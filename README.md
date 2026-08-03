@@ -5,9 +5,9 @@ Materials for the course in their quarto format are stored here
 
 ## For learners
 
-The course main webpage is TBD
+The course main webpage is: https://github.com/OUCRU-Modelling/R-training-2026
 
-## For instructors
+## Guideline for instructors
 
 - Make sure you are using `renv` for R package version control
     - Always start your session with `renv::restore()`
