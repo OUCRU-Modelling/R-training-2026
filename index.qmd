@@ -42,77 +42,86 @@ Please follow [this handout](handouts/precourse_setup.qmd){target="_blank"} befo
 
 ## Introduction to R
 
-### 🧑‍🏫️ Lead instructors: Ronald and Thinh
+### Day 1 (Monday)
 
-### Day 1 
+<!-- - [Lecture slides](slides/IntroductionRDay1.qmd) -->
+- **Learning objectives**:
+  1. Open and inspect datasets, understand their structure
+  2. Make selections and extract relevant data
+  3. Perform basic data exploration, including calculating summaries and identifying missing values
+  4. Navigate RStudio with confidence
 
-- [Lecture slides](slides/IntroductionRDay1.qmd)
-- Contents:
-  - Open and inspect datasets, understand their structure
-  - Make selections and extract relevant data
-  - Perform basic data exploration, including calculating summaries and identifying missing values
-  - Navigate RStudio with confidence
-- Exercises:
+<!-- - Exercises:
   - [Handout file](handouts/exercises_Day1.qmd){target="_blank"}
   - [Exercise answer key](handouts/exercises_Day1_answer.qmd){target="_blank"}
   - [Exercise answer script](handouts/exercises_Day1_answer.R){target="_blank"}
-- [Example R code scripts - Day 1](slides/Scripts/ExampleCodeDay1.R){target="_blank"}
+- [Example R code scripts - Day 1](slides/Scripts/ExampleCodeDay1.R){target="_blank"} -->
 
-### Day 2
+### Day 2 (Tuesday)
 
-- [Lecture slides](slides/IntroductionRDay2.qmd)
-- Contents:
-  - Write simple functions to automate tasks
-  - Create visualisations using Base R graphics
-  - Understand the R working environment, including file paths and workspace management
-  - Find and use R documentation and resources to solve problems on your own
-- No exercises given
-- [Example R code scripts - Day 2](slides/Scripts/ExampleCodeDay2.R){target="_blank"}
+<!-- - [Lecture slides](slides/IntroductionRDay2.qmd) -->
+- **Learning objectives**:
+  1. Write simple functions to automate tasks
+  2. Create visualisations using Base R graphics
+  3. Understand the R working environment, including file paths and workspace management
+  4. Using *pipe operators* to chain functions
+  5. How to read and understand the errors and warnings in your R console
+  6. Find and use R documentation and resources to solve problems on your own
+- No exercises will be given
+<!-- - [Example R code scripts - Day 2](slides/Scripts/ExampleCodeDay2.R){target="_blank"} -->
 
 
-## Day 3: Principles of data visualisation
+## Principles of data visualisation and plotting in R
 
-### 🧑‍🏫️ Lead instructors: Ronald and Thinh
+### Day 3 (Wednesday):
 
-- [Lecture slides](slides/viz.qmd)
-- Contents:
-  - The step-by-step process of creating graphs in R
-  - The grammar of graphics—understanding how plots are built
-  - How to design clear and impactful visualisations
-- [Handout file](handouts/VisualisationHandouts.pdf)
+<!-- - [Lecture slides](slides/viz.qmd) -->
+- **Learning objectives**:
+  1. The grammar of graphics—understanding how plots are built
+  2. The step-by-step process of creating graphs in R
+  3. Use the `ggplot2` package plot figures in R
+  4. How to design clear and impactful visualisations
+  5. Using LLMs (Large Language Models) to help you with plotting
+
+<!-- - [Handout file](handouts/VisualisationHandouts.pdf)
 - Exercises:
   - [Exercise file](handouts/exercises_Day3.qmd)
   - [Exercise answer key](handouts/Exercises_Day3_answer.pdf)
   - [Exercise answer script](handouts/Exercises_Day3_answer.R)
   - Datasets: 
     - [NightingaleRose.csv](https://github.com/OUCRU-Modelling/R-training-2026/raw/refs/heads/main/slides/data/NightingaleRose.csv) 
-    - [ICUCost.csv](https://github.com/OUCRU-Modelling/R-training-2026/raw/refs/heads/main/slides/data/ICUCost.csv)
+    - [ICUCost.csv](https://github.com/OUCRU-Modelling/R-training-2026/raw/refs/heads/main/slides/data/ICUCost.csv) -->
+
+### Day 4 (Thursday-morning):
+
+- **Learning objectives**:
+  1. Understand the principles of data visualisation
+
+## Advanced data management in R
+
+### Day 4 (Thursday-afternoon):
+
+- **Learning objectives**:
+  1. Logics with if-else statements and for-loops
+  3. Data manipulation with `mutate()`
+  4. Joining dataframes
+  5. Pivotting dataframes into long and wide formats
+  6. Vectorisation in R with `map()`
 
 
-## Day 4: Advanced R topics
 
-### 🧑‍🏫️ Lead instructors: Tuyen and Hai
+## Reproducible research and reporting using Quarto
 
-- [Lecture slides](slides/advance_r.qmd)
-- Contents:
-  - Logics with if-else statements and for-loops
-  - Piping in R
-  - Data manipulation with `mutate()`
-  - Joining dataframes
-  - Pivotting dataframes into long and wide formats
-  - Vectorisation in R with `map()`
+### Day 5 (Friday-morning)
 
-## Day 5: Using Quarto for reproducible research
+<!-- - [Lecture slides](slides/qt-repro-res.qmd) -->
+- **Learning objectives**:
+  1. Write papers with reproducible tables and figures using Quarto
+  2. Generate reports in multiple formats: Word, PDF, slides, web pages…
+  3. Easily update analyses when new data becomes available
 
-### 🧑‍🏫️ Lead instructor: Thinh
-
-- [Lecture slides](slides/qt-repro-res.qmd)
-- Contents:
-  - Write papers with reproducible tables and figures using Quarto
-  - Generate reports in multiple formats: Word, PDF, slides, web pages…
-  - Easily update analyses when new data becomes available
-- [Exercises](handouts/exercises_Day5.qmd){target="_blank"}
-- [Exercise answer keys]{style="cursor:not-allowed;user-select:none;"}
+<!-- - [Exercises](handouts/exercises_Day5.qmd){target="_blank"}
+- [Exercise answer keys]{style="cursor:not-allowed;user-select:none;"} -->
 
 # Appendix
 

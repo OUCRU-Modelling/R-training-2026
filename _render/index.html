@@ -116,9 +116,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#course-topics" id="toc-course-topics" class="nav-link" data-scroll-target="#course-topics">Course topics</a>
   <ul class="collapse">
   <li><a href="#introduction-to-r" id="toc-introduction-to-r" class="nav-link" data-scroll-target="#introduction-to-r">Introduction to R</a></li>
-  <li><a href="#day-3-principles-of-data-visualisation" id="toc-day-3-principles-of-data-visualisation" class="nav-link" data-scroll-target="#day-3-principles-of-data-visualisation">Day 3: Principles of data visualisation</a></li>
-  <li><a href="#day-4-advanced-r-topics" id="toc-day-4-advanced-r-topics" class="nav-link" data-scroll-target="#day-4-advanced-r-topics">Day 4: Advanced R topics</a></li>
-  <li><a href="#day-5-using-quarto-for-reproducible-research" id="toc-day-5-using-quarto-for-reproducible-research" class="nav-link" data-scroll-target="#day-5-using-quarto-for-reproducible-research">Day 5: Using Quarto for reproducible research</a></li>
+  <li><a href="#principles-of-data-visualisation-and-plotting-in-r" id="toc-principles-of-data-visualisation-and-plotting-in-r" class="nav-link" data-scroll-target="#principles-of-data-visualisation-and-plotting-in-r">Principles of data visualisation and plotting in R</a></li>
+  <li><a href="#advanced-data-management-in-r" id="toc-advanced-data-management-in-r" class="nav-link" data-scroll-target="#advanced-data-management-in-r">Advanced data management in R</a></li>
+  <li><a href="#reproducible-research-and-reporting-using-quarto" id="toc-reproducible-research-and-reporting-using-quarto" class="nav-link" data-scroll-target="#reproducible-research-and-reporting-using-quarto">Reproducible research and reporting using Quarto</a></li>
   </ul></li>
   <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a>
   <ul class="collapse">
@@ -146,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 3, 2026 – 14:58:16 (GMT+7)</p>
+      <p class="date">August 3, 2026 – 17:19:02 (GMT+7)</p>
     </div>
   </div>
   
@@ -186,105 +186,106 @@ ul.task-list li input[type="checkbox"] {
 <h1>Course topics</h1>
 <section id="introduction-to-r" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-to-r">Introduction to R</h2>
-<section id="lead-instructors-ronald-and-thinh" class="level3">
-<h3 class="anchored" data-anchor-id="lead-instructors-ronald-and-thinh">🧑‍🏫️ Lead instructors: Ronald and Thinh</h3>
-</section>
-<section id="day-1" class="level3">
-<h3 class="anchored" data-anchor-id="day-1">Day 1</h3>
+<section id="day-1-monday" class="level3">
+<h3 class="anchored" data-anchor-id="day-1-monday">Day 1 (Monday)</h3>
+<!-- - [Lecture slides](slides/IntroductionRDay1.qmd) -->
 <ul>
-<li><a href="slides/IntroductionRDay1.qmd">Lecture slides</a></li>
-<li>Contents:
-<ul>
+<li><strong>Learning objectives</strong>:
+<ol type="1">
 <li>Open and inspect datasets, understand their structure</li>
 <li>Make selections and extract relevant data</li>
 <li>Perform basic data exploration, including calculating summaries and identifying missing values</li>
 <li>Navigate RStudio with confidence</li>
-</ul></li>
-<li>Exercises:
-<ul>
-<li><a href="handouts/exercises_Day1.qmd" target="_blank">Handout file</a></li>
-<li><a href="handouts/exercises_Day1_answer.qmd" target="_blank">Exercise answer key</a></li>
-<li><a href="handouts/exercises_Day1_answer.R" target="_blank">Exercise answer script</a></li>
-</ul></li>
-<li><a href="slides/Scripts/ExampleCodeDay1.R" target="_blank">Example R code scripts - Day 1</a></li>
+</ol></li>
 </ul>
+<!-- - Exercises:
+  - [Handout file](handouts/exercises_Day1.qmd){target="_blank"}
+  - [Exercise answer key](handouts/exercises_Day1_answer.qmd){target="_blank"}
+  - [Exercise answer script](handouts/exercises_Day1_answer.R){target="_blank"}
+- [Example R code scripts - Day 1](slides/Scripts/ExampleCodeDay1.R){target="_blank"} -->
 </section>
-<section id="day-2" class="level3">
-<h3 class="anchored" data-anchor-id="day-2">Day 2</h3>
+<section id="day-2-tuesday" class="level3">
+<h3 class="anchored" data-anchor-id="day-2-tuesday">Day 2 (Tuesday)</h3>
+<!-- - [Lecture slides](slides/IntroductionRDay2.qmd) -->
 <ul>
-<li><a href="slides/IntroductionRDay2.qmd">Lecture slides</a></li>
-<li>Contents:
-<ul>
+<li><strong>Learning objectives</strong>:
+<ol type="1">
 <li>Write simple functions to automate tasks</li>
 <li>Create visualisations using Base R graphics</li>
 <li>Understand the R working environment, including file paths and workspace management</li>
+<li>Using <em>pipe operators</em> to chain functions</li>
+<li>How to read and understand the errors and warnings in your R console</li>
 <li>Find and use R documentation and resources to solve problems on your own</li>
-</ul></li>
-<li>No exercises given</li>
-<li><a href="slides/Scripts/ExampleCodeDay2.R" target="_blank">Example R code scripts - Day 2</a></li>
+</ol></li>
+<li>No exercises will be given <!-- - [Example R code scripts - Day 2](slides/Scripts/ExampleCodeDay2.R){target="_blank"} --></li>
 </ul>
 </section>
 </section>
-<section id="day-3-principles-of-data-visualisation" class="level2">
-<h2 class="anchored" data-anchor-id="day-3-principles-of-data-visualisation">Day 3: Principles of data visualisation</h2>
-<section id="lead-instructors-ronald-and-thinh-1" class="level3">
-<h3 class="anchored" data-anchor-id="lead-instructors-ronald-and-thinh-1">🧑‍🏫️ Lead instructors: Ronald and Thinh</h3>
+<section id="principles-of-data-visualisation-and-plotting-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="principles-of-data-visualisation-and-plotting-in-r">Principles of data visualisation and plotting in R</h2>
+<section id="day-3-wednesday" class="level3">
+<h3 class="anchored" data-anchor-id="day-3-wednesday">Day 3 (Wednesday):</h3>
+<!-- - [Lecture slides](slides/viz.qmd) -->
 <ul>
-<li><a href="slides/viz.qmd">Lecture slides</a></li>
-<li>Contents:
-<ul>
-<li>The step-by-step process of creating graphs in R</li>
+<li><strong>Learning objectives</strong>:
+<ol type="1">
 <li>The grammar of graphics—understanding how plots are built</li>
+<li>The step-by-step process of creating graphs in R</li>
+<li>Use the <code>ggplot2</code> package plot figures in R</li>
 <li>How to design clear and impactful visualisations</li>
-</ul></li>
-<li><a href="handouts/VisualisationHandouts.pdf">Handout file</a></li>
-<li>Exercises:
+<li>Using LLMs (Large Language Models) to help you with plotting</li>
+</ol></li>
+</ul>
+<!-- - [Handout file](handouts/VisualisationHandouts.pdf)
+- Exercises:
+  - [Exercise file](handouts/exercises_Day3.qmd)
+  - [Exercise answer key](handouts/Exercises_Day3_answer.pdf)
+  - [Exercise answer script](handouts/Exercises_Day3_answer.R)
+  - Datasets: 
+    - [NightingaleRose.csv](https://github.com/OUCRU-Modelling/R-training-2026/raw/refs/heads/main/slides/data/NightingaleRose.csv) 
+    - [ICUCost.csv](https://github.com/OUCRU-Modelling/R-training-2026/raw/refs/heads/main/slides/data/ICUCost.csv) -->
+</section>
+<section id="day-4-thursday-morning" class="level3">
+<h3 class="anchored" data-anchor-id="day-4-thursday-morning">Day 4 (Thursday-morning):</h3>
 <ul>
-<li><a href="handouts/exercises_Day3.qmd">Exercise file</a></li>
-<li><a href="handouts/Exercises_Day3_answer.pdf">Exercise answer key</a></li>
-<li><a href="handouts/Exercises_Day3_answer.R">Exercise answer script</a></li>
-<li>Datasets:
-<ul>
-<li><a href="https://github.com/OUCRU-Modelling/R-training-2026/raw/refs/heads/main/slides/data/NightingaleRose.csv">NightingaleRose.csv</a></li>
-<li><a href="https://github.com/OUCRU-Modelling/R-training-2026/raw/refs/heads/main/slides/data/ICUCost.csv">ICUCost.csv</a></li>
-</ul></li>
-</ul></li>
+<li><strong>Learning objectives</strong>:
+<ol type="1">
+<li>Understand the principles of data visualisation</li>
+</ol></li>
 </ul>
 </section>
 </section>
-<section id="day-4-advanced-r-topics" class="level2">
-<h2 class="anchored" data-anchor-id="day-4-advanced-r-topics">Day 4: Advanced R topics</h2>
-<section id="lead-instructors-tuyen-and-hai" class="level3">
-<h3 class="anchored" data-anchor-id="lead-instructors-tuyen-and-hai">🧑‍🏫️ Lead instructors: Tuyen and Hai</h3>
+<section id="advanced-data-management-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-data-management-in-r">Advanced data management in R</h2>
+<section id="day-4-thursday-afternoon" class="level3">
+<h3 class="anchored" data-anchor-id="day-4-thursday-afternoon">Day 4 (Thursday-afternoon):</h3>
 <ul>
-<li><a href="slides/advance_r.qmd">Lecture slides</a></li>
-<li>Contents:
-<ul>
+<li><strong>Learning objectives</strong>:
+<ol type="1">
 <li>Logics with if-else statements and for-loops</li>
-<li>Piping in R</li>
 <li>Data manipulation with <code>mutate()</code></li>
 <li>Joining dataframes</li>
 <li>Pivotting dataframes into long and wide formats</li>
 <li>Vectorisation in R with <code>map()</code></li>
-</ul></li>
+</ol></li>
 </ul>
 </section>
 </section>
-<section id="day-5-using-quarto-for-reproducible-research" class="level2">
-<h2 class="anchored" data-anchor-id="day-5-using-quarto-for-reproducible-research">Day 5: Using Quarto for reproducible research</h2>
-<section id="lead-instructor-thinh" class="level3">
-<h3 class="anchored" data-anchor-id="lead-instructor-thinh">🧑‍🏫️ Lead instructor: Thinh</h3>
+<section id="reproducible-research-and-reporting-using-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="reproducible-research-and-reporting-using-quarto">Reproducible research and reporting using Quarto</h2>
+<section id="day-5-friday-morning" class="level3">
+<h3 class="anchored" data-anchor-id="day-5-friday-morning">Day 5 (Friday-morning)</h3>
+<!-- - [Lecture slides](slides/qt-repro-res.qmd) -->
 <ul>
-<li><a href="slides/qt-repro-res.qmd">Lecture slides</a></li>
-<li>Contents:
-<ul>
+<li><strong>Learning objectives</strong>:
+<ol type="1">
 <li>Write papers with reproducible tables and figures using Quarto</li>
 <li>Generate reports in multiple formats: Word, PDF, slides, web pages…</li>
 <li>Easily update analyses when new data becomes available</li>
-</ul></li>
-<li><a href="handouts/exercises_Day5.qmd" target="_blank">Exercises</a></li>
-<li><span style="cursor:not-allowed;user-select:none;">Exercise answer keys</span></li>
+</ol></li>
 </ul>
+<!-- - [Exercises](handouts/exercises_Day5.qmd){target="_blank"}
+- [Exercise answer keys]{style="cursor:not-allowed;user-select:none;"} -->
 </section>
 </section>
 </section>

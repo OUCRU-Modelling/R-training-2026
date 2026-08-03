@@ -11,28 +11,28 @@
     "href": "index.html#introduction-to-r",
     "title": "OUCRU R training course - 2026",
     "section": "Introduction to R",
-    "text": "Introduction to R\n\n🧑‍🏫️ Lead instructors: Ronald and Thinh\n\n\nDay 1\n\nLecture slides\nContents:\n\nOpen and inspect datasets, understand their structure\nMake selections and extract relevant data\nPerform basic data exploration, including calculating summaries and identifying missing values\nNavigate RStudio with confidence\n\nExercises:\n\nHandout file\nExercise answer key\nExercise answer script\n\nExample R code scripts - Day 1\n\n\n\nDay 2\n\nLecture slides\nContents:\n\nWrite simple functions to automate tasks\nCreate visualisations using Base R graphics\nUnderstand the R working environment, including file paths and workspace management\nFind and use R documentation and resources to solve problems on your own\n\nNo exercises given\nExample R code scripts - Day 2"
+    "text": "Introduction to R\n\nDay 1 (Monday)\n\n\nLearning objectives:\n\nOpen and inspect datasets, understand their structure\nMake selections and extract relevant data\nPerform basic data exploration, including calculating summaries and identifying missing values\nNavigate RStudio with confidence\n\n\n\n\n\nDay 2 (Tuesday)\n\n\nLearning objectives:\n\nWrite simple functions to automate tasks\nCreate visualisations using Base R graphics\nUnderstand the R working environment, including file paths and workspace management\nUsing pipe operators to chain functions\nHow to read and understand the errors and warnings in your R console\nFind and use R documentation and resources to solve problems on your own\n\nNo exercises will be given"
   },
   {
-    "objectID": "index.html#day-3-principles-of-data-visualisation",
-    "href": "index.html#day-3-principles-of-data-visualisation",
+    "objectID": "index.html#principles-of-data-visualisation-and-plotting-in-r",
+    "href": "index.html#principles-of-data-visualisation-and-plotting-in-r",
     "title": "OUCRU R training course - 2026",
-    "section": "Day 3: Principles of data visualisation",
-    "text": "Day 3: Principles of data visualisation\n\n🧑‍🏫️ Lead instructors: Ronald and Thinh\n\nLecture slides\nContents:\n\nThe step-by-step process of creating graphs in R\nThe grammar of graphics—understanding how plots are built\nHow to design clear and impactful visualisations\n\nHandout file\nExercises:\n\nExercise file\nExercise answer key\nExercise answer script\nDatasets:\n\nNightingaleRose.csv\nICUCost.csv"
+    "section": "Principles of data visualisation and plotting in R",
+    "text": "Principles of data visualisation and plotting in R\n\nDay 3 (Wednesday):\n\n\nLearning objectives:\n\nThe grammar of graphics—understanding how plots are built\nThe step-by-step process of creating graphs in R\nUse the ggplot2 package plot figures in R\nHow to design clear and impactful visualisations\nUsing LLMs (Large Language Models) to help you with plotting\n\n\n\n\n\nDay 4 (Thursday-morning):\n\nLearning objectives:\n\nUnderstand the principles of data visualisation"
   },
   {
-    "objectID": "index.html#day-4-advanced-r-topics",
-    "href": "index.html#day-4-advanced-r-topics",
+    "objectID": "index.html#advanced-data-management-in-r",
+    "href": "index.html#advanced-data-management-in-r",
     "title": "OUCRU R training course - 2026",
-    "section": "Day 4: Advanced R topics",
-    "text": "Day 4: Advanced R topics\n\n🧑‍🏫️ Lead instructors: Tuyen and Hai\n\nLecture slides\nContents:\n\nLogics with if-else statements and for-loops\nPiping in R\nData manipulation with mutate()\nJoining dataframes\nPivotting dataframes into long and wide formats\nVectorisation in R with map()"
+    "section": "Advanced data management in R",
+    "text": "Advanced data management in R\n\nDay 4 (Thursday-afternoon):\n\nLearning objectives:\n\nLogics with if-else statements and for-loops\nData manipulation with mutate()\nJoining dataframes\nPivotting dataframes into long and wide formats\nVectorisation in R with map()"
   },
   {
-    "objectID": "index.html#day-5-using-quarto-for-reproducible-research",
-    "href": "index.html#day-5-using-quarto-for-reproducible-research",
+    "objectID": "index.html#reproducible-research-and-reporting-using-quarto",
+    "href": "index.html#reproducible-research-and-reporting-using-quarto",
     "title": "OUCRU R training course - 2026",
-    "section": "Day 5: Using Quarto for reproducible research",
-    "text": "Day 5: Using Quarto for reproducible research\n\n🧑‍🏫️ Lead instructor: Thinh\n\nLecture slides\nContents:\n\nWrite papers with reproducible tables and figures using Quarto\nGenerate reports in multiple formats: Word, PDF, slides, web pages…\nEasily update analyses when new data becomes available\n\nExercises\nExercise answer keys"
+    "section": "Reproducible research and reporting using Quarto",
+    "text": "Reproducible research and reporting using Quarto\n\nDay 5 (Friday-morning)\n\n\nLearning objectives:\n\nWrite papers with reproducible tables and figures using Quarto\nGenerate reports in multiple formats: Word, PDF, slides, web pages…\nEasily update analyses when new data becomes available"
   },
   {
     "objectID": "index.html#introduction-to-r-and-rstudio",
