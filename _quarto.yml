@@ -1,0 +1,24 @@
+project:
+  type: website
+  output-dir: _render
+
+execute:
+  freeze: auto
+
+website:
+  title: "R-training-2026"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+
+

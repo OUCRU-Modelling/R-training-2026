@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "OUCRU R training course - 2026",
+    "section": "",
+    "text": "Please follow this handout before joining the course."
+  },
+  {
+    "objectID": "index.html#introduction-to-r",
+    "href": "index.html#introduction-to-r",
+    "title": "OUCRU R training course - 2026",
+    "section": "Introduction to R",
+    "text": "Introduction to R\n\n🧑‍🏫️ Lead instructors: Ronald and Thinh\n\n\nDay 1\n\nLecture slides\nContents:\n\nOpen and inspect datasets, understand their structure\nMake selections and extract relevant data\nPerform basic data exploration, including calculating summaries and identifying missing values\nNavigate RStudio with confidence\n\nExercises:\n\nHandout file\nExercise answer key\nExercise answer script\n\nExample R code scripts - Day 1\n\n\n\nDay 2\n\nLecture slides\nContents:\n\nWrite simple functions to automate tasks\nCreate visualisations using Base R graphics\nUnderstand the R working environment, including file paths and workspace management\nFind and use R documentation and resources to solve problems on your own\n\nNo exercises given\nExample R code scripts - Day 2"
+  },
+  {
+    "objectID": "index.html#day-3-principles-of-data-visualisation",
+    "href": "index.html#day-3-principles-of-data-visualisation",
+    "title": "OUCRU R training course - 2026",
+    "section": "Day 3: Principles of data visualisation",
+    "text": "Day 3: Principles of data visualisation\n\n🧑‍🏫️ Lead instructors: Ronald and Thinh\n\nLecture slides\nContents:\n\nThe step-by-step process of creating graphs in R\nThe grammar of graphics—understanding how plots are built\nHow to design clear and impactful visualisations\n\nHandout file\nExercises:\n\nExercise file\nExercise answer key\nExercise answer script\nDatasets:\n\nNightingaleRose.csv\nICUCost.csv"
+  },
+  {
+    "objectID": "index.html#day-4-advanced-r-topics",
+    "href": "index.html#day-4-advanced-r-topics",
+    "title": "OUCRU R training course - 2026",
+    "section": "Day 4: Advanced R topics",
+    "text": "Day 4: Advanced R topics\n\n🧑‍🏫️ Lead instructors: Tuyen and Hai\n\nLecture slides\nContents:\n\nLogics with if-else statements and for-loops\nPiping in R\nData manipulation with mutate()\nJoining dataframes\nPivotting dataframes into long and wide formats\nVectorisation in R with map()"
+  },
+  {
+    "objectID": "index.html#day-5-using-quarto-for-reproducible-research",
+    "href": "index.html#day-5-using-quarto-for-reproducible-research",
+    "title": "OUCRU R training course - 2026",
+    "section": "Day 5: Using Quarto for reproducible research",
+    "text": "Day 5: Using Quarto for reproducible research\n\n🧑‍🏫️ Lead instructor: Thinh\n\nLecture slides\nContents:\n\nWrite papers with reproducible tables and figures using Quarto\nGenerate reports in multiple formats: Word, PDF, slides, web pages…\nEasily update analyses when new data becomes available\n\nExercises\nExercise answer keys"
+  },
+  {
+    "objectID": "index.html#introduction-to-r-and-rstudio",
+    "href": "index.html#introduction-to-r-and-rstudio",
+    "title": "OUCRU R training course - 2026",
+    "section": "Introduction to R and RStudio",
+    "text": "Introduction to R and RStudio\nGood introduction, with explanatory videos:\n\nRStudio provides several tutorials for beginners and more advanced users: https://education.rstudio.com/\nDatacamp provides many courses at different levels (OUCRU HCMC has a license). See http://www.statmethods.net. The introduction is free\nA basic course, interactive design: https://www.quantargo.com/courses/course-r-introduction\nIntroduction from Pasteur institute: https://hub-courses.pages.pasteur.fr/R_pasteur_phd/First_steps_RStudio.html\nGood summary of basic concepts: http://www.burns-stat.com/documents/tutorials/impatient-r\nA comprehensive introduction: https://github.com/matloff/fasteR\nIntroduction to R programming: https://jjallaire.github.io/hopr/"
+  },
+  {
+    "objectID": "index.html#deeper-into-r",
+    "href": "index.html#deeper-into-r",
+    "title": "OUCRU R training course - 2026",
+    "section": "DeepeR into R",
+    "text": "DeepeR into R\n\nThe book R for Data Science (2e)\n“What They Forgot to Teach You About R”\nhttps://www.r-project.org/doc/bib/R-books.html\nThe official R manuals: https://cran.r-project.org/manuals.html"
+  },
+  {
+    "objectID": "index.html#r-and-statistics",
+    "href": "index.html#r-and-statistics",
+    "title": "OUCRU R training course - 2026",
+    "section": "R and statistics",
+    "text": "R and statistics\n\nA simple introduction to biomedical statistics using R: https://a-little-book-of-r-for-biomedical-statistics.readthedocs.io/en/latest/\nA website with detailed examples of all types of statistical analysis: https://stats.oarc.ucla.edu/other/dae/\nR by example: http://www.mayin.org/ajayshah/KB/R/index.html\nR course, with focus machine learning"
+  },
+  {
+    "objectID": "index.html#r-markdown-and-quarto",
+    "href": "index.html#r-markdown-and-quarto",
+    "title": "OUCRU R training course - 2026",
+    "section": "R Markdown and Quarto",
+    "text": "R Markdown and Quarto\n\nThe main RStudio webpage on R Markdown, with links to two freely available books: https://rmarkdown.rstudio.com/docs/\nIntroduction from RStudio\nIntroduction to knitr\nFirst steps in Markdown\nWriting academic papers with R Markdown (focus on bibiliographies): https://ikashnitsky.github.io/2019/zotero/\nR Markdown tips: https://appsilon.com/r-markdown-tips/\nPowerpoint presentations using R Markdown: https://appsilon.com/r-markdown-powerpoint-presentation/\nhttps://codingclubuc3m.rbind.io/post/2019-09-24/ focus on creating presentations\nR Quarto tutorial: https://appsilon.com/r-quarto-tutorial/"
+  }
+]
