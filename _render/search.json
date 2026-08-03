@@ -61,5 +61,670 @@
     "title": "OUCRU R training course - 2026",
     "section": "R Markdown and Quarto",
     "text": "R Markdown and Quarto\n\nThe main RStudio webpage on R Markdown, with links to two freely available books: https://rmarkdown.rstudio.com/docs/\nIntroduction from RStudio\nIntroduction to knitr\nFirst steps in Markdown\nWriting academic papers with R Markdown (focus on bibiliographies): https://ikashnitsky.github.io/2019/zotero/\nR Markdown tips: https://appsilon.com/r-markdown-tips/\nPowerpoint presentations using R Markdown: https://appsilon.com/r-markdown-powerpoint-presentation/\nhttps://codingclubuc3m.rbind.io/post/2019-09-24/ focus on creating presentations\nR Quarto tutorial: https://appsilon.com/r-quarto-tutorial/"
+  },
+  {
+    "objectID": "slides/viz.html#what-to-expect",
+    "href": "slides/viz.html#what-to-expect",
+    "title": "Principles of Data Visualisation",
+    "section": "What to expect",
+    "text": "What to expect\nHow to make an informative visual representation of data and/or results\n\nPart I: process of graph creation\nPart II: principles of graph interpretation\n\n\n\n\n\n\n\nNote\n\n\nGraph = diagram = chart = figure = picture"
+  },
+  {
+    "objectID": "slides/viz.html#section",
+    "href": "slides/viz.html#section",
+    "title": "Principles of Data Visualisation",
+    "section": "",
+    "text": "But it takes\n\nknowledge of graphics principles\neffort; trial and error\ntime\n\nto make a “good” one"
+  },
+  {
+    "objectID": "slides/viz.html#who-created-this-graph",
+    "href": "slides/viz.html#who-created-this-graph",
+    "title": "Principles of Data Visualisation",
+    "section": "Who created this graph?",
+    "text": "Who created this graph?"
+  },
+  {
+    "objectID": "slides/viz.html#answer-florence-nightingale",
+    "href": "slides/viz.html#answer-florence-nightingale",
+    "title": "Principles of Data Visualisation",
+    "section": "Answer: Florence Nightingale",
+    "text": "Answer: Florence Nightingale\nRose plot to convince UK authorities of importance of hygiene"
+  },
+  {
+    "objectID": "slides/viz.html#example-of-informative-graph",
+    "href": "slides/viz.html#example-of-informative-graph",
+    "title": "Principles of Data Visualisation",
+    "section": "Example of informative graph",
+    "text": "Example of informative graph"
+  },
+  {
+    "objectID": "slides/viz.html#example-of-noninformative-graph",
+    "href": "slides/viz.html#example-of-noninformative-graph",
+    "title": "Principles of Data Visualisation",
+    "section": "Example of noninformative graph",
+    "text": "Example of noninformative graph\nHinrichsen: risk factors for hepatitis G infection in haemodialysis patients\n\nDo we need a graph?\nAre there enough data points to merit a plot?\n\nDepends on mode of presentation: conference lecture (time limit), article\n\nIf we use a graph, is this one the most truthful and informative?"
+  },
+  {
+    "objectID": "slides/viz.html#graph-versus-table",
+    "href": "slides/viz.html#graph-versus-table",
+    "title": "Principles of Data Visualisation",
+    "section": "Graph versus table",
+    "text": "Graph versus table\nCohort study on 1187 HIV infected persons in The Gambia"
+  },
+  {
+    "objectID": "slides/viz.html#pattern-discovery-fake-results",
+    "href": "slides/viz.html#pattern-discovery-fake-results",
+    "title": "Principles of Data Visualisation",
+    "section": "Pattern discovery (fake results)",
+    "text": "Pattern discovery (fake results)"
+  },
+  {
+    "objectID": "slides/viz.html#points-to-consider",
+    "href": "slides/viz.html#points-to-consider",
+    "title": "Principles of Data Visualisation",
+    "section": "Points to consider",
+    "text": "Points to consider\n\n\nWhy do we make a graph? (purpose)\n\nWe want to explore and inspect our data or results\nPresent data or results, often with a message, to others\n\n\n\n\nWhere do we show the graph: research paper, conference, website\n\n\n\n\nWho is the audience. Level of background knowledge\n\n\n\n\nWhat do we want to show (data)\n\nGraph: visual representation of information (“encoding”)\nmapping from data/results to figure"
+  },
+  {
+    "objectID": "slides/viz.html#the-origin",
+    "href": "slides/viz.html#the-origin",
+    "title": "Principles of Data Visualisation",
+    "section": "The origin",
+    "text": "The origin\n\n\nThe author\n\nLeland Wilkinson, The Grammar of Graphics, Springer 2005\nAuthor of SYSTAT; 1995: sold to SPSS\n1994 - 2007: Senior VP, SPSS"
+  },
+  {
+    "objectID": "slides/viz.html#what-is-a-grammar",
+    "href": "slides/viz.html#what-is-a-grammar",
+    "title": "Principles of Data Visualisation",
+    "section": "What is a grammar",
+    "text": "What is a grammar\n\nNatural language grammar:\n\nDefines components of a sentence (verb, noun, …) and rules how to combine them\nDoes not advise on the choice between synonymous words or whether a sentence is meaningful; one can write grammatically correct nonsense\n\nGraphics grammar:\n\nDefines components of a statistical graph and rules how to combine them\nDoes not advise on the best choice of scale (linear, logarithmic), color or line type; one can create noninformative graphs\n\n\n\n\nGrammar helps expressing ideas or information in a clear and coherent way"
+  },
+  {
+    "objectID": "slides/viz.html#main-components-of-a-graph-r",
+    "href": "slides/viz.html#main-components-of-a-graph-r",
+    "title": "Principles of Data Visualisation",
+    "section": "Main components of a graph (R)",
+    "text": "Main components of a graph (R)\n\nMapping from information (data) to aesthetic attributes of geometric objects\nGeometic objects: what you see on the plot (points, lines, bars)\nAesthetic attributes: “role” of variables in plot: location (often along x-axis and y-axis), colour, size, shape"
+  },
+  {
+    "objectID": "slides/viz.html#scatter-plot",
+    "href": "slides/viz.html#scatter-plot",
+    "title": "Principles of Data Visualisation",
+    "section": "Scatter plot",
+    "text": "Scatter plot\n\n\n\n\n\n“Mapping routine measles vaccination in low-and middle-income countries.” Nature 589, no. 7842 (2021): 415-419. (IF 2023 = 50.5).\nHow do you read this plot?"
+  },
+  {
+    "objectID": "slides/viz.html#scatter-plot-1",
+    "href": "slides/viz.html#scatter-plot-1",
+    "title": "Principles of Data Visualisation",
+    "section": "Scatter plot",
+    "text": "Scatter plot\n\n\n\n\nWhat information would you need to map each dot correctly onto this plot?\n\nCountry name\nPosition\nSize\nColor"
+  },
+  {
+    "objectID": "slides/viz.html#data",
+    "href": "slides/viz.html#data",
+    "title": "Principles of Data Visualisation",
+    "section": "Data",
+    "text": "Data\n\n\n\n\n\n\n\n\n\n\nlabel\n(country)\nx\n(coverage)\ny\n(i nequality)\nsize\n(p opulation)\ncolor\n(region)\n\n\n\n\nNigeria\n0.20\n-0.07\n220M\nSub-Saharan Africa\n\n\n\nData found here: nature_plot.xlsx\n\n\n# A tibble: 6 × 5\n  country          coverage inequality   pop region                             \n  &lt;chr&gt;               &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;                              \n1 Angola              -0.14      0.1    30.2 Sub-Saharan Africa                 \n2 Papua New Guinea    -0.35      0.08   16.5 Southeast Asia, East Asia and Ocea…\n3 Pakistan             0.12      0.05   82.5 South Asia                         \n4 Chad                 0.14      0.01   27.5 Sub-Saharan Africa                 \n5 Ethiopia             0.32      0.005  55   Sub-Saharan Africa                 \n6 Kenya                0.07     -0.06   30.2 Sub-Saharan Africa"
+  },
+  {
+    "objectID": "slides/viz.html#scatter-plot-2",
+    "href": "slides/viz.html#scatter-plot-2",
+    "title": "Principles of Data Visualisation",
+    "section": "Scatter plot",
+    "text": "Scatter plot\n\n\n\n\nLet’s draw this by hand"
+  },
+  {
+    "objectID": "slides/viz.html#draw-this-by-hand",
+    "href": "slides/viz.html#draw-this-by-hand",
+    "title": "Principles of Data Visualisation",
+    "section": "Draw this by hand",
+    "text": "Draw this by hand\n\n\n\n\n\nDraw the axes\nDraw the data points\nAdjust dot sizes\nColour-code the regions\nAdd key country labels"
+  },
+  {
+    "objectID": "slides/viz.html#draw-the-axes",
+    "href": "slides/viz.html#draw-the-axes",
+    "title": "Principles of Data Visualisation",
+    "section": "Draw the axes",
+    "text": "Draw the axes\n\n\n\ncode.r\n\nggplot(df, aes(x = coverage, y = inequality))"
+  },
+  {
+    "objectID": "slides/viz.html#draw-the-data-points",
+    "href": "slides/viz.html#draw-the-data-points",
+    "title": "Principles of Data Visualisation",
+    "section": "Draw the data points",
+    "text": "Draw the data points\nThe x and y aesthetics determine which variable is drawn on each axis.\n\n\n\ncode.r\n\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point()"
+  },
+  {
+    "objectID": "slides/viz.html#changing-the-plot-orientation",
+    "href": "slides/viz.html#changing-the-plot-orientation",
+    "title": "Principles of Data Visualisation",
+    "section": "Changing the plot orientation",
+    "text": "Changing the plot orientation\nSwapping x and y aesthetics will change the plot orientation\n\n\n\ncode.r\n\nggplot(df, aes(x = inequality, y = coverage)) +\n  geom_point()"
+  },
+  {
+    "objectID": "slides/viz.html#adjust-dot-sizes",
+    "href": "slides/viz.html#adjust-dot-sizes",
+    "title": "Principles of Data Visualisation",
+    "section": "Adjust dot sizes",
+    "text": "Adjust dot sizes\n\n\n\ncode.r\n\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop))"
+  },
+  {
+    "objectID": "slides/viz.html#colour-code-the-regions",
+    "href": "slides/viz.html#colour-code-the-regions",
+    "title": "Principles of Data Visualisation",
+    "section": "Colour-code the regions",
+    "text": "Colour-code the regions\n\n\n\ncode.r\n\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region))"
+  },
+  {
+    "objectID": "slides/viz.html#add-key-country-labels",
+    "href": "slides/viz.html#add-key-country-labels",
+    "title": "Principles of Data Visualisation",
+    "section": "Add key country labels",
+    "text": "Add key country labels\n\n\n\ncode.r\n\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region)) +\n  geom_text(aes(label = country))"
+  },
+  {
+    "objectID": "slides/viz.html#add-key-country-labels-1",
+    "href": "slides/viz.html#add-key-country-labels-1",
+    "title": "Principles of Data Visualisation",
+    "section": "Add key country labels",
+    "text": "Add key country labels"
+  },
+  {
+    "objectID": "slides/viz.html#main-components-of-a-graph-r-1",
+    "href": "slides/viz.html#main-components-of-a-graph-r-1",
+    "title": "Principles of Data Visualisation",
+    "section": "Main components of a graph (R)",
+    "text": "Main components of a graph (R)\n\nMapping from data to aesthetic attributes of geometric objects\nGeometic objects: what you see on the plot (points, lines, bars)\nAesthetic attributes: “role” of variables in plot: location (often along x-axis and y-axis), colour, size, shape\nScales: map data values to aesthetic attributes"
+  },
+  {
+    "objectID": "slides/viz.html#scales",
+    "href": "slides/viz.html#scales",
+    "title": "Principles of Data Visualisation",
+    "section": "Scales",
+    "text": "Scales\n\nPosition on x-axis and on y-axis\nMay be (summarized) value after statistical transformation"
+  },
+  {
+    "objectID": "slides/viz.html#statistical-transformation",
+    "href": "slides/viz.html#statistical-transformation",
+    "title": "Principles of Data Visualisation",
+    "section": "Statistical transformation",
+    "text": "Statistical transformation\n\nValue transformation (e.g. logarithm)\nHistogram: statistical transformation “sum” or “percentage/frequency” before geometric object “bar” is used\nLinear regression line: statistical transformation: “least squares fit” before geometric object “line” is used\nBoxplot"
+  },
+  {
+    "objectID": "slides/viz.html#scales-1",
+    "href": "slides/viz.html#scales-1",
+    "title": "Principles of Data Visualisation",
+    "section": "Scales",
+    "text": "Scales\n\nPosition on x-axis and on y-axis\nMay be (summarized) value after statistical transformation\n\n\nRest: via colour,\nshape (type of point),\nlinetype,\npoint size\n\n\n\nReading values from the graph via guides: tick marks and labels, legend"
+  },
+  {
+    "objectID": "slides/viz.html#refine-the-plot-scale-color",
+    "href": "slides/viz.html#refine-the-plot-scale-color",
+    "title": "Principles of Data Visualisation",
+    "section": "Refine the plot: scale color",
+    "text": "Refine the plot: scale color\nDefault\n\n\n\ncode.r\n\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region)) +\n  geom_text(aes(label = country))"
+  },
+  {
+    "objectID": "slides/viz.html#refine-the-plot-scale-color-1",
+    "href": "slides/viz.html#refine-the-plot-scale-color-1",
+    "title": "Principles of Data Visualisation",
+    "section": "Refine the plot: scale color",
+    "text": "Refine the plot: scale color\nBuilt-in color palette\n\n\n\ncode.r\n\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region)) +\n  geom_text(aes(label = country)) +\n  scale_color_discrete(\n    palette = scales::pal_viridis()\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#refine-the-plot-scale-color-2",
+    "href": "slides/viz.html#refine-the-plot-scale-color-2",
+    "title": "Principles of Data Visualisation",
+    "section": "Refine the plot: scale color",
+    "text": "Refine the plot: scale color\nCustom color palette\n\n\n\ncode.r\n\ncols &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region)) +\n  geom_text(aes(label = country)) +\n  scale_color_manual(values = cols)"
+  },
+  {
+    "objectID": "slides/viz.html#refine-the-plot-scale-size",
+    "href": "slides/viz.html#refine-the-plot-scale-size",
+    "title": "Principles of Data Visualisation",
+    "section": "Refine the plot: scale size",
+    "text": "Refine the plot: scale size\n\n\n\ncode.r\n\ncols &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region)) +\n  geom_text(aes(label = country)) +\n  scale_color_manual(\n    values = cols,\n    guide = guide_legend(order = 2)\n  ) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#refine-the-plot-scale-axes",
+    "href": "slides/viz.html#refine-the-plot-scale-axes",
+    "title": "Principles of Data Visualisation",
+    "section": "Refine the plot: scale axes",
+    "text": "Refine the plot: scale axes\n\n\n\ncode.r\n\ncols &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region)) +\n  geom_text(aes(label = country)) +\n  scale_color_manual(\n    values = cols,\n    guide = guide_legend(order = 2)\n  ) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_x_continuous(\n    breaks = c(-0.25, 0, 0.25, 0.5),\n    limits = c(-0.4, 0.55)\n  ) +\n  scale_y_continuous(\n    breaks = c(-0.1, 0, 0.1), \n    limits = c(-0.16, 0.1)\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#refine-the-plot-theme-and-labels",
+    "href": "slides/viz.html#refine-the-plot-theme-and-labels",
+    "title": "Principles of Data Visualisation",
+    "section": "Refine the plot: theme and labels",
+    "text": "Refine the plot: theme and labels\n\n\n\ncode.r\n\ncols &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region)) +\n  geom_text(aes(label = country)) +\n  scale_color_manual(\n    values = cols,\n    guide = guide_legend(order = 2)\n  ) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_x_continuous(\n    breaks = c(-0.25, 0, 0.25, 0.5),\n    limits = c(-0.4, 0.55)\n  ) +\n  scale_y_continuous(\n    breaks = c(-0.1, 0, 0.1), \n    limits = c(-0.16, 0.1)\n  ) +\n  labs(x = \"Change in MCV1 coverage (2019-2000)\",\n       y = \"Change in absolute geographical inequality (2019-2000)\",\n       size = NULL,\n       color = NULL) +\n  theme_classic() +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\"),\n    axis.text = element_text(size = 11)\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#refine-the-plot-minor-tweaks",
+    "href": "slides/viz.html#refine-the-plot-minor-tweaks",
+    "title": "Principles of Data Visualisation",
+    "section": "Refine the plot: minor tweaks",
+    "text": "Refine the plot: minor tweaks\n\n\n\ncode.r\n\ncols &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region), alpha = 0.8) +\n  geom_text(aes(label = country), hjust = -0.2, vjust = 0.2) +\n  geom_vline(xintercept = 0, color = \"#999999\") +\n  geom_hline(yintercept = 0, color = \"#999999\") +\n  scale_color_manual(\n    values = cols,\n    guide = guide_legend(order = 2)\n  ) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_x_continuous(\n    breaks = c(-0.25, 0, 0.25, 0.5),\n    limits = c(-0.4, 0.55)\n  ) +\n  scale_y_continuous(\n    breaks = c(-0.1, 0, 0.1), \n    limits = c(-0.16, 0.1)\n  ) +\n  labs(x = \"Change in MCV1 coverage (2019-2000)\",\n       y = \"Change in absolute geographical inequality (2019-2000)\",\n       size = NULL,\n       color = NULL) +\n  theme_classic() +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\"),\n    axis.text = element_text(size = 11)\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#refine-the-plot",
+    "href": "slides/viz.html#refine-the-plot",
+    "title": "Principles of Data Visualisation",
+    "section": "Refine the plot",
+    "text": "Refine the plot"
+  },
+  {
+    "objectID": "slides/viz.html#some-frequently-used-geom_",
+    "href": "slides/viz.html#some-frequently-used-geom_",
+    "title": "Principles of Data Visualisation",
+    "section": "Some frequently used geom_*",
+    "text": "Some frequently used geom_*\n\nHistogram and bar charts\n\n\n\n\n\n\n\n\ngeom_*\nDescription\nParameters\n\n\n\n\ngeom_histogram()\nDivide continuous x into bins and count observations.\nRequired: x bins or binwidth\n\n\ngeom_col()\nBar chart using provided x and y values.\nRequired: x, y\n\n\ngeom_bar()\nBar chart with one axis computed using stat.\nRequired: x or y stat (default: \"count\")"
+  },
+  {
+    "objectID": "slides/viz.html#some-frequently-used-geom_-1",
+    "href": "slides/viz.html#some-frequently-used-geom_-1",
+    "title": "Principles of Data Visualisation",
+    "section": "Some frequently used geom_*",
+    "text": "Some frequently used geom_*\n\nExample: For the following examples, we will use the simulated_covid.rds dataset\n\nsimulated_covid &lt;- readRDS(\"data/simulated_covid.rds\") \n\nhead(simulated_covid)\n\n  id  case_name case_type sex age date_onset date_admission   outcome\n1  1 jCQH5RSlVq confirmed   m  22 2023-01-01           &lt;NA&gt; recovered\n2  2 AdCD3im7sn  probable   m  21 2023-01-08           &lt;NA&gt; recovered\n3  3 iDzmfZhFkV  probable   m  21 2023-01-03           &lt;NA&gt; recovered\n4  4 sKipHJsjZ2  probable   m  10 2023-01-10           &lt;NA&gt;      died\n5  5 xG7GvAjlBf suspected   m  24 2023-01-05           &lt;NA&gt; recovered\n6  7 ZWWcBMLzoH confirmed   m  10 2023-01-04           &lt;NA&gt; recovered\n  date_outcome date_first_contact date_last_contact   district     outbreak\n1         &lt;NA&gt;               &lt;NA&gt;              &lt;NA&gt;   Tan Binh 1st outbreak\n2         &lt;NA&gt;         2022-12-31        2023-01-04    Tan Phu 1st outbreak\n3         &lt;NA&gt;         2022-12-29        2023-01-05   Binh Tan 1st outbreak\n4   2023-01-27         2023-01-10        2023-01-13    Quan 10 1st outbreak\n5         &lt;NA&gt;         2023-01-07        2023-01-07    Quan 12 1st outbreak\n6         &lt;NA&gt;         2023-01-06        2023-01-07 Binh Thanh 1st outbreak"
+  },
+  {
+    "objectID": "slides/viz.html#some-frequently-used-geom_-2",
+    "href": "slides/viz.html#some-frequently-used-geom_-2",
+    "title": "Principles of Data Visualisation",
+    "section": "Some frequently used geom_*",
+    "text": "Some frequently used geom_*\n\nExample: creating a bar chart for number of covid incidence over time\n\n\n\ncode.r\n\nggplot(\n    data = simulated_covid, \n    aes(x = date_onset)\n  ) +                   \n  geom_bar(\n    color = \"cornflowerblue\"    \n  )+                       \n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#some-frequently-used-geom_-3",
+    "href": "slides/viz.html#some-frequently-used-geom_-3",
+    "title": "Principles of Data Visualisation",
+    "section": "Some frequently used geom_*",
+    "text": "Some frequently used geom_*\n\nScatter plot\n\n\n\n\n\n\n\n\ngeom_*\ndescription\nParameters\n\n\n\n\ngeom_point()\nCreate a scatter plot from given x and y\nRequired aesthetic: x and y"
+  },
+  {
+    "objectID": "slides/viz.html#some-frequently-used-geom_-4",
+    "href": "slides/viz.html#some-frequently-used-geom_-4",
+    "title": "Principles of Data Visualisation",
+    "section": "Some frequently used geom_*",
+    "text": "Some frequently used geom_*\n\nExample: creating a scatter plot for number of covid incidence over time\n\n\n\ncode.r\n\nlibrary(dplyr)\n# we need to compute y \n# (case_count before plotting)\naggregated_cases &lt;- simulated_covid |&gt; \n  group_by(date_onset) |&gt; \n  summarize(\n    case_count = n()\n  )\n\nggplot(\n    aggregated_cases,\n    aes(x = date_onset, y = case_count)\n  ) +                   \n  geom_point(\n    color = \"cornflowerblue\"    \n  )+                       \n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#some-frequently-used-geom_-5",
+    "href": "slides/viz.html#some-frequently-used-geom_-5",
+    "title": "Principles of Data Visualisation",
+    "section": "Some frequently used geom_*",
+    "text": "Some frequently used geom_*\n\nLine chart\n\n\n\n\n\n\n\n\ngeom_*\ndescription\nParameters\n\n\n\n\ngeom_line()\nCreate a line plot from given x and y\nRequired aesthetic: x and y\n\n\ngeom_smooth()\nCreate a regression line plot from x and y\nRequired aesthetic: x and y\n\nmethod: select regression model (\"auto\", \" lm\", \"glm\", \"gam\", \"loess\")\nformula: adjust the formula for the regression model"
+  },
+  {
+    "objectID": "slides/viz.html#some-frequently-used-geom_-6",
+    "href": "slides/viz.html#some-frequently-used-geom_-6",
+    "title": "Principles of Data Visualisation",
+    "section": "Some frequently used geom_*",
+    "text": "Some frequently used geom_*\n\nExample: creating a line chart for number of covid incidence over time\n\n\n\ncode.r\n\nggplot(\n    aggregated_cases,\n    aes(x = date_onset, \n        y = case_count)\n  ) +                   \n  geom_line(\n    color = \"cornflowerblue\"    \n  )+                       \n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#some-frequently-used-geom_-7",
+    "href": "slides/viz.html#some-frequently-used-geom_-7",
+    "title": "Principles of Data Visualisation",
+    "section": "Some frequently used geom_*",
+    "text": "Some frequently used geom_*\n\nExample: add a regression line for number of covid incidence over time\n\n\n\ncode.r\n\nggplot(\n    aggregated_cases,\n    aes(x = date_onset, y = case_count)\n  ) +                   \n  geom_point(\n    color = \"grey\"    \n  )+  \n  geom_smooth(\n      color = \"cornflowerblue\",\n      # choose gam model to fit the data\n      method = \"gam\" \n    )+\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#some-frequently-used-geom_-8",
+    "href": "slides/viz.html#some-frequently-used-geom_-8",
+    "title": "Principles of Data Visualisation",
+    "section": "Some frequently used geom_*",
+    "text": "Some frequently used geom_*\n\nBox plot\n\n\n\n\n\n\n\n\ngeom_*\ndescription\nParameters\n\n\n\n\ngeom _boxplot()\nCreate a boxplot from a continuous variable.\nIf both x and y are given, one must be a categorical variable (in which case a boxplot is created for each category)\nRequired aesthetic: x [or] {.underline} y"
+  },
+  {
+    "objectID": "slides/viz.html#some-frequently-used-geom_-9",
+    "href": "slides/viz.html#some-frequently-used-geom_-9",
+    "title": "Principles of Data Visualisation",
+    "section": "Some frequently used geom_*",
+    "text": "Some frequently used geom_*\n\nExample: create a box plot to compare number of cases per day between 2 outbreaks\n\n\n\ncode.r\n\n# compute cases per day for each outbreak\ncases_per_outbreak &lt;- simulated_covid |&gt; \n  group_by(date_onset, outbreak) |&gt; \n  summarize(\n    case_count = n()\n  ) \n\nggplot(\n    cases_per_outbreak,\n    aes(x = case_count, y = outbreak)\n  ) +                   \n  geom_boxplot()+\n  labs(\n    title = \"Compare distribution of daily cases between 2 outbreaks\",\n    y = \"Outbreak\",\n    x = \"Number of daily cases\"\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#where-to-find-more-geom_",
+    "href": "slides/viz.html#where-to-find-more-geom_",
+    "title": "Principles of Data Visualisation",
+    "section": "Where to find more geom_*?",
+    "text": "Where to find more geom_*?\n\nFor a complete list of geom_*, refer to ggplot2 documentation\nAlternatively, you can also look for the example code for your desired chart type at R Graph Gallery"
+  },
+  {
+    "objectID": "slides/viz.html#save-plot",
+    "href": "slides/viz.html#save-plot",
+    "title": "Principles of Data Visualisation",
+    "section": "Save plot",
+    "text": "Save plot\n\nFunction ggsave() is used for saving plots with the following key parameters\n\nplot select plot to save (default to the last generated plot)\nfilename name of the saved file\npath path to the directory where the plot is stored\nwidth, height plot size in units expressed by the units argument\ndpi plot resolution"
+  },
+  {
+    "objectID": "slides/viz.html#save-plot-1",
+    "href": "slides/viz.html#save-plot-1",
+    "title": "Principles of Data Visualisation",
+    "section": "Save plot",
+    "text": "Save plot\nExample: save the last generated plot\n\nggsave(\n  path = \"plots\", # save plot under plots directory\n  filename = \"new_plot.png\",\n  width = 800, height = 600, # adjust plot size in pixel\n  units = \"px\",\n  dpi = 200 # set resolution\n)"
+  },
+  {
+    "objectID": "slides/viz.html#export-two-types-of-formats",
+    "href": "slides/viz.html#export-two-types-of-formats",
+    "title": "Principles of Data Visualisation",
+    "section": "Export: two types of formats",
+    "text": "Export: two types of formats\n\nVector format (pdf, eps, wmf, emf, svg)\n\ndigital image consisting of independent geometric objects (segments, polygons, curves, etc.)\ncan be enlarged without losing resolution\n\nRaster format (png, jpeg, tiff, bmp).\n\nrectangular grid of pixels, possibly with color\nresolution impaired if image is enlarged"
+  },
+  {
+    "objectID": "slides/viz.html#main-components-of-a-graph-r-2",
+    "href": "slides/viz.html#main-components-of-a-graph-r-2",
+    "title": "Principles of Data Visualisation",
+    "section": "Main components of a graph (R)",
+    "text": "Main components of a graph (R)\n\nMapping from data to aesthetic attributes of geometric objects\nGeometic objects: what you see on the plot (points, lines, bars)\nAesthetic attributes: “role” of variables in plot: location (often along x-axis and y-axis), colour, size, shape\nScales: map data values to aesthetic attributes\n\n\n\nCoordinate system: cartesian, polar, map projections.\nNetworks, trees have no coordinate system\n\n\n\n\nNot about:\n\ngraph type (\\(\\approx\\) language, words)\nfont size, background colour … Some of these are specified in a theme"
+  },
+  {
+    "objectID": "slides/viz.html#polar-coordinate-system",
+    "href": "slides/viz.html#polar-coordinate-system",
+    "title": "Principles of Data Visualisation",
+    "section": "Polar coordinate system",
+    "text": "Polar coordinate system\nPie chart WHO European Health Report 2009\n\nGeometric object? Aesthetic attributes? Transformation? Coordinate system?"
+  },
+  {
+    "objectID": "slides/viz.html#overview",
+    "href": "slides/viz.html#overview",
+    "title": "Principles of Data Visualisation",
+    "section": "Overview",
+    "text": "Overview\n\nWhat does mapping = aes() do?\nInheritance of data and aesthetics\nThe annotate() layer\nSplitting up with facet_wrap()\nExtending ggplot2\nInteractive plots with plotly"
+  },
+  {
+    "objectID": "slides/viz.html#what-does-mapping-aes-do",
+    "href": "slides/viz.html#what-does-mapping-aes-do",
+    "title": "Principles of Data Visualisation",
+    "section": "What does mapping = aes() do?",
+    "text": "What does mapping = aes() do?\n\n\nggplot() arguments and default values:\n\nggplot(data = NULL, mapping = aes(), ...)\n\ngeom_*() arguments and default values:\n\ngeom_bar(mapping = NULL, data = NULL, ...)\ngeom_boxplot(mapping = NULL, data = NULL, ...)\ngeom_point(mapping = NULL, data = NULL, ...)"
+  },
+  {
+    "objectID": "slides/viz.html#what-does-mapping-aes-do-1",
+    "href": "slides/viz.html#what-does-mapping-aes-do-1",
+    "title": "Principles of Data Visualisation",
+    "section": "What does mapping = aes() do?",
+    "text": "What does mapping = aes() do?\n\nRecall this:\n\n\ndf &lt;- read_excel(\"data/nature_plot.xlsx\")\nhead(df)\n\n# A tibble: 6 × 5\n  country          coverage inequality   pop region                             \n  &lt;chr&gt;               &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;                              \n1 Angola              -0.14      0.1    30.2 Sub-Saharan Africa                 \n2 Papua New Guinea    -0.35      0.08   16.5 Southeast Asia, East Asia and Ocea…\n3 Pakistan             0.12      0.05   82.5 South Asia                         \n4 Chad                 0.14      0.01   27.5 Sub-Saharan Africa                 \n5 Ethiopia             0.32      0.005  55   Sub-Saharan Africa                 \n6 Kenya                0.07     -0.06   30.2 Sub-Saharan Africa                 \n\n\n\n\n\n\n\n\n\n\n\n\n\nlabel\n(country)\nx\n(coverage)\ny\n(inequality)\nsize\n(population)\ncolor\n(region)\n\n\n\n\nNigeria\n0.20\n-0.07\n220M\nSub-Saharan Africa"
+  },
+  {
+    "objectID": "slides/viz.html#what-does-mapping-aes-do-2",
+    "href": "slides/viz.html#what-does-mapping-aes-do-2",
+    "title": "Principles of Data Visualisation",
+    "section": "What does mapping = aes() do?",
+    "text": "What does mapping = aes() do?\nIdea: we are mapping the variables in the data to the aesthetics of a geometry\naes(x = coverage, y = inequality)\n#&gt; Aesthetic mapping: \n#&gt; * `x` -&gt; `coverage`\n#&gt; * `y` -&gt; `inequality`\n\n\naes(x = coverage^2, y = inequality/2)\n#&gt; Aesthetic mapping: \n#&gt; * `x` -&gt; `coverage^2`\n#&gt; * `y` -&gt; `inequality/2`"
+  },
+  {
+    "objectID": "slides/viz.html#what-does-mapping-aes-do-3",
+    "href": "slides/viz.html#what-does-mapping-aes-do-3",
+    "title": "Principles of Data Visualisation",
+    "section": "What does mapping = aes() do?",
+    "text": "What does mapping = aes() do?\nHow do we know which aesthetics does each geometry support? Read the documentation!\nSimply:\n\nRead the documentation of the geometry of interest\nClick Aesthetics on the navigation bar on the right (or scroll down)\nAll aesthetics compatible for the geometry are listed"
+  },
+  {
+    "objectID": "slides/viz.html#inheritance-of-data-and-aesthetics",
+    "href": "slides/viz.html#inheritance-of-data-and-aesthetics",
+    "title": "Principles of Data Visualisation",
+    "section": "Inheritance of data and aesthetics",
+    "text": "Inheritance of data and aesthetics\n\nRecall this:\n\nggplot() arguments and default values:\n\nggplot(data = NULL, mapping = aes(), ...)\n\ngeom_*() arguments and default values:\n\ngeom_bar(mapping = NULL, data = NULL, ...)\ngeom_boxplot(mapping = NULL, data = NULL, ...)\ngeom_point(mapping = NULL, data = NULL, ...)"
+  },
+  {
+    "objectID": "slides/viz.html#inheritance-of-data-and-aesthetics-1",
+    "href": "slides/viz.html#inheritance-of-data-and-aesthetics-1",
+    "title": "Principles of Data Visualisation",
+    "section": "Inheritance of data and aesthetics",
+    "text": "Inheritance of data and aesthetics\nThe idea is that:\n\nggplot() can control the dataset and aesthetics\ngeom_*()s can also control the type of geometries, and allow customisation of aesthetics"
+  },
+  {
+    "objectID": "slides/viz.html#inheritance-of-data-and-aesthetics-2",
+    "href": "slides/viz.html#inheritance-of-data-and-aesthetics-2",
+    "title": "Principles of Data Visualisation",
+    "section": "Inheritance of data and aesthetics",
+    "text": "Inheritance of data and aesthetics\nA typical ggplot plot will look something like:\nggplot(plot_df, aes(x = date, y = count)) +\n  geom_line() +\n  geom_point()\n\nImplicitly, you can think of this as:\nggplot() +\n  geom_line(mapping = aes(x = date, y = count), data = plot_df) +\n  geom_line(mapping = aes(x = date, y = count), data = plot_df)\n\n\n\n\n\n\n\n\nNote\n\n\n\nWe call this inheritance\nData and aesthetics are inherited top-down"
+  },
+  {
+    "objectID": "slides/viz.html#inheritance-of-data-and-aesthetics-3",
+    "href": "slides/viz.html#inheritance-of-data-and-aesthetics-3",
+    "title": "Principles of Data Visualisation",
+    "section": "Inheritance of data and aesthetics",
+    "text": "Inheritance of data and aesthetics\nYou have seen this in action before!\ncols &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region, alpha = 0.8)) +\n  geom_text(aes(label = country), hjust = -0.2, vjust = 0.2) +\n  geom_vline(xintercept = 0, color = \"#999999\") +\n  geom_hline(yintercept = 0, color = \"#999999\") +\n  scale_x_continuous(breaks = c(-0.25, 0, 0.25, 0.5),\n                     limits = c(-0.4, 0.55)) +\n  scale_y_continuous(breaks = c(-0.1, 0, 0.1), limits = c(-0.16, 0.1)) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_color_manual(\n    values = cols,\n    guide = guide_legend(order = 2)\n  ) +\n  labs(x = \"Change in MCV1 coverage (2019-2000)\",\n       y = \"Change in absolute geographical inequality (2019-2000)\",\n       size = NULL,\n       color = NULL) +\n  theme_classic() +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\"),\n    axis.text = element_text(size = 11)\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#inheritance-of-data-and-aesthetics-4",
+    "href": "slides/viz.html#inheritance-of-data-and-aesthetics-4",
+    "title": "Principles of Data Visualisation",
+    "section": "Inheritance of data and aesthetics",
+    "text": "Inheritance of data and aesthetics\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region), alpha = 0.8) +\n  geom_text(aes(label = country), hjust = -0.2, vjust = 0.2)"
+  },
+  {
+    "objectID": "slides/viz.html#inside-and-outside-aes",
+    "href": "slides/viz.html#inside-and-outside-aes",
+    "title": "Principles of Data Visualisation",
+    "section": "Inside and outside aes()",
+    "text": "Inside and outside aes()\nWhat happens if we do it like this:\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region, alpha = 0.8)) +\n  geom_text(aes(label = country, hjust = -0.2, vjust = 0.2))"
+  },
+  {
+    "objectID": "slides/viz.html#inside-and-outside-aes-1",
+    "href": "slides/viz.html#inside-and-outside-aes-1",
+    "title": "Principles of Data Visualisation",
+    "section": "Inside and outside aes()",
+    "text": "Inside and outside aes()\n\nBack to this slide (again):\n\n\n\n\n\n\n\n\n\n\nlabel\n(country)\nx\n(coverage)\ny\n(inequality)\nsize\n(population)\ncolor\n(region)\n\n\n\n\nNigeria\n0.20\n-0.07\n220M\nSub-Saharan Africa\n\n\n\n\ndf &lt;- read_excel(\"data/nature_plot.xlsx\")\nhead(df)\n\n# A tibble: 6 × 5\n  country          coverage inequality   pop region                             \n  &lt;chr&gt;               &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;                              \n1 Angola              -0.14      0.1    30.2 Sub-Saharan Africa                 \n2 Papua New Guinea    -0.35      0.08   16.5 Southeast Asia, East Asia and Ocea…\n3 Pakistan             0.12      0.05   82.5 South Asia                         \n4 Chad                 0.14      0.01   27.5 Sub-Saharan Africa                 \n5 Ethiopia             0.32      0.005  55   Sub-Saharan Africa                 \n6 Kenya                0.07     -0.06   30.2 Sub-Saharan Africa"
+  },
+  {
+    "objectID": "slides/viz.html#inside-and-outside-aes-2",
+    "href": "slides/viz.html#inside-and-outside-aes-2",
+    "title": "Principles of Data Visualisation",
+    "section": "Inside and outside aes()",
+    "text": "Inside and outside aes()\n\n\n\n\n\n\nImportant\n\n\nIn short:\n\nYou want the aesthetics to change with the data -&gt; put it inside aes()*\nYou want the aesthetics to be fixed regardless of data -&gt; put it outside aes()*\nThe aesthetics must be supported by the geometry\n\n\n\nThis also means that columns names can only be used inside aes()"
+  },
+  {
+    "objectID": "slides/viz.html#color-transparency",
+    "href": "slides/viz.html#color-transparency",
+    "title": "Principles of Data Visualisation",
+    "section": "Color transparency",
+    "text": "Color transparency\nIn ggplot2, you can add transparency to colors with the alpha aesthetics (available for most geometries)"
+  },
+  {
+    "objectID": "slides/viz.html#the-annotate-layer",
+    "href": "slides/viz.html#the-annotate-layer",
+    "title": "Principles of Data Visualisation",
+    "section": "The annotate() layer",
+    "text": "The annotate() layer\n\nWhat if we want to annotate specific parts of a figure?\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +                   \n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#the-annotate-layer-1",
+    "href": "slides/viz.html#the-annotate-layer-1",
+    "title": "Principles of Data Visualisation",
+    "section": "The annotate() layer",
+    "text": "The annotate() layer\n\nAdding a vertical line with geom_vline() and a label with geom_label()\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  # main plotting geoms\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  # figure annotation geoms (2)\n  geom_vline(xintercept = as.Date(\"2023-03-01\"), linetype = 2) +\n  geom_label(label = \"Start of outbreak\", x = as.Date(\"2023-03-01\"), y = 30) +\n  # labels\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#the-annotate-layer-2",
+    "href": "slides/viz.html#the-annotate-layer-2",
+    "title": "Principles of Data Visualisation",
+    "section": "The annotate() layer",
+    "text": "The annotate() layer\n\nAdding a region with geom_rect() and a label with geom_label()\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  # figure annotation geoms (1)\n  geom_rect(\n    ymin = -Inf, ymax = Inf,\n    xmin = as.Date(\"2023-04-01\"), xmax = as.Date(\"2023-06-01\"), \n    alpha = 0.2, fill = \"red\"\n  ) +\n  geom_label(label = \"Outbreak peak\", x = as.Date(\"2023-06-25\"), y = 30, color = \"red\") +\n  # main plotting geoms\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  # labels\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#the-annotate-layer-3",
+    "href": "slides/viz.html#the-annotate-layer-3",
+    "title": "Principles of Data Visualisation",
+    "section": "The annotate() layer",
+    "text": "The annotate() layer\n\nWe already said alpha = 0.2 outside of aes(), why doesn’t it have any transparency at all??"
+  },
+  {
+    "objectID": "slides/viz.html#the-annotate-layer-4",
+    "href": "slides/viz.html#the-annotate-layer-4",
+    "title": "Principles of Data Visualisation",
+    "section": "The annotate() layer",
+    "text": "The annotate() layer\n\n\nI lied\nAesthetics are always dependant on the dataset, whether it is outside or inside aes()"
+  },
+  {
+    "objectID": "slides/viz.html#the-annotate-layer-5",
+    "href": "slides/viz.html#the-annotate-layer-5",
+    "title": "Principles of Data Visualisation",
+    "section": "The annotate() layer",
+    "text": "The annotate() layer\nExample:\n\nOriginally the dataset when used in ggplot() looks like this:\n\nggplot(aggregated_cases, ...) + ...\n\n\n# A tibble: 257 × 2\n   date_onset case_count\n   &lt;date&gt;          &lt;int&gt;\n 1 2023-01-01          1\n 2 2023-01-03          1\n 3 2023-01-04          1\n 4 2023-01-05          1\n 5 2023-01-06          3\n 6 2023-01-07          3\n 7 2023-01-08          1\n 8 2023-01-09          1\n 9 2023-01-10          2\n10 2023-01-14          1\n# ℹ 247 more rows\n\n\n\nWhen you assigned a fixed value to an aesthetic outside of aes(), it might look like this:\n\nggplot(aggregated_cases, ...) + geom_...(alpha = 0.2)\n\n\n# A tibble: 257 × 3\n   date_onset case_count alpha\n   &lt;date&gt;          &lt;int&gt; &lt;dbl&gt;\n 1 2023-01-01          1   0.2\n 2 2023-01-03          1   0.2\n 3 2023-01-04          1   0.2\n 4 2023-01-05          1   0.2\n 5 2023-01-06          3   0.2\n 6 2023-01-07          3   0.2\n 7 2023-01-08          1   0.2\n 8 2023-01-09          1   0.2\n 9 2023-01-10          2   0.2\n10 2023-01-14          1   0.2\n# ℹ 247 more rows"
+  },
+  {
+    "objectID": "slides/viz.html#the-annotate-layer-6",
+    "href": "slides/viz.html#the-annotate-layer-6",
+    "title": "Principles of Data Visualisation",
+    "section": "The annotate() layer",
+    "text": "The annotate() layer\n\nUsing the annotate() layer, you can separate the annotations from the geometry layer\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  # figure annotation geoms (1)\n  annotate(\"rect\",\n    ymin = -Inf, ymax = Inf,\n    xmin = as.Date(\"2023-04-01\"), xmax = as.Date(\"2023-06-01\"), \n    alpha = 0.2, fill = \"red\"\n  ) +\n  annotate(\"label\", label = \"Outbreak peak\", x = as.Date(\"2023-06-25\"), y = 30, color = \"red\") +\n  # main plotting geoms\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  # labels\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#the-annotate-layer-7",
+    "href": "slides/viz.html#the-annotate-layer-7",
+    "title": "Principles of Data Visualisation",
+    "section": "The annotate() layer",
+    "text": "The annotate() layer\nComparing:\ngeom_rect(\n  ymin = -Inf, ymax = Inf,\n  xmin = as.Date(\"2023-04-01\"), xmax = as.Date(\"2023-06-01\"), \n  alpha = 0.2, fill = \"red\"\n) +\ngeom_label(label = \"Outbreak peak\", x = as.Date(\"2023-06-25\"), y = 30, color = \"red\")\nvs.\nannotate(\"rect\",\n  ymin = -Inf, ymax = Inf,\n  xmin = as.Date(\"2023-04-01\"), xmax = as.Date(\"2023-06-01\"), \n  alpha = 0.2, fill = \"red\"\n) +\nannotate(\"label\", label = \"Outbreak peak\", x = as.Date(\"2023-06-25\"), y = 30, color = \"red\") +"
+  },
+  {
+    "objectID": "slides/viz.html#the-annotate-layer-8",
+    "href": "slides/viz.html#the-annotate-layer-8",
+    "title": "Principles of Data Visualisation",
+    "section": "The annotate() layer",
+    "text": "The annotate() layer\n\n\n\n\n\n\nImportant\n\n\nIn short:\n\nYou can create plot annotations with geom_label(), geom_rect(), geom_abline(), etc. (look at ggplot2 website)\nIf it’s not working correctly (looks blurry, result not as expected), use annotate() instead; very easy to switch from geom_*() to annotate()"
+  },
+  {
+    "objectID": "slides/viz.html#splitting-up-with-facet_wrap",
+    "href": "slides/viz.html#splitting-up-with-facet_wrap",
+    "title": "Principles of Data Visualisation",
+    "section": "Splitting up with facet_wrap()",
+    "text": "Splitting up with facet_wrap()\n\nWhat if you want to split the plot into different panels for each group?\nHave a look at your data, find a “grouping” variable to split the data"
+  },
+  {
+    "objectID": "slides/viz.html#splitting-up-with-facet_wrap-1",
+    "href": "slides/viz.html#splitting-up-with-facet_wrap-1",
+    "title": "Principles of Data Visualisation",
+    "section": "Splitting up with facet_wrap()",
+    "text": "Splitting up with facet_wrap()\n\n\nFor example: Split our simulated_covid by outbreak\n\n\n\nggplot(data = simulated_covid, aes(x = date_onset)) +                   \n  geom_bar(fill = \"cornflowerblue\") + \n  facet_wrap(~outbreak)"
+  },
+  {
+    "objectID": "slides/viz.html#splitting-up-with-facet_wrap-2",
+    "href": "slides/viz.html#splitting-up-with-facet_wrap-2",
+    "title": "Principles of Data Visualisation",
+    "section": "Splitting up with facet_wrap()",
+    "text": "Splitting up with facet_wrap()\n\n\nUse facet_wrap() and add in the variable (with a ~ in the front)\n\n\n\nggplot(data = simulated_covid, aes(x = date_onset)) +                   \n  geom_bar(fill = \"cornflowerblue\") + \n  facet_wrap(~outbreak)"
+  },
+  {
+    "objectID": "slides/viz.html#splitting-up-with-facet_wrap-3",
+    "href": "slides/viz.html#splitting-up-with-facet_wrap-3",
+    "title": "Principles of Data Visualisation",
+    "section": "Splitting up with facet_wrap()",
+    "text": "Splitting up with facet_wrap()\n\n\nYou can “free” the scales from their original limits\n\n\n\nggplot(data = simulated_covid, aes(x = date_onset)) +                   \n  geom_bar(fill = \"cornflowerblue\") + \n  facet_wrap(~outbreak, scales = \"free_x\")"
+  },
+  {
+    "objectID": "slides/viz.html#splitting-up-with-facet_wrap-4",
+    "href": "slides/viz.html#splitting-up-with-facet_wrap-4",
+    "title": "Principles of Data Visualisation",
+    "section": "Splitting up with facet_wrap()",
+    "text": "Splitting up with facet_wrap()\n\n\nYou can “free” the scales from their original limits\n\n\n\nggplot(data = simulated_covid, aes(x = date_onset)) +                   \n  geom_bar(fill = \"cornflowerblue\") + \n  facet_wrap(~outbreak, scales = \"free_y\")"
+  },
+  {
+    "objectID": "slides/viz.html#splitting-up-with-facet_wrap-5",
+    "href": "slides/viz.html#splitting-up-with-facet_wrap-5",
+    "title": "Principles of Data Visualisation",
+    "section": "Splitting up with facet_wrap()",
+    "text": "Splitting up with facet_wrap()\n\n\nYou can “free” the scales from their original limits\n\n\n\nggplot(data = simulated_covid, aes(x = date_onset)) +                   \n  geom_bar(fill = \"cornflowerblue\") + \n  facet_wrap(~outbreak, scales = \"free\")"
+  },
+  {
+    "objectID": "slides/viz.html#extending-ggplot2",
+    "href": "slides/viz.html#extending-ggplot2",
+    "title": "Principles of Data Visualisation",
+    "section": "Extending ggplot2",
+    "text": "Extending ggplot2\n\nAdd specific functionalities to ggplot2 with extensions!\nHow to use:\n\nThink of a specific figure you want to plot\nTry your best to plot it with ggplot2\nIf you think ggplot2 cannot do what you want. Have a look here\nRead their documentation to see how to use them"
+  },
+  {
+    "objectID": "slides/viz.html#extending-ggplot2-1",
+    "href": "slides/viz.html#extending-ggplot2-1",
+    "title": "Principles of Data Visualisation",
+    "section": "Extending ggplot2",
+    "text": "Extending ggplot2\nSome commonly used extensions:\n\npatchwork: to patch multiple ggplot2 plots together\ngganimate: to create moving/animating plots\nggrepel: to repel labels on a plot away from each other\nggdist: to work with distributions"
+  },
+  {
+    "objectID": "slides/viz.html#interactive-plots-with-plotly",
+    "href": "slides/viz.html#interactive-plots-with-plotly",
+    "title": "Principles of Data Visualisation",
+    "section": "Interactive plots with plotly",
+    "text": "Interactive plots with plotly\n\n\nIf you need to create interactive ggplots, you can use the plotly package\nYou just need to save your ggplot into an object\n\n\np &lt;- ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#interactive-plots-with-plotly-1",
+    "href": "slides/viz.html#interactive-plots-with-plotly-1",
+    "title": "Principles of Data Visualisation",
+    "section": "Interactive plots with plotly",
+    "text": "Interactive plots with plotly\n\n\nThen use it in the plotly::ggplotly() function\n\n\n# install.packages(\"plotly\")\nlibrary(plotly)\nggplotly(p)"
+  },
+  {
+    "objectID": "slides/viz.html#interactive-plots-with-plotly-2",
+    "href": "slides/viz.html#interactive-plots-with-plotly-2",
+    "title": "Principles of Data Visualisation",
+    "section": "Interactive plots with plotly",
+    "text": "Interactive plots with plotly\n\n\nYou can also create 3d plots with plotly\n\n\nplot_ly(\n  data = tibble(x = rnorm(10), y = rnorm(10), z = rnorm(10)),\n  x = ~x, \n  y = ~y,\n  z = ~z\n)"
+  },
+  {
+    "objectID": "AGENTS.html",
+    "href": "AGENTS.html",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Guidance for AI coding agents working in this repository.\n\n\nCourse website for OUCRU R training course 2026 — a Quarto website project (project: type: website) built from .qmd files. Rendered output goes to _render/ and is published to GitHub Pages.\n\n\n\n\nQuarto website project (not a book or blog)\nR, with package versions locked via renv (renv.lock, .Rprofile, renv/)\nSlide decks use format: revealjs; handouts use format: html (or pdf)\n\n\n\n\n\n\n\n\n\n\n\nPath\nPurpose\n\n\n\n\nindex.qmd\nHomepage — course schedule + links to each day’s slides/handouts\n\n\nslides/\nLecture slide decks (format: revealjs), plus Scripts/ (example R scripts) and data/ (datasets used in slides)\n\n\nhandouts/\nExercises, answer keys, setup instructions (format: html or pdf)\n\n\n_quarto.yml\nProject-level config (theme, navbar, output dir)\n\n\nstyles.css\nCustom CSS overrides\n\n\nrenv/, renv.lock, .Rprofile\nR package version locking\n\n\n_render/\nRendered site output — generated, not hand-edited\n\n\n\n\n\n\nBefore doing any R work in this project:\nrenv::restore()\nThis installs the exact package versions pinned in renv.lock.\n\n\n\n\nNew/edited slides go in slides/ and must keep format: revealjs in the YAML header.\nNew/edited handouts go in handouts/ and must use format: html (or pdf).\nCSS tweaks go in styles.css, not inline in .qmd files.\nSite-wide settings (theme, navbar, etc.) live in _quarto.yml. A .qmd file’s own YAML header overrides project defaults for that file only.\nIf you add, remove, or update an R package used anywhere in the project, run renv::snapshot() before committing so renv.lock stays in sync.\n\n\n\n\n\nLive preview while editing: quarto preview\nOne-off full render: quarto render → output lands in _render/index.html\n\nRun one of these after editing any .qmd file to catch rendering errors before committing.\n\n\n\n\nDo: push commits to main — a GitHub Actions workflow renders and publishes the site automatically.\nDon’t: run quarto publish gh-pages manually — this bypasses the intended CI-based publishing flow.\n\n\n\n\n\nDon’t hand-edit anything under _render/ — it’s generated; edit the source .qmd instead.\nDon’t commit a dependency change without a matching renv::snapshot().\nDon’t install R packages outside the project’s renv library.\nDon’t change a slide’s format away from revealjs or a handout’s away from html/pdf without good reason — downstream links in index.qmd assume these."
+  },
+  {
+    "objectID": "AGENTS.html#what-this-repo-is",
+    "href": "AGENTS.html#what-this-repo-is",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Course website for OUCRU R training course 2026 — a Quarto website project (project: type: website) built from .qmd files. Rendered output goes to _render/ and is published to GitHub Pages."
+  },
+  {
+    "objectID": "AGENTS.html#stack",
+    "href": "AGENTS.html#stack",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Quarto website project (not a book or blog)\nR, with package versions locked via renv (renv.lock, .Rprofile, renv/)\nSlide decks use format: revealjs; handouts use format: html (or pdf)"
+  },
+  {
+    "objectID": "AGENTS.html#repository-layout",
+    "href": "AGENTS.html#repository-layout",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Path\nPurpose\n\n\n\n\nindex.qmd\nHomepage — course schedule + links to each day’s slides/handouts\n\n\nslides/\nLecture slide decks (format: revealjs), plus Scripts/ (example R scripts) and data/ (datasets used in slides)\n\n\nhandouts/\nExercises, answer keys, setup instructions (format: html or pdf)\n\n\n_quarto.yml\nProject-level config (theme, navbar, output dir)\n\n\nstyles.css\nCustom CSS overrides\n\n\nrenv/, renv.lock, .Rprofile\nR package version locking\n\n\n_render/\nRendered site output — generated, not hand-edited"
+  },
+  {
+    "objectID": "AGENTS.html#environment-setup",
+    "href": "AGENTS.html#environment-setup",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Before doing any R work in this project:\nrenv::restore()\nThis installs the exact package versions pinned in renv.lock."
+  },
+  {
+    "objectID": "AGENTS.html#making-changes",
+    "href": "AGENTS.html#making-changes",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "New/edited slides go in slides/ and must keep format: revealjs in the YAML header.\nNew/edited handouts go in handouts/ and must use format: html (or pdf).\nCSS tweaks go in styles.css, not inline in .qmd files.\nSite-wide settings (theme, navbar, etc.) live in _quarto.yml. A .qmd file’s own YAML header overrides project defaults for that file only.\nIf you add, remove, or update an R package used anywhere in the project, run renv::snapshot() before committing so renv.lock stays in sync."
+  },
+  {
+    "objectID": "AGENTS.html#build-test-locally",
+    "href": "AGENTS.html#build-test-locally",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Live preview while editing: quarto preview\nOne-off full render: quarto render → output lands in _render/index.html\n\nRun one of these after editing any .qmd file to catch rendering errors before committing."
+  },
+  {
+    "objectID": "AGENTS.html#publishing",
+    "href": "AGENTS.html#publishing",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Do: push commits to main — a GitHub Actions workflow renders and publishes the site automatically.\nDon’t: run quarto publish gh-pages manually — this bypasses the intended CI-based publishing flow."
+  },
+  {
+    "objectID": "AGENTS.html#things-to-avoid",
+    "href": "AGENTS.html#things-to-avoid",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Don’t hand-edit anything under _render/ — it’s generated; edit the source .qmd instead.\nDon’t commit a dependency change without a matching renv::snapshot().\nDon’t install R packages outside the project’s renv library.\nDon’t change a slide’s format away from revealjs or a handout’s away from html/pdf without good reason — downstream links in index.qmd assume these."
   }
 ]
