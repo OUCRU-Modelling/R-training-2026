@@ -4,6 +4,7 @@ project:
 
 execute:
   freeze: auto
+  echo: true
 
 website:
   title: "R-training-2026"
@@ -11,6 +12,8 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: slides/viz.qmd
+        text: Principles of data visualisation
 
 format:
   html:
