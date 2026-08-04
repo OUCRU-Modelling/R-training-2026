@@ -2,6 +2,3 @@
 **/*.quarto_ipynb
 .Rproj.user
 .DS_Store
-
-_render/
-_freeze/
