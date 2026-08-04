@@ -7,14 +7,19 @@ execute:
   echo: true
 
 website:
-  title: "R-training-2026"
+  favicon: "slides/figures/OUCRU.jpg"
+  site-url: https://oucru-modelling.github.io/R-training-2026/
   navbar:
+    logo: slides/figures/OUCRU.jpg
     left:
       - href: index.qmd
         text: Home
       - href: slides/viz.qmd
         text: Principles of data visualisation
-
+    tools:
+      - icon: github
+        href: https://github.com/OUCRU-Modelling/R-training-2026
+        text: Quarto GitHub
 format:
   html:
     respect-user-color-scheme: true
@@ -22,6 +27,6 @@ format:
     theme:
       light: [cosmo, theme.scss]
       dark: [cosmo, theme-dark.scss]
-
+  
 
 

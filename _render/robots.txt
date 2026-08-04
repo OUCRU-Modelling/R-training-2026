@@ -1,1 +1,1 @@
-Sitemap: https://OUCRU-Modelling.github.io/R-training-2026/sitemap.xml
+Sitemap: https://oucru-modelling.github.io/R-training-2026/sitemap.xml
