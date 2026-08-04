@@ -1,4 +1,7 @@
 # OUCRU R training course 2026
+
+[![Quarto render & publish on GH Pages](https://github.com/OUCRU-Modelling/R-training-2026/actions/workflows/publish.yml/badge.svg)](https://github.com/OUCRU-Modelling/R-training-2026/actions/workflows/publish.yml)
+
 The GitHub repository for the OUCRU R training course in 2026
 
 Materials for the course in their quarto format are stored here

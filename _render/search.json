@@ -1,68 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "OUCRU R training course - 2026",
-    "section": "",
-    "text": "Please follow this handout before joining the course."
-  },
-  {
-    "objectID": "index.html#introduction-to-r",
-    "href": "index.html#introduction-to-r",
-    "title": "OUCRU R training course - 2026",
-    "section": "Introduction to R",
-    "text": "Introduction to R\n\nDay 1 (Monday)\n\n\nLearning objectives:\n\nOpen and inspect datasets, understand their structure\nMake selections and extract relevant data\nPerform basic data exploration, including calculating summaries and identifying missing values\nNavigate RStudio with confidence\n\n\n\n\n\nDay 2 (Tuesday)\n\n\nLearning objectives:\n\nWrite simple functions to automate tasks\nCreate visualisations using Base R graphics\nUnderstand the R working environment, including file paths and workspace management\nUsing pipe operators to chain functions\nHow to read and understand the errors and warnings in your R console\nFind and use R documentation and resources to solve problems on your own\n\nNo exercises will be given"
-  },
-  {
-    "objectID": "index.html#principles-of-data-visualisation-and-plotting-in-r",
-    "href": "index.html#principles-of-data-visualisation-and-plotting-in-r",
-    "title": "OUCRU R training course - 2026",
-    "section": "Principles of data visualisation and plotting in R",
-    "text": "Principles of data visualisation and plotting in R\n\nDay 3 (Wednesday):\n\nLecture slides\nLearning objectives:\n\nThe grammar of graphics—understanding how plots are built\nThe step-by-step process of creating graphs in R\nUse the ggplot2 package plot figures in R\nHow to design clear and impactful visualisations\nUsing LLMs (Large Language Models) to help you with plotting\n\n\n\n\n\nDay 4 (Thursday-morning):\n\nLearning objectives:\n\nUnderstand the principles of data visualisation"
-  },
-  {
-    "objectID": "index.html#advanced-data-management-in-r",
-    "href": "index.html#advanced-data-management-in-r",
-    "title": "OUCRU R training course - 2026",
-    "section": "Advanced data management in R",
-    "text": "Advanced data management in R\n\nDay 4 (Thursday-afternoon):\n\nLearning objectives:\n\nLogics with if-else statements and for-loops\nData manipulation with mutate()\nJoining dataframes\nPivotting dataframes into long and wide formats\nVectorisation in R with map()"
-  },
-  {
-    "objectID": "index.html#reproducible-research-and-reporting-using-quarto",
-    "href": "index.html#reproducible-research-and-reporting-using-quarto",
-    "title": "OUCRU R training course - 2026",
-    "section": "Reproducible research and reporting using Quarto",
-    "text": "Reproducible research and reporting using Quarto\n\nDay 5 (Friday-morning)\n\n\nLearning objectives:\n\nWrite papers with reproducible tables and figures using Quarto\nGenerate reports in multiple formats: Word, PDF, slides, web pages…\nEasily update analyses when new data becomes available"
-  },
-  {
-    "objectID": "index.html#introduction-to-r-and-rstudio",
-    "href": "index.html#introduction-to-r-and-rstudio",
-    "title": "OUCRU R training course - 2026",
-    "section": "Introduction to R and RStudio",
-    "text": "Introduction to R and RStudio\nGood introduction, with explanatory videos:\n\nRStudio provides several tutorials for beginners and more advanced users: https://education.rstudio.com/\nDatacamp provides many courses at different levels (OUCRU HCMC has a license). See http://www.statmethods.net. The introduction is free\nA basic course, interactive design: https://www.quantargo.com/courses/course-r-introduction\nIntroduction from Pasteur institute: https://hub-courses.pages.pasteur.fr/R_pasteur_phd/First_steps_RStudio.html\nGood summary of basic concepts: http://www.burns-stat.com/documents/tutorials/impatient-r\nA comprehensive introduction: https://github.com/matloff/fasteR\nIntroduction to R programming: https://jjallaire.github.io/hopr/"
-  },
-  {
-    "objectID": "index.html#deeper-into-r",
-    "href": "index.html#deeper-into-r",
-    "title": "OUCRU R training course - 2026",
-    "section": "DeepeR into R",
-    "text": "DeepeR into R\n\nThe book R for Data Science (2e)\n“What They Forgot to Teach You About R”\nhttps://www.r-project.org/doc/bib/R-books.html\nThe official R manuals: https://cran.r-project.org/manuals.html"
-  },
-  {
-    "objectID": "index.html#r-and-statistics",
-    "href": "index.html#r-and-statistics",
-    "title": "OUCRU R training course - 2026",
-    "section": "R and statistics",
-    "text": "R and statistics\n\nA simple introduction to biomedical statistics using R: https://a-little-book-of-r-for-biomedical-statistics.readthedocs.io/en/latest/\nA website with detailed examples of all types of statistical analysis: https://stats.oarc.ucla.edu/other/dae/\nR by example: http://www.mayin.org/ajayshah/KB/R/index.html\nR course, with focus machine learning"
-  },
-  {
-    "objectID": "index.html#r-markdown-and-quarto",
-    "href": "index.html#r-markdown-and-quarto",
-    "title": "OUCRU R training course - 2026",
-    "section": "R Markdown and Quarto",
-    "text": "R Markdown and Quarto\n\nThe main RStudio webpage on R Markdown, with links to two freely available books: https://rmarkdown.rstudio.com/docs/\nIntroduction from RStudio\nIntroduction to knitr\nFirst steps in Markdown\nWriting academic papers with R Markdown (focus on bibiliographies): https://ikashnitsky.github.io/2019/zotero/\nR Markdown tips: https://appsilon.com/r-markdown-tips/\nPowerpoint presentations using R Markdown: https://appsilon.com/r-markdown-powerpoint-presentation/\nhttps://codingclubuc3m.rbind.io/post/2019-09-24/ focus on creating presentations\nR Quarto tutorial: https://appsilon.com/r-quarto-tutorial/"
-  },
-  {
     "objectID": "slides/viz.html#what-to-expect",
     "href": "slides/viz.html#what-to-expect",
     "title": "Principles of data visualisation and plotting in R",
@@ -623,13 +560,6 @@
     "text": "Splitting up with facet_wrap()\n\n\nYou can “free” the scales from their original limits\n\n\n\nggplot(data = simulated_covid, aes(x = date_onset)) +\n  geom_bar(fill = \"cornflowerblue\") +\n  facet_wrap(~outbreak, scales = \"free_y\")"
   },
   {
-    "objectID": "slides/viz.html#splitting-up-with-facet_wrap-5",
-    "href": "slides/viz.html#splitting-up-with-facet_wrap-5",
-    "title": "Principles of Data Visualisation",
-    "section": "Splitting up with facet_wrap()",
-    "text": "Splitting up with facet_wrap()\n\n\nYou can “free” the scales from their original limits\n\n\n\nggplot(data = simulated_covid, aes(x = date_onset)) +                   \n  geom_bar(fill = \"cornflowerblue\") + \n  facet_wrap(~outbreak, scales = \"free\")"
-  },
-  {
     "objectID": "slides/viz.html#extending-ggplot2",
     "href": "slides/viz.html#extending-ggplot2",
     "title": "Principles of data visualisation and plotting in R",
@@ -665,69 +595,6 @@
     "text": "Interactive plots with plotly\n\n\nYou can also create 3d plots with plotly\n\n\nplot_ly(\n  data = tibble(x = rnorm(10), y = rnorm(10), z = rnorm(10)),\n  x = ~x,\n  y = ~y,\n  z = ~z\n)"
   },
   {
-    "objectID": "AGENTS.html",
-    "href": "AGENTS.html",
-    "title": "AGENTS.md",
-    "section": "",
-    "text": "Guidance for AI coding agents working in this repository.\n\n\nCourse website for OUCRU R training course 2026 — a Quarto website project (project: type: website) built from .qmd files. Rendered output goes to _render/ and is published to GitHub Pages.\n\n\n\n\nQuarto website project (not a book or blog)\nR, with package versions locked via renv (renv.lock, .Rprofile, renv/)\nSlide decks use format: revealjs; handouts use format: html (or pdf)\n\n\n\n\n\n\n\n\n\n\n\nPath\nPurpose\n\n\n\n\nindex.qmd\nHomepage — course schedule + links to each day’s slides/handouts\n\n\nslides/\nLecture slide decks (format: revealjs), plus Scripts/ (example R scripts) and data/ (datasets used in slides)\n\n\nhandouts/\nExercises, answer keys, setup instructions (format: html or pdf)\n\n\n_quarto.yml\nProject-level config (theme, navbar, output dir)\n\n\nstyles.css\nCustom CSS overrides\n\n\nrenv/, renv.lock, .Rprofile\nR package version locking\n\n\n_render/\nRendered site output — generated, not hand-edited\n\n\n\n\n\n\nBefore doing any R work in this project:\nrenv::restore()\nThis installs the exact package versions pinned in renv.lock.\n\n\n\n\nNew/edited slides go in slides/ and must keep format: revealjs in the YAML header.\nNew/edited handouts go in handouts/ and must use format: html (or pdf).\nCSS tweaks go in styles.css, not inline in .qmd files.\nSite-wide settings (theme, navbar, etc.) live in _quarto.yml. A .qmd file’s own YAML header overrides project defaults for that file only.\nIf you add, remove, or update an R package used anywhere in the project, run renv::snapshot() before committing so renv.lock stays in sync.\n\n\n\n\n\nLive preview while editing: quarto preview\nOne-off full render: quarto render → output lands in _render/index.html\n\nRun one of these after editing any .qmd file to catch rendering errors before committing.\n\n\n\n\nDo: push commits to main — a GitHub Actions workflow renders and publishes the site automatically.\nDon’t: run quarto publish gh-pages manually — this bypasses the intended CI-based publishing flow.\n\n\n\n\n\nDon’t hand-edit anything under _render/ — it’s generated; edit the source .qmd instead.\nDon’t commit a dependency change without a matching renv::snapshot().\nDon’t install R packages outside the project’s renv library.\nDon’t change a slide’s format away from revealjs or a handout’s away from html/pdf without good reason — downstream links in index.qmd assume these."
-  },
-  {
-    "objectID": "AGENTS.html#what-this-repo-is",
-    "href": "AGENTS.html#what-this-repo-is",
-    "title": "AGENTS.md",
-    "section": "",
-    "text": "Course website for OUCRU R training course 2026 — a Quarto website project (project: type: website) built from .qmd files. Rendered output goes to _render/ and is published to GitHub Pages."
-  },
-  {
-    "objectID": "AGENTS.html#stack",
-    "href": "AGENTS.html#stack",
-    "title": "AGENTS.md",
-    "section": "",
-    "text": "Quarto website project (not a book or blog)\nR, with package versions locked via renv (renv.lock, .Rprofile, renv/)\nSlide decks use format: revealjs; handouts use format: html (or pdf)"
-  },
-  {
-    "objectID": "AGENTS.html#repository-layout",
-    "href": "AGENTS.html#repository-layout",
-    "title": "AGENTS.md",
-    "section": "",
-    "text": "Path\nPurpose\n\n\n\n\nindex.qmd\nHomepage — course schedule + links to each day’s slides/handouts\n\n\nslides/\nLecture slide decks (format: revealjs), plus Scripts/ (example R scripts) and data/ (datasets used in slides)\n\n\nhandouts/\nExercises, answer keys, setup instructions (format: html or pdf)\n\n\n_quarto.yml\nProject-level config (theme, navbar, output dir)\n\n\nstyles.css\nCustom CSS overrides\n\n\nrenv/, renv.lock, .Rprofile\nR package version locking\n\n\n_render/\nRendered site output — generated, not hand-edited"
-  },
-  {
-    "objectID": "AGENTS.html#environment-setup",
-    "href": "AGENTS.html#environment-setup",
-    "title": "AGENTS.md",
-    "section": "",
-    "text": "Before doing any R work in this project:\nrenv::restore()\nThis installs the exact package versions pinned in renv.lock."
-  },
-  {
-    "objectID": "AGENTS.html#making-changes",
-    "href": "AGENTS.html#making-changes",
-    "title": "AGENTS.md",
-    "section": "",
-    "text": "New/edited slides go in slides/ and must keep format: revealjs in the YAML header.\nNew/edited handouts go in handouts/ and must use format: html (or pdf).\nCSS tweaks go in styles.css, not inline in .qmd files.\nSite-wide settings (theme, navbar, etc.) live in _quarto.yml. A .qmd file’s own YAML header overrides project defaults for that file only.\nIf you add, remove, or update an R package used anywhere in the project, run renv::snapshot() before committing so renv.lock stays in sync."
-  },
-  {
-    "objectID": "AGENTS.html#build-test-locally",
-    "href": "AGENTS.html#build-test-locally",
-    "title": "AGENTS.md",
-    "section": "",
-    "text": "Live preview while editing: quarto preview\nOne-off full render: quarto render → output lands in _render/index.html\n\nRun one of these after editing any .qmd file to catch rendering errors before committing."
-  },
-  {
-    "objectID": "AGENTS.html#publishing",
-    "href": "AGENTS.html#publishing",
-    "title": "AGENTS.md",
-    "section": "",
-    "text": "Do: push commits to main — a GitHub Actions workflow renders and publishes the site automatically.\nDon’t: run quarto publish gh-pages manually — this bypasses the intended CI-based publishing flow."
-  },
-  {
-    "objectID": "AGENTS.html#things-to-avoid",
-    "href": "AGENTS.html#things-to-avoid",
-    "title": "AGENTS.md",
-    "section": "",
-    "text": "Don’t hand-edit anything under _render/ — it’s generated; edit the source .qmd instead.\nDon’t commit a dependency change without a matching renv::snapshot().\nDon’t install R packages outside the project’s renv library.\nDon’t change a slide’s format away from revealjs or a handout’s away from html/pdf without good reason — downstream links in index.qmd assume these."
-  },
-  {
     "objectID": "handouts/precourse_setup.html",
     "href": "handouts/precourse_setup.html",
     "title": "Pre-course setups and requirements",
@@ -747,5 +614,68 @@
     "title": "Pre-course setups and requirements",
     "section": "RStudio Desktop",
     "text": "RStudio Desktop\n\nGo to the download page\nScroll down, look for 2: Install Rstudio and click on the button for downloading RStudio Desktop\nDownload and install RStudio Desktop\n\nYou can use the default installation options\n\nOpen Rstudio Desktop, to check that everything has been installed correctly\n\nE.g. via the Start menu in Windows"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "OUCRU R training course - 2026",
+    "section": "",
+    "text": "Website status:"
+  },
+  {
+    "objectID": "index.html#introduction-to-r",
+    "href": "index.html#introduction-to-r",
+    "title": "OUCRU R training course - 2026",
+    "section": "Introduction to R",
+    "text": "Introduction to R\n\nDay 1 (Monday)\n\n\nLearning objectives:\n\nOpen and inspect datasets, understand their structure\nMake selections and extract relevant data\nPerform basic data exploration, including calculating summaries and identifying missing values\nNavigate RStudio with confidence\n\n\n\n\n\nDay 2 (Tuesday)\n\n\nLearning objectives:\n\nWrite simple functions to automate tasks\nCreate visualisations using Base R graphics\nUnderstand the R working environment, including file paths and workspace management\nUsing pipe operators to chain functions\nHow to read and understand the errors and warnings in your R console\nFind and use R documentation and resources to solve problems on your own\n\nNo exercises will be given"
+  },
+  {
+    "objectID": "index.html#principles-of-data-visualisation-and-plotting-in-r",
+    "href": "index.html#principles-of-data-visualisation-and-plotting-in-r",
+    "title": "OUCRU R training course - 2026",
+    "section": "Principles of data visualisation and plotting in R",
+    "text": "Principles of data visualisation and plotting in R\n\nDay 3 (Wednesday):\n\nLecture slides\nLearning objectives:\n\nThe grammar of graphics—understanding how plots are built\nThe step-by-step process of creating graphs in R\nUse the ggplot2 package plot figures in R\nHow to design clear and impactful visualisations\nUsing LLMs (Large Language Models) to help you with plotting\n\n\n\n\n\nDay 4 (Thursday-morning):\n\nLearning objectives:\n\nUnderstand the principles of data visualisation"
+  },
+  {
+    "objectID": "index.html#advanced-data-management-in-r",
+    "href": "index.html#advanced-data-management-in-r",
+    "title": "OUCRU R training course - 2026",
+    "section": "Advanced data management in R",
+    "text": "Advanced data management in R\n\nDay 4 (Thursday-afternoon):\n\nLearning objectives:\n\nLogics with if-else statements and for-loops\nData manipulation with mutate()\nJoining dataframes\nPivotting dataframes into long and wide formats\nVectorisation in R with map()"
+  },
+  {
+    "objectID": "index.html#reproducible-research-and-reporting-using-quarto",
+    "href": "index.html#reproducible-research-and-reporting-using-quarto",
+    "title": "OUCRU R training course - 2026",
+    "section": "Reproducible research and reporting using Quarto",
+    "text": "Reproducible research and reporting using Quarto\n\nDay 5 (Friday-morning)\n\n\nLearning objectives:\n\nWrite papers with reproducible tables and figures using Quarto\nGenerate reports in multiple formats: Word, PDF, slides, web pages…\nEasily update analyses when new data becomes available"
+  },
+  {
+    "objectID": "index.html#introduction-to-r-and-rstudio",
+    "href": "index.html#introduction-to-r-and-rstudio",
+    "title": "OUCRU R training course - 2026",
+    "section": "Introduction to R and RStudio",
+    "text": "Introduction to R and RStudio\nGood introduction, with explanatory videos:\n\nRStudio provides several tutorials for beginners and more advanced users: https://education.rstudio.com/\nDatacamp provides many courses at different levels (OUCRU HCMC has a license). See http://www.statmethods.net. The introduction is free\nA basic course, interactive design: https://www.quantargo.com/courses/course-r-introduction\nIntroduction from Pasteur institute: https://hub-courses.pages.pasteur.fr/R_pasteur_phd/First_steps_RStudio.html\nGood summary of basic concepts: http://www.burns-stat.com/documents/tutorials/impatient-r\nA comprehensive introduction: https://github.com/matloff/fasteR\nIntroduction to R programming: https://jjallaire.github.io/hopr/"
+  },
+  {
+    "objectID": "index.html#deeper-into-r",
+    "href": "index.html#deeper-into-r",
+    "title": "OUCRU R training course - 2026",
+    "section": "DeepeR into R",
+    "text": "DeepeR into R\n\nThe book R for Data Science (2e)\n“What They Forgot to Teach You About R”\nhttps://www.r-project.org/doc/bib/R-books.html\nThe official R manuals: https://cran.r-project.org/manuals.html"
+  },
+  {
+    "objectID": "index.html#r-and-statistics",
+    "href": "index.html#r-and-statistics",
+    "title": "OUCRU R training course - 2026",
+    "section": "R and statistics",
+    "text": "R and statistics\n\nA simple introduction to biomedical statistics using R: https://a-little-book-of-r-for-biomedical-statistics.readthedocs.io/en/latest/\nA website with detailed examples of all types of statistical analysis: https://stats.oarc.ucla.edu/other/dae/\nR by example: http://www.mayin.org/ajayshah/KB/R/index.html\nR course, with focus machine learning"
+  },
+  {
+    "objectID": "index.html#r-markdown-and-quarto",
+    "href": "index.html#r-markdown-and-quarto",
+    "title": "OUCRU R training course - 2026",
+    "section": "R Markdown and Quarto",
+    "text": "R Markdown and Quarto\n\nThe main RStudio webpage on R Markdown, with links to two freely available books: https://rmarkdown.rstudio.com/docs/\nIntroduction from RStudio\nIntroduction to knitr\nFirst steps in Markdown\nWriting academic papers with R Markdown (focus on bibiliographies): https://ikashnitsky.github.io/2019/zotero/\nR Markdown tips: https://appsilon.com/r-markdown-tips/\nPowerpoint presentations using R Markdown: https://appsilon.com/r-markdown-powerpoint-presentation/\nhttps://codingclubuc3m.rbind.io/post/2019-09-24/ focus on creating presentations\nR Quarto tutorial: https://appsilon.com/r-quarto-tutorial/"
   }
 ]
