@@ -2,16 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OUCRU R training course - 2026 – R-training-2026</title>
+<title>agents – R-training-2026</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -22,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -35,14 +67,15 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -82,6 +115,8 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">R-training-2026</span>
     </a>
@@ -93,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -115,229 +150,125 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
+  <ul>
+  <li><a href="#agents.md" id="toc-agents.md" class="nav-link active" data-scroll-target="#agents.md">AGENTS.md</a>
   <ul class="collapse">
-  <li><a href="#pre-course-setups-and-requirements" id="toc-pre-course-setups-and-requirements" class="nav-link active" data-scroll-target="#pre-course-setups-and-requirements">Pre-course setups and requirements</a></li>
-  <li><a href="#course-topics" id="toc-course-topics" class="nav-link" data-scroll-target="#course-topics">Course topics</a>
-  <ul class="collapse">
-  <li><a href="#introduction-to-r" id="toc-introduction-to-r" class="nav-link" data-scroll-target="#introduction-to-r">Introduction to R</a></li>
-  <li><a href="#principles-of-data-visualisation-and-plotting-in-r" id="toc-principles-of-data-visualisation-and-plotting-in-r" class="nav-link" data-scroll-target="#principles-of-data-visualisation-and-plotting-in-r">Principles of data visualisation and plotting in R</a></li>
-  <li><a href="#advanced-data-management-in-r" id="toc-advanced-data-management-in-r" class="nav-link" data-scroll-target="#advanced-data-management-in-r">Advanced data management in R</a></li>
-  <li><a href="#reproducible-research-and-reporting-using-quarto" id="toc-reproducible-research-and-reporting-using-quarto" class="nav-link" data-scroll-target="#reproducible-research-and-reporting-using-quarto">Reproducible research and reporting using Quarto</a></li>
-  </ul></li>
-  <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a>
-  <ul class="collapse">
-  <li><a href="#introduction-to-r-and-rstudio" id="toc-introduction-to-r-and-rstudio" class="nav-link" data-scroll-target="#introduction-to-r-and-rstudio">Introduction to R and RStudio</a></li>
-  <li><a href="#deeper-into-r" id="toc-deeper-into-r" class="nav-link" data-scroll-target="#deeper-into-r">DeepeR into R</a></li>
-  <li><a href="#r-and-statistics" id="toc-r-and-statistics" class="nav-link" data-scroll-target="#r-and-statistics">R and statistics</a></li>
-  <li><a href="#r-markdown-and-quarto" id="toc-r-markdown-and-quarto" class="nav-link" data-scroll-target="#r-markdown-and-quarto">R Markdown and Quarto</a></li>
+  <li><a href="#what-this-repo-is" id="toc-what-this-repo-is" class="nav-link" data-scroll-target="#what-this-repo-is">What this repo is</a></li>
+  <li><a href="#stack" id="toc-stack" class="nav-link" data-scroll-target="#stack">Stack</a></li>
+  <li><a href="#repository-layout" id="toc-repository-layout" class="nav-link" data-scroll-target="#repository-layout">Repository layout</a></li>
+  <li><a href="#environment-setup" id="toc-environment-setup" class="nav-link" data-scroll-target="#environment-setup">Environment setup</a></li>
+  <li><a href="#making-changes" id="toc-making-changes" class="nav-link" data-scroll-target="#making-changes">Making changes</a></li>
+  <li><a href="#build-test-locally" id="toc-build-test-locally" class="nav-link" data-scroll-target="#build-test-locally">Build / test locally</a></li>
+  <li><a href="#publishing" id="toc-publishing" class="nav-link" data-scroll-target="#publishing">Publishing</a></li>
+  <li><a href="#things-to-avoid" id="toc-things-to-avoid" class="nav-link" data-scroll-target="#things-to-avoid">Things to avoid</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">OUCRU R training course - 2026</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
 
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">August 4, 2026 – 15:15:10 (GMT+7)</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<!-- ## Course structure {.unnumbered}
-![](site_imgs/R_course_schedule.png)
-
-- The training will be **09:00 – 17:00 (UTC +7)** for everyday
-- There will be a **lunch break between 12:30 – 13:30 (UTC +7)**
-- Lunch will be provided for in-person attendees -->
-<!-- ## Contributors {.unnumbered}
-
-- Prof. Ronald Geskus, Biostatistics group, OUCRU HCM
-- Dr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM
-- Mr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM
-- Dr. Tran Thai Hung, Biostatistics group, OUCRU HCM
-- Ms. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM
-- Dr. Hai Ho Bich, Emerging Infections group, OUCRU HCM
-- Dr. Duc Du Hong, Biostatistics group, OUCRU HCM
-- Mr. Manh Nguyen Duc, Mathematical Modeling group, OUCRU HCM
-- Mr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM
-- Dr. Marc Choisy, Mathematical Modeling group, OUCRU HCM
-- Dr. Dung Vu Tien Viet, Biostatistician, OUCRU Hanoi
-- Dr. Trinh Dong Huu Khanh, formerly: Biostatistics group, OUCRU HCM -->
-<section id="pre-course-setups-and-requirements" class="level1">
-<h1>Pre-course setups and requirements</h1>
-<p>Please follow <a href="./handouts/precourse_setup.html" target="_blank">this handout</a> before joining the course.</p>
+<section id="agents.md" class="level1">
+<h1>AGENTS.md</h1>
+<p>Guidance for AI coding agents working in this repository.</p>
+<section id="what-this-repo-is" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-repo-is">What this repo is</h2>
+<p>Course website for <strong>OUCRU R training course 2026</strong> — a <a href="https://quarto.org">Quarto</a> website project (<code>project: type: website</code>) built from <code>.qmd</code> files. Rendered output goes to <code>_render/</code> and is published to GitHub Pages.</p>
 </section>
-<section id="course-topics" class="level1">
-<h1>Course topics</h1>
-<section id="introduction-to-r" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-to-r">Introduction to R</h2>
-<section id="day-1-monday" class="level3">
-<h3 class="anchored" data-anchor-id="day-1-monday">Day 1 (Monday)</h3>
-<!-- - [Lecture slides](slides/IntroductionRDay1.qmd) -->
+<section id="stack" class="level2">
+<h2 class="anchored" data-anchor-id="stack">Stack</h2>
 <ul>
-<li><strong>Learning objectives</strong>:
-<ol type="1">
-<li>Open and inspect datasets, understand their structure</li>
-<li>Make selections and extract relevant data</li>
-<li>Perform basic data exploration, including calculating summaries and identifying missing values</li>
-<li>Navigate RStudio with confidence</li>
-</ol></li>
-</ul>
-<!-- - Exercises:
-  - [Handout file](handouts/exercises_Day1.qmd){target="_blank"}
-  - [Exercise answer key](handouts/exercises_Day1_answer.qmd){target="_blank"}
-  - [Exercise answer script](handouts/exercises_Day1_answer.R){target="_blank"}
-- [Example R code scripts - Day 1](slides/Scripts/ExampleCodeDay1.R){target="_blank"} -->
-</section>
-<section id="day-2-tuesday" class="level3">
-<h3 class="anchored" data-anchor-id="day-2-tuesday">Day 2 (Tuesday)</h3>
-<!-- - [Lecture slides](slides/IntroductionRDay2.qmd) -->
-<ul>
-<li><strong>Learning objectives</strong>:
-<ol type="1">
-<li>Write simple functions to automate tasks</li>
-<li>Create visualisations using Base R graphics</li>
-<li>Understand the R working environment, including file paths and workspace management</li>
-<li>Using <em>pipe operators</em> to chain functions</li>
-<li>How to read and understand the errors and warnings in your R console</li>
-<li>Find and use R documentation and resources to solve problems on your own</li>
-</ol></li>
-<li>No exercises will be given <!-- - [Example R code scripts - Day 2](slides/Scripts/ExampleCodeDay2.R){target="_blank"} --></li>
+<li><strong>Quarto</strong> website project (not a book or blog)</li>
+<li><strong>R</strong>, with package versions locked via <strong>renv</strong> (<code>renv.lock</code>, <code>.Rprofile</code>, <code>renv/</code>)</li>
+<li>Slide decks use <code>format: revealjs</code>; handouts use <code>format: html</code> (or <code>pdf</code>)</li>
 </ul>
 </section>
+<section id="repository-layout" class="level2">
+<h2 class="anchored" data-anchor-id="repository-layout">Repository layout</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Path</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>index.qmd</code></td>
+<td>Homepage — course schedule + links to each day’s slides/handouts</td>
+</tr>
+<tr class="even">
+<td><code>slides/</code></td>
+<td>Lecture slide decks (<code>format: revealjs</code>), plus <code>Scripts/</code> (example R scripts) and <code>data/</code> (datasets used in slides)</td>
+</tr>
+<tr class="odd">
+<td><code>handouts/</code></td>
+<td>Exercises, answer keys, setup instructions (<code>format: html</code> or <code>pdf</code>)</td>
+</tr>
+<tr class="even">
+<td><code>_quarto.yml</code></td>
+<td>Project-level config (theme, navbar, output dir)</td>
+</tr>
+<tr class="odd">
+<td><code>styles.css</code></td>
+<td>Custom CSS overrides</td>
+</tr>
+<tr class="even">
+<td><code>renv/</code>, <code>renv.lock</code>, <code>.Rprofile</code></td>
+<td>R package version locking</td>
+</tr>
+<tr class="odd">
+<td><code>_render/</code></td>
+<td>Rendered site output — generated, not hand-edited</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="principles-of-data-visualisation-and-plotting-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="principles-of-data-visualisation-and-plotting-in-r">Principles of data visualisation and plotting in R</h2>
-<section id="day-3-wednesday" class="level3">
-<h3 class="anchored" data-anchor-id="day-3-wednesday">Day 3 (Wednesday):</h3>
+<section id="environment-setup" class="level2">
+<h2 class="anchored" data-anchor-id="environment-setup">Environment setup</h2>
+<p>Before doing any R work in this project:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This installs the exact package versions pinned in <code>renv.lock</code>.</p>
+</section>
+<section id="making-changes" class="level2">
+<h2 class="anchored" data-anchor-id="making-changes">Making changes</h2>
 <ul>
-<li><a href="./slides/viz.html">Lecture slides</a></li>
-<li><strong>Learning objectives</strong>:
-<ol type="1">
-<li>The grammar of graphics—understanding how plots are built</li>
-<li>The step-by-step process of creating graphs in R</li>
-<li>Use the <code>ggplot2</code> package plot figures in R</li>
-<li>How to design clear and impactful visualisations</li>
-<li>Using LLMs (Large Language Models) to help you with plotting</li>
-</ol></li>
-</ul>
-<!-- - [Handout file](handouts/VisualisationHandouts.pdf)
-- Exercises:
-  - [Exercise file](handouts/exercises_Day3.qmd)
-  - [Exercise answer key](handouts/Exercises_Day3_answer.pdf)
-  - [Exercise answer script](handouts/Exercises_Day3_answer.R)
-  - Datasets: 
-    - [NightingaleRose.csv](https://github.com/OUCRU-Modelling/R-training-2026/raw/refs/heads/main/slides/data/NightingaleRose.csv) 
-    - [ICUCost.csv](https://github.com/OUCRU-Modelling/R-training-2026/raw/refs/heads/main/slides/data/ICUCost.csv) -->
-</section>
-<section id="day-4-thursday-morning" class="level3">
-<h3 class="anchored" data-anchor-id="day-4-thursday-morning">Day 4 (Thursday-morning):</h3>
-<ul>
-<li><strong>Learning objectives</strong>:
-<ol type="1">
-<li>Understand the principles of data visualisation</li>
-</ol></li>
-</ul>
-</section>
-</section>
-<section id="advanced-data-management-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="advanced-data-management-in-r">Advanced data management in R</h2>
-<section id="day-4-thursday-afternoon" class="level3">
-<h3 class="anchored" data-anchor-id="day-4-thursday-afternoon">Day 4 (Thursday-afternoon):</h3>
-<ul>
-<li><strong>Learning objectives</strong>:
-<ol type="1">
-<li>Logics with if-else statements and for-loops</li>
-<li>Data manipulation with <code>mutate()</code></li>
-<li>Joining dataframes</li>
-<li>Pivotting dataframes into long and wide formats</li>
-<li>Vectorisation in R with <code>map()</code></li>
-</ol></li>
-</ul>
-</section>
-</section>
-<section id="reproducible-research-and-reporting-using-quarto" class="level2">
-<h2 class="anchored" data-anchor-id="reproducible-research-and-reporting-using-quarto">Reproducible research and reporting using Quarto</h2>
-<section id="day-5-friday-morning" class="level3">
-<h3 class="anchored" data-anchor-id="day-5-friday-morning">Day 5 (Friday-morning)</h3>
-<!-- - [Lecture slides](slides/qt-repro-res.qmd) -->
-<ul>
-<li><strong>Learning objectives</strong>:
-<ol type="1">
-<li>Write papers with reproducible tables and figures using Quarto</li>
-<li>Generate reports in multiple formats: Word, PDF, slides, web pages…</li>
-<li>Easily update analyses when new data becomes available</li>
-</ol></li>
-</ul>
-<!-- - [Exercises](handouts/exercises_Day5.qmd){target="_blank"}
-- [Exercise answer keys]{style="cursor:not-allowed;user-select:none;"} -->
-</section>
-</section>
-</section>
-<section id="appendix" class="level1">
-<h1>Appendix</h1>
-<section id="introduction-to-r-and-rstudio" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-to-r-and-rstudio">Introduction to R and RStudio</h2>
-<p>Good introduction, with explanatory videos:</p>
-<ul>
-<li>RStudio provides several tutorials for beginners and more advanced users: <a href="https://education.rstudio.com/" class="uri">https://education.rstudio.com/</a></li>
-<li>Datacamp provides many courses at different levels (OUCRU HCMC has a license). See <a href="http://www.statmethods.net" class="uri">http://www.statmethods.net</a>. The <a href="https://www.datacamp.com/courses/free-introduction-to-r">introduction</a> is free</li>
-<li>A basic course, interactive design: <a href="https://www.quantargo.com/courses/course-r-introduction" class="uri">https://www.quantargo.com/courses/course-r-introduction</a></li>
-<li>Introduction from Pasteur institute: <a href="https://hub-courses.pages.pasteur.fr/R_pasteur_phd/First_steps_RStudio.html" class="uri">https://hub-courses.pages.pasteur.fr/R_pasteur_phd/First_steps_RStudio.html</a></li>
-<li>Good summary of basic concepts: <a href="http://www.burns-stat.com/documents/tutorials/impatient-r" class="uri">http://www.burns-stat.com/documents/tutorials/impatient-r</a></li>
-<li>A comprehensive introduction: <a href="https://github.com/matloff/fasteR" class="uri">https://github.com/matloff/fasteR</a></li>
-<li>Introduction to R programming: <a href="https://jjallaire.github.io/hopr/" class="uri">https://jjallaire.github.io/hopr/</a></li>
+<li>New/edited <strong>slides</strong> go in <code>slides/</code> and must keep <code>format: revealjs</code> in the YAML header.</li>
+<li>New/edited <strong>handouts</strong> go in <code>handouts/</code> and must use <code>format: html</code> (or <code>pdf</code>).</li>
+<li>CSS tweaks go in <code>styles.css</code>, not inline in <code>.qmd</code> files.</li>
+<li>Site-wide settings (theme, navbar, etc.) live in <code>_quarto.yml</code>. A <code>.qmd</code> file’s own YAML header overrides project defaults for that file only.</li>
+<li>If you add, remove, or update an R package used anywhere in the project, run <code>renv::snapshot()</code> before committing so <code>renv.lock</code> stays in sync.</li>
 </ul>
 </section>
-<section id="deeper-into-r" class="level2">
-<h2 class="anchored" data-anchor-id="deeper-into-r">DeepeR into R</h2>
+<section id="build-test-locally" class="level2">
+<h2 class="anchored" data-anchor-id="build-test-locally">Build / test locally</h2>
 <ul>
-<li>The book <a href="https://r4ds.hadley.nz/">R for Data Science (2e)</a></li>
-<li><a href="https://rstats.wtf/index.html">“What They Forgot to Teach You About R”</a></li>
-<li><a href="https://www.r-project.org/doc/bib/R-books.html" class="uri">https://www.r-project.org/doc/bib/R-books.html</a></li>
-<li>The official R manuals: <a href="https://cran.r-project.org/manuals.html" class="uri">https://cran.r-project.org/manuals.html</a></li>
+<li>Live preview while editing: <code>quarto preview</code></li>
+<li>One-off full render: <code>quarto render</code> → output lands in <code>_render/index.html</code></li>
+</ul>
+<p>Run one of these after editing any <code>.qmd</code> file to catch rendering errors before committing.</p>
+</section>
+<section id="publishing" class="level2">
+<h2 class="anchored" data-anchor-id="publishing">Publishing</h2>
+<ul>
+<li><strong>Do:</strong> push commits to <code>main</code> — a GitHub Actions workflow renders and publishes the site automatically.</li>
+<li><strong>Don’t:</strong> run <code>quarto publish gh-pages</code> manually — this bypasses the intended CI-based publishing flow.</li>
 </ul>
 </section>
-<section id="r-and-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="r-and-statistics">R and statistics</h2>
+<section id="things-to-avoid" class="level2">
+<h2 class="anchored" data-anchor-id="things-to-avoid">Things to avoid</h2>
 <ul>
-<li>A simple introduction to biomedical statistics using R: <a href="https://a-little-book-of-r-for-biomedical-statistics.readthedocs.io/en/latest/" class="uri">https://a-little-book-of-r-for-biomedical-statistics.readthedocs.io/en/latest/</a></li>
-<li>A website with detailed examples of all types of statistical analysis: <a href="https://stats.oarc.ucla.edu/other/dae/" class="uri">https://stats.oarc.ucla.edu/other/dae/</a></li>
-<li>R by example: <a href="http://www.mayin.org/ajayshah/KB/R/index.html" class="uri">http://www.mayin.org/ajayshah/KB/R/index.html</a></li>
-<li><a href="https://www.udemy.com/course/data-science-and-machine-learning-bootcamp-with-r/">R course, with focus machine learning</a></li>
-</ul>
-</section>
-<section id="r-markdown-and-quarto" class="level2">
-<h2 class="anchored" data-anchor-id="r-markdown-and-quarto">R Markdown and Quarto</h2>
-<ul>
-<li>The main RStudio webpage on R Markdown, with links to two freely available books: <a href="https://rmarkdown.rstudio.com/docs/" class="uri">https://rmarkdown.rstudio.com/docs/</a></li>
-<li><a href="https://rmarkdown.rstudio.com/lesson-1.html">Introduction</a> from RStudio</li>
-<li><a href="https://sachsmc.github.io/knit-git-markr-guide/knitr/knit.html">Introduction to <code>knitr</code></a></li>
-<li><a href="https://www.r-bloggers.com/2022/02/how-to-use-r-markdown-part-one/">First steps in Markdown</a></li>
-<li>Writing academic papers with R Markdown (focus on bibiliographies): <a href="https://ikashnitsky.github.io/2019/zotero/" class="uri">https://ikashnitsky.github.io/2019/zotero/</a></li>
-<li>R Markdown tips: <a href="https://appsilon.com/r-markdown-tips/" class="uri">https://appsilon.com/r-markdown-tips/</a></li>
-<li>Powerpoint presentations using R Markdown: <a href="https://appsilon.com/r-markdown-powerpoint-presentation/" class="uri">https://appsilon.com/r-markdown-powerpoint-presentation/</a></li>
-<li><a href="https://codingclubuc3m.rbind.io/post/2019-09-24/" class="uri">https://codingclubuc3m.rbind.io/post/2019-09-24/</a> focus on creating presentations</li>
-<li>R Quarto tutorial: <a href="https://appsilon.com/r-quarto-tutorial/" class="uri">https://appsilon.com/r-quarto-tutorial/</a></li>
+<li>Don’t hand-edit anything under <code>_render/</code> — it’s generated; edit the source <code>.qmd</code> instead.</li>
+<li>Don’t commit a dependency change without a matching <code>renv::snapshot()</code>.</li>
+<li>Don’t install R packages outside the project’s <code>renv</code> library.</li>
+<li>Don’t change a slide’s format away from <code>revealjs</code> or a handout’s away from <code>html</code>/<code>pdf</code> without good reason — downstream links in <code>index.qmd</code> assume these.</li>
 </ul>
 
 
@@ -418,7 +349,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/OUCRU-Modelling\.github\.io\/R-training-2026\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -432,13 +363,6 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
-            // target, if specified
-            link.setAttribute("target", "_blank");
-            if (link.getAttribute("rel") === null) {
-              link.setAttribute("rel", "noopener");
-            }
-            // default icon
-            link.classList.add("external");
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
