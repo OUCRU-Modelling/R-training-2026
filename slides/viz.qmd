@@ -30,8 +30,8 @@ editor:
 
 How to make an informative visual representation of data and/or results
 
--   **Part I**: process of graph creation
--   **Part II**: principles of graph interpretation
+- **Part I**: process of graph creation
+- **Part II**: principles of graph interpretation
 
 ::: callout-note
 *Graph* = diagram = chart = figure = picture
@@ -39,8 +39,7 @@ How to make an informative visual representation of data and/or results
 
 ## 
 
-::: columns
-
+::::: columns
 ::: {.column width="60%"}
 ![](figures/viz/picture1000words.jpg){fig-align="left"}
 :::
@@ -48,14 +47,13 @@ How to make an informative visual representation of data and/or results
 ::: {.column .fragment width="40%"}
 But it takes
 
--   knowledge of graphics principles
--   effort; trial and error
--   time
+- knowledge of graphics principles
+- effort; trial and error
+- time
 
 to make a "good" one
 :::
-
-:::
+:::::
 
 ## Who created this graph?
 
@@ -76,14 +74,14 @@ Rose plot to convince UK authorities of importance of hygiene
 [Hinrichsen](https://pubmed.ncbi.nlm.nih.gov/11812878/): risk factors
 for hepatitis G infection in haemodialysis patients
 
--   Do we need a graph?
+- Do we need a graph?
 
-    Are there enough data points to merit a plot?
+  Are there enough data points to merit a plot?
 
-    -   Depends on mode of presentation: conference lecture (time
-        limit), article
+  - Depends on mode of presentation: conference lecture (time limit),
+    article
 
--   If we use a graph, is this one the most truthful and informative?
+- If we use a graph, is this one the most truthful and informative?
 
 ![](figures/viz/hgv.jpg){fig-align="center" width="300"}
 
@@ -91,8 +89,7 @@ for hepatitis G infection in haemodialysis patients
 
 Cohort study on 1187 HIV infected persons in The Gambia
 
-::: columns
-
+::::: columns
 ::: {.column width="20%"}
 ![](figures/viz/tableage.png){fig-align="center" width="60%"}
 :::
@@ -100,130 +97,133 @@ Cohort study on 1187 HIV infected persons in The Gambia
 ::: {.column .fragment width="80%"}
 ![](figures/viz/histage.png){fig-align="center"}
 :::
-:::
+:::::
 
 ## Pattern discovery (fake results)
 
 ![](figures/viz/ElectionRussia.png){fig-align="center"}
 
 ## Points to consider
-::: r-fit-text
 
--   [Why]{style="color:red;"} do we make a graph? (purpose)
+:::::: r-fit-text
+- [Why]{style="color:red;"} do we make a graph? (purpose)
 
-    1.  We want to explore and inspect our data or results
+  1.  We want to explore and inspect our data or results
 
-    2.  Present data or results, often with a message, to others
-
-::: fragment
--   [Where]{style="color:red;"} do we show the graph: research paper,
-    conference, website
-:::
+  2.  Present data or results, often with a message, to others
 
 ::: fragment
--   [Who]{style="color:red;"} is the audience. Level of background
-    knowledge
+- [Where]{style="color:red;"} do we show the graph: research paper,
+  conference, website
 :::
 
 ::: fragment
--   [What]{style="color:red;"} do we want to show (data)
-
-    -   Graph: visual representation of information ("encoding")
-
-        mapping from data/results to figure
+- [Who]{style="color:red;"} is the audience. Level of background
+  knowledge
 :::
 
+::: fragment
+- [What]{style="color:red;"} do we want to show (data)
+
+  - Graph: visual representation of information ("encoding")
+
+    mapping from data/results to figure
 :::
+::::::
+
 # The Grammar of Graphics
 
 ## The origin
 
-::: columns
+::::: columns
 ::: {.column width="60%"}
 The author
 
--   Leland Wilkinson, *The Grammar of Graphics*, Springer 2005
--   Author of SYSTAT; 1995: sold to SPSS
--   1994 - 2007: Senior VP, SPSS
+- Leland Wilkinson, *The Grammar of Graphics*, Springer 2005
+- Author of SYSTAT; 1995: sold to SPSS
+- 1994 - 2007: Senior VP, SPSS
 :::
 
 ::: {.column width="40%"}
 ![](figures/viz/BookSpringerVS1.jpg){fig-align="center"}
 :::
-:::
+:::::
 
 ## What is a grammar?
 
-:::: {.columns}
-
-::: {.column width="50%" .incremental}
--   Defines components of a sentence (verb, noun, ...) and rules how
-    to combine them
--   Such a sentence *does not* necessarily have to make sense
--   **"The lab is flying menacingly"** (Subject + Conjugate + Verb + Adverb)
+::::: columns
+::: {.column .incremental width="50%"}
+- Defines components of a sentence (verb, noun, ...) and rules how to
+  combine them
+- Such a sentence *does not* necessarily have to make sense
+- **"The lab is flying menacingly"** (Subject + Conjugate + Verb +
+  Adverb)
 :::
 
-::: {.column width="50%" .fragment style="text-align: center;"}
-![](figures/viz/english_grammar.jpg){height="500" style="display: block; margin: 0 auto;"}
-[E.g. this is one grammar rule of English]{style="font-size: x-large;"}
+::: {.column .fragment width="50%" style="text-align: center;"}
+![](figures/viz/english_grammar.jpg){height="500"
+style="display: block; margin: 0 auto;"} [E.g. this is one grammar rule
+of English]{style="font-size: x-large;"}
 :::
-
-::::
+:::::
 
 ## What is a grammar?
--   **Graphics** grammar:
-    -   Defines components of a figure and rules how to combine them
-    -   Does not advise on the best choice of scale (linear,
-        logarithmic), color or line type; one can create noninformative
-        graphs
+
+- **Graphics** grammar:
+  - Defines components of a figure and rules how to combine them
+  - Does not advise on the best choice of scale (linear, logarithmic),
+    color or line type; one can create noninformative graphs
 
 ::: {.fragment .fade-in}
-[Grammar helps expressing ideas or information in a clear and coherent way]{style="color: red;"}
+[Grammar helps expressing ideas or information in a clear and coherent
+way]{style="color: red;"}
 :::
 
 ## Grammar of a graph
 
--   Mapping from information (data) to [aesthetic attributes]{.fragment fragment-index=1 .highlight-red} of [geometric objects]{.fragment fragment-index=1 .highlight-blue}
--   [Aesthetic attributes]{.fragment fragment-index=1 .highlight-red} are the "role" of variables in plot: location (often along x-axis and y-axis), colour, size, shape
--   [Geometric objects]{.fragment fragment-index=1 .highlight-blue} are what you see on the plot (points, lines, bars)
+- Mapping from information (data) to [aesthetic attributes]{.fragment
+  .highlight-red fragment-index="1"} of [geometric objects]{.fragment
+  .highlight-blue fragment-index="1"}
+- [Aesthetic attributes]{.fragment .highlight-red fragment-index="1"}
+  are the "role" of variables in plot: location (often along x-axis and
+  y-axis), colour, size, shape
+- [Geometric objects]{.fragment .highlight-blue fragment-index="1"} are
+  what you see on the plot (points, lines, bars)
 
 ## Scatter plot
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ![](figures/viz/nature.png)
 :::
 
 ::: {.column width="50%"}
--   "Mapping routine measles vaccination in low-and middle-income
-    countries." *Nature* 589, no. 7842 (2021): 415-419. (IF 2023 =
-    50.5).
+- "Mapping routine measles vaccination in low-and middle-income
+  countries." *Nature* 589, no. 7842 (2021): 415-419. (IF 2023 = 50.5).
 
--   How do you read this plot?
+- How do you read this plot?
 :::
-:::
+:::::
 
 ## Scatter plot
 
-::: columns
-
+:::::: columns
 ::: {.column width="50%"}
 ![](figures/viz/nature.png)
 :::
 
-:::{.column width="50%"}
+:::: {.column width="50%"}
 What information would you need to map each dot correctly onto this
 plot?
 
 ::: incremental
--   Country name
--   Position
--   Size
--   Color
+- Country name
+- Position
+- Size
+- Color
 :::
-:::
-
-:::
+::::
+::::::
 
 ## Data {.smaller}
 
@@ -249,7 +249,7 @@ head(df)
 
 ## Scatter plot
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ![](figures/viz/nature.png)
 :::
@@ -257,23 +257,23 @@ head(df)
 ::: {.column width="50%"}
 Let's draw this by hand
 :::
-:::
+:::::
 
 ## Draw this by hand
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ![](figures/viz/nature.png)
 :::
 
 ::: {.column width="50%"}
--   Draw the axes
--   Draw the data points
--   Adjust dot sizes
--   Colour-code the regions
--   Add key country labels
+- Draw the axes
+- Draw the data points
+- Adjust dot sizes
+- Colour-code the regions
+- Add key country labels
 :::
-:::
+:::::
 
 # We draw this by using...
 
@@ -282,24 +282,22 @@ Let's draw this by hand
 Use the **Grammar of Graphics** to create elegant data visualisations
 
 ::: {.codewindow .r}
-
 code.R
+
 ```{r}
 #| warning: FALSE
 #| message: FALSE
 library(ggplot2)
 ```
-
 :::
 
 ## Draw the axes {.smaller}
 
-::: columns
-
-::: {.column width="60%"}
+::::::: columns
+::::: {.column width="60%"}
 ::: {.codewindow .r}
-
 code.R
+
 ```{r}
 #| eval: FALSE
 # df <- ...
@@ -308,13 +306,13 @@ ggplot(
   mapping = aes(x = coverage, y = inequality)
 )
 ```
-
 :::
 
-::: {.fragment}
-➡ The `x` and `y` aesthetics determine which variable is drawn on each axis. 
+::: fragment
+➡ The `x` and `y` aesthetics determine which variable is drawn on each
+axis.
 :::
-:::
+:::::
 
 ::: {.column width="40%"}
 ```{r}
@@ -324,15 +322,13 @@ ggplot(
 #| out-width: "100%"
 ggplot(data = df, mapping = aes(x = coverage, y = inequality))
 ```
-
 :::
-:::
+:::::::
 
 ## Draw the data points {.smaller}
 
-::: columns
-
-::: {.column width="60%"}
+:::::: columns
+:::: {.column width="60%"}
 ::: {.codewindow .r}
 code.R
 
@@ -342,9 +338,8 @@ code.R
 ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_point()
 ```
-
 :::
-:::
+::::
 
 ::: {.column width="40%"}
 ```{r}
@@ -355,17 +350,13 @@ ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
 ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_point()
 ```
-
 :::
-:::
-
+::::::
 
 ## Changing the plot orientation {.smaller}
 
-
-::: columns
-
-::: {.column width="60%"}
+::::::: columns
+::::: {.column width="60%"}
 ::: {.codewindow .r}
 code.R
 
@@ -375,12 +366,12 @@ code.R
 ggplot(data = df, mapping = aes(x = inequality, y = coverage)) +
   geom_point()
 ```
-
 :::
-::: {.fragment}
+
+::: fragment
 Swapping `x` and `y` aesthetics will change the plot orientation
 :::
-:::
+:::::
 
 ::: {.column width="40%"}
 ```{r}
@@ -392,13 +383,12 @@ ggplot(df, aes(x = inequality, y = coverage)) +
   geom_point()
 ```
 :::
-
-:::
+:::::::
 
 ## Adjust dot sizes {.smaller}
 
-::: columns
-::: {.column width="60%"}
+::::::: columns
+::::: {.column width="60%"}
 ::: {.codewindow .r}
 code.R
 
@@ -408,12 +398,13 @@ code.R
 ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_point(mapping = aes(size = pop))
 ```
+:::
 
+::: fragment
+Observe the 2 `mapping` argument calls, one in `ggplot()` and one in
+`geom_point()`
 :::
-::: {.fragment}
-Observe the 2 `mapping` argument calls, one in `ggplot()` and one in `geom_point()`
-:::
-:::
+:::::
 
 ::: {.column width="40%"}
 ```{r}
@@ -425,12 +416,12 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   geom_point(aes(size = pop))
 ```
 :::
-:::
+:::::::
 
 ## Colour-code the regions {.smaller}
 
-::: columns
-::: {.column width="60%"}
+:::::: columns
+:::: {.column width="60%"}
 ::: {.codewindow .r}
 code.R
 
@@ -441,7 +432,7 @@ ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_point(mapping = aes(size = pop, color = region))
 ```
 :::
-:::
+::::
 
 ::: {.column width="40%"}
 ```{r}
@@ -453,12 +444,12 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   geom_point(aes(size = pop, color = region))
 ```
 :::
-:::
+::::::
 
 ## Add key country labels {.smaller}
 
-::: columns
-::: {.column width="60%"}
+:::::: columns
+:::: {.column width="60%"}
 ::: {.codewindow .r}
 code.R
 
@@ -470,7 +461,7 @@ ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_text(mapping = aes(label = country))
 ```
 :::
-:::
+::::
 
 ::: {.column width="40%"}
 ```{r}
@@ -483,18 +474,18 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   geom_text(aes(label = country))
 ```
 :::
-:::
+::::::
 
 ## Compare with the original figure {.smaller}
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
-Original figure
-![](figures/viz/nature.png)
+Original figure ![](figures/viz/nature.png)
 :::
 
 ::: {.column width="50%"}
 Ours (so far)
+
 ```{r}
 #| echo: FALSE
 #| fig-width: 5
@@ -505,64 +496,76 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   geom_text(aes(label = country))
 ```
 :::
-:::
+:::::
 
 ## Grammar of a graph
 
--   Mapping from information (data) to [aesthetic attributes]{style="color: red;"} of [geometric objects]{style="color: blue;"}
--   [Aesthetic attributes]{style="color: red;"} are the "role" of variables in plot: location (often along x-axis and y-axis), colour, size, shape
--   [Geometric objects]{style="color: blue;"} are what you see on the plot (points, lines, bars)
+- Mapping from information (data) to [aesthetic
+  attributes]{style="color: red;"} of [geometric
+  objects]{style="color: blue;"}
+- [Aesthetic attributes]{style="color: red;"} are the "role" of
+  variables in plot: location (often along x-axis and y-axis), colour,
+  size, shape
+- [Geometric objects]{style="color: blue;"} are what you see on the plot
+  (points, lines, bars)
 
-:::{.fragment}
--   [Scales]{style="color: orange;"} defines the range and values of an [aesthetic]{style="color: red;"}
+::: fragment
+- [Scales]{style="color: orange;"} defines the range and values of an
+  [aesthetic]{style="color: red;"}
 :::
 
 ## Scales
--   E.g. The limits and breaks of the x-axis and y-axis
--   It *may* also include statistical transformation(s)
+
+- E.g. The limits and breaks of the x-axis and y-axis
+- It *may* also include statistical transformation(s)
 
 ## Scales: statistical transformation
 
--   **Value transformation** (e.g. linear scale -> logarithm scale)
+- **Value transformation** (e.g. linear scale -\> logarithm scale)
 
--   Each **bar in a histogram** can be a "sum" or a "percentage/frequency", depending on the (optional) statistical transformation applied
+- Each **bar in a histogram** can be a "sum" or a
+  "percentage/frequency", depending on the (optional) statistical
+  transformation applied
 
--   A Least Square **Regression line** can be fitted before plotting, this also counts as a statistical transformation
+- A Least Square **Regression line** can be fitted before plotting, this
+  also counts as a statistical transformation
 
 ## Scales: statistical transformation
 
-**Note**: statistical transformation on the scales [do not]{style="color: red;"} change the data, just how we "observe" it
+**Note**: statistical transformation on the scales [do
+not]{style="color: red;"} change the data, just how we "observe" it
 
 ## Scales
 
--   Position on x-axis and on y-axis
--   It *may* be a value after statistical transformation
+- Position on x-axis and on y-axis
 
--   ::: columns
-    ::: {.column width="50%"}
-    Rest: via colour,
+- It *may* be a value after statistical transformation
 
-    shape (type of point),
+- ::::: columns
+  ::: {.column width="50%"}
+  Rest: via colour,
 
-    linetype,
+  shape (type of point),
 
-    point size
-    :::
+  linetype,
 
-    ::: {.column width="50%"}
-    ![](figures/viz/ColorGraph.png){width="50%"}
-    :::
-    :::
+  point size
+  :::
 
--   Reading values from the graph via **guides**: tick marks and labels,
-    legend
-    
+  ::: {.column width="50%"}
+  ![](figures/viz/ColorGraph.png){width="50%"}
+  :::
+  :::::
+
+- Reading values from the graph via **guides**: tick marks and labels,
+  legend
+
 ## Refine the plot: scale color {.smaller}
+
 Default
 
-::: columns
-
-::: {.column width="50%"} 
+:::::: columns
+:::: {.column width="50%"}
 ::: {.codewindow .r}
 code.R
 
@@ -574,7 +577,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   geom_text(aes(label = country))
 ```
 :::
-:::
+::::
 
 ::: {.column width="50%"}
 ```{r default 2}
@@ -587,14 +590,14 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   geom_text(aes(label = country))
 ```
 :::
-:::
+::::::
 
 ## Refine the plot: scale color {.smaller}
+
 Built-in color palette
 
-::: columns
-
-::: {.column width="50%"}
+:::::: columns
+:::: {.column width="50%"}
 ::: {.codewindow .r}
 code.R
 
@@ -609,7 +612,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   )
 ```
 :::
-:::
+::::
 
 ::: {.column width="50%"}
 ```{r builtin 2}
@@ -625,14 +628,14 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   )
 ```
 :::
-:::
-
+::::::
 
 ## Refine the plot: scale color {.smaller}
+
 Custom color palette
 
-::: columns
-::: {.column width="50%"}
+:::::: columns
+:::: {.column width="50%"}
 ::: {.codewindow .r}
 code.R
 
@@ -654,7 +657,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   scale_color_manual(values = cols)
 ```
 :::
-:::
+::::
 
 ::: {.column width="50%"}
 ```{r custom 2}
@@ -677,12 +680,12 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   scale_color_manual(values = cols)
 ```
 :::
-:::
+::::::
 
 ## Refine the plot: scale size {.smaller}
 
-::: columns
-::: {.column width="50%"}
+:::::: columns
+:::: {.column width="50%"}
 ::: {.codewindow .r}
 code.R
 
@@ -713,7 +716,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   )
 ```
 :::
-:::
+::::
 
 ::: {.column width="50%"}
 ```{r}
@@ -745,12 +748,12 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   )
 ```
 :::
-:::
+::::::
 
 ## Refine the plot: scale axes {.smaller}
 
-::: columns
-::: {.column width="50%"}
+:::::: columns
+:::: {.column width="50%"}
 ::: {.codewindow .r}
 code.R
 
@@ -789,7 +792,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   )
 ```
 :::
-:::
+::::
 
 ::: {.column width="50%"}
 ```{r}
@@ -823,12 +826,12 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   )
 ```
 :::
-:::
+::::::
 
 ## Refine the plot: theme and labels {.smaller}
 
-::: columns
-::: {.column width="50%"}
+:::::: columns
+:::: {.column width="50%"}
 ::: {.codewindow .r}
 code.R
 
@@ -881,7 +884,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   )
 ```
 :::
-:::
+::::
 
 ::: {.column width="50%"}
 ```{r}
@@ -935,13 +938,12 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   )
 ```
 :::
-:::
-
+::::::
 
 ## Refine the plot: minor tweaks {.smaller}
 
-::: columns
-::: {.column width="50%"}
+:::::: columns
+:::: {.column width="50%"}
 ::: {.codewindow .r}
 code.R
 
@@ -996,7 +998,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   )
 ```
 :::
-:::
+::::
 
 ::: {.column width="50%"}
 ```{r}
@@ -1046,11 +1048,11 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   )
 ```
 :::
-:::
+::::::
 
 ## Refine the plot {.smaller}
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ![](figures/viz/nature.png)
 :::
@@ -1107,7 +1109,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   )
 ```
 :::
-:::
+:::::
 
 ## Some frequently used `geom_*`
 
@@ -1151,12 +1153,12 @@ head(simulated_covid)
 
 ## Some frequently used `geom_*`
 
-::: r-fit-text
+::::::: r-fit-text
 **Example:** creating a bar chart for number of covid incidence over
 time
 
-::: columns
-::: {.column width="50%"}
+:::::: columns
+:::: {.column width="50%"}
 ::: {.codewindow .r}
 code.R
 
@@ -1175,7 +1177,7 @@ ggplot(
   )
 ```
 :::
-:::
+::::
 
 ::: {.column width="50%"}
 ```{r echo=FALSE}
@@ -1196,32 +1198,31 @@ ggplot(
   )
 ```
 :::
-:::
-
-:::
-
+::::::
+:::::::
 
 ## Some frequently used `geom_*`
 
 ::: r-fit-text
 Scatter plot
 
-+---------------+-------------------------------+---------------------+
-| `geom_*`      | description                   | Parameters          |
-+===============+===============================+=====================+
-| `             | Create a scatter plot from    | Required aesthetic: |
-| geom_point()` | given `x` and `y`             | `x` and `y`         |
-+---------------+-------------------------------+---------------------+
++----------------+------------------------------+--------------------+
+| `geom_*`       | description                  | Parameters         |
++================+==============================+====================+
+| `geom_point()` | Create a scatter plot from   | Required           |
+|                | given `x` and `y`            | aesthetic: `x` and |
+|                |                              | `y`                |
++----------------+------------------------------+--------------------+
 :::
 
 ## Some frequently used `geom_*`
 
-::: r-fit-text
+::::::: r-fit-text
 **Example:** creating a scatter plot for number of covid incidence over
 time
 
-::: columns
-::: {.column width="50%"}
+:::::: columns
+:::: {.column width="50%"}
 ::: {.codewindow .r}
 code.R
 
@@ -1249,7 +1250,7 @@ ggplot(
   )
 ```
 :::
-:::
+::::
 
 ::: {.column width="50%"}
 ```{r echo=FALSE}
@@ -1278,43 +1279,40 @@ ggplot(
   )
 ```
 :::
-:::
-
-:::
+::::::
+:::::::
 
 ## Some frequently used `geom_*`
 
 ::: r-fit-text
 Line chart
 
-+----------------+------------------+------------------------------------+
-| `geom_*`       | description      | Parameters                         |
-+================+==================+====================================+
-| `geom_line()`  | Create a line    | Required aesthetic: `x` and `y`    |
-|                | plot from given  |                                    |
-|                | `x` and `y`      |                                    |
-+----------------+------------------+------------------------------------+
-| `geom_smooth()`| Create a         | Required aesthetic: `x` and `y`    |
-|                | regression line  |                                    |
-|                | plot from `x`    | -   `method`: select regression    |
-|                | and `y`          |     model                          |
-|                |                  |     (`"auto"`, `"                  |
-|                |                  | lm"`, `"glm"`, `"gam"`, `"loess"`) |
-|                |                  |                                    |
-|                |                  | -   `formula`: adjust the formula  |
-|                |                  |     for the regression model       |
-+----------------+------------------+------------------------------------+
++-----------------+----------------+----------------------------------------------------+
+| `geom_*`        | description    | Parameters                                         |
++=================+================+====================================================+
+| `geom_line()`   | Create a line  | Required aesthetic: `x` and `y`                    |
+|                 | plot from      |                                                    |
+|                 | given `x` and  |                                                    |
+|                 | `y`            |                                                    |
++-----------------+----------------+----------------------------------------------------+
+| `geom_smooth()` | Create a       | Required aesthetic: `x` and `y`                    |
+|                 | regression     |                                                    |
+|                 | line plot from | - `method`: select regression model                |
+|                 | `x` and `y`    |   (`"auto"`, `" lm"`, `"glm"`, `"gam"`, `"loess"`) |
+|                 |                |                                                    |
+|                 |                | - `formula`: adjust the formula for the regression |
+|                 |                |   model                                            |
++-----------------+----------------+----------------------------------------------------+
 :::
 
 ## Some frequently used `geom_*`
 
-::: r-fit-text
+::::::: r-fit-text
 **Example:** creating a line chart for number of covid incidence over
 time
 
-::: columns
-
-::: {.column width="50%"}
+:::::: columns
+:::: {.column width="50%"}
 ::: {.codewindow .r}
 code.R
 
@@ -1333,7 +1331,7 @@ ggplot(
   )
 ```
 :::
-:::
+::::
 
 ::: {.column width="50%"}
 ```{r echo=FALSE}
@@ -1354,19 +1352,17 @@ ggplot(
   )
 ```
 :::
-:::
-
-:::
+::::::
+:::::::
 
 ## Some frequently used `geom_*`
 
-::: r-fit-text
+::::::: r-fit-text
 **Example:** add a regression line for number of covid incidence over
 time
 
-::: columns
-
-::: {.column width="50%"}
+:::::: columns
+:::: {.column width="50%"}
 ::: {.codewindow .r}
 code.R
 
@@ -1390,7 +1386,7 @@ ggplot(
   )
 ```
 :::
-:::
+::::
 
 ::: {.column width="50%"}
 ```{r echo=FALSE}
@@ -1415,37 +1411,35 @@ ggplot(
   )
 ```
 :::
-:::
-
-:::
+::::::
+:::::::
 
 ## Some frequently used `geom_*`
 
 ::: r-fit-text
 Box plot
 
-+-------------+----------------------------------------+--------------+
-| `geom_*`    | description                            | Parameters   |
-+=============+========================================+==============+
-| `geom       | Create a boxplot from a continuous     | Required     |
-| _boxplot()` | variable.                              | aesthetic:   |
-|             |                                        | `x`          |
-|             | If both `x` and `y` are given, one     | [**or**]     |
-|             | must be a categorical variable (in     | {.underline} |
-|             | which case a boxplot is created for    | `y`          |
-|             | each category)                         |              |
-+-------------+----------------------------------------+--------------+
++-------------------+-------------------------------------+--------------+
+| `geom_*`          | description                         | Parameters   |
++===================+=====================================+==============+
+| `geom _boxplot()` | Create a boxplot from a continuous  | Required     |
+|                   | variable.                           | aesthetic:   |
+|                   |                                     | `x`          |
+|                   | If both `x` and `y` are given, one  | \[**or**\]   |
+|                   | must be a categorical variable (in  | {.underline} |
+|                   | which case a boxplot is created for | `y`          |
+|                   | each category)                      |              |
++-------------------+-------------------------------------+--------------+
 :::
 
 ## Some frequently used `geom_*`
 
-::: r-fit-text
+::::::: r-fit-text
 **Example:** create a box plot to compare number of cases per day
 between 2 outbreaks
 
-::: columns
-
-::: {.column width="50%"}
+:::::: columns
+:::: {.column width="50%"}
 ::: {.codewindow .r}
 code.R
 
@@ -1469,7 +1463,7 @@ ggplot(
   )
 ```
 :::
-:::
+::::
 
 ::: {.column width="50%"}
 ```{r echo=FALSE}
@@ -1492,9 +1486,8 @@ simulated_covid |>
   )
 ```
 :::
-:::
-
-:::
+::::::
+:::::::
 
 ## Where to find more geom\_\*?
 
@@ -1513,16 +1506,15 @@ Gallery](https://r-graph-gallery.com){preview-link="true"}
 Function `ggsave()` is used for saving plots with the following key
 parameters
 
--   `plot` select plot to save (default to the last generated plot)
+- `plot` select plot to save (default to the last generated plot)
 
--   `filename` name of the saved file
+- `filename` name of the saved file
 
--   `path` path to the directory where the plot is stored
+- `path` path to the directory where the plot is stored
 
--   `width`, `height` plot size in units expressed by the `units`
-    argument
+- `width`, `height` plot size in units expressed by the `units` argument
 
--   `dpi` plot resolution
+- `dpi` plot resolution
 :::
 
 ## Save plot
@@ -1542,38 +1534,38 @@ ggsave(
 
 ## Export: two types of formats
 
--   Vector format (pdf, eps, wmf, emf, svg)
-    -   digital image consisting of independent geometric objects
-        (segments, polygons, curves, etc.)
-    -   can be enlarged without losing resolution
--   Raster format (png, jpeg, tiff, bmp).
-    -   rectangular grid of pixels, possibly with color
-    -   resolution impaired if image is enlarged
+- Vector format (pdf, eps, wmf, emf, svg)
+  - digital image consisting of independent geometric objects (segments,
+    polygons, curves, etc.)
+  - can be enlarged without losing resolution
+- Raster format (png, jpeg, tiff, bmp).
+  - rectangular grid of pixels, possibly with color
+  - resolution impaired if image is enlarged
 
 ## Main components of a graph (R) {.smaller}
 
--   Mapping from data to aesthetic attributes of geometric objects
+- Mapping from data to aesthetic attributes of geometric objects
 
--   Geometic objects: what you see on the plot (points, lines, bars)
+- Geometic objects: what you see on the plot (points, lines, bars)
 
--   Aesthetic attributes: "role" of variables in plot: location (often
-    along x-axis and y-axis), colour, size, shape
+- Aesthetic attributes: "role" of variables in plot: location (often
+  along x-axis and y-axis), colour, size, shape
 
--   Scales: map data values to aesthetic attributes
+- Scales: map data values to aesthetic attributes
 
 ::: fragment
--   [Coordinate system]{style="color:red;"}: cartesian, polar, map
-    projections.
+- [Coordinate system]{style="color:red;"}: cartesian, polar, map
+  projections.
 
-    Networks, trees have no coordinate system
+  Networks, trees have no coordinate system
 :::
 
 ::: fragment
--   Not about:
-    -   [graph type](https://www.data-to-viz.com/) ($\approx$ language,
-        words)
-    -   font size, background colour ... Some of these are specified in
-        a [theme]{style="color:red;"}
+- Not about:
+  - [graph type](https://www.data-to-viz.com/) ($\approx$ language,
+    words)
+  - font size, background colour ... Some of these are specified in a
+    [theme]{style="color:red;"}
 :::
 
 ## Polar coordinate system
@@ -1591,23 +1583,23 @@ Tuyen Huynh
 
 ## Overview
 
--   What does `mapping = aes()` do?
--   Inheritance of data and aesthetics
--   The `annotate()` layer
--   Splitting up with `facet_wrap()`
--   Extending `ggplot2`
--   Interactive plots with `plotly`
+- What does `mapping = aes()` do?
+- Inheritance of data and aesthetics
+- The `annotate()` layer
+- Splitting up with `facet_wrap()`
+- Extending `ggplot2`
+- Interactive plots with `plotly`
 
 ## What does `mapping = aes()` do?
 
 ::: fragment
--   `ggplot()` arguments and default values:
+- `ggplot()` arguments and default values:
 
 ``` r
 ggplot(data = NULL, mapping = aes(), ...)
 ```
 
--   `geom_*()` arguments and default values:
+- `geom_*()` arguments and default values:
 
 ``` r
 geom_bar(mapping = NULL, data = NULL, ...)
@@ -1622,8 +1614,7 @@ geom_point(mapping = NULL, data = NULL, ...)
 
 ## What does `mapping = aes()` do? {.scrollable}
 
-::: r-fit-text 
-
+:::: r-fit-text
 Recall this:
 
 ::: fragment
@@ -1633,17 +1624,15 @@ head(df)
 ```
 :::
 
-+------------+------------+------------+------------+-------------+
-| label      | x          | y          | size       | color       |
-|            |            |            |            |             |
-| (country)  | (coverage) |(inequality)|(population)| (region)    |
-|            |            |            |            |             |
-+============+============+============+============+=============+
-| Nigeria    | 0.20       | -0.07      | 220M       | Sub-Saharan |
-|            |            |            |            | Africa      |
-+------------+------------+------------+------------+-------------+
-
-:::
++------------+------------+--------------+--------------+-------------+
+| label      | x          | y            | size         | color       |
+|            |            |              |              |             |
+| (country)  | (coverage) | (inequality) | (population) | (region)    |
++============+============+==============+==============+=============+
+| Nigeria    | 0.20       | -0.07        | 220M         | Sub-Saharan |
+|            |            |              |              | Africa      |
++------------+------------+--------------+--------------+-------------+
+::::
 
 ## What does `mapping = aes()` do?
 
@@ -1676,23 +1665,23 @@ style="text-decoration: underline;"}!
 
 Simply:
 
--   Read the documentation of the geometry of interest
--   Click **Aesthetics** on the navigation bar on the right (or scroll
-    down)
--   All aesthetics compatible for the geometry are listed
+- Read the documentation of the geometry of interest
+- Click **Aesthetics** on the navigation bar on the right (or scroll
+  down)
+- All aesthetics compatible for the geometry are listed
 
 ## Inheritance of data and aesthetics
 
 ::: fragment
 Recall this:
 
--   `ggplot()` arguments and default values:
+- `ggplot()` arguments and default values:
 
 ``` r
 ggplot(data = NULL, mapping = aes(), ...)
 ```
 
--   `geom_*()` arguments and default values:
+- `geom_*()` arguments and default values:
 
 ``` r
 geom_bar(mapping = NULL, data = NULL, ...)
@@ -1705,9 +1694,9 @@ geom_point(mapping = NULL, data = NULL, ...)
 
 The idea is that:
 
--   `ggplot()` can control the **dataset** and **aesthetics**
--   `geom_*()`s can also control the type of **geometries**, and *allow
-    customisation* of **aesthetics**
+- `ggplot()` can control the **dataset** and **aesthetics**
+- `geom_*()`s can also control the type of **geometries**, and *allow
+  customisation* of **aesthetics**
 
 ## Inheritance of data and aesthetics
 
@@ -1730,8 +1719,8 @@ ggplot() +
 :::
 
 ::: {.fragment .callout-note}
--   We call this **inheritance**
--   Data and aesthetics are inherited **top-down**
+- We call this **inheritance**
+- Data and aesthetics are inherited **top-down**
 :::
 
 ## Inheritance of data and aesthetics {auto-animate="true"}
@@ -1889,41 +1878,39 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 
 ## Inside and outside `aes()` {.scrollable}
 
-::: r-fit-text 
-
+::: r-fit-text
 Back to this slide (again):
 
-+------------+------------+------------+------------+-------------+
-| label      | x          | y          | size       | color       |
-|            |            |            |            |             |
-| (country)  | (coverage) |(inequality)|(population)| (region)    |
-|            |            |            |            |             |
-+============+============+============+============+=============+
-| Nigeria    | 0.20       | -0.07      | 220M       | Sub-Saharan |
-|            |            |            |            | Africa      |
-+------------+------------+------------+------------+-------------+
++------------+------------+--------------+--------------+-------------+
+| label      | x          | y            | size         | color       |
+|            |            |              |              |             |
+| (country)  | (coverage) | (inequality) | (population) | (region)    |
++============+============+==============+==============+=============+
+| Nigeria    | 0.20       | -0.07        | 220M         | Sub-Saharan |
+|            |            |              |              | Africa      |
++------------+------------+--------------+--------------+-------------+
 
 ```{r}
 df <- read_excel("data/nature_plot.xlsx")
 head(df)
 ```
-
 :::
+
 ## Inside and outside `aes()`
 
-::: callout-important
+:::: callout-important
 In short:
 
--   You want the aesthetics to **change** with the data -\> put it
-    **inside** `aes()`\*
--   You want the aesthetics to **be fixed** regardless of data -\> put
-    it **outside** `aes()`\*
--   The aesthetics must be supported by the geometry
+- You want the aesthetics to **change** with the data -\> put it
+  **inside** `aes()`\*
+- You want the aesthetics to **be fixed** regardless of data -\> put it
+  **outside** `aes()`\*
+- The aesthetics must be supported by the geometry
 
 ::: footnote
--   This also means that columns names can only be used inside `aes()`
+- This also means that columns names can only be used inside `aes()`
 :::
-:::
+::::
 
 ## Color transparency
 
@@ -1948,8 +1935,7 @@ tibble(start_x = 1:10, end_x = 2:11, alphas = seq(0.1, 1, 0.1)) |>
 
 ## The `annotate()` layer {.scrollable}
 
-::: r-fit-text
-
+:::: r-fit-text
 What if we want to *annotate* specific parts of a figure?
 
 ::: fragment
@@ -1965,13 +1951,11 @@ ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
   )
 ```
 :::
-
-:::
+::::
 
 ## The `annotate()` layer {.scrollable}
 
-::: r-fit-text
-
+:::: r-fit-text
 Adding a vertical line with `geom_vline()` and a label with
 `geom_label()`
 
@@ -1994,13 +1978,11 @@ ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
   )
 ```
 :::
-
-:::
+::::
 
 ## The `annotate()` layer {.scrollable}
 
-::: r-fit-text
-
+:::: r-fit-text
 Adding a region with `geom_rect()` and a label with `geom_label()`
 
 ::: fragment
@@ -2034,8 +2016,7 @@ ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
   )
 ```
 :::
-
-:::
+::::
 
 ## The `annotate()` layer {.scrollable}
 
@@ -2076,16 +2057,16 @@ have any transparency at all??
 ## The `annotate()` layer {.scrollable}
 
 ::: {.fragment .incremental}
--   I lied
--   Aesthetics are always dependant on the dataset, whether it is
-    outside or inside `aes()`
+- I lied
+- Aesthetics are always dependant on the dataset, whether it is outside
+  or inside `aes()`
 :::
 
 ## The `annotate()` layer {.scrollable}
 
 Example:
 
--   Originally the dataset **when used in `ggplot()`** looks like this:
+- Originally the dataset **when used in `ggplot()`** looks like this:
 
 ``` r
 ggplot(aggregated_cases, ...) + ...
@@ -2096,8 +2077,8 @@ ggplot(aggregated_cases, ...) + ...
 aggregated_cases
 ```
 
--   When you assigned a fixed value to an aesthetic outside of `aes()`,
-    it might look like this:
+- When you assigned a fixed value to an aesthetic outside of `aes()`, it
+  might look like this:
 
 ``` r
 ggplot(aggregated_cases, ...) + geom_...(alpha = 0.2)
@@ -2110,8 +2091,7 @@ aggregated_cases |> mutate(alpha = 0.2)
 
 ## The `annotate()` layer {.scrollable}
 
-::: r-fit-text
-
+:::: r-fit-text
 Using the `annotate()` layer, you can separate the annotations from the
 geometry layer
 
@@ -2148,9 +2128,7 @@ ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
   )
 ```
 :::
-
-:::
-
+::::
 
 ## The `annotate()` layer {.scrollable}
 
@@ -2181,28 +2159,26 @@ annotate("label", label = "Outbreak peak", x = as.Date("2023-06-25"), y = 30, co
 ::: callout-important
 In short:
 
--   You can create plot annotations with `geom_label()`, `geom_rect()`,
-    `geom_abline()`, etc. (look at `ggplot2`
-    [website](https://ggplot2.tidyverse.org/))
--   If it's not working correctly (looks blurry, result not as
-    expected), use `annotate()` instead; very easy to switch from
-    `geom_*()` to `annotate()`
+- You can create plot annotations with `geom_label()`, `geom_rect()`,
+  `geom_abline()`, etc. (look at `ggplot2`
+  [website](https://ggplot2.tidyverse.org/))
+- If it's not working correctly (looks blurry, result not as expected),
+  use `annotate()` instead; very easy to switch from `geom_*()` to
+  `annotate()`
 :::
 
 ## Splitting up with `facet_wrap()`
 
 ::: incremental
--   What if you want to split the plot into different panels for each
-    group?
--   Have a look at your data, find a "grouping" variable to split the
-    data
+- What if you want to split the plot into different panels for each
+  group?
+- Have a look at your data, find a "grouping" variable to split the data
 :::
 
 ## Splitting up with `facet_wrap()` {.scrollable}
 
-::: r-fit-text
-
--   For example: Split our `simulated_covid` by `outbreak`
+:::: r-fit-text
+- For example: Split our `simulated_covid` by `outbreak`
 
 ::: fragment
 ```{r}
@@ -2211,15 +2187,12 @@ ggplot(data = simulated_covid, aes(x = date_onset)) +
   facet_wrap(~outbreak)
 ```
 :::
-
-:::
-
+::::
 
 ## Splitting up with `facet_wrap()` {.scrollable}
 
-::: r-fit-text
-
--   Use `facet_wrap()` and add in the variable (with a `~` in the front)
+:::: r-fit-text
+- Use `facet_wrap()` and add in the variable (with a `~` in the front)
 
 ::: fragment
 ```{r}
@@ -2229,14 +2202,12 @@ ggplot(data = simulated_covid, aes(x = date_onset)) +
   facet_wrap(~outbreak)
 ```
 :::
-
-:::
+::::
 
 ## Splitting up with `facet_wrap()` {.scrollable}
 
-::: r-fit-text
-
--   You can "free" the scales from their original limits
+:::: r-fit-text
+- You can "free" the scales from their original limits
 
 ::: fragment
 ```{r}
@@ -2246,14 +2217,12 @@ ggplot(data = simulated_covid, aes(x = date_onset)) +
   facet_wrap(~outbreak, scales = "free_x")
 ```
 :::
-
-:::
+::::
 
 ## Splitting up with `facet_wrap()` {.scrollable}
 
-::: r-fit-text
-
--   You can "free" the scales from their original limits
+:::: r-fit-text
+- You can "free" the scales from their original limits
 
 ::: fragment
 ```{r}
@@ -2263,37 +2232,35 @@ ggplot(data = simulated_covid, aes(x = date_onset)) +
   facet_wrap(~outbreak, scales = "free_y")
 ```
 :::
-
-:::
+::::
 
 ## Extending `ggplot2`
 
 ::: incremental
--   Add specific functionalities to `ggplot2` with extensions!
--   How to use:
-    -   Think of a specific figure you want to plot
-    -   Try your best to plot it with `ggplot2`
-    -   If you think `ggplot2` cannot do what you want. Have a look
-        [here](https://exts.ggplot2.tidyverse.org/gallery/)
-    -   Read their documentation to see how to use them
+- Add specific functionalities to `ggplot2` with extensions!
+- How to use:
+  - Think of a specific figure you want to plot
+  - Try your best to plot it with `ggplot2`
+  - If you think `ggplot2` cannot do what you want. Have a look
+    [here](https://exts.ggplot2.tidyverse.org/gallery/)
+  - Read their documentation to see how to use them
 :::
 
 ## Extending `ggplot2`
 
 Some commonly used extensions:
 
--   `patchwork`: to patch multiple `ggplot2` plots together
--   `gganimate`: to create moving/animating plots
--   `ggrepel`: to repel labels on a plot away from each other
--   `ggdist`: to work with distributions
+- `patchwork`: to patch multiple `ggplot2` plots together
+- `gganimate`: to create moving/animating plots
+- `ggrepel`: to repel labels on a plot away from each other
+- `ggdist`: to work with distributions
 
 ## Interactive plots with `plotly`
 
 ::: r-fit-text
-
--   If you need to create interactive `ggplot`s, you can use the
-    `plotly` package
--   You just need to save your `ggplot` into an object
+- If you need to create interactive `ggplot`s, you can use the `plotly`
+  package
+- You just need to save your `ggplot` into an object
 
 ```{r}
 p <- ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
@@ -2305,28 +2272,24 @@ p <- ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
     y = "Number of cases"
   )
 ```
-
 :::
 
 ## Interactive plots with `plotly` {.scrollable}
 
 ::: r-fit-text
-
--   Then use it in the `plotly::ggplotly()` function
+- Then use it in the `plotly::ggplotly()` function
 
 ```{r}
 # install.packages("plotly")
 library(plotly)
 ggplotly(p)
 ```
-
 :::
 
 ## Interactive plots with `plotly` {.scrollable}
 
 ::: r-fit-text
-
--   You can also create 3d plots with `plotly`
+- You can also create 3d plots with `plotly`
 
 ```{r}
 plot_ly(
@@ -2336,5 +2299,4 @@ plot_ly(
   z = ~z
 )
 ```
-
 :::
