@@ -152,37 +152,40 @@ The author
 :::
 :::
 
-## What is a grammar {.smaller}
+## What is a grammar?
 
--   Natural language grammar:
-    -   Defines components of a sentence (verb, noun, ...) and rules how
-        to combine them
-    -   Does not advise on the choice between synonymous words or
-        whether a sentence is meaningful; one can write grammatically
-        correct nonsense
--   Graphics grammar:
-    -   Defines components of a statistical graph and rules how to
-        combine them
+:::: {.columns}
+
+::: {.column width="50%" .incremental}
+-   Defines components of a sentence (verb, noun, ...) and rules how
+    to combine them
+-   Such a sentence *does not* necessarily have to make sense
+-   **"The lab is flying menacingly"** (Subject + Conjugate + Verb + Adverb)
+:::
+
+::: {.column width="50%" .fragment style="text-align: center;"}
+![](figures/viz/english_grammar.jpg){height="500" style="display: block; margin: 0 auto;"}
+[E.g. this is one grammar rule of English]{style="font-size: x-large;"}
+:::
+
+::::
+
+## What is a grammar?
+-   **Graphics** grammar:
+    -   Defines components of a figure and rules how to combine them
     -   Does not advise on the best choice of scale (linear,
         logarithmic), color or line type; one can create noninformative
         graphs
 
-::: {.fragment .fade-in .highlight-red}
--   Grammar helps expressing ideas or information in a clear and
-    coherent way
+::: {.fragment .fade-in}
+[Grammar helps expressing ideas or information in a clear and coherent way]{style="color: red;"}
 :::
 
-## Main components of a graph (R)
+## Grammar of a graph
 
--   Mapping from information (data) to [aesthetic
-    attributes]{style="color:red;"} of [geometric
-    objects]{style="color:red;"}
-
--   [Geometic objects]{style="color:red;"}: what you see on the plot
-    (points, lines, bars)
-
--   [Aesthetic attributes]{style="color:red;"}: "role" of variables in
-    plot: location (often along x-axis and y-axis), colour, size, shape
+-   Mapping from information (data) to [aesthetic attributes]{.fragment fragment-index=1 .highlight-red} of [geometric objects]{.fragment fragment-index=1 .highlight-blue}
+-   [Aesthetic attributes]{.fragment fragment-index=1 .highlight-red} are the "role" of variables in plot: location (often along x-axis and y-axis), colour, size, shape
+-   [Geometric objects]{.fragment fragment-index=1 .highlight-blue} are what you see on the plot (points, lines, bars)
 
 ## Scatter plot
 
@@ -272,13 +275,15 @@ Let's draw this by hand
 :::
 :::
 
-# ggplot
+# We draw this by using...
 
-Create Elegant Data Visualisations Using the **Grammar of Graphics**.
+# `ggplot2`
+
+Use the **Grammar of Graphics** to create elegant data visualisations
 
 ::: {.codewindow .r}
 
-code.r  
+code.R
 ```{r}
 #| warning: FALSE
 #| message: FALSE
@@ -291,81 +296,93 @@ library(ggplot2)
 
 ::: columns
 
-::: {.column width="50%"}
+::: {.column width="60%"}
 ::: {.codewindow .r}
-code.r
 
+code.R
 ```{r}
 #| eval: FALSE
-ggplot(df, aes(x = coverage, y = inequality))
+# df <- ...
+ggplot(
+  data = df,
+  mapping = aes(x = coverage, y = inequality)
+)
 ```
+
+:::
+
+::: {.fragment}
+➡ The `x` and `y` aesthetics determine which variable is drawn on each axis. 
 :::
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 ```{r}
 #| echo: FALSE
 #| fig-width: 5
 #| fig-height: 5
 #| out-width: "100%"
-ggplot(df, aes(x = coverage, y = inequality))
+ggplot(data = df, mapping = aes(x = coverage, y = inequality))
 ```
-:::
 
+:::
 :::
 
 ## Draw the data points {.smaller}
-The `x` and `y` aesthetics determine which variable is drawn on each axis. 
 
 ::: columns
 
-::: {.column width="50%"}
+::: {.column width="60%"}
 ::: {.codewindow .r}
-code.r
+code.R
 
 ```{r}
 #| eval: FALSE
 #| code-line-numbers: "2"
-ggplot(df, aes(x = coverage, y = inequality)) +
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_point()
 ```
+
 :::
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 ```{r}
 #| echo: FALSE
 #| fig-width: 5
 #| fig-height: 5
 #| out-width: "100%"
-ggplot(df, aes(x = coverage, y = inequality)) +
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_point()
 ```
-:::
 
+:::
 :::
 
 
 ## Changing the plot orientation {.smaller}
 
-Swapping `x` and `y` aesthetics will change the plot orientation
 
 ::: columns
 
-::: {.column width="50%"}
+::: {.column width="60%"}
 ::: {.codewindow .r}
-code.r
+code.R
 
 ```{r}
 #| eval: FALSE
-#| code-line-numbers: "2"
-ggplot(df, aes(x = inequality, y = coverage)) +
+#| code-line-numbers: "1"
+ggplot(data = df, mapping = aes(x = inequality, y = coverage)) +
   geom_point()
 ```
+
+:::
+::: {.fragment}
+Swapping `x` and `y` aesthetics will change the plot orientation
 :::
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 ```{r}
 #| echo: FALSE
 #| fig-width: 5
@@ -381,20 +398,24 @@ ggplot(df, aes(x = inequality, y = coverage)) +
 ## Adjust dot sizes {.smaller}
 
 ::: columns
-::: {.column width="50%"}
+::: {.column width="60%"}
 ::: {.codewindow .r}
-code.r
+code.R
 
 ```{r}
 #| eval: FALSE
 #| code-line-numbers: "2"
-ggplot(df, aes(x = coverage, y = inequality)) +
-  geom_point(aes(size = pop))
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop))
 ```
+
+:::
+::: {.fragment}
+Observe the 2 `mapping` argument calls, one in `ggplot()` and one in `geom_point()`
 :::
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 ```{r}
 #| echo: FALSE
 #| fig-width: 5
@@ -409,20 +430,20 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 ## Colour-code the regions {.smaller}
 
 ::: columns
-::: {.column width="50%"}
+::: {.column width="60%"}
 ::: {.codewindow .r}
-code.r
+code.R
 
 ```{r}
 #| eval: FALSE
 #| code-line-numbers: "2"
-ggplot(df, aes(x = coverage, y = inequality)) +
-  geom_point(aes(size = pop, color = region))
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region))
 ```
 :::
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 ```{r}
 #| echo: FALSE
 #| fig-width: 5
@@ -437,21 +458,21 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 ## Add key country labels {.smaller}
 
 ::: columns
-::: {.column width="50%"}
+::: {.column width="60%"}
 ::: {.codewindow .r}
-code.r
+code.R
 
 ```{r}
 #| eval: FALSE
 #| code-line-numbers: "3"
-ggplot(df, aes(x = coverage, y = inequality)) +
-  geom_point(aes(size = pop, color = region)) +
-  geom_text(aes(label = country))
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region)) +
+  geom_text(mapping = aes(label = country))
 ```
 :::
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 ```{r}
 #| echo: FALSE
 #| fig-width: 5
@@ -464,14 +485,16 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 :::
 :::
 
-## Add key country labels {.smaller}
+## Compare with the original figure {.smaller}
 
 ::: columns
 ::: {.column width="50%"}
+Original figure
 ![](figures/viz/nature.png)
 :::
 
 ::: {.column width="50%"}
+Ours (so far)
 ```{r}
 #| echo: FALSE
 #| fig-width: 5
@@ -484,41 +507,36 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 :::
 :::
 
-## Main components of a graph (R) {.smaller}
+## Grammar of a graph
 
--   Mapping from data to aesthetic attributes of geometric objects
+-   Mapping from information (data) to [aesthetic attributes]{style="color: red;"} of [geometric objects]{style="color: blue;"}
+-   [Aesthetic attributes]{style="color: red;"} are the "role" of variables in plot: location (often along x-axis and y-axis), colour, size, shape
+-   [Geometric objects]{style="color: blue;"} are what you see on the plot (points, lines, bars)
 
--   Geometic objects: what you see on the plot (points, lines, bars)
+:::{.fragment}
+-   [Scales]{style="color: orange;"} defines the range and values of an [aesthetic]{style="color: red;"}
+:::
 
--   Aesthetic attributes: "role" of variables in plot: location (often
-    along x-axis and y-axis), colour, size, shape
+## Scales
+-   E.g. The limits and breaks of the x-axis and y-axis
+-   It *may* also include statistical transformation(s)
 
--   [Scales]{style="color:red;"}: map data values to aesthetic
-    attributes
+## Scales: statistical transformation
+
+-   **Value transformation** (e.g. linear scale -> logarithm scale)
+
+-   Each **bar in a histogram** can be a "sum" or a "percentage/frequency", depending on the (optional) statistical transformation applied
+
+-   A Least Square **Regression line** can be fitted before plotting, this also counts as a statistical transformation
+
+## Scales: statistical transformation
+
+**Note**: statistical transformation on the scales [do not]{style="color: red;"} change the data, just how we "observe" it
 
 ## Scales
 
 -   Position on x-axis and on y-axis
-
-    May be (summarized) value after statistical transformation
-
-## Statistical transformation
-
--   Value transformation (e.g. logarithm)
-
--   Histogram: statistical transformation "sum" or
-    "percentage/frequency" before geometric object "bar" is used
-
--   Linear regression line: statistical transformation: "least squares
-    fit" before geometric object "line" is used
-
--   Boxplot
-
-## Scales
-
--   Position on x-axis and on y-axis
-
-    May be (summarized) value after statistical transformation
+-   It *may* be a value after statistical transformation
 
 -   ::: columns
     ::: {.column width="50%"}
@@ -546,7 +564,7 @@ Default
 
 ::: {.column width="50%"} 
 ::: {.codewindow .r}
-code.r
+code.R
 
 ```{r default 1}
 #| eval: FALSE
@@ -578,7 +596,7 @@ Built-in color palette
 
 ::: {.column width="50%"}
 ::: {.codewindow .r}
-code.r
+code.R
 
 ```{r builtin 1}
 #| eval: FALSE
@@ -616,7 +634,7 @@ Custom color palette
 ::: columns
 ::: {.column width="50%"}
 ::: {.codewindow .r}
-code.r
+code.R
 
 ```{r custom 1}
 #| eval: FALSE
@@ -666,7 +684,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 ::: columns
 ::: {.column width="50%"}
 ::: {.codewindow .r}
-code.r
+code.R
 
 ```{r}
 #| eval: FALSE
@@ -734,7 +752,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 ::: columns
 ::: {.column width="50%"}
 ::: {.codewindow .r}
-code.r
+code.R
 
 ```{r}
 #| eval: FALSE
@@ -812,7 +830,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 ::: columns
 ::: {.column width="50%"}
 ::: {.codewindow .r}
-code.r
+code.R
 
 ```{r}
 #| eval: FALSE
@@ -925,7 +943,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 ::: columns
 ::: {.column width="50%"}
 ::: {.codewindow .r}
-code.r
+code.R
 
 ```{r}
 #| eval: FALSE
@@ -1133,7 +1151,7 @@ time
 ::: columns
 ::: {.column width="50%"}
 ::: {.codewindow .r}
-code.r
+code.R
 
 ```{r eval=FALSE}
 ggplot(
@@ -1198,7 +1216,7 @@ time
 ::: columns
 ::: {.column width="50%"}
 ::: {.codewindow .r}
-code.r
+code.R
 
 ```{r eval=FALSE}
 library(dplyr)
@@ -1291,7 +1309,7 @@ time
 
 ::: {.column width="50%"}
 ::: {.codewindow .r}
-code.r
+code.R
 
 ```{r eval=FALSE}
 ggplot(
@@ -1343,7 +1361,7 @@ time
 
 ::: {.column width="50%"}
 ::: {.codewindow .r}
-code.r
+code.R
 
 ```{r eval=FALSE}
 ggplot(
@@ -1422,7 +1440,7 @@ between 2 outbreaks
 
 ::: {.column width="50%"}
 ::: {.codewindow .r}
-code.r
+code.R
 
 ```{r eval=FALSE}
 # compute cases per day for each outbreak
