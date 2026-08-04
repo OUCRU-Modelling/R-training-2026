@@ -11,12 +11,12 @@ date: last-modified
 date-format: "MMMM D, YYYY -- HH:mm:ss (z)"
 ---
 
-<!-- ## Course structure {.unnumbered}
-![](site_imgs/R_course_schedule.png)
+# Housekeeping
 
 - The training will be **09:00 – 17:00 (UTC +7)** for everyday
+  - We will finish on Friday morning session
 - There will be a **lunch break between 12:30 – 13:30 (UTC +7)**
-- Lunch will be provided for in-person attendees -->
+- Lunch will be provided for in-person attendees
 
 ## Contributors
 
