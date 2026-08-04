@@ -1114,18 +1114,25 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 ::: {.r-fit-text .scrolling style="height: 450px; padding:10px;overflow-y:scroll"}
 Histogram and bar charts
 
-+---------------------+-----------------------------------+-------------------------------+
-| `geom_*`            | Description                       | Parameters                    |
-+=====================+===================================+===============================+
-| `geom_histogram()`  | Divide continuous `x` into bins   | Required: `x`                 |
-|                     | and count observations.           | `bins` or `binwidth`          |
-+---------------------+-----------------------------------+-------------------------------+
-| `geom_col()`        | Bar chart using provided `x` and  | Required: `x`, `y`            |
-|                     | `y` values.                       |                               |
-+---------------------+-----------------------------------+-------------------------------+
-| `geom_bar()`        | Bar chart with one axis computed  | Required: `x` or `y`          |
-|                     | using `stat`.                     | `stat` (default: `"count"`)   |
-+---------------------+-----------------------------------+-------------------------------+
++--------------------+---------------------------+------------------------+
+| Geometric object   | Description               | Aesthetics             |
++====================+===========================+========================+
+| `geom_line()`      | Connect observations in   | Required: `x`, `y`     |
+|                    | order of the x-axis       |                        |
++--------------------+---------------------------+------------------------+
+| `geom_histogram()` | Divide continuous `x`     | Required: `x`, and     |
+|                    | into bins and count       | `bins` or `binwidth`   |
+|                    | observations.             |                        |
++--------------------+---------------------------+------------------------+
+| `geom_col()`       | Bar chart using provided  | Required: `x`, `y`     |
+|                    | `x` and `y` values.       |                        |
++--------------------+---------------------------+------------------------+
+| `geom_bar()`       | Bar chart with one axis   | Required: `x` or `y`,  |
+|                    | computed using `stat`.    | `stat` (default:       |
+|                    |                           | `"count"`)             |
++--------------------+---------------------------+------------------------+
+
+More at [`ggplot2` package reference](https://ggplot2.tidyverse.org/reference/index.html#geoms)
 :::
 
 ## Some frequently used `geom_*`

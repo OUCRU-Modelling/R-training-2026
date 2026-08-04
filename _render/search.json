@@ -263,7 +263,7 @@
     "href": "slides/viz.html#some-frequently-used-geom_",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Some frequently used geom_*",
-    "text": "Some frequently used geom_*\n\nHistogram and bar charts\n\n\n\n\n\n\n\n\ngeom_*\nDescription\nParameters\n\n\n\n\ngeom_histogram()\nDivide continuous x into bins and count observations.\nRequired: x bins or binwidth\n\n\ngeom_col()\nBar chart using provided x and y values.\nRequired: x, y\n\n\ngeom_bar()\nBar chart with one axis computed using stat.\nRequired: x or y stat (default: \"count\")"
+    "text": "Some frequently used geom_*\n\nHistogram and bar charts\n\n\n\n\n\n\n\n\nGeometric object\nDescription\nAesthetics\n\n\n\n\ngeom_line()\nConnect observations in order of the x-axis\nRequired: x, y\n\n\ngeom_histogram()\nDivide continuous x into bins and count observations.\nRequired: x, and bins or binwidth\n\n\ngeom_col()\nBar chart using provided x and y values.\nRequired: x, y\n\n\ngeom_bar()\nBar chart with one axis computed using stat.\nRequired: x or y, stat (default: \"count\")\n\n\n\nMore at ggplot2 package reference"
   },
   {
     "objectID": "slides/viz.html#some-frequently-used-geom_-1",
