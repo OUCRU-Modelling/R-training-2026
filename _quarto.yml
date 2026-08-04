@@ -17,11 +17,11 @@ website:
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
-    css: styles.css
+    respect-user-color-scheme: true
     toc: true
+    theme:
+      light: [cosmo, theme.scss]
+      dark: [cosmo, theme-dark.scss]
 
 
 
