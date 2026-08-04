@@ -6,10 +6,6 @@ The GitHub repository for the OUCRU R training course in 2026
 
 Materials for the course in their quarto format are stored here
 
-## For learners
-
-The course main webpage is: https://github.com/OUCRU-Modelling/R-training-2026
-
 ## Guideline for instructors
 
 - Make sure you are using `renv` for R package version control
