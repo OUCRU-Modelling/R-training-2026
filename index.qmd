@@ -75,7 +75,7 @@ Please follow [this handout](handouts/precourse_setup.qmd){target="_blank"} befo
 
 ### Day 3 (Wednesday):
 
-<!-- - [Lecture slides](slides/viz.qmd) -->
+- [Lecture slides](slides/viz.qmd)
 - **Learning objectives**:
   1. The grammar of graphics—understanding how plots are built
   2. The step-by-step process of creating graphs in R

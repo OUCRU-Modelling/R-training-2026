@@ -1,9 +1,9 @@
 ---
-title: "Principles of Data Visualisation"
+title: "Principles of data visualisation and plotting in R"
 subtitle: "The step-by-step process of creating graphs in R"
-author: "Ronald Geskus and Thinh Ong Phuc"
+author: "Ronald Geskus, Thinh Ong Phuc, Vuong Lam Nguyen, Anh Phan Truong Quynh, and Tuyen Huynh"
 engine: knitr
-format-links: 
+format-links:
   - html
 toc: false
 number-sections: false
@@ -692,7 +692,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
     labels = c("50 million", "100 million", "150 million", "200 million"),
     range = c(0, 8),
     guide = guide_legend(order = 1)
-  ) 
+  )
 ```
 :::
 :::
@@ -724,7 +724,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   scale_color_manual(
     values = cols,
     guide = guide_legend(order = 2)
-  ) 
+  )
 ```
 :::
 :::
@@ -766,9 +766,9 @@ ggplot(df, aes(x = coverage, y = inequality)) +
     limits = c(-0.4, 0.55)
   ) +
   scale_y_continuous(
-    breaks = c(-0.1, 0, 0.1), 
+    breaks = c(-0.1, 0, 0.1),
     limits = c(-0.16, 0.1)
-  ) 
+  )
 ```
 :::
 :::
@@ -791,8 +791,7 @@ cols <- c(
 ggplot(df, aes(x = coverage, y = inequality)) +
   geom_point(aes(size = pop, color = region)) +
   geom_text(aes(label = country)) +
-  scale_x_continuous(breaks = c(-0.25, 0, 0.25, 0.5),
-                     limits = c(-0.4, 0.55)) +
+  scale_x_continuous(breaks = c(-0.25, 0, 0.25, 0.5), limits = c(-0.4, 0.55)) +
   scale_y_continuous(breaks = c(-0.1, 0, 0.1), limits = c(-0.16, 0.1)) +
   scale_size_continuous(
     breaks = c(50, 100, 150, 200),
@@ -803,7 +802,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   scale_color_manual(
     values = cols,
     guide = guide_legend(order = 2)
-  ) 
+  )
 ```
 :::
 :::
@@ -845,13 +844,15 @@ ggplot(df, aes(x = coverage, y = inequality)) +
     limits = c(-0.4, 0.55)
   ) +
   scale_y_continuous(
-    breaks = c(-0.1, 0, 0.1), 
+    breaks = c(-0.1, 0, 0.1),
     limits = c(-0.16, 0.1)
   ) +
-  labs(x = "Change in MCV1 coverage (2019-2000)",
-       y = "Change in absolute geographical inequality (2019-2000)",
-       size = NULL,
-       color = NULL) +
+  labs(
+    x = "Change in MCV1 coverage (2019-2000)",
+    y = "Change in absolute geographical inequality (2019-2000)",
+    size = NULL,
+    color = NULL
+  ) +
   theme_classic() +
   theme(
     legend.position = "top",
@@ -897,13 +898,15 @@ ggplot(df, aes(x = coverage, y = inequality)) +
     limits = c(-0.4, 0.55)
   ) +
   scale_y_continuous(
-    breaks = c(-0.1, 0, 0.1), 
+    breaks = c(-0.1, 0, 0.1),
     limits = c(-0.16, 0.1)
   ) +
-  labs(x = "Change in MCV1 coverage (2019-2000)",
-       y = "Change in absolute geographical inequality (2019-2000)",
-       size = NULL,
-       color = NULL) +
+  labs(
+    x = "Change in MCV1 coverage (2019-2000)",
+    y = "Change in absolute geographical inequality (2019-2000)",
+    size = NULL,
+    color = NULL
+  ) +
   theme_classic() +
   theme(
     legend.position = "top",
@@ -956,13 +959,15 @@ ggplot(df, aes(x = coverage, y = inequality)) +
     limits = c(-0.4, 0.55)
   ) +
   scale_y_continuous(
-    breaks = c(-0.1, 0, 0.1), 
+    breaks = c(-0.1, 0, 0.1),
     limits = c(-0.16, 0.1)
   ) +
-  labs(x = "Change in MCV1 coverage (2019-2000)",
-       y = "Change in absolute geographical inequality (2019-2000)",
-       size = NULL,
-       color = NULL) +
+  labs(
+    x = "Change in MCV1 coverage (2019-2000)",
+    y = "Change in absolute geographical inequality (2019-2000)",
+    size = NULL,
+    color = NULL
+  ) +
   theme_classic() +
   theme(
     legend.position = "top",
@@ -995,8 +1000,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   geom_text(aes(label = country), hjust = -0.2, vjust = 0.2) +
   geom_vline(xintercept = 0, color = "#999999") +
   geom_hline(yintercept = 0, color = "#999999") +
-  scale_x_continuous(breaks = c(-0.25, 0, 0.25, 0.5),
-                     limits = c(-0.4, 0.55)) +
+  scale_x_continuous(breaks = c(-0.25, 0, 0.25, 0.5), limits = c(-0.4, 0.55)) +
   scale_y_continuous(breaks = c(-0.1, 0, 0.1), limits = c(-0.16, 0.1)) +
   scale_size_continuous(
     breaks = c(50, 100, 150, 200),
@@ -1008,10 +1012,12 @@ ggplot(df, aes(x = coverage, y = inequality)) +
     values = cols,
     guide = guide_legend(order = 2)
   ) +
-  labs(x = "Change in MCV1 coverage (2019-2000)",
-       y = "Change in absolute geographical inequality (2019-2000)",
-       size = NULL,
-       color = NULL) +
+  labs(
+    x = "Change in MCV1 coverage (2019-2000)",
+    y = "Change in absolute geographical inequality (2019-2000)",
+    size = NULL,
+    color = NULL
+  ) +
   theme_classic() +
   theme(
     legend.position = "top",
@@ -1055,8 +1061,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   geom_text(aes(label = country), hjust = -0.2, vjust = 0.2) +
   geom_vline(xintercept = 0, color = "#999999") +
   geom_hline(yintercept = 0, color = "#999999") +
-  scale_x_continuous(breaks = c(-0.25, 0, 0.25, 0.5),
-                     limits = c(-0.4, 0.55)) +
+  scale_x_continuous(breaks = c(-0.25, 0, 0.25, 0.5), limits = c(-0.4, 0.55)) +
   scale_y_continuous(breaks = c(-0.1, 0, 0.1), limits = c(-0.16, 0.1)) +
   scale_size_continuous(
     breaks = c(50, 100, 150, 200),
@@ -1068,10 +1073,12 @@ ggplot(df, aes(x = coverage, y = inequality)) +
     values = cols,
     guide = guide_legend(order = 2)
   ) +
-  labs(x = "Change in MCV1 coverage (2019-2000)",
-       y = "Change in absolute geographical inequality (2019-2000)",
-       size = NULL,
-       color = NULL) +
+  labs(
+    x = "Change in MCV1 coverage (2019-2000)",
+    y = "Change in absolute geographical inequality (2019-2000)",
+    size = NULL,
+    color = NULL
+  ) +
   theme_classic() +
   theme(
     legend.position = "top",
@@ -1111,7 +1118,7 @@ Histogram and bar charts
 dataset
 
 ```{r}
-simulated_covid <- readRDS("data/simulated_covid.rds") 
+simulated_covid <- readRDS("data/simulated_covid.rds")
 
 head(simulated_covid)
 ```
@@ -1130,12 +1137,12 @@ code.r
 
 ```{r eval=FALSE}
 ggplot(
-    data = simulated_covid, 
-    aes(x = date_onset)
-  ) +                   
+  data = simulated_covid,
+  aes(x = date_onset)
+) +
   geom_bar(
-    color = "cornflowerblue"    
-  )+                       
+    color = "cornflowerblue"
+  ) +
   labs(
     title = "New covid cases over time",
     x = "Date",
@@ -1151,12 +1158,12 @@ ggplot(
 #| fig-height: 5
 #| out-width: "100%"
 ggplot(
-    data = simulated_covid, 
-    aes(x = date_onset)
-  ) +                   
+  data = simulated_covid,
+  aes(x = date_onset)
+) +
   geom_bar(
-    color = "cornflowerblue"    
-  )+                       
+    color = "cornflowerblue"
+  ) +
   labs(
     title = "New covid cases over time",
     x = "Date",
@@ -1195,21 +1202,21 @@ code.r
 
 ```{r eval=FALSE}
 library(dplyr)
-# we need to compute y 
+# we need to compute y
 # (case_count before plotting)
-aggregated_cases <- simulated_covid |> 
-  group_by(date_onset) |> 
+aggregated_cases <- simulated_covid |>
+  group_by(date_onset) |>
   summarize(
     case_count = n()
   )
 
 ggplot(
-    aggregated_cases,
-    aes(x = date_onset, y = case_count)
-  ) +                   
+  aggregated_cases,
+  aes(x = date_onset, y = case_count)
+) +
   geom_point(
-    color = "cornflowerblue"    
-  )+                       
+    color = "cornflowerblue"
+  ) +
   labs(
     title = "New covid cases over time",
     x = "Date",
@@ -1226,19 +1233,19 @@ ggplot(
 #| out-width: "100%"
 library(dplyr)
 # we need to compute y (case_count before plotting)
-aggregated_cases <- simulated_covid |> 
-  group_by(date_onset) |> 
+aggregated_cases <- simulated_covid |>
+  group_by(date_onset) |>
   summarize(
     case_count = n()
   )
 
 ggplot(
-    aggregated_cases,
-    aes(x = date_onset, y = case_count)
-  ) +                   
+  aggregated_cases,
+  aes(x = date_onset, y = case_count)
+) +
   geom_point(
-    color = "cornflowerblue"    
-  )+                       
+    color = "cornflowerblue"
+  ) +
   labs(
     title = "New covid cases over time",
     x = "Date",
@@ -1288,13 +1295,12 @@ code.r
 
 ```{r eval=FALSE}
 ggplot(
-    aggregated_cases,
-    aes(x = date_onset, 
-        y = case_count)
-  ) +                   
+  aggregated_cases,
+  aes(x = date_onset, y = case_count)
+) +
   geom_line(
-    color = "cornflowerblue"    
-  )+                       
+    color = "cornflowerblue"
+  ) +
   labs(
     title = "New covid cases over time",
     x = "Date",
@@ -1310,12 +1316,12 @@ ggplot(
 #| fig-height: 5
 #| out-width: "100%"
 ggplot(
-    aggregated_cases,
-    aes(x = date_onset, y = case_count)
-  ) +                   
+  aggregated_cases,
+  aes(x = date_onset, y = case_count)
+) +
   geom_line(
-    color = "cornflowerblue"    
-  )+                       
+    color = "cornflowerblue"
+  ) +
   labs(
     title = "New covid cases over time",
     x = "Date",
@@ -1341,17 +1347,17 @@ code.r
 
 ```{r eval=FALSE}
 ggplot(
-    aggregated_cases,
-    aes(x = date_onset, y = case_count)
-  ) +                   
+  aggregated_cases,
+  aes(x = date_onset, y = case_count)
+) +
   geom_point(
-    color = "grey"    
-  )+  
+    color = "grey"
+  ) +
   geom_smooth(
-      color = "cornflowerblue",
-      # choose gam model to fit the data
-      method = "gam" 
-    )+
+    color = "cornflowerblue",
+    # choose gam model to fit the data
+    method = "gam"
+  ) +
   labs(
     title = "New covid cases over time",
     x = "Date",
@@ -1367,16 +1373,16 @@ ggplot(
 #| fig-height: 5
 #| out-width: "100%"
 ggplot(
-    aggregated_cases,
-    aes(x = date_onset, y = case_count)
-  ) +                   
+  aggregated_cases,
+  aes(x = date_onset, y = case_count)
+) +
   geom_point(
-    color = "grey"    
-  )+  
+    color = "grey"
+  ) +
   geom_smooth(
-      color = "cornflowerblue",
-      method = "gam" # choose gam model to fit the data
-    )+
+    color = "cornflowerblue",
+    method = "gam" # choose gam model to fit the data
+  ) +
   labs(
     title = "New covid cases over time",
     x = "Date",
@@ -1420,17 +1426,17 @@ code.r
 
 ```{r eval=FALSE}
 # compute cases per day for each outbreak
-cases_per_outbreak <- simulated_covid |> 
-  group_by(date_onset, outbreak) |> 
+cases_per_outbreak <- simulated_covid |>
+  group_by(date_onset, outbreak) |>
   summarize(
     case_count = n()
-  ) 
+  )
 
 ggplot(
-    cases_per_outbreak,
-    aes(x = case_count, y = outbreak)
-  ) +                   
-  geom_boxplot()+
+  cases_per_outbreak,
+  aes(x = case_count, y = outbreak)
+) +
+  geom_boxplot() +
   labs(
     title = "Compare distribution of daily cases between 2 outbreaks",
     y = "Outbreak",
@@ -1445,20 +1451,20 @@ ggplot(
 #| fig-width: 5
 #| fig-height: 5
 #| out-width: "100%"
-simulated_covid |> 
-  group_by(date_onset, outbreak) |> 
+simulated_covid |>
+  group_by(date_onset, outbreak) |>
   summarize(
     case_count = n()
-  ) |> 
+  ) |>
   ggplot(
-      aes(x = case_count, y = outbreak)
-    ) +                   
-    geom_boxplot()+
-    labs(
-      title = "Compare distribution of daily cases between 2 outbreaks",
-      y = "Outbreak",
-      x = "Number of daily cases"
-    )
+    aes(x = case_count, y = outbreak)
+  ) +
+  geom_boxplot() +
+  labs(
+    title = "Compare distribution of daily cases between 2 outbreaks",
+    y = "Outbreak",
+    x = "Number of daily cases"
+  )
 ```
 :::
 :::
@@ -1502,7 +1508,8 @@ parameters
 ggsave(
   path = "plots", # save plot under plots directory
   filename = "new_plot.png",
-  width = 800, height = 600, # adjust plot size in pixel
+  width = 800,
+  height = 600, # adjust plot size in pixel
   units = "px",
   dpi = 200 # set resolution
 )
@@ -1773,8 +1780,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   geom_text(aes(label = country), hjust = -0.2, vjust = 0.2) +
   geom_vline(xintercept = 0, color = "#999999") +
   geom_hline(yintercept = 0, color = "#999999") +
-  scale_x_continuous(breaks = c(-0.25, 0, 0.25, 0.5),
-                     limits = c(-0.4, 0.55)) +
+  scale_x_continuous(breaks = c(-0.25, 0, 0.25, 0.5), limits = c(-0.4, 0.55)) +
   scale_y_continuous(breaks = c(-0.1, 0, 0.1), limits = c(-0.16, 0.1)) +
   scale_size_continuous(
     breaks = c(50, 100, 150, 200),
@@ -1786,10 +1792,12 @@ ggplot(df, aes(x = coverage, y = inequality)) +
     values = cols,
     guide = guide_legend(order = 2)
   ) +
-  labs(x = "Change in MCV1 coverage (2019-2000)",
-       y = "Change in absolute geographical inequality (2019-2000)",
-       size = NULL,
-       color = NULL) +
+  labs(
+    x = "Change in MCV1 coverage (2019-2000)",
+    y = "Change in absolute geographical inequality (2019-2000)",
+    size = NULL,
+    color = NULL
+  ) +
   theme_classic() +
   theme(
     legend.position = "top",
@@ -1826,8 +1834,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   geom_text(aes(label = country), hjust = -0.2, vjust = 0.2) +
   geom_vline(xintercept = 0, color = "#999999") +
   geom_hline(yintercept = 0, color = "#999999") +
-  scale_x_continuous(breaks = c(-0.25, 0, 0.25, 0.5),
-                     limits = c(-0.4, 0.55)) +
+  scale_x_continuous(breaks = c(-0.25, 0, 0.25, 0.5), limits = c(-0.4, 0.55)) +
   scale_y_continuous(breaks = c(-0.1, 0, 0.1), limits = c(-0.16, 0.1)) +
   scale_size_continuous(
     breaks = c(50, 100, 150, 200),
@@ -1839,10 +1846,12 @@ ggplot(df, aes(x = coverage, y = inequality)) +
     values = cols,
     guide = guide_legend(order = 2)
   ) +
-  labs(x = "Change in MCV1 coverage (2019-2000)",
-       y = "Change in absolute geographical inequality (2019-2000)",
-       size = NULL,
-       color = NULL) +
+  labs(
+    x = "Change in MCV1 coverage (2019-2000)",
+    y = "Change in absolute geographical inequality (2019-2000)",
+    size = NULL,
+    color = NULL
+  ) +
   theme_classic() +
   theme(
     legend.position = "top",
@@ -1898,12 +1907,17 @@ aesthetics (available for most geometries)
 
 ```{r}
 #| echo: false
-tibble(start_x = 1:10, end_x = 2:11, alphas = seq(0.1, 1, 0.1)) |> 
+tibble(start_x = 1:10, end_x = 2:11, alphas = seq(0.1, 1, 0.1)) |>
   ggplot() +
   geom_label(aes(label = as.character(alphas), x = (start_x + 0.5), y = 5)) +
-  geom_rect(aes(xmin = start_x, xmax = end_x, alpha = alphas), ymin = 0, ymax = 10, fill = "blue") +
-  scale_x_continuous("", labels = NULL) + 
-  scale_y_continuous("", labels = NULL) + 
+  geom_rect(
+    aes(xmin = start_x, xmax = end_x, alpha = alphas),
+    ymin = 0,
+    ymax = 10,
+    fill = "blue"
+  ) +
+  scale_x_continuous("", labels = NULL) +
+  scale_y_continuous("", labels = NULL) +
   scale_alpha_continuous(breaks = seq(0.1, 1, 0.1))
 ```
 
@@ -1916,7 +1930,7 @@ What if we want to *annotate* specific parts of a figure?
 ::: fragment
 ```{r}
 #| out-width: "100%"
-ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +                   
+ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
   geom_point(color = "grey") +
   geom_smooth(color = "cornflowerblue", method = "gam") +
   labs(
@@ -1971,11 +1985,19 @@ Adding a region with `geom_rect()` and a label with `geom_label()`
 ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
   # figure annotation geoms (1)
   geom_rect(
-    ymin = -Inf, ymax = Inf,
-    xmin = as.Date("2023-04-01"), xmax = as.Date("2023-06-01"), 
-    alpha = 0.2, fill = "red"
+    ymin = -Inf,
+    ymax = Inf,
+    xmin = as.Date("2023-04-01"),
+    xmax = as.Date("2023-06-01"),
+    alpha = 0.2,
+    fill = "red"
   ) +
-  geom_label(label = "Outbreak peak", x = as.Date("2023-06-25"), y = 30, color = "red") +
+  geom_label(
+    label = "Outbreak peak",
+    x = as.Date("2023-06-25"),
+    y = 30,
+    color = "red"
+  ) +
   # main plotting geoms
   geom_point(color = "grey") +
   geom_smooth(color = "cornflowerblue", method = "gam") +
@@ -1999,11 +2021,19 @@ ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
 ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
   # figure annotation geoms (1)
   geom_rect(
-    ymin = -Inf, ymax = Inf,
-    xmin = as.Date("2023-04-01"), xmax = as.Date("2023-06-01"), 
-    alpha = 0.2, fill = "red"
+    ymin = -Inf,
+    ymax = Inf,
+    xmin = as.Date("2023-04-01"),
+    xmax = as.Date("2023-06-01"),
+    alpha = 0.2,
+    fill = "red"
   ) +
-  geom_label(label = "Outbreak peak", x = as.Date("2023-06-25"), y = 30, color = "red") +
+  geom_label(
+    label = "Outbreak peak",
+    x = as.Date("2023-06-25"),
+    y = 30,
+    color = "red"
+  ) +
   # main plotting geoms
   geom_point(color = "grey") +
   geom_smooth(color = "cornflowerblue", method = "gam") +
@@ -2066,12 +2096,22 @@ geometry layer
 #| code-line-numbers: 3-8
 ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
   # figure annotation geoms (1)
-  annotate("rect",
-    ymin = -Inf, ymax = Inf,
-    xmin = as.Date("2023-04-01"), xmax = as.Date("2023-06-01"), 
-    alpha = 0.2, fill = "red"
+  annotate(
+    "rect",
+    ymin = -Inf,
+    ymax = Inf,
+    xmin = as.Date("2023-04-01"),
+    xmax = as.Date("2023-06-01"),
+    alpha = 0.2,
+    fill = "red"
   ) +
-  annotate("label", label = "Outbreak peak", x = as.Date("2023-06-25"), y = 30, color = "red") +
+  annotate(
+    "label",
+    label = "Outbreak peak",
+    x = as.Date("2023-06-25"),
+    y = 30,
+    color = "red"
+  ) +
   # main plotting geoms
   geom_point(color = "grey") +
   geom_smooth(color = "cornflowerblue", method = "gam") +
@@ -2141,8 +2181,8 @@ In short:
 
 ::: fragment
 ```{r}
-ggplot(data = simulated_covid, aes(x = date_onset)) +                   
-  geom_bar(fill = "cornflowerblue") + 
+ggplot(data = simulated_covid, aes(x = date_onset)) +
+  geom_bar(fill = "cornflowerblue") +
   facet_wrap(~outbreak)
 ```
 :::
@@ -2159,8 +2199,8 @@ ggplot(data = simulated_covid, aes(x = date_onset)) +
 ::: fragment
 ```{r}
 #| code-line-number: 3
-ggplot(data = simulated_covid, aes(x = date_onset)) +                   
-  geom_bar(fill = "cornflowerblue") + 
+ggplot(data = simulated_covid, aes(x = date_onset)) +
+  geom_bar(fill = "cornflowerblue") +
   facet_wrap(~outbreak)
 ```
 :::
@@ -2176,8 +2216,8 @@ ggplot(data = simulated_covid, aes(x = date_onset)) +
 ::: fragment
 ```{r}
 #| code-line-number: 3
-ggplot(data = simulated_covid, aes(x = date_onset)) +                   
-  geom_bar(fill = "cornflowerblue") + 
+ggplot(data = simulated_covid, aes(x = date_onset)) +
+  geom_bar(fill = "cornflowerblue") +
   facet_wrap(~outbreak, scales = "free_x")
 ```
 :::
@@ -2193,8 +2233,8 @@ ggplot(data = simulated_covid, aes(x = date_onset)) +
 ::: fragment
 ```{r}
 #| code-line-number: 3
-ggplot(data = simulated_covid, aes(x = date_onset)) +                   
-  geom_bar(fill = "cornflowerblue") + 
+ggplot(data = simulated_covid, aes(x = date_onset)) +
+  geom_bar(fill = "cornflowerblue") +
   facet_wrap(~outbreak, scales = "free_y")
 ```
 :::
@@ -2266,7 +2306,7 @@ ggplotly(p)
 ```{r}
 plot_ly(
   data = tibble(x = rnorm(10), y = rnorm(10), z = rnorm(10)),
-  x = ~x, 
+  x = ~x,
   y = ~y,
   z = ~z
 )
