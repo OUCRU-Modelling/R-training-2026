@@ -26,6 +26,7 @@ date-format: "MMMM D, YYYY -- HH:mm:ss (z)"
 - Dr. Tran Thai Hung, Biostatistics group, OUCRU HCM
 - Ms. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM
 - Dr. Duc Du Hong, Biostatistics group, OUCRU HCM
+- Dr. Thuan Hoang Van, Biostatistics group, OUCRU HCM
 - Mr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM
 
 
