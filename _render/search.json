@@ -396,7 +396,7 @@
     "href": "slides/viz.html#overview",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Overview",
-    "text": "Overview\n\nWhat does mapping = aes() do?\nInheritance of data and aesthetics\nThe annotate() layer\nSplitting up with facet_wrap()\nExtending ggplot2\nInteractive plots with plotly"
+    "text": "Overview\n\nWhat does mapping = aes() do?\nInheritance of data and aesthetics\nThe annotate() layer\nFigure panes using facet_wrap()\nExtending ggplot2\nInteractive plots with plotly"
   },
   {
     "objectID": "slides/viz.html#what-does-mapping-aes-do",

@@ -803,15 +803,6 @@ ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
 #| fig-width: 5
 #| fig-height: 5
 #| out-width: "100%"
-my_pallete <- c(
-  "Central Europe, Eastern Europe and Central Asia" = "#fa8495",
-  "Latin America and Caribbean" = "#4ca258",
-  "North Africa and Middle East" = "#6493bb",
-  "South Asia" = "#d7c968",
-  "Southeast Asia, East Asia and Oceania" = "#7dd8f3",
-  "Sub-Saharan Africa" = "#bc5c91"
-)
-
 ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_point(mapping = aes(size = pop, color = region)) +
   geom_text(mapping = aes(label = country)) +
@@ -873,15 +864,6 @@ ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
 #| fig-width: 5
 #| fig-height: 5
 #| out-width: "100%"
-my_pallete <- c(
-  "Central Europe, Eastern Europe and Central Asia" = "#fa8495",
-  "Latin America and Caribbean" = "#4ca258",
-  "North Africa and Middle East" = "#6493bb",
-  "South Asia" = "#d7c968",
-  "Southeast Asia, East Asia and Oceania" = "#7dd8f3",
-  "Sub-Saharan Africa" = "#bc5c91"
-)
-
 ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_point(mapping = aes(size = pop, color = region)) +
   geom_text(mapping = aes(label = country)) +
@@ -966,15 +948,6 @@ ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
 #| fig-width: 5
 #| fig-height: 5
 #| out-width: "100%"
-my_pallete <- c(
-  "Central Europe, Eastern Europe and Central Asia" = "#fa8495",
-  "Latin America and Caribbean" = "#4ca258",
-  "North Africa and Middle East" = "#6493bb",
-  "South Asia" = "#d7c968",
-  "Southeast Asia, East Asia and Oceania" = "#7dd8f3",
-  "Sub-Saharan Africa" = "#bc5c91"
-)
-
 ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_point(mapping = aes(size = pop, color = region)) +
   geom_text(mapping = aes(label = country)) +
@@ -1076,15 +1049,6 @@ ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
 #| fig-width: 5
 #| fig-height: 5
 #| out-width: "100%"
-my_pallete <- c(
-  "Central Europe, Eastern Europe and Central Asia" = "#fa8495",
-  "Latin America and Caribbean" = "#4ca258",
-  "North Africa and Middle East" = "#6493bb",
-  "South Asia" = "#d7c968",
-  "Southeast Asia, East Asia and Oceania" = "#7dd8f3",
-  "Sub-Saharan Africa" = "#bc5c91"
-)
-
 ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_point(mapping = aes(size = pop, color = region), alpha = 0.8) +
   geom_text(mapping = aes(label = country), hjust = -0.2, vjust = 0.2) +
@@ -1137,15 +1101,6 @@ ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
 #| fig-width: 5.6
 #| fig-height: 6.7
 #| out-width: "100%"
-my_pallete <- c(
-  "Central Europe, Eastern Europe and Central Asia" = "#fa8495",
-  "Latin America and Caribbean" = "#4ca258",
-  "North Africa and Middle East" = "#6493bb",
-  "South Asia" = "#d7c968",
-  "Southeast Asia, East Asia and Oceania" = "#7dd8f3",
-  "Sub-Saharan Africa" = "#bc5c91"
-)
-
 ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_point(mapping = aes(size = pop, color = region), alpha = 0.8) +
   geom_text(mapping = aes(label = country), hjust = -0.2, vjust = 0.2) +
@@ -1830,15 +1785,6 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 ```{r}
 #| eval: true
 #| echo: false
-my_pallete <- c(
-  "Central Europe, Eastern Europe and Central Asia" = "#fa8495",
-  "Latin America and Caribbean" = "#4ca258",
-  "North Africa and Middle East" = "#6493bb",
-  "South Asia" = "#d7c968",
-  "Southeast Asia, East Asia and Oceania" = "#7dd8f3",
-  "Sub-Saharan Africa" = "#bc5c91"
-)
-
 ggplot(df, aes(x = coverage, y = inequality)) +
   geom_point(aes(size = pop, color = region), alpha = 0.8) +
   geom_text(aes(label = country), hjust = -0.2, vjust = 0.2) +
@@ -1884,15 +1830,6 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 
 ```{r}
 #| echo: false
-my_pallete <- c(
-  "Central Europe, Eastern Europe and Central Asia" = "#fa8495",
-  "Latin America and Caribbean" = "#4ca258",
-  "North Africa and Middle East" = "#6493bb",
-  "South Asia" = "#d7c968",
-  "Southeast Asia, East Asia and Oceania" = "#7dd8f3",
-  "Sub-Saharan Africa" = "#bc5c91"
-)
-
 ggplot(df, aes(x = coverage, y = inequality)) +
   geom_point(aes(size = pop, color = region, alpha = 0.8)) +
   geom_text(aes(label = country), hjust = -0.2, vjust = 0.2) +
