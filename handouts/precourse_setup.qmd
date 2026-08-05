@@ -39,3 +39,44 @@ Here we explain how to install R and RStudio on your own computer. This is **req
     - You can use the default installation options
 4. Open Rstudio Desktop, to check that everything has been installed correctly
     - E.g. via the **Start** menu in Windows
+
+# `renv` setup
+
+> The [`renv`](https://rstudio.github.io/renv/) package helps you create reproducible environments for your R projects. Use `renv` to make your R projects more **isolated**, portable and **reproducible**.
+
+For better error reproducilibity, environment consistency, and ease of debugging, we will setup an `renv` environment for the course. Follow these steps:
+
+1. In your normal R console, install `renv` with 
+
+```r
+install.packages("renv")
+```
+
+2. Initialise `renv` in the project environment with 
+
+```r
+renv::init()
+```
+
+::: {.callout-note collapse="true"}
+
+Make sure you're in the correct working directory!
+
+You can check from the R console with `getwd()` and set the correct working directory with `setwd(...)`
+
+:::
+
+3. Restart your R session
+
+
+::: {.callout-tip collapse="true"}
+
+This can be done using Ctrl+Shift+F10 on Windows and Cmd+Shift+F10 on MacOS
+
+:::
+
+4. Check your R console upon restart. It should say that `renv` is loaded and activated!
+
+
+
+(This will be quickly walked through again on the first session of the course)
