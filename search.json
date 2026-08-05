@@ -88,7 +88,7 @@
     "href": "slides/viz.html#grammar-of-a-graph",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Grammar of a graph",
-    "text": "Grammar of a graph\n\nMapping from information (data) to aesthetic attributes of geometric objects\nAesthetic attributes are the “role” of variables in plot: location (often along x-axis and y-axis), colour, size, shape\nGeometric objects are what you see on the plot (points, lines, bars)"
+    "text": "Grammar of a graph\n\nA graph maps information (data) to aesthetic attributes of geometric objects\nAesthetic attributes are the “role” of variables in plot: location (often along x-axis and y-axis), colour, size, shape\nGeometric objects are the shapes of the data you’re visualising, e.g. points, lines, bars"
   },
   {
     "objectID": "slides/viz.html#scatter-plot",
@@ -102,28 +102,28 @@
     "href": "slides/viz.html#scatter-plot-1",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Scatter plot",
-    "text": "Scatter plot\n\n\n\n\nWhat information would you need to map each dot correctly onto this plot?\n\nCountry name\nPosition\nSize\nColor"
+    "text": "Scatter plot\n\n\n\n\nWhat information would you need to map each point correctly onto this plot?\n\nCountry name\nPosition\nSize\nColor"
   },
   {
     "objectID": "slides/viz.html#data",
     "href": "slides/viz.html#data",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Data",
-    "text": "Data\n\n\n\n\n\n\n\n\n\n\nlabel\n(country)\nx\n(coverage)\ny\n(i nequality)\nsize\n(p opulation)\ncolor\n(region)\n\n\n\n\nNigeria\n0.20\n-0.07\n220M\nSub-Saharan Africa\n\n\n\nData found here: nature_plot.xlsx\n\n\n# A tibble: 6 × 5\n  country          coverage inequality   pop region                             \n  &lt;chr&gt;               &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;                              \n1 Angola              -0.14      0.1    30.2 Sub-Saharan Africa                 \n2 Papua New Guinea    -0.35      0.08   16.5 Southeast Asia, East Asia and Ocea…\n3 Pakistan             0.12      0.05   82.5 South Asia                         \n4 Chad                 0.14      0.01   27.5 Sub-Saharan Africa                 \n5 Ethiopia             0.32      0.005  55   Sub-Saharan Africa                 \n6 Kenya                0.07     -0.06   30.2 Sub-Saharan Africa"
+    "text": "Data\n\n\n\n\n\n\n\n\n\n\nlabel\n(country)\nx\n(coverage)\ny\n(inequality)\nsize\n(population)\ncolor\n(region)\n\n\n\n\nNigeria\n0.20\n-0.07\n220M\nSub-Saharan Africa\n\n\n\nData can be downloaded here: nature_plot.xlsx\n\n\n# A tibble: 6 × 5\n  country          coverage inequality   pop region                             \n  &lt;chr&gt;               &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;                              \n1 Angola              -0.14      0.1    30.2 Sub-Saharan Africa                 \n2 Papua New Guinea    -0.35      0.08   16.5 Southeast Asia, East Asia and Ocea…\n3 Pakistan             0.12      0.05   82.5 South Asia                         \n4 Chad                 0.14      0.01   27.5 Sub-Saharan Africa                 \n5 Ethiopia             0.32      0.005  55   Sub-Saharan Africa                 \n6 Kenya                0.07     -0.06   30.2 Sub-Saharan Africa"
   },
   {
     "objectID": "slides/viz.html#scatter-plot-2",
     "href": "slides/viz.html#scatter-plot-2",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Scatter plot",
-    "text": "Scatter plot\n\n\n\n\nLet’s draw this by hand"
+    "text": "Scatter plot\n\n\n\n\nLet’s draw this “by hand”"
   },
   {
     "objectID": "slides/viz.html#draw-this-by-hand",
     "href": "slides/viz.html#draw-this-by-hand",
     "title": "Principles of data visualisation and plotting in R",
-    "section": "Draw this by hand",
-    "text": "Draw this by hand\n\n\n\n\n\nDraw the axes\nDraw the data points\nAdjust dot sizes\nColour-code the regions\nAdd key country labels"
+    "section": "Draw this “by hand”",
+    "text": "Draw this “by hand”\n\n\n\n\n\nDraw the axes\nDraw the data points\nAdjust point sizes\nColour-code the regions\nAdd key country labels"
   },
   {
     "objectID": "slides/viz.html#draw-the-axes",
@@ -147,11 +147,11 @@
     "text": "Changing the plot orientation\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = inequality, y = coverage)) +\n  geom_point()\n\n\n\nSwapping x and y aesthetics will change the plot orientation"
   },
   {
-    "objectID": "slides/viz.html#adjust-dot-sizes",
-    "href": "slides/viz.html#adjust-dot-sizes",
+    "objectID": "slides/viz.html#adjust-point-sizes",
+    "href": "slides/viz.html#adjust-point-sizes",
     "title": "Principles of data visualisation and plotting in R",
-    "section": "Adjust dot sizes",
-    "text": "Adjust dot sizes\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop))\n\n\n\nObserve the 2 mapping argument calls, one in ggplot() and one in geom_point()"
+    "section": "Adjust point sizes",
+    "text": "Adjust point sizes\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop))\n\n\n\nObserve the 2 mapping argument calls, one in ggplot() and one in geom_point()"
   },
   {
     "objectID": "slides/viz.html#colour-code-the-regions",
@@ -179,14 +179,21 @@
     "href": "slides/viz.html#grammar-of-a-graph-1",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Grammar of a graph",
-    "text": "Grammar of a graph\n\nMapping from information (data) to aesthetic attributes of geometric objects\nAesthetic attributes are the “role” of variables in plot: location (often along x-axis and y-axis), colour, size, shape\nGeometric objects are what you see on the plot (points, lines, bars)\n\n\n\nScales defines the range and values of an aesthetic"
+    "text": "Grammar of a graph\n\nMapping from information (data) to aesthetic attributes of geometric objects\nAesthetic attributes are the “role” of variables in plot: location (often along x-axis and y-axis), colour, size, shape\nGeometric objects are what you see on the plot (points, lines, bars)\n\n\n\nScales defines how the information (data) is mapped to aesthetic attributes work\nGuides defines how scales are represented"
   },
   {
-    "objectID": "slides/viz.html#scales",
-    "href": "slides/viz.html#scales",
+    "objectID": "slides/viz.html#scales-and-guides",
+    "href": "slides/viz.html#scales-and-guides",
     "title": "Principles of data visualisation and plotting in R",
-    "section": "Scales",
-    "text": "Scales\n\nE.g. The limits and breaks of the x-axis and y-axis\nIt may also include statistical transformation(s)"
+    "section": "Scales and guides",
+    "text": "Scales and guides\n\nScales controls the limits and ticks of the x-axis and y-axis\nGuides can roughly be understood as similar to figure legends, it’s where we read data values from the graph\n\n\nWhich components are controlled by scales? And which are controlled by guides?"
+  },
+  {
+    "objectID": "slides/viz.html#scales-and-guides-1",
+    "href": "slides/viz.html#scales-and-guides-1",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Scales and guides",
+    "text": "Scales and guides\n\nScales can also include statistical transformation(s)!"
   },
   {
     "objectID": "slides/viz.html#scales-statistical-transformation",
@@ -200,63 +207,70 @@
     "href": "slides/viz.html#scales-statistical-transformation-1",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Scales: statistical transformation",
-    "text": "Scales: statistical transformation\nNote: statistical transformation on the scales do not change the data, just how we “observe” it"
+    "text": "Scales: statistical transformation\n\n\n\n\n\n\nImportant\n\n\nStatistical transformation(s) on the scales do not change the data, just the scale we use to observe it\n\n\n\n\n\nLinear scale on the x-axis\n\n\n\n\n\n\n\n\n\n\nLog-10-scale on the x-axis"
   },
   {
-    "objectID": "slides/viz.html#scales-1",
-    "href": "slides/viz.html#scales-1",
+    "objectID": "slides/viz.html#scales",
+    "href": "slides/viz.html#scales",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Scales",
-    "text": "Scales\n\nPosition on x-axis and on y-axis\nIt may be a value after statistical transformation\n\n\nRest: via colour,\nshape (type of point),\nlinetype,\npoint size\n\n\n\nReading values from the graph via guides: tick marks and labels, legend"
+    "text": "Scales\n\nScales controls the limits and ticks of the x-axis and y-axis\nGuides can roughly be understood as similar to figure legends\nScales can also include statistical transformation(s)\n\n\n\n\n\nSome other types of scales: colour, point shape, line type, point size"
   },
   {
-    "objectID": "slides/viz.html#refine-the-plot-scale-color",
-    "href": "slides/viz.html#refine-the-plot-scale-color",
+    "objectID": "slides/viz.html#refine-the-plot-the-colour-scale",
+    "href": "slides/viz.html#refine-the-plot-the-colour-scale",
     "title": "Principles of data visualisation and plotting in R",
-    "section": "Refine the plot: scale color",
-    "text": "Refine the plot: scale color\nDefault\n\n\n\ncode.R\n\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region)) +\n  geom_text(aes(label = country))"
+    "section": "Refine the plot: the colour scale",
+    "text": "Refine the plot: the colour scale\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country))"
   },
   {
-    "objectID": "slides/viz.html#refine-the-plot-scale-color-1",
-    "href": "slides/viz.html#refine-the-plot-scale-color-1",
+    "objectID": "slides/viz.html#refine-the-plot-the-colour-scale-1",
+    "href": "slides/viz.html#refine-the-plot-the-colour-scale-1",
     "title": "Principles of data visualisation and plotting in R",
-    "section": "Refine the plot: scale color",
-    "text": "Refine the plot: scale color\nBuilt-in color palette\n\n\n\ncode.R\n\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region)) +\n  geom_text(aes(label = country)) +\n  scale_color_discrete(\n    palette = scales::pal_viridis()\n  )"
+    "section": "Refine the plot: the colour scale",
+    "text": "Refine the plot: the colour scale\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_discrete(\n    palette = scales::pal_viridis()\n  )\n\n\nUse the built-in Viridis color palette"
   },
   {
-    "objectID": "slides/viz.html#refine-the-plot-scale-color-2",
-    "href": "slides/viz.html#refine-the-plot-scale-color-2",
+    "objectID": "slides/viz.html#refine-the-plot-the-colour-scale-2",
+    "href": "slides/viz.html#refine-the-plot-the-colour-scale-2",
     "title": "Principles of data visualisation and plotting in R",
-    "section": "Refine the plot: scale color",
-    "text": "Refine the plot: scale color\nCustom color palette\n\n\n\ncode.R\n\ncols &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region)) +\n  geom_text(aes(label = country)) +\n  scale_color_manual(values = cols)"
+    "section": "Refine the plot: the colour scale",
+    "text": "Refine the plot: the colour scale\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_viridis_d()\n\n\n\n\n\n\n\n\nTip\n\n\nYou can also use scale_color_viridis_d(), which is a shorthand for the scale layer we used on the previous slide\nBreakdown:\n\nscale means we are adding a scale layer\n_color means this scale is for the color aesthetic (checking your aes()!)\n_viridis defines the color palette\n_d() stands for “discrete”, so this scale is for a discrete variable"
   },
   {
-    "objectID": "slides/viz.html#refine-the-plot-scale-size",
-    "href": "slides/viz.html#refine-the-plot-scale-size",
+    "objectID": "slides/viz.html#refine-the-plot-the-colour-scale-3",
+    "href": "slides/viz.html#refine-the-plot-the-colour-scale-3",
     "title": "Principles of data visualisation and plotting in R",
-    "section": "Refine the plot: scale size",
-    "text": "Refine the plot: scale size\n\n\n\ncode.R\n\ncols &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region)) +\n  geom_text(aes(label = country)) +\n  scale_color_manual(\n    values = cols,\n    guide = guide_legend(order = 2)\n  ) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  )"
+    "section": "Refine the plot: the colour scale",
+    "text": "Refine the plot: the colour scale\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_manual(values = my_pallete)\n\n\nYou can define and use your own custom color palette!"
   },
   {
-    "objectID": "slides/viz.html#refine-the-plot-scale-axes",
-    "href": "slides/viz.html#refine-the-plot-scale-axes",
+    "objectID": "slides/viz.html#refine-the-plot-the-point-size-scale",
+    "href": "slides/viz.html#refine-the-plot-the-point-size-scale",
     "title": "Principles of data visualisation and plotting in R",
-    "section": "Refine the plot: scale axes",
-    "text": "Refine the plot: scale axes\n\n\n\ncode.R\n\ncols &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region)) +\n  geom_text(aes(label = country)) +\n  scale_color_manual(\n    values = cols,\n    guide = guide_legend(order = 2)\n  ) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_x_continuous(\n    breaks = c(-0.25, 0, 0.25, 0.5),\n    limits = c(-0.4, 0.55)\n  ) +\n  scale_y_continuous(\n    breaks = c(-0.1, 0, 0.1),\n    limits = c(-0.16, 0.1)\n  )"
+    "section": "Refine the plot: the point-size scale",
+    "text": "Refine the plot: the point-size scale\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_manual(values = my_pallete, guide = guide_legend(order = 2)) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  )"
   },
   {
-    "objectID": "slides/viz.html#refine-the-plot-theme-and-labels",
-    "href": "slides/viz.html#refine-the-plot-theme-and-labels",
+    "objectID": "slides/viz.html#refine-the-plot-the-axes",
+    "href": "slides/viz.html#refine-the-plot-the-axes",
     "title": "Principles of data visualisation and plotting in R",
-    "section": "Refine the plot: theme and labels",
-    "text": "Refine the plot: theme and labels\n\n\n\ncode.R\n\ncols &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region)) +\n  geom_text(aes(label = country)) +\n  scale_color_manual(\n    values = cols,\n    guide = guide_legend(order = 2)\n  ) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_x_continuous(\n    breaks = c(-0.25, 0, 0.25, 0.5),\n    limits = c(-0.4, 0.55)\n  ) +\n  scale_y_continuous(\n    breaks = c(-0.1, 0, 0.1),\n    limits = c(-0.16, 0.1)\n  ) +\n  labs(\n    x = \"Change in MCV1 coverage (2019-2000)\",\n    y = \"Change in absolute geographical inequality (2019-2000)\",\n    size = NULL,\n    color = NULL\n  ) +\n  theme_classic() +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\"),\n    axis.text = element_text(size = 11)\n  )"
+    "section": "Refine the plot: the axes",
+    "text": "Refine the plot: the axes\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_manual(values = my_pallete, guide = guide_legend(order = 2)) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_x_continuous(\n    breaks = c(-0.25, 0, 0.25, 0.5),\n    limits = c(-0.4, 0.55)\n  ) +\n  scale_y_continuous(\n    breaks = c(-0.1, 0, 0.1),\n    limits = c(-0.16, 0.1)\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#refine-the-plot-labels-and-theme",
+    "href": "slides/viz.html#refine-the-plot-labels-and-theme",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Refine the plot: labels and theme",
+    "text": "Refine the plot: labels and theme\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_manual(\n    name = \"\",\n    values = my_pallete,\n    guide = guide_legend(order = 2)\n  ) +\n  scale_size_continuous(\n    name = \"\",\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_x_continuous(\n    name = \"Change in MCV1 coverage (2019-2000)\",\n    breaks = c(-0.25, 0, 0.25, 0.5),\n    limits = c(-0.4, 0.55)\n  ) +\n  scale_y_continuous(\n    name = \"Change in absolute geographical inequality (2019-2000)\",\n    breaks = c(-0.1, 0, 0.1),\n    limits = c(-0.16, 0.1)\n  ) +\n  theme_classic() +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\"),\n    axis.text = element_text(size = 11)\n  )"
   },
   {
     "objectID": "slides/viz.html#refine-the-plot-minor-tweaks",
     "href": "slides/viz.html#refine-the-plot-minor-tweaks",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Refine the plot: minor tweaks",
-    "text": "Refine the plot: minor tweaks\n\n\n\ncode.R\n\ncols &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region), alpha = 0.8) +\n  geom_text(aes(label = country), hjust = -0.2, vjust = 0.2) +\n  geom_vline(xintercept = 0, color = \"#999999\") +\n  geom_hline(yintercept = 0, color = \"#999999\") +\n  scale_color_manual(\n    values = cols,\n    guide = guide_legend(order = 2)\n  ) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_x_continuous(\n    breaks = c(-0.25, 0, 0.25, 0.5),\n    limits = c(-0.4, 0.55)\n  ) +\n  scale_y_continuous(\n    breaks = c(-0.1, 0, 0.1),\n    limits = c(-0.16, 0.1)\n  ) +\n  labs(\n    x = \"Change in MCV1 coverage (2019-2000)\",\n    y = \"Change in absolute geographical inequality (2019-2000)\",\n    size = NULL,\n    color = NULL\n  ) +\n  theme_classic() +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\"),\n    axis.text = element_text(size = 11)\n  )"
+    "text": "Refine the plot: minor tweaks\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region), alpha = 0.8) +\n  geom_text(mapping = aes(label = country), hjust = -0.2, vjust = 0.2) +\n  geom_vline(xintercept = 0, color = \"#999999\") +\n  geom_hline(yintercept = 0, color = \"#999999\") +\n  scale_color_manual(\n    name = \"\",\n    values = my_pallete,\n    guide = guide_legend(order = 2)\n  ) +\n  scale_size_continuous(\n    name = \"\",\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_x_continuous(\n    name = \"Change in MCV1 coverage (2019-2000)\",\n    breaks = c(-0.25, 0, 0.25, 0.5),\n    limits = c(-0.4, 0.55)\n  ) +\n  scale_y_continuous(\n    name = \"Change in absolute geographical inequality (2019-2000)\",\n    breaks = c(-0.1, 0, 0.1),\n    limits = c(-0.16, 0.1)\n  ) +\n  theme_classic() +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\"),\n    axis.text = element_text(size = 11)\n  )"
   },
   {
     "objectID": "slides/viz.html#refine-the-plot",
@@ -270,7 +284,7 @@
     "href": "slides/viz.html#some-frequently-used-geom_",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Some frequently used geom_*",
-    "text": "Some frequently used geom_*\n\nHistogram and bar charts\n\n\n\n\n\n\n\n\nGeometric object\nDescription\nAesthetics\n\n\n\n\ngeom_line()\nConnect observations in order of the x-axis\nRequired: x, y\n\n\ngeom_histogram()\nDivide continuous x into bins and count observations.\nRequired: x, and bins or binwidth\n\n\ngeom_col()\nBar chart using provided x and y values.\nRequired: x, y\n\n\ngeom_bar()\nBar chart with one axis computed using stat.\nRequired: x or y, stat (default: \"count\")\n\n\n\nMore at ggplot2 package reference"
+    "text": "Some frequently used geom_*\nHistogram and bar charts\n\n\n\n\n\n\n\n\n\nGeometric object\nDescription\nAesthetics\n\n\n\n\ngeom_histogram()\nDivide continuous x into bins and count observations.\nRequired: x, and bins or binwidth\n\n\ngeom_col()\nBar chart using provided x and y values.\nRequired: x, y\n\n\ngeom_bar()\nBar chart with one axis computed using stat.\nRequired: x or y, stat (default: \"count\")"
   },
   {
     "objectID": "slides/viz.html#some-frequently-used-geom_-1",
@@ -284,70 +298,70 @@
     "href": "slides/viz.html#some-frequently-used-geom_-2",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Some frequently used geom_*",
-    "text": "Some frequently used geom_*\n\nExample: creating a bar chart for number of covid incidence over time\n\n\n\ncode.R\n\nggplot(\n  data = simulated_covid,\n  aes(x = date_onset)\n) +\n  geom_bar(\n    color = \"cornflowerblue\"\n  ) +\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
+    "text": "Some frequently used geom_*\n\nExample: creating a bar chart for number of covid incidence over time\n\n\n\ncode.R\n\nggplot(\n  data = simulated_covid,\n  aes(x = date_onset)\n) +\n  geom_bar(\n    color = \"cornflowerblue\"\n  ) +\n  scale_x_date(\"Date\") +\n  scale_y_continuous(\"Number of cases\") +\n  ggtitle(\"New covid cases over time\")"
   },
   {
     "objectID": "slides/viz.html#some-frequently-used-geom_-3",
     "href": "slides/viz.html#some-frequently-used-geom_-3",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Some frequently used geom_*",
-    "text": "Some frequently used geom_*\n\nScatter plot\n\n\n\n\n\n\n\n\ngeom_*\ndescription\nParameters\n\n\n\n\ngeom_point()\nCreate a scatter plot from given x and y\nRequired aesthetic: x and y"
+    "text": "Some frequently used geom_*\nScatter plot\n\n\n\n\n\n\n\n\n\ngeom_*\ndescription\nParameters\n\n\n\n\ngeom_point()\nCreate a scatter plot from given x and y\nRequired aesthetic: x and y"
   },
   {
     "objectID": "slides/viz.html#some-frequently-used-geom_-4",
     "href": "slides/viz.html#some-frequently-used-geom_-4",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Some frequently used geom_*",
-    "text": "Some frequently used geom_*\n\nExample: creating a scatter plot for number of covid incidence over time\n\n\n\ncode.R\n\nlibrary(dplyr)\n# we need to compute y\n# (case_count before plotting)\naggregated_cases &lt;- simulated_covid |&gt;\n  group_by(date_onset) |&gt;\n  summarize(\n    case_count = n()\n  )\n\nggplot(\n  aggregated_cases,\n  aes(x = date_onset, y = case_count)\n) +\n  geom_point(\n    color = \"cornflowerblue\"\n  ) +\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
+    "text": "Some frequently used geom_*\n\nExample: creating a scatter plot for number of covid incidence over time\n\n\n\ncode.R\n\nlibrary(dplyr)\n# we need to compute y\n# (case_count before plotting)\naggregated_cases &lt;- simulated_covid |&gt;\n  group_by(date_onset) |&gt;\n  summarise(\n    case_count = n()\n  )\n\nggplot(\n  aggregated_cases,\n  aes(x = date_onset, y = case_count)\n) +\n  geom_point(\n    color = \"cornflowerblue\"\n  ) +\n  scale_x_date(\"Date\") +\n  scale_y_continuous(\"Number of cases\") +\n  ggtitle(\"New covid cases over time\")"
   },
   {
     "objectID": "slides/viz.html#some-frequently-used-geom_-5",
     "href": "slides/viz.html#some-frequently-used-geom_-5",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Some frequently used geom_*",
-    "text": "Some frequently used geom_*\n\nLine chart\n\n\n\n\n\n\n\n\ngeom_*\ndescription\nParameters\n\n\n\n\ngeom_line()\nCreate a line plot from given x and y\nRequired aesthetic: x and y\n\n\ngeom_smooth()\nCreate a regression line plot from x and y\nRequired aesthetic: x and y\n\nmethod: select regression model (\"auto\", \" lm\", \"glm\", \"gam\", \"loess\")\nformula: adjust the formula for the regression model"
+    "text": "Some frequently used geom_*\nLine chart\n\n\n\n\n\n\n\n\n\ngeom_*\ndescription\nParameters\n\n\n\n\ngeom_line()\nCreate a line plot from given x and y\nRequired aesthetic: x and y\n\n\ngeom_smooth()\nCreate a regression line plot from x and y\nRequired aesthetic: x and y\n\nmethod: select regression model (\"auto\", \" lm\", \"glm\", \"gam\", \"loess\")\nformula: adjust the formula for the regression model"
   },
   {
     "objectID": "slides/viz.html#some-frequently-used-geom_-6",
     "href": "slides/viz.html#some-frequently-used-geom_-6",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Some frequently used geom_*",
-    "text": "Some frequently used geom_*\n\nExample: creating a line chart for number of covid incidence over time\n\n\n\ncode.R\n\nggplot(\n  aggregated_cases,\n  aes(x = date_onset, y = case_count)\n) +\n  geom_line(\n    color = \"cornflowerblue\"\n  ) +\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
+    "text": "Some frequently used geom_*\n\nExample: creating a line chart for number of covid incidence over time\n\n\n\ncode.R\n\nggplot(\n  aggregated_cases,\n  aes(x = date_onset, y = case_count)\n) +\n  geom_line(\n    color = \"cornflowerblue\"\n  ) +\n  scale_x_date(\"Date\") +\n  scale_y_continuous(\"Number of cases\") +\n  ggtitle(\"New covid cases over time\")"
   },
   {
     "objectID": "slides/viz.html#some-frequently-used-geom_-7",
     "href": "slides/viz.html#some-frequently-used-geom_-7",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Some frequently used geom_*",
-    "text": "Some frequently used geom_*\n\nExample: add a regression line for number of covid incidence over time\n\n\n\ncode.R\n\nggplot(\n  aggregated_cases,\n  aes(x = date_onset, y = case_count)\n) +\n  geom_point(\n    color = \"grey\"\n  ) +\n  geom_smooth(\n    color = \"cornflowerblue\",\n    # choose gam model to fit the data\n    method = \"gam\"\n  ) +\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
+    "text": "Some frequently used geom_*\n\nExample: add a regression line for number of covid incidence over time\n\n\n\ncode.R\n\nggplot(\n  aggregated_cases,\n  aes(x = date_onset, y = case_count)\n) +\n  geom_point(\n    color = \"grey\"\n  ) +\n  geom_smooth(\n    color = \"cornflowerblue\",\n    # choose gam model to fit the data\n    method = \"gam\"\n  ) +\n  scale_x_date(\"Date\") +\n  scale_y_continuous(\"Number of cases\") +\n  ggtitle(\"New covid cases over time\")"
   },
   {
     "objectID": "slides/viz.html#some-frequently-used-geom_-8",
     "href": "slides/viz.html#some-frequently-used-geom_-8",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Some frequently used geom_*",
-    "text": "Some frequently used geom_*\n\nBox plot\n\n\n\n\n\n\n\n\ngeom_*\ndescription\nParameters\n\n\n\n\ngeom _boxplot()\nCreate a boxplot from a continuous variable.\nIf both x and y are given, one must be a categorical variable (in which case a boxplot is created for each category)\nRequired aesthetic: x [or] {.underline} y"
+    "text": "Some frequently used geom_*\n\nBox plot\n\n\n\n\n\n\n\n\ngeom_*\ndescription\nParameters\n\n\n\n\ngeom _boxplot()\nCreate a boxplot from a continuous variable.\nIf both x and y are given, one must be a categorical variable (in which case a boxplot is created for each category)\nRequired aesthetic: x or y"
   },
   {
     "objectID": "slides/viz.html#some-frequently-used-geom_-9",
     "href": "slides/viz.html#some-frequently-used-geom_-9",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Some frequently used geom_*",
-    "text": "Some frequently used geom_*\n\nExample: create a box plot to compare number of cases per day between 2 outbreaks\n\n\n\ncode.R\n\n# compute cases per day for each outbreak\ncases_per_outbreak &lt;- simulated_covid |&gt;\n  group_by(date_onset, outbreak) |&gt;\n  summarize(\n    case_count = n()\n  )\n\nggplot(\n  cases_per_outbreak,\n  aes(x = case_count, y = outbreak)\n) +\n  geom_boxplot() +\n  labs(\n    title = \"Compare distribution of daily cases between 2 outbreaks\",\n    y = \"Outbreak\",\n    x = \"Number of daily cases\"\n  )"
+    "text": "Some frequently used geom_*\n\nExample: create a box plot to compare number of cases per day between 2 outbreaks\n\n\n\ncode.R\n\n# compute cases per day for each outbreak\ncases_per_outbreak &lt;- simulated_covid |&gt;\n  group_by(date_onset, outbreak) |&gt;\n  summarise(\n    case_count = n()\n  )\n\nggplot(\n  cases_per_outbreak,\n  aes(x = case_count, y = outbreak)\n) +\n  geom_boxplot() +\n  scale_x_continuous(\"Number of daily cases\") +\n  scale_y_discrete(\"Outbreak\") +\n  ggtitle(\"Compare distribution of daily cases between 2 outbreaks\")"
   },
   {
     "objectID": "slides/viz.html#where-to-find-more-geom_",
     "href": "slides/viz.html#where-to-find-more-geom_",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Where to find more geom_*?",
-    "text": "Where to find more geom_*?\n\nFor a complete list of geom_*, refer to ggplot2 documentation\nAlternatively, you can also look for the example code for your desired chart type at R Graph Gallery"
+    "text": "Where to find more geom_*?\nFor a complete list of geom_*, refer to ggplot2 official documentation\nAlternatively, you can also look for the example code for your desired chart type at R Graph Gallery"
   },
   {
     "objectID": "slides/viz.html#save-plot",
     "href": "slides/viz.html#save-plot",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Save plot",
-    "text": "Save plot\n\nFunction ggsave() is used for saving plots with the following key parameters\n\nplot select plot to save (default to the last generated plot)\nfilename name of the saved file\npath path to the directory where the plot is stored\nwidth, height plot size in units expressed by the units argument\ndpi plot resolution"
+    "text": "Save plot\nFunction ggsave() is used for saving plots with the following key parameters\n\nplot select plot to save (default to the last generated plot)\nfilename name of the saved file\npath path to the directory where the plot is stored\nwidth, height plot size in units expressed by the units argument\ndpi plot resolution"
   },
   {
     "objectID": "slides/viz.html#save-plot-1",
@@ -361,7 +375,7 @@
     "href": "slides/viz.html#export-two-types-of-formats",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Export: two types of formats",
-    "text": "Export: two types of formats\n\nVector format (pdf, eps, wmf, emf, svg)\n\ndigital image consisting of independent geometric objects (segments, polygons, curves, etc.)\ncan be enlarged without losing resolution\n\nRaster format (png, jpeg, tiff, bmp).\n\nrectangular grid of pixels, possibly with color\nresolution impaired if image is enlarged"
+    "text": "Export: two types of formats\n\nVector format (e.g. .pdf, .svg, .eps)\n\nConsists of independent geometric objects (segments, polygons, curves, etc.)\nCan be enlarged without losing resolution\n\nRaster format (e.g. .png, .jpeg/.jpg, .tiff).\n\nRectangular grid of pixels, possibly with color\nWill be very blurry if image is enlarged while resolution is low"
   },
   {
     "objectID": "slides/viz.html#main-components-of-a-graph-r",
@@ -438,7 +452,7 @@
     "href": "slides/viz.html#inheritance-of-data-and-aesthetics-3",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Inheritance of data and aesthetics",
-    "text": "Inheritance of data and aesthetics\nYou have seen this in action before!\ncols &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region, alpha = 0.8)) +\n  geom_text(aes(label = country), hjust = -0.2, vjust = 0.2) +\n  geom_vline(xintercept = 0, color = \"#999999\") +\n  geom_hline(yintercept = 0, color = \"#999999\") +\n  scale_x_continuous(breaks = c(-0.25, 0, 0.25, 0.5),\n                     limits = c(-0.4, 0.55)) +\n  scale_y_continuous(breaks = c(-0.1, 0, 0.1), limits = c(-0.16, 0.1)) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_color_manual(\n    values = cols,\n    guide = guide_legend(order = 2)\n  ) +\n  labs(x = \"Change in MCV1 coverage (2019-2000)\",\n       y = \"Change in absolute geographical inequality (2019-2000)\",\n       size = NULL,\n       color = NULL) +\n  theme_classic() +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\"),\n    axis.text = element_text(size = 11)\n  )"
+    "text": "Inheritance of data and aesthetics\nYou have seen this in action before!\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region, alpha = 0.8)) +\n  geom_text(aes(label = country), hjust = -0.2, vjust = 0.2) +\n  geom_vline(xintercept = 0, color = \"#999999\") +\n  geom_hline(yintercept = 0, color = \"#999999\") +\n  scale_x_continuous(breaks = c(-0.25, 0, 0.25, 0.5),\n                     limits = c(-0.4, 0.55)) +\n  scale_y_continuous(breaks = c(-0.1, 0, 0.1), limits = c(-0.16, 0.1)) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_color_manual(\n    values = my_pallete,\n    guide = guide_legend(order = 2)\n  ) +\n  labs(x = \"Change in MCV1 coverage (2019-2000)\",\n       y = \"Change in absolute geographical inequality (2019-2000)\",\n       size = NULL,\n       color = NULL) +\n  theme_classic() +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\"),\n    axis.text = element_text(size = 11)\n  )"
   },
   {
     "objectID": "slides/viz.html#inheritance-of-data-and-aesthetics-4",
@@ -634,14 +648,14 @@
     "href": "index.html",
     "title": "OUCRU R training course - 2026",
     "section": "",
-    "text": "The training will be 09:00 – 17:00 (UTC +7) for everyday\n\nWe will finish on Friday morning session\n\nThere will be a lunch break between 12:30 – 13:30 (UTC +7)\nLunch will be provided for in-person attendees\n\n\n\n\nProf. Ronald Geskus, Biostatistics group, OUCRU HCM\nDr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM\nMr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM\nDr. Tran Thai Hung, Biostatistics group, OUCRU HCM\nMs. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM\nDr. Duc Du Hong, Biostatistics group, OUCRU HCM\nMr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM\n\n\n\n\nPlease follow this precourse handout to setup R and RStudio."
+    "text": "The training will be 09:00 – 17:00 (UTC +7) for everyday\n\nWe will finish on Friday morning session\n\nThere will be a lunch break between 12:30 – 13:30 (UTC +7)\nLunch will be provided for in-person attendees\n\n\n\n\nProf. Ronald Geskus, Biostatistics group, OUCRU HCM\nDr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM\nMr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM\nDr. Tran Thai Hung, Biostatistics group, OUCRU HCM\nMs. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM\nDr. Duc Du Hong, Biostatistics group, OUCRU HCM\nDr. Thuan Hoang Van, Biostatistics group, OUCRU HCM\nMr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM\n\n\n\n\nPlease follow this precourse handout to setup R and RStudio."
   },
   {
     "objectID": "index.html#contributors",
     "href": "index.html#contributors",
     "title": "OUCRU R training course - 2026",
     "section": "",
-    "text": "Prof. Ronald Geskus, Biostatistics group, OUCRU HCM\nDr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM\nMr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM\nDr. Tran Thai Hung, Biostatistics group, OUCRU HCM\nMs. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM\nDr. Duc Du Hong, Biostatistics group, OUCRU HCM\nMr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM"
+    "text": "Prof. Ronald Geskus, Biostatistics group, OUCRU HCM\nDr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM\nMr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM\nDr. Tran Thai Hung, Biostatistics group, OUCRU HCM\nMs. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM\nDr. Duc Du Hong, Biostatistics group, OUCRU HCM\nDr. Thuan Hoang Van, Biostatistics group, OUCRU HCM\nMr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM"
   },
   {
     "objectID": "index.html#pre-course-setups-and-requirements",
