@@ -92,6 +92,49 @@ $box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     }
 }
 
+// -- Dark-mode Pandoc syntax highlighting for ALL regular code blocks --
+// .reveal div.sourceCode gets the dark #1e293b bg from above,
+// but Pandoc's inline <style> block uses light-theme token colors.
+// This overrides them to dark-mode colors.
+
+.reveal div.sourceCode code span {
+    color: #e2e8f0;
+}
+.reveal div.sourceCode code span.kw,
+.reveal div.sourceCode code span.cf,
+.reveal div.sourceCode code span.im { color: #c792ea; }
+.reveal div.sourceCode code span.st,
+.reveal div.sourceCode code span.ch,
+.reveal div.sourceCode code span.vs,
+.reveal div.sourceCode code span.ss { color: #c3e88d; }
+.reveal div.sourceCode code span.dv,
+.reveal div.sourceCode code span.bn,
+.reveal div.sourceCode code span.fl,
+.reveal div.sourceCode code span.cn,
+.reveal div.sourceCode code span.sc { color: #f78c6c; }
+.reveal div.sourceCode code span.an,
+.reveal div.sourceCode code span.co,
+.reveal div.sourceCode code span.do {
+    color: #7f8ea3;
+    font-style: italic;
+}
+.reveal div.sourceCode code span.fu,
+.reveal div.sourceCode code span.bu { color: #82aaff; }
+.reveal div.sourceCode code span.dt,
+.reveal div.sourceCode code span.at,
+.reveal div.sourceCode code span.va {
+    color: #ffcb6b;
+}
+.reveal div.sourceCode code span.op,
+.reveal div.sourceCode code span.ot,
+.reveal div.sourceCode code span.pp { color: #89ddff; }
+.reveal div.sourceCode code span.al,
+.reveal div.sourceCode code span.er,
+.reveal div.sourceCode code span.wa {
+    color: #ff5370;
+    font-weight: bold;
+}
+
 // -- R console output: dark text on slide background --
 // Structure: .cell > .cell-output cell-output-stdout > pre > code
 // RevealJS .reveal pre sets dark bg; .reveal pre code sets light fg.

@@ -226,15 +226,14 @@ plot?
 
 ## Data {.smaller}
 
-+------------+------------+-------------+-------------+-------------+
-| label      | x          | y           | size        | color       |
-|            |            |             |             |             |
-| (country)  | (coverage) | (inequality)| (population)| (region)    |
-|            |            |             |             |             |
-+============+============+=============+=============+=============+
-| Nigeria    | 0.20       | -0.07       | 220M        | Sub-Saharan |
-|            |            |             |             | Africa      |
-+------------+------------+-------------+-------------+-------------+
++------------+------------+--------------+--------------+-------------+
+| label      | x          | y            | size         | color       |
+|            |            |              |              |             |
+| (country)  | (coverage) | (inequality) | (population) | (region)    |
++============+============+==============+==============+=============+
+| Nigeria    | 0.20       | -0.07        | 220M         | Sub-Saharan |
+|            |            |              |              | Africa      |
++------------+------------+--------------+--------------+-------------+
 
 Data can be downloaded here:
 [nature_plot.xlsx](https://github.com/OUCRU-Modelling/R-training-2025/raw/refs/heads/main/slides/data/nature_plot.xlsx)
@@ -509,13 +508,28 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   (points, lines, bars)
 
 ::: fragment
-- [Scales]{style="color: orange;"} defines *how* the information (data) is mapped to [aesthetic attributes]{style="color: red;"} work
+- [Scales]{style="color: orange;"} defines *how* the information (data)
+  is mapped to [aesthetic attributes]{style="color: red;"} work
+- [Guides]{style="color: green;"} defines how
+  [scales]{style="color: orange;"} are represented
 :::
 
-## Scales
+## Scales and guides {.scrollable}
 
-- E.g. The limits and breaks of the x-axis and y-axis
-- It *may* also include statistical transformation(s)
+- **Scales** controls the limits and ticks of the x-axis and y-axis
+- **Guides** can roughly be understood as similar to **figure legends**,
+  it's where we read data values from the graph
+
+::: fragment
+Which components are controlled by **scales**? And which are controlled
+by **guides**?
+
+![](figures/viz/scale-guides.png)
+:::
+
+## Scales and guides
+
+- Scales *can* also include statistical transformation(s)!
 
 ## Scales: statistical transformation
 
@@ -528,99 +542,124 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 - A Least Square **Regression line** can be fitted before plotting, this
   also counts as a statistical transformation
 
-## Scales: statistical transformation
+## Scales: statistical transformation {.scrollable}
 
-**Note**: statistical transformation on the scales [do
-not]{style="color: red;"} change the data, just how we "observe" it
+::: callout-important
+Statistical transformation(s) on the scales [do
+not]{style="color: red;"} change the data, just the scale we use to
+observe it
+:::
+
+::::: {.columns .fragment}
+::: {.column width="50%"}
+Linear scale on the x-axis
+
+```{r}
+#| echo: FALSE
+#| fig-width: 5
+#| fig-height: 5
+#| out-width: "100%"
+ggplot(mtcars) +
+  geom_point(aes(x = hp, y = wt, color = as.factor(cyl))) +
+  scale_color_discrete("Cylinders")
+```
+:::
+
+::: {.column width="50%"}
+Log-10-scale on the x-axis
+
+```{r}
+#| echo: FALSE
+#| fig-width: 5
+#| fig-height: 5
+#| out-width: "100%"
+ggplot(mtcars) +
+  geom_point(aes(x = hp, y = wt, color = as.factor(cyl))) +
+  scale_color_discrete("Cylinders") +
+  scale_x_log10()
+```
+:::
+:::::
 
 ## Scales
 
-- Position on x-axis and on y-axis
+- **Scales** controls the limits and ticks of the x-axis and y-axis
+- **Guides** can roughly be understood as similar to **figure legends**
+- Scales *can* also include statistical transformation(s)
 
-- It *may* be a value after statistical transformation
+:::::: fragment
+::::: columns
+::: {.column width="50%"}
+- Some other types of scales: colour, point shape, line type, point size
+:::
 
-- ::::: columns
-  ::: {.column width="50%"}
-  Rest: via colour,
+::: {.column width="50%" style="text-align: center;"}
+![](figures/viz/ColorGraph.png){width="50%"
+style="display: block; margin: 0 auto;"}
+:::
+:::::
+::::::
 
-  shape (type of point),
-
-  linetype,
-
-  point size
-  :::
-
-  ::: {.column width="50%"}
-  ![](figures/viz/ColorGraph.png){width="50%"}
-  :::
-  :::::
-
-- Reading values from the graph via **guides**: tick marks and labels,
-  legend
-
-## Refine the plot: scale color {.smaller}
-
-Default
+## Refine the plot: the colour scale {.smaller}
 
 :::::: columns
-:::: {.column width="50%"}
+:::: {.column width="60%"}
 ::: {.codewindow .r}
 code.R
 
 ```{r default 1}
 #| eval: FALSE
-#| code-line-numbers: false
-ggplot(df, aes(x = coverage, y = inequality)) +
-  geom_point(aes(size = pop, color = region)) +
-  geom_text(aes(label = country))
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region)) +
+  geom_text(mapping = aes(label = country))
 ```
 :::
 ::::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 ```{r default 2}
 #| echo: FALSE
-#| fig-width: 5.6
-#| fig-height: 6.7
+#| fig-width: 5
+#| fig-height: 5
 #| out-width: "100%"
-ggplot(df, aes(x = coverage, y = inequality)) +
-  geom_point(aes(size = pop, color = region)) +
-  geom_text(aes(label = country))
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region)) +
+  geom_text(mapping = aes(label = country))
 ```
 :::
 ::::::
 
-## Refine the plot: scale color {.smaller}
-
-Built-in color palette
+## Refine the plot: the colour scale {.smaller}
 
 :::::: columns
-:::: {.column width="50%"}
+:::: {.column width="60%"}
 ::: {.codewindow .r}
 code.R
 
-```{r builtin 1}
+```{r}
 #| eval: FALSE
 #| code-line-numbers: "4-6"
-ggplot(df, aes(x = coverage, y = inequality)) +
-  geom_point(aes(size = pop, color = region)) +
-  geom_text(aes(label = country)) +
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region)) +
+  geom_text(mapping = aes(label = country)) +
   scale_color_discrete(
     palette = scales::pal_viridis()
   )
 ```
 :::
+
+Use the built-in Viridis color palette
 ::::
 
-::: {.column width="50%"}
-```{r builtin 2}
+::: {.column width="40%"}
+```{r}
 #| echo: FALSE
-#| fig-width: 5.6
-#| fig-height: 6.7
+#| fig-width: 5
+#| fig-height: 5
 #| out-width: "100%"
-ggplot(df, aes(x = coverage, y = inequality)) +
-  geom_point(aes(size = pop, color = region)) +
-  geom_text(aes(label = country)) +
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region)) +
+  geom_text(mapping = aes(label = country)) +
   scale_color_discrete(
     palette = scales::pal_viridis()
   )
@@ -628,19 +667,63 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 :::
 ::::::
 
-## Refine the plot: scale color {.smaller}
+## Refine the plot: the colour scale {.smaller}
 
-Custom color palette
+::::::: columns
+::::: {.column width="60%"}
+::: {.codewindow .r}
+code.R
+
+```{r}
+#| eval: FALSE
+#| code-line-numbers: "4"
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region)) +
+  geom_text(mapping = aes(label = country)) +
+  scale_color_viridis_d()
+```
+:::
+
+::: callout-tip
+You can also use `scale_color_viridis_d()`, which is a shorthand for the
+scale layer we used on the previous slide
+
+Breakdown:
+
+- `scale` means we are adding a scale layer
+- `_color` means this scale is for the `color` aesthetic (checking your
+  `aes()`!)
+- `_viridis` defines the color palette
+- `_d()` stands for "discrete", so this scale is for a discrete variable
+:::
+:::::
+
+::: {.column width="40%"}
+```{r}
+#| echo: FALSE
+#| fig-width: 5
+#| fig-height: 5
+#| out-width: "100%"
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region)) +
+  geom_text(mapping = aes(label = country)) +
+  scale_color_viridis_d()
+```
+:::
+:::::::
+
+## Refine the plot: the colour scale {.smaller}
+
 
 :::::: columns
-:::: {.column width="50%"}
+:::: {.column width="60%"}
 ::: {.codewindow .r}
 code.R
 
 ```{r custom 1}
 #| eval: FALSE
 #| code-line-numbers: "1-8|13"
-cols <- c(
+my_pallete <- c(
   "Central Europe, Eastern Europe and Central Asia" = "#fa8495",
   "Latin America and Caribbean" = "#4ca258",
   "North Africa and Middle East" = "#6493bb",
@@ -649,21 +732,22 @@ cols <- c(
   "Sub-Saharan Africa" = "#bc5c91"
 )
 
-ggplot(df, aes(x = coverage, y = inequality)) +
-  geom_point(aes(size = pop, color = region)) +
-  geom_text(aes(label = country)) +
-  scale_color_manual(values = cols)
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region)) +
+  geom_text(mapping = aes(label = country)) +
+  scale_color_manual(values = my_pallete)
 ```
 :::
+You can define and use your own custom color palette!
 ::::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 ```{r custom 2}
 #| echo: FALSE
-#| fig-width: 5.6
-#| fig-height: 6.7
+#| fig-width: 5
+#| fig-height: 5
 #| out-width: "100%"
-cols <- c(
+my_pallete <- c(
   "Central Europe, Eastern Europe and Central Asia" = "#fa8495",
   "Latin America and Caribbean" = "#4ca258",
   "North Africa and Middle East" = "#6493bb",
@@ -672,25 +756,25 @@ cols <- c(
   "Sub-Saharan Africa" = "#bc5c91"
 )
 
-ggplot(df, aes(x = coverage, y = inequality)) +
-  geom_point(aes(size = pop, color = region)) +
-  geom_text(aes(label = country)) +
-  scale_color_manual(values = cols)
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region)) +
+  geom_text(mapping = aes(label = country)) +
+  scale_color_manual(values = my_pallete)
 ```
 :::
 ::::::
 
-## Refine the plot: scale size {.smaller}
+## Refine the plot: the point-size scale {.smaller}
 
 :::::: columns
-:::: {.column width="50%"}
+:::: {.column width="60%"}
 ::: {.codewindow .r}
 code.R
 
 ```{r}
 #| eval: FALSE
-#| code-line-numbers: "16-22"
-cols <- c(
+#| code-line-numbers: "14-19"
+my_pallete <- c(
   "Central Europe, Eastern Europe and Central Asia" = "#fa8495",
   "Latin America and Caribbean" = "#4ca258",
   "North Africa and Middle East" = "#6493bb",
@@ -699,13 +783,10 @@ cols <- c(
   "Sub-Saharan Africa" = "#bc5c91"
 )
 
-ggplot(df, aes(x = coverage, y = inequality)) +
-  geom_point(aes(size = pop, color = region)) +
-  geom_text(aes(label = country)) +
-  scale_color_manual(
-    values = cols,
-    guide = guide_legend(order = 2)
-  ) +
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region)) +
+  geom_text(mapping = aes(label = country)) +
+  scale_color_manual(values = my_pallete, guide = guide_legend(order = 2)) +
   scale_size_continuous(
     breaks = c(50, 100, 150, 200),
     labels = c("50 million", "100 million", "150 million", "200 million"),
@@ -716,13 +797,13 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 :::
 ::::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 ```{r}
 #| echo: FALSE
-#| fig-width: 5.6
-#| fig-height: 6.7
+#| fig-width: 5
+#| fig-height: 5
 #| out-width: "100%"
-cols <- c(
+my_pallete <- c(
   "Central Europe, Eastern Europe and Central Asia" = "#fa8495",
   "Latin America and Caribbean" = "#4ca258",
   "North Africa and Middle East" = "#6493bb",
@@ -731,34 +812,31 @@ cols <- c(
   "Sub-Saharan Africa" = "#bc5c91"
 )
 
-ggplot(df, aes(x = coverage, y = inequality)) +
-  geom_point(aes(size = pop, color = region)) +
-  geom_text(aes(label = country)) +
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region)) +
+  geom_text(mapping = aes(label = country)) +
+  scale_color_manual(values = my_pallete, guide = guide_legend(order = 2)) +
   scale_size_continuous(
     breaks = c(50, 100, 150, 200),
     labels = c("50 million", "100 million", "150 million", "200 million"),
     range = c(0, 8),
     guide = guide_legend(order = 1)
-  ) +
-  scale_color_manual(
-    values = cols,
-    guide = guide_legend(order = 2)
   )
 ```
 :::
 ::::::
 
-## Refine the plot: scale axes {.smaller}
+## Refine the plot: the axes {.smaller}
 
 :::::: columns
-:::: {.column width="50%"}
+:::: {.column width="60%"}
 ::: {.codewindow .r}
 code.R
 
 ```{r}
 #| eval: FALSE
-#| code-line-numbers: "23-30"
-cols <- c(
+#| code-line-numbers: "20-27"
+my_pallete <- c(
   "Central Europe, Eastern Europe and Central Asia" = "#fa8495",
   "Latin America and Caribbean" = "#4ca258",
   "North Africa and Middle East" = "#6493bb",
@@ -767,13 +845,10 @@ cols <- c(
   "Sub-Saharan Africa" = "#bc5c91"
 )
 
-ggplot(df, aes(x = coverage, y = inequality)) +
-  geom_point(aes(size = pop, color = region)) +
-  geom_text(aes(label = country)) +
-  scale_color_manual(
-    values = cols,
-    guide = guide_legend(order = 2)
-  ) +
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region)) +
+  geom_text(mapping = aes(label = country)) +
+  scale_color_manual(values = my_pallete, guide = guide_legend(order = 2)) +
   scale_size_continuous(
     breaks = c(50, 100, 150, 200),
     labels = c("50 million", "100 million", "150 million", "200 million"),
@@ -792,13 +867,13 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 :::
 ::::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 ```{r}
 #| echo: FALSE
-#| fig-width: 5.6
-#| fig-height: 6.7
+#| fig-width: 5
+#| fig-height: 5
 #| out-width: "100%"
-cols <- c(
+my_pallete <- c(
   "Central Europe, Eastern Europe and Central Asia" = "#fa8495",
   "Latin America and Caribbean" = "#4ca258",
   "North Africa and Middle East" = "#6493bb",
@@ -807,51 +882,10 @@ cols <- c(
   "Sub-Saharan Africa" = "#bc5c91"
 )
 
-ggplot(df, aes(x = coverage, y = inequality)) +
-  geom_point(aes(size = pop, color = region)) +
-  geom_text(aes(label = country)) +
-  scale_x_continuous(breaks = c(-0.25, 0, 0.25, 0.5), limits = c(-0.4, 0.55)) +
-  scale_y_continuous(breaks = c(-0.1, 0, 0.1), limits = c(-0.16, 0.1)) +
-  scale_size_continuous(
-    breaks = c(50, 100, 150, 200),
-    labels = c("50 million", "100 million", "150 million", "200 million"),
-    range = c(0, 8),
-    guide = guide_legend(order = 1)
-  ) +
-  scale_color_manual(
-    values = cols,
-    guide = guide_legend(order = 2)
-  )
-```
-:::
-::::::
-
-## Refine the plot: theme and labels {.smaller}
-
-:::::: columns
-:::: {.column width="50%"}
-::: {.codewindow .r}
-code.R
-
-```{r}
-#| eval: FALSE
-#| code-line-numbers: "31-42"
-cols <- c(
-  "Central Europe, Eastern Europe and Central Asia" = "#fa8495",
-  "Latin America and Caribbean" = "#4ca258",
-  "North Africa and Middle East" = "#6493bb",
-  "South Asia" = "#d7c968",
-  "Southeast Asia, East Asia and Oceania" = "#7dd8f3",
-  "Sub-Saharan Africa" = "#bc5c91"
-)
-
-ggplot(df, aes(x = coverage, y = inequality)) +
-  geom_point(aes(size = pop, color = region)) +
-  geom_text(aes(label = country)) +
-  scale_color_manual(
-    values = cols,
-    guide = guide_legend(order = 2)
-  ) +
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region)) +
+  geom_text(mapping = aes(label = country)) +
+  scale_color_manual(values = my_pallete, guide = guide_legend(order = 2)) +
   scale_size_continuous(
     breaks = c(50, 100, 150, 200),
     labels = c("50 million", "100 million", "150 million", "200 million"),
@@ -865,12 +899,54 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   scale_y_continuous(
     breaks = c(-0.1, 0, 0.1),
     limits = c(-0.16, 0.1)
+  )
+```
+:::
+::::::
+
+## Refine the plot: labels and theme {.smaller}
+
+:::::: columns
+:::: {.column width="60%"}
+::: {.codewindow .r}
+code.R
+
+```{r}
+#| eval: FALSE
+#| code-line-numbers: "13-14,18-19,25-26,30-31,35-42"
+my_pallete <- c(
+  "Central Europe, Eastern Europe and Central Asia" = "#fa8495",
+  "Latin America and Caribbean" = "#4ca258",
+  "North Africa and Middle East" = "#6493bb",
+  "South Asia" = "#d7c968",
+  "Southeast Asia, East Asia and Oceania" = "#7dd8f3",
+  "Sub-Saharan Africa" = "#bc5c91"
+)
+
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region)) +
+  geom_text(mapping = aes(label = country)) +
+  scale_color_manual(
+    name = "",
+    values = my_pallete,
+    guide = guide_legend(order = 2)
   ) +
-  labs(
-    x = "Change in MCV1 coverage (2019-2000)",
-    y = "Change in absolute geographical inequality (2019-2000)",
-    size = NULL,
-    color = NULL
+  scale_size_continuous(
+    name = "",
+    breaks = c(50, 100, 150, 200),
+    labels = c("50 million", "100 million", "150 million", "200 million"),
+    range = c(0, 8),
+    guide = guide_legend(order = 1)
+  ) +
+  scale_x_continuous(
+    name = "Change in MCV1 coverage (2019-2000)",
+    breaks = c(-0.25, 0, 0.25, 0.5),
+    limits = c(-0.4, 0.55)
+  ) +
+  scale_y_continuous(
+    name = "Change in absolute geographical inequality (2019-2000)",
+    breaks = c(-0.1, 0, 0.1),
+    limits = c(-0.16, 0.1)
   ) +
   theme_classic() +
   theme(
@@ -884,13 +960,13 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 :::
 ::::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 ```{r}
 #| echo: FALSE
-#| fig-width: 5.6
-#| fig-height: 6.7
+#| fig-width: 5
+#| fig-height: 5
 #| out-width: "100%"
-cols <- c(
+my_pallete <- c(
   "Central Europe, Eastern Europe and Central Asia" = "#fa8495",
   "Latin America and Caribbean" = "#4ca258",
   "North Africa and Middle East" = "#6493bb",
@@ -899,32 +975,30 @@ cols <- c(
   "Sub-Saharan Africa" = "#bc5c91"
 )
 
-ggplot(df, aes(x = coverage, y = inequality)) +
-  geom_point(aes(size = pop, color = region)) +
-  geom_text(aes(label = country)) +
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region)) +
+  geom_text(mapping = aes(label = country)) +
   scale_color_manual(
-    values = cols,
+    name = "",
+    values = my_pallete,
     guide = guide_legend(order = 2)
   ) +
   scale_size_continuous(
+    name = "",
     breaks = c(50, 100, 150, 200),
     labels = c("50 million", "100 million", "150 million", "200 million"),
     range = c(0, 8),
     guide = guide_legend(order = 1)
   ) +
   scale_x_continuous(
+    name = "Change in MCV1 coverage (2019-2000)",
     breaks = c(-0.25, 0, 0.25, 0.5),
     limits = c(-0.4, 0.55)
   ) +
   scale_y_continuous(
+    name = "Change in absolute geographical inequality (2019-2000)",
     breaks = c(-0.1, 0, 0.1),
     limits = c(-0.16, 0.1)
-  ) +
-  labs(
-    x = "Change in MCV1 coverage (2019-2000)",
-    y = "Change in absolute geographical inequality (2019-2000)",
-    size = NULL,
-    color = NULL
   ) +
   theme_classic() +
   theme(
@@ -941,14 +1015,14 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 ## Refine the plot: minor tweaks {.smaller}
 
 :::::: columns
-:::: {.column width="50%"}
+:::: {.column width="60%"}
 ::: {.codewindow .r}
 code.R
 
 ```{r}
 #| eval: FALSE
-#| code-line-numbers: false
-cols <- c(
+#| code-line-numbers: "11-14"
+my_pallete <- c(
   "Central Europe, Eastern Europe and Central Asia" = "#fa8495",
   "Latin America and Caribbean" = "#4ca258",
   "North Africa and Middle East" = "#6493bb",
@@ -957,34 +1031,32 @@ cols <- c(
   "Sub-Saharan Africa" = "#bc5c91"
 )
 
-ggplot(df, aes(x = coverage, y = inequality)) +
-  geom_point(aes(size = pop, color = region), alpha = 0.8) +
-  geom_text(aes(label = country), hjust = -0.2, vjust = 0.2) +
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region), alpha = 0.8) +
+  geom_text(mapping = aes(label = country), hjust = -0.2, vjust = 0.2) +
   geom_vline(xintercept = 0, color = "#999999") +
   geom_hline(yintercept = 0, color = "#999999") +
   scale_color_manual(
-    values = cols,
+    name = "",
+    values = my_pallete,
     guide = guide_legend(order = 2)
   ) +
   scale_size_continuous(
+    name = "",
     breaks = c(50, 100, 150, 200),
     labels = c("50 million", "100 million", "150 million", "200 million"),
     range = c(0, 8),
     guide = guide_legend(order = 1)
   ) +
   scale_x_continuous(
+    name = "Change in MCV1 coverage (2019-2000)",
     breaks = c(-0.25, 0, 0.25, 0.5),
     limits = c(-0.4, 0.55)
   ) +
   scale_y_continuous(
+    name = "Change in absolute geographical inequality (2019-2000)",
     breaks = c(-0.1, 0, 0.1),
     limits = c(-0.16, 0.1)
-  ) +
-  labs(
-    x = "Change in MCV1 coverage (2019-2000)",
-    y = "Change in absolute geographical inequality (2019-2000)",
-    size = NULL,
-    color = NULL
   ) +
   theme_classic() +
   theme(
@@ -998,13 +1070,13 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 :::
 ::::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 ```{r}
 #| echo: FALSE
-#| fig-width: 5.6
-#| fig-height: 6.7
+#| fig-width: 5
+#| fig-height: 5
 #| out-width: "100%"
-cols <- c(
+my_pallete <- c(
   "Central Europe, Eastern Europe and Central Asia" = "#fa8495",
   "Latin America and Caribbean" = "#4ca258",
   "North Africa and Middle East" = "#6493bb",
@@ -1013,28 +1085,32 @@ cols <- c(
   "Sub-Saharan Africa" = "#bc5c91"
 )
 
-ggplot(df, aes(x = coverage, y = inequality)) +
-  geom_point(aes(size = pop, color = region), alpha = 0.8) +
-  geom_text(aes(label = country), hjust = -0.2, vjust = 0.2) +
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region), alpha = 0.8) +
+  geom_text(mapping = aes(label = country), hjust = -0.2, vjust = 0.2) +
   geom_vline(xintercept = 0, color = "#999999") +
   geom_hline(yintercept = 0, color = "#999999") +
-  scale_x_continuous(breaks = c(-0.25, 0, 0.25, 0.5), limits = c(-0.4, 0.55)) +
-  scale_y_continuous(breaks = c(-0.1, 0, 0.1), limits = c(-0.16, 0.1)) +
+  scale_color_manual(
+    name = "",
+    values = my_pallete,
+    guide = guide_legend(order = 2)
+  ) +
   scale_size_continuous(
+    name = "",
     breaks = c(50, 100, 150, 200),
     labels = c("50 million", "100 million", "150 million", "200 million"),
     range = c(0, 8),
     guide = guide_legend(order = 1)
   ) +
-  scale_color_manual(
-    values = cols,
-    guide = guide_legend(order = 2)
+  scale_x_continuous(
+    name = "Change in MCV1 coverage (2019-2000)",
+    breaks = c(-0.25, 0, 0.25, 0.5),
+    limits = c(-0.4, 0.55)
   ) +
-  labs(
-    x = "Change in MCV1 coverage (2019-2000)",
-    y = "Change in absolute geographical inequality (2019-2000)",
-    size = NULL,
-    color = NULL
+  scale_y_continuous(
+    name = "Change in absolute geographical inequality (2019-2000)",
+    breaks = c(-0.1, 0, 0.1),
+    limits = c(-0.16, 0.1)
   ) +
   theme_classic() +
   theme(
@@ -1061,7 +1137,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 #| fig-width: 5.6
 #| fig-height: 6.7
 #| out-width: "100%"
-cols <- c(
+my_pallete <- c(
   "Central Europe, Eastern Europe and Central Asia" = "#fa8495",
   "Latin America and Caribbean" = "#4ca258",
   "North Africa and Middle East" = "#6493bb",
@@ -1070,32 +1146,32 @@ cols <- c(
   "Sub-Saharan Africa" = "#bc5c91"
 )
 
-# 1. Don't try to write and run everything at once
-# 2. Add one small piece at a time
-# 3. If something goes wrong, it's easier to fix
-
-ggplot(df, aes(x = coverage, y = inequality)) +
-  geom_point(aes(size = pop, color = region), alpha = 0.8) +
-  geom_text(aes(label = country), hjust = -0.2, vjust = 0.2) +
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region), alpha = 0.8) +
+  geom_text(mapping = aes(label = country), hjust = -0.2, vjust = 0.2) +
   geom_vline(xintercept = 0, color = "#999999") +
   geom_hline(yintercept = 0, color = "#999999") +
-  scale_x_continuous(breaks = c(-0.25, 0, 0.25, 0.5), limits = c(-0.4, 0.55)) +
-  scale_y_continuous(breaks = c(-0.1, 0, 0.1), limits = c(-0.16, 0.1)) +
+  scale_color_manual(
+    name = "",
+    values = my_pallete,
+    guide = guide_legend(order = 2)
+  ) +
   scale_size_continuous(
+    name = "",
     breaks = c(50, 100, 150, 200),
     labels = c("50 million", "100 million", "150 million", "200 million"),
     range = c(0, 8),
     guide = guide_legend(order = 1)
   ) +
-  scale_color_manual(
-    values = cols,
-    guide = guide_legend(order = 2)
+  scale_x_continuous(
+    name = "Change in MCV1 coverage (2019-2000)",
+    breaks = c(-0.25, 0, 0.25, 0.5),
+    limits = c(-0.4, 0.55)
   ) +
-  labs(
-    x = "Change in MCV1 coverage (2019-2000)",
-    y = "Change in absolute geographical inequality (2019-2000)",
-    size = NULL,
-    color = NULL
+  scale_y_continuous(
+    name = "Change in absolute geographical inequality (2019-2000)",
+    breaks = c(-0.1, 0, 0.1),
+    limits = c(-0.16, 0.1)
   ) +
   theme_classic() +
   theme(
@@ -1111,28 +1187,25 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 
 ## Some frequently used `geom_*`
 
-::: {.r-fit-text .scrolling style="height: 450px; padding:10px;overflow-y:scroll"}
 Histogram and bar charts
 
-+--------------------+---------------------------+------------------------+
-| Geometric object   | Description               | Aesthetics             |
-+====================+===========================+========================+
-| `geom_line()`      | Connect observations in   | Required: `x`, `y`     |
-|                    | order of the x-axis       |                        |
-+--------------------+---------------------------+------------------------+
-| `geom_histogram()` | Divide continuous `x`     | Required: `x`, and     |
-|                    | into bins and count       | `bins` or `binwidth`   |
-|                    | observations.             |                        |
-+--------------------+---------------------------+------------------------+
-| `geom_col()`       | Bar chart using provided  | Required: `x`, `y`     |
-|                    | `x` and `y` values.       |                        |
-+--------------------+---------------------------+------------------------+
-| `geom_bar()`       | Bar chart with one axis   | Required: `x` or `y`,  |
-|                    | computed using `stat`.    | `stat` (default:       |
-|                    |                           | `"count"`)             |
-+--------------------+---------------------------+------------------------+
-
-More at [`ggplot2` package reference](https://ggplot2.tidyverse.org/reference/index.html#geoms)
+::: {.r-fit-text .scrolling style="height: 450px; padding:10px;overflow-y:scroll"}
++--------------------+------------------------+---------------------+
+| Geometric object   | Description            | Aesthetics          |
++====================+========================+=====================+
+| `geom_histogram()` | Divide continuous `x`  | Required: `x`, and  |
+|                    | into bins and count    | `bins` or           |
+|                    | observations.          | `binwidth`          |
++--------------------+------------------------+---------------------+
+| `geom_col()`       | Bar chart using        | Required: `x`, `y`  |
+|                    | provided `x` and `y`   |                     |
+|                    | values.                |                     |
++--------------------+------------------------+---------------------+
+| `geom_bar()`       | Bar chart with one     | Required: `x` or    |
+|                    | axis computed using    | `y`, `stat`         |
+|                    | `stat`.                | (default:           |
+|                    |                        | `"count"`)          |
++--------------------+------------------------+---------------------+
 :::
 
 ## Some frequently used `geom_*`
@@ -1168,11 +1241,9 @@ ggplot(
   geom_bar(
     color = "cornflowerblue"
   ) +
-  labs(
-    title = "New covid cases over time",
-    x = "Date",
-    y = "Number of cases"
-  )
+  scale_x_date("Date") +
+  scale_y_continuous("Number of cases") +
+  ggtitle("New covid cases over time")
 ```
 :::
 ::::
@@ -1189,11 +1260,9 @@ ggplot(
   geom_bar(
     color = "cornflowerblue"
   ) +
-  labs(
-    title = "New covid cases over time",
-    x = "Date",
-    y = "Number of cases"
-  )
+  scale_x_date("Date") +
+  scale_y_continuous("Number of cases") +
+  ggtitle("New covid cases over time")
 ```
 :::
 ::::::
@@ -1201,16 +1270,18 @@ ggplot(
 
 ## Some frequently used `geom_*`
 
-::: r-fit-text
 Scatter plot
 
-+----------------+------------------------------+--------------------+
-| `geom_*`       | description                  | Parameters         |
-+================+==============================+====================+
-| `geom_point()` | Create a scatter plot from   | Required           |
-|                | given `x` and `y`            | aesthetic: `x` and |
-|                |                              | `y`                |
-+----------------+------------------------------+--------------------+
+::: r-fit-text
+
++----------------+----------------------------+------------------+
+| `geom_*`       | description                | Parameters       |
++================+============================+==================+
+| `geom_point()` | Create a scatter plot from | Required         |
+|                | given `x` and `y`          | aesthetic: `x`   |
+|                |                            | and `y`          |
++----------------+----------------------------+------------------+
+
 :::
 
 ## Some frequently used `geom_*`
@@ -1230,7 +1301,7 @@ library(dplyr)
 # (case_count before plotting)
 aggregated_cases <- simulated_covid |>
   group_by(date_onset) |>
-  summarize(
+  summarise(
     case_count = n()
   )
 
@@ -1241,11 +1312,9 @@ ggplot(
   geom_point(
     color = "cornflowerblue"
   ) +
-  labs(
-    title = "New covid cases over time",
-    x = "Date",
-    y = "Number of cases"
-  )
+  scale_x_date("Date") +
+  scale_y_continuous("Number of cases") +
+  ggtitle("New covid cases over time")
 ```
 :::
 ::::
@@ -1259,7 +1328,7 @@ library(dplyr)
 # we need to compute y (case_count before plotting)
 aggregated_cases <- simulated_covid |>
   group_by(date_onset) |>
-  summarize(
+  summarise(
     case_count = n()
   )
 
@@ -1270,11 +1339,9 @@ ggplot(
   geom_point(
     color = "cornflowerblue"
   ) +
-  labs(
-    title = "New covid cases over time",
-    x = "Date",
-    y = "Number of cases"
-  )
+  scale_x_date("Date") +
+  scale_y_continuous("Number of cases") +
+  ggtitle("New covid cases over time")
 ```
 :::
 ::::::
@@ -1282,25 +1349,27 @@ ggplot(
 
 ## Some frequently used `geom_*`
 
-::: r-fit-text
 Line chart
 
-+-----------------+----------------+----------------------------------------------------+
-| `geom_*`        | description    | Parameters                                         |
-+=================+================+====================================================+
-| `geom_line()`   | Create a line  | Required aesthetic: `x` and `y`                    |
-|                 | plot from      |                                                    |
-|                 | given `x` and  |                                                    |
-|                 | `y`            |                                                    |
-+-----------------+----------------+----------------------------------------------------+
-| `geom_smooth()` | Create a       | Required aesthetic: `x` and `y`                    |
-|                 | regression     |                                                    |
-|                 | line plot from | - `method`: select regression model                |
-|                 | `x` and `y`    |   (`"auto"`, `" lm"`, `"glm"`, `"gam"`, `"loess"`) |
-|                 |                |                                                    |
-|                 |                | - `formula`: adjust the formula for the regression |
-|                 |                |   model                                            |
-+-----------------+----------------+----------------------------------------------------+
+::: r-fit-text
+
++-----------------+--------------+----------------------------------------------------+
+| `geom_*`        | description  | Parameters                                         |
++=================+==============+====================================================+
+| `geom_line()`   | Create a     | Required aesthetic: `x` and `y`                    |
+|                 | line plot    |                                                    |
+|                 | from given   |                                                    |
+|                 | `x` and `y`  |                                                    |
++-----------------+--------------+----------------------------------------------------+
+| `geom_smooth()` | Create a     | Required aesthetic: `x` and `y`                    |
+|                 | regression   |                                                    |
+|                 | line plot    | - `method`: select regression model                |
+|                 | from `x` and |   (`"auto"`, `" lm"`, `"glm"`, `"gam"`, `"loess"`) |
+|                 | `y`          |                                                    |
+|                 |              | - `formula`: adjust the formula for the regression |
+|                 |              |   model                                            |
++-----------------+--------------+----------------------------------------------------+
+
 :::
 
 ## Some frequently used `geom_*`
@@ -1322,11 +1391,9 @@ ggplot(
   geom_line(
     color = "cornflowerblue"
   ) +
-  labs(
-    title = "New covid cases over time",
-    x = "Date",
-    y = "Number of cases"
-  )
+  scale_x_date("Date") +
+  scale_y_continuous("Number of cases") +
+  ggtitle("New covid cases over time")
 ```
 :::
 ::::
@@ -1343,11 +1410,9 @@ ggplot(
   geom_line(
     color = "cornflowerblue"
   ) +
-  labs(
-    title = "New covid cases over time",
-    x = "Date",
-    y = "Number of cases"
-  )
+  scale_x_date("Date") +
+  scale_y_continuous("Number of cases") +
+  ggtitle("New covid cases over time")
 ```
 :::
 ::::::
@@ -1377,11 +1442,9 @@ ggplot(
     # choose gam model to fit the data
     method = "gam"
   ) +
-  labs(
-    title = "New covid cases over time",
-    x = "Date",
-    y = "Number of cases"
-  )
+  scale_x_date("Date") +
+  scale_y_continuous("Number of cases") +
+  ggtitle("New covid cases over time")
 ```
 :::
 ::::
@@ -1402,11 +1465,9 @@ ggplot(
     color = "cornflowerblue",
     method = "gam" # choose gam model to fit the data
   ) +
-  labs(
-    title = "New covid cases over time",
-    x = "Date",
-    y = "Number of cases"
-  )
+  scale_x_date("Date") +
+  scale_y_continuous("Number of cases") +
+  ggtitle("New covid cases over time")
 ```
 :::
 ::::::
@@ -1417,17 +1478,18 @@ ggplot(
 ::: r-fit-text
 Box plot
 
-+-------------------+-------------------------------------+--------------+
-| `geom_*`          | description                         | Parameters   |
-+===================+=====================================+==============+
-| `geom _boxplot()` | Create a boxplot from a continuous  | Required     |
-|                   | variable.                           | aesthetic:   |
-|                   |                                     | `x`          |
-|                   | If both `x` and `y` are given, one  | \[**or**\]   |
-|                   | must be a categorical variable (in  | {.underline} |
-|                   | which case a boxplot is created for | `y`          |
-|                   | each category)                      |              |
-+-------------------+-------------------------------------+--------------+
++-------------------+---------------------------------+-----------------+
+| `geom_*`          | description                     | Parameters      |
++===================+=================================+=================+
+| `geom _boxplot()` | Create a boxplot from a         | Required        |
+|                   | continuous variable.            | aesthetic: `x`  |
+|                   |                                 | [or]{.underline}|
+|                   | If both `x` and `y` are given,  | `y`             |
+|                   | one must be a categorical       |                 |
+|                   | variable (in which case a       |                 |
+|                   | boxplot is created for each     |                 |
+|                   | category)                       |                 |
++-------------------+---------------------------------+-----------------+
 :::
 
 ## Some frequently used `geom_*`
@@ -1445,7 +1507,7 @@ code.R
 # compute cases per day for each outbreak
 cases_per_outbreak <- simulated_covid |>
   group_by(date_onset, outbreak) |>
-  summarize(
+  summarise(
     case_count = n()
   )
 
@@ -1454,11 +1516,9 @@ ggplot(
   aes(x = case_count, y = outbreak)
 ) +
   geom_boxplot() +
-  labs(
-    title = "Compare distribution of daily cases between 2 outbreaks",
-    y = "Outbreak",
-    x = "Number of daily cases"
-  )
+  scale_x_continuous("Number of daily cases") +
+  scale_y_discrete("Outbreak") +
+  ggtitle("Compare distribution of daily cases between 2 outbreaks")
 ```
 :::
 ::::
@@ -1470,37 +1530,32 @@ ggplot(
 #| out-width: "100%"
 simulated_covid |>
   group_by(date_onset, outbreak) |>
-  summarize(
+  summarise(
     case_count = n()
   ) |>
   ggplot(
     aes(x = case_count, y = outbreak)
   ) +
   geom_boxplot() +
-  labs(
-    title = "Compare distribution of daily cases between 2 outbreaks",
-    y = "Outbreak",
-    x = "Number of daily cases"
-  )
+  scale_x_continuous("Number of daily cases") +
+  scale_y_discrete("Outbreak") +
+  ggtitle("Compare distribution of daily cases between 2 outbreaks")
 ```
 :::
 ::::::
 :::::::
 
-## Where to find more geom\_\*?
+## Where to find more `geom_*`?
 
-::: r-fit-text
-For a complete list of `geom_*`, refer to [ggplot2
+For a complete list of `geom_*`, refer to [`ggplot2` official
 documentation](https://ggplot2.tidyverse.org/reference/index.html#geom){preview-link="true"}
 
 Alternatively, you can also look for the example code for your desired
 chart type at [R Graph
 Gallery](https://r-graph-gallery.com){preview-link="true"}
-:::
 
 ## Save plot
 
-::: r-fit-text
 Function `ggsave()` is used for saving plots with the following key
 parameters
 
@@ -1513,7 +1568,6 @@ parameters
 - `width`, `height` plot size in units expressed by the `units` argument
 
 - `dpi` plot resolution
-:::
 
 ## Save plot
 
@@ -1532,13 +1586,13 @@ ggsave(
 
 ## Export: two types of formats
 
-- Vector format (pdf, eps, wmf, emf, svg)
-  - digital image consisting of independent geometric objects (segments,
+- Vector format (e.g. `.pdf`, `.svg`, `.eps`)
+  - Consists of independent geometric objects (segments,
     polygons, curves, etc.)
-  - can be enlarged without losing resolution
-- Raster format (png, jpeg, tiff, bmp).
-  - rectangular grid of pixels, possibly with color
-  - resolution impaired if image is enlarged
+  - Can be enlarged without losing resolution
+- Raster format (e.g. `.png`, `.jpeg`/`.jpg`, `.tiff`).
+  - Rectangular grid of pixels, possibly with color
+  - Will be very blurry if image is enlarged while resolution is low
 
 ## Main components of a graph (R) {.smaller}
 
@@ -1576,8 +1630,6 @@ Pie chart WHO European Health Report 2009
 system?**
 
 # Advance `ggplot2`
-
-Tuyen Huynh
 
 ## Overview
 
@@ -1726,7 +1778,7 @@ ggplot() +
 You have seen this in action before!
 
 ``` r
-cols <- c(
+my_pallete <- c(
   "Central Europe, Eastern Europe and Central Asia" = "#fa8495",
   "Latin America and Caribbean" = "#4ca258",
   "North Africa and Middle East" = "#6493bb",
@@ -1750,7 +1802,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
     guide = guide_legend(order = 1)
   ) +
   scale_color_manual(
-    values = cols,
+    values = my_pallete,
     guide = guide_legend(order = 2)
   ) +
   labs(x = "Change in MCV1 coverage (2019-2000)",
@@ -1778,7 +1830,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 ```{r}
 #| eval: true
 #| echo: false
-cols <- c(
+my_pallete <- c(
   "Central Europe, Eastern Europe and Central Asia" = "#fa8495",
   "Latin America and Caribbean" = "#4ca258",
   "North Africa and Middle East" = "#6493bb",
@@ -1801,7 +1853,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
     guide = guide_legend(order = 1)
   ) +
   scale_color_manual(
-    values = cols,
+    values = my_pallete,
     guide = guide_legend(order = 2)
   ) +
   labs(
@@ -1832,7 +1884,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 
 ```{r}
 #| echo: false
-cols <- c(
+my_pallete <- c(
   "Central Europe, Eastern Europe and Central Asia" = "#fa8495",
   "Latin America and Caribbean" = "#4ca258",
   "North Africa and Middle East" = "#6493bb",
@@ -1855,7 +1907,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
     guide = guide_legend(order = 1)
   ) +
   scale_color_manual(
-    values = cols,
+    values = my_pallete,
     guide = guide_legend(order = 2)
   ) +
   labs(
