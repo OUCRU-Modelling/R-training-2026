@@ -102,28 +102,28 @@
     "href": "slides/viz.html#scatter-plot-1",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Scatter plot",
-    "text": "Scatter plot\n\n\n\n\nWhat information would you need to map each dot correctly onto this plot?\n\nCountry name\nPosition\nSize\nColor"
+    "text": "Scatter plot\n\n\n\n\nWhat information would you need to map each point correctly onto this plot?\n\nCountry name\nPosition\nSize\nColor"
   },
   {
     "objectID": "slides/viz.html#data",
     "href": "slides/viz.html#data",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Data",
-    "text": "Data\n\n\n\n\n\n\n\n\n\n\nlabel\n(country)\nx\n(coverage)\ny\n(i nequality)\nsize\n(p opulation)\ncolor\n(region)\n\n\n\n\nNigeria\n0.20\n-0.07\n220M\nSub-Saharan Africa\n\n\n\nData found here: nature_plot.xlsx\n\n\n# A tibble: 6 × 5\n  country          coverage inequality   pop region                             \n  &lt;chr&gt;               &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;                              \n1 Angola              -0.14      0.1    30.2 Sub-Saharan Africa                 \n2 Papua New Guinea    -0.35      0.08   16.5 Southeast Asia, East Asia and Ocea…\n3 Pakistan             0.12      0.05   82.5 South Asia                         \n4 Chad                 0.14      0.01   27.5 Sub-Saharan Africa                 \n5 Ethiopia             0.32      0.005  55   Sub-Saharan Africa                 \n6 Kenya                0.07     -0.06   30.2 Sub-Saharan Africa"
+    "text": "Data\n\n\n\n\n\n\n\n\n\n\nlabel\n(country)\nx\n(coverage)\ny\n(inequality)\nsize\n(population)\ncolor\n(region)\n\n\n\n\nNigeria\n0.20\n-0.07\n220M\nSub-Saharan Africa\n\n\n\nData can be downloaded here: nature_plot.xlsx\n\n\n# A tibble: 6 × 5\n  country          coverage inequality   pop region                             \n  &lt;chr&gt;               &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;                              \n1 Angola              -0.14      0.1    30.2 Sub-Saharan Africa                 \n2 Papua New Guinea    -0.35      0.08   16.5 Southeast Asia, East Asia and Ocea…\n3 Pakistan             0.12      0.05   82.5 South Asia                         \n4 Chad                 0.14      0.01   27.5 Sub-Saharan Africa                 \n5 Ethiopia             0.32      0.005  55   Sub-Saharan Africa                 \n6 Kenya                0.07     -0.06   30.2 Sub-Saharan Africa"
   },
   {
     "objectID": "slides/viz.html#scatter-plot-2",
     "href": "slides/viz.html#scatter-plot-2",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Scatter plot",
-    "text": "Scatter plot\n\n\n\n\nLet’s draw this by hand"
+    "text": "Scatter plot\n\n\n\n\nLet’s draw this “by hand”"
   },
   {
     "objectID": "slides/viz.html#draw-this-by-hand",
     "href": "slides/viz.html#draw-this-by-hand",
     "title": "Principles of data visualisation and plotting in R",
-    "section": "Draw this by hand",
-    "text": "Draw this by hand\n\n\n\n\n\nDraw the axes\nDraw the data points\nAdjust dot sizes\nColour-code the regions\nAdd key country labels"
+    "section": "Draw this “by hand”",
+    "text": "Draw this “by hand”\n\n\n\n\n\nDraw the axes\nDraw the data points\nAdjust point sizes\nColour-code the regions\nAdd key country labels"
   },
   {
     "objectID": "slides/viz.html#draw-the-axes",
@@ -186,7 +186,7 @@
     "href": "slides/viz.html#scales",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Scales",
-    "text": "Scales\n\nE.g. The limits and breaks of the x-axis and y-axis\nIt may also include statistical transformation(s)"
+    "text": "Scales\n\nControl the limits and breaks of the x-axis and y-axis\nIt may also include statistical transformation(s)"
   },
   {
     "objectID": "slides/viz.html#statistical-transformation",
@@ -200,7 +200,7 @@
     "href": "slides/viz.html#scales-1",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Scales",
-    "text": "Scales\n\nPosition on x-axis and on y-axis\nIt may be a value after statistical transformation\n\n\nRest: via colour,\nshape (type of point),\nlinetype,\npoint size\n\n\n\nReading values from the graph via guides: tick marks and labels, legend"
+    "text": "Scales\n\nControl the limits and breaks of the x-axis and y-axis\nIt may also include statistical transformation(s)\n\n\n\n\n\nRest: via colour,\nshape (type of point),\nlinetype,\npoint size\n\n\n\n\n\n\n\nReading values from the graph via guides: tick marks and labels, legend"
   },
   {
     "objectID": "slides/viz.html#refine-the-plot-scale-color",
@@ -606,7 +606,7 @@
     "href": "slides/viz.html#grammar-of-a-graph",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Grammar of a graph",
-    "text": "Grammar of a graph\n\nMapping from information (data) to aesthetic attributes of geometric objects\nAesthetic attributes are the “role” of variables in plot: location (often along x-axis and y-axis), colour, size, shape\nGeometric objects are what you see on the plot (points, lines, bars)"
+    "text": "Grammar of a graph\n\nA graph maps information (data) to aesthetic attributes of geometric objects\nAesthetic attributes are the “role” of variables in plot: location (often along x-axis and y-axis), colour, size, shape\nGeometric objects are the shapes of the data you’re visualising, e.g. points, lines, bars"
   },
   {
     "objectID": "slides/viz.html#compare-with-the-original-figure",
@@ -620,7 +620,7 @@
     "href": "slides/viz.html#grammar-of-a-graph-1",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Grammar of a graph",
-    "text": "Grammar of a graph\n\nMapping from information (data) to aesthetic attributes of geometric objects\nAesthetic attributes are the “role” of variables in plot: location (often along x-axis and y-axis), colour, size, shape\nGeometric objects are what you see on the plot (points, lines, bars)\n\n\n\nScales defines the range and values of an aesthetic"
+    "text": "Grammar of a graph\n\nMapping from information (data) to aesthetic attributes of geometric objects\nAesthetic attributes are the “role” of variables in plot: location (often along x-axis and y-axis), colour, size, shape\nGeometric objects are what you see on the plot (points, lines, bars)\n\n\n\nScales defines how the information (data) is mapped to aesthetic attributes work"
   },
   {
     "objectID": "slides/viz.html#scales-statistical-transformation",
@@ -634,21 +634,21 @@
     "href": "slides/viz.html#scales-statistical-transformation-1",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Scales: statistical transformation",
-    "text": "Scales: statistical transformation\nNote: statistical transformation on the scales do not change the data, just how we “observe” it"
+    "text": "Scales: statistical transformation\n\n\n\n\n\n\n\nImportant\n\n\nStatistical transformation(s) on the scales do not change the data, just how we “observe” it"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "OUCRU R training course - 2026",
     "section": "",
-    "text": "The training will be 09:00 – 17:00 (UTC +7) for everyday\n\nWe will finish on Friday morning session\n\nThere will be a lunch break between 12:30 – 13:30 (UTC +7)\nLunch will be provided for in-person attendees\n\n\n\n\nProf. Ronald Geskus, Biostatistics group, OUCRU HCM\nDr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM\nMr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM\nDr. Tran Thai Hung, Biostatistics group, OUCRU HCM\nMs. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM\nDr. Duc Du Hong, Biostatistics group, OUCRU HCM\nMr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM\n\n\n\n\nPlease follow this precourse handout to setup R and RStudio."
+    "text": "The training will be 09:00 – 17:00 (UTC +7) for everyday\n\nWe will finish on Friday morning session\n\nThere will be a lunch break between 12:30 – 13:30 (UTC +7)\nLunch will be provided for in-person attendees\n\n\n\n\nProf. Ronald Geskus, Biostatistics group, OUCRU HCM\nDr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM\nMr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM\nDr. Tran Thai Hung, Biostatistics group, OUCRU HCM\nMs. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM\nDr. Duc Du Hong, Biostatistics group, OUCRU HCM\nDr. Thuan Hoang Van, Biostatistics group, OUCRU HCM\nMr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM\n\n\n\n\nPlease follow this precourse handout to setup R and RStudio."
   },
   {
     "objectID": "index.html#contributors",
     "href": "index.html#contributors",
     "title": "OUCRU R training course - 2026",
     "section": "",
-    "text": "Prof. Ronald Geskus, Biostatistics group, OUCRU HCM\nDr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM\nMr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM\nDr. Tran Thai Hung, Biostatistics group, OUCRU HCM\nMs. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM\nDr. Duc Du Hong, Biostatistics group, OUCRU HCM\nMr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM"
+    "text": "Prof. Ronald Geskus, Biostatistics group, OUCRU HCM\nDr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM\nMr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM\nDr. Tran Thai Hung, Biostatistics group, OUCRU HCM\nMs. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM\nDr. Duc Du Hong, Biostatistics group, OUCRU HCM\nDr. Thuan Hoang Van, Biostatistics group, OUCRU HCM\nMr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM"
   },
   {
     "objectID": "index.html#pre-course-setups-and-requirements",
@@ -733,5 +733,12 @@
     "title": "Pre-course setups and requirements",
     "section": "RStudio Desktop",
     "text": "RStudio Desktop\n\nGo to the download page\nScroll down, look for 2: Install Rstudio and click on the button for downloading RStudio Desktop\nDownload and install RStudio Desktop\n\nYou can use the default installation options\n\nOpen Rstudio Desktop, to check that everything has been installed correctly\n\nE.g. via the Start menu in Windows"
+  },
+  {
+    "objectID": "slides/viz.html#adjust-point-sizes",
+    "href": "slides/viz.html#adjust-point-sizes",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Adjust point sizes",
+    "text": "Adjust point sizes\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop))\n\n\n\nObserve the 2 mapping argument calls, one in ggplot() and one in geom_point()"
   }
 ]

@@ -1,0 +1,338 @@
+// viz-theme.scss — RevealJS theme for data visualisation training
+// Optimised for: readable code blocks, clear plot comparison,
+//                and a professional academic aesthetic.
+
+/*-- scss:defaults --*/
+
+// -- Colours --
+
+// Background: cool white, slightly blue to keep slides crisp and modern.
+$slidescolor: #f8fafc;
+$slidebgcolor: #ffffff;
+
+// Primary text: near-black for maximum contrast.
+$slidecolor: #1e293b;
+
+// Accent: OUCRU-aligned blue, used for headings and highlights.
+$primary: #2563eb;
+$slideheadingcolor: $primary;
+
+// Code blocks: dark slate background with light text (terminal-like).
+$code-block-bg: #1e293b;
+$code-block-color: #e2e8f0;
+
+// Links and callouts: match accent.
+$link-color: $primary;
+
+// -- Typography --
+
+// Headings: tight tracking for a clean slide look.
+$headingsfontfamily: "Inter", "Source Sans Pro", "Helvetica Neue", sans-serif;
+$headingsfontweight: 700;
+
+// Body: system sans-serif, slightly relaxed line-height for slides.
+$bodyfontfamily: "Inter", "Source Sans Pro", "Helvetica Neue", sans-serif;
+$line-height: 1.6;
+
+// Code: monospace, no ligatures for clarity.
+$codefontfamily: "JetBrains Mono", "Fira Code", "SF Mono", "Cascadia Code", "Consolas", monospace;
+$code-font-size: 0.85em;
+
+// -- Borders & shadows --
+
+$border-radius: 6px;
+$box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+
+/*-- scss:rules --*/
+
+// -- Slide base --
+
+.slide-background {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+// -- Heading accent line --
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+    border-bottom: 3px solid $primary;
+    padding-bottom: 0.3em;
+    margin-bottom: 0.6em;
+}
+
+// -- Code blocks: terminal-style with subtle border --
+
+.reveal div.sourceCode,
+.reveal pre.sourceCode {
+    background: $code-block-bg !important;
+    border: 1px solid #334155;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    padding: 0.8em 1em;
+    margin: 0.5em 0;
+
+    // Ensure syntax-highlighted tokens are readable on dark bg.
+    code {
+        color: $code-block-color;
+        font-size: $code-font-size;
+        line-height: 1.5;
+    }
+
+    // Line numbers: muted, don't compete.
+    .number {
+        color: #64748b;
+    }
+
+    // Annotation hover area: subtle highlight.
+    .has-annotation {
+        background-color: rgba(37, 99, 235, 0.12);
+        border-left: 3px solid $primary;
+    }
+}
+
+// -- R console output: dark text on slide background --
+// Structure: .cell > .cell-output cell-output-stdout > pre > code
+// RevealJS .reveal pre sets dark bg; .reveal pre code sets light fg.
+// Must override both the <pre> container and the <code> text.
+
+.reveal div.cell-output-stdout pre,
+.reveal div.cell-output-stderr pre {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0.3em 0 !important;
+    font-size: 0.85em !important;
+    line-height: 1.5 !important;
+    color: #1e293b !important;
+}
+
+.reveal div.cell-output-stdout code,
+.reveal div.cell-output-stderr code {
+    background: transparent !important;
+    color: #1e293b !important;
+    font-size: 0.85em !important;
+    line-height: 1.5 !important;
+    padding: 0 !important;
+}
+
+// -- Code copy button: match accent --
+
+.reveal .codewindow .btn-copy {
+    background-color: $primary;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.2em 0.6em;
+    font-size: 0.75em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+        background-color: #1d4ed8;
+    }
+}
+
+// -- Callout blocks: subtle left accent --
+
+.reveal .callout {
+    border-left-width: 4px;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    margin: 0.8em 0;
+
+    &.callout-note {
+        border-left-color: #3b82f6;
+        background-color: #eff6ff;
+    }
+
+    &.callout-important {
+        border-left-color: #ef4444;
+        background-color: #fef2f2;
+    }
+
+    &.callout-tip {
+        border-left-color: #10b981;
+        background-color: #ecfdf5;
+    }
+
+    &.callout-warning {
+        border-left-color: #f59e0b;
+        background-color: #fffbeb;
+    }
+
+    &.callout-caution {
+        border-left-color: #f97316;
+        background-color: #fff7ed;
+    }
+}
+
+// -- Code windows (codewindow extension) --
+// Plugin uses CSS custom properties + a `.codewindow-dark` class for dark mode.
+// Override RevealJS's .reveal pre { background:#1e293b } which bleeds into the textarea.
+// Also map Quarto's Pandoc token classes to dark-mode colors.
+
+.reveal .codewindow {
+    --codewindow-bg: #1e293b !important;
+    --codewindow-header-bg: #0f172a !important;
+    --codewindow-tab-bg: #334155 !important;
+    --codewindow-color: #e2e8f0 !important;
+    --codewindow-shadow-color: #020617 !important;
+    --codewindow-tab-active-bg: #1e293b !important;
+
+    // Filename in the header bar.
+    .header {
+        .file {
+            color: #e2e8f0;
+
+            .file-name {
+                color: #e2e8f0;
+            }
+        }
+    }
+
+    // Code textarea: prevent RevealJS from applying its dark <pre> bg.
+    .textarea {
+        padding: 1em 1.2em;
+
+        pre {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            font-size: unset !important;
+            line-height: 1.5 !important;
+
+            // Fragmented code-line-number clones must mask the background.
+            code:not(:first-child).fragment {
+                background: var(--codewindow-bg) !important;
+            }
+        }
+    }
+
+    // -- Dark-mode Pandoc syntax highlighting --
+    // Quarto's syntax highlighting uses Pandoc `code span.<class>` tokens.
+    // The codewindow plugin only applies these when .codewindow-dark is present.
+    .textarea code span {
+        color: var(--codewindow-color, #e2e8f0);
+    }
+    .textarea code span.kw,
+    .textarea code span.cf,
+    .textarea code span.im { color: #c792ea; }
+    .textarea code span.st,
+    .textarea code span.ch,
+    .textarea code span.vs,
+    .textarea code span.ss { color: #c3e88d; }
+    .textarea code span.dv,
+    .textarea code span.bn,
+    .textarea code span.fl,
+    .textarea code span.cn,
+    .textarea code span.sc { color: #f78c6c; }
+    .textarea code span.an,
+    .textarea code span.co,
+    .textarea code span.do {
+        color: #7f8ea3;
+        font-style: italic;
+    }
+    .textarea code span.fu,
+    .textarea code span.bu { color: #82aaff; }
+    .textarea code span.dt,
+    .textarea code span.at,
+    .textarea code span.va { color: #ffcb6b; }
+    .textarea code span.op,
+    .textarea code span.ot,
+    .textarea code span.pp { color: #89ddff; }
+    .textarea code span.al,
+    .textarea code span.er,
+    .textarea code span.wa {
+        color: #ff5370;
+        font-weight: bold;
+    }
+}
+
+// -- Tables: clean, readable --
+
+.reveal table {
+    border-collapse: collapse;
+    margin: 0.8em 0;
+    font-size: 0.85em;
+
+    th {
+        background-color: #f1f5f9;
+        color: $slidecolor;
+        border-bottom: 2px solid $primary;
+        font-weight: 600;
+    }
+
+    td {
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    tr:hover td {
+        background-color: #f8fafc;
+    }
+}
+
+// -- Fragments: gentle fade-in --
+
+.reveal .fragment.fade-in {
+    opacity: 0;
+    display: block;
+
+    &.visible {
+        opacity: 1;
+        transition: opacity 0.5s ease;
+    }
+}
+
+// -- Column layouts: RevealJS handles these natively --
+// Do NOT add padding/margin overrides — they break percentage-based widths.
+
+// -- Scrollable containers --
+
+.reveal .scrolling {
+    border: 1px solid #e2e8f0;
+    border-radius: $border-radius;
+    background: white;
+}
+
+// -- Figure/image containers --
+
+.reveal figcaption,
+.reveal p.caption {
+    font-size: 0.8em;
+    color: #64748b;
+    text-align: center;
+    margin-top: 0.4em;
+    font-style: italic;
+}
+
+// -- Section divider slides --
+
+.reveal .slide-menu-button .chapter-title,
+.reveal h1[data-state] {
+    // Full-screen section headers get a bigger accent treatment.
+    font-size: 2.2em;
+    text-align: center;
+    padding: 2em 0;
+}
+
+// -- Print mode --
+
+@media print {
+    .reveal .slide-background {
+        background: white !important;
+    }
+
+    .reveal div.sourceCode {
+        background: #f8fafc !important;
+        border: 1px solid #cbd5e1;
+    }
+
+    .reveal div.sourceCode code {
+        color: #1e293b !important;
+    }
+}

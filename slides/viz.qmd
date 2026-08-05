@@ -1,7 +1,6 @@
 ---
 title: "Principles of data visualisation and plotting in R"
-subtitle: "The step-by-step process of creating graphs in R"
-author: "Ronald Geskus, Thinh Ong Phuc, Vuong Lam Nguyen, Anh Phan Truong Quynh, and Tuyen Huynh"
+author: "**Ronald Geskus**, Thinh Ong Phuc, **Tuyen Huynh**, **Anh Phan Truong Quynh**, and Vuong Lam Nguyen"
 engine: knitr
 format-links:
   - html
@@ -11,7 +10,7 @@ code-annotations: hover
 format:
   revealjs:
     slide-number: true
-    theme: serif
+    theme: [default, viz-theme.scss]
     code-copy: true
     logo: "figures/OUCRU.jpg"
     preview-links: auto
@@ -181,14 +180,14 @@ way]{style="color: red;"}
 
 ## Grammar of a graph
 
-- Mapping from information (data) to [aesthetic attributes]{.fragment
+- A graph maps information (data) to [aesthetic attributes]{.fragment
   .highlight-red fragment-index="1"} of [geometric objects]{.fragment
   .highlight-blue fragment-index="1"}
 - [Aesthetic attributes]{.fragment .highlight-red fragment-index="1"}
   are the "role" of variables in plot: location (often along x-axis and
   y-axis), colour, size, shape
 - [Geometric objects]{.fragment .highlight-blue fragment-index="1"} are
-  what you see on the plot (points, lines, bars)
+  the shapes of the data you're visualising, e.g. points, lines, bars
 
 ## Scatter plot
 
@@ -213,7 +212,7 @@ way]{style="color: red;"}
 :::
 
 :::: {.column width="50%"}
-What information would you need to map each dot correctly onto this
+What information would you need to map each point correctly onto this
 plot?
 
 ::: incremental
@@ -227,17 +226,17 @@ plot?
 
 ## Data {.smaller}
 
-+------------+------------+------------+------------+-------------+
-| label      | x          | y          | size       | color       |
-|            |            |            |            |             |
-| (country)  | (coverage) | (i         | (p         | (region)    |
-|            |            | nequality) | opulation) |             |
-+============+============+============+============+=============+
-| Nigeria    | 0.20       | -0.07      | 220M       | Sub-Saharan |
-|            |            |            |            | Africa      |
-+------------+------------+------------+------------+-------------+
++------------+------------+-------------+-------------+-------------+
+| label      | x          | y           | size        | color       |
+|            |            |             |             |             |
+| (country)  | (coverage) | (inequality)| (population)| (region)    |
+|            |            |             |             |             |
++============+============+=============+=============+=============+
+| Nigeria    | 0.20       | -0.07       | 220M        | Sub-Saharan |
+|            |            |             |             | Africa      |
++------------+------------+-------------+-------------+-------------+
 
-Data found here:
+Data can be downloaded here:
 [nature_plot.xlsx](https://github.com/OUCRU-Modelling/R-training-2025/raw/refs/heads/main/slides/data/nature_plot.xlsx)
 
 ```{r}
@@ -255,11 +254,11 @@ head(df)
 :::
 
 ::: {.column width="50%"}
-Let's draw this by hand
+Let's draw this "by hand"
 :::
 :::::
 
-## Draw this by hand
+## Draw this "by hand"
 
 ::::: columns
 ::: {.column width="50%"}
@@ -269,7 +268,7 @@ Let's draw this by hand
 ::: {.column width="50%"}
 - Draw the axes
 - Draw the data points
-- Adjust dot sizes
+- Adjust point sizes
 - Colour-code the regions
 - Add key country labels
 :::
@@ -385,7 +384,7 @@ ggplot(df, aes(x = inequality, y = coverage)) +
 :::
 :::::::
 
-## Adjust dot sizes {.smaller}
+## Adjust point sizes {.smaller}
 
 ::::::: columns
 ::::: {.column width="60%"}
@@ -510,8 +509,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   (points, lines, bars)
 
 ::: fragment
-- [Scales]{style="color: orange;"} defines the range and values of an
-  [aesthetic]{style="color: red;"}
+- [Scales]{style="color: orange;"} defines *how* the information (data) is mapped to [aesthetic attributes]{style="color: red;"} work
 :::
 
 ## Scales
