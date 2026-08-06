@@ -245,6 +245,209 @@
     "text": "Slide structure\n\n\n\nindex.qmd\n---\ntitle: \"My Presentation\"\nauthor: \"Your Name\"\nformat: \n  revealjs:\n    chalkboard: true\ntoc: false\n---\n\n## Slide Title\n\n- Bullet point 1\n- Bullet point 2\n\n## Code Blocks & Highlighting\n\nYou can add code blocks like this:\n\n```{r}\n# R code block\nsummary(cars)\n```"
   },
   {
+    "objectID": "slides/qt-example-slide.html#slide-title",
+    "href": "slides/qt-example-slide.html#slide-title",
+    "title": "My Presentation",
+    "section": "Slide Title",
+    "text": "Slide Title\n\nBullet point 1\nBullet point 2"
+  },
+  {
+    "objectID": "slides/qt-example-slide.html#code-blocks-highlighting",
+    "href": "slides/qt-example-slide.html#code-blocks-highlighting",
+    "title": "My Presentation",
+    "section": "Code Blocks & Highlighting",
+    "text": "Code Blocks & Highlighting\nYou can add code blocks like this:\n```{r}\n# R code block\nsummary(cars)\n```"
+  },
+  {
+    "objectID": "handouts/precourse_setup.html",
+    "href": "handouts/precourse_setup.html",
+    "title": "Pre-course setups and requirements",
+    "section": "",
+    "text": "Here we explain how to install R and RStudio on your own computer. This is required to ensure a smooth experience and reproducible results during the course."
+  },
+  {
+    "objectID": "handouts/precourse_setup.html#r",
+    "href": "handouts/precourse_setup.html#r",
+    "title": "Pre-course setups and requirements",
+    "section": "R",
+    "text": "R\n\nGo to the R website\nIn the column on the left hand side, click on the CRAN link under the subheading Download\n\nYou now see a page with CRAN Mirrors. This is a list of servers from which the R software and extensions can be downloaded from\n\nClick on the first link\n\nNow both the left hand side and the right hand side of the page change (This page can be saved as a bookmark/favorite)\n\nOn the right hand side, click on the download link for your operating system\n\nE.g. Windows users click on Download R for Windows, then click on base and download the program from there.\nIt is recommended to install the latest version as well as to upgrade the program if a new major version is released, which is about once per year\nYou can use the default installation options"
+  },
+  {
+    "objectID": "handouts/precourse_setup.html#rstudio-desktop",
+    "href": "handouts/precourse_setup.html#rstudio-desktop",
+    "title": "Pre-course setups and requirements",
+    "section": "RStudio Desktop",
+    "text": "RStudio Desktop\n\nGo to the download page\nScroll down, look for 2: Install Rstudio and click on the button for downloading RStudio Desktop\nDownload and install RStudio Desktop\n\nYou can use the default installation options\n\nOpen Rstudio Desktop, to check that everything has been installed correctly\n\nE.g. via the Start menu in Windows"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "OUCRU R training course - 2026",
+    "section": "",
+    "text": "The training will be 09:00 – 17:00 (UTC +7) for everyday\n\nWe will finish on Friday morning session\n\nThere will be a lunch break between 12:30 – 13:30 (UTC +7)\nLunch will be provided for in-person attendees\n\n\n\n\nProf. Ronald Geskus, Biostatistics group, OUCRU HCM\nDr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM\nMr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM\nDr. Tran Thai Hung, Biostatistics group, OUCRU HCM\nMs. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM\nDr. Duc Du Hong, Biostatistics group, OUCRU HCM\nDr. Thuan Hoang Van, Biostatistics group, OUCRU HCM\nMr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM\n\n\n\n\nPlease follow this precourse handout to setup R and RStudio."
+  },
+  {
+    "objectID": "index.html#contributors",
+    "href": "index.html#contributors",
+    "title": "OUCRU R training course - 2026",
+    "section": "",
+    "text": "Prof. Ronald Geskus, Biostatistics group, OUCRU HCM\nDr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM\nMr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM\nDr. Tran Thai Hung, Biostatistics group, OUCRU HCM\nMs. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM\nDr. Duc Du Hong, Biostatistics group, OUCRU HCM\nDr. Thuan Hoang Van, Biostatistics group, OUCRU HCM\nMr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM"
+  },
+  {
+    "objectID": "index.html#pre-course-setups-and-requirements",
+    "href": "index.html#pre-course-setups-and-requirements",
+    "title": "OUCRU R training course - 2026",
+    "section": "",
+    "text": "Please follow this precourse handout to setup R and RStudio."
+  },
+  {
+    "objectID": "index.html#introduction-to-r",
+    "href": "index.html#introduction-to-r",
+    "title": "OUCRU R training course - 2026",
+    "section": "Introduction to R",
+    "text": "Introduction to R\n\nDay 1 (Monday)\n\n\nLearning objectives:\n\nOpen and inspect datasets, understand their structure\nMake selections and extract relevant data\nPerform basic data exploration, including calculating summaries and identifying missing values\nNavigate RStudio with confidence\n\n\n\n\n\nDay 2 (Tuesday)\n\n\nLearning objectives:\n\nWrite simple functions to automate tasks\nCreate visualisations using Base R graphics\nUnderstand the R working environment, including file paths and workspace management\nUsing pipe operators to chain functions\nHow to read and understand the errors and warnings in your R console\nFind and use R documentation and resources to solve problems on your own\n\nNo exercises will be given"
+  },
+  {
+    "objectID": "index.html#principles-of-data-visualisation-and-plotting-in-r",
+    "href": "index.html#principles-of-data-visualisation-and-plotting-in-r",
+    "title": "OUCRU R training course - 2026",
+    "section": "Principles of data visualisation and plotting in R",
+    "text": "Principles of data visualisation and plotting in R\n\nDay 3 (Wednesday):\n\nLecture slides\nLearning objectives:\n\nThe grammar of graphics—understanding how plots are built\nThe step-by-step process of creating graphs in R\nUse the ggplot2 package plot figures in R\nHow to design clear and impactful visualisations\nUsing LLMs (Large Language Models) to help you with plotting\n\n\n\n\n\nDay 4 (Thursday-morning):\n\nLearning objectives:\n\nUnderstand the principles of data visualisation"
+  },
+  {
+    "objectID": "index.html#advanced-data-management-in-r",
+    "href": "index.html#advanced-data-management-in-r",
+    "title": "OUCRU R training course - 2026",
+    "section": "Advanced data management in R",
+    "text": "Advanced data management in R\n\nDay 4 (Thursday-afternoon):\n\nLearning objectives:\n\nLogics with if-else statements and for-loops\nData manipulation with mutate()\nJoining dataframes\nPivotting dataframes into long and wide formats\nVectorisation in R with map()"
+  },
+  {
+    "objectID": "index.html#reproducible-research-and-reporting-using-quarto",
+    "href": "index.html#reproducible-research-and-reporting-using-quarto",
+    "title": "OUCRU R training course - 2026",
+    "section": "Reproducible research and reporting using Quarto",
+    "text": "Reproducible research and reporting using Quarto\n\nDay 5 (Friday-morning)\n\nLecture slides\nLearning objectives:\n\nWrite papers with reproducible tables and figures using Quarto\nGenerate reports in multiple formats: Word, PDF, slides, web pages…\nEasily update analyses when new data becomes available\n\nExercises\nExercise answer keys"
+  },
+  {
+    "objectID": "index.html#introduction-to-r-and-rstudio",
+    "href": "index.html#introduction-to-r-and-rstudio",
+    "title": "OUCRU R training course - 2026",
+    "section": "Introduction to R and RStudio",
+    "text": "Introduction to R and RStudio\nGood introduction, with explanatory videos:\n\nRStudio provides several tutorials for beginners and more advanced users: https://education.rstudio.com/\nDatacamp provides many courses at different levels (OUCRU HCMC has a license). See http://www.statmethods.net. The introduction is free\nA basic course, interactive design: https://www.quantargo.com/courses/course-r-introduction\nIntroduction from Pasteur institute: https://hub-courses.pages.pasteur.fr/R_pasteur_phd/First_steps_RStudio.html\nGood summary of basic concepts: http://www.burns-stat.com/documents/tutorials/impatient-r\nA comprehensive introduction: https://github.com/matloff/fasteR\nIntroduction to R programming: https://jjallaire.github.io/hopr/"
+  },
+  {
+    "objectID": "index.html#deeper-into-r",
+    "href": "index.html#deeper-into-r",
+    "title": "OUCRU R training course - 2026",
+    "section": "DeepeR into R",
+    "text": "DeepeR into R\n\nThe book R for Data Science (2e)\n“What They Forgot to Teach You About R”\nhttps://www.r-project.org/doc/bib/R-books.html\nThe official R manuals: https://cran.r-project.org/manuals.html"
+  },
+  {
+    "objectID": "index.html#r-and-statistics",
+    "href": "index.html#r-and-statistics",
+    "title": "OUCRU R training course - 2026",
+    "section": "R and statistics",
+    "text": "R and statistics\n\nA simple introduction to biomedical statistics using R: https://a-little-book-of-r-for-biomedical-statistics.readthedocs.io/en/latest/\nA website with detailed examples of all types of statistical analysis: https://stats.oarc.ucla.edu/other/dae/\nR by example: http://www.mayin.org/ajayshah/KB/R/index.html\nR course, with focus machine learning"
+  },
+  {
+    "objectID": "index.html#r-markdown-and-quarto",
+    "href": "index.html#r-markdown-and-quarto",
+    "title": "OUCRU R training course - 2026",
+    "section": "R Markdown and Quarto",
+    "text": "R Markdown and Quarto\n\nThe main RStudio webpage on R Markdown, with links to two freely available books: https://rmarkdown.rstudio.com/docs/\nIntroduction from RStudio\nIntroduction to knitr\nFirst steps in Markdown\nWriting academic papers with R Markdown (focus on bibiliographies): https://ikashnitsky.github.io/2019/zotero/\nR Markdown tips: https://appsilon.com/r-markdown-tips/\nPowerpoint presentations using R Markdown: https://appsilon.com/r-markdown-powerpoint-presentation/\nhttps://codingclubuc3m.rbind.io/post/2019-09-24/ focus on creating presentations\nR Quarto tutorial: https://appsilon.com/r-quarto-tutorial/"
+  },
+  {
+    "objectID": "handouts/exercises_Day5.html",
+    "href": "handouts/exercises_Day5.html",
+    "title": "Exercises Day 5",
+    "section": "",
+    "text": "NotePiping\n\n\n\nIt is expected that the exercise answers will be mainly using the pipe operators |&gt;, instead of putting functions inside each other"
+  },
+  {
+    "objectID": "handouts/exercises_Day5.html#notes-and-instructions",
+    "href": "handouts/exercises_Day5.html#notes-and-instructions",
+    "title": "Exercises Day 5",
+    "section": "",
+    "text": "NotePiping\n\n\n\nIt is expected that the exercise answers will be mainly using the pipe operators |&gt;, instead of putting functions inside each other"
+  },
+  {
+    "objectID": "handouts/exercises_Day5.html#dataset",
+    "href": "handouts/exercises_Day5.html#dataset",
+    "title": "Exercises Day 5",
+    "section": "Dataset",
+    "text": "Dataset\nWe will use covid_cases.rds for this exercise.\n\n  \n    Data dictionary\n  \n\n\n\n\n\n\n\nColumn\nDescription\n\n\n\n\ndate\ndate of the case report\n\n\n211 columns with the format cases_{country_code}\nnumber of reported cases of each country and archipelago\n\n\n\nCountry codes of interest (i.e. Codes for countries needed for the exercise)\n\n\n\nCode\nCountry name\n\n\n\n\nchn\nChina\n\n\nusa\nUnited States of America\n\n\nvnm\nVietnam\n\n\nsgp\nSingapore"
+  },
+  {
+    "objectID": "handouts/exercises_Day5.html#exercises",
+    "href": "handouts/exercises_Day5.html#exercises",
+    "title": "Exercises Day 5",
+    "section": "Exercises",
+    "text": "Exercises\n\nTask 1: Data import\n\nRead data\nLoad the tidyverse meta-package into R\n\n\n\n\n\n\n\nNote\n\n\n\nA “meta-package” is a package that contains other packages. Remember, tidyverse is just a collection of packages.\n\n\n\n\nTask 2: Data cleaning and filtering\n\nDoes the data follow the tidy data standard?\n\nIf not, pivot the data into a tibble that follows the tidy data standard\n\nDo some quick skim on the data. Do the variable values make sense given its type?\n\nIf not, filter out incorrect/impossible data\n\nFilter the data so that we only have week 3-12 of 2020\nSave the results back into covid_cases\n\n\n\n\n\n\n\nTipTip: pivotting\n\n\n\n\n\n\nIf your data is not tidy data:\n\n“Lengthens” the data using tidyr::pivot_longer(), i.e. less columns, more rows\n“Widens” the data using tidyr::pivot_wider(), i.e. less rows, more columns\n\n\n\n\n\n\n\n\n\n\n\nTipTip: data cleaning\n\n\n\n\n\n\nThe main variable here is case counts from each country. They should have a numeric type and should not be lower than 0. You can’t have negative case counts\nYou can remove or filter undesirable values using dplyr::filter()\n\n\n\n\n\n\nTask 3: Data transformation\n\nUsing the covid_cases object created in Task 2:\n\nGroup the data and calculate the total number of cases per country\nSelect the top 5 countries with highest total cases\nExtract the country codes and save them into a new object, e.g. top_countries\n\n\n\nUse the covid_cases object created in Task 2 again:\n\nGroup the data again, calculate the total number of cases per country again\nModify the country column:\n\nSo that we only keep the names of countries in the top 5 (generated above). Countries on in the top 5 will be changed to \"Others\"\nTurn this column into a factor type using the forcats package (already in tidyverse)\nGroup the data again, this time, group by date and country\nCalculate the total number of cases per date per country\nCreate a new column called pct_cases, which is the percentage of total cases per date per country\n(Optional) remove rows with NA from the tibble\nThere are many ways to do this part of the task\n\nSave all of this into a new object, e.g. plot_data\n\n\n\n\n\n\n\n\nTipTip: data grouping and summarisation\n\n\n\n\n\n\nGroup data into groups with dplyr::group_by() and ungroup data with dplyr::ungroup()\nSummarise each group into a single row with dplyr::summarise()\nYou can have multiple groups at the same time. For example:\n\n\n\n`summarise()` has regrouped the output.\nℹ Summaries were computed grouped by date and country.\nℹ Output is grouped by date.\nℹ Use `summarise(.groups = \"drop_last\")` to silence this message.\nℹ Use `summarise(.by = c(date, country))` for per-operation grouping\n  (`?dplyr::dplyr_by`) instead.\n\n\n\n  \n\n\n\n\nYou can choose not to summarise, but add a new column to each group with dplyr::mutate(). For example:\n\n\n\n\n  \n\n\n\nThis will create a new column total_cases that contains the sum of cases for each country without reducing each group into a single row like summarise(). Values will be duplicated for each group.\n\n\n\n\n\n\n\n\n\nTipTip: get top n values in a tibble\n\n\n\n\n\n\nYou can select rows with the top n values in a tibble using dplyr::slice_max()\n\n\n\n\n\n\n\n\n\n\nTipTip: get values of a column in a tibble\n\n\n\n\n\n\nYou can extract values from a columns in a tibble using dplyr::pull()\n\n\n\n\n\n\n\n\n\n\nTipTip: turn a tibble column into a factor\n\n\n\n\n\n\nYou can create and work with factors inside a tibble using the forcats package (already in tidyverse)\nYou can “lump”, or gather, factor levels that are not frequent with forcats::fct_lump_n()\n\n\n\n\n\n\nTask 4: Join data\n\nUse this data country_region.rds to get the regions and sub-regions for all countries.\nMake these 2 tables:\n\n\n\n\n  \n\n\n\n\n\n\n  \n\n\n\n\nWrite a short paragraph summarising key insights from the table, using inline R code to dynamically display case numbers. For example:\n\n\nEurope (192,068) and Asia (126,420) reported the highest number of cases, while Oceania (1,879) had the lowest.\n\nNoted that the number of cases is not hard-coded but you use inline R code to generate it within the text.\n\n\n\n\n\n\nTipTip: join the tables with left_join()\n\n\n\n\n\nYou can join covid_cases and country_region, using the country column of covid_cases and the alpha_3 column of country_region.\n\n\n\n\n\n\n\n\n\nTipTip: make the total cases table\n\n\n\n\n\nYou can use group_by() and summarise() to compute the total cases by sum(cases).\n\n\n\n\n\n\n\n\n\nTipTip: make inline R code\n\n\n\n\n\nIn the paragraph, use inline R code like {r} scales::comma(data$total_cases[tmp1$region == \"Europe\"]) to reference computed values. Function scales::comma() will make the numbers appear with commas for thousands (e.g., 100,000 instead of 100000).\n\n\n\n\n\nTask 5: Data visualization\n\nUsing ggplot2, try your best to generate the following figure:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipTip: how do I draw that??\n\n\n\n\n\n\nggplot2 reference page is very useful\nHere are all the functions used to generate the plot above, in sequence:\n\nggplot()\ngeom_area()\nscale_y_continuous()\nscale_x_date()\nscale_fill_discrete()\nggtitle()\nEvery function is connected with the + operator"
+  },
+  {
+    "objectID": "slides/qt-example.html",
+    "href": "slides/qt-example.html",
+    "title": "Hello, Quarto",
+    "section": "",
+    "text": "Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
+  },
+  {
+    "objectID": "slides/qt-example.html#introduction-to-quarto",
+    "href": "slides/qt-example.html#introduction-to-quarto",
+    "title": "Hello, Quarto",
+    "section": "",
+    "text": "Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
+  },
+  {
+    "objectID": "slides/qt-example.html#header-levels",
+    "href": "slides/qt-example.html#header-levels",
+    "title": "Hello, Quarto",
+    "section": "2 Header Levels",
+    "text": "2 Header Levels\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\nLevel 1 header: # Header\nLevel 2 header: ## Subheader\nLevel 3 header: ### Sub-subheader\n\n\n2.1 Nested Headers\nUsing headers, you can create nested sections to structure your document in a clear and organized way."
+  },
+  {
+    "objectID": "slides/qt-example.html#inline-text-formatting",
+    "href": "slides/qt-example.html#inline-text-formatting",
+    "title": "Hello, Quarto",
+    "section": "3 Inline Text Formatting",
+    "text": "3 Inline Text Formatting\nYou can format your text inline to add emphasis or other styling options.\n\nBold text: **bold**\nItalic text: *italic*\nInline code: `code`\nUnderline: [underline]{.underline}\n\n\nBlockquotes can be used to highlight important information or quotes by adding &gt; at the beginning of a line."
+  },
+  {
+    "objectID": "slides/qt-example.html#lists",
+    "href": "slides/qt-example.html#lists",
+    "title": "Hello, Quarto",
+    "section": "4 Lists",
+    "text": "4 Lists\nQuarto supports both ordered and unordered lists.\n\n4.1 Unordered List\nTo create an unordered list, use an asterisk * before each item:\n\nFirst item\nSecond item\nThird item\n\n\n\n4.2 Ordered List\nTo create an ordered list, use numbers before each item:\n\nFirst item\nSecond item\nThird item"
+  },
+  {
+    "objectID": "slides/qt-example.html#links-and-images",
+    "href": "slides/qt-example.html#links-and-images",
+    "title": "Hello, Quarto",
+    "section": "5 Links and images",
+    "text": "5 Links and images\nhttp://example.com\nlinked phrase\n\n\n\noptional caption text"
+  },
+  {
+    "objectID": "slides/qt-example.html#tables",
+    "href": "slides/qt-example.html#tables",
+    "title": "Hello, Quarto",
+    "section": "6 Tables",
+    "text": "6 Tables\n\n\n\nFirst Header\nSecond Header\n\n\n\n\nContent Cell\nContent Cell\n\n\nContent Cell\nContent Cell"
+  },
+  {
+    "objectID": "slides/qt-example.html#code-block",
+    "href": "slides/qt-example.html#code-block",
+    "title": "Hello, Quarto",
+    "section": "7 Code block",
+    "text": "7 Code block\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")"
+  },
+  {
+    "objectID": "slides/qt-example.html#footnotes",
+    "href": "slides/qt-example.html#footnotes",
+    "title": "Hello, Quarto",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThis is an example footnote.↩︎"
+  },
+  {
     "objectID": "slides/viz.html#what-to-expect",
     "href": "slides/viz.html#what-to-expect",
     "title": "Principles of data visualisation and plotting in R",
@@ -866,208 +1069,5 @@
     "title": "Principles of data visualisation and plotting in R",
     "section": "Interactive plots with plotly",
     "text": "Interactive plots with plotly\n\n\nYou can also create 3d plots with plotly\n\n\nplot_ly(\n  data = tibble(x = rnorm(10), y = rnorm(10), z = rnorm(10)),\n  x = ~x,\n  y = ~y,\n  z = ~z\n)\n\nNo trace type specified:\n  Based on info supplied, a 'scatter3d' trace seems appropriate.\n  Read more about this trace type -&gt; https://plotly.com/r/reference/#scatter3d\n\n\nNo scatter3d mode specifed:\n  Setting the mode to markers\n  Read more about this attribute -&gt; https://plotly.com/r/reference/#scatter-mode"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "OUCRU R training course - 2026",
-    "section": "",
-    "text": "The training will be 09:00 – 17:00 (UTC +7) for everyday\n\nWe will finish on Friday morning session\n\nThere will be a lunch break between 12:30 – 13:30 (UTC +7)\nLunch will be provided for in-person attendees\n\n\n\n\nProf. Ronald Geskus, Biostatistics group, OUCRU HCM\nDr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM\nMr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM\nDr. Tran Thai Hung, Biostatistics group, OUCRU HCM\nMs. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM\nDr. Duc Du Hong, Biostatistics group, OUCRU HCM\nDr. Thuan Hoang Van, Biostatistics group, OUCRU HCM\nMr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM\n\n\n\n\nPlease follow this precourse handout to setup R and RStudio."
-  },
-  {
-    "objectID": "index.html#contributors",
-    "href": "index.html#contributors",
-    "title": "OUCRU R training course - 2026",
-    "section": "",
-    "text": "Prof. Ronald Geskus, Biostatistics group, OUCRU HCM\nDr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM\nMr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM\nDr. Tran Thai Hung, Biostatistics group, OUCRU HCM\nMs. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM\nDr. Duc Du Hong, Biostatistics group, OUCRU HCM\nDr. Thuan Hoang Van, Biostatistics group, OUCRU HCM\nMr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM"
-  },
-  {
-    "objectID": "index.html#pre-course-setups-and-requirements",
-    "href": "index.html#pre-course-setups-and-requirements",
-    "title": "OUCRU R training course - 2026",
-    "section": "",
-    "text": "Please follow this precourse handout to setup R and RStudio."
-  },
-  {
-    "objectID": "index.html#introduction-to-r",
-    "href": "index.html#introduction-to-r",
-    "title": "OUCRU R training course - 2026",
-    "section": "Introduction to R",
-    "text": "Introduction to R\n\nDay 1 (Monday)\n\n\nLearning objectives:\n\nOpen and inspect datasets, understand their structure\nMake selections and extract relevant data\nPerform basic data exploration, including calculating summaries and identifying missing values\nNavigate RStudio with confidence\n\n\n\n\n\nDay 2 (Tuesday)\n\n\nLearning objectives:\n\nWrite simple functions to automate tasks\nCreate visualisations using Base R graphics\nUnderstand the R working environment, including file paths and workspace management\nUsing pipe operators to chain functions\nHow to read and understand the errors and warnings in your R console\nFind and use R documentation and resources to solve problems on your own\n\nNo exercises will be given"
-  },
-  {
-    "objectID": "index.html#principles-of-data-visualisation-and-plotting-in-r",
-    "href": "index.html#principles-of-data-visualisation-and-plotting-in-r",
-    "title": "OUCRU R training course - 2026",
-    "section": "Principles of data visualisation and plotting in R",
-    "text": "Principles of data visualisation and plotting in R\n\nDay 3 (Wednesday):\n\nLecture slides\nLearning objectives:\n\nThe grammar of graphics—understanding how plots are built\nThe step-by-step process of creating graphs in R\nUse the ggplot2 package plot figures in R\nHow to design clear and impactful visualisations\nUsing LLMs (Large Language Models) to help you with plotting\n\n\n\n\n\nDay 4 (Thursday-morning):\n\nLearning objectives:\n\nUnderstand the principles of data visualisation"
-  },
-  {
-    "objectID": "index.html#advanced-data-management-in-r",
-    "href": "index.html#advanced-data-management-in-r",
-    "title": "OUCRU R training course - 2026",
-    "section": "Advanced data management in R",
-    "text": "Advanced data management in R\n\nDay 4 (Thursday-afternoon):\n\nLearning objectives:\n\nLogics with if-else statements and for-loops\nData manipulation with mutate()\nJoining dataframes\nPivotting dataframes into long and wide formats\nVectorisation in R with map()"
-  },
-  {
-    "objectID": "index.html#reproducible-research-and-reporting-using-quarto",
-    "href": "index.html#reproducible-research-and-reporting-using-quarto",
-    "title": "OUCRU R training course - 2026",
-    "section": "Reproducible research and reporting using Quarto",
-    "text": "Reproducible research and reporting using Quarto\n\nDay 5 (Friday-morning)\n\nLecture slides\nLearning objectives:\n\nWrite papers with reproducible tables and figures using Quarto\nGenerate reports in multiple formats: Word, PDF, slides, web pages…\nEasily update analyses when new data becomes available\n\nExercises\nExercise answer keys"
-  },
-  {
-    "objectID": "index.html#introduction-to-r-and-rstudio",
-    "href": "index.html#introduction-to-r-and-rstudio",
-    "title": "OUCRU R training course - 2026",
-    "section": "Introduction to R and RStudio",
-    "text": "Introduction to R and RStudio\nGood introduction, with explanatory videos:\n\nRStudio provides several tutorials for beginners and more advanced users: https://education.rstudio.com/\nDatacamp provides many courses at different levels (OUCRU HCMC has a license). See http://www.statmethods.net. The introduction is free\nA basic course, interactive design: https://www.quantargo.com/courses/course-r-introduction\nIntroduction from Pasteur institute: https://hub-courses.pages.pasteur.fr/R_pasteur_phd/First_steps_RStudio.html\nGood summary of basic concepts: http://www.burns-stat.com/documents/tutorials/impatient-r\nA comprehensive introduction: https://github.com/matloff/fasteR\nIntroduction to R programming: https://jjallaire.github.io/hopr/"
-  },
-  {
-    "objectID": "index.html#deeper-into-r",
-    "href": "index.html#deeper-into-r",
-    "title": "OUCRU R training course - 2026",
-    "section": "DeepeR into R",
-    "text": "DeepeR into R\n\nThe book R for Data Science (2e)\n“What They Forgot to Teach You About R”\nhttps://www.r-project.org/doc/bib/R-books.html\nThe official R manuals: https://cran.r-project.org/manuals.html"
-  },
-  {
-    "objectID": "index.html#r-and-statistics",
-    "href": "index.html#r-and-statistics",
-    "title": "OUCRU R training course - 2026",
-    "section": "R and statistics",
-    "text": "R and statistics\n\nA simple introduction to biomedical statistics using R: https://a-little-book-of-r-for-biomedical-statistics.readthedocs.io/en/latest/\nA website with detailed examples of all types of statistical analysis: https://stats.oarc.ucla.edu/other/dae/\nR by example: http://www.mayin.org/ajayshah/KB/R/index.html\nR course, with focus machine learning"
-  },
-  {
-    "objectID": "index.html#r-markdown-and-quarto",
-    "href": "index.html#r-markdown-and-quarto",
-    "title": "OUCRU R training course - 2026",
-    "section": "R Markdown and Quarto",
-    "text": "R Markdown and Quarto\n\nThe main RStudio webpage on R Markdown, with links to two freely available books: https://rmarkdown.rstudio.com/docs/\nIntroduction from RStudio\nIntroduction to knitr\nFirst steps in Markdown\nWriting academic papers with R Markdown (focus on bibiliographies): https://ikashnitsky.github.io/2019/zotero/\nR Markdown tips: https://appsilon.com/r-markdown-tips/\nPowerpoint presentations using R Markdown: https://appsilon.com/r-markdown-powerpoint-presentation/\nhttps://codingclubuc3m.rbind.io/post/2019-09-24/ focus on creating presentations\nR Quarto tutorial: https://appsilon.com/r-quarto-tutorial/"
-  },
-  {
-    "objectID": "handouts/exercises_Day5.html",
-    "href": "handouts/exercises_Day5.html",
-    "title": "Exercises Day 5",
-    "section": "",
-    "text": "NotePiping\n\n\n\nIt is expected that the exercise answers will be mainly using the pipe operators |&gt;, instead of putting functions inside each other"
-  },
-  {
-    "objectID": "handouts/exercises_Day5.html#notes-and-instructions",
-    "href": "handouts/exercises_Day5.html#notes-and-instructions",
-    "title": "Exercises Day 5",
-    "section": "",
-    "text": "NotePiping\n\n\n\nIt is expected that the exercise answers will be mainly using the pipe operators |&gt;, instead of putting functions inside each other"
-  },
-  {
-    "objectID": "handouts/exercises_Day5.html#dataset",
-    "href": "handouts/exercises_Day5.html#dataset",
-    "title": "Exercises Day 5",
-    "section": "Dataset",
-    "text": "Dataset\nWe will use covid_cases.rds for this exercise.\n\n  \n    Data dictionary\n  \n\n\n\n\n\n\n\nColumn\nDescription\n\n\n\n\ndate\ndate of the case report\n\n\n211 columns with the format cases_{country_code}\nnumber of reported cases of each country and archipelago\n\n\n\nCountry codes of interest (i.e. Codes for countries needed for the exercise)\n\n\n\nCode\nCountry name\n\n\n\n\nchn\nChina\n\n\nusa\nUnited States of America\n\n\nvnm\nVietnam\n\n\nsgp\nSingapore"
-  },
-  {
-    "objectID": "handouts/exercises_Day5.html#exercises",
-    "href": "handouts/exercises_Day5.html#exercises",
-    "title": "Exercises Day 5",
-    "section": "Exercises",
-    "text": "Exercises\n\nTask 1: Data import\n\nRead data\nLoad the tidyverse meta-package into R\n\n\n\n\n\n\n\nNote\n\n\n\nA “meta-package” is a package that contains other packages. Remember, tidyverse is just a collection of packages.\n\n\n\n\nTask 2: Data cleaning and filtering\n\nDoes the data follow the tidy data standard?\n\nIf not, pivot the data into a tibble that follows the tidy data standard\n\nDo some quick skim on the data. Do the variable values make sense given its type?\n\nIf not, filter out incorrect/impossible data\n\nFilter the data so that we only have week 3-12 of 2020\nSave the results back into covid_cases\n\n\n\n\n\n\n\nTipTip: pivotting\n\n\n\n\n\n\nIf your data is not tidy data:\n\n“Lengthens” the data using tidyr::pivot_longer(), i.e. less columns, more rows\n“Widens” the data using tidyr::pivot_wider(), i.e. less rows, more columns\n\n\n\n\n\n\n\n\n\n\n\nTipTip: data cleaning\n\n\n\n\n\n\nThe main variable here is case counts from each country. They should have a numeric type and should not be lower than 0. You can’t have negative case counts\nYou can remove or filter undesirable values using dplyr::filter()\n\n\n\n\n\n\nTask 3: Data transformation\n\nUsing the covid_cases object created in Task 2:\n\nGroup the data and calculate the total number of cases per country\nSelect the top 5 countries with highest total cases\nExtract the country codes and save them into a new object, e.g. top_countries\n\n\n\nUse the covid_cases object created in Task 2 again:\n\nGroup the data again, calculate the total number of cases per country again\nModify the country column:\n\nSo that we only keep the names of countries in the top 5 (generated above). Countries on in the top 5 will be changed to \"Others\"\nTurn this column into a factor type using the forcats package (already in tidyverse)\nGroup the data again, this time, group by date and country\nCalculate the total number of cases per date per country\nCreate a new column called pct_cases, which is the percentage of total cases per date per country\n(Optional) remove rows with NA from the tibble\nThere are many ways to do this part of the task\n\nSave all of this into a new object, e.g. plot_data\n\n\n\n\n\n\n\n\nTipTip: data grouping and summarisation\n\n\n\n\n\n\nGroup data into groups with dplyr::group_by() and ungroup data with dplyr::ungroup()\nSummarise each group into a single row with dplyr::summarise()\nYou can have multiple groups at the same time. For example:\n\n\n\n`summarise()` has regrouped the output.\nℹ Summaries were computed grouped by date and country.\nℹ Output is grouped by date.\nℹ Use `summarise(.groups = \"drop_last\")` to silence this message.\nℹ Use `summarise(.by = c(date, country))` for per-operation grouping\n  (`?dplyr::dplyr_by`) instead.\n\n\n\n  \n\n\n\n\nYou can choose not to summarise, but add a new column to each group with dplyr::mutate(). For example:\n\n\n\n\n  \n\n\n\nThis will create a new column total_cases that contains the sum of cases for each country without reducing each group into a single row like summarise(). Values will be duplicated for each group.\n\n\n\n\n\n\n\n\n\nTipTip: get top n values in a tibble\n\n\n\n\n\n\nYou can select rows with the top n values in a tibble using dplyr::slice_max()\n\n\n\n\n\n\n\n\n\n\nTipTip: get values of a column in a tibble\n\n\n\n\n\n\nYou can extract values from a columns in a tibble using dplyr::pull()\n\n\n\n\n\n\n\n\n\n\nTipTip: turn a tibble column into a factor\n\n\n\n\n\n\nYou can create and work with factors inside a tibble using the forcats package (already in tidyverse)\nYou can “lump”, or gather, factor levels that are not frequent with forcats::fct_lump_n()\n\n\n\n\n\n\nTask 4: Join data\n\nUse this data country_region.rds to get the regions and sub-regions for all countries.\nMake these 2 tables:\n\n\n\n\n  \n\n\n\n\n\n\n  \n\n\n\n\nWrite a short paragraph summarising key insights from the table, using inline R code to dynamically display case numbers. For example:\n\n\nEurope (192,068) and Asia (126,420) reported the highest number of cases, while Oceania (1,879) had the lowest.\n\nNoted that the number of cases is not hard-coded but you use inline R code to generate it within the text.\n\n\n\n\n\n\nTipTip: join the tables with left_join()\n\n\n\n\n\nYou can join covid_cases and country_region, using the country column of covid_cases and the alpha_3 column of country_region.\n\n\n\n\n\n\n\n\n\nTipTip: make the total cases table\n\n\n\n\n\nYou can use group_by() and summarise() to compute the total cases by sum(cases).\n\n\n\n\n\n\n\n\n\nTipTip: make inline R code\n\n\n\n\n\nIn the paragraph, use inline R code like {r} scales::comma(data$total_cases[tmp1$region == \"Europe\"]) to reference computed values. Function scales::comma() will make the numbers appear with commas for thousands (e.g., 100,000 instead of 100000).\n\n\n\n\n\nTask 5: Data visualization\n\nUsing ggplot2, try your best to generate the following figure:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipTip: how do I draw that??\n\n\n\n\n\n\nggplot2 reference page is very useful\nHere are all the functions used to generate the plot above, in sequence:\n\nggplot()\ngeom_area()\nscale_y_continuous()\nscale_x_date()\nscale_fill_discrete()\nggtitle()\nEvery function is connected with the + operator"
-  },
-  {
-    "objectID": "handouts/precourse_setup.html",
-    "href": "handouts/precourse_setup.html",
-    "title": "Pre-course setups and requirements",
-    "section": "",
-    "text": "Here we explain how to install R and RStudio on your own computer. This is required to ensure a smooth experience and reproducible results during the course."
-  },
-  {
-    "objectID": "handouts/precourse_setup.html#r",
-    "href": "handouts/precourse_setup.html#r",
-    "title": "Pre-course setups and requirements",
-    "section": "R",
-    "text": "R\n\nGo to the R website\nIn the column on the left hand side, click on the CRAN link under the subheading Download\n\nYou now see a page with CRAN Mirrors. This is a list of servers from which the R software and extensions can be downloaded from\n\nClick on the first link\n\nNow both the left hand side and the right hand side of the page change (This page can be saved as a bookmark/favorite)\n\nOn the right hand side, click on the download link for your operating system\n\nE.g. Windows users click on Download R for Windows, then click on base and download the program from there.\nIt is recommended to install the latest version as well as to upgrade the program if a new major version is released, which is about once per year\nYou can use the default installation options"
-  },
-  {
-    "objectID": "handouts/precourse_setup.html#rstudio-desktop",
-    "href": "handouts/precourse_setup.html#rstudio-desktop",
-    "title": "Pre-course setups and requirements",
-    "section": "RStudio Desktop",
-    "text": "RStudio Desktop\n\nGo to the download page\nScroll down, look for 2: Install Rstudio and click on the button for downloading RStudio Desktop\nDownload and install RStudio Desktop\n\nYou can use the default installation options\n\nOpen Rstudio Desktop, to check that everything has been installed correctly\n\nE.g. via the Start menu in Windows"
-  },
-  {
-    "objectID": "slides/qt-example-slide.html#slide-title",
-    "href": "slides/qt-example-slide.html#slide-title",
-    "title": "My Presentation",
-    "section": "Slide Title",
-    "text": "Slide Title\n\nBullet point 1\nBullet point 2"
-  },
-  {
-    "objectID": "slides/qt-example-slide.html#code-blocks-highlighting",
-    "href": "slides/qt-example-slide.html#code-blocks-highlighting",
-    "title": "My Presentation",
-    "section": "Code Blocks & Highlighting",
-    "text": "Code Blocks & Highlighting\nYou can add code blocks like this:\n```{r}\n# R code block\nsummary(cars)\n```"
-  },
-  {
-    "objectID": "slides/qt-example.html",
-    "href": "slides/qt-example.html",
-    "title": "Hello, Quarto",
-    "section": "",
-    "text": "Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
-  },
-  {
-    "objectID": "slides/qt-example.html#introduction-to-quarto",
-    "href": "slides/qt-example.html#introduction-to-quarto",
-    "title": "Hello, Quarto",
-    "section": "",
-    "text": "Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
-  },
-  {
-    "objectID": "slides/qt-example.html#header-levels",
-    "href": "slides/qt-example.html#header-levels",
-    "title": "Hello, Quarto",
-    "section": "2 Header Levels",
-    "text": "2 Header Levels\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\nLevel 1 header: # Header\nLevel 2 header: ## Subheader\nLevel 3 header: ### Sub-subheader\n\n\n2.1 Nested Headers\nUsing headers, you can create nested sections to structure your document in a clear and organized way."
-  },
-  {
-    "objectID": "slides/qt-example.html#inline-text-formatting",
-    "href": "slides/qt-example.html#inline-text-formatting",
-    "title": "Hello, Quarto",
-    "section": "3 Inline Text Formatting",
-    "text": "3 Inline Text Formatting\nYou can format your text inline to add emphasis or other styling options.\n\nBold text: **bold**\nItalic text: *italic*\nInline code: `code`\nUnderline: [underline]{.underline}\n\n\nBlockquotes can be used to highlight important information or quotes by adding &gt; at the beginning of a line."
-  },
-  {
-    "objectID": "slides/qt-example.html#lists",
-    "href": "slides/qt-example.html#lists",
-    "title": "Hello, Quarto",
-    "section": "4 Lists",
-    "text": "4 Lists\nQuarto supports both ordered and unordered lists.\n\n4.1 Unordered List\nTo create an unordered list, use an asterisk * before each item:\n\nFirst item\nSecond item\nThird item\n\n\n\n4.2 Ordered List\nTo create an ordered list, use numbers before each item:\n\nFirst item\nSecond item\nThird item"
-  },
-  {
-    "objectID": "slides/qt-example.html#links-and-images",
-    "href": "slides/qt-example.html#links-and-images",
-    "title": "Hello, Quarto",
-    "section": "5 Links and images",
-    "text": "5 Links and images\nhttp://example.com\nlinked phrase\n\n\n\noptional caption text"
-  },
-  {
-    "objectID": "slides/qt-example.html#tables",
-    "href": "slides/qt-example.html#tables",
-    "title": "Hello, Quarto",
-    "section": "6 Tables",
-    "text": "6 Tables\n\n\n\nFirst Header\nSecond Header\n\n\n\n\nContent Cell\nContent Cell\n\n\nContent Cell\nContent Cell"
-  },
-  {
-    "objectID": "slides/qt-example.html#code-block",
-    "href": "slides/qt-example.html#code-block",
-    "title": "Hello, Quarto",
-    "section": "7 Code block",
-    "text": "7 Code block\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")"
-  },
-  {
-    "objectID": "slides/qt-example.html#footnotes",
-    "href": "slides/qt-example.html#footnotes",
-    "title": "Hello, Quarto",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nThis is an example footnote.↩︎"
   }
 ]
