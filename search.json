@@ -242,7 +242,7 @@
     "href": "slides/qt-repro-res.html#slide-structure-1",
     "title": "Using Quarto for reproducible research",
     "section": "Slide structure",
-    "text": "Slide structure\n\n\n\nindex.qmd\n---\ntitle: \"My Presentation\"\nauthor: \"Your Name\"\nformat: \n  revealjs:\n    chalkboard: true\ntoc: false\n---\n\n## Slide Title\n\n- Bullet point 1\n- Bullet point 2\n\n## Code Blocks & Highlighting\n\nYou can add code blocks like this:\n\n```{r}\n# R code block\nsummary(cars)\n```\n\n\n{{&lt; revealjs file=\"qt-example-slide.html\" height=\"500px\" class=\"ratio ratio-16x9\" full-screen-link=\"false\" &gt;}}"
+    "text": "Slide structure\n\n\n\nindex.qmd\n---\ntitle: \"My Presentation\"\nauthor: \"Your Name\"\nformat: \n  revealjs:\n    chalkboard: true\ntoc: false\n---\n\n## Slide Title\n\n- Bullet point 1\n- Bullet point 2\n\n## Code Blocks & Highlighting\n\nYou can add code blocks like this:\n\n```{r}\n# R code block\nsummary(cars)\n```"
   },
   {
     "objectID": "slides/viz.html#what-to-expect",
