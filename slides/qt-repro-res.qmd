@@ -60,8 +60,15 @@ number-sections: false
 :::
 
 ::: {.column width="30%"}
-{{< qrcode https://quarto.org/docs/gallery/ width=200 height=200 >}}
+```{r}
+#| echo: false
+#| fig-width: 2
+#| fig-height: 2
+# Run install.packages("qrcode") in R console if not installed
+library(qrcode)
+qr_code("https://quarto.org/docs/gallery/") |> plot()
 
+```
 Or click [here](https://quarto.org/docs/gallery/)
 :::
 :::::
