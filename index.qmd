@@ -80,10 +80,10 @@ Please follow this [precourse handout](handouts/precourse_setup.qmd){target="_bl
   3. Use the `ggplot2` package plot figures in R
   4. How to design clear and impactful visualisations
   5. Using LLMs (Large Language Models) to help you with plotting
+  
+- [Exercises](handouts/exercise_day3.qmd){target="_blank"}
 
 <!-- - [Handout file](handouts/VisualisationHandouts.pdf)
-- Exercises:
-  - [Exercise file](handouts/exercises_Day3.qmd)
   - [Exercise answer key](handouts/Exercises_Day3_answer.pdf)
   - [Exercise answer script](handouts/Exercises_Day3_answer.R)
   - Datasets: 
