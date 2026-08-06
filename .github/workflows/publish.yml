@@ -28,9 +28,8 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      # Add TinyTeX installation step for PDF rendering
       - name: Install TinyTeX
-        uses: quarto-dev/quarto-actions/install-tinytex@v2
+        run: quarto install tinytex --no-prompt
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
