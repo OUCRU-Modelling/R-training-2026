@@ -26,7 +26,8 @@ date-format: "MMMM D, YYYY -- HH:mm:ss (z)"
 - Dr. Tran Thai Hung, Biostatistics group, OUCRU HCM
 - Ms. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM
 - Dr. Duc Du Hong, Biostatistics group, OUCRU HCM
-- Dr. Thuan Hoang Van, Biostatistics group, OUCRU HCM
+- Dr. Thuan Hoang Van, Biostatistics group, OUCRU Ha Noi
+- Dr. Nguyen Lam Vuong, Biostatistics group, OUCRU HCM
 - Mr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM
 
 
@@ -40,18 +41,19 @@ Please follow this [precourse handout](handouts/precourse_setup.qmd){target="_bl
 
 ### Day 1 (Monday)
 
-<!-- - [Lecture slides](slides/IntroductionRDay1.qmd) -->
+- [Lecture slides](slides/IntroductionRDay1.qmd)
 - **Learning objectives**:
-  1. Open and inspect datasets, understand their structure
-  2. Make selections and extract relevant data
-  3. Perform basic data exploration, including calculating summaries and identifying missing values
-  4. Navigate RStudio with confidence
+  1. Basic structure of R
+  2. Simple computations
+  3. Import and inspect datasets
+  4. Make selections
+  5. Navigate RStudio with confidence
 
-<!-- - Exercises:
-  - [Handout file](handouts/exercises_Day1.qmd){target="_blank"}
-  - [Exercise answer key](handouts/exercises_Day1_answer.qmd){target="_blank"}
-  - [Exercise answer script](handouts/exercises_Day1_answer.R){target="_blank"}
-- [Example R code scripts - Day 1](slides/Scripts/ExampleCodeDay1.R){target="_blank"} -->
+- Exercises:
+  - [Exercises](handouts/exercises_Day1.qmd){target="_blank"}
+  - [Exercise answers](handouts/exercises_Day1_answer.qmd){target="_blank"}
+  - [Exercise answers script](handouts/exercises_Day1_answer.R){target="_blank"}
+- [Example R code scripts - Day 1](slides/Scripts/ExampleCodeDay1.R){target="_blank"}
 
 ### Day 2 (Tuesday)
 
