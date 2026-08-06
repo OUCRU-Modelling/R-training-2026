@@ -900,7 +900,7 @@
     "href": "index.html#principles-of-data-visualisation-and-plotting-in-r",
     "title": "OUCRU R training course - 2026",
     "section": "Principles of data visualisation and plotting in R",
-    "text": "Principles of data visualisation and plotting in R\n\nDay 3 (Wednesday):\n\nLecture slides\nLearning objectives:\n\nThe grammar of graphics—understanding how plots are built\nThe step-by-step process of creating graphs in R\nUse the ggplot2 package plot figures in R\nHow to design clear and impactful visualisations\nUsing LLMs (Large Language Models) to help you with plotting\n\nExercise\n\n\n\n\nDay 4 (Thursday-morning):\n\nLearning objectives:\n\nUnderstand the principles of data visualisation"
+    "text": "Principles of data visualisation and plotting in R\n\nDay 3 (Wednesday):\n\nLecture slides\nLearning objectives:\n\nThe grammar of graphics—understanding how plots are built\nThe step-by-step process of creating graphs in R\nUse the ggplot2 package plot figures in R\nHow to design clear and impactful visualisations\nUsing LLMs (Large Language Models) to help you with plotting\n\nExercises\n\n\n\n\nDay 4 (Thursday-morning):\n\nLearning objectives:\n\nUnderstand the principles of data visualisation"
   },
   {
     "objectID": "index.html#advanced-data-management-in-r",
@@ -977,14 +977,14 @@
     "href": "handouts/exercise_day3.html",
     "title": "Exercises Day 3",
     "section": "",
-    "text": "Throughout this exercise, we will recreate the plots from [Day 2 exercise] using the ggplot2 package"
+    "text": "Throughout these exercises, we will recreate the plots from [Day 2 exercise] using the ggplot2 package"
   },
   {
     "objectID": "handouts/exercise_day3.html#overview",
     "href": "handouts/exercise_day3.html#overview",
     "title": "Exercises Day 3",
     "section": "",
-    "text": "Throughout this exercise, we will recreate the plots from [Day 2 exercise] using the ggplot2 package"
+    "text": "Throughout these exercises, we will recreate the plots from [Day 2 exercise] using the ggplot2 package"
   },
   {
     "objectID": "handouts/exercise_day3.html#dataset",
