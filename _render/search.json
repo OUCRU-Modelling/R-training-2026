@@ -908,6 +908,7 @@
     "title": "Using Quarto for reproducible research",
     "section": "Presentation",
     "text": "Presentation"
+    "text": "Presentation"
   },
   {
     "objectID": "slides/qt-repro-res.html#reportmanuscript",
@@ -928,7 +929,7 @@
     "href": "slides/qt-repro-res.html#more-examples",
     "title": "Using Quarto for reproducible research",
     "section": "More examples",
-    "text": "More examples\n\n\n\n\n{{&lt; qrcode https://quarto.org/docs/gallery/ 200 200 &gt;}}\nOr click here"
+    "text": "More examples\n\n\n\n\n{{&lt; qrcode https://quarto.org/docs/gallery/ width=200 height=200 &gt;}}\nOr click here"
   },
   {
     "objectID": "slides/qt-repro-res.html#exploring-quarto",

@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://oucru-modelling.github.io/R-training-2026/slides/viz.html</loc>
-    <lastmod>2026-08-06T03:33:42.625Z</lastmod>
+    <lastmod>2026-08-06T05:11:46.503Z</lastmod>
   </url>
   <url>
     <loc>https://oucru-modelling.github.io/R-training-2026/index.html</loc>
-    <lastmod>2026-08-06T03:42:07.892Z</lastmod>
+    <lastmod>2026-08-06T05:11:46.499Z</lastmod>
   </url>
   <url>
     <loc>https://oucru-modelling.github.io/R-training-2026/handouts/precourse_setup.html</loc>
@@ -31,5 +31,9 @@
   <url>
     <loc>https://oucru-modelling.github.io/R-training-2026/handouts/exercises_Day5.html</loc>
     <lastmod>2025-04-04T06:58:58.175Z</lastmod>
+  </url>
+  <url>
+    <loc>https://oucru-modelling.github.io/R-training-2026/handouts/exercise_day3.html</loc>
+    <lastmod>2026-08-06T10:10:15.771Z</lastmod>
   </url>
 </urlset>
