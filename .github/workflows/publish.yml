@@ -31,6 +31,9 @@ jobs:
       - name: Install TinyTeX
         run: quarto install tinytex --no-prompt
 
+      - name: Install webR Extension
+        run: quarto install extension quarto-ext/webr --no-prompt
+
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
