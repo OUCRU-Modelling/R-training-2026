@@ -3,8 +3,8 @@
     "objectID": "slides/viz.html#what-to-expect",
     "href": "slides/viz.html#what-to-expect",
     "title": "Principles of data visualisation and plotting in R",
-    "section": "What to expect",
-    "text": "What to expect\nHow to make an informative visual representation of data and/or results\n\nPart I: process of graph creation\nPart II: principles of graph interpretation\n\n\n\n\n\n\n\nNote\n\n\nGraph = diagram = chart = figure = picture"
+    "section": "",
+    "text": "How to make an informative visual representation of data and/or results\n\nPart I: process of graph creation\nPart II: principles of graph interpretation\n\n\n\n\n\n\n\nNote\n\n\n\nGraph = diagram = chart = figure = picture"
   },
   {
     "objectID": "slides/viz.html#section",
@@ -24,8 +24,8 @@
     "objectID": "slides/viz.html#answer-florence-nightingale",
     "href": "slides/viz.html#answer-florence-nightingale",
     "title": "Principles of data visualisation and plotting in R",
-    "section": "Answer: Florence Nightingale",
-    "text": "Answer: Florence Nightingale\nRose plot to convince UK authorities of importance of hygiene"
+    "section": "",
+    "text": "Rose plot to convince UK authorities of importance of hygiene"
   },
   {
     "objectID": "slides/viz.html#example-of-informative-graph",
@@ -38,15 +38,15 @@
     "objectID": "slides/viz.html#example-of-noninformative-graph",
     "href": "slides/viz.html#example-of-noninformative-graph",
     "title": "Principles of data visualisation and plotting in R",
-    "section": "Example of noninformative graph",
-    "text": "Example of noninformative graph\nHinrichsen: risk factors for hepatitis G infection in haemodialysis patients\n\nDo we need a graph?\nAre there enough data points to merit a plot?\n\nDepends on mode of presentation: conference lecture (time limit), article\n\nIf we use a graph, is this one the most truthful and informative?"
+    "section": "",
+    "text": "Hinrichsen: risk factors for hepatitis G infection in haemodialysis patients\n\nDo we need a graph?\nAre there enough data points to merit a plot?\n\nDepends on mode of presentation: conference lecture (time limit), article\n\nIf we use a graph, is this one the most truthful and informative?"
   },
   {
     "objectID": "slides/viz.html#graph-versus-table",
     "href": "slides/viz.html#graph-versus-table",
     "title": "Principles of data visualisation and plotting in R",
-    "section": "Graph versus table",
-    "text": "Graph versus table\nCohort study on 1187 HIV infected persons in The Gambia"
+    "section": "",
+    "text": "Cohort study on 1187 HIV infected persons in The Gambia"
   },
   {
     "objectID": "slides/viz.html#pattern-discovery-fake-results",
@@ -59,8 +59,8 @@
     "objectID": "slides/viz.html#points-to-consider",
     "href": "slides/viz.html#points-to-consider",
     "title": "Principles of data visualisation and plotting in R",
-    "section": "Points to consider",
-    "text": "Points to consider\n\n\nWhy do we make a graph? (purpose)\n\nWe want to explore and inspect our data or results\nPresent data or results, often with a message, to others\n\n\n\n\nWhere do we show the graph: research paper, conference, website\n\n\n\n\nWho is the audience. Level of background knowledge\n\n\n\n\nWhat do we want to show (data)\n\nGraph: visual representation of information (“encoding”)\nmapping from data/results to figure"
+    "section": "",
+    "text": "Why do we make a graph? (purpose)\n\nWe want to explore and inspect our data or results\nPresent data or results, often with a message, to others\n\n\n\n\nWhere do we show the graph: research paper, conference, website\n\n\n\n\nWho is the audience. Level of background knowledge\n\n\n\n\nWhat do we want to show (data)\n\nGraph: visual representation of information (“encoding”)\nmapping from data/results to figure"
   },
   {
     "objectID": "slides/viz.html#the-origin",
@@ -102,7 +102,7 @@
     "href": "slides/viz.html#scatter-plot-1",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Scatter plot",
-    "text": "Scatter plot\n\n\n\n\nWhat information would you need to map each point correctly onto this plot?\n\nCountry name\nPosition\nSize\nColor"
+    "text": "Scatter plot\n\n\n\n\nWhat information would you need to map each point correctly onto this plot?\n\n\nCountry name\nPosition\nSize\nColor"
   },
   {
     "objectID": "slides/viz.html#data",
@@ -165,14 +165,14 @@
     "href": "slides/viz.html#add-key-country-labels",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Add key country labels",
-    "text": "Add key country labels\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country))"
+    "text": "Add key country labels\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country))\n\n\n\n\n\nWarning: Removed 50 rows containing missing values or values outside the scale range\n(`geom_text()`)."
   },
   {
     "objectID": "slides/viz.html#compare-with-the-original-figure",
     "href": "slides/viz.html#compare-with-the-original-figure",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Compare with the original figure",
-    "text": "Compare with the original figure\n\n\nOriginal figure \n\nOurs (so far)"
+    "text": "Compare with the original figure\n\n\nOriginal figure \n\nOurs (so far)\n\n\nWarning: Removed 50 rows containing missing values or values outside the scale range\n(`geom_text()`)."
   },
   {
     "objectID": "slides/viz.html#grammar-of-a-graph-1",
@@ -207,7 +207,7 @@
     "href": "slides/viz.html#scales-statistical-transformation-1",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Scales: statistical transformation",
-    "text": "Scales: statistical transformation\n\n\n\n\n\n\nImportant\n\n\nStatistical transformation(s) on the scales do not change the data, just the scale we use to observe it\n\n\n\n\n\nLinear scale on the x-axis\n\n\n\n\n\n\n\n\n\n\nLog-10-scale on the x-axis"
+    "text": "Scales: statistical transformation\n\n\n\n\n\n\nImportant\n\n\n\nStatistical transformation(s) on the scales do not change the data, just the scale we use to observe it\n\n\n\n\nLinear scale on the x-axis\n\n\n\n\n\n\n\n\n\n\nLog-10-scale on the x-axis"
   },
   {
     "objectID": "slides/viz.html#scales",
@@ -221,63 +221,63 @@
     "href": "slides/viz.html#refine-the-plot-the-colour-scale",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Refine the plot: the colour scale",
-    "text": "Refine the plot: the colour scale\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country))"
+    "text": "Refine the plot: the colour scale\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country))\n\n\n\n\n\nWarning: Removed 50 rows containing missing values or values outside the scale range\n(`geom_text()`)."
   },
   {
     "objectID": "slides/viz.html#refine-the-plot-the-colour-scale-1",
     "href": "slides/viz.html#refine-the-plot-the-colour-scale-1",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Refine the plot: the colour scale",
-    "text": "Refine the plot: the colour scale\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_discrete(\n    palette = scales::pal_viridis()\n  )\n\n\nUse the built-in Viridis color palette"
+    "text": "Refine the plot: the colour scale\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_discrete(\n    palette = scales::pal_viridis()\n  )\n\n\nUse the built-in Viridis color palette\n\n\n\nWarning: Removed 50 rows containing missing values or values outside the scale range\n(`geom_text()`)."
   },
   {
     "objectID": "slides/viz.html#refine-the-plot-the-colour-scale-2",
     "href": "slides/viz.html#refine-the-plot-the-colour-scale-2",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Refine the plot: the colour scale",
-    "text": "Refine the plot: the colour scale\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_viridis_d()\n\n\n\n\n\n\n\n\nTip\n\n\nYou can also use scale_color_viridis_d(), which is a shorthand for the scale layer we used on the previous slide\nBreakdown:\n\nscale means we are adding a scale layer\n_color means this scale is for the color aesthetic (checking your aes()!)\n_viridis defines the color palette\n_d() stands for “discrete”, so this scale is for a discrete variable"
+    "text": "Refine the plot: the colour scale\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_viridis_d()\n\n\n\n\n\n\n\n\nTip\n\n\n\nYou can also use scale_color_viridis_d(), which is a shorthand for the scale layer we used on the previous slide\nBreakdown:\n\nscale means we are adding a scale layer\n_color means this scale is for the color aesthetic (checking your aes()!)\n_viridis defines the color palette\n_d() stands for “discrete”, so this scale is for a discrete variable\n\n\n\n\n\n\nWarning: Removed 50 rows containing missing values or values outside the scale range\n(`geom_text()`)."
   },
   {
     "objectID": "slides/viz.html#refine-the-plot-the-colour-scale-3",
     "href": "slides/viz.html#refine-the-plot-the-colour-scale-3",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Refine the plot: the colour scale",
-    "text": "Refine the plot: the colour scale\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_manual(values = my_pallete)\n\n\nYou can define and use your own custom color palette!"
+    "text": "Refine the plot: the colour scale\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_manual(values = my_pallete)\n\n\nYou can define and use your own custom color palette!\n\n\n\nWarning: Removed 50 rows containing missing values or values outside the scale range\n(`geom_text()`)."
   },
   {
     "objectID": "slides/viz.html#refine-the-plot-the-point-size-scale",
     "href": "slides/viz.html#refine-the-plot-the-point-size-scale",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Refine the plot: the point-size scale",
-    "text": "Refine the plot: the point-size scale\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_manual(values = my_pallete, guide = guide_legend(order = 2)) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  )"
+    "text": "Refine the plot: the point-size scale\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_manual(values = my_pallete, guide = guide_legend(order = 2)) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  )\n\n\n\n\n\nWarning: Removed 50 rows containing missing values or values outside the scale range\n(`geom_text()`)."
   },
   {
     "objectID": "slides/viz.html#refine-the-plot-the-axes",
     "href": "slides/viz.html#refine-the-plot-the-axes",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Refine the plot: the axes",
-    "text": "Refine the plot: the axes\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_manual(values = my_pallete, guide = guide_legend(order = 2)) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_x_continuous(\n    breaks = c(-0.25, 0, 0.25, 0.5),\n    limits = c(-0.4, 0.55)\n  ) +\n  scale_y_continuous(\n    breaks = c(-0.1, 0, 0.1),\n    limits = c(-0.16, 0.1)\n  )"
+    "text": "Refine the plot: the axes\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_manual(values = my_pallete, guide = guide_legend(order = 2)) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_x_continuous(\n    breaks = c(-0.25, 0, 0.25, 0.5),\n    limits = c(-0.4, 0.55)\n  ) +\n  scale_y_continuous(\n    breaks = c(-0.1, 0, 0.1),\n    limits = c(-0.16, 0.1)\n  )\n\n\n\n\n\nWarning: Removed 50 rows containing missing values or values outside the scale range\n(`geom_text()`)."
   },
   {
     "objectID": "slides/viz.html#refine-the-plot-labels-and-theme",
     "href": "slides/viz.html#refine-the-plot-labels-and-theme",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Refine the plot: labels and theme",
-    "text": "Refine the plot: labels and theme\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_manual(\n    name = \"\",\n    values = my_pallete,\n    guide = guide_legend(order = 2)\n  ) +\n  scale_size_continuous(\n    name = \"\",\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_x_continuous(\n    name = \"Change in MCV1 coverage (2019-2000)\",\n    breaks = c(-0.25, 0, 0.25, 0.5),\n    limits = c(-0.4, 0.55)\n  ) +\n  scale_y_continuous(\n    name = \"Change in absolute geographical inequality (2019-2000)\",\n    breaks = c(-0.1, 0, 0.1),\n    limits = c(-0.16, 0.1)\n  ) +\n  theme_classic() +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\"),\n    axis.text = element_text(size = 11)\n  )"
+    "text": "Refine the plot: labels and theme\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_manual(\n    name = \"\",\n    values = my_pallete,\n    guide = guide_legend(order = 2)\n  ) +\n  scale_size_continuous(\n    name = \"\",\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_x_continuous(\n    name = \"Change in MCV1 coverage (2019-2000)\",\n    breaks = c(-0.25, 0, 0.25, 0.5),\n    limits = c(-0.4, 0.55)\n  ) +\n  scale_y_continuous(\n    name = \"Change in absolute geographical inequality (2019-2000)\",\n    breaks = c(-0.1, 0, 0.1),\n    limits = c(-0.16, 0.1)\n  ) +\n  theme_classic() +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\"),\n    axis.text = element_text(size = 11)\n  )\n\n\n\n\n\nWarning: Removed 50 rows containing missing values or values outside the scale range\n(`geom_text()`)."
   },
   {
     "objectID": "slides/viz.html#refine-the-plot-minor-tweaks",
     "href": "slides/viz.html#refine-the-plot-minor-tweaks",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Refine the plot: minor tweaks",
-    "text": "Refine the plot: minor tweaks\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region), alpha = 0.8) +\n  geom_text(mapping = aes(label = country), hjust = -0.2, vjust = 0.2) +\n  geom_vline(xintercept = 0, color = \"#999999\") +\n  geom_hline(yintercept = 0, color = \"#999999\") +\n  scale_color_manual(\n    name = \"\",\n    values = my_pallete,\n    guide = guide_legend(order = 2)\n  ) +\n  scale_size_continuous(\n    name = \"\",\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_x_continuous(\n    name = \"Change in MCV1 coverage (2019-2000)\",\n    breaks = c(-0.25, 0, 0.25, 0.5),\n    limits = c(-0.4, 0.55)\n  ) +\n  scale_y_continuous(\n    name = \"Change in absolute geographical inequality (2019-2000)\",\n    breaks = c(-0.1, 0, 0.1),\n    limits = c(-0.16, 0.1)\n  ) +\n  theme_classic() +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\"),\n    axis.text = element_text(size = 11)\n  )"
+    "text": "Refine the plot: minor tweaks\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region), alpha = 0.8) +\n  geom_text(mapping = aes(label = country), hjust = -0.2, vjust = 0.2) +\n  geom_vline(xintercept = 0, color = \"#999999\") +\n  geom_hline(yintercept = 0, color = \"#999999\") +\n  scale_color_manual(\n    name = \"\",\n    values = my_pallete,\n    guide = guide_legend(order = 2)\n  ) +\n  scale_size_continuous(\n    name = \"\",\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_x_continuous(\n    name = \"Change in MCV1 coverage (2019-2000)\",\n    breaks = c(-0.25, 0, 0.25, 0.5),\n    limits = c(-0.4, 0.55)\n  ) +\n  scale_y_continuous(\n    name = \"Change in absolute geographical inequality (2019-2000)\",\n    breaks = c(-0.1, 0, 0.1),\n    limits = c(-0.16, 0.1)\n  ) +\n  theme_classic() +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\"),\n    axis.text = element_text(size = 11)\n  )\n\n\n\n\n\nWarning: Removed 50 rows containing missing values or values outside the scale range\n(`geom_text()`)."
   },
   {
     "objectID": "slides/viz.html#refine-the-plot",
     "href": "slides/viz.html#refine-the-plot",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Refine the plot",
-    "text": "Refine the plot"
+    "text": "Refine the plot\n\n\n\n\n\n\nWarning: Removed 50 rows containing missing values or values outside the scale range\n(`geom_text()`)."
   },
   {
     "objectID": "slides/viz.html#some-frequently-used-geom_",
@@ -312,7 +312,7 @@
     "href": "slides/viz.html#some-frequently-used-geom_-4",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Some frequently used geom_*",
-    "text": "Some frequently used geom_*\n\nExample: creating a scatter plot for number of covid incidence over time\n\n\n\ncode.R\n\nlibrary(dplyr)\n# we need to compute y\n# (case_count before plotting)\naggregated_cases &lt;- simulated_covid |&gt;\n  group_by(date_onset) |&gt;\n  summarise(\n    case_count = n()\n  )\n\nggplot(\n  aggregated_cases,\n  aes(x = date_onset, y = case_count)\n) +\n  geom_point(\n    color = \"cornflowerblue\"\n  ) +\n  scale_x_date(\"Date\") +\n  scale_y_continuous(\"Number of cases\") +\n  ggtitle(\"New covid cases over time\")"
+    "text": "Some frequently used geom_*\n\nExample: creating a scatter plot for number of covid incidence over time\n\n\n\ncode.R\n\nlibrary(dplyr)\n# we need to compute y\n# (case_count before plotting)\naggregated_cases &lt;- simulated_covid |&gt;\n  group_by(date_onset) |&gt;\n  summarise(\n    case_count = n()\n  )\n\nggplot(\n  aggregated_cases,\n  aes(x = date_onset, y = case_count)\n) +\n  geom_point(\n    color = \"cornflowerblue\"\n  ) +\n  scale_x_date(\"Date\") +\n  scale_y_continuous(\"Number of cases\") +\n  ggtitle(\"New covid cases over time\")\n\n\n\n\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union"
   },
   {
     "objectID": "slides/viz.html#some-frequently-used-geom_-5",
@@ -333,7 +333,7 @@
     "href": "slides/viz.html#some-frequently-used-geom_-7",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Some frequently used geom_*",
-    "text": "Some frequently used geom_*\n\nExample: add a regression line for number of covid incidence over time\n\n\n\ncode.R\n\nggplot(\n  aggregated_cases,\n  aes(x = date_onset, y = case_count)\n) +\n  geom_point(\n    color = \"grey\"\n  ) +\n  geom_smooth(\n    color = \"cornflowerblue\",\n    # choose gam model to fit the data\n    method = \"gam\"\n  ) +\n  scale_x_date(\"Date\") +\n  scale_y_continuous(\"Number of cases\") +\n  ggtitle(\"New covid cases over time\")"
+    "text": "Some frequently used geom_*\n\nExample: add a regression line for number of covid incidence over time\n\n\n\ncode.R\n\nggplot(\n  aggregated_cases,\n  aes(x = date_onset, y = case_count)\n) +\n  geom_point(\n    color = \"grey\"\n  ) +\n  geom_smooth(\n    color = \"cornflowerblue\",\n    # choose gam model to fit the data\n    method = \"gam\"\n  ) +\n  scale_x_date(\"Date\") +\n  scale_y_continuous(\"Number of cases\") +\n  ggtitle(\"New covid cases over time\")\n\n\n\n\n\n`geom_smooth()` using formula = 'y ~ s(x, bs = \"cs\")'"
   },
   {
     "objectID": "slides/viz.html#some-frequently-used-geom_-8",
@@ -347,7 +347,7 @@
     "href": "slides/viz.html#some-frequently-used-geom_-9",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Some frequently used geom_*",
-    "text": "Some frequently used geom_*\n\nExample: create a box plot to compare number of cases per day between 2 outbreaks\n\n\n\ncode.R\n\n# compute cases per day for each outbreak\ncases_per_outbreak &lt;- simulated_covid |&gt;\n  group_by(date_onset, outbreak) |&gt;\n  summarise(\n    case_count = n()\n  )\n\nggplot(\n  cases_per_outbreak,\n  aes(x = case_count, y = outbreak)\n) +\n  geom_boxplot() +\n  scale_x_continuous(\"Number of daily cases\") +\n  scale_y_discrete(\"Outbreak\") +\n  ggtitle(\"Compare distribution of daily cases between 2 outbreaks\")"
+    "text": "Some frequently used geom_*\n\nExample: create a box plot to compare number of cases per day between 2 outbreaks\n\n\n\ncode.R\n\n# compute cases per day for each outbreak\ncases_per_outbreak &lt;- simulated_covid |&gt;\n  group_by(date_onset, outbreak) |&gt;\n  summarise(\n    case_count = n()\n  )\n\nggplot(\n  cases_per_outbreak,\n  aes(x = case_count, y = outbreak)\n) +\n  geom_boxplot() +\n  scale_x_continuous(\"Number of daily cases\") +\n  scale_y_discrete(\"Outbreak\") +\n  ggtitle(\"Compare distribution of daily cases between 2 outbreaks\")\n\n\n\n\n\n`summarise()` has regrouped the output.\nℹ Summaries were computed grouped by date_onset and outbreak.\nℹ Output is grouped by date_onset.\nℹ Use `summarise(.groups = \"drop_last\")` to silence this message.\nℹ Use `summarise(.by = c(date_onset, outbreak))` for per-operation grouping\n  (`?dplyr::dplyr_by`) instead."
   },
   {
     "objectID": "slides/viz.html#where-to-find-more-geom_",
@@ -396,7 +396,7 @@
     "href": "slides/viz.html#overview",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Overview",
-    "text": "Overview\n\nWhat does mapping = aes() do?\nInheritance of data and aesthetics\nThe annotate() layer\nFigure panes using facet_wrap()\nExtending ggplot2\nInteractive plots with plotly"
+    "text": "Overview\n\nWhat does mapping = aes() do?\nInheritance of data and aesthetics\nThe annotate() layer\nSplitting up with facet_wrap()\nExtending ggplot2\nInteractive plots with plotly"
   },
   {
     "objectID": "slides/viz.html#what-does-mapping-aes-do",
@@ -445,7 +445,7 @@
     "href": "slides/viz.html#inheritance-of-data-and-aesthetics-2",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Inheritance of data and aesthetics",
-    "text": "Inheritance of data and aesthetics\nA typical ggplot plot will look something like:\nggplot(plot_df, aes(x = date, y = count)) +\n  geom_line() +\n  geom_point()\n\nImplicitly, you can think of this as:\nggplot() +\n  geom_line(mapping = aes(x = date, y = count), data = plot_df) +\n  geom_line(mapping = aes(x = date, y = count), data = plot_df)\n\n\n\n\n\n\n\n\nNote\n\n\n\nWe call this inheritance\nData and aesthetics are inherited top-down"
+    "text": "Inheritance of data and aesthetics\nA typical ggplot plot will look something like:\nggplot(plot_df, aes(x = date, y = count)) +\n  geom_line() +\n  geom_point()\n\nImplicitly, you can think of this as:\nggplot() +\n  geom_line(mapping = aes(x = date, y = count), data = plot_df) +\n  geom_line(mapping = aes(x = date, y = count), data = plot_df)\n\n\n\n\n\n\n\nNote\n\n\n\n\nWe call this inheritance\nData and aesthetics are inherited top-down"
   },
   {
     "objectID": "slides/viz.html#inheritance-of-data-and-aesthetics-3",
@@ -459,14 +459,14 @@
     "href": "slides/viz.html#inheritance-of-data-and-aesthetics-4",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Inheritance of data and aesthetics",
-    "text": "Inheritance of data and aesthetics\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region), alpha = 0.8) +\n  geom_text(aes(label = country), hjust = -0.2, vjust = 0.2)"
+    "text": "Inheritance of data and aesthetics\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region), alpha = 0.8) +\n  geom_text(aes(label = country), hjust = -0.2, vjust = 0.2) \n\n\nWarning: Removed 50 rows containing missing values or values outside the scale range\n(`geom_text()`)."
   },
   {
     "objectID": "slides/viz.html#inside-and-outside-aes",
     "href": "slides/viz.html#inside-and-outside-aes",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Inside and outside aes()",
-    "text": "Inside and outside aes()\nWhat happens if we do it like this:\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region, alpha = 0.8)) +\n  geom_text(aes(label = country, hjust = -0.2, vjust = 0.2))"
+    "text": "Inside and outside aes()\nWhat happens if we do it like this:\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region, alpha = 0.8)) +\n  geom_text(aes(label = country, hjust = -0.2, vjust = 0.2)) \n\n\nWarning: Removed 50 rows containing missing values or values outside the scale range\n(`geom_text()`)."
   },
   {
     "objectID": "slides/viz.html#inside-and-outside-aes-1",
@@ -480,7 +480,7 @@
     "href": "slides/viz.html#inside-and-outside-aes-2",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Inside and outside aes()",
-    "text": "Inside and outside aes()\n\n\n\n\n\n\nImportant\n\n\nIn short:\n\nYou want the aesthetics to change with the data -&gt; put it inside aes()*\nYou want the aesthetics to be fixed regardless of data -&gt; put it outside aes()*\nThe aesthetics must be supported by the geometry\n\n\n\nThis also means that columns names can only be used inside aes()"
+    "text": "Inside and outside aes()\n\n\n\n\n\n\nImportant\n\n\n\nIn short:\n\nYou want the aesthetics to change with the data -&gt; put it inside aes()*\nYou want the aesthetics to be fixed regardless of data -&gt; put it outside aes()*\nThe aesthetics must be supported by the geometry\n\n\n\nThis also means that columns names can only be used inside aes()"
   },
   {
     "objectID": "slides/viz.html#color-transparency",
@@ -494,28 +494,28 @@
     "href": "slides/viz.html#the-annotate-layer",
     "title": "Principles of data visualisation and plotting in R",
     "section": "The annotate() layer",
-    "text": "The annotate() layer\n\nWhat if we want to annotate specific parts of a figure?\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
+    "text": "The annotate() layer\n\nWhat if we want to annotate specific parts of a figure?\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )\n\n`geom_smooth()` using formula = 'y ~ s(x, bs = \"cs\")'"
   },
   {
     "objectID": "slides/viz.html#the-annotate-layer-1",
     "href": "slides/viz.html#the-annotate-layer-1",
     "title": "Principles of data visualisation and plotting in R",
     "section": "The annotate() layer",
-    "text": "The annotate() layer\n\nAdding a vertical line with geom_vline() and a label with geom_label()\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  # main plotting geoms\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  # figure annotation geoms (2)\n  geom_vline(xintercept = as.Date(\"2023-03-01\"), linetype = 2) +\n  geom_label(label = \"Start of outbreak\", x = as.Date(\"2023-03-01\"), y = 30) +\n  # labels\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
+    "text": "The annotate() layer\n\nAdding a vertical line with geom_vline() and a label with geom_label()\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  # main plotting geoms\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  # figure annotation geoms (2)\n  geom_vline(xintercept = as.Date(\"2023-03-01\"), linetype = 2) +\n  geom_label(label = \"Start of outbreak\", x = as.Date(\"2023-03-01\"), y = 30) +\n  # labels\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )\n\n`geom_smooth()` using formula = 'y ~ s(x, bs = \"cs\")'"
   },
   {
     "objectID": "slides/viz.html#the-annotate-layer-2",
     "href": "slides/viz.html#the-annotate-layer-2",
     "title": "Principles of data visualisation and plotting in R",
     "section": "The annotate() layer",
-    "text": "The annotate() layer\n\nAdding a region with geom_rect() and a label with geom_label()\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  # figure annotation geoms (1)\n  geom_rect(\n    ymin = -Inf,\n    ymax = Inf,\n    xmin = as.Date(\"2023-04-01\"),\n    xmax = as.Date(\"2023-06-01\"),\n    alpha = 0.2,\n    fill = \"red\"\n  ) +\n  geom_label(\n    label = \"Outbreak peak\",\n    x = as.Date(\"2023-06-25\"),\n    y = 30,\n    color = \"red\"\n  ) +\n  # main plotting geoms\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  # labels\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
+    "text": "The annotate() layer\n\nAdding a region with geom_rect() and a label with geom_label()\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  # figure annotation geoms (1)\n  geom_rect(\n    ymin = -Inf,\n    ymax = Inf,\n    xmin = as.Date(\"2023-04-01\"),\n    xmax = as.Date(\"2023-06-01\"),\n    alpha = 0.2,\n    fill = \"red\"\n  ) +\n  geom_label(\n    label = \"Outbreak peak\",\n    x = as.Date(\"2023-06-25\"),\n    y = 30,\n    color = \"red\"\n  ) +\n  # main plotting geoms\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  # labels\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )\n\n`geom_smooth()` using formula = 'y ~ s(x, bs = \"cs\")'"
   },
   {
     "objectID": "slides/viz.html#the-annotate-layer-3",
     "href": "slides/viz.html#the-annotate-layer-3",
     "title": "Principles of data visualisation and plotting in R",
     "section": "The annotate() layer",
-    "text": "The annotate() layer\n\nWe already said alpha = 0.2 outside of aes(), why doesn’t it have any transparency at all??"
+    "text": "The annotate() layer\n\n\n`geom_smooth()` using formula = 'y ~ s(x, bs = \"cs\")'\n\n\n\n\n\n\n\n\n\nWe already said alpha = 0.2 outside of aes(), why doesn’t it have any transparency at all??"
   },
   {
     "objectID": "slides/viz.html#the-annotate-layer-4",
@@ -536,7 +536,7 @@
     "href": "slides/viz.html#the-annotate-layer-6",
     "title": "Principles of data visualisation and plotting in R",
     "section": "The annotate() layer",
-    "text": "The annotate() layer\n\nUsing the annotate() layer, you can separate the annotations from the geometry layer\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  # figure annotation geoms (1)\n  annotate(\n    \"rect\",\n    ymin = -Inf,\n    ymax = Inf,\n    xmin = as.Date(\"2023-04-01\"),\n    xmax = as.Date(\"2023-06-01\"),\n    alpha = 0.2,\n    fill = \"red\"\n  ) +\n  annotate(\n    \"label\",\n    label = \"Outbreak peak\",\n    x = as.Date(\"2023-06-25\"),\n    y = 30,\n    color = \"red\"\n  ) +\n  # main plotting geoms\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  # labels\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
+    "text": "The annotate() layer\n\nUsing the annotate() layer, you can separate the annotations from the geometry layer\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  # figure annotation geoms (1)\n  annotate(\n    \"rect\",\n    ymin = -Inf,\n    ymax = Inf,\n    xmin = as.Date(\"2023-04-01\"),\n    xmax = as.Date(\"2023-06-01\"),\n    alpha = 0.2,\n    fill = \"red\"\n  ) +\n  annotate(\n    \"label\",\n    label = \"Outbreak peak\",\n    x = as.Date(\"2023-06-25\"),\n    y = 30,\n    color = \"red\"\n  ) +\n  # main plotting geoms\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  # labels\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )\n\n`geom_smooth()` using formula = 'y ~ s(x, bs = \"cs\")'"
   },
   {
     "objectID": "slides/viz.html#the-annotate-layer-7",
@@ -550,14 +550,14 @@
     "href": "slides/viz.html#the-annotate-layer-8",
     "title": "Principles of data visualisation and plotting in R",
     "section": "The annotate() layer",
-    "text": "The annotate() layer\n\n\n\n\n\n\nImportant\n\n\nIn short:\n\nYou can create plot annotations with geom_label(), geom_rect(), geom_abline(), etc. (look at ggplot2 website)\nIf it’s not working correctly (looks blurry, result not as expected), use annotate() instead; very easy to switch from geom_*() to annotate()"
+    "text": "The annotate() layer\n\n\n\n\n\n\nImportant\n\n\n\nIn short:\n\nYou can create plot annotations with geom_label(), geom_rect(), geom_abline(), etc. (look at ggplot2 website)\nIf it’s not working correctly (looks blurry, result not as expected), use annotate() instead; very easy to switch from geom_*() to annotate()"
   },
   {
     "objectID": "slides/viz.html#splitting-up-with-facet_wrap",
     "href": "slides/viz.html#splitting-up-with-facet_wrap",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Splitting up with facet_wrap()",
-    "text": "Splitting up with facet_wrap()\n\nWhat if you want to split the plot into different panels for each group?\nHave a look at your data, find a “grouping” variable to split the data"
+    "text": "Splitting up with facet_wrap()\n\n\nWhat if you want to split the plot into different panels for each group?\nHave a look at your data, find a “grouping” variable to split the data"
   },
   {
     "objectID": "slides/viz.html#splitting-up-with-facet_wrap-1",
@@ -592,7 +592,7 @@
     "href": "slides/viz.html#extending-ggplot2",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Extending ggplot2",
-    "text": "Extending ggplot2\n\nAdd specific functionalities to ggplot2 with extensions!\nHow to use:\n\nThink of a specific figure you want to plot\nTry your best to plot it with ggplot2\nIf you think ggplot2 cannot do what you want. Have a look here\nRead their documentation to see how to use them"
+    "text": "Extending ggplot2\n\n\nAdd specific functionalities to ggplot2 with extensions!\nHow to use:\n\nThink of a specific figure you want to plot\nTry your best to plot it with ggplot2\nIf you think ggplot2 cannot do what you want. Have a look here\nRead their documentation to see how to use them"
   },
   {
     "objectID": "slides/viz.html#extending-ggplot2-1",
@@ -613,14 +613,14 @@
     "href": "slides/viz.html#interactive-plots-with-plotly-1",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Interactive plots with plotly",
-    "text": "Interactive plots with plotly\n\n\nThen use it in the plotly::ggplotly() function\n\n\n# install.packages(\"plotly\")\nlibrary(plotly)\nggplotly(p)"
+    "text": "Interactive plots with plotly\n\n\nThen use it in the plotly::ggplotly() function\n\n\n# install.packages(\"plotly\")\nlibrary(plotly)\n\n\nAttaching package: 'plotly'\n\n\nThe following object is masked from 'package:ggplot2':\n\n    last_plot\n\n\nThe following object is masked from 'package:stats':\n\n    filter\n\n\nThe following object is masked from 'package:graphics':\n\n    layout\n\nggplotly(p)\n\n`geom_smooth()` using formula = 'y ~ s(x, bs = \"cs\")'"
   },
   {
     "objectID": "slides/viz.html#interactive-plots-with-plotly-2",
     "href": "slides/viz.html#interactive-plots-with-plotly-2",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Interactive plots with plotly",
-    "text": "Interactive plots with plotly\n\n\nYou can also create 3d plots with plotly\n\n\nplot_ly(\n  data = tibble(x = rnorm(10), y = rnorm(10), z = rnorm(10)),\n  x = ~x,\n  y = ~y,\n  z = ~z\n)"
+    "text": "Interactive plots with plotly\n\n\nYou can also create 3d plots with plotly\n\n\nplot_ly(\n  data = tibble(x = rnorm(10), y = rnorm(10), z = rnorm(10)),\n  x = ~x,\n  y = ~y,\n  z = ~z\n)\n\nNo trace type specified:\n  Based on info supplied, a 'scatter3d' trace seems appropriate.\n  Read more about this trace type -&gt; https://plotly.com/r/reference/#scatter3d\n\n\nNo scatter3d mode specifed:\n  Setting the mode to markers\n  Read more about this attribute -&gt; https://plotly.com/r/reference/#scatter-mode"
   },
   {
     "objectID": "index.html",
@@ -669,7 +669,7 @@
     "href": "index.html#reproducible-research-and-reporting-using-quarto",
     "title": "OUCRU R training course - 2026",
     "section": "Reproducible research and reporting using Quarto",
-    "text": "Reproducible research and reporting using Quarto\n\nDay 5 (Friday-morning)\n\n\nLearning objectives:\n\nWrite papers with reproducible tables and figures using Quarto\nGenerate reports in multiple formats: Word, PDF, slides, web pages…\nEasily update analyses when new data becomes available"
+    "text": "Reproducible research and reporting using Quarto\n\nDay 5 (Friday-morning)\n\nLecture slides\nLearning objectives:\n\nWrite papers with reproducible tables and figures using Quarto\nGenerate reports in multiple formats: Word, PDF, slides, web pages…\nEasily update analyses when new data becomes available\n\nExercises\nExercise answer keys"
   },
   {
     "objectID": "index.html#introduction-to-r-and-rstudio",
@@ -719,5 +719,411 @@
     "title": "Pre-course setups and requirements",
     "section": "RStudio Desktop",
     "text": "RStudio Desktop\n\nGo to the download page\nScroll down, look for 2: Install Rstudio and click on the button for downloading RStudio Desktop\nDownload and install RStudio Desktop\n\nYou can use the default installation options\n\nOpen Rstudio Desktop, to check that everything has been installed correctly\n\nE.g. via the Start menu in Windows"
+  },
+  {
+    "objectID": "slides/viz.html",
+    "href": "slides/viz.html",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "",
+    "text": "How to make an informative visual representation of data and/or results\n\nPart I: process of graph creation\nPart II: principles of graph interpretation\n\n\n\n\n\n\n\nNote\n\n\n\nGraph = diagram = chart = figure = picture\n\n\n\n\n\n\n\n\n\n\n\n\n\nBut it takes\n\nknowledge of graphics principles\neffort; trial and error\ntime\n\nto make a “good” one\n\n\n\n\n\n\n\n\n\n\n\n\n\nRose plot to convince UK authorities of importance of hygiene\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHinrichsen: risk factors for hepatitis G infection in haemodialysis patients\n\nDo we need a graph?\nAre there enough data points to merit a plot?\n\nDepends on mode of presentation: conference lecture (time limit), article\n\nIf we use a graph, is this one the most truthful and informative?\n\n\n\n\n\n\n\n\n\nCohort study on 1187 HIV infected persons in The Gambia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhy do we make a graph? (purpose)\n\nWe want to explore and inspect our data or results\nPresent data or results, often with a message, to others\n\n\n\n\nWhere do we show the graph: research paper, conference, website\n\n\n\n\nWho is the audience. Level of background knowledge\n\n\n\n\nWhat do we want to show (data)\n\nGraph: visual representation of information (“encoding”)\nmapping from data/results to figure"
+  },
+  {
+    "objectID": "slides/qt-example.html",
+    "href": "slides/qt-example.html",
+    "title": "Hello, Quarto",
+    "section": "",
+    "text": "Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
+  },
+  {
+    "objectID": "slides/qt-example.html#introduction-to-quarto",
+    "href": "slides/qt-example.html#introduction-to-quarto",
+    "title": "Hello, Quarto",
+    "section": "",
+    "text": "Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
+  },
+  {
+    "objectID": "slides/qt-example.html#header-levels",
+    "href": "slides/qt-example.html#header-levels",
+    "title": "Hello, Quarto",
+    "section": "2 Header Levels",
+    "text": "2 Header Levels\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\nLevel 1 header: # Header\nLevel 2 header: ## Subheader\nLevel 3 header: ### Sub-subheader\n\n\n2.1 Nested Headers\nUsing headers, you can create nested sections to structure your document in a clear and organized way."
+  },
+  {
+    "objectID": "slides/qt-example.html#inline-text-formatting",
+    "href": "slides/qt-example.html#inline-text-formatting",
+    "title": "Hello, Quarto",
+    "section": "3 Inline Text Formatting",
+    "text": "3 Inline Text Formatting\nYou can format your text inline to add emphasis or other styling options.\n\nBold text: **bold**\nItalic text: *italic*\nInline code: `code`\nUnderline: [underline]{.underline}\n\n\nBlockquotes can be used to highlight important information or quotes by adding &gt; at the beginning of a line."
+  },
+  {
+    "objectID": "slides/qt-example.html#lists",
+    "href": "slides/qt-example.html#lists",
+    "title": "Hello, Quarto",
+    "section": "4 Lists",
+    "text": "4 Lists\nQuarto supports both ordered and unordered lists.\n\n4.1 Unordered List\nTo create an unordered list, use an asterisk * before each item:\n\nFirst item\nSecond item\nThird item\n\n\n\n4.2 Ordered List\nTo create an ordered list, use numbers before each item:\n\nFirst item\nSecond item\nThird item"
+  },
+  {
+    "objectID": "slides/qt-example.html#links-and-images",
+    "href": "slides/qt-example.html#links-and-images",
+    "title": "Hello, Quarto",
+    "section": "5 Links and images",
+    "text": "5 Links and images\nhttp://example.com\nlinked phrase\n\n\n\noptional caption text"
+  },
+  {
+    "objectID": "slides/qt-example.html#tables",
+    "href": "slides/qt-example.html#tables",
+    "title": "Hello, Quarto",
+    "section": "6 Tables",
+    "text": "6 Tables\n\n\n\nFirst Header\nSecond Header\n\n\n\n\nContent Cell\nContent Cell\n\n\nContent Cell\nContent Cell"
+  },
+  {
+    "objectID": "slides/qt-example.html#code-block",
+    "href": "slides/qt-example.html#code-block",
+    "title": "Hello, Quarto",
+    "section": "7 Code block",
+    "text": "7 Code block\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")"
+  },
+  {
+    "objectID": "slides/qt-example.html#footnotes",
+    "href": "slides/qt-example.html#footnotes",
+    "title": "Hello, Quarto",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThis is an example footnote.↩︎"
+  },
+  {
+    "objectID": "AGENTS.html",
+    "href": "AGENTS.html",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Guidance for AI coding agents working in this repository.\n\n\nCourse website for OUCRU R training course 2026 — a Quarto website project (project: type: website) built from .qmd files. Published at https://oucru-modelling.github.io/R-training-2026/.\n\n\n\n\nQuarto website project (not a book or blog)\nR, with package versions locked via renv (renv.lock, .Rprofile, renv/)\nSlide decks use format: revealjs; handouts use format: html (or pdf)\n\n\n\n\n\n\n\n\n\n\n\nPath\nPurpose\n\n\n\n\nindex.qmd\nHomepage — course schedule + links to slides/handouts\n\n\nslides/\nLecture slide decks (format: revealjs)\n\n\nhandouts/\nExercises, answer keys, setup instructions (format: html or pdf)\n\n\n_quarto.yml\nProject-level config (theme, navbar, output dir, freeze: auto)\n\n\ntheme.scss, theme-dark.scss\nLight and dark theme overrides (paired with cosmo bootstrap theme)\n\n\nREADME.md\nHuman-readable project description and instructor guidelines\n\n\nR-training-2026.Rproj\nRStudio project file\n\n\n.nojekyll\nGitHub Pages directive (prevents Jekyll processing)\n\n\nrenv/, renv.lock, .Rprofile\nR package version locking\n\n\n_render/\nRendered site output — generated, not hand-edited\n\n\n.github/workflows/publish.yml\nGitHub Actions workflow: renders and publishes on push to main\n\n\n\nNote: the publish workflow ignores changes to README.md and AGENTS.md — editing them won’t trigger a rebuild.\n\n\n\nBefore doing any R work in this project:\nrenv::restore()\nThis installs the exact package versions pinned in renv.lock.\n\n\n\n\nNew/edited slides go in slides/ and must keep format: revealjs in the YAML header.\nNew/edited handouts go in handouts/ and must use format: html (or pdf).\nTheme overrides go in theme.scss (light) and theme-dark.scss (dark), not inline in .qmd files.\nSite-wide settings (theme, navbar, etc.) live in _quarto.yml. A .qmd file’s own YAML header overrides project defaults for that file only.\nIf you add, remove, or update an R package used anywhere in the project, run renv::snapshot() before committing so renv.lock stays in sync.\n\n\n\n\n\nLive preview while editing: quarto preview\nOne-off full render: quarto render → output lands in _render/index.html\n\nThe _quarto.yml has freeze: auto, which caches code output to speed up subsequent renders. If output changes, delete _render/ or run quarto render --no-cache.\nRun one of these after editing any .qmd file to catch rendering errors before committing.\n\n\n\n\nDo: push commits to main — a GitHub Actions workflow renders and publishes the site automatically.\nDon’t: run quarto publish gh-pages manually — this bypasses the intended CI-based publishing flow.\n\n\n\n\n\nDon’t hand-edit anything under _render/ — it’s generated; edit the source .qmd instead.\nDon’t commit a dependency change without a matching renv::snapshot().\nDon’t install R packages outside the project’s renv library.\nDon’t change a slide’s format away from revealjs or a handout’s away from html/pdf without good reason — downstream links in index.qmd assume these."
+  },
+  {
+    "objectID": "AGENTS.html#what-this-repo-is",
+    "href": "AGENTS.html#what-this-repo-is",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Course website for OUCRU R training course 2026 — a Quarto website project (project: type: website) built from .qmd files. Published at https://oucru-modelling.github.io/R-training-2026/."
+  },
+  {
+    "objectID": "AGENTS.html#stack",
+    "href": "AGENTS.html#stack",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Quarto website project (not a book or blog)\nR, with package versions locked via renv (renv.lock, .Rprofile, renv/)\nSlide decks use format: revealjs; handouts use format: html (or pdf)"
+  },
+  {
+    "objectID": "AGENTS.html#repository-layout",
+    "href": "AGENTS.html#repository-layout",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Path\nPurpose\n\n\n\n\nindex.qmd\nHomepage — course schedule + links to slides/handouts\n\n\nslides/\nLecture slide decks (format: revealjs)\n\n\nhandouts/\nExercises, answer keys, setup instructions (format: html or pdf)\n\n\n_quarto.yml\nProject-level config (theme, navbar, output dir, freeze: auto)\n\n\ntheme.scss, theme-dark.scss\nLight and dark theme overrides (paired with cosmo bootstrap theme)\n\n\nREADME.md\nHuman-readable project description and instructor guidelines\n\n\nR-training-2026.Rproj\nRStudio project file\n\n\n.nojekyll\nGitHub Pages directive (prevents Jekyll processing)\n\n\nrenv/, renv.lock, .Rprofile\nR package version locking\n\n\n_render/\nRendered site output — generated, not hand-edited\n\n\n.github/workflows/publish.yml\nGitHub Actions workflow: renders and publishes on push to main\n\n\n\nNote: the publish workflow ignores changes to README.md and AGENTS.md — editing them won’t trigger a rebuild."
+  },
+  {
+    "objectID": "AGENTS.html#environment-setup",
+    "href": "AGENTS.html#environment-setup",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Before doing any R work in this project:\nrenv::restore()\nThis installs the exact package versions pinned in renv.lock."
+  },
+  {
+    "objectID": "AGENTS.html#making-changes",
+    "href": "AGENTS.html#making-changes",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "New/edited slides go in slides/ and must keep format: revealjs in the YAML header.\nNew/edited handouts go in handouts/ and must use format: html (or pdf).\nTheme overrides go in theme.scss (light) and theme-dark.scss (dark), not inline in .qmd files.\nSite-wide settings (theme, navbar, etc.) live in _quarto.yml. A .qmd file’s own YAML header overrides project defaults for that file only.\nIf you add, remove, or update an R package used anywhere in the project, run renv::snapshot() before committing so renv.lock stays in sync."
+  },
+  {
+    "objectID": "AGENTS.html#build-test-locally",
+    "href": "AGENTS.html#build-test-locally",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Live preview while editing: quarto preview\nOne-off full render: quarto render → output lands in _render/index.html\n\nThe _quarto.yml has freeze: auto, which caches code output to speed up subsequent renders. If output changes, delete _render/ or run quarto render --no-cache.\nRun one of these after editing any .qmd file to catch rendering errors before committing."
+  },
+  {
+    "objectID": "AGENTS.html#publishing",
+    "href": "AGENTS.html#publishing",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Do: push commits to main — a GitHub Actions workflow renders and publishes the site automatically.\nDon’t: run quarto publish gh-pages manually — this bypasses the intended CI-based publishing flow."
+  },
+  {
+    "objectID": "AGENTS.html#things-to-avoid",
+    "href": "AGENTS.html#things-to-avoid",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Don’t hand-edit anything under _render/ — it’s generated; edit the source .qmd instead.\nDon’t commit a dependency change without a matching renv::snapshot().\nDon’t install R packages outside the project’s renv library.\nDon’t change a slide’s format away from revealjs or a handout’s away from html/pdf without good reason — downstream links in index.qmd assume these."
+  },
+  {
+    "objectID": "slides/qt-example-slide.html",
+    "href": "slides/qt-example-slide.html",
+    "title": "My Presentation",
+    "section": "",
+    "text": "Bullet point 1\nBullet point 2"
+  },
+  {
+    "objectID": "slides/qt-example-slide.html#slide-title",
+    "href": "slides/qt-example-slide.html#slide-title",
+    "title": "My Presentation",
+    "section": "",
+    "text": "Bullet point 1\nBullet point 2"
+  },
+  {
+    "objectID": "slides/qt-example-slide.html#code-blocks-highlighting",
+    "href": "slides/qt-example-slide.html#code-blocks-highlighting",
+    "title": "My Presentation",
+    "section": "Code Blocks & Highlighting",
+    "text": "Code Blocks & Highlighting\nYou can add code blocks like this:\n```{r}\n# R code block\nsummary(cars)\n```"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html",
+    "href": "slides/qt-repro-res.html",
+    "title": "Using Quarto for reproducible research",
+    "section": "",
+    "text": "A publishing system for creating documents, presentations, websites…\nCan build HTML, PDF, Microsoft Word…\nCombines Markdown and R/Python/Julia code for reproducible workflows\nIntegrated into RStudio by default"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#what-is-quarto",
+    "href": "slides/qt-repro-res.html#what-is-quarto",
+    "title": "Using Quarto for reproducible research",
+    "section": "",
+    "text": "A publishing system for creating documents, presentations, websites…\nCan build HTML, PDF, Microsoft Word…\nCombines Markdown and R/Python/Julia code for reproducible workflows\nIntegrated into RStudio by default"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#how-does-quarto-work",
+    "href": "slides/qt-repro-res.html#how-does-quarto-work",
+    "title": "Using Quarto for reproducible research",
+    "section": "How does Quarto work?",
+    "text": "How does Quarto work?"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#website",
+    "href": "slides/qt-repro-res.html#website",
+    "title": "Using Quarto for reproducible research",
+    "section": "Website",
+    "text": "Website"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#presentation",
+    "href": "slides/qt-repro-res.html#presentation",
+    "title": "Using Quarto for reproducible research",
+    "section": "Presentation",
+    "text": "Presentation\n{{&lt; revealjs \"viz.html\" \"500px\" \"ratio ratio-16x9\" \"false\" &gt;}}"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#reportmanuscript",
+    "href": "slides/qt-repro-res.html#reportmanuscript",
+    "title": "Using Quarto for reproducible research",
+    "section": "Report/Manuscript",
+    "text": "Report/Manuscript"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#dashboard",
+    "href": "slides/qt-repro-res.html#dashboard",
+    "title": "Using Quarto for reproducible research",
+    "section": "Dashboard",
+    "text": "Dashboard"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#more-examples",
+    "href": "slides/qt-repro-res.html#more-examples",
+    "title": "Using Quarto for reproducible research",
+    "section": "More examples",
+    "text": "More examples\n\n\n\n\n{{&lt; qrcode https://quarto.org/docs/gallery/ 200 200 &gt;}}\nOr click here"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#exploring-quarto",
+    "href": "slides/qt-repro-res.html#exploring-quarto",
+    "title": "Using Quarto for reproducible research",
+    "section": "Exploring Quarto",
+    "text": "Exploring Quarto"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#exploring-quarto-1",
+    "href": "slides/qt-repro-res.html#exploring-quarto-1",
+    "title": "Using Quarto for reproducible research",
+    "section": "Exploring Quarto",
+    "text": "Exploring Quarto"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#creating-a-quarto-file",
+    "href": "slides/qt-repro-res.html#creating-a-quarto-file",
+    "title": "Using Quarto for reproducible research",
+    "section": "Creating a Quarto file",
+    "text": "Creating a Quarto file\n\n\n\n\n\n\n\nOpen RStudio\nGo to File &gt; New File &gt; Quarto Document\nSelect the format you want\nSave the file with a .qmd extension"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#how-to-use-quarto",
+    "href": "slides/qt-repro-res.html#how-to-use-quarto",
+    "title": "Using Quarto for reproducible research",
+    "section": "How to use Quarto?",
+    "text": "How to use Quarto?\n\n\n\nindex.qmd\n---\ntitle: \"My Quarto file\"\nauthor: \"Your Name\"\ndate: \"2026-08-06\"\nformat: html\n---\n\nSummary of `mtcars`\n\n```{r}\nsummary(mtcars)\n```\n\n\n\n\nMain components of a Quarto file:\n\nHeader (YAML metadata)\nBody (Markdown content and code chunks)"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#header",
+    "href": "slides/qt-repro-res.html#header",
+    "title": "Using Quarto for reproducible research",
+    "section": "Header",
+    "text": "Header\n\n\n\nindex.qmd\n---\ntitle: \"My Quarto file\"\nauthor: \"Your Name\"\ndate: \"2026-08-06\"\nformat: html\ntoc: true\n---\n\n\n\n\nDefines document properties and settings, for examples:\n\ntitle: Document title\nauthor: Authorship\ndate: Date this document was published\nformat:\n\nWebpage: html\nPresentation: revealjs\nMS Word: docx\nReport/Manuscript: pdf\n\ntoc: table of contents"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#body",
+    "href": "slides/qt-repro-res.html#body",
+    "title": "Using Quarto for reproducible research",
+    "section": "Body",
+    "text": "Body\n\n\n\nindex.qmd\n---\ntitle: \"Hello, Quarto\"\ndate: 2025-01-06\nauthor: \"Biostats and Modelling\"\nformat: \n  html:\n    code-overflow: wrap\n    embed-resources: true\nnumber-sections: true\nnavbar: false\ntoc: false\n---\n\n## Introduction to Quarto\n\nQuarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools. \n\n## Header Levels\n\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\n- Level 1 header: `# Header`\n- Level 2 header: `## Subheader`\n- Level 3 header: `### Sub-subheader`\n\n### Nested Headers\n\nUsing headers, you can create nested sections to structure your document in a clear and organized way.\n\n## Inline Text Formatting\n\nYou can format your text inline to add emphasis or other styling options.\n\n- **Bold text**: `**bold**`\n- *Italic text*: `*italic*`\n- Inline `code`: `` `code` ``\n- [Underline]{.underline}: `[underline]{.underline}`\n\n&gt; Blockquotes can be used to highlight important information or quotes by adding `&gt; ` at the beginning of a line.\n\n## Lists\n\nQuarto supports both ordered and unordered lists.\n\n### Unordered List\n\nTo create an unordered list, use an asterisk `*` before each item:\n\n* First item\n* Second item\n* Third item\n\n### Ordered List\n\nTo create an ordered list, use numbers before each item:\n\n1. First item\n2. Second item\n3. Third item\n\n## Links and images\n\n&lt;http://example.com&gt;\n\n[linked phrase](http://example.com)\n\n![optional caption text](figures/OUCRU.jpg)\n\n## Tables\n\n| First Header | Second Header |\n|--------------|---------------|\n| Content Cell | Content Cell  |\n| Content Cell | Content Cell  |\n\n## Code block\n\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\n```{r}\n#| fig-width: 4\n#| fig-height: 3\n#| out-width: \"100%\"\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")\n```\n\n## Footnotes\n\nFootnotes can be added inline to provide additional information or references. Here's an example of a footnote in Quarto: ^[This is an example footnote.]\n\n\n\nindex.html"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#ms-word-like-interface",
+    "href": "slides/qt-repro-res.html#ms-word-like-interface",
+    "title": "Using Quarto for reproducible research",
+    "section": "MS Word-like interface",
+    "text": "MS Word-like interface"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#rendering-output",
+    "href": "slides/qt-repro-res.html#rendering-output",
+    "title": "Using Quarto for reproducible research",
+    "section": "Rendering output",
+    "text": "Rendering output\n\nSave your Quarto file.\nRender it using the “Render” button in RStudio or by pressing Ctrl+Shift+K."
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#create-tables",
+    "href": "slides/qt-repro-res.html#create-tables",
+    "title": "Using Quarto for reproducible research",
+    "section": "Create tables",
+    "text": "Create tables\n\nThere are many packages to create beautiful tables in R:\nflextable\nhuxtable\ngtsummary\nIn this course, we will use gtsummary."
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#data",
+    "href": "slides/qt-repro-res.html#data",
+    "title": "Using Quarto for reproducible research",
+    "section": "Data",
+    "text": "Data\nFirst let’s load the packages and have a look at the dataset simulated_covid.rds.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.2.1     ✔ readr     2.2.0\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.3     ✔ tibble    3.3.1\n✔ lubridate 1.9.5     ✔ tidyr     1.3.2\n✔ purrr     1.2.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gtsummary)\n\ndf &lt;- readRDS(\"data/simulated_covid.rds\")\nhead(df)\n\n  id  case_name case_type sex age date_onset date_admission   outcome\n1  1 jCQH5RSlVq confirmed   m  22 2023-01-01           &lt;NA&gt; recovered\n2  2 AdCD3im7sn  probable   m  21 2023-01-08           &lt;NA&gt; recovered\n3  3 iDzmfZhFkV  probable   m  21 2023-01-03           &lt;NA&gt; recovered\n4  4 sKipHJsjZ2  probable   m  10 2023-01-10           &lt;NA&gt;      died\n5  5 xG7GvAjlBf suspected   m  24 2023-01-05           &lt;NA&gt; recovered\n6  7 ZWWcBMLzoH confirmed   m  10 2023-01-04           &lt;NA&gt; recovered\n  date_outcome date_first_contact date_last_contact   district     outbreak\n1         &lt;NA&gt;               &lt;NA&gt;              &lt;NA&gt;   Tan Binh 1st outbreak\n2         &lt;NA&gt;         2022-12-31        2023-01-04    Tan Phu 1st outbreak\n3         &lt;NA&gt;         2022-12-29        2023-01-05   Binh Tan 1st outbreak\n4   2023-01-27         2023-01-10        2023-01-13    Quan 10 1st outbreak\n5         &lt;NA&gt;         2023-01-07        2023-01-07    Quan 12 1st outbreak\n6         &lt;NA&gt;         2023-01-06        2023-01-07 Binh Thanh 1st outbreak"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#descriptive-tables",
+    "href": "slides/qt-repro-res.html#descriptive-tables",
+    "title": "Using Quarto for reproducible research",
+    "section": "Descriptive tables",
+    "text": "Descriptive tables\n\n\n\n\ndf |&gt; \n  tbl_summary(\n    include = c(sex, age, outcome, outbreak)\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN = 2,7621\n\n\n\n\nsex\n\n\n\n\n    f\n1,365 (49%)\n\n\n    m\n1,397 (51%)\n\n\nage\n15 (8, 22)\n\n\noutcome\n\n\n\n\n    died\n220 (8.0%)\n\n\n    recovered\n2,542 (92%)\n\n\noutbreak\n\n\n\n\n    1st outbreak\n1,513 (55%)\n\n\n    2nd outbreak\n1,249 (45%)\n\n\n\n1 n (%); Median (Q1, Q3)"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#fix-the-labels",
+    "href": "slides/qt-repro-res.html#fix-the-labels",
+    "title": "Using Quarto for reproducible research",
+    "section": "Fix the labels",
+    "text": "Fix the labels\n\n\n\n\ndf |&gt;\n  tbl_summary(\n    include = c(sex, age, outcome, outbreak),\n    label = list(\n      sex ~ \"Sex\", age ~ \"Age (years)\", \n      outcome ~ \"Outcome\", outbreak ~ \"Outbreak\"\n    )\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN = 2,7621\n\n\n\n\nSex\n\n\n\n\n    f\n1,365 (49%)\n\n\n    m\n1,397 (51%)\n\n\nAge (years)\n15 (8, 22)\n\n\nOutcome\n\n\n\n\n    died\n220 (8.0%)\n\n\n    recovered\n2,542 (92%)\n\n\nOutbreak\n\n\n\n\n    1st outbreak\n1,513 (55%)\n\n\n    2nd outbreak\n1,249 (45%)\n\n\n\n1 n (%); Median (Q1, Q3)"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#correct-the-values",
+    "href": "slides/qt-repro-res.html#correct-the-values",
+    "title": "Using Quarto for reproducible research",
+    "section": "Correct the values",
+    "text": "Correct the values\n\n\n\n\ndf |&gt;\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) |&gt;\n  tbl_summary(\n    include = c(sex, age, outcome, outbreak),\n    label = list(\n      sex ~ \"Sex\", age ~ \"Age (years)\", \n      outcome ~ \"Outcome\", outbreak ~ \"Outbreak\"\n    )\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN = 2,7621\n\n\n\n\nSex\n\n\n\n\n    Female\n1,365 (49%)\n\n\n    Male\n1,397 (51%)\n\n\nAge (years)\n15 (8, 22)\n\n\nOutcome\n\n\n\n\n    Died\n220 (8.0%)\n\n\n    Recovered\n2,542 (92%)\n\n\nOutbreak\n\n\n\n\n    1st outbreak\n1,513 (55%)\n\n\n    2nd outbreak\n1,249 (45%)\n\n\n\n1 n (%); Median (Q1, Q3)"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#decimal-places",
+    "href": "slides/qt-repro-res.html#decimal-places",
+    "title": "Using Quarto for reproducible research",
+    "section": "Decimal places",
+    "text": "Decimal places\n\n\n\n\ndf |&gt;\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) |&gt;\n  tbl_summary(\n    include = c(sex, age, outcome, outbreak),\n    label = list(\n      sex ~ \"Sex\", age ~ \"Age (years)\", \n      outcome ~ \"Outcome\", outbreak ~ \"Outbreak\"\n    ),\n    digits = c(\n      all_categorical() ~ c(0, 1), \n      all_continuous() ~ 1\n    )\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN = 2,7621\n\n\n\n\nSex\n\n\n\n\n    Female\n1,365 (49.4%)\n\n\n    Male\n1,397 (50.6%)\n\n\nAge (years)\n15.0 (8.0, 22.0)\n\n\nOutcome\n\n\n\n\n    Died\n220 (8.0%)\n\n\n    Recovered\n2,542 (92.0%)\n\n\nOutbreak\n\n\n\n\n    1st outbreak\n1,513 (54.8%)\n\n\n    2nd outbreak\n1,249 (45.2%)\n\n\n\n1 n (%); Median (Q1, Q3)"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#use-mean-or-median",
+    "href": "slides/qt-repro-res.html#use-mean-or-median",
+    "title": "Using Quarto for reproducible research",
+    "section": "Use mean or median",
+    "text": "Use mean or median\n\n\n\n\ndf |&gt;\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) |&gt;\n  tbl_summary(\n    include = c(sex, age, outcome, outbreak),\n    label = list(\n      sex ~ \"Sex\", age ~ \"Age (years)\", \n      outcome ~ \"Outcome\", outbreak ~ \"Outbreak\"\n    ),\n    digits = c(\n      all_categorical() ~ c(0, 1), \n      all_continuous() ~ 1\n    ),\n    statistic = list(\n      all_continuous() ~ \"{mean} \\u00b1 {sd}\"\n    )\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN = 2,7621\n\n\n\n\nSex\n\n\n\n\n    Female\n1,365 (49.4%)\n\n\n    Male\n1,397 (50.6%)\n\n\nAge (years)\n15.5 ± 9.1\n\n\nOutcome\n\n\n\n\n    Died\n220 (8.0%)\n\n\n    Recovered\n2,542 (92.0%)\n\n\nOutbreak\n\n\n\n\n    1st outbreak\n1,513 (54.8%)\n\n\n    2nd outbreak\n1,249 (45.2%)\n\n\n\n1 n (%); Mean ± SD"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#make-a-plot",
+    "href": "slides/qt-repro-res.html#make-a-plot",
+    "title": "Using Quarto for reproducible research",
+    "section": "Make a plot",
+    "text": "Make a plot\n\n\n\n\ndf |&gt;\n  count(date_onset) |&gt;\n  ggplot(aes(x = date_onset, y = n)) +\n  geom_bar(stat = \"identity\",\n           width = 1,\n           fill = \"cornflowerblue\") +\n  labs(x = \"Date of onset\", \n       y = \"Case count\") +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#reuse-code-with-new-data",
+    "href": "slides/qt-repro-res.html#reuse-code-with-new-data",
+    "title": "Using Quarto for reproducible research",
+    "section": "Reuse code with new data",
+    "text": "Reuse code with new data\nWhat if we only care about the 1st outbreak?\n\n\n\n\ndf |&gt;\n  count(date_onset) |&gt;\n  ggplot(aes(x = date_onset, y = n)) +\n  geom_bar(stat = \"identity\",\n           width = 1,\n           fill = \"cornflowerblue\") +\n  labs(x = \"Date of onset\", \n       y = \"Case count\") +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#reuse-code-with-new-data-1",
+    "href": "slides/qt-repro-res.html#reuse-code-with-new-data-1",
+    "title": "Using Quarto for reproducible research",
+    "section": "Reuse code with new data",
+    "text": "Reuse code with new data\nWhat if we only care about the 1st outbreak?\n\n\n\n\ndf &lt;- df |&gt; \n  filter(outbreak == \"1st outbreak\")\ndf |&gt;\n  count(date_onset) |&gt;\n  ggplot(aes(x = date_onset, y = n)) +\n  geom_bar(stat = \"identity\",\n           width = 1,\n           fill = \"cornflowerblue\") +\n  labs(x = \"Date of onset\", \n       y = \"Case count\") +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#reuse-code-with-new-data-2",
+    "href": "slides/qt-repro-res.html#reuse-code-with-new-data-2",
+    "title": "Using Quarto for reproducible research",
+    "section": "Reuse code with new data",
+    "text": "Reuse code with new data\n\n\n\n\ndf |&gt;\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) |&gt;\n  tbl_summary(\n    include = c(sex, age, outcome, outbreak),\n    label = list(\n      sex ~ \"Sex\", age ~ \"Age (years)\", \n      outcome ~ \"Outcome\", outbreak ~ \"Outbreak\"\n    ),\n    digits = c(\n      all_categorical() ~ c(0, 1), \n      all_continuous() ~ 1\n    ),\n    statistic = list(\n      all_continuous() ~ \"{mean} \\u00b1 {sd}\"\n    )\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN = 1,5131\n\n\n\n\nSex\n\n\n\n\n    Female\n746 (49.3%)\n\n\n    Male\n767 (50.7%)\n\n\nAge (years)\n12.8 ± 7.6\n\n\nOutcome\n\n\n\n\n    Died\n110 (7.3%)\n\n\n    Recovered\n1,403 (92.7%)\n\n\nOutbreak\n\n\n\n\n    1st outbreak\n1,513 (100.0%)\n\n\n\n1 n (%); Mean ± SD"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#add-citation",
+    "href": "slides/qt-repro-res.html#add-citation",
+    "title": "Using Quarto for reproducible research",
+    "section": "Add citation",
+    "text": "Add citation\n\nYou can add citations to the text using Quarto\nThe easiest way to do this is via the Visual view"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#add-citation-1",
+    "href": "slides/qt-repro-res.html#add-citation-1",
+    "title": "Using Quarto for reproducible research",
+    "section": "Add citation",
+    "text": "Add citation"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#template",
+    "href": "slides/qt-repro-res.html#template",
+    "title": "Using Quarto for reproducible research",
+    "section": "Template",
+    "text": "Template\n\nTemplates help make your document look professional without extra effort\nYou can use pre-built templates or create your own for a custom style\nSome templates are designed for academic journals, presentations, or reports\nClick here to see a list of available journal templates in Quarto"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#what-is-a-quarto-template",
+    "href": "slides/qt-repro-res.html#what-is-a-quarto-template",
+    "title": "Using Quarto for reproducible research",
+    "section": "What is a Quarto template?",
+    "text": "What is a Quarto template?\n\nA Quarto template is a pre-designed document layout that controls the appearance of your output (PDF, Word, HTML, or presentation).\n\nLet’s try a template for journals published by Elsevier."
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#template-1",
+    "href": "slides/qt-repro-res.html#template-1",
+    "title": "Using Quarto for reproducible research",
+    "section": "Template",
+    "text": "Template\nPaste this code in the terminal (not the console or your coding panel).\n\nquarto use template quarto-journals/elsevier\n\nSay “Yes” to everything it gonna ask."
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#template-2",
+    "href": "slides/qt-repro-res.html#template-2",
+    "title": "Using Quarto for reproducible research",
+    "section": "Template",
+    "text": "Template\n\n\n\npaper.qmd\n---\ntitle: Short Paper\nsubtitle: A Short Subtitle\nauthor:\n  - name: Alice Anonymous\n    email: alice@example.com\n    affiliations: \n        - id: some-tech\n          name: Some Institute of Technology\n          department: Department Name\n          address: Street Address\n          city: City\n          state: State\n          postal-code: Postal Code\n    attributes:\n        corresponding: true\n    note: This is the first author footnote.\n  - name: Bob Security\n    email: bob@example.com\n    affiliations:\n        - id: another-u\n          name: Another University\n          department: Department Name\n          address: Street Address\n          city: City\n          state: State\n          postal-code: Postal Code\n    note: |\n      Another author footnote, this is a very long footnote and it should be a really long footnote. But this footnote is not yet sufficiently long enough to make two lines of footnote text.\n  - name: Cat Memes\n    email: cat@example.com\n    affiliations:\n        - ref: another-u\n    note: Yet another author footnote.\n  - name: Derek Zoolander\n    email: derek@example.com\n    affilations:\n        - ref: some-tech\nabstract: |\n  This is the abstract. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum augue turpis, dictum non malesuada a, volutpat eget velit. Nam placerat turpis purus, eu tristique ex tincidunt et. Mauris sed augue eget turpis ultrices tincidunt. Sed et mi in leo porta egestas. Aliquam non laoreet velit. Nunc quis ex vitae eros aliquet auctor nec ac libero. Duis laoreet sapien eu mi luctus, in bibendum leo molestie. Sed hendrerit diam diam, ac dapibus nisl volutpat vitae. Aliquam bibendum varius libero, eu efficitur justo rutrum at. Sed at tempus elit.\nkeywords: \n  - keyword1\n  - keyword2\ndate: last-modified\nbibliography: bibliography.bib\nformat:\n  elsevier-pdf:\n    keep-tex: true\n    journal:\n      name: Journal Name\n      formatting: preprint\n      # model: 3p # Don't set a model with preprint\n      cite-style: authoryear\n---\n\nPlease make sure that your manuscript follows the guidelines in the \nGuide for Authors of the relevant journal. It is not necessary to \ntypeset your manuscript in exactly the same way as an article, \nunless you are submitting to a camera-ready copy (CRC) journal.\n\nFor detailed instructions regarding the elsevier article class, see   &lt;https://www.elsevier.com/authors/policies-and-guidelines/latex-instructions&gt;\n\n# Bibliography styles\n\nHere are two sample references:  @Feynman1963118 @Dirac1953888.\n\nWith this template using elsevier class, natbib will be used. Three bibliographic style ﬁles (*.bst) are provided and their use controled by `cite-style` option: \n\n- `citestyle: number` (default)  will use `elsarticle-num.bst` - can be used for the numbered scheme\n- `citestyle: numbername` will use `elsarticle-num-names.bst` - can be used for numbered with new options of natbib.sty\n- `citestyle: authoryear` will use `elsarticle-harv.bst` — can be used for author year scheme\n\nThis `citestyle` will insert the right `.bst` and set the correct `classoption` for `elsarticle` document class.\n\nUsing `natbiboptions` variable in YAML header, you can set more options for `natbib` itself . Example \n\n```yaml\nnatbiboptions: longnamesfirst,angle,semicolon\n```\n\n## Using CSL \n\nIf `cite-method` is set to `citeproc` in `elsevier_article()`, then pandoc is used for citations instead of `natbib`. In this case, the `csl` option is used to format the references. By default, this template will provide an appropriate style, but alternative `csl` files are available from &lt;https://www.zotero.org/styles?q=elsevier&gt;. These can be downloaded\nand stored locally, or the url can be used as in the example header.\n\n# Equations\n\nHere is an equation:\n$$ \n  f_{X}(x) = \\left(\\frac{\\alpha}{\\beta}\\right)\n  \\left(\\frac{x}{\\beta}\\right)^{\\alpha-1}\n  e^{-\\left(\\frac{x}{\\beta}\\right)^{\\alpha}}; \n  \\alpha,\\beta,x &gt; 0 .\n$$\n\nInline equations work as well: $\\sum_{i = 2}^\\infty\\{\\alpha_i^\\beta\\}$\n\n# Figures and tables\n\n@fig-meaningless is generated using an R chunk.\n\n```{r}\n#| label: fig-meaningless\n#| fig-cap: A meaningless scatterplot\n#| fig-width: 5\n#| fig-height: 5\n#| fig-align: center\n#| out-width: 50%\n#| echo: false\nplot(runif(25), runif(25))\n```\n\n# Tables coming from R\n\nTables can also be generated using R chunks, as shown in @tbl-simple example.\n\n```{r}\n#| label: tbl-simple\n#| tbl-cap: Caption centered above table\n#| echo: true\nknitr::kable(head(mtcars)[,1:4])\n```\n\n# References {-}"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#revealjs",
+    "href": "slides/qt-repro-res.html#revealjs",
+    "title": "Using Quarto for reproducible research",
+    "section": "Revealjs",
+    "text": "Revealjs\n\nQuarto + Revealjs = Interactive Presentations\nUses Markdown for content\nSimple, flexible, and powerful!"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#slide-structure",
+    "href": "slides/qt-repro-res.html#slide-structure",
+    "title": "Using Quarto for reproducible research",
+    "section": "Slide structure",
+    "text": "Slide structure\n\n\n\nindex.qmd\n---\ntitle: \"My Presentation\"\nauthor: \"Your Name\"\nformat: \n  revealjs:\n    chalkboard: true\ntoc: false\n---\n\n## Slide Title\n\n- Bullet point 1\n- Bullet point 2\n\n## Code Blocks & Highlighting\n\nYou can add code blocks like this:\n\n```{r}\n# R code block\nsummary(cars)\n```\n\n\n\n\n\nSet format: revealjs\nUse ## for slide titles and Markdown for content"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#slide-structure-1",
+    "href": "slides/qt-repro-res.html#slide-structure-1",
+    "title": "Using Quarto for reproducible research",
+    "section": "Slide structure",
+    "text": "Slide structure\n\n\n\nindex.qmd\n---\ntitle: \"My Presentation\"\nauthor: \"Your Name\"\nformat: \n  revealjs:\n    chalkboard: true\ntoc: false\n---\n\n## Slide Title\n\n- Bullet point 1\n- Bullet point 2\n\n## Code Blocks & Highlighting\n\nYou can add code blocks like this:\n\n```{r}\n# R code block\nsummary(cars)\n```\n\n\n{{&lt; revealjs \"qt-example-slide.html\" \"500px\" \"ratio ratio-16x9\" \"false\" &gt;}}"
   }
 ]
