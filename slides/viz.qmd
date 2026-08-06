@@ -594,8 +594,7 @@ ggplot(mtcars) +
 :::
 
 ::: {.column width="50%" style="text-align: center;"}
-![](figures/viz/ColorGraph.png){width="50%"
-style="display: block; margin: 0 auto;"}
+![](figures/viz/ColorGraph.png){style="display: block; margin: 0 auto;"}
 :::
 :::::
 ::::::
@@ -1591,7 +1590,7 @@ system?**
 - What does `mapping = aes()` do?
 - Inheritance of data and aesthetics
 - The `annotate()` layer
-- Splitting up with `facet_wrap()`
+- Figure panes using `facet_wrap()`
 - Extending `ggplot2`
 - Interactive plots with `plotly`
 
