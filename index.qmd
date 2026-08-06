@@ -110,14 +110,14 @@ Please follow this [precourse handout](handouts/precourse_setup.qmd){target="_bl
 
 ### Day 5 (Friday-morning)
 
-<!-- - [Lecture slides](slides/qt-repro-res.qmd) -->
+- [Lecture slides](slides/qt-repro-res.qmd)
 - **Learning objectives**:
   1. Write papers with reproducible tables and figures using Quarto
   2. Generate reports in multiple formats: Word, PDF, slides, web pages…
   3. Easily update analyses when new data becomes available
 
-<!-- - [Exercises](handouts/exercises_Day5.qmd){target="_blank"}
-- [Exercise answer keys]{style="cursor:not-allowed;user-select:none;"} -->
+- [Exercises](handouts/exercises_Day5.qmd){target="_blank"}
+- [Exercise answer keys]{style="cursor:not-allowed;user-select:none;"}
 
 # Appendix
 
