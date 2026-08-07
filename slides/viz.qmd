@@ -706,7 +706,7 @@ ggplot(mtcars) +
 - In summary:
   - **Scales** control properties of aesthetics, e.g. x-axis limits, y-axis ticks, point color, point size, line type, etc.
   - **Guides** control the  **figure legends**, where we read data values from the graph
-- Scales *can* also include statistical transformation(s)
+  - Scales *can* also include statistical transformation(s)
 
 :::::: fragment
 - Some other aesthetic attributes that can be controlled with a **scale**: 
