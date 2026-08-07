@@ -14,14 +14,14 @@ date-format: "MMMM D, YYYY -- HH:mm:ss (z)"
 # Housekeeping
 
 - The training will be **09:00 – 17:00 (UTC +7)** for everyday
-  - We will finish on Friday morning session
 - There will be a **lunch break between 12:30 – 13:30 (UTC +7)**
-- Lunch will be provided for in-person attendees
+- Lunch will be provided for in-person attendees who filled in their attendance on
+  ferendum.com. If you did not, you need to arrange lunch yourself. 
 
 ## Contributors
 
 - Prof. Ronald Geskus, Biostatistics group, OUCRU HCM
-- Dr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM
+- Mr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM
 - Mr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM
 - Dr. Tran Thai Hung, Biostatistics group, OUCRU HCM
 - Ms. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM
@@ -41,7 +41,7 @@ Please follow this [precourse handout](handouts/precourse_setup.qmd){target="_bl
 
 ### Day 1 (Monday)
 
-- [Lecture slides](slides/IntroductionRDay1.qmd)
+- [Lecture slides](slides/IntroductionRDay1.qmd){target="_blank"}
 - **Learning objectives**:
   1. Basic structure of R
   2. Simple computations

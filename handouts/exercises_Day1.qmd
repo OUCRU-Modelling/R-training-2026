@@ -144,7 +144,10 @@ each of the variables?
 summary(titanic)
 ```
 
-d.  Compute the 5%, 25%, 50%, 75% and 95% quantiles, the inter-quartile range and the standard deviation for age and fare. You may have to take a look at the `help` files for the functions `quantile`, `IQR` and `sd`.
+d.  Compute the 5%, 25%, 50%, 75% and 95% quantiles, the inter-quartile range and the
+standard deviation for age and fare. You may need to take a look at the `help` files
+for the functions `quantile`, `IQR` and `sd` (look at the RStudio shortcut list if
+you want to see one way to open a help page.
 
 ```{r}
 ## some quantiles

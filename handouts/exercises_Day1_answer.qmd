@@ -55,7 +55,11 @@ We create the data set  that we used in the web based interface.
 titanic <- data.frame(
     pclass=rep(c("1st","2nd","3rd"),c(4,2,4)),
     survived=c(1,0,0,0,1,1,0,0,0,0),
-    name=c("Allison, Master. Hudson Trevor","Dulles, Mr. William Crothers","McCarthy, Mr. Timothy J","Walker, Mr. William Anderson", "Duran y More, Miss. Asuncion", "Mellinger, Miss. Madeleine Viol","Abbott, Master. Eugene Joseph", "Calic, Mr. Petar","Flynn, Mr. James", "Johnston, Miss. Catherine Helen"),
+    name=c("Allison, Master. Hudson Trevor","Dulles, Mr. William Crothers",
+           "McCarthy, Mr. Timothy J","Walker, Mr. William Anderson",
+           "Duran y More, Miss. Asuncion", "Mellinger, Miss. Madeleine Viol",
+           "Abbott, Master. Eugene Joseph", "Calic, Mr. Petar","Flynn, Mr. James",
+           "Johnston, Miss. Catherine Helen"),
     age= c(0.9167,39,54,47,27,13,13,17,NA,NA),
 	fare=c(151.55,29.7,51.8625,34.0208,13.8583,19.5,20.25,8.6625,7.75,23.4))
 ```
@@ -136,7 +140,10 @@ titanic <- read_excel("data/raw/Titanic3.xlsx", na="NA")
 ```
 
 
-a.  Inspect the data set in spreadsheet-like format that shows up after importing (if it does not show up, you can click on the `titanic` object in the **Environment** pane). Do the variables make sense? Are there any weird values? Sort the data in ascending order of age by clicking on the **age** in the data set.
+a.  Inspect the data set in spreadsheet-like format that shows up after importing (if it does not show up, you can click on the `titanic` object in the **Environment** pane). Do the variables make sense? Are there any weird values? Sort the data in ascending order of age by clicking on **age** in the data set.
+
+**Answer**: The variable `dob` has a strange format. The variable `survived` has
+values 0 and 1, which are not very informative.  
 
 b.  Use the function `dim` to find the number of rows (passengers) and columns (variables) in the data set.
 
@@ -196,7 +203,7 @@ summary(titanic)
 Many are of class and mode character, and the `summary` function does not give any
 information. The `dob` variable has negative values.
 
-d.  Compute the 5%, 25%, 50%, 75% and 95% quantiles, the inter-quartile range and the standard deviation for age and fare. You may have to take a look at the `help` files for the functions `quantile`, `IQR` and `sd`.
+d.  Compute the 5%, 25%, 50%, 75% and 95% quantiles, the inter-quartile range and the standard deviation for age and fare. 
 
 ```{r}
 ## some quantiles
@@ -217,7 +224,8 @@ e.  For categorical variables, `summary` is not very informative. Use the `table
 table(titanic$pclass)
 table(titanic$sex)
 table(titanic$sex, titanic$survived)
-## argument useNA has no added value because there are no missings in sex and survived
+## argument useNA has no added value because there are no missings in
+## sex and survived
 table(titanic$sex, titanic$survived, useNA = "always")
 ```
 
