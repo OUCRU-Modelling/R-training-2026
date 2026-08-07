@@ -1,0 +1,411 @@
+---
+title: Introduction to R, Day 2
+author: "Ronald Geskus"
+engine: knitr
+format-links: 
+  - html
+toc: false
+number-sections: false
+webr:
+  channel-type: "shared-array-buffer"
+  cell-options:
+    autorun: false
+    message: true
+    warning: true
+    eval: true
+    echo: false
+format:
+  revealjs:
+    slide-number: true
+    logo: "figures/OUCRU.jpg"
+    preview-links: true
+    theme: solarized
+    transition: fade
+    show-slide-number: print
+    embed-resources: true
+    include-in-header: 
+      - text: |
+          <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.js'></script>
+filters: 
+  - webr
+---
+
+## Learning goals {.smaller} 
+
+- Day 1
+  - Basic structure of the R program and language
+  - Use the RStudio working environment	
+  - Import, inspect and manage a data set
+    - Select variables (columns) and rows (observations)
+	- Missing data, factors, dates
+
+::: {.fragment .highlight-red}
+- Day 2
+  - Using graphics in base R
+  - Functions, packages
+  - Object specific functions
+  - Lists
+  - Writing more transparent code
+::: 
+
+
+# Basic data visualisation
+
+## R graphics systems:
+
+- Base graphics (package *graphics*)
+  - Straightforward to use
+  - Always loaded when R is started
+  - See Ch.\ 12 of manual [An Introduction to R](https://cran.r-project.org/doc/manuals/R-intro.pdf){target="_blank"}
+	
+::: {.fragment}
+- lattice package. Less popular nowadays. Not covered here. 
+- **ggplot2** package: Wednesday 
+- Note: these systems cannot be mixed
+:::
+
+## Basic plot in base graphics {.smaller}
+
+
+Plot fare paid as function of age
+```{.r}
+plot(titanic$age, titanic$fare)
+```
+Exercise: What would you like to change to make it good enough for publication? 
+
+::: {.fragment}
+
+- Formula based specification 
+    - basis for specification of regression models
+    - general form: `dependent ~ independent`
+	```{.r}
+    plot(fare ~ age, data=titanic)
+    ```
+    - independent: variable names separated by operator (`+` for main effects and `*`
+      for main effects plus interaction)
+    - functions with formula (as first argument) have `data` and `subset` argument
+:::
+
+::: {.fragment}
+*Some possible changes: change labels along axes, rotate numbers along y-axis, add regression line, rescale fare*
+::: 
+
+::: {.fragment}
+
+-  Good summary on base graphics on page 5 of [Reference card](http://cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf){target="_blank"}
+:::
+
+
+## Arguments and parameters that can be changed {.smaller}
+
+- Within function only
+  - `xlab`, `ylab`, `main`
+  - `type`
+  - `xlim`, `ylim`, `log`
+  
+- Also via `par` function
+  - `cex.axis`, `cex.lab`, `las`
+  - `cex`, `pch`
+  - `col`, `lty`, `lwd`
+
+- Only via `par` function
+  - `mar`, `mfcol`, `mfrow`
+
+
+## Some important functions for plotting ##
+
+- High level plot functions
+  - `plot`
+  - `hist`
+  - `boxplot`
+  
+- Low level plot functions (add to existing plot)
+  - `points`
+  - `lines`, `abline`
+  - `text`, `legend`, `title`, `arrows`, `segments`
+
+
+## Other plots
+
+1-3. Plot fare paid as function of age, change scale, add regression line
+
+4. Color points by passenger class
+
+5. Make a separate plot by sex
+
+::: {.fragment}
+Exercise 6: Make a histogram of age
+
+Exercise 7: Make a boxplot of age by passenger class. 
+:::
+
+
+
+## Export: two types of formats {.smaller}
+
+- Vector format (pdf, eps, wmf, emf, svg)
+  - digital image consisting of independent geometric objects
+        (segments, polygons, curves, etc.)
+  - can be enlarged without losing resolution
+- Raster format (png, jpeg, tiff, bmp).
+  - rectangular grid of pixels, possibly with color
+  - resolution impaired if image is enlarged
+- Graphics can be saved via the menu in the graphics/plots window, or
+    a specific graphics file type can be created directly via code
+
+```{.r}
+pdf("foo.pdf",...)
+...
+dev.off()
+```
+or `win.metafile("foo.wmf",...)` or `png("foo.png",...)` and ending with `dev.off()`
+
+## Aside: errors and warnings
+
+- Error: code cannot be executed; no output is produced
+
+```{.r}
+5 + "apple"
+titanic$age[1,5]
+```
+
+- Warning: something unexpected occurred; output produced, but potentially incorrect
+
+```{.r}
+as.numeric(c("1", "2", "banana"))
+plot(fare ~ age, data=titanic, las=1, log="y")
+```
+
+# Functions and packages
+
+## Basic format {.smaller .scrollable}
+
+- All actions are performed via functions: 
+  `sqrt`, `mean`, `help`, `library`, `t.test`, `plot`
+
+- Input: *required* and *optional* arguments; within parentheses, separated by comma
+  - required: need to be supplied
+  - optional: have default values
+
+    Beware of sequence of arguments; required ones come first. Compare
+	```{.r}
+    log(1000, 10) 
+    log(10, 1000) 
+	```
+
+::: {.fragment}
+- Some functions have special "argument": `...`  
+  Meaning: anything that makes sense. Example: in `c` and `paste` function, which allow for the use of many values to
+- Output: result of calculations (typically assigned to R object), graphics, help
+   window, etc.
+
+- You can use functions within other functions, e.g. `mean(c(3,6,8))`
+:::
+
+## Object specific functionality (I)
+
+- Output of function depends on *class* of object
+
+Examples:
+
+-   `summary`:  
+  `summary.data.frame`, `summary.factor`, `summary.Date`  
+   default: `summary.default`
+-  `plot`: `plot(y ~ x, data=..., ...)`
+  
+        Plot depends on class of `x`: scatterplot is default, but
+        boxplot if `x` is of class factor and plot by year if `x` is of class Date
+
+## Object specific functionality (II)
+
+Why important to know?
+
+- Finding information in help file
+- Very efficient in use. E.g. `plot` is a *generic function*, with specific methods
+    depending on the class of the object that is the argument of the function.  
+	*We only need to remember `plot`*
+
+
+
+## Functions: the inside {.smaller}
+
+- Function code can be seen by leaving out the parentheses \texttt{( )}
+```{.r}
+IQR
+```
+- General structure: 
+
+```{.r}
+FunctionName(args) {
+    lines of R code (collection of functions)
+}
+```
+
+The last value is returned as output
+- You can write your own functions:
+
+```{.r}
+good.morning <- function(work){
+    if(work==TRUE) cat("wake up") else 
+      cat("you can stay in bed")
+}
+good.morning()
+```
+
+## Packages {.smaller}
+
+- Regular R users transform recurring tasks into self-made functions
+
+- Can make it into a <span style="color:red;">package</span>, i.e. a collection of
+    functions (and data):
+  - [ggplot2](https://ggplot2.tidyverse.org/index.html){preview-links="true"}
+  - [tidyverse](https://www.tidyverse.org){preview-links="true"}
+  - [WHO TB data](https://github.com/seabbs/getTBinR){target="_blank"}
+  - [AMR](https://msberends.r-universe.dev/articles/AMR/welcome_to_AMR.html){preview-links="true"}
+  - [pharmaverse](https://pharmaverse.github.io/blog/posts/2025-02-28_theres_a_pharmaverse_package_for_that/managing-clinical-trial-data.html){preview-links="true"}
+  - [SUSENAS](https://cran.r-project.org/web/packages/SUSENAS/index.html){preview-links="true"}
+  - [vietnameseConverter](https://cran.r-project.org/web/packages/vietnameseConverter/index.html){preview-links="true"}
+  - [sudoku](https://cran.r-project.org/web/packages/sudoku/index.html){preview-links="true"}
+  - [rStrava](https://cran.r-project.org/web/packages/rStrava/index.html){preview-links="true"}
+
+-   Give package developers appropriate credit and [cite their packages](https://ropensci.org/blog/2021/11/16/how-to-cite-r-and-r-packages/){preview-links="true"}
+	
+## Packages, where to find them? {.smaller}
+
+
+- [Comprehensive R Archive Network](https://cloud.r-project.org/web/packages/available_packages_by_name.html){preview-links="true"}
+    (24504 packages on August 4, 2026)
+- [GitHub](https://rdrr.io/find/?repos=cran%2Cbioc%2Crforge%2Cgithub&page=0&fuzzy_slug=){target="_blank"}
+  (34867 packages on August 4, 2026)
+- [Bioconductor](https://www.bioconductor.org/packages/release/BiocViews.html#___Software){preview-links="true"}
+- [Review](https://rworks.dev/posts/june-2026-top-40-new-cran-packages/){target="_blank"}
+
+::: {.fragment}
+- Need to be installed on your computer
+- R program itself also based on packages. Some loaded at startup 
+    *base*, *graphics*, *stats*, *utils* ...
+
+  For example, *base* package contains `sqrt` function
+- Other packages need to be loaded before use, best way is via `library(pkg_name)` 
+::: 
+
+
+	
+# Some further topics
+
+## Another object mode: list {.smaller .scrollable}
+
+- General mode to store information
+- Different modes cannot be mixed in vectors
+```{.r}
+teachers <- c("Ronald","Hung","Tuyen") # mode character
+rooms <- c(306,306,305) # mode numeric
+c(teachers, rooms) # numbers become characters
+```
+- Modes can be mixed in a list:
+
+```{.r}
+list(teachers, rooms)
+## named list:
+list(teacher = teachers, room = rooms)
+```
+Two *components*, with names `teacher` and `room` 
+
+- Data are of mode list, but with a special class `data.frame`
+```{.r}
+mode(titanic)
+class(titanic)
+```
+
+## Example: regression models
+
+How does fare paid depend on age? Linear regression:
+
+```{.r}
+FareByAge <- lm(log(fare+3)~age, data=titanic)
+```
+
+Output: should contain everything to derive information from fitted model:
+coefficients, p-values, confidence intervals, residuals, ...
+
+Object of mode `list` and of class `lm`. Help file for summary: `summary.lm` 
+
+## More transparent (and often shorter) code {.smaller}
+
+- *formula* structure (regression models, `plot` function)
+
+- `with` function to save repetitive use of data set name : 
+
+  ```{.r}
+  with(titanic, table(sex, survived))
+  ## instead of table(titanic$sex, titanic$survived)
+  ```
+
+- pipe operator `|>` (or `%>%` from the `magrittr` package)  
+  - combining functions in one line can make code obscure: `h(g(f(x)))`  
+    example: `round(proportions(table(titanic$sex,titanic$survived)),2)`
+  - replace by `x |> f() |> g() |> h()` 
+
+
+
+## The apply  functions
+
+- `apply`: apply a function over all columns or all rows of an array
+
+- `lapply`: apply a function over a list (including data.frame)
+
+- `sapply`: similar to `lapply` but more user-friendly if output can
+    be coerced into a vector
+
+- `tapply`: can be used to split a vector in subgroups and apply a
+    function to each of the subgroups
+	
+- `aggregate` is an alternative to `tapply`
+
+## Exercises
+
+- Make a summary of fare by passenger class using the `tapply` and the `aggregate`
+  function
+  
+- Fit the regression model that fits the mean fare paid (on the log scale) as a
+  function of age:    
+  `FareByAge <- lm(log(fare+3)~age, data=titanic)`  
+  Summarize the results. What do you conclude? 
+  
+- Refit the model using 10 years as unit for age and summarize the results. Use the
+  pipe operator, starting with `titanic |> transform(age=age/10) |> ...`  
+  Use a LLM if you get an error message
+
+
+
+
+
+## Finding Information {.smaller}
+
+-   Function `help`. R is object oriented!
+
+-   Search on Google (use `language r:` if result is non-specific)
+
+-   chatGPT or an R package such as
+    [askgpt](https://github.com/cran/askgpt/){target="_blank"}
+    or [ellmer](https://cran.r-project.org/web/packages/ellmer/index.html){target="_blank"}
+
+-   [R documentation](https://www.rdocumentation.org){target="_blank"}  
+[Rseek](http://rseek.org){preview-links="false"}
+
+-   [R-universe](https://r-universe.dev/search){target="_blank"}
+
+-   CRAN ([list with packages](https://cloud.r-project.org/){target="_blank"}, [Task Views](https://cran.r-project.org/web/views/){target="_blank"}, [FAQs](https://cran.r-project.org/faqs.html){target="_blank"}, Vignettes)
+
+-   [Stack Overflow](http://stackoverflow.com/questions/tagged/r){preview-links="false"}
+
+<!-- -   Have a look at the links provided at the end of the handout -->
+
+## Exercise 
+
+Find information on 
+
+- descriptive statistics
+- change several categorical variables of a data.frame into factor variables
+- recognize nonstandard date formats
+

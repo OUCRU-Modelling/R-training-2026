@@ -56,16 +56,16 @@ Please follow this [pre-course setups handout](handouts/precourse_setup.qmd) to 
 
 ### Day 2 (Tuesday)
 
-<!-- - [Lecture slides](slides/IntroductionRDay2.qmd) -->
+- [Lecture slides](slides/IntroductionRDay2.qmd)
 - **Learning objectives**:
-  1. Write simple functions to automate tasks
-  2. Create visualisations using Base R graphics
-  3. Understand the R working environment, including file paths and workspace management
+  1. Create visualisations using Base R graphics
+  2. Write simple functions to automate tasks; the package system
+  3. Lists
   4. Using *pipe operators* to chain functions
-  5. How to read and understand the errors and warnings in your R console
-  6. Find and use R documentation and resources to solve problems on your own
-- No exercises will be given
-<!-- - [Example R code scripts - Day 2](slides/Scripts/ExampleCodeDay2.R){target="_blank"} -->
+- R code:
+  - {{< downloadthis handouts/exercises_Day2_answer.R dname="exercises_Day2_answer" label="Exercise answers script" type="primary">}}
+- {{< downloadthis slides/Scripts/ExampleCodeDay2.R dname="ExampleCodeDay2"
+  label="Example R code scripts - Day 2" type="primary">}}
 
 
 ## Principles of data visualisation and plotting in R
