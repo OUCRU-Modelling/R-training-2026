@@ -224,6 +224,19 @@ plot?
 ::::
 ::::::
 
+## Scatter plot
+
+:::::: columns
+::: {.column width="50%"}
+![](figures/viz/nature.png)
+:::
+
+:::: {.column width="50%"}
+<!-- TODO: which information/data is used for what aes -->
+
+::::
+::::::
+
 ## Data {.smaller}
 
 +------------+------------+--------------+--------------+-------------+
