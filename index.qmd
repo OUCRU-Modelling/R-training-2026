@@ -16,7 +16,7 @@ date-format: "MMMM D, YYYY -- HH:mm:ss (z)"
 - The training will be **09:00 – 17:00 (UTC +7)** for everyday
 - There will be a **lunch break between 12:30 – 13:30 (UTC +7)**
 - Lunch will be provided for in-person attendees who filled in their attendance on
-  ferendum.com. If you did not, you need to arrange lunch yourself. 
+  [ferendum.com]{style="text-decoration: underline;"}. If you did not, you need to arrange lunch yourself. 
 
 ## Contributors
 

@@ -1,6 +1,8 @@
 ---
 title: "Pre-course setups and requirements"
-author: "Ronald Geskus and Tuyen Huynh"
+author: 
+    - "Ronald Geskus"
+    - "Tuyen Huynh"
 number-sections: true
 format: 
   html:
