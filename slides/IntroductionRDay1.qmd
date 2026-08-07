@@ -28,9 +28,6 @@ format:
           <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.js'></script>
 filters: 
   - webr
-  - assign
-profile: 
-  default: assign
 ---
 
 ## Learning goals {.smaller} 
