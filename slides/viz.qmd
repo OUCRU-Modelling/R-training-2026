@@ -517,26 +517,26 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   (points, lines, bars)
 
 ::: fragment
-- [Scales]{style="color: orange;"} defines *how* the information (data)
-  is mapped to [aesthetic attributes]{style="color: red;"} work
+- [Scales]{style="color: orange;"} maps the information (data)
+   to [aesthetic attributes]{style="color: red;"}
 - [Guides]{style="color: green;"} defines how
   [scales]{style="color: orange;"} are represented
 :::
 
-## Scales and guides {.scrollable}
+## Scales and guides
 
-- **Scales** controls the limits and ticks of the x-axis and y-axis
-- **Guides** can roughly be understood as similar to **figure legends**,
-  it's where we read data values from the graph
+- In other words:
+  - **Scales** control properties of aesthetics, e.g. x-axis limits, y-axis ticks, point color, point size, line type, etc.
+  - **Guides** control the  **figure legends**, where we read data values from the graph
 
-::: fragment
+<!-- ::: {.fragment style="text-align: center;"}
 Which components are controlled by **scales**? And which are controlled
 by **guides**?
 
-![](figures/viz/scale-guides.png)
-:::
+![](figures/viz/scale-guides.png){height="300" style="display: block; margin: 0 auto;"}
+::: -->
 
-## Scales and guides
+## Scales
 
 - Scales *can* also include statistical transformation(s)!
 
@@ -545,8 +545,8 @@ by **guides**?
 - **Value transformation** (e.g. linear scale -\> logarithm scale)
 
 - Each **bar in a histogram** can be a "sum" or a
-  "percentage/frequency", depending on the (optional) statistical
-  transformation applied
+  "percentage/frequency", depending on which statistical
+  transformation you want to apply
 
 - A Least Square **Regression line** can be fitted before plotting, this
   also counts as a statistical transformation
@@ -590,22 +590,19 @@ ggplot(mtcars) +
 :::
 :::::
 
-## Scales
+## Scales and guides {.smaller}
 
-- **Scales** controls the limits and ticks of the x-axis and y-axis
-- **Guides** can roughly be understood as similar to **figure legends**
+- In summary:
+  - **Scales** control properties of aesthetics, e.g. x-axis limits, y-axis ticks, point color, point size, line type, etc.
+  - **Guides** control the  **figure legends**, where we read data values from the graph
 - Scales *can* also include statistical transformation(s)
 
 :::::: fragment
-::::: columns
-::: {.column width="50%"}
-- Some other types of scales: colour, point shape, line type, point size
-:::
-
-::: {.column width="50%" style="text-align: center;"}
-![](figures/viz/ColorGraph.png){style="display: block; margin: 0 auto;"}
-:::
-:::::
+- Some other aesthetic attributes that can be controlled with a **scale**: 
+  - colour/fill
+  - line type
+  - geometric object shape
+  - geometric object size
 ::::::
 
 ## Refine the plot: the colour scale {.smaller}
