@@ -18,8 +18,10 @@ website:
         text: Pre-course setups
       - href: slides/IntroductionRDay1.qmd
         text: Introduction to R (Day 1)
+      - href: slides/IntroductionRDay2.qmd
+        text: Introduction to R (Day 2)
       - href: slides/viz.qmd
-        text: Principles of data visualisation (Day 3)
+        text: Grammar of Graphics (Day 3)
       - href: slides/qt-repro-res.qmd
         text: Reproducible research and reporting using Quarto (Day 5)
     tools:

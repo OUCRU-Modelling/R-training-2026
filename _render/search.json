@@ -245,6 +245,384 @@
     "text": "Slide structure\n\n\n\nindex.qmd\n---\ntitle: \"My Presentation\"\nauthor: \"Your Name\"\nformat: \n  revealjs:\n    chalkboard: true\ntoc: false\n---\n\n## Slide Title\n\n- Bullet point 1\n- Bullet point 2\n\n## Code Blocks & Highlighting\n\nYou can add code blocks like this:\n\n```{r}\n# R code block\nsummary(cars)\n```"
   },
   {
+    "objectID": "slides/IntroductionRDay2.html#learning-goals",
+    "href": "slides/IntroductionRDay2.html#learning-goals",
+    "title": "Introduction to R, Day 2",
+    "section": "Learning goals",
+    "text": "Learning goals\n\nDay 1\n\nBasic structure of the R program and language\nUse the RStudio working environment\nImport, inspect and manage a data set\n\nSelect variables (columns) and rows (observations)\nMissing data, factors, dates\n\n\n\n\n\nDay 2\n\nUsing graphics in base R\nFunctions, packages\nObject specific functions\nLists\nWriting more transparent code"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#r-graphics-systems",
+    "href": "slides/IntroductionRDay2.html#r-graphics-systems",
+    "title": "Introduction to R, Day 2",
+    "section": "R graphics systems:",
+    "text": "R graphics systems:\n\nBase graphics (package graphics)\n\nStraightforward to use\nAlways loaded when R is started\nSee Ch. 12 of manual An Introduction to R\n\n\n\n\nlattice package. Less popular nowadays. Not covered here.\nggplot2 package: Wednesday\nNote: these systems cannot be mixed"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#basic-plot-in-base-graphics",
+    "href": "slides/IntroductionRDay2.html#basic-plot-in-base-graphics",
+    "title": "Introduction to R, Day 2",
+    "section": "Basic plot in base graphics",
+    "text": "Basic plot in base graphics\nPlot fare paid as function of age\nplot(titanic$age, titanic$fare)\nExercise: What would you like to change to make it good enough for publication?\n\n\nFormula based specification\n\nbasis for specification of regression models\ngeneral form: dependent ~ independent\n\nplot(fare ~ age, data=titanic)\n\nindependent: variable names separated by operator (+ for main effects and * for main effects plus interaction)\nfunctions with formula (as first argument) have data and subset argument\n\n\n\n\nSome possible changes: change labels along axes, rotate numbers along y-axis, add regression line, rescale fare\n\n\n\nGood summary on base graphics on page 5 of Reference card"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#arguments-and-parameters-that-can-be-changed",
+    "href": "slides/IntroductionRDay2.html#arguments-and-parameters-that-can-be-changed",
+    "title": "Introduction to R, Day 2",
+    "section": "Arguments and parameters that can be changed",
+    "text": "Arguments and parameters that can be changed\n\nWithin function only\n\nxlab, ylab, main\ntype\nxlim, ylim, log\n\nAlso via par function\n\ncex.axis, cex.lab, las\ncex, pch\ncol, lty, lwd\n\nOnly via par function\n\nmar, mfcol, mfrow"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#some-important-functions-for-plotting",
+    "href": "slides/IntroductionRDay2.html#some-important-functions-for-plotting",
+    "title": "Introduction to R, Day 2",
+    "section": "Some important functions for plotting",
+    "text": "Some important functions for plotting\n\nHigh level plot functions\n\nplot\nhist\nboxplot\n\nLow level plot functions (add to existing plot)\n\npoints\nlines, abline\ntext, legend, title, arrows, segments"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#other-plots",
+    "href": "slides/IntroductionRDay2.html#other-plots",
+    "title": "Introduction to R, Day 2",
+    "section": "Other plots",
+    "text": "Other plots\n1-3. Plot fare paid as function of age, change scale, add regression line\n\nColor points by passenger class\nMake a separate plot by sex\n\n\nExercise 6: Make a histogram of age\nExercise 7: Make a boxplot of age by passenger class."
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#export-two-types-of-formats",
+    "href": "slides/IntroductionRDay2.html#export-two-types-of-formats",
+    "title": "Introduction to R, Day 2",
+    "section": "Export: two types of formats",
+    "text": "Export: two types of formats\n\nVector format (pdf, eps, wmf, emf, svg)\n\ndigital image consisting of independent geometric objects (segments, polygons, curves, etc.)\ncan be enlarged without losing resolution\n\nRaster format (png, jpeg, tiff, bmp).\n\nrectangular grid of pixels, possibly with color\nresolution impaired if image is enlarged\n\nGraphics can be saved via the menu in the graphics/plots window, or a specific graphics file type can be created directly via code\n\npdf(\"foo.pdf\",...)\n...\ndev.off()\nor win.metafile(\"foo.wmf\",...) or png(\"foo.png\",...) and ending with dev.off()"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#aside-errors-and-warnings",
+    "href": "slides/IntroductionRDay2.html#aside-errors-and-warnings",
+    "title": "Introduction to R, Day 2",
+    "section": "Aside: errors and warnings",
+    "text": "Aside: errors and warnings\n\nError: code cannot be executed; no output is produced\n\n5 + \"apple\"\ntitanic$age[1,5]\n\nWarning: something unexpected occurred; output produced, but potentially incorrect\n\nas.numeric(c(\"1\", \"2\", \"banana\"))\nplot(fare ~ age, data=titanic, las=1, log=\"y\")"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#basic-format",
+    "href": "slides/IntroductionRDay2.html#basic-format",
+    "title": "Introduction to R, Day 2",
+    "section": "Basic format",
+    "text": "Basic format\n\nAll actions are performed via functions: sqrt, mean, help, library, t.test, plot\nInput: required and optional arguments; within parentheses, separated by comma\n\nrequired: need to be supplied\noptional: have default values\nBeware of sequence of arguments; required ones come first. Compare\nlog(1000, 10) \nlog(10, 1000) \n\n\n\n\nSome functions have special “argument”: ...\nMeaning: anything that makes sense. Example: in c and paste function, which allow for the use of many values to\nOutput: result of calculations (typically assigned to R object), graphics, help window, etc.\nYou can use functions within other functions, e.g. mean(c(3,6,8))"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#object-specific-functionality-i",
+    "href": "slides/IntroductionRDay2.html#object-specific-functionality-i",
+    "title": "Introduction to R, Day 2",
+    "section": "Object specific functionality (I)",
+    "text": "Object specific functionality (I)\n\nOutput of function depends on class of object\n\nExamples:\n\nsummary:\nsummary.data.frame, summary.factor, summary.Date\ndefault: summary.default\nplot: plot(y ~ x, data=..., ...)\n Plot depends on class of `x`: scatterplot is default, but\n boxplot if `x` is of class factor and plot by year if `x` is of class Date"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#object-specific-functionality-ii",
+    "href": "slides/IntroductionRDay2.html#object-specific-functionality-ii",
+    "title": "Introduction to R, Day 2",
+    "section": "Object specific functionality (II)",
+    "text": "Object specific functionality (II)\nWhy important to know?\n\nFinding information in help file\nVery efficient in use. E.g. plot is a generic function, with specific methods depending on the class of the object that is the argument of the function.\nWe only need to remember plot"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#functions-the-inside",
+    "href": "slides/IntroductionRDay2.html#functions-the-inside",
+    "title": "Introduction to R, Day 2",
+    "section": "Functions: the inside",
+    "text": "Functions: the inside\n\nFunction code can be seen by leaving out the parentheses \n\nIQR\n\nGeneral structure:\n\nFunctionName(args) {\n    lines of R code (collection of functions)\n}\nThe last value is returned as output - You can write your own functions:\ngood.morning &lt;- function(work){\n    if(work==TRUE) cat(\"wake up\") else \n      cat(\"you can stay in bed\")\n}\ngood.morning()"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#packages",
+    "href": "slides/IntroductionRDay2.html#packages",
+    "title": "Introduction to R, Day 2",
+    "section": "Packages",
+    "text": "Packages\n\nRegular R users transform recurring tasks into self-made functions\nCan make it into a package, i.e. a collection of functions (and data):\n\nggplot2\ntidyverse\nWHO TB data\nAMR\npharmaverse\nSUSENAS\nvietnameseConverter\nsudoku\nrStrava\n\nGive package developers appropriate credit and cite their packages"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#packages-where-to-find-them",
+    "href": "slides/IntroductionRDay2.html#packages-where-to-find-them",
+    "title": "Introduction to R, Day 2",
+    "section": "Packages, where to find them?",
+    "text": "Packages, where to find them?\n\nComprehensive R Archive Network (24504 packages on August 4, 2026)\nGitHub (34867 packages on August 4, 2026)\nBioconductor\nMonthly Review Top 40 packages\n\n\n\nNeed to be installed on your computer\nR program itself also based on packages. Some loaded at startup base, graphics, stats, utils …\nFor example, base package contains sqrt function\nOther packages need to be loaded before use, best way is via library(pkg_name)"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#another-object-mode-list",
+    "href": "slides/IntroductionRDay2.html#another-object-mode-list",
+    "title": "Introduction to R, Day 2",
+    "section": "Another object mode: list",
+    "text": "Another object mode: list\n\nGeneral mode to store information\nDifferent modes cannot be mixed in vectors\n\nteachers &lt;- c(\"Ronald\",\"Hung\",\"Tuyen\") # mode character\nrooms &lt;- c(306,306,305) # mode numeric\nc(teachers, rooms) # numbers become characters\n\nModes can be mixed in a list:\n\nlist(teachers, rooms)\n## named list:\nlist(teacher = teachers, room = rooms)\nTwo components, with names teacher and room\n\nData are of mode list, but with a special class data.frame\n\nmode(titanic)\nclass(titanic)"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#example-regression-models",
+    "href": "slides/IntroductionRDay2.html#example-regression-models",
+    "title": "Introduction to R, Day 2",
+    "section": "Example: regression models",
+    "text": "Example: regression models\nHow does fare paid depend on age? Linear regression:\nFareByAge &lt;- lm(log(fare+3)~age, data=titanic)\nOutput: should contain everything to derive information from fitted model: coefficients, p-values, confidence intervals, residuals, …\nObject of mode list and of class lm. Help file for summary: summary.lm"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#more-transparent-and-often-shorter-code",
+    "href": "slides/IntroductionRDay2.html#more-transparent-and-often-shorter-code",
+    "title": "Introduction to R, Day 2",
+    "section": "More transparent (and often shorter) code",
+    "text": "More transparent (and often shorter) code\n\nformula structure (regression models, plot function)\nwith function to save repetitive use of data set name :\nwith(titanic, table(sex, survived))\n## instead of table(titanic$sex, titanic$survived)\npipe operator |&gt; (or %&gt;% from the magrittr package)\n\ncombining functions in one line can make code obscure: h(g(f(x)))\nexample: round(proportions(table(titanic$sex,titanic$survived)),2)\nreplace by x |&gt; f() |&gt; g() |&gt; h()"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#the-apply-functions",
+    "href": "slides/IntroductionRDay2.html#the-apply-functions",
+    "title": "Introduction to R, Day 2",
+    "section": "The apply functions",
+    "text": "The apply functions\n\napply: apply a function over all columns or all rows of an array\nlapply: apply a function over a list (including data.frame)\nsapply: similar to lapply but more user-friendly if output can be coerced into a vector\ntapply: can be used to split a vector in subgroups and apply a function to each of the subgroups\naggregate is an alternative to tapply"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#exercises",
+    "href": "slides/IntroductionRDay2.html#exercises",
+    "title": "Introduction to R, Day 2",
+    "section": "Exercises",
+    "text": "Exercises\n\nMake a summary of fare by passenger class using the tapply and the aggregate function\nFit the regression model that fits the mean fare paid (on the log scale) as a function of age:\nFareByAge &lt;- lm(log(fare+3)~age, data=titanic)\nSummarize the results. What do you conclude?\nRefit the model using 10 years as unit for age and summarize the results. Use the pipe operator, starting with titanic |&gt; transform(age=age/10) |&gt; ...\nUse a LLM if you get an error message"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#finding-information",
+    "href": "slides/IntroductionRDay2.html#finding-information",
+    "title": "Introduction to R, Day 2",
+    "section": "Finding Information",
+    "text": "Finding Information\n\nFunction help. R is object oriented!\nSearch on Google (use language r: if result is non-specific)\nchatGPT or an R package such as askgpt or ellmer\nR documentation\nRseek\nR-universe\nCRAN (list with packages, Task Views, FAQs, Vignettes)\nStack Overflow\nHave a look at the links provided in the appendix on the course website"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#exercise",
+    "href": "slides/IntroductionRDay2.html#exercise",
+    "title": "Introduction to R, Day 2",
+    "section": "Exercise",
+    "text": "Exercise\nFind information on\n\ndescriptive statistics\nchange several categorical variables of a data.frame into factor variables\nrecognize nonstandard date formats"
+  },
+  {
+    "objectID": "slides/qt-example.html",
+    "href": "slides/qt-example.html",
+    "title": "Hello, Quarto",
+    "section": "",
+    "text": "Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
+  },
+  {
+    "objectID": "slides/qt-example.html#introduction-to-quarto",
+    "href": "slides/qt-example.html#introduction-to-quarto",
+    "title": "Hello, Quarto",
+    "section": "",
+    "text": "Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
+  },
+  {
+    "objectID": "slides/qt-example.html#header-levels",
+    "href": "slides/qt-example.html#header-levels",
+    "title": "Hello, Quarto",
+    "section": "2 Header Levels",
+    "text": "2 Header Levels\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\nLevel 1 header: # Header\nLevel 2 header: ## Subheader\nLevel 3 header: ### Sub-subheader\n\n\n2.1 Nested Headers\nUsing headers, you can create nested sections to structure your document in a clear and organized way."
+  },
+  {
+    "objectID": "slides/qt-example.html#inline-text-formatting",
+    "href": "slides/qt-example.html#inline-text-formatting",
+    "title": "Hello, Quarto",
+    "section": "3 Inline Text Formatting",
+    "text": "3 Inline Text Formatting\nYou can format your text inline to add emphasis or other styling options.\n\nBold text: **bold**\nItalic text: *italic*\nInline code: `code`\nUnderline: [underline]{.underline}\n\n\nBlockquotes can be used to highlight important information or quotes by adding &gt; at the beginning of a line."
+  },
+  {
+    "objectID": "slides/qt-example.html#lists",
+    "href": "slides/qt-example.html#lists",
+    "title": "Hello, Quarto",
+    "section": "4 Lists",
+    "text": "4 Lists\nQuarto supports both ordered and unordered lists.\n\n4.1 Unordered List\nTo create an unordered list, use an asterisk * before each item:\n\nFirst item\nSecond item\nThird item\n\n\n\n4.2 Ordered List\nTo create an ordered list, use numbers before each item:\n\nFirst item\nSecond item\nThird item"
+  },
+  {
+    "objectID": "slides/qt-example.html#links-and-images",
+    "href": "slides/qt-example.html#links-and-images",
+    "title": "Hello, Quarto",
+    "section": "5 Links and images",
+    "text": "5 Links and images\nhttp://example.com\nlinked phrase\n\n\n\noptional caption text"
+  },
+  {
+    "objectID": "slides/qt-example.html#tables",
+    "href": "slides/qt-example.html#tables",
+    "title": "Hello, Quarto",
+    "section": "6 Tables",
+    "text": "6 Tables\n\n\n\nFirst Header\nSecond Header\n\n\n\n\nContent Cell\nContent Cell\n\n\nContent Cell\nContent Cell"
+  },
+  {
+    "objectID": "slides/qt-example.html#code-block",
+    "href": "slides/qt-example.html#code-block",
+    "title": "Hello, Quarto",
+    "section": "7 Code block",
+    "text": "7 Code block\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")"
+  },
+  {
+    "objectID": "slides/qt-example.html#footnotes",
+    "href": "slides/qt-example.html#footnotes",
+    "title": "Hello, Quarto",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThis is an example footnote.↩︎"
+  },
+  {
+    "objectID": "handouts/exercise_day3.html",
+    "href": "handouts/exercise_day3.html",
+    "title": "Exercises Day 3",
+    "section": "",
+    "text": "Throughout these exercises, we will recreate the plots from Day 2 exercises using the ggplot2 package"
+  },
+  {
+    "objectID": "handouts/exercise_day3.html#overview",
+    "href": "handouts/exercise_day3.html#overview",
+    "title": "Exercises Day 3",
+    "section": "",
+    "text": "Throughout these exercises, we will recreate the plots from Day 2 exercises using the ggplot2 package"
+  },
+  {
+    "objectID": "handouts/exercise_day3.html#dataset",
+    "href": "handouts/exercise_day3.html#dataset",
+    "title": "Exercises Day 3",
+    "section": "Dataset",
+    "text": "Dataset\nWe will use the Titanic3.xlsx dataset\nIf you haven’t had the data already, click the button below to download it\n\n\n Download data\n\n\nWe can then load the data by running\n\nlibrary(readxl)\nlibrary(ggplot2)\n\n# make sure to modify the file path to match where it is on your device\ntitanic &lt;- read_excel(\"data/raw/Titanic3.xlsx\", na = \"NA\")\n\nhead(titanic, n = 10)"
+  },
+  {
+    "objectID": "handouts/exercise_day3.html#exercise-1",
+    "href": "handouts/exercise_day3.html#exercise-1",
+    "title": "Exercises Day 3",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nIn this exercise, we will draw a plot exploring the relationship between age, sex and the fare paid for the trip.\nThe end result will look something like this.\n\n\n\n\n\n\n\n\n\nSeems complicated? Don’t panic! the following sections will guide you through the process step-by-step.\nStep 1: Plot the price that was paid (fare) as a function of age. Label the axis for fare as “fare paid (GBP)”\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\n\nuse geom_point() for scatter plot\nlabel for y-axis and x-axis can be configure via ylab() and xlab()\n\n\n\n\n\n\nReveal answer\nggplot(titanic) +\n  geom_point(aes(x = age, y = fare)) +\n  ylab(\"fare paid (GBP)\")\n\n\nBonus task: Try adding coord_polar() to see what happen\n\n\nReveal code\nggplot(titanic) +\n  geom_point(aes(x = age, y = fare)) +\n  ylab(\"fare paid (GBP)\") +\n  coord_polar()\n\n\nStep 2: Return to the cartesian coordinate system. Add a second layer that fits the linear regression line with 95% confidence interval.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\nThis is considered as smoothing, use geom_smooth(method=\"lm\") to fit a linear regression model\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = fare)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  ylab(\"fare paid (GBP)\")\n\n\nStep 3: The distribution of fare is very skewed. Therefore, it may be better to plot fare on a logarithmic scale so let’s do exactly that.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\nReplace ylab() with scale_y_log10()\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = fare)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  scale_y_log10(\"fare paid (GBP)\")\n\n\nStep 4: Now, we want to color the data points by passenger class (pclass), and split the calculation and plot for the regression line by these 3 groups.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nAdd color to the aesthetic attributes (via aes())\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = fare, color = pclass)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  scale_y_log10(\"fare paid (GBP)\")\n\n\nStep 5: Next, we want to split the plot into separate panes for each sex, add a rug plot to both sides as well.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\nSeparate plots into panes via facet_wrap()\nAdd rug plot via geom_rug()\n\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = fare, color = pclass)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  geom_rug() +\n  scale_y_log10(\"fare paid (GBP)\") +\n  facet_wrap(~sex)\n\n\nStep 6: Make the plot prettier to your heart’s content!\n\n\nExample output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\nYou can consider:\n\nChanging color scale (e.g., scale_color_viridis_d(), scale_color_manual())\nChanging plot theme (e.g., theme_bw(), theme_minimal())\n\n\n\n\nFor the color palette, we use a custom OUCRU palette from the oucru package, which can be installed by running\n\nrenv::install(\"OUCRU-Modelling/oucru\")\n\nAnd loaded into R via\n\nlibrary(oucru)\n\n# The palette can be accessed via\nscale_color_oucru_d()\n\nYou may also want to check some sample usages of the package here\n\n\nCode for example output\nggplot(titanic, aes(x = age, y = fare, color = pclass)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  geom_rug() +\n  scale_y_log10(\"fare paid (GBP)\") +\n  facet_wrap(~sex) +\n  scale_color_oucru_d() +\n  theme_bw()\n\n\nStep 7: Save your plot as a .png\n\n\nReveal answer\nggsave(\"output/titanic_fare_plot.png\", width = 7, heigh = 5)"
+  },
+  {
+    "objectID": "handouts/exercise_day3.html#exercise-2",
+    "href": "handouts/exercise_day3.html#exercise-2",
+    "title": "Exercises Day 3",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nFor this exercise, we will create plots to explore the age distribution for each pclass\n\nExercise 2.1. Histogram\nWe can start by plotting histograms of age for each of the pclass.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\n\nUse geom_histogram()\nSplit the plot by pclass via facet_wrap()\n\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age)) +\n  geom_histogram() +\n  facet_wrap(~pclass)\n\n\n\n\nExercise 2.2. Boxplot\nAnother option is to use the boxplot. Start by making a boxplot of age (along y-axis) for each of the passenger classes (along x-axis).\n\n\nReveal answer\nggplot(titanic) +\n  geom_boxplot(\n    aes(y = age, x = pclass)\n  )\n\n\nThen, add the individual data points to the boxplot. Give the data points a red color and make them (slightly) transparent.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\n\nUse geom_jitter() instead of geom_point() to make it easier to discriminate between the data points.\nTransparency level can be configured via the alpha aesthetic\n\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(y = age, x = pclass)) +\n  geom_boxplot() +\n  geom_jitter(color = \"red\", alpha = .2)\n\n\n\n\nExercise 2.3. Violin plot\nInstead of using boxplot, you may also consider using the violin plot.\nTry recreating the following plot\n\n\n\n\n\n\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(y = age, x = pclass)) +\n  geom_violin() +\n  geom_jitter(color = \"red\", alpha = .2) +\n  theme_bw()\n\n\nBonus task: Customize the plot to your liking!"
+  },
+  {
+    "objectID": "handouts/exercise_day3.html#exercise-3",
+    "href": "handouts/exercise_day3.html#exercise-3",
+    "title": "Exercises Day 3",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nMake a new graph in which we perform an exploratory analysis of the relationship between survival and age, sex and passenger class (pclass).\nThe end result should look something like this.\n\n\n\n\n\n\n\n\n\nA few details\n\nJitter is configured with height=0.05 and width=0 (experiment with different width values to see why you should set width=0)\n\n\n\nThe smoothed layer is generated with loess method\nThe color is configured with oucru palette “group4”\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\nList of geoms used include:\n\ngeom_smooth()\ngeom_jitter()\n\nPosition of legend can be configured via theme(legend.position = ...)\nLimit for y-axis can be configured via coord_cartesian(ylim=...)\nThe oucru palette can be configured via scale_color_oucru_d(palette = ...)\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = survived, color = sex)) +\n  geom_smooth(method = \"loess\") +\n  geom_jitter(width = 0, height = .05, alpha = .5) +\n  facet_wrap(~pclass) +\n  coord_cartesian(ylim = c(-.1, 1.1)) +\n  scale_color_oucru_d(palette = \"group4\") +\n  theme_bw() +\n  theme(legend.position = 'top')"
+  },
+  {
+    "objectID": "handouts/exercises_Day5.html",
+    "href": "handouts/exercises_Day5.html",
+    "title": "Exercises Day 5",
+    "section": "",
+    "text": "NotePiping\n\n\n\nIt is expected that the exercise answers will be mainly using the pipe operators |&gt;, instead of putting functions inside each other"
+  },
+  {
+    "objectID": "handouts/exercises_Day5.html#notes-and-instructions",
+    "href": "handouts/exercises_Day5.html#notes-and-instructions",
+    "title": "Exercises Day 5",
+    "section": "",
+    "text": "NotePiping\n\n\n\nIt is expected that the exercise answers will be mainly using the pipe operators |&gt;, instead of putting functions inside each other"
+  },
+  {
+    "objectID": "handouts/exercises_Day5.html#dataset",
+    "href": "handouts/exercises_Day5.html#dataset",
+    "title": "Exercises Day 5",
+    "section": "Dataset",
+    "text": "Dataset\nWe will use covid_cases.rds for this exercise.\n\n  \n    Data dictionary\n  \n\n\n\n\n\n\n\nColumn\nDescription\n\n\n\n\ndate\ndate of the case report\n\n\n211 columns with the format cases_{country_code}\nnumber of reported cases of each country and archipelago\n\n\n\nCountry codes of interest (i.e. Codes for countries needed for the exercise)\n\n\n\nCode\nCountry name\n\n\n\n\nchn\nChina\n\n\nusa\nUnited States of America\n\n\nvnm\nVietnam\n\n\nsgp\nSingapore"
+  },
+  {
+    "objectID": "handouts/exercises_Day5.html#exercises",
+    "href": "handouts/exercises_Day5.html#exercises",
+    "title": "Exercises Day 5",
+    "section": "Exercises",
+    "text": "Exercises\n\nTask 1: Data import\n\nRead data\nLoad the tidyverse meta-package into R\n\n\n\n\n\n\n\nNote\n\n\n\nA “meta-package” is a package that contains other packages. Remember, tidyverse is just a collection of packages.\n\n\n\n\nTask 2: Data cleaning and filtering\n\nDoes the data follow the tidy data standard?\n\nIf not, pivot the data into a tibble that follows the tidy data standard\n\nDo some quick skim on the data. Do the variable values make sense given its type?\n\nIf not, filter out incorrect/impossible data\n\nFilter the data so that we only have week 3-12 of 2020\nSave the results back into covid_cases\n\n\n\n\n\n\n\nTipTip: pivotting\n\n\n\n\n\n\nIf your data is not tidy data:\n\n“Lengthens” the data using tidyr::pivot_longer(), i.e. less columns, more rows\n“Widens” the data using tidyr::pivot_wider(), i.e. less rows, more columns\n\n\n\n\n\n\n\n\n\n\n\nTipTip: data cleaning\n\n\n\n\n\n\nThe main variable here is case counts from each country. They should have a numeric type and should not be lower than 0. You can’t have negative case counts\nYou can remove or filter undesirable values using dplyr::filter()\n\n\n\n\n\n\nTask 3: Data transformation\n\nUsing the covid_cases object created in Task 2:\n\nGroup the data and calculate the total number of cases per country\nSelect the top 5 countries with highest total cases\nExtract the country codes and save them into a new object, e.g. top_countries\n\n\n\nUse the covid_cases object created in Task 2 again:\n\nGroup the data again, calculate the total number of cases per country again\nModify the country column:\n\nSo that we only keep the names of countries in the top 5 (generated above). Countries on in the top 5 will be changed to \"Others\"\nTurn this column into a factor type using the forcats package (already in tidyverse)\nGroup the data again, this time, group by date and country\nCalculate the total number of cases per date per country\nCreate a new column called pct_cases, which is the percentage of total cases per date per country\n(Optional) remove rows with NA from the tibble\nThere are many ways to do this part of the task\n\nSave all of this into a new object, e.g. plot_data\n\n\n\n\n\n\n\n\nTipTip: data grouping and summarisation\n\n\n\n\n\n\nGroup data into groups with dplyr::group_by() and ungroup data with dplyr::ungroup()\nSummarise each group into a single row with dplyr::summarise()\nYou can have multiple groups at the same time. For example:\n\n\n\n`summarise()` has regrouped the output.\nℹ Summaries were computed grouped by date and country.\nℹ Output is grouped by date.\nℹ Use `summarise(.groups = \"drop_last\")` to silence this message.\nℹ Use `summarise(.by = c(date, country))` for per-operation grouping\n  (`?dplyr::dplyr_by`) instead.\n\n\n\n  \n\n\n\n\nYou can choose not to summarise, but add a new column to each group with dplyr::mutate(). For example:\n\n\n\n\n  \n\n\n\nThis will create a new column total_cases that contains the sum of cases for each country without reducing each group into a single row like summarise(). Values will be duplicated for each group.\n\n\n\n\n\n\n\n\n\nTipTip: get top n values in a tibble\n\n\n\n\n\n\nYou can select rows with the top n values in a tibble using dplyr::slice_max()\n\n\n\n\n\n\n\n\n\n\nTipTip: get values of a column in a tibble\n\n\n\n\n\n\nYou can extract values from a columns in a tibble using dplyr::pull()\n\n\n\n\n\n\n\n\n\n\nTipTip: turn a tibble column into a factor\n\n\n\n\n\n\nYou can create and work with factors inside a tibble using the forcats package (already in tidyverse)\nYou can “lump”, or gather, factor levels that are not frequent with forcats::fct_lump_n()\n\n\n\n\n\n\nTask 4: Join data\n\nUse this data country_region.rds to get the regions and sub-regions for all countries.\nMake these 2 tables:\n\n\n\n\n  \n\n\n\n\n\n\n  \n\n\n\n\nWrite a short paragraph summarising key insights from the table, using inline R code to dynamically display case numbers. For example:\n\n\nEurope (192,068) and Asia (126,420) reported the highest number of cases, while Oceania (1,879) had the lowest.\n\nNoted that the number of cases is not hard-coded but you use inline R code to generate it within the text.\n\n\n\n\n\n\nTipTip: join the tables with left_join()\n\n\n\n\n\nYou can join covid_cases and country_region, using the country column of covid_cases and the alpha_3 column of country_region.\n\n\n\n\n\n\n\n\n\nTipTip: make the total cases table\n\n\n\n\n\nYou can use group_by() and summarise() to compute the total cases by sum(cases).\n\n\n\n\n\n\n\n\n\nTipTip: make inline R code\n\n\n\n\n\nIn the paragraph, use inline R code like {r} scales::comma(data$total_cases[tmp1$region == \"Europe\"]) to reference computed values. Function scales::comma() will make the numbers appear with commas for thousands (e.g., 100,000 instead of 100000).\n\n\n\n\n\nTask 5: Data visualization\n\nUsing ggplot2, try your best to generate the following figure:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipTip: how do I draw that??\n\n\n\n\n\n\nggplot2 reference page is very useful\nHere are all the functions used to generate the plot above, in sequence:\n\nggplot()\ngeom_area()\nscale_y_continuous()\nscale_x_date()\nscale_fill_discrete()\nggtitle()\nEvery function is connected with the + operator"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "OUCRU R training course - 2026",
+    "section": "",
+    "text": "The training will be 09:00 – 17:00 (UTC +7) for everyday\nThere will be a lunch break between 12:30 – 13:30 (UTC +7)\nLunch will be provided for in-person attendees who filled in their attendance on ferendum.com. If you did not, you need to arrange lunch yourself.\n\n\n\n\nProf. Ronald Geskus, Biostatistics group, OUCRU HCM\nMr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM\nMr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM\nDr. Tran Thai Hung, Biostatistics group, OUCRU HCM\nMs. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM\nDr. Duc Du Hong, Biostatistics group, OUCRU HCM\nDr. Thuan Hoang Van, Biostatistics group, OUCRU Ha Noi\nDr. Nguyen Lam Vuong, Biostatistics group, OUCRU HCM\nMr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM\n\n\n\n\nPlease follow this pre-course setups handout to setup R and RStudio."
+  },
+  {
+    "objectID": "index.html#contributors",
+    "href": "index.html#contributors",
+    "title": "OUCRU R training course - 2026",
+    "section": "",
+    "text": "Prof. Ronald Geskus, Biostatistics group, OUCRU HCM\nMr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM\nMr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM\nDr. Tran Thai Hung, Biostatistics group, OUCRU HCM\nMs. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM\nDr. Duc Du Hong, Biostatistics group, OUCRU HCM\nDr. Thuan Hoang Van, Biostatistics group, OUCRU Ha Noi\nDr. Nguyen Lam Vuong, Biostatistics group, OUCRU HCM\nMr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM"
+  },
+  {
+    "objectID": "index.html#pre-course-setups-and-requirements",
+    "href": "index.html#pre-course-setups-and-requirements",
+    "title": "OUCRU R training course - 2026",
+    "section": "",
+    "text": "Please follow this pre-course setups handout to setup R and RStudio."
+  },
+  {
+    "objectID": "index.html#introduction-to-r",
+    "href": "index.html#introduction-to-r",
+    "title": "OUCRU R training course - 2026",
+    "section": "Introduction to R",
+    "text": "Introduction to R\n\nDay 1 (Monday)\n\nLecture slides\nLearning objectives:\n\nBasic structure of R\nSimple computations\nImport and inspect datasets\nMake selections\nNavigate RStudio with confidence\n\nExercises:\n\nExercises\nExercise answers\n Exercise answers script \n\n Example R code scripts - Day 1 \n\n\n\nDay 2 (Tuesday)\n\nLecture slides\nLearning objectives:\n\nCreate visualisations using Base R graphics\nWrite simple functions to automate tasks; the package system\nLists\nUsing pipe operators to chain functions\n\nR code:\n\n Exercise answers script \n\n Example R code scripts - Day 2"
+  },
+  {
+    "objectID": "index.html#principles-of-data-visualisation-and-plotting-in-r",
+    "href": "index.html#principles-of-data-visualisation-and-plotting-in-r",
+    "title": "OUCRU R training course - 2026",
+    "section": "Principles of data visualisation and plotting in R",
+    "text": "Principles of data visualisation and plotting in R\n\nDay 3 (Wednesday):\n\nLecture slides\nLearning objectives:\n\nThe grammar of graphics—understanding how plots are built\nThe step-by-step process of creating graphs in R\nUse the ggplot2 package plot figures in R\nHow to design clear and impactful visualisations\nUsing LLMs (Large Language Models) to help you with plotting\n\nExercises\n\n\n\n\nDay 4 (Thursday-morning):\n\nLearning objectives:\n\nUnderstand the principles of data visualisation"
+  },
+  {
+    "objectID": "index.html#advanced-data-management-in-r",
+    "href": "index.html#advanced-data-management-in-r",
+    "title": "OUCRU R training course - 2026",
+    "section": "Advanced data management in R",
+    "text": "Advanced data management in R\n\nDay 4 (Thursday-afternoon):\n\nLearning objectives:\n\nLogics with if-else statements and for-loops\nData manipulation with mutate()\nJoining dataframes\nPivotting dataframes into long and wide formats\nVectorisation in R with map()"
+  },
+  {
+    "objectID": "index.html#reproducible-research-and-reporting-using-quarto",
+    "href": "index.html#reproducible-research-and-reporting-using-quarto",
+    "title": "OUCRU R training course - 2026",
+    "section": "Reproducible research and reporting using Quarto",
+    "text": "Reproducible research and reporting using Quarto\n\nDay 5 (Friday-morning)\n\nLecture slides\nLearning objectives:\n\nWrite papers with reproducible tables and figures using Quarto\nGenerate reports in multiple formats: Word, PDF, slides, web pages…\nEasily update analyses when new data becomes available\n\nExercises\nExercise answer keys"
+  },
+  {
+    "objectID": "index.html#introduction-to-r-and-rstudio",
+    "href": "index.html#introduction-to-r-and-rstudio",
+    "title": "OUCRU R training course - 2026",
+    "section": "Introduction to R and RStudio",
+    "text": "Introduction to R and RStudio\nGood introduction, with explanatory videos:\n\nRStudio provides several tutorials for beginners and more advanced users: https://education.rstudio.com/\nDatacamp provides many courses at different levels (OUCRU HCMC has a license). See http://www.statmethods.net. The introduction is free\nA basic course, interactive design: https://www.quantargo.com/courses/course-r-introduction\nIntroduction from Pasteur institute: https://hub-courses.pages.pasteur.fr/R_pasteur_phd/First_steps_RStudio.html\nGood summary of basic concepts: http://www.burns-stat.com/documents/tutorials/impatient-r\nA comprehensive introduction: https://github.com/matloff/fasteR\nIntroduction to R programming: https://jjallaire.github.io/hopr/"
+  },
+  {
+    "objectID": "index.html#deeper-into-r",
+    "href": "index.html#deeper-into-r",
+    "title": "OUCRU R training course - 2026",
+    "section": "DeepeR into R",
+    "text": "DeepeR into R\n\nThe book R for Data Science (2e)\n“What They Forgot to Teach You About R”\nhttps://www.r-project.org/doc/bib/R-books.html\nThe official R manuals: https://cran.r-project.org/manuals.html"
+  },
+  {
+    "objectID": "index.html#r-and-statistics",
+    "href": "index.html#r-and-statistics",
+    "title": "OUCRU R training course - 2026",
+    "section": "R and statistics",
+    "text": "R and statistics\n\nA simple introduction to biomedical statistics using R: https://a-little-book-of-r-for-biomedical-statistics.readthedocs.io/en/latest/\nA website with detailed examples of all types of statistical analysis: https://stats.oarc.ucla.edu/other/dae/\nR by example: http://www.mayin.org/ajayshah/KB/R/index.html\nR course, with focus machine learning"
+  },
+  {
+    "objectID": "index.html#r-markdown-and-quarto",
+    "href": "index.html#r-markdown-and-quarto",
+    "title": "OUCRU R training course - 2026",
+    "section": "R Markdown and Quarto",
+    "text": "R Markdown and Quarto\n\nThe main RStudio webpage on R Markdown, with links to two freely available books: https://rmarkdown.rstudio.com/docs/\nIntroduction from RStudio\nIntroduction to knitr\nFirst steps in Markdown\nWriting academic papers with R Markdown (focus on bibiliographies): https://ikashnitsky.github.io/2019/zotero/\nR Markdown tips: https://appsilon.com/r-markdown-tips/\nPowerpoint presentations using R Markdown: https://appsilon.com/r-markdown-powerpoint-presentation/\nhttps://codingclubuc3m.rbind.io/post/2019-09-24/ focus on creating presentations\nR Quarto tutorial: https://appsilon.com/r-quarto-tutorial/"
+  },
+  {
+    "objectID": "handouts/precourse_setup.html",
+    "href": "handouts/precourse_setup.html",
+    "title": "Pre-course setups and requirements",
+    "section": "",
+    "text": "About\nHere we explain how to install R and RStudio on your own computer. This is required to ensure a smooth experience and reproducible results during the course.\n\n\n1 R\n\nGo to the R website\nIn the column on the left hand side, click on the CRAN link under the subheading Download\n\nYou now see a page with CRAN Mirrors. This is a list of servers from which the R software and extensions can be downloaded from\n\nClick on the first link\n\nNow both the left hand side and the right hand side of the page change (This page can be saved as a bookmark/favorite)\n\nOn the right hand side, click on the download link for your operating system\n\nE.g. Windows users click on Download R for Windows, then click on base and download the program from there.\nIt is recommended to install the latest version as well as to upgrade the program if a new major version is released, which is about once per year\nYou can use the default installation options\n\n\n\n\n2 RStudio Desktop\n\nGo to the download page\nScroll down, look for 2: Install Rstudio and click on the button for downloading RStudio Desktop\nDownload and install RStudio Desktop\n\nYou can use the default installation options\n\nOpen Rstudio Desktop, to check that everything has been installed correctly\n\nE.g. via the Start menu in Windows\n\n\n\n\n3 renv setup\n\nThe renv package helps you create reproducible environments for your R projects. Use renv to make your R projects more isolated, portable and reproducible.\n\nFor better error reproducilibity, environment consistency, and ease of debugging, we will setup an renv environment for the course. Follow these steps:\n\nIn your normal R console, install renv with\n\ninstall.packages(\"renv\")\n\nInitialise renv in the project environment with\n\nrenv::init()\n\n\n\n\n\n\nNote\n\n\n\n\n\nMake sure you’re in the correct working directory!\nYou can check from the R console with getwd() and set the correct working directory with setwd(...)\n\n\n\n\nRestart your R session\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nThis can be done using Ctrl+Shift+F10 on Windows and Cmd+Shift+F10 on MacOS\n\n\n\n\nCheck your R console upon restart. It should say that renv is loaded and activated!\n\n(This will be quickly walked through again on the first session of the course)"
+  },
+  {
+    "objectID": "slides/qt-example-slide.html#slide-title",
+    "href": "slides/qt-example-slide.html#slide-title",
+    "title": "My Presentation",
+    "section": "Slide Title",
+    "text": "Slide Title\n\nBullet point 1\nBullet point 2"
+  },
+  {
+    "objectID": "slides/qt-example-slide.html#code-blocks-highlighting",
+    "href": "slides/qt-example-slide.html#code-blocks-highlighting",
+    "title": "My Presentation",
+    "section": "Code Blocks & Highlighting",
+    "text": "Code Blocks & Highlighting\nYou can add code blocks like this:\n```{r}\n# R code block\nsummary(cars)\n```"
+  },
+  {
     "objectID": "slides/viz.html#what-to-expect",
     "href": "slides/viz.html#what-to-expect",
     "title": "Principles of data visualisation and plotting in R",
@@ -889,237 +1267,6 @@
     "text": "Interactive plots with plotly\n\n\nYou can also create 3d plots with plotly\n\n\nplot_ly(\n  data = tibble(x = rnorm(10), y = rnorm(10), z = rnorm(10)),\n  x = ~x,\n  y = ~y,\n  z = ~z\n)"
   },
   {
-    "objectID": "slides/qt-example-slide.html#slide-title",
-    "href": "slides/qt-example-slide.html#slide-title",
-    "title": "My Presentation",
-    "section": "Slide Title",
-    "text": "Slide Title\n\nBullet point 1\nBullet point 2"
-  },
-  {
-    "objectID": "slides/qt-example-slide.html#code-blocks-highlighting",
-    "href": "slides/qt-example-slide.html#code-blocks-highlighting",
-    "title": "My Presentation",
-    "section": "Code Blocks & Highlighting",
-    "text": "Code Blocks & Highlighting\nYou can add code blocks like this:\n```{r}\n# R code block\nsummary(cars)\n```"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "OUCRU R training course - 2026",
-    "section": "",
-    "text": "The training will be 09:00 – 17:00 (UTC +7) for everyday\nThere will be a lunch break between 12:30 – 13:30 (UTC +7)\nLunch will be provided for in-person attendees who filled in their attendance on ferendum.com. If you did not, you need to arrange lunch yourself.\n\n\n\n\nProf. Ronald Geskus, Biostatistics group, OUCRU HCM\nMr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM\nMr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM\nDr. Tran Thai Hung, Biostatistics group, OUCRU HCM\nMs. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM\nDr. Duc Du Hong, Biostatistics group, OUCRU HCM\nDr. Thuan Hoang Van, Biostatistics group, OUCRU Ha Noi\nDr. Nguyen Lam Vuong, Biostatistics group, OUCRU HCM\nMr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM\n\n\n\n\nPlease follow this pre-course setups handout to setup R and RStudio."
-  },
-  {
-    "objectID": "index.html#contributors",
-    "href": "index.html#contributors",
-    "title": "OUCRU R training course - 2026",
-    "section": "",
-    "text": "Prof. Ronald Geskus, Biostatistics group, OUCRU HCM\nMr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM\nMr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM\nDr. Tran Thai Hung, Biostatistics group, OUCRU HCM\nMs. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM\nDr. Duc Du Hong, Biostatistics group, OUCRU HCM\nDr. Thuan Hoang Van, Biostatistics group, OUCRU Ha Noi\nDr. Nguyen Lam Vuong, Biostatistics group, OUCRU HCM\nMr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM"
-  },
-  {
-    "objectID": "index.html#pre-course-setups-and-requirements",
-    "href": "index.html#pre-course-setups-and-requirements",
-    "title": "OUCRU R training course - 2026",
-    "section": "",
-    "text": "Please follow this pre-course setups handout to setup R and RStudio."
-  },
-  {
-    "objectID": "index.html#introduction-to-r",
-    "href": "index.html#introduction-to-r",
-    "title": "OUCRU R training course - 2026",
-    "section": "Introduction to R",
-    "text": "Introduction to R\n\nDay 1 (Monday)\n\nLecture slides\nLearning objectives:\n\nBasic structure of R\nSimple computations\nImport and inspect datasets\nMake selections\nNavigate RStudio with confidence\n\nExercises:\n\nExercises\nExercise answers\n Exercise answers script \n\n Example R code scripts - Day 1 \n\n\n\nDay 2 (Tuesday)\n\nLecture slides\nLearning objectives:\n\nCreate visualisations using Base R graphics\nWrite simple functions to automate tasks; the package system\nLists\nUsing pipe operators to chain functions\n\nR code:\n\n Exercise answers script \n\n Example R code scripts - Day 2"
-  },
-  {
-    "objectID": "index.html#principles-of-data-visualisation-and-plotting-in-r",
-    "href": "index.html#principles-of-data-visualisation-and-plotting-in-r",
-    "title": "OUCRU R training course - 2026",
-    "section": "Principles of data visualisation and plotting in R",
-    "text": "Principles of data visualisation and plotting in R\n\nDay 3 (Wednesday):\n\nLecture slides\nLearning objectives:\n\nThe grammar of graphics—understanding how plots are built\nThe step-by-step process of creating graphs in R\nUse the ggplot2 package plot figures in R\nHow to design clear and impactful visualisations\nUsing LLMs (Large Language Models) to help you with plotting\n\nExercises\n\n\n\n\nDay 4 (Thursday-morning):\n\nLearning objectives:\n\nUnderstand the principles of data visualisation"
-  },
-  {
-    "objectID": "index.html#advanced-data-management-in-r",
-    "href": "index.html#advanced-data-management-in-r",
-    "title": "OUCRU R training course - 2026",
-    "section": "Advanced data management in R",
-    "text": "Advanced data management in R\n\nDay 4 (Thursday-afternoon):\n\nLearning objectives:\n\nLogics with if-else statements and for-loops\nData manipulation with mutate()\nJoining dataframes\nPivotting dataframes into long and wide formats\nVectorisation in R with map()"
-  },
-  {
-    "objectID": "index.html#reproducible-research-and-reporting-using-quarto",
-    "href": "index.html#reproducible-research-and-reporting-using-quarto",
-    "title": "OUCRU R training course - 2026",
-    "section": "Reproducible research and reporting using Quarto",
-    "text": "Reproducible research and reporting using Quarto\n\nDay 5 (Friday-morning)\n\nLecture slides\nLearning objectives:\n\nWrite papers with reproducible tables and figures using Quarto\nGenerate reports in multiple formats: Word, PDF, slides, web pages…\nEasily update analyses when new data becomes available\n\nExercises\nExercise answer keys"
-  },
-  {
-    "objectID": "index.html#introduction-to-r-and-rstudio",
-    "href": "index.html#introduction-to-r-and-rstudio",
-    "title": "OUCRU R training course - 2026",
-    "section": "Introduction to R and RStudio",
-    "text": "Introduction to R and RStudio\nGood introduction, with explanatory videos:\n\nRStudio provides several tutorials for beginners and more advanced users: https://education.rstudio.com/\nDatacamp provides many courses at different levels (OUCRU HCMC has a license). See http://www.statmethods.net. The introduction is free\nA basic course, interactive design: https://www.quantargo.com/courses/course-r-introduction\nIntroduction from Pasteur institute: https://hub-courses.pages.pasteur.fr/R_pasteur_phd/First_steps_RStudio.html\nGood summary of basic concepts: http://www.burns-stat.com/documents/tutorials/impatient-r\nA comprehensive introduction: https://github.com/matloff/fasteR\nIntroduction to R programming: https://jjallaire.github.io/hopr/"
-  },
-  {
-    "objectID": "index.html#deeper-into-r",
-    "href": "index.html#deeper-into-r",
-    "title": "OUCRU R training course - 2026",
-    "section": "DeepeR into R",
-    "text": "DeepeR into R\n\nThe book R for Data Science (2e)\n“What They Forgot to Teach You About R”\nhttps://www.r-project.org/doc/bib/R-books.html\nThe official R manuals: https://cran.r-project.org/manuals.html"
-  },
-  {
-    "objectID": "index.html#r-and-statistics",
-    "href": "index.html#r-and-statistics",
-    "title": "OUCRU R training course - 2026",
-    "section": "R and statistics",
-    "text": "R and statistics\n\nA simple introduction to biomedical statistics using R: https://a-little-book-of-r-for-biomedical-statistics.readthedocs.io/en/latest/\nA website with detailed examples of all types of statistical analysis: https://stats.oarc.ucla.edu/other/dae/\nR by example: http://www.mayin.org/ajayshah/KB/R/index.html\nR course, with focus machine learning"
-  },
-  {
-    "objectID": "index.html#r-markdown-and-quarto",
-    "href": "index.html#r-markdown-and-quarto",
-    "title": "OUCRU R training course - 2026",
-    "section": "R Markdown and Quarto",
-    "text": "R Markdown and Quarto\n\nThe main RStudio webpage on R Markdown, with links to two freely available books: https://rmarkdown.rstudio.com/docs/\nIntroduction from RStudio\nIntroduction to knitr\nFirst steps in Markdown\nWriting academic papers with R Markdown (focus on bibiliographies): https://ikashnitsky.github.io/2019/zotero/\nR Markdown tips: https://appsilon.com/r-markdown-tips/\nPowerpoint presentations using R Markdown: https://appsilon.com/r-markdown-powerpoint-presentation/\nhttps://codingclubuc3m.rbind.io/post/2019-09-24/ focus on creating presentations\nR Quarto tutorial: https://appsilon.com/r-quarto-tutorial/"
-  },
-  {
-    "objectID": "handouts/exercises_Day5.html",
-    "href": "handouts/exercises_Day5.html",
-    "title": "Exercises Day 5",
-    "section": "",
-    "text": "NotePiping\n\n\n\nIt is expected that the exercise answers will be mainly using the pipe operators |&gt;, instead of putting functions inside each other"
-  },
-  {
-    "objectID": "handouts/exercises_Day5.html#notes-and-instructions",
-    "href": "handouts/exercises_Day5.html#notes-and-instructions",
-    "title": "Exercises Day 5",
-    "section": "",
-    "text": "NotePiping\n\n\n\nIt is expected that the exercise answers will be mainly using the pipe operators |&gt;, instead of putting functions inside each other"
-  },
-  {
-    "objectID": "handouts/exercises_Day5.html#dataset",
-    "href": "handouts/exercises_Day5.html#dataset",
-    "title": "Exercises Day 5",
-    "section": "Dataset",
-    "text": "Dataset\nWe will use covid_cases.rds for this exercise.\n\n  \n    Data dictionary\n  \n\n\n\n\n\n\n\nColumn\nDescription\n\n\n\n\ndate\ndate of the case report\n\n\n211 columns with the format cases_{country_code}\nnumber of reported cases of each country and archipelago\n\n\n\nCountry codes of interest (i.e. Codes for countries needed for the exercise)\n\n\n\nCode\nCountry name\n\n\n\n\nchn\nChina\n\n\nusa\nUnited States of America\n\n\nvnm\nVietnam\n\n\nsgp\nSingapore"
-  },
-  {
-    "objectID": "handouts/exercises_Day5.html#exercises",
-    "href": "handouts/exercises_Day5.html#exercises",
-    "title": "Exercises Day 5",
-    "section": "Exercises",
-    "text": "Exercises\n\nTask 1: Data import\n\nRead data\nLoad the tidyverse meta-package into R\n\n\n\n\n\n\n\nNote\n\n\n\nA “meta-package” is a package that contains other packages. Remember, tidyverse is just a collection of packages.\n\n\n\n\nTask 2: Data cleaning and filtering\n\nDoes the data follow the tidy data standard?\n\nIf not, pivot the data into a tibble that follows the tidy data standard\n\nDo some quick skim on the data. Do the variable values make sense given its type?\n\nIf not, filter out incorrect/impossible data\n\nFilter the data so that we only have week 3-12 of 2020\nSave the results back into covid_cases\n\n\n\n\n\n\n\nTipTip: pivotting\n\n\n\n\n\n\nIf your data is not tidy data:\n\n“Lengthens” the data using tidyr::pivot_longer(), i.e. less columns, more rows\n“Widens” the data using tidyr::pivot_wider(), i.e. less rows, more columns\n\n\n\n\n\n\n\n\n\n\n\nTipTip: data cleaning\n\n\n\n\n\n\nThe main variable here is case counts from each country. They should have a numeric type and should not be lower than 0. You can’t have negative case counts\nYou can remove or filter undesirable values using dplyr::filter()\n\n\n\n\n\n\nTask 3: Data transformation\n\nUsing the covid_cases object created in Task 2:\n\nGroup the data and calculate the total number of cases per country\nSelect the top 5 countries with highest total cases\nExtract the country codes and save them into a new object, e.g. top_countries\n\n\n\nUse the covid_cases object created in Task 2 again:\n\nGroup the data again, calculate the total number of cases per country again\nModify the country column:\n\nSo that we only keep the names of countries in the top 5 (generated above). Countries on in the top 5 will be changed to \"Others\"\nTurn this column into a factor type using the forcats package (already in tidyverse)\nGroup the data again, this time, group by date and country\nCalculate the total number of cases per date per country\nCreate a new column called pct_cases, which is the percentage of total cases per date per country\n(Optional) remove rows with NA from the tibble\nThere are many ways to do this part of the task\n\nSave all of this into a new object, e.g. plot_data\n\n\n\n\n\n\n\n\nTipTip: data grouping and summarisation\n\n\n\n\n\n\nGroup data into groups with dplyr::group_by() and ungroup data with dplyr::ungroup()\nSummarise each group into a single row with dplyr::summarise()\nYou can have multiple groups at the same time. For example:\n\n\n\n`summarise()` has regrouped the output.\nℹ Summaries were computed grouped by date and country.\nℹ Output is grouped by date.\nℹ Use `summarise(.groups = \"drop_last\")` to silence this message.\nℹ Use `summarise(.by = c(date, country))` for per-operation grouping\n  (`?dplyr::dplyr_by`) instead.\n\n\n\n  \n\n\n\n\nYou can choose not to summarise, but add a new column to each group with dplyr::mutate(). For example:\n\n\n\n\n  \n\n\n\nThis will create a new column total_cases that contains the sum of cases for each country without reducing each group into a single row like summarise(). Values will be duplicated for each group.\n\n\n\n\n\n\n\n\n\nTipTip: get top n values in a tibble\n\n\n\n\n\n\nYou can select rows with the top n values in a tibble using dplyr::slice_max()\n\n\n\n\n\n\n\n\n\n\nTipTip: get values of a column in a tibble\n\n\n\n\n\n\nYou can extract values from a columns in a tibble using dplyr::pull()\n\n\n\n\n\n\n\n\n\n\nTipTip: turn a tibble column into a factor\n\n\n\n\n\n\nYou can create and work with factors inside a tibble using the forcats package (already in tidyverse)\nYou can “lump”, or gather, factor levels that are not frequent with forcats::fct_lump_n()\n\n\n\n\n\n\nTask 4: Join data\n\nUse this data country_region.rds to get the regions and sub-regions for all countries.\nMake these 2 tables:\n\n\n\n\n  \n\n\n\n\n\n\n  \n\n\n\n\nWrite a short paragraph summarising key insights from the table, using inline R code to dynamically display case numbers. For example:\n\n\nEurope (192,068) and Asia (126,420) reported the highest number of cases, while Oceania (1,879) had the lowest.\n\nNoted that the number of cases is not hard-coded but you use inline R code to generate it within the text.\n\n\n\n\n\n\nTipTip: join the tables with left_join()\n\n\n\n\n\nYou can join covid_cases and country_region, using the country column of covid_cases and the alpha_3 column of country_region.\n\n\n\n\n\n\n\n\n\nTipTip: make the total cases table\n\n\n\n\n\nYou can use group_by() and summarise() to compute the total cases by sum(cases).\n\n\n\n\n\n\n\n\n\nTipTip: make inline R code\n\n\n\n\n\nIn the paragraph, use inline R code like {r} scales::comma(data$total_cases[tmp1$region == \"Europe\"]) to reference computed values. Function scales::comma() will make the numbers appear with commas for thousands (e.g., 100,000 instead of 100000).\n\n\n\n\n\nTask 5: Data visualization\n\nUsing ggplot2, try your best to generate the following figure:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipTip: how do I draw that??\n\n\n\n\n\n\nggplot2 reference page is very useful\nHere are all the functions used to generate the plot above, in sequence:\n\nggplot()\ngeom_area()\nscale_y_continuous()\nscale_x_date()\nscale_fill_discrete()\nggtitle()\nEvery function is connected with the + operator"
-  },
-  {
-    "objectID": "handouts/exercise_day3.html",
-    "href": "handouts/exercise_day3.html",
-    "title": "Exercises Day 3",
-    "section": "",
-    "text": "Throughout these exercises, we will recreate the plots from Day 2 exercises using the ggplot2 package"
-  },
-  {
-    "objectID": "handouts/exercise_day3.html#overview",
-    "href": "handouts/exercise_day3.html#overview",
-    "title": "Exercises Day 3",
-    "section": "",
-    "text": "Throughout these exercises, we will recreate the plots from Day 2 exercises using the ggplot2 package"
-  },
-  {
-    "objectID": "handouts/exercise_day3.html#dataset",
-    "href": "handouts/exercise_day3.html#dataset",
-    "title": "Exercises Day 3",
-    "section": "Dataset",
-    "text": "Dataset\nWe will use the Titanic3.xlsx dataset\nIf you haven’t had the data already, click the button below to download it\n\n\n Download data\n\n\nWe can then load the data by running\n\nlibrary(readxl)\nlibrary(ggplot2)\n\n# make sure to modify the file path to match where it is on your device\ntitanic &lt;- read_excel(\"data/raw/Titanic3.xlsx\", na = \"NA\")\n\nhead(titanic, n = 10)"
-  },
-  {
-    "objectID": "handouts/exercise_day3.html#exercise-1",
-    "href": "handouts/exercise_day3.html#exercise-1",
-    "title": "Exercises Day 3",
-    "section": "Exercise 1",
-    "text": "Exercise 1\nIn this exercise, we will draw a plot exploring the relationship between age, sex and the fare paid for the trip.\nThe end result will look something like this.\n\n\n\n\n\n\n\n\n\nSeems complicated? Don’t panic! the following sections will guide you through the process step-by-step.\nStep 1: Plot the price that was paid (fare) as a function of age. Label the axis for fare as “fare paid (GBP)”\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\n\nuse geom_point() for scatter plot\nlabel for y-axis and x-axis can be configure via ylab() and xlab()\n\n\n\n\n\n\nReveal answer\nggplot(titanic) +\n  geom_point(aes(x = age, y = fare)) +\n  ylab(\"fare paid (GBP)\")\n\n\nBonus task: Try adding coord_polar() to see what happen\n\n\nReveal code\nggplot(titanic) +\n  geom_point(aes(x = age, y = fare)) +\n  ylab(\"fare paid (GBP)\") +\n  coord_polar()\n\n\nStep 2: Return to the cartesian coordinate system. Add a second layer that fits the linear regression line with 95% confidence interval.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\nThis is considered as smoothing, use geom_smooth(method=\"lm\") to fit a linear regression model\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = fare)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  ylab(\"fare paid (GBP)\")\n\n\nStep 3: The distribution of fare is very skewed. Therefore, it may be better to plot fare on a logarithmic scale so let’s do exactly that.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\nReplace ylab() with scale_y_log10()\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = fare)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  scale_y_log10(\"fare paid (GBP)\")\n\n\nStep 4: Now, we want to color the data points by passenger class (pclass), and split the calculation and plot for the regression line by these 3 groups.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nAdd color to the aesthetic attributes (via aes())\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = fare, color = pclass)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  scale_y_log10(\"fare paid (GBP)\")\n\n\nStep 5: Next, we want to split the plot into separate panes for each sex, add a rug plot to both sides as well.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\nSeparate plots into panes via facet_wrap()\nAdd rug plot via geom_rug()\n\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = fare, color = pclass)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  geom_rug() +\n  scale_y_log10(\"fare paid (GBP)\") +\n  facet_wrap(~sex)\n\n\nStep 6: Make the plot prettier to your heart’s content!\n\n\nExample output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\nYou can consider:\n\nChanging color scale (e.g., scale_color_viridis_d(), scale_color_manual())\nChanging plot theme (e.g., theme_bw(), theme_minimal())\n\n\n\n\nFor the color palette, we use a custom OUCRU palette from the oucru package, which can be installed by running\n\nrenv::install(\"OUCRU-Modelling/oucru\")\n\nAnd loaded into R via\n\nlibrary(oucru)\n\n# The palette can be accessed via\nscale_color_oucru_d()\n\nYou may also want to check some sample usages of the package here\n\n\nCode for example output\nggplot(titanic, aes(x = age, y = fare, color = pclass)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  geom_rug() +\n  scale_y_log10(\"fare paid (GBP)\") +\n  facet_wrap(~sex) +\n  scale_color_oucru_d() +\n  theme_bw()\n\n\nStep 7: Save your plot as a .png\n\n\nReveal answer\nggsave(\"output/titanic_fare_plot.png\", width = 7, heigh = 5)"
-  },
-  {
-    "objectID": "handouts/exercise_day3.html#exercise-2",
-    "href": "handouts/exercise_day3.html#exercise-2",
-    "title": "Exercises Day 3",
-    "section": "Exercise 2",
-    "text": "Exercise 2\nFor this exercise, we will create plots to explore the age distribution for each pclass\n\nExercise 2.1. Histogram\nWe can start by plotting histograms of age for each of the pclass.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\n\nUse geom_histogram()\nSplit the plot by pclass via facet_wrap()\n\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age)) +\n  geom_histogram() +\n  facet_wrap(~pclass)\n\n\n\n\nExercise 2.2. Boxplot\nAnother option is to use the boxplot. Start by making a boxplot of age (along y-axis) for each of the passenger classes (along x-axis).\n\n\nReveal answer\nggplot(titanic) +\n  geom_boxplot(\n    aes(y = age, x = pclass)\n  )\n\n\nThen, add the individual data points to the boxplot. Give the data points a red color and make them (slightly) transparent.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\n\nUse geom_jitter() instead of geom_point() to make it easier to discriminate between the data points.\nTransparency level can be configured via the alpha aesthetic\n\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(y = age, x = pclass)) +\n  geom_boxplot() +\n  geom_jitter(color = \"red\", alpha = .2)\n\n\n\n\nExercise 2.3. Violin plot\nInstead of using boxplot, you may also consider using the violin plot.\nTry recreating the following plot\n\n\n\n\n\n\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(y = age, x = pclass)) +\n  geom_violin() +\n  geom_jitter(color = \"red\", alpha = .2) +\n  theme_bw()\n\n\nBonus task: Customize the plot to your liking!"
-  },
-  {
-    "objectID": "handouts/exercise_day3.html#exercise-3",
-    "href": "handouts/exercise_day3.html#exercise-3",
-    "title": "Exercises Day 3",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nMake a new graph in which we perform an exploratory analysis of the relationship between survival and age, sex and passenger class (pclass).\nThe end result should look something like this.\n\n\n\n\n\n\n\n\n\nA few details\n\nJitter is configured with height=0.05 and width=0 (experiment with different width values to see why you should set width=0)\n\n\n\nThe smoothed layer is generated with loess method\nThe color is configured with oucru palette “group4”\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\nList of geoms used include:\n\ngeom_smooth()\ngeom_jitter()\n\nPosition of legend can be configured via theme(legend.position = ...)\nLimit for y-axis can be configured via coord_cartesian(ylim=...)\nThe oucru palette can be configured via scale_color_oucru_d(palette = ...)\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = survived, color = sex)) +\n  geom_smooth(method = \"loess\") +\n  geom_jitter(width = 0, height = .05, alpha = .5) +\n  facet_wrap(~pclass) +\n  coord_cartesian(ylim = c(-.1, 1.1)) +\n  scale_color_oucru_d(palette = \"group4\") +\n  theme_bw() +\n  theme(legend.position = 'top')"
-  },
-  {
-    "objectID": "handouts/precourse_setup.html",
-    "href": "handouts/precourse_setup.html",
-    "title": "Pre-course setups and requirements",
-    "section": "",
-    "text": "About\nHere we explain how to install R and RStudio on your own computer. This is required to ensure a smooth experience and reproducible results during the course.\n\n\n1 R\n\nGo to the R website\nIn the column on the left hand side, click on the CRAN link under the subheading Download\n\nYou now see a page with CRAN Mirrors. This is a list of servers from which the R software and extensions can be downloaded from\n\nClick on the first link\n\nNow both the left hand side and the right hand side of the page change (This page can be saved as a bookmark/favorite)\n\nOn the right hand side, click on the download link for your operating system\n\nE.g. Windows users click on Download R for Windows, then click on base and download the program from there.\nIt is recommended to install the latest version as well as to upgrade the program if a new major version is released, which is about once per year\nYou can use the default installation options\n\n\n\n\n2 RStudio Desktop\n\nGo to the download page\nScroll down, look for 2: Install Rstudio and click on the button for downloading RStudio Desktop\nDownload and install RStudio Desktop\n\nYou can use the default installation options\n\nOpen Rstudio Desktop, to check that everything has been installed correctly\n\nE.g. via the Start menu in Windows\n\n\n\n\n3 renv setup\n\nThe renv package helps you create reproducible environments for your R projects. Use renv to make your R projects more isolated, portable and reproducible.\n\nFor better error reproducilibity, environment consistency, and ease of debugging, we will setup an renv environment for the course. Follow these steps:\n\nIn your normal R console, install renv with\n\ninstall.packages(\"renv\")\n\nInitialise renv in the project environment with\n\nrenv::init()\n\n\n\n\n\n\nNote\n\n\n\n\n\nMake sure you’re in the correct working directory!\nYou can check from the R console with getwd() and set the correct working directory with setwd(...)\n\n\n\n\nRestart your R session\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nThis can be done using Ctrl+Shift+F10 on Windows and Cmd+Shift+F10 on MacOS\n\n\n\n\nCheck your R console upon restart. It should say that renv is loaded and activated!\n\n(This will be quickly walked through again on the first session of the course)"
-  },
-  {
-    "objectID": "slides/qt-example.html",
-    "href": "slides/qt-example.html",
-    "title": "Hello, Quarto",
-    "section": "",
-    "text": "Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
-  },
-  {
-    "objectID": "slides/qt-example.html#introduction-to-quarto",
-    "href": "slides/qt-example.html#introduction-to-quarto",
-    "title": "Hello, Quarto",
-    "section": "",
-    "text": "Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
-  },
-  {
-    "objectID": "slides/qt-example.html#header-levels",
-    "href": "slides/qt-example.html#header-levels",
-    "title": "Hello, Quarto",
-    "section": "2 Header Levels",
-    "text": "2 Header Levels\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\nLevel 1 header: # Header\nLevel 2 header: ## Subheader\nLevel 3 header: ### Sub-subheader\n\n\n2.1 Nested Headers\nUsing headers, you can create nested sections to structure your document in a clear and organized way."
-  },
-  {
-    "objectID": "slides/qt-example.html#inline-text-formatting",
-    "href": "slides/qt-example.html#inline-text-formatting",
-    "title": "Hello, Quarto",
-    "section": "3 Inline Text Formatting",
-    "text": "3 Inline Text Formatting\nYou can format your text inline to add emphasis or other styling options.\n\nBold text: **bold**\nItalic text: *italic*\nInline code: `code`\nUnderline: [underline]{.underline}\n\n\nBlockquotes can be used to highlight important information or quotes by adding &gt; at the beginning of a line."
-  },
-  {
-    "objectID": "slides/qt-example.html#lists",
-    "href": "slides/qt-example.html#lists",
-    "title": "Hello, Quarto",
-    "section": "4 Lists",
-    "text": "4 Lists\nQuarto supports both ordered and unordered lists.\n\n4.1 Unordered List\nTo create an unordered list, use an asterisk * before each item:\n\nFirst item\nSecond item\nThird item\n\n\n\n4.2 Ordered List\nTo create an ordered list, use numbers before each item:\n\nFirst item\nSecond item\nThird item"
-  },
-  {
-    "objectID": "slides/qt-example.html#links-and-images",
-    "href": "slides/qt-example.html#links-and-images",
-    "title": "Hello, Quarto",
-    "section": "5 Links and images",
-    "text": "5 Links and images\nhttp://example.com\nlinked phrase\n\n\n\noptional caption text"
-  },
-  {
-    "objectID": "slides/qt-example.html#tables",
-    "href": "slides/qt-example.html#tables",
-    "title": "Hello, Quarto",
-    "section": "6 Tables",
-    "text": "6 Tables\n\n\n\nFirst Header\nSecond Header\n\n\n\n\nContent Cell\nContent Cell\n\n\nContent Cell\nContent Cell"
-  },
-  {
-    "objectID": "slides/qt-example.html#code-block",
-    "href": "slides/qt-example.html#code-block",
-    "title": "Hello, Quarto",
-    "section": "7 Code block",
-    "text": "7 Code block\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")"
-  },
-  {
-    "objectID": "slides/qt-example.html#footnotes",
-    "href": "slides/qt-example.html#footnotes",
-    "title": "Hello, Quarto",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nThis is an example footnote.↩︎"
-  },
-  {
     "objectID": "slides/IntroductionRDay1.html#learning-goals",
     "href": "slides/IntroductionRDay1.html#learning-goals",
     "title": "Introduction to R, Day 1",
@@ -1384,152 +1531,5 @@
     "title": "Introduction to R, Day 1",
     "section": "Make exercises 5, 6 and 7",
     "text": "Make exercises 5, 6 and 7\nReturn to main course page"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#learning-goals",
-    "href": "slides/IntroductionRDay2.html#learning-goals",
-    "title": "Introduction to R, Day 2",
-    "section": "Learning goals",
-    "text": "Learning goals\n\nDay 1\n\nBasic structure of the R program and language\nUse the RStudio working environment\nImport, inspect and manage a data set\n\nSelect variables (columns) and rows (observations)\nMissing data, factors, dates\n\n\n\n\n\nDay 2\n\nUsing graphics in base R\nFunctions, packages\nObject specific functions\nLists\nWriting more transparent code"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#r-graphics-systems",
-    "href": "slides/IntroductionRDay2.html#r-graphics-systems",
-    "title": "Introduction to R, Day 2",
-    "section": "R graphics systems:",
-    "text": "R graphics systems:\n\nBase graphics (package graphics)\n\nStraightforward to use\nAlways loaded when R is started\nSee Ch. 12 of manual An Introduction to R\n\n\n\n\nlattice package. Less popular nowadays. Not covered here.\nggplot2 package: Wednesday\nNote: these systems cannot be mixed"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#basic-plot-in-base-graphics",
-    "href": "slides/IntroductionRDay2.html#basic-plot-in-base-graphics",
-    "title": "Introduction to R, Day 2",
-    "section": "Basic plot in base graphics",
-    "text": "Basic plot in base graphics\nPlot fare paid as function of age\nplot(titanic$age, titanic$fare)\nExercise: What would you like to change to make it good enough for publication?\n\n\nFormula based specification\n\nbasis for specification of regression models\ngeneral form: dependent ~ independent\n\nplot(fare ~ age, data=titanic)\n\nindependent: variable names separated by operator (+ for main effects and * for main effects plus interaction)\nfunctions with formula (as first argument) have data and subset argument\n\n\n\n\nSome possible changes: change labels along axes, rotate numbers along y-axis, add regression line, rescale fare\n\n\n\nGood summary on base graphics on page 5 of Reference card"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#arguments-and-parameters-that-can-be-changed",
-    "href": "slides/IntroductionRDay2.html#arguments-and-parameters-that-can-be-changed",
-    "title": "Introduction to R, Day 2",
-    "section": "Arguments and parameters that can be changed",
-    "text": "Arguments and parameters that can be changed\n\nWithin function only\n\nxlab, ylab, main\ntype\nxlim, ylim, log\n\nAlso via par function\n\ncex.axis, cex.lab, las\ncex, pch\ncol, lty, lwd\n\nOnly via par function\n\nmar, mfcol, mfrow"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#some-important-functions-for-plotting",
-    "href": "slides/IntroductionRDay2.html#some-important-functions-for-plotting",
-    "title": "Introduction to R, Day 2",
-    "section": "Some important functions for plotting",
-    "text": "Some important functions for plotting\n\nHigh level plot functions\n\nplot\nhist\nboxplot\n\nLow level plot functions (add to existing plot)\n\npoints\nlines, abline\ntext, legend, title, arrows, segments"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#other-plots",
-    "href": "slides/IntroductionRDay2.html#other-plots",
-    "title": "Introduction to R, Day 2",
-    "section": "Other plots",
-    "text": "Other plots\n1-3. Plot fare paid as function of age, change scale, add regression line\n\nColor points by passenger class\nMake a separate plot by sex\n\n\nExercise 6: Make a histogram of age\nExercise 7: Make a boxplot of age by passenger class."
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#export-two-types-of-formats",
-    "href": "slides/IntroductionRDay2.html#export-two-types-of-formats",
-    "title": "Introduction to R, Day 2",
-    "section": "Export: two types of formats",
-    "text": "Export: two types of formats\n\nVector format (pdf, eps, wmf, emf, svg)\n\ndigital image consisting of independent geometric objects (segments, polygons, curves, etc.)\ncan be enlarged without losing resolution\n\nRaster format (png, jpeg, tiff, bmp).\n\nrectangular grid of pixels, possibly with color\nresolution impaired if image is enlarged\n\nGraphics can be saved via the menu in the graphics/plots window, or a specific graphics file type can be created directly via code\n\npdf(\"foo.pdf\",...)\n...\ndev.off()\nor win.metafile(\"foo.wmf\",...) or png(\"foo.png\",...) and ending with dev.off()"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#aside-errors-and-warnings",
-    "href": "slides/IntroductionRDay2.html#aside-errors-and-warnings",
-    "title": "Introduction to R, Day 2",
-    "section": "Aside: errors and warnings",
-    "text": "Aside: errors and warnings\n\nError: code cannot be executed; no output is produced\n\n5 + \"apple\"\ntitanic$age[1,5]\n\nWarning: something unexpected occurred; output produced, but potentially incorrect\n\nas.numeric(c(\"1\", \"2\", \"banana\"))\nplot(fare ~ age, data=titanic, las=1, log=\"y\")"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#basic-format",
-    "href": "slides/IntroductionRDay2.html#basic-format",
-    "title": "Introduction to R, Day 2",
-    "section": "Basic format",
-    "text": "Basic format\n\nAll actions are performed via functions: sqrt, mean, help, library, t.test, plot\nInput: required and optional arguments; within parentheses, separated by comma\n\nrequired: need to be supplied\noptional: have default values\nBeware of sequence of arguments; required ones come first. Compare\nlog(1000, 10) \nlog(10, 1000) \n\n\n\n\nSome functions have special “argument”: ...\nMeaning: anything that makes sense. Example: in c and paste function, which allow for the use of many values to\nOutput: result of calculations (typically assigned to R object), graphics, help window, etc.\nYou can use functions within other functions, e.g. mean(c(3,6,8))"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#object-specific-functionality-i",
-    "href": "slides/IntroductionRDay2.html#object-specific-functionality-i",
-    "title": "Introduction to R, Day 2",
-    "section": "Object specific functionality (I)",
-    "text": "Object specific functionality (I)\n\nOutput of function depends on class of object\n\nExamples:\n\nsummary:\nsummary.data.frame, summary.factor, summary.Date\ndefault: summary.default\nplot: plot(y ~ x, data=..., ...)\n Plot depends on class of `x`: scatterplot is default, but\n boxplot if `x` is of class factor and plot by year if `x` is of class Date"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#object-specific-functionality-ii",
-    "href": "slides/IntroductionRDay2.html#object-specific-functionality-ii",
-    "title": "Introduction to R, Day 2",
-    "section": "Object specific functionality (II)",
-    "text": "Object specific functionality (II)\nWhy important to know?\n\nFinding information in help file\nVery efficient in use. E.g. plot is a generic function, with specific methods depending on the class of the object that is the argument of the function.\nWe only need to remember plot"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#functions-the-inside",
-    "href": "slides/IntroductionRDay2.html#functions-the-inside",
-    "title": "Introduction to R, Day 2",
-    "section": "Functions: the inside",
-    "text": "Functions: the inside\n\nFunction code can be seen by leaving out the parentheses \n\nIQR\n\nGeneral structure:\n\nFunctionName(args) {\n    lines of R code (collection of functions)\n}\nThe last value is returned as output - You can write your own functions:\ngood.morning &lt;- function(work){\n    if(work==TRUE) cat(\"wake up\") else \n      cat(\"you can stay in bed\")\n}\ngood.morning()"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#packages",
-    "href": "slides/IntroductionRDay2.html#packages",
-    "title": "Introduction to R, Day 2",
-    "section": "Packages",
-    "text": "Packages\n\nRegular R users transform recurring tasks into self-made functions\nCan make it into a package, i.e. a collection of functions (and data):\n\nggplot2\ntidyverse\nWHO TB data\nAMR\npharmaverse\nSUSENAS\nvietnameseConverter\nsudoku\nrStrava\n\nGive package developers appropriate credit and cite their packages"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#packages-where-to-find-them",
-    "href": "slides/IntroductionRDay2.html#packages-where-to-find-them",
-    "title": "Introduction to R, Day 2",
-    "section": "Packages, where to find them?",
-    "text": "Packages, where to find them?\n\nComprehensive R Archive Network (24504 packages on August 4, 2026)\nGitHub (34867 packages on August 4, 2026)\nBioconductor\nMonthly Review Top 40 packages\n\n\n\nNeed to be installed on your computer\nR program itself also based on packages. Some loaded at startup base, graphics, stats, utils …\nFor example, base package contains sqrt function\nOther packages need to be loaded before use, best way is via library(pkg_name)"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#another-object-mode-list",
-    "href": "slides/IntroductionRDay2.html#another-object-mode-list",
-    "title": "Introduction to R, Day 2",
-    "section": "Another object mode: list",
-    "text": "Another object mode: list\n\nGeneral mode to store information\nDifferent modes cannot be mixed in vectors\n\nteachers &lt;- c(\"Ronald\",\"Hung\",\"Tuyen\") # mode character\nrooms &lt;- c(306,306,305) # mode numeric\nc(teachers, rooms) # numbers become characters\n\nModes can be mixed in a list:\n\nlist(teachers, rooms)\n## named list:\nlist(teacher = teachers, room = rooms)\nTwo components, with names teacher and room\n\nData are of mode list, but with a special class data.frame\n\nmode(titanic)\nclass(titanic)"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#example-regression-models",
-    "href": "slides/IntroductionRDay2.html#example-regression-models",
-    "title": "Introduction to R, Day 2",
-    "section": "Example: regression models",
-    "text": "Example: regression models\nHow does fare paid depend on age? Linear regression:\nFareByAge &lt;- lm(log(fare+3)~age, data=titanic)\nOutput: should contain everything to derive information from fitted model: coefficients, p-values, confidence intervals, residuals, …\nObject of mode list and of class lm. Help file for summary: summary.lm"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#more-transparent-and-often-shorter-code",
-    "href": "slides/IntroductionRDay2.html#more-transparent-and-often-shorter-code",
-    "title": "Introduction to R, Day 2",
-    "section": "More transparent (and often shorter) code",
-    "text": "More transparent (and often shorter) code\n\nformula structure (regression models, plot function)\nwith function to save repetitive use of data set name :\nwith(titanic, table(sex, survived))\n## instead of table(titanic$sex, titanic$survived)\npipe operator |&gt; (or %&gt;% from the magrittr package)\n\ncombining functions in one line can make code obscure: h(g(f(x)))\nexample: round(proportions(table(titanic$sex,titanic$survived)),2)\nreplace by x |&gt; f() |&gt; g() |&gt; h()"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#the-apply-functions",
-    "href": "slides/IntroductionRDay2.html#the-apply-functions",
-    "title": "Introduction to R, Day 2",
-    "section": "The apply functions",
-    "text": "The apply functions\n\napply: apply a function over all columns or all rows of an array\nlapply: apply a function over a list (including data.frame)\nsapply: similar to lapply but more user-friendly if output can be coerced into a vector\ntapply: can be used to split a vector in subgroups and apply a function to each of the subgroups\naggregate is an alternative to tapply"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#exercises",
-    "href": "slides/IntroductionRDay2.html#exercises",
-    "title": "Introduction to R, Day 2",
-    "section": "Exercises",
-    "text": "Exercises\n\nMake a summary of fare by passenger class using the tapply and the aggregate function\nFit the regression model that fits the mean fare paid (on the log scale) as a function of age:\nFareByAge &lt;- lm(log(fare+3)~age, data=titanic)\nSummarize the results. What do you conclude?\nRefit the model using 10 years as unit for age and summarize the results. Use the pipe operator, starting with titanic |&gt; transform(age=age/10) |&gt; ...\nUse a LLM if you get an error message"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#finding-information",
-    "href": "slides/IntroductionRDay2.html#finding-information",
-    "title": "Introduction to R, Day 2",
-    "section": "Finding Information",
-    "text": "Finding Information\n\nFunction help. R is object oriented!\nSearch on Google (use language r: if result is non-specific)\nchatGPT or an R package such as askgpt or ellmer\nR documentation\nRseek\nR-universe\nCRAN (list with packages, Task Views, FAQs, Vignettes)\nStack Overflow\nHave a look at the links provided in the appendix on the course website"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#exercise",
-    "href": "slides/IntroductionRDay2.html#exercise",
-    "title": "Introduction to R, Day 2",
-    "section": "Exercise",
-    "text": "Exercise\nFind information on\n\ndescriptive statistics\nchange several categorical variables of a data.frame into factor variables\nrecognize nonstandard date formats"
   }
 ]
