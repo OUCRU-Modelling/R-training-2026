@@ -14,6 +14,8 @@ format:
     code-copy: true
     logo: "figures/OUCRU.jpg"
     preview-links: auto
+    link-external-icon: true
+    link-external-newwindow: true
     show-slide-number: print
     chalkboard: true
 revealjs-plugins:
@@ -1178,12 +1180,12 @@ ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_point(mapping = aes(size = pop, color = region)) +
   geom_text(mapping = aes(label = country)) +
   scale_color_manual(
-    name = "",
+    name = NULL,
     values = my_pallete,
     guide = guide_legend(order = 2)
   ) +
   scale_size_continuous(
-    name = "",
+    name = NULL,
     breaks = c(50, 100, 150, 200),
     labels = c("50 million", "100 million", "150 million", "200 million"),
     range = c(0, 8),
@@ -1221,12 +1223,12 @@ ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_point(mapping = aes(size = pop, color = region)) +
   geom_text(mapping = aes(label = country)) +
   scale_color_manual(
-    name = "",
+    name = NULL,
     values = my_pallete,
     guide = guide_legend(order = 2)
   ) +
   scale_size_continuous(
-    name = "",
+    name = NULL,
     breaks = c(50, 100, 150, 200),
     labels = c("50 million", "100 million", "150 million", "200 million"),
     range = c(0, 8),
@@ -1279,12 +1281,12 @@ ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_vline(xintercept = 0, color = "#999999") +
   geom_hline(yintercept = 0, color = "#999999") +
   scale_color_manual(
-    name = "",
+    name = NULL,
     values = my_pallete,
     guide = guide_legend(order = 2)
   ) +
   scale_size_continuous(
-    name = "",
+    name = NULL,
     breaks = c(50, 100, 150, 200),
     labels = c("50 million", "100 million", "150 million", "200 million"),
     range = c(0, 8),
@@ -1324,12 +1326,12 @@ ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_vline(xintercept = 0, color = "#999999") +
   geom_hline(yintercept = 0, color = "#999999") +
   scale_color_manual(
-    name = "",
+    name = NULL,
     values = my_pallete,
     guide = guide_legend(order = 2)
   ) +
   scale_size_continuous(
-    name = "",
+    name = NULL,
     breaks = c(50, 100, 150, 200),
     labels = c("50 million", "100 million", "150 million", "200 million"),
     range = c(0, 8),
@@ -1376,12 +1378,12 @@ ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_vline(xintercept = 0, color = "#999999") +
   geom_hline(yintercept = 0, color = "#999999") +
   scale_color_manual(
-    name = "",
+    name = NULL,
     values = my_pallete,
     guide = guide_legend(order = 2)
   ) +
   scale_size_continuous(
-    name = "",
+    name = NULL,
     breaks = c(50, 100, 150, 200),
     labels = c("50 million", "100 million", "150 million", "200 million"),
     range = c(0, 8),
@@ -1769,12 +1771,15 @@ simulated_covid |>
 ::::::
 :::::::
 
-## Where to find more `geom_*`?
+## Read the docs!
 
-For a complete list of `geom_*`, refer to [`ggplot2` official
+- For a complete list of `geom_*`, refer to [`ggplot2` official
 documentation](https://ggplot2.tidyverse.org/reference/index.html#geom){preview-link="true"}
 
-Alternatively, you can also look for the example code for your desired
+- How do we know which aesthetics does each geometry support? Read the [documentation](https://ggplot2.tidyverse.org/reference/index.html#geoms){style="text-decoration: underline;"}!
+
+
+- Alternatively, you can also look for the example code for your desired
 chart type at [R Graph
 Gallery](https://r-graph-gallery.com){preview-link="true"}
 
@@ -1818,31 +1823,27 @@ ggsave(
   - Rectangular grid of pixels, possibly with color
   - Will be very blurry if image is enlarged while resolution is low
 
-## Main components of a graph (R) {.smaller}
+## Grammar of a graph {.smaller}
 
-- Mapping from data to aesthetic attributes of geometric objects
+- Mapping from information (data) to **aesthetic attributes** of **geometric objects**
+- **Aesthetic attributes** are the "role" of
+  variables in plot: location (often along x-axis and y-axis), colour,
+  size, shape
+- **Geometric objects** are what you see on the plot
+  (points, lines, bars)
+- **Scales** maps the information (data)
+   to **aesthetic attributes**
+- **Guides** defines how
+  **scales** are represented
 
-- Geometic objects: what you see on the plot (points, lines, bars)
-
-- Aesthetic attributes: "role" of variables in plot: location (often
-  along x-axis and y-axis), colour, size, shape
-
-- Scales: map data values to aesthetic attributes
-
-::: fragment
+:::: fragment
 - [Coordinate system]{style="color:red;"}: cartesian, polar, map
-  projections.
+  projections
 
+::: {.callout-note}
   Networks, trees have no coordinate system
 :::
-
-::: fragment
-- Not about:
-  - [graph type](https://www.data-to-viz.com/) ($\approx$ language,
-    words)
-  - font size, background colour ... Some of these are specified in a
-    [theme]{style="color:red;"}
-:::
+::::
 
 ## Polar coordinate system
 
@@ -1853,111 +1854,35 @@ Pie chart WHO European Health Report 2009
 **Geometric object? Aesthetic attributes? Transformation? Coordinate
 system?**
 
+## Grammar of a graph
+
+- The grammar of graphics [**is not**]{style="color: red;"} about **deciding** the [type of graphics](https://www.data-to-viz.com/) for your data
+- We are the decision makers. The grammar of graphics just provide the common language, e.g. knowing English and knowing what to say are 2 different things!
+
 # Advance `ggplot2`
 
 ## Overview
 
-- What does `mapping = aes()` do?
 - Inheritance of data and aesthetics
 - The `annotate()` layer
 - Figure panes using `facet_wrap()`
 - Extending `ggplot2`
 - Interactive plots with `plotly`
 
-## What does `mapping = aes()` do?
-
-::: fragment
-- `ggplot()` arguments and default values:
-
-``` r
-ggplot(data = NULL, mapping = aes(), ...)
-```
-
-- `geom_*()` arguments and default values:
-
-``` r
-geom_bar(mapping = NULL, data = NULL, ...)
-geom_boxplot(mapping = NULL, data = NULL, ...)
-geom_point(mapping = NULL, data = NULL, ...)
-```
-:::
-
-::: fragment
-![](figures/ggplots_mapping_aes.png)
-:::
-
-## What does `mapping = aes()` do? {.scrollable}
-
-:::: r-fit-text
-Recall this:
-
-::: fragment
-```{r}
-df <- read_excel("data/nature_plot.xlsx")
-head(df)
-```
-:::
-
-+------------+------------+--------------+--------------+-------------+
-| label      | x          | y            | size         | color       |
-|            |            |              |              |             |
-| (country)  | (coverage) | (inequality) | (population) | (region)    |
-+============+============+==============+==============+=============+
-| Nigeria    | 0.20       | -0.07        | 220M         | Sub-Saharan |
-|            |            |              |              | Africa      |
-+------------+------------+--------------+--------------+-------------+
-::::
-
-## What does `mapping = aes()` do?
-
-**Idea**: we are **mapping** the *variables* in the data to the
-*aesthetics* of a *geometry*
-
-``` r
-aes(x = coverage, y = inequality)
-#> Aesthetic mapping: 
-#> * `x` -> `coverage`
-#> * `y` -> `inequality`
-```
-
-<br/>
-
-::: fragment
-``` r
-aes(x = coverage^2, y = inequality/2)
-#> Aesthetic mapping: 
-#> * `x` -> `coverage^2`
-#> * `y` -> `inequality/2`
-```
-:::
-
-## What does `mapping = aes()` do?
-
-How do we know which aesthetics does each geometry support? Read the
-[documentation](https://ggplot2.tidyverse.org/reference/index.html#geoms){target="_blank"
-style="text-decoration: underline;"}!
-
-Simply:
-
-- Read the documentation of the geometry of interest
-- Click **Aesthetics** on the navigation bar on the right (or scroll
-  down)
-- All aesthetics compatible for the geometry are listed
-
-## Inheritance of data and aesthetics
+## Inheritance of data and aesthetics {.smaller}
 
 ::: fragment
 Recall this:
 
 - `ggplot()` arguments and default values:
 
-``` r
+```{.r}
 ggplot(data = NULL, mapping = aes(), ...)
 ```
 
 - `geom_*()` arguments and default values:
 
-``` r
+```{.r}
 geom_bar(mapping = NULL, data = NULL, ...)
 geom_boxplot(mapping = NULL, data = NULL, ...)
 geom_point(mapping = NULL, data = NULL, ...)
@@ -1968,15 +1893,15 @@ geom_point(mapping = NULL, data = NULL, ...)
 
 The idea is that:
 
-- `ggplot()` can control the **dataset** and **aesthetics**
-- `geom_*()`s can also control the type of **geometries**, and *allow
-  customisation* of **aesthetics**
+- `ggplot()` control the **dataset** and **aesthetics**
+- `geom_*()`s control the **geometric layer**, and *allow
+  customisation* of **aesthetics** for that specific geom layer
 
-## Inheritance of data and aesthetics
+## Inheritance of data and aesthetics {.smaller}
 
 A typical `ggplot` plot will look something like:
 
-``` r
+```{.r}
 ggplot(plot_df, aes(x = date, y = count)) +
   geom_line() +
   geom_point()
@@ -1985,7 +1910,7 @@ ggplot(plot_df, aes(x = date, y = count)) +
 ::: fragment
 Implicitly, you can think of this as:
 
-``` r
+```{.r}
 ggplot() +
   geom_line(mapping = aes(x = date, y = count), data = plot_df) +
   geom_line(mapping = aes(x = date, y = count), data = plot_df)
@@ -1997,42 +1922,38 @@ ggplot() +
 - Data and aesthetics are inherited **top-down**
 :::
 
-## Inheritance of data and aesthetics {auto-animate="true"}
+## Inheritance of data and aesthetics {.smaller auto-animate="true"}
 
-You have seen this in action before!
+Our final figure this morning:
 
-``` r
-my_pallete <- c(
-  "Central Europe, Eastern Europe and Central Asia" = "#fa8495",
-  "Latin America and Caribbean" = "#4ca258",
-  "North Africa and Middle East" = "#6493bb",
-  "South Asia" = "#d7c968",
-  "Southeast Asia, East Asia and Oceania" = "#7dd8f3",
-  "Sub-Saharan Africa" = "#bc5c91"
-)
-
-ggplot(df, aes(x = coverage, y = inequality)) +
-  geom_point(aes(size = pop, color = region, alpha = 0.8)) +
-  geom_text(aes(label = country), hjust = -0.2, vjust = 0.2) +
+```{.r}
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region), alpha = 0.8) +
+  geom_text(mapping = aes(label = country), hjust = -0.2, vjust = 0.2) +
   geom_vline(xintercept = 0, color = "#999999") +
   geom_hline(yintercept = 0, color = "#999999") +
-  scale_x_continuous(breaks = c(-0.25, 0, 0.25, 0.5),
-                     limits = c(-0.4, 0.55)) +
-  scale_y_continuous(breaks = c(-0.1, 0, 0.1), limits = c(-0.16, 0.1)) +
+  scale_color_manual(
+    name = NULL,
+    values = my_pallete,
+    guide = guide_legend(order = 2)
+  ) +
   scale_size_continuous(
+    name = NULL,
     breaks = c(50, 100, 150, 200),
     labels = c("50 million", "100 million", "150 million", "200 million"),
     range = c(0, 8),
     guide = guide_legend(order = 1)
   ) +
-  scale_color_manual(
-    values = my_pallete,
-    guide = guide_legend(order = 2)
+  scale_x_continuous(
+    name = "Change in MCV1 coverage (2019-2000)",
+    breaks = c(-0.25, 0, 0.25, 0.5),
+    limits = c(-0.4, 0.55)
   ) +
-  labs(x = "Change in MCV1 coverage (2019-2000)",
-       y = "Change in absolute geographical inequality (2019-2000)",
-       size = NULL,
-       color = NULL) +
+  scale_y_continuous(
+    name = "Change in absolute geographical inequality (2019-2000)",
+    breaks = c(-0.1, 0, 0.1),
+    limits = c(-0.16, 0.1)
+  ) +
   theme_classic() +
   theme(
     legend.position = "top",
@@ -2043,12 +1964,14 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   )
 ```
 
-## Inheritance of data and aesthetics {auto-animate="true"}
+## Inheritance of data and aesthetics {.smaller auto-animate="true"}
 
-``` r
-ggplot(df, aes(x = coverage, y = inequality)) +
-  geom_point(aes(size = pop, color = region), alpha = 0.8) +
-  geom_text(aes(label = country), hjust = -0.2, vjust = 0.2) 
+Focus on this chunk
+
+```{.r}
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region), alpha = 0.8) +
+  geom_text(mapping = aes(label = country), hjust = -0.2, vjust = 0.2) +
 ```
 
 ```{r}
@@ -2087,21 +2010,21 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   )
 ```
 
-## Inside and outside `aes()`
+## Inside and outside `aes()` {.smaller}
 
 What happens if we do it like this:
 
-``` r
-ggplot(df, aes(x = coverage, y = inequality)) +
-  geom_point(aes(size = pop, color = region, alpha = 0.8)) +
-  geom_text(aes(label = country, hjust = -0.2, vjust = 0.2)) 
+```{.r}
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region, alpha = 0.8)) +
+  geom_text(mapping = aes(label = country, hjust = -0.2, vjust = 0.2)) +
 ```
 
 ```{r}
 #| echo: false
-ggplot(df, aes(x = coverage, y = inequality)) +
-  geom_point(aes(size = pop, color = region, alpha = 0.8)) +
-  geom_text(aes(label = country), hjust = -0.2, vjust = 0.2) +
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region, alpha = 0.8)) +
+  geom_text(mapping = aes(label = country, hjust = -0.2, vjust = 0.2)) +
   geom_vline(xintercept = 0, color = "#999999") +
   geom_hline(yintercept = 0, color = "#999999") +
   scale_x_continuous(breaks = c(-0.25, 0, 0.25, 0.5), limits = c(-0.4, 0.55)) +
@@ -2132,7 +2055,7 @@ ggplot(df, aes(x = coverage, y = inequality)) +
   )
 ```
 
-## Inside and outside `aes()` {.scrollable}
+## Inside and outside `aes()` {.scrollable .smaller}
 
 ::: r-fit-text
 Back to this slide (again):
@@ -2161,20 +2084,23 @@ In short:
   **inside** `aes()`\*
 - You want the aesthetics to **be fixed** regardless of data -\> put it
   **outside** `aes()`\*
-- The aesthetics must be supported by the geometry
+- The aesthetics must be supported by the geometric objects
 
-::: footnote
+::::
+::: callout-warning
 - This also means that columns names can only be used inside `aes()`
 :::
-::::
 
-## Color transparency
+## Color transparency {.smaller}
 
 In `ggplot2`, you can add transparency to colors with the `alpha`
-aesthetics (available for most geometries)
+aesthetics (available for most geometric objects)
 
-```{r}
-#| echo: false
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{.r}
 tibble(start_x = 1:10, end_x = 2:11, alphas = seq(0.1, 1, 0.1)) |>
   ggplot() +
   geom_label(aes(label = as.character(alphas), x = (start_x + 0.5), y = 5)) +
@@ -2184,18 +2110,56 @@ tibble(start_x = 1:10, end_x = 2:11, alphas = seq(0.1, 1, 0.1)) |>
     ymax = 10,
     fill = "blue"
   ) +
-  scale_x_continuous("", labels = NULL) +
-  scale_y_continuous("", labels = NULL) +
+  scale_x_continuous(name = NULL, labels = NULL) +
+  scale_y_continuous(name = NULL, labels = NULL) +
   scale_alpha_continuous(breaks = seq(0.1, 1, 0.1))
 ```
 
-## The `annotate()` layer {.scrollable}
+:::
 
-:::: r-fit-text
-What if we want to *annotate* specific parts of a figure?
-
-::: fragment
+::: {.column width="50%"}
 ```{r}
+#| echo: FALSE
+#| out-width: "100%"
+tibble(start_x = 1:10, end_x = 2:11, alphas = seq(0.1, 1, 0.1)) |>
+  ggplot() +
+  geom_label(aes(label = as.character(alphas), x = (start_x + 0.5), y = 5)) +
+  geom_rect(
+    aes(xmin = start_x, xmax = end_x, alpha = alphas),
+    ymin = 0,
+    ymax = 10,
+    fill = "blue"
+  ) +
+  scale_x_continuous(name = NULL, labels = NULL) +
+  scale_y_continuous(name = NULL, labels = NULL) +
+  scale_alpha_continuous(breaks = seq(0.1, 1, 0.1))
+```
+:::
+
+::::
+
+## The `annotate()` layer
+
+How to *annotate* specific parts of a figure?
+
+:::: {.columns}
+::: {.column width="50%"}
+
+```{.r}
+ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
+  geom_point(color = "grey") +
+  geom_smooth(color = "cornflowerblue", method = "gam") +
+  labs(
+    title = "New covid cases over time",
+    x = "Date",
+    y = "Number of cases"
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: FALSE
 #| out-width: "100%"
 ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
   geom_point(color = "grey") +
@@ -2207,18 +2171,40 @@ ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
   )
 ```
 :::
+
 ::::
 
-## The `annotate()` layer {.scrollable}
+## The `annotate()` layer
 
-:::: r-fit-text
-Adding a vertical line with `geom_vline()` and a label with
-`geom_label()`
+Adding a vertical line with `geom_vline()` and a label with `geom_label()`
 
-::: fragment
+:::: {.columns}
+
+::: {.column width="50%"}
+
 ```{r}
-#| out-width: "100%"
+#| eval: FALSE
 #| code-line-numbers: 6-7
+ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
+  # main plotting geoms
+  geom_point(color = "grey") +
+  geom_smooth(color = "cornflowerblue", method = "gam") +
+  # figure annotation geoms (2)
+  geom_vline(xintercept = as.Date("2023-03-01"), linetype = 2) +
+  geom_label(label = "Start of outbreak", x = as.Date("2023-03-01"), y = 30) +
+  # labels
+  labs(
+    title = "New covid cases over time",
+    x = "Date",
+    y = "Number of cases"
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: FALSE
+#| out-width: "100%"
 ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
   # main plotting geoms
   geom_point(color = "grey") +
@@ -2238,13 +2224,46 @@ ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
 
 ## The `annotate()` layer {.scrollable}
 
-:::: r-fit-text
-Adding a region with `geom_rect()` and a label with `geom_label()`
+Annotate a time range with `geom_rect()` and a label with `geom_label()`
 
-::: fragment
+:::: {.columns}
+
+::: {.column width="50%"}
 ```{r}
+#| eval: FALSE
+#| code-line-numbers: 3-10
+ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
+  # figure annotation geoms (1)
+  geom_rect(
+    ymin = -Inf,
+    ymax = Inf,
+    xmin = as.Date("2023-04-01"),
+    xmax = as.Date("2023-06-01"),
+    alpha = 0.2,
+    fill = "red"
+  ) +
+  geom_label(
+    label = "Outbreak peak",
+    x = as.Date("2023-06-25"),
+    y = 30,
+    color = "red"
+  ) +
+  # main plotting geoms
+  geom_point(color = "grey") +
+  geom_smooth(color = "cornflowerblue", method = "gam") +
+  # labels
+  labs(
+    title = "New covid cases over time",
+    x = "Date",
+    y = "Number of cases"
+  )
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: FALSE
 #| out-width: "100%"
-#| code-line-numbers: 3-8
 ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
   # figure annotation geoms (1)
   geom_rect(
@@ -2307,24 +2326,24 @@ ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
   )
 ```
 
-We already said `alpha = 0.2` **outside of `aes()`**, why doesn't it
+We already put `alpha = 0.2` **outside of `aes()`**, why doesn't it
 have any transparency at all??
 
 ## The `annotate()` layer {.scrollable}
 
 ::: {.fragment .incremental}
-- I lied
+- Well ackshually... ☝️🤓
 - Aesthetics are always dependant on the dataset, whether it is outside
-  or inside `aes()`
+  or inside `aes()`!
 :::
 
-## The `annotate()` layer {.scrollable}
+## The `annotate()` layer {.scrollable .smaller}
 
 Example:
 
 - Originally the dataset **when used in `ggplot()`** looks like this:
 
-``` r
+```{.r}
 ggplot(aggregated_cases, ...) + ...
 ```
 
@@ -2334,9 +2353,9 @@ aggregated_cases
 ```
 
 - When you assigned a fixed value to an aesthetic outside of `aes()`, it
-  might look like this:
+  will look like this:
 
-``` r
+```{.r}
 ggplot(aggregated_cases, ...) + geom_...(alpha = 0.2)
 ```
 
@@ -2347,14 +2366,49 @@ aggregated_cases |> mutate(alpha = 0.2)
 
 ## The `annotate()` layer {.scrollable}
 
-:::: r-fit-text
+:::: {.columns}
 Using the `annotate()` layer, you can separate the annotations from the
 geometry layer
 
-::: fragment
+::: {.column width="50%"}
 ```{r}
+#| eval: FALSE
+#| code-line-numbers: 3-11
+ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
+  # figure annotation geoms (1)
+  annotate(
+    "rect",
+    ymin = -Inf,
+    ymax = Inf,
+    xmin = as.Date("2023-04-01"),
+    xmax = as.Date("2023-06-01"),
+    alpha = 0.2,
+    fill = "red"
+  ) +
+  annotate(
+    "label",
+    label = "Outbreak peak",
+    x = as.Date("2023-06-25"),
+    y = 30,
+    color = "red"
+  ) +
+  # main plotting geoms
+  geom_point(color = "grey") +
+  geom_smooth(color = "cornflowerblue", method = "gam") +
+  # labels
+  labs(
+    title = "New covid cases over time",
+    x = "Date",
+    y = "Number of cases"
+  )
+```
+
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: FALSE
 #| out-width: "100%"
-#| code-line-numbers: 3-8
 ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
   # figure annotation geoms (1)
   annotate(
@@ -2390,7 +2444,7 @@ ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +
 
 Comparing:
 
-``` r
+```{.r}
 geom_rect(
   ymin = -Inf, ymax = Inf,
   xmin = as.Date("2023-04-01"), xmax = as.Date("2023-06-01"), 
@@ -2401,7 +2455,7 @@ geom_label(label = "Outbreak peak", x = as.Date("2023-06-25"), y = 30, color = "
 
 vs.
 
-``` r
+```{.r}
 annotate("rect",
   ymin = -Inf, ymax = Inf,
   xmin = as.Date("2023-04-01"), xmax = as.Date("2023-06-01"), 

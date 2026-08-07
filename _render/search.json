@@ -532,6 +532,13 @@
     "text": "Refine the plot: the point-size scale\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_manual(values = my_pallete) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n  ) +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\")\n  )"
   },
   {
+    "objectID": "slides/viz.html#refine-the-plot-reorder-the-legends",
+    "href": "slides/viz.html#refine-the-plot-reorder-the-legends",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Refine the plot: reorder the legends",
+    "text": "Refine the plot: reorder the legends\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_manual(values = my_pallete) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\")\n  )"
+  },
+  {
     "objectID": "slides/viz.html#refine-the-plot-the-axes",
     "href": "slides/viz.html#refine-the-plot-the-axes",
     "title": "Principles of data visualisation and plotting in R",
@@ -543,14 +550,14 @@
     "href": "slides/viz.html#refine-the-plot-labels-and-theme",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Refine the plot: labels and theme",
-    "text": "Refine the plot: labels and theme\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_manual(\n    name = \"\",\n    values = my_pallete,\n    guide = guide_legend(order = 2)\n  ) +\n  scale_size_continuous(\n    name = \"\",\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_x_continuous(\n    name = \"Change in MCV1 coverage (2019-2000)\",\n    breaks = c(-0.25, 0, 0.25, 0.5),\n    limits = c(-0.4, 0.55)\n  ) +\n  scale_y_continuous(\n    name = \"Change in absolute geographical inequality (2019-2000)\",\n    breaks = c(-0.1, 0, 0.1),\n    limits = c(-0.16, 0.1)\n  ) +\n  theme_classic() +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\"),\n    axis.text = element_text(size = 11)\n  )"
+    "text": "Refine the plot: labels and theme\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_manual(\n    name = NULL,\n    values = my_pallete,\n    guide = guide_legend(order = 2)\n  ) +\n  scale_size_continuous(\n    name = NULL,\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_x_continuous(\n    name = \"Change in MCV1 coverage (2019-2000)\",\n    breaks = c(-0.25, 0, 0.25, 0.5),\n    limits = c(-0.4, 0.55)\n  ) +\n  scale_y_continuous(\n    name = \"Change in absolute geographical inequality (2019-2000)\",\n    breaks = c(-0.1, 0, 0.1),\n    limits = c(-0.16, 0.1)\n  ) +\n  theme_classic() +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\"),\n    axis.text = element_text(size = 11)\n  )"
   },
   {
     "objectID": "slides/viz.html#refine-the-plot-minor-tweaks",
     "href": "slides/viz.html#refine-the-plot-minor-tweaks",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Refine the plot: minor tweaks",
-    "text": "Refine the plot: minor tweaks\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region), alpha = 0.8) +\n  geom_text(mapping = aes(label = country), hjust = -0.2, vjust = 0.2) +\n  geom_vline(xintercept = 0, color = \"#999999\") +\n  geom_hline(yintercept = 0, color = \"#999999\") +\n  scale_color_manual(\n    name = \"\",\n    values = my_pallete,\n    guide = guide_legend(order = 2)\n  ) +\n  scale_size_continuous(\n    name = \"\",\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_x_continuous(\n    name = \"Change in MCV1 coverage (2019-2000)\",\n    breaks = c(-0.25, 0, 0.25, 0.5),\n    limits = c(-0.4, 0.55)\n  ) +\n  scale_y_continuous(\n    name = \"Change in absolute geographical inequality (2019-2000)\",\n    breaks = c(-0.1, 0, 0.1),\n    limits = c(-0.16, 0.1)\n  ) +\n  theme_classic() +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\"),\n    axis.text = element_text(size = 11)\n  )"
+    "text": "Refine the plot: minor tweaks\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region), alpha = 0.8) +\n  geom_text(mapping = aes(label = country), hjust = -0.2, vjust = 0.2) +\n  geom_vline(xintercept = 0, color = \"#999999\") +\n  geom_hline(yintercept = 0, color = \"#999999\") +\n  scale_color_manual(\n    name = NULL,\n    values = my_pallete,\n    guide = guide_legend(order = 2)\n  ) +\n  scale_size_continuous(\n    name = NULL,\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_x_continuous(\n    name = \"Change in MCV1 coverage (2019-2000)\",\n    breaks = c(-0.25, 0, 0.25, 0.5),\n    limits = c(-0.4, 0.55)\n  ) +\n  scale_y_continuous(\n    name = \"Change in absolute geographical inequality (2019-2000)\",\n    breaks = c(-0.1, 0, 0.1),\n    limits = c(-0.16, 0.1)\n  ) +\n  theme_classic() +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\"),\n    axis.text = element_text(size = 11)\n  )"
   },
   {
     "objectID": "slides/viz.html#refine-the-plot",
@@ -630,11 +637,11 @@
     "text": "Some frequently used geom_*\n\nExample: create a box plot to compare number of cases per day between 2 outbreaks\n\n\n\ncode.R\n\n# compute cases per day for each outbreak\ncases_per_outbreak &lt;- simulated_covid |&gt;\n  group_by(date_onset, outbreak) |&gt;\n  summarise(\n    case_count = n()\n  )\n\nggplot(\n  cases_per_outbreak,\n  aes(x = case_count, y = outbreak)\n) +\n  geom_boxplot() +\n  scale_x_continuous(\"Number of daily cases\") +\n  scale_y_discrete(\"Outbreak\") +\n  ggtitle(\"Compare distribution of daily cases between 2 outbreaks\")"
   },
   {
-    "objectID": "slides/viz.html#where-to-find-more-geom_",
-    "href": "slides/viz.html#where-to-find-more-geom_",
+    "objectID": "slides/viz.html#read-the-docs",
+    "href": "slides/viz.html#read-the-docs",
     "title": "Principles of data visualisation and plotting in R",
-    "section": "Where to find more geom_*?",
-    "text": "Where to find more geom_*?\nFor a complete list of geom_*, refer to ggplot2 official documentation\nAlternatively, you can also look for the example code for your desired chart type at R Graph Gallery"
+    "section": "Read the docs!",
+    "text": "Read the docs!\n\nFor a complete list of geom_*, refer to ggplot2 official documentation\nHow do we know which aesthetics does each geometry support? Read the documentation!\nAlternatively, you can also look for the example code for your desired chart type at R Graph Gallery"
   },
   {
     "objectID": "slides/viz.html#save-plot",
@@ -658,11 +665,11 @@
     "text": "Export: two types of formats\n\nVector format (e.g. .svg, .eps)\n\nConsists of independent geometric objects (segments, polygons, curves, etc.)\nCan be enlarged without losing resolution\n\nRaster format (e.g. .png, .jpeg/.jpg, .tiff).\n\nRectangular grid of pixels, possibly with color\nWill be very blurry if image is enlarged while resolution is low"
   },
   {
-    "objectID": "slides/viz.html#main-components-of-a-graph-r",
-    "href": "slides/viz.html#main-components-of-a-graph-r",
+    "objectID": "slides/viz.html#grammar-of-a-graph-2",
+    "href": "slides/viz.html#grammar-of-a-graph-2",
     "title": "Principles of data visualisation and plotting in R",
-    "section": "Main components of a graph (R)",
-    "text": "Main components of a graph (R)\n\nMapping from data to aesthetic attributes of geometric objects\nGeometic objects: what you see on the plot (points, lines, bars)\nAesthetic attributes: “role” of variables in plot: location (often along x-axis and y-axis), colour, size, shape\nScales: map data values to aesthetic attributes\n\n\n\nCoordinate system: cartesian, polar, map projections.\nNetworks, trees have no coordinate system\n\n\n\n\nNot about:\n\ngraph type (\\(\\approx\\) language, words)\nfont size, background colour … Some of these are specified in a theme"
+    "section": "Grammar of a graph",
+    "text": "Grammar of a graph\n\nMapping from information (data) to aesthetic attributes of geometric objects\nAesthetic attributes are the “role” of variables in plot: location (often along x-axis and y-axis), colour, size, shape\nGeometric objects are what you see on the plot (points, lines, bars)\nScales maps the information (data) to aesthetic attributes\nGuides defines how scales are represented\n\n\n\nCoordinate system: cartesian, polar, map projections\n\n\n\n\n\n\n\nNote\n\n\nNetworks, trees have no coordinate system"
   },
   {
     "objectID": "slides/viz.html#polar-coordinate-system",
@@ -672,39 +679,18 @@
     "text": "Polar coordinate system\nPie chart WHO European Health Report 2009\n\nGeometric object? Aesthetic attributes? Transformation? Coordinate system?"
   },
   {
+    "objectID": "slides/viz.html#grammar-of-a-graph-3",
+    "href": "slides/viz.html#grammar-of-a-graph-3",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Grammar of a graph",
+    "text": "Grammar of a graph\n\nThe grammar of graphics is not about deciding the type of graphics for your data\nWe are the decision makers. The grammar of graphics just provide the common language, e.g. knowing English and knowing what to say are 2 different things!"
+  },
+  {
     "objectID": "slides/viz.html#overview",
     "href": "slides/viz.html#overview",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Overview",
-    "text": "Overview\n\nWhat does mapping = aes() do?\nInheritance of data and aesthetics\nThe annotate() layer\nFigure panes using facet_wrap()\nExtending ggplot2\nInteractive plots with plotly"
-  },
-  {
-    "objectID": "slides/viz.html#what-does-mapping-aes-do",
-    "href": "slides/viz.html#what-does-mapping-aes-do",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "What does mapping = aes() do?",
-    "text": "What does mapping = aes() do?\n\n\nggplot() arguments and default values:\n\nggplot(data = NULL, mapping = aes(), ...)\n\ngeom_*() arguments and default values:\n\ngeom_bar(mapping = NULL, data = NULL, ...)\ngeom_boxplot(mapping = NULL, data = NULL, ...)\ngeom_point(mapping = NULL, data = NULL, ...)"
-  },
-  {
-    "objectID": "slides/viz.html#what-does-mapping-aes-do-1",
-    "href": "slides/viz.html#what-does-mapping-aes-do-1",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "What does mapping = aes() do?",
-    "text": "What does mapping = aes() do?\n\nRecall this:\n\n\ndf &lt;- read_excel(\"data/nature_plot.xlsx\")\nhead(df)\n\n# A tibble: 6 × 5\n  country          coverage inequality   pop region                             \n  &lt;chr&gt;               &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;                              \n1 Angola              -0.14      0.1    30.2 Sub-Saharan Africa                 \n2 Papua New Guinea    -0.35      0.08   16.5 Southeast Asia, East Asia and Ocea…\n3 Pakistan             0.12      0.05   82.5 South Asia                         \n4 Chad                 0.14      0.01   27.5 Sub-Saharan Africa                 \n5 Ethiopia             0.32      0.005  55   Sub-Saharan Africa                 \n6 Kenya                0.07     -0.06   30.2 Sub-Saharan Africa                 \n\n\n\n\n\n\n\n\n\n\n\n\n\nlabel\n(country)\nx\n(coverage)\ny\n(inequality)\nsize\n(population)\ncolor\n(region)\n\n\n\n\nNigeria\n0.20\n-0.07\n220M\nSub-Saharan Africa"
-  },
-  {
-    "objectID": "slides/viz.html#what-does-mapping-aes-do-2",
-    "href": "slides/viz.html#what-does-mapping-aes-do-2",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "What does mapping = aes() do?",
-    "text": "What does mapping = aes() do?\nIdea: we are mapping the variables in the data to the aesthetics of a geometry\naes(x = coverage, y = inequality)\n#&gt; Aesthetic mapping: \n#&gt; * `x` -&gt; `coverage`\n#&gt; * `y` -&gt; `inequality`\n\n\naes(x = coverage^2, y = inequality/2)\n#&gt; Aesthetic mapping: \n#&gt; * `x` -&gt; `coverage^2`\n#&gt; * `y` -&gt; `inequality/2`"
-  },
-  {
-    "objectID": "slides/viz.html#what-does-mapping-aes-do-3",
-    "href": "slides/viz.html#what-does-mapping-aes-do-3",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "What does mapping = aes() do?",
-    "text": "What does mapping = aes() do?\nHow do we know which aesthetics does each geometry support? Read the documentation!\nSimply:\n\nRead the documentation of the geometry of interest\nClick Aesthetics on the navigation bar on the right (or scroll down)\nAll aesthetics compatible for the geometry are listed"
+    "text": "Overview\n\nInheritance of data and aesthetics\nThe annotate() layer\nFigure panes using facet_wrap()\nExtending ggplot2\nInteractive plots with plotly"
   },
   {
     "objectID": "slides/viz.html#inheritance-of-data-and-aesthetics",
@@ -718,7 +704,7 @@
     "href": "slides/viz.html#inheritance-of-data-and-aesthetics-1",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Inheritance of data and aesthetics",
-    "text": "Inheritance of data and aesthetics\nThe idea is that:\n\nggplot() can control the dataset and aesthetics\ngeom_*()s can also control the type of geometries, and allow customisation of aesthetics"
+    "text": "Inheritance of data and aesthetics\nThe idea is that:\n\nggplot() control the dataset and aesthetics\ngeom_*()s control the geometric layer, and allow customisation of aesthetics for that specific geom layer"
   },
   {
     "objectID": "slides/viz.html#inheritance-of-data-and-aesthetics-2",
@@ -732,21 +718,21 @@
     "href": "slides/viz.html#inheritance-of-data-and-aesthetics-3",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Inheritance of data and aesthetics",
-    "text": "Inheritance of data and aesthetics\nYou have seen this in action before!\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region, alpha = 0.8)) +\n  geom_text(aes(label = country), hjust = -0.2, vjust = 0.2) +\n  geom_vline(xintercept = 0, color = \"#999999\") +\n  geom_hline(yintercept = 0, color = \"#999999\") +\n  scale_x_continuous(breaks = c(-0.25, 0, 0.25, 0.5),\n                     limits = c(-0.4, 0.55)) +\n  scale_y_continuous(breaks = c(-0.1, 0, 0.1), limits = c(-0.16, 0.1)) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_color_manual(\n    values = my_pallete,\n    guide = guide_legend(order = 2)\n  ) +\n  labs(x = \"Change in MCV1 coverage (2019-2000)\",\n       y = \"Change in absolute geographical inequality (2019-2000)\",\n       size = NULL,\n       color = NULL) +\n  theme_classic() +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\"),\n    axis.text = element_text(size = 11)\n  )"
+    "text": "Inheritance of data and aesthetics\nOur final figure this morning:\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region), alpha = 0.8) +\n  geom_text(mapping = aes(label = country), hjust = -0.2, vjust = 0.2) +\n  geom_vline(xintercept = 0, color = \"#999999\") +\n  geom_hline(yintercept = 0, color = \"#999999\") +\n  scale_color_manual(\n    name = NULL,\n    values = my_pallete,\n    guide = guide_legend(order = 2)\n  ) +\n  scale_size_continuous(\n    name = NULL,\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_x_continuous(\n    name = \"Change in MCV1 coverage (2019-2000)\",\n    breaks = c(-0.25, 0, 0.25, 0.5),\n    limits = c(-0.4, 0.55)\n  ) +\n  scale_y_continuous(\n    name = \"Change in absolute geographical inequality (2019-2000)\",\n    breaks = c(-0.1, 0, 0.1),\n    limits = c(-0.16, 0.1)\n  ) +\n  theme_classic() +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\"),\n    axis.text = element_text(size = 11)\n  )"
   },
   {
     "objectID": "slides/viz.html#inheritance-of-data-and-aesthetics-4",
     "href": "slides/viz.html#inheritance-of-data-and-aesthetics-4",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Inheritance of data and aesthetics",
-    "text": "Inheritance of data and aesthetics\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region), alpha = 0.8) +\n  geom_text(aes(label = country), hjust = -0.2, vjust = 0.2)"
+    "text": "Inheritance of data and aesthetics\nFocus on this chunk\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region), alpha = 0.8) +\n  geom_text(mapping = aes(label = country), hjust = -0.2, vjust = 0.2) +"
   },
   {
     "objectID": "slides/viz.html#inside-and-outside-aes",
     "href": "slides/viz.html#inside-and-outside-aes",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Inside and outside aes()",
-    "text": "Inside and outside aes()\nWhat happens if we do it like this:\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region, alpha = 0.8)) +\n  geom_text(aes(label = country, hjust = -0.2, vjust = 0.2))"
+    "text": "Inside and outside aes()\nWhat happens if we do it like this:\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region, alpha = 0.8)) +\n  geom_text(mapping = aes(label = country, hjust = -0.2, vjust = 0.2)) +"
   },
   {
     "objectID": "slides/viz.html#inside-and-outside-aes-1",
@@ -760,63 +746,63 @@
     "href": "slides/viz.html#inside-and-outside-aes-2",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Inside and outside aes()",
-    "text": "Inside and outside aes()\n\n\n\n\n\n\nImportant\n\n\nIn short:\n\nYou want the aesthetics to change with the data -&gt; put it inside aes()*\nYou want the aesthetics to be fixed regardless of data -&gt; put it outside aes()*\nThe aesthetics must be supported by the geometry\n\n\n\nThis also means that columns names can only be used inside aes()"
+    "text": "Inside and outside aes()\n\n\n\n\n\n\nImportant\n\n\nIn short:\n\nYou want the aesthetics to change with the data -&gt; put it inside aes()*\nYou want the aesthetics to be fixed regardless of data -&gt; put it outside aes()*\nThe aesthetics must be supported by the geometric objects\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\nThis also means that columns names can only be used inside aes()"
   },
   {
     "objectID": "slides/viz.html#color-transparency",
     "href": "slides/viz.html#color-transparency",
     "title": "Principles of data visualisation and plotting in R",
     "section": "Color transparency",
-    "text": "Color transparency\nIn ggplot2, you can add transparency to colors with the alpha aesthetics (available for most geometries)"
+    "text": "Color transparency\nIn ggplot2, you can add transparency to colors with the alpha aesthetics (available for most geometric objects)\n\n\ntibble(start_x = 1:10, end_x = 2:11, alphas = seq(0.1, 1, 0.1)) |&gt;\n  ggplot() +\n  geom_label(aes(label = as.character(alphas), x = (start_x + 0.5), y = 5)) +\n  geom_rect(\n    aes(xmin = start_x, xmax = end_x, alpha = alphas),\n    ymin = 0,\n    ymax = 10,\n    fill = \"blue\"\n  ) +\n  scale_x_continuous(name = NULL, labels = NULL) +\n  scale_y_continuous(name = NULL, labels = NULL) +\n  scale_alpha_continuous(breaks = seq(0.1, 1, 0.1))"
   },
   {
     "objectID": "slides/viz.html#the-annotate-layer",
     "href": "slides/viz.html#the-annotate-layer",
     "title": "Principles of data visualisation and plotting in R",
     "section": "The annotate() layer",
-    "text": "The annotate() layer\n\nWhat if we want to annotate specific parts of a figure?\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
+    "text": "The annotate() layer\nHow to annotate specific parts of a figure?\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
   },
   {
     "objectID": "slides/viz.html#the-annotate-layer-1",
     "href": "slides/viz.html#the-annotate-layer-1",
     "title": "Principles of data visualisation and plotting in R",
     "section": "The annotate() layer",
-    "text": "The annotate() layer\n\nAdding a vertical line with geom_vline() and a label with geom_label()\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  # main plotting geoms\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  # figure annotation geoms (2)\n  geom_vline(xintercept = as.Date(\"2023-03-01\"), linetype = 2) +\n  geom_label(label = \"Start of outbreak\", x = as.Date(\"2023-03-01\"), y = 30) +\n  # labels\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
+    "text": "The annotate() layer\nAdding a vertical line with geom_vline() and a label with geom_label()\n\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  # main plotting geoms\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  # figure annotation geoms (2)\n  geom_vline(xintercept = as.Date(\"2023-03-01\"), linetype = 2) +\n  geom_label(label = \"Start of outbreak\", x = as.Date(\"2023-03-01\"), y = 30) +\n  # labels\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
   },
   {
     "objectID": "slides/viz.html#the-annotate-layer-2",
     "href": "slides/viz.html#the-annotate-layer-2",
     "title": "Principles of data visualisation and plotting in R",
     "section": "The annotate() layer",
-    "text": "The annotate() layer\n\nAdding a region with geom_rect() and a label with geom_label()\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  # figure annotation geoms (1)\n  geom_rect(\n    ymin = -Inf,\n    ymax = Inf,\n    xmin = as.Date(\"2023-04-01\"),\n    xmax = as.Date(\"2023-06-01\"),\n    alpha = 0.2,\n    fill = \"red\"\n  ) +\n  geom_label(\n    label = \"Outbreak peak\",\n    x = as.Date(\"2023-06-25\"),\n    y = 30,\n    color = \"red\"\n  ) +\n  # main plotting geoms\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  # labels\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
+    "text": "The annotate() layer\nAnnotate a time range with geom_rect() and a label with geom_label()\n\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  # figure annotation geoms (1)\n  geom_rect(\n    ymin = -Inf,\n    ymax = Inf,\n    xmin = as.Date(\"2023-04-01\"),\n    xmax = as.Date(\"2023-06-01\"),\n    alpha = 0.2,\n    fill = \"red\"\n  ) +\n  geom_label(\n    label = \"Outbreak peak\",\n    x = as.Date(\"2023-06-25\"),\n    y = 30,\n    color = \"red\"\n  ) +\n  # main plotting geoms\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  # labels\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
   },
   {
     "objectID": "slides/viz.html#the-annotate-layer-3",
     "href": "slides/viz.html#the-annotate-layer-3",
     "title": "Principles of data visualisation and plotting in R",
     "section": "The annotate() layer",
-    "text": "The annotate() layer\n\nWe already said alpha = 0.2 outside of aes(), why doesn’t it have any transparency at all??"
+    "text": "The annotate() layer\n\nWe already put alpha = 0.2 outside of aes(), why doesn’t it have any transparency at all??"
   },
   {
     "objectID": "slides/viz.html#the-annotate-layer-4",
     "href": "slides/viz.html#the-annotate-layer-4",
     "title": "Principles of data visualisation and plotting in R",
     "section": "The annotate() layer",
-    "text": "The annotate() layer\n\n\nI lied\nAesthetics are always dependant on the dataset, whether it is outside or inside aes()"
+    "text": "The annotate() layer\n\n\nWell ackshually… ☝️🤓\nAesthetics are always dependant on the dataset, whether it is outside or inside aes()!"
   },
   {
     "objectID": "slides/viz.html#the-annotate-layer-5",
     "href": "slides/viz.html#the-annotate-layer-5",
     "title": "Principles of data visualisation and plotting in R",
     "section": "The annotate() layer",
-    "text": "The annotate() layer\nExample:\n\nOriginally the dataset when used in ggplot() looks like this:\n\nggplot(aggregated_cases, ...) + ...\n\n\n# A tibble: 257 × 2\n   date_onset case_count\n   &lt;date&gt;          &lt;int&gt;\n 1 2023-01-01          1\n 2 2023-01-03          1\n 3 2023-01-04          1\n 4 2023-01-05          1\n 5 2023-01-06          3\n 6 2023-01-07          3\n 7 2023-01-08          1\n 8 2023-01-09          1\n 9 2023-01-10          2\n10 2023-01-14          1\n# ℹ 247 more rows\n\n\n\nWhen you assigned a fixed value to an aesthetic outside of aes(), it might look like this:\n\nggplot(aggregated_cases, ...) + geom_...(alpha = 0.2)\n\n\n# A tibble: 257 × 3\n   date_onset case_count alpha\n   &lt;date&gt;          &lt;int&gt; &lt;dbl&gt;\n 1 2023-01-01          1   0.2\n 2 2023-01-03          1   0.2\n 3 2023-01-04          1   0.2\n 4 2023-01-05          1   0.2\n 5 2023-01-06          3   0.2\n 6 2023-01-07          3   0.2\n 7 2023-01-08          1   0.2\n 8 2023-01-09          1   0.2\n 9 2023-01-10          2   0.2\n10 2023-01-14          1   0.2\n# ℹ 247 more rows"
+    "text": "The annotate() layer\nExample:\n\nOriginally the dataset when used in ggplot() looks like this:\n\nggplot(aggregated_cases, ...) + ...\n\n\n# A tibble: 257 × 2\n   date_onset case_count\n   &lt;date&gt;          &lt;int&gt;\n 1 2023-01-01          1\n 2 2023-01-03          1\n 3 2023-01-04          1\n 4 2023-01-05          1\n 5 2023-01-06          3\n 6 2023-01-07          3\n 7 2023-01-08          1\n 8 2023-01-09          1\n 9 2023-01-10          2\n10 2023-01-14          1\n# ℹ 247 more rows\n\n\n\nWhen you assigned a fixed value to an aesthetic outside of aes(), it will look like this:\n\nggplot(aggregated_cases, ...) + geom_...(alpha = 0.2)\n\n\n# A tibble: 257 × 3\n   date_onset case_count alpha\n   &lt;date&gt;          &lt;int&gt; &lt;dbl&gt;\n 1 2023-01-01          1   0.2\n 2 2023-01-03          1   0.2\n 3 2023-01-04          1   0.2\n 4 2023-01-05          1   0.2\n 5 2023-01-06          3   0.2\n 6 2023-01-07          3   0.2\n 7 2023-01-08          1   0.2\n 8 2023-01-09          1   0.2\n 9 2023-01-10          2   0.2\n10 2023-01-14          1   0.2\n# ℹ 247 more rows"
   },
   {
     "objectID": "slides/viz.html#the-annotate-layer-6",
     "href": "slides/viz.html#the-annotate-layer-6",
     "title": "Principles of data visualisation and plotting in R",
     "section": "The annotate() layer",
-    "text": "The annotate() layer\n\nUsing the annotate() layer, you can separate the annotations from the geometry layer\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  # figure annotation geoms (1)\n  annotate(\n    \"rect\",\n    ymin = -Inf,\n    ymax = Inf,\n    xmin = as.Date(\"2023-04-01\"),\n    xmax = as.Date(\"2023-06-01\"),\n    alpha = 0.2,\n    fill = \"red\"\n  ) +\n  annotate(\n    \"label\",\n    label = \"Outbreak peak\",\n    x = as.Date(\"2023-06-25\"),\n    y = 30,\n    color = \"red\"\n  ) +\n  # main plotting geoms\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  # labels\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
+    "text": "The annotate() layer\n\nUsing the annotate() layer, you can separate the annotations from the geometry layer\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  # figure annotation geoms (1)\n  annotate(\n    \"rect\",\n    ymin = -Inf,\n    ymax = Inf,\n    xmin = as.Date(\"2023-04-01\"),\n    xmax = as.Date(\"2023-06-01\"),\n    alpha = 0.2,\n    fill = \"red\"\n  ) +\n  annotate(\n    \"label\",\n    label = \"Outbreak peak\",\n    x = as.Date(\"2023-06-25\"),\n    y = 30,\n    color = \"red\"\n  ) +\n  # main plotting geoms\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  # labels\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
   },
   {
     "objectID": "slides/viz.html#the-annotate-layer-7",
@@ -1495,7 +1481,7 @@
     "href": "slides/IntroductionRDay2.html#packages-where-to-find-them",
     "title": "Introduction to R, Day 2",
     "section": "Packages, where to find them?",
-    "text": "Packages, where to find them?\n\nComprehensive R Archive Network (24504 packages on August 4, 2026)\nGitHub (34867 packages on August 4, 2026)\nBioconductor\nReview\n\n\n\nNeed to be installed on your computer\nR program itself also based on packages. Some loaded at startup base, graphics, stats, utils …\nFor example, base package contains sqrt function\nOther packages need to be loaded before use, best way is via library(pkg_name)"
+    "text": "Packages, where to find them?\n\nComprehensive R Archive Network (24504 packages on August 4, 2026)\nGitHub (34867 packages on August 4, 2026)\nBioconductor\nMonthly Review Top 40 packages\n\n\n\nNeed to be installed on your computer\nR program itself also based on packages. Some loaded at startup base, graphics, stats, utils …\nFor example, base package contains sqrt function\nOther packages need to be loaded before use, best way is via library(pkg_name)"
   },
   {
     "objectID": "slides/IntroductionRDay2.html#another-object-mode-list",
@@ -1537,7 +1523,7 @@
     "href": "slides/IntroductionRDay2.html#finding-information",
     "title": "Introduction to R, Day 2",
     "section": "Finding Information",
-    "text": "Finding Information\n\nFunction help. R is object oriented!\nSearch on Google (use language r: if result is non-specific)\nchatGPT or an R package such as askgpt or ellmer\nR documentation\nRseek\nR-universe\nCRAN (list with packages, Task Views, FAQs, Vignettes)\nStack Overflow"
+    "text": "Finding Information\n\nFunction help. R is object oriented!\nSearch on Google (use language r: if result is non-specific)\nchatGPT or an R package such as askgpt or ellmer\nR documentation\nRseek\nR-universe\nCRAN (list with packages, Task Views, FAQs, Vignettes)\nStack Overflow\nHave a look at the links provided in the appendix on the course website"
   },
   {
     "objectID": "slides/IntroductionRDay2.html#exercise",
@@ -1545,19 +1531,5 @@
     "title": "Introduction to R, Day 2",
     "section": "Exercise",
     "text": "Exercise\nFind information on\n\ndescriptive statistics\nchange several categorical variables of a data.frame into factor variables\nrecognize nonstandard date formats"
-  },
-  {
-    "objectID": "slides/viz.html#refine-the-plot-the-colour-scale-4",
-    "href": "slides/viz.html#refine-the-plot-the-colour-scale-4",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Refine the plot: the colour scale",
-    "text": "Refine the plot: the colour scale\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_manual(values = my_pallete, guide = guide_legend(order = 2)) +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\")\n  )\n\n\nRelocate the color legend with guide = guide_legend(...) inside the color scale"
-  },
-  {
-    "objectID": "slides/viz.html#refine-the-plot-reorder-the-legends",
-    "href": "slides/viz.html#refine-the-plot-reorder-the-legends",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Refine the plot: reorder the legends",
-    "text": "Refine the plot: reorder the legends\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_manual(values = my_pallete) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\")\n  )"
   }
 ]
