@@ -299,10 +299,7 @@ code.R
 ```{r}
 #| eval: FALSE
 # df <- ...
-ggplot(
-  data = df,
-  mapping = aes(x = coverage, y = inequality)
-)
+ggplot(data = df, mapping = aes(x = coverage, y = inequality))
 ```
 :::
 
@@ -332,7 +329,6 @@ code.R
 
 ```{r}
 #| eval: FALSE
-#| code-line-numbers: "2"
 ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_point()
 ```
@@ -721,7 +717,7 @@ code.R
 
 ```{r custom 1}
 #| eval: FALSE
-#| code-line-numbers: "1-8|13"
+#| code-line-numbers: "1-8,13"
 my_pallete <- c(
   "Central Europe, Eastern Europe and Central Asia" = "#fa8495",
   "Latin America and Caribbean" = "#4ca258",
@@ -1435,7 +1431,7 @@ Box plot
 +-------------------+---------------------------------+-----------------+
 | `geom_*`          | description                     | Parameters      |
 +===================+=================================+=================+
-| `geom _boxplot()` | Create a boxplot from a         | Required        |
+| `geom_boxplot()`  | Create a boxplot from a         | Required        |
 |                   | continuous variable.            | aesthetic: `x`  |
 |                   |                                 | [or]{.underline}|
 |                   | If both `x` and `y` are given,  | `y`             |
@@ -1540,7 +1536,7 @@ ggsave(
 
 ## Export: two types of formats
 
-- Vector format (e.g. `.pdf`, `.svg`, `.eps`)
+- Vector format (e.g. `.svg`, `.eps`)
   - Consists of independent geometric objects (segments,
     polygons, curves, etc.)
   - Can be enlarged without losing resolution
