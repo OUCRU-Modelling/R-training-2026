@@ -32,7 +32,7 @@ date-format: "MMMM D, YYYY -- HH:mm:ss (z)"
 
 ## Pre-course setups and requirements
 
-Please follow this [precourse handout](handouts/precourse_setup.qmd){target="_blank"} to setup R and RStudio.
+Please follow this [pre-course setups handout](handouts/precourse_setup.qmd) to setup R and RStudio.
 
 # Course topics
 
@@ -40,7 +40,7 @@ Please follow this [precourse handout](handouts/precourse_setup.qmd){target="_bl
 
 ### Day 1 (Monday)
 
-- [Lecture slides](slides/IntroductionRDay1.qmd){target="_blank"}
+- [Lecture slides](slides/IntroductionRDay1.qmd){.external target="_blank"}
 - **Learning objectives**:
   1. Basic structure of R
   2. Simple computations
@@ -49,8 +49,8 @@ Please follow this [precourse handout](handouts/precourse_setup.qmd){target="_bl
   5. Navigate RStudio with confidence
 
 - Exercises:
-  - [Exercises](handouts/exercises_Day1.qmd){target="_blank"}
-  - [Exercise answers](handouts/exercises_Day1_answer.qmd){target="_blank"}
+  - [Exercises](handouts/exercises_Day1.qmd){.external target="_blank"}
+  - [Exercise answers](handouts/exercises_Day1_answer.qmd){.external target="_blank"}
   - {{< downloadthis handouts/exercises_Day1_answer.R dname="exercises_Day1_answer" label="Exercise answers script" type="primary">}}
 - {{< downloadthis slides/Scripts/ExampleCodeDay1.R dname="ExampleCodeDay1" label="Example R code scripts - Day 1" type="primary">}}
 
@@ -80,7 +80,7 @@ Please follow this [precourse handout](handouts/precourse_setup.qmd){target="_bl
   4. How to design clear and impactful visualisations
   5. Using LLMs (Large Language Models) to help you with plotting
   
-- [Exercises](handouts/exercise_day3.qmd){target="_blank"}
+- [Exercises](handouts/exercise_day3.qmd){.external target="_blank"}
 
 <!-- - [Handout file](handouts/VisualisationHandouts.pdf)
   - [Exercise answer key](handouts/Exercises_Day3_answer.pdf)

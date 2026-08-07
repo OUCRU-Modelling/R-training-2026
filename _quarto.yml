@@ -14,6 +14,8 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: handouts/precourse_setup.qmd
+        text: Pre-course setups
       - href: slides/IntroductionRDay1.qmd
         text: Introduction to R (Day 1)
       - href: slides/viz.qmd

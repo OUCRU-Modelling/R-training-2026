@@ -1,5 +1,9 @@
 ---
 title: "Exercises Day 3"
+subtitle: "Please do not circulate."
+author: 
+  - "Ronald Geskus"
+  - "Anh Phan Truong Quynh"
 date: 'last-modified'
 date-format: '[Last version:] MMMM DD, YYYY'
 format: 
@@ -11,7 +15,6 @@ toc: TRUE
 lof: FALSE
 lot: FALSE
 number-sections: FALSE
-thanks: "Please do not circulate."
 execute:
   echo: true
   eval: true
@@ -19,7 +22,7 @@ execute:
 
 ## Overview
 
-Throughout these exercises, we will recreate the plots from \[Day 2 exercise\] using the `ggplot2` package
+Throughout these exercises, we will recreate the plots from [Day 2 exercises](#) using the `ggplot2` package
 
 <!-- TODO: Add reference to the base R plot exercise once it is published-->
 
@@ -35,11 +38,9 @@ If you haven't had the data already, click the button below to download it
 #| warning: false
 library(downloadthis)
 library(readxl)
-titanic <- read_excel("data/Titanic3.xlsx", na = "NA")
+titanic <- read_excel("data/raw/Titanic3.xlsx", na = "NA")
 
-download_this(titanic, 
-              output_name = "Titanic3",
-              output_extension = ".xlsx")
+download_this(titanic, output_name = "Titanic3", output_extension = ".xlsx")
 ```
 :::
 
@@ -49,10 +50,11 @@ We can then load the data by running
 #| message: false
 library(readxl)
 library(ggplot2)
-# make sure to adjust the path to match that on your device
-titanic <- read_excel("data/Titanic3.xlsx", na = "NA")
 
-head(titanic, n=10)
+# make sure to modify the file path to match where it is on your device
+titanic <- read_excel("data/raw/Titanic3.xlsx", na = "NA")
+
+head(titanic, n = 10)
 ```
 
 ------------------------------------------------------------------------
@@ -69,9 +71,9 @@ The end result will look something like this.
 
 library(oucru)
 
-ggplot(titanic, aes(x = age, y = fare, color = pclass)) + 
-  geom_point(size = 1) + 
-  geom_smooth(method = "lm") + 
+ggplot(titanic, aes(x = age, y = fare, color = pclass)) +
+  geom_point(size = 1) +
+  geom_smooth(method = "lm") +
   geom_rug() +
   scale_y_log10("fare paid (GBP)") +
   scale_color_oucru_d() +
@@ -174,7 +176,7 @@ ggplot(titanic, aes(x = age, y = fare)) +
 ggplot(titanic, aes(x = age, y = fare)) +
   geom_point() +
   geom_smooth(method = "lm") +
-  scale_y_log10("fare paid (GBP)") 
+  scale_y_log10("fare paid (GBP)")
 ```
 
 </details>
@@ -193,7 +195,7 @@ Replace `ylab()` with `scale_y_log10()`
 ggplot(titanic, aes(x = age, y = fare)) +
   geom_point() +
   geom_smooth(method = "lm") +
-  scale_y_log10("fare paid (GBP)") 
+  scale_y_log10("fare paid (GBP)")
 ```
 
 **Step 4:** Now, we want to color the data points by passenger class (`pclass`), and split the calculation and plot for the regression line by these 3 groups.
@@ -208,7 +210,7 @@ ggplot(titanic, aes(x = age, y = fare)) +
 ggplot(titanic, aes(x = age, y = fare, color = pclass)) +
   geom_point() +
   geom_smooth(method = "lm") +
-  scale_y_log10("fare paid (GBP)") 
+  scale_y_log10("fare paid (GBP)")
 ```
 
 </details>
@@ -225,7 +227,7 @@ Add `color` to the aesthetic attributes (via `aes()`)
 ggplot(titanic, aes(x = age, y = fare, color = pclass)) +
   geom_point() +
   geom_smooth(method = "lm") +
-  scale_y_log10("fare paid (GBP)") 
+  scale_y_log10("fare paid (GBP)")
 ```
 
 **Step 5:** Next, we want to split the plot into separate panes for each `sex`, add a rug plot to both sides as well.
@@ -239,7 +241,7 @@ ggplot(titanic, aes(x = age, y = fare, color = pclass)) +
 #| warning: false
 ggplot(titanic, aes(x = age, y = fare, color = pclass)) +
   geom_point() +
-  geom_smooth(method = "lm") + 
+  geom_smooth(method = "lm") +
   geom_rug() +
   scale_y_log10("fare paid (GBP)") +
   facet_wrap(~sex)
@@ -260,7 +262,7 @@ ggplot(titanic, aes(x = age, y = fare, color = pclass)) +
 
 ggplot(titanic, aes(x = age, y = fare, color = pclass)) +
   geom_point() +
-  geom_smooth(method = "lm") + 
+  geom_smooth(method = "lm") +
   geom_rug() +
   scale_y_log10("fare paid (GBP)") +
   facet_wrap(~sex)
@@ -277,7 +279,7 @@ ggplot(titanic, aes(x = age, y = fare, color = pclass)) +
 #| warning: false
 ggplot(titanic, aes(x = age, y = fare, color = pclass)) +
   geom_point() +
-  geom_smooth(method = "lm") + 
+  geom_smooth(method = "lm") +
   geom_rug() +
   scale_y_log10("fare paid (GBP)") +
   facet_wrap(~sex) +
@@ -324,7 +326,7 @@ You may also want to check some sample usages of the package [here](https://gith
 
 ggplot(titanic, aes(x = age, y = fare, color = pclass)) +
   geom_point() +
-  geom_smooth(method = "lm") + 
+  geom_smooth(method = "lm") +
   geom_rug() +
   scale_y_log10("fare paid (GBP)") +
   facet_wrap(~sex) +
@@ -339,7 +341,7 @@ ggplot(titanic, aes(x = age, y = fare, color = pclass)) +
 #| warning: false
 #| code-fold: true
 #| code-summary: "Reveal answer"
-ggsave("output/titanic_fare_plot.png", width = 7, heigh=5)
+ggsave("output/titanic_fare_plot.png", width = 7, heigh = 5)
 ```
 
 ------------------------------------------------------------------------
@@ -396,7 +398,7 @@ Another option is to use the boxplot. Start by making a boxplot of age (along y-
 ggplot(titanic) +
   geom_boxplot(
     aes(y = age, x = pclass)
-  ) 
+  )
 ```
 
 Then, add the individual data points to the boxplot. Give the data points a red color and make them (slightly) transparent.
@@ -472,14 +474,14 @@ The end result should look something like this.
 ```{r}
 #| echo: false
 #| warning: false
-ggplot(titanic, aes(x = age, y = survived, color = sex)) + 
-  geom_smooth(method = "loess") + 
-  geom_jitter(width = 0, height=.05, alpha=.5) +
-  facet_wrap(~ pclass) +
-  coord_cartesian(ylim=c(-.1,1.1)) +
+ggplot(titanic, aes(x = age, y = survived, color = sex)) +
+  geom_smooth(method = "loess") +
+  geom_jitter(width = 0, height = .05, alpha = .5) +
+  facet_wrap(~pclass) +
+  coord_cartesian(ylim = c(-.1, 1.1)) +
   scale_color_oucru_d(palette = "group4") +
   theme_bw() +
-  theme(legend.position='top')
+  theme(legend.position = 'top')
 ```
 
 A few details
@@ -513,12 +515,12 @@ The oucru palette can be configured via `scale_color_oucru_d(palette = ...)`
 #| warning: false
 #| code-fold: true
 #| code-summary: "Reveal answer"
-ggplot(titanic, aes(x = age, y = survived, color = sex)) + 
-  geom_smooth(method = "loess") + 
-  geom_jitter(width = 0, height=.05, alpha=.5) +
-  facet_wrap(~ pclass) +
-  coord_cartesian(ylim=c(-.1,1.1)) +
+ggplot(titanic, aes(x = age, y = survived, color = sex)) +
+  geom_smooth(method = "loess") +
+  geom_jitter(width = 0, height = .05, alpha = .5) +
+  facet_wrap(~pclass) +
+  coord_cartesian(ylim = c(-.1, 1.1)) +
   scale_color_oucru_d(palette = "group4") +
   theme_bw() +
-  theme(legend.position='top')
+  theme(legend.position = 'top')
 ```
