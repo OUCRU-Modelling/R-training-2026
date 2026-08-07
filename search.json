@@ -424,7 +424,7 @@
     "href": "slides/IntroductionRDay2.html#packages-where-to-find-them",
     "title": "Introduction to R, Day 2",
     "section": "Packages, where to find them?",
-    "text": "Packages, where to find them?\n\nComprehensive R Archive Network (24504 packages on August 4, 2026)\nGitHub (34867 packages on August 4, 2026)\nBioconductor\nReview\n\n\n\nNeed to be installed on your computer\nR program itself also based on packages. Some loaded at startup base, graphics, stats, utils …\nFor example, base package contains sqrt function\nOther packages need to be loaded before use, best way is via library(pkg_name)"
+    "text": "Packages, where to find them?\n\nComprehensive R Archive Network (24504 packages on August 4, 2026)\nGitHub (34867 packages on August 4, 2026)\nBioconductor\nMonthly Review Top 40 packages\n\n\n\nNeed to be installed on your computer\nR program itself also based on packages. Some loaded at startup base, graphics, stats, utils …\nFor example, base package contains sqrt function\nOther packages need to be loaded before use, best way is via library(pkg_name)"
   },
   {
     "objectID": "slides/IntroductionRDay2.html#another-object-mode-list",
@@ -466,7 +466,7 @@
     "href": "slides/IntroductionRDay2.html#finding-information",
     "title": "Introduction to R, Day 2",
     "section": "Finding Information",
-    "text": "Finding Information\n\nFunction help. R is object oriented!\nSearch on Google (use language r: if result is non-specific)\nchatGPT or an R package such as askgpt or ellmer\nR documentation\nRseek\nR-universe\nCRAN (list with packages, Task Views, FAQs, Vignettes)\nStack Overflow"
+    "text": "Finding Information\n\nFunction help. R is object oriented!\nSearch on Google (use language r: if result is non-specific)\nchatGPT or an R package such as askgpt or ellmer\nR documentation\nRseek\nR-universe\nCRAN (list with packages, Task Views, FAQs, Vignettes)\nStack Overflow\nHave a look at the links provided in the appendix on the course website"
   },
   {
     "objectID": "slides/IntroductionRDay2.html#exercise",

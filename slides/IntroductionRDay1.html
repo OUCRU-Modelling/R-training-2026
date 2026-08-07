@@ -8950,7 +8950,7 @@ Ronald Geskus
 <section id="r-what-is-it-and-why-use-it" class="slide level2">
 <h2>R: What is it and why use it?</h2>
 <ul>
-<li><p>On <a href="http://www.r-project.org/about.html" data-preview-links="true">R Project website</a>: “a language and environment for statistical computing and graphics”</p></li>
+<li><p>On <a href="http://www.r-project.org/about.html">R Project website</a>: “a language and environment for statistical computing and graphics”</p></li>
 <li><p>Free: no money charged and open source</p></li>
 <li><p>Runs on all major operating systems</p></li>
 <li><p>Very flexible and powerful</p>
@@ -8987,7 +8987,7 @@ Ronald Geskus
 </div>
 <div class="fragment">
 <ul>
-<li><a href="https://r4stats.com/articles/software-reviews/r-gui-comparison/" data-preview-links="true">Graphical User Interface</a> e.g. BlueSky, R-Instat, jamovi, RKWard</li>
+<li><a href="https://r4stats.com/articles/software-reviews/r-gui-comparison/">Graphical User Interface</a> e.g. BlueSky, R-Instat, jamovi, RKWard</li>
 </ul>
 </div>
 </section></section>
@@ -9049,7 +9049,7 @@ Ronald Geskus
 <li>Columns: variables</li>
 <li>Rows: observations</li>
 </ul></li>
-<li>Example: <a href="https://hbiostat.org/data/repo/ctitanic3" target="_blank">titanic3</a> data set; passenger characteristics and survival status after disaster with the <a href="https://www.encyclopedia-titanica.org/" data-preview-links="false">Titanic cruise ship</a></li>
+<li>Example: <a href="https://hbiostat.org/data/repo/ctitanic3" data-preview-link="false" target="_blank">titanic3</a> data set; passenger characteristics and survival status after disaster with the <a href="https://www.encyclopedia-titanica.org/" data-preview-link="false" target="_blank">Titanic cruise ship</a></li>
 </ul>
 <div id="qwebr-insertion-location-12"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
@@ -9404,7 +9404,7 @@ How does this translate into R?</p>
 <section id="data-import" class="slide level2 smaller">
 <h2>Data import</h2>
 <ol type="1">
-<li>R: see <a href="https://cran.r-project.org/manuals.html" data-preview-links="true">R Data Import/Export</a></li>
+<li>R: see <a href="https://cran.r-project.org/manuals.html">R Data Import/Export</a></li>
 <li>RStudio: <strong>Environment</strong> pane: <strong>Import Dataset</strong>; or via <strong>File</strong> menu: <strong>Import Dataset</strong>
 <ul>
 <li>text and csv (<code>base</code> or <code>readr</code> package)</li>
@@ -9414,10 +9414,10 @@ How does this translate into R?</p>
 <span id="cb5-2"><a aria-label="2"></a>titanic <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/raw/Titanic3.xlsx&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>SPSS/Stata/SAS (<code>haven</code> package)</li>
-<li>see <a href="https://support.posit.co/hc/en-us/articles/218611977-Importing-Data-with-RStudio" target="_blank">Importing Data with RStudio</a></li>
-<li>Imported as a <a href="https://github.com/tidyverse/tibble" target="_blank">“tibble”</a> (enhancement of <code>data.frame</code>)</li>
+<li>see <a href="https://support.posit.co/hc/en-us/articles/218611977-Importing-Data-with-RStudio" data-preview-link="false" target="_blank">Importing Data with RStudio</a></li>
+<li>Imported as a <a href="https://github.com/tidyverse/tibble" data-preview-link="false" target="_blank">“tibble”</a> (enhancement of <code>data.frame</code>)</li>
 </ul></li>
-<li>Database: <a href="https://solutions.posit.co/connections/db/databases/" data-preview-links="true">Oracle, SQLite, …</a></li>
+<li>Database: <a href="https://solutions.posit.co/connections/db/databases/">Oracle, SQLite, …</a></li>
 </ol>
 </section>
 <section id="data-inspection-and-basic-variable-summaries" class="slide level2 smaller">
@@ -9463,7 +9463,7 @@ How does this translate into R?</p>
 </section>
 <section id="make-exercises-3-and-4" class="slide level2">
 <h2>Make exercises 3 and 4</h2>
-<p>Data found here: <a href="https://github.com/OUCRU-Modelling/R-training-2025/raw/refs/heads/main/slides/data/Titanic3.xlsx">Titanic3.xlsx</a></p>
+<p>Data found here: <a href="https://github.com/OUCRU-Modelling/R-training-2025/raw/refs/heads/main/slides/data/Titanic3.xlsx" data-preview-link="false" target="_blank">Titanic3.xlsx</a></p>
 <!-- Package readxl needs to be installed (not sure whether it comes with RStudio) -->
 <!-- ```{.r} -->
 <!-- #| label: "First data overview" -->
@@ -9560,7 +9560,7 @@ How does this translate into R?</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-label="1"></a><span class="fu">levels</span>(titanic<span class="sc">$</span>sex) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;M&quot;</span>,<span class="st">&quot;F&quot;</span>)</span>
 <span id="cb14-2"><a aria-label="2"></a><span class="do">## when (re)creating the factor</span></span>
 <span id="cb14-3"><a aria-label="3"></a>titanic<span class="sc">$</span>sex <span class="ot">&lt;-</span> <span class="fu">factor</span>(titanic<span class="sc">$</span>sex, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;M&quot;</span>,<span class="st">&quot;F&quot;</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p><a href="https://www.gormanalysis.com/blog/r-introduction-to-factors-tutorial" data-preview-links="true">Good introduction to factors</a></p></li>
+<li><p><a href="https://www.gormanalysis.com/blog/r-introduction-to-factors-tutorial">Good introduction to factors</a></p></li>
 </ul>
 </section>
 <section id="dates" class="slide level2 smaller">
@@ -9578,12 +9578,12 @@ How does this translate into R?</p>
 <p><code>format</code>: change display format</p></li>
 <li><p>See page 5 of this <a href="http://cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf" target="_blank">reference card</a></p></li>
 <li><p>Packages <a href="https://cran.r-project.org/web/packages/anytime/index.html" target="_blank">anytime</a> and <a href="https://cran.r-project.org/web/packages/lubridate/index.html" target="_blank">lubridate</a> useful</p></li>
-<li><p><a href="https://blog.rsquaredacademy.com/handling-date-and-time-in-r" target="_blank">A Comprehensive Introduction to Handling Date &amp; Time</a></p></li>
+<li><p><a href="https://blog.rsquaredacademy.com/handling-date-and-time-in-r" data-preview-link="false" target="_blank">A Comprehensive Introduction to Handling Date &amp; Time</a></p></li>
 </ul>
 </section>
 <section id="make-exercises-5-6-and-7" class="slide level2">
 <h2>Make exercises 5, 6 and 7</h2>
-<p>Return to <a href="https://oucru-modelling.github.io/R-training-2025/">main course page</a></p>
+<p>Return to <a href="https://oucru-modelling.github.io/R-training-2026/" data-preview-link="false" target="_blank">main course page</a></p>
 
 
 </section></section>
@@ -10707,7 +10707,7 @@ window.QuartoSupport = function () {
         hideCursorTime: 5000,
 
         // Opens links in an iframe preview overlay
-        previewLinks: false,
+        previewLinks: true,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
         transition: 'fade',
@@ -10764,6 +10764,44 @@ window.QuartoSupport = function () {
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
