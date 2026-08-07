@@ -453,6 +453,117 @@ ggplot(df, aes(x = coverage, y = inequality)) +
 :::
 ::::::
 
+## Setting the theme {.smaller}
+
+::: {.incremental}
+- In `ggplot2`, **themes** control the display of all **non-data** elements of the plot
+- What are **non-data** elements?
+- List of **non-data** elements:
+  - titles
+  - labels
+  - fonts
+  - background
+  - gridlines
+  - legends
+:::
+
+## Setting the theme {.smaller}
+
+:::::: columns
+:::: {.column width="60%" .incremental}
+- Which part of the figure's **theme** do we want to modify?
+- Use the [official documentation](https://ggplot2.tidyverse.org/reference/theme.html) to find out how and what can we change
+- Quick answer: `theme(legend.position = ...)`
+::::
+
+::: {.column width="40%"}
+```{r}
+#| echo: FALSE
+#| fig-width: 5
+#| fig-height: 5
+#| out-width: "100%"
+ggplot(df, aes(x = coverage, y = inequality)) +
+  geom_point(aes(size = pop, color = region))
+```
+:::
+::::::
+
+## Setting the theme {.smaller}
+
+:::::: columns
+:::: {.column width="60%" .incremental}
+::: {.codewindow .r}
+code.R
+
+```{r}
+#| eval: FALSE
+#| code-line-numbers: "3"
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region)) +
+  theme(legend.position = "top")
+```
+:::
+
+Moved the legend to the top of the figure
+::::
+
+::: {.column width="40%"}
+```{r}
+#| echo: FALSE
+#| fig-width: 5
+#| fig-height: 5
+#| out-width: "100%"
+ggplot(df, aes(x = coverage, y = inequality)) +
+  geom_point(aes(size = pop, color = region)) +
+  theme(legend.position = "top")
+```
+:::
+::::::
+
+## Setting the theme {.smaller}
+
+:::::: columns
+:::: {.column width="60%" .incremental}
+::: {.codewindow .r}
+code.R
+
+```{r}
+#| eval: FALSE
+#| code-line-numbers: "3-8"
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region)) +
+  theme(
+    legend.position = "top",
+    legend.direction = "vertical",
+    legend.text = element_text(size = 11),
+    legend.key.height = unit(0.5, "cm")
+  )
+```
+:::
+
+A few more tweaks to make it look nice
+
+Ask your LLM what they mean!
+::::
+
+::: {.column width="40%"}
+```{r}
+#| echo: FALSE
+#| fig-width: 5
+#| fig-height: 5
+#| out-width: "100%"
+ggplot(df, aes(x = coverage, y = inequality)) +
+  geom_point(aes(size = pop, color = region)) +
+  theme(
+    legend.position = "top",
+    legend.direction = "vertical",
+    legend.text = element_text(size = 11),
+    legend.key.height = unit(0.5, "cm")
+  )
+```
+:::
+::::::
+
 ## Add key country labels {.smaller}
 
 :::::: columns
