@@ -56,7 +56,7 @@ Please follow this [pre-course setups handout](handouts/precourse_setup.qmd) to 
 
 ### Day 2 (Tuesday)
 
-- [Lecture slides](slides/IntroductionRDay2.qmd)
+- [Lecture slides](slides/IntroductionRDay2.qmd){.external target="_blank"}
 - **Learning objectives**:
   1. Create visualisations using Base R graphics
   2. Write simple functions to automate tasks; the package system

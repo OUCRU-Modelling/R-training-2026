@@ -258,27 +258,27 @@ good.morning()
 
 - Can make it into a <span style="color:red;">package</span>, i.e. a collection of
     functions (and data):
-  - [ggplot2](https://ggplot2.tidyverse.org/index.html){preview-links="true"}
-  - [tidyverse](https://www.tidyverse.org){preview-links="true"}
-  - [WHO TB data](https://github.com/seabbs/getTBinR){target="_blank"}
-  - [AMR](https://msberends.r-universe.dev/articles/AMR/welcome_to_AMR.html){preview-links="true"}
-  - [pharmaverse](https://pharmaverse.github.io/blog/posts/2025-02-28_theres_a_pharmaverse_package_for_that/managing-clinical-trial-data.html){preview-links="true"}
-  - [SUSENAS](https://cran.r-project.org/web/packages/SUSENAS/index.html){preview-links="true"}
-  - [vietnameseConverter](https://cran.r-project.org/web/packages/vietnameseConverter/index.html){preview-links="true"}
-  - [sudoku](https://cran.r-project.org/web/packages/sudoku/index.html){preview-links="true"}
-  - [rStrava](https://cran.r-project.org/web/packages/rStrava/index.html){preview-links="true"}
+  - [ggplot2](https://ggplot2.tidyverse.org/index.html)
+  - [tidyverse](https://www.tidyverse.org)
+  - [WHO TB data](https://github.com/seabbs/getTBinR){preview-link="false" target="_blank"}
+  - [AMR](https://msberends.r-universe.dev/articles/AMR/welcome_to_AMR.html)
+  - [pharmaverse](https://pharmaverse.github.io/blog/posts/2025-02-28_theres_a_pharmaverse_package_for_that/managing-clinical-trial-data.html)
+  - [SUSENAS](https://cran.r-project.org/web/packages/SUSENAS/index.html)
+  - [vietnameseConverter](https://cran.r-project.org/web/packages/vietnameseConverter/index.html)
+  - [sudoku](https://cran.r-project.org/web/packages/sudoku/index.html)
+  - [rStrava](https://cran.r-project.org/web/packages/rStrava/index.html)
 
--   Give package developers appropriate credit and [cite their packages](https://ropensci.org/blog/2021/11/16/how-to-cite-r-and-r-packages/){preview-links="true"}
+-   Give package developers appropriate credit and [cite their packages](https://ropensci.org/blog/2021/11/16/how-to-cite-r-and-r-packages/)
 	
 ## Packages, where to find them? {.smaller}
 
 
-- [Comprehensive R Archive Network](https://cloud.r-project.org/web/packages/available_packages_by_name.html){preview-links="true"}
+- [Comprehensive R Archive Network](https://cloud.r-project.org/web/packages/available_packages_by_name.html)
     (24504 packages on August 4, 2026)
-- [GitHub](https://rdrr.io/find/?repos=cran%2Cbioc%2Crforge%2Cgithub&page=0&fuzzy_slug=){target="_blank"}
+- [GitHub](https://rdrr.io/find/?repos=cran%2Cbioc%2Crforge%2Cgithub&page=0&fuzzy_slug=){preview-link="false" target="_blank"}
   (34867 packages on August 4, 2026)
-- [Bioconductor](https://www.bioconductor.org/packages/release/BiocViews.html#___Software){preview-links="true"}
-- [Review](https://rworks.dev/posts/june-2026-top-40-new-cran-packages/){target="_blank"}
+- [Bioconductor](https://www.bioconductor.org/packages/release/BiocViews.html#___Software)
+- [Monthly Review Top 40 packages](https://rworks.dev/posts/june-2026-top-40-new-cran-packages/){target="_blank"}
 
 ::: {.fragment}
 - Need to be installed on your computer
@@ -387,19 +387,19 @@ Object of mode `list` and of class `lm`. Help file for summary: `summary.lm`
 -   Search on Google (use `language r:` if result is non-specific)
 
 -   chatGPT or an R package such as
-    [askgpt](https://github.com/cran/askgpt/){target="_blank"}
+    [askgpt](https://github.com/cran/askgpt/){preview-link="false" target="_blank"}
     or [ellmer](https://cran.r-project.org/web/packages/ellmer/index.html){target="_blank"}
 
 -   [R documentation](https://www.rdocumentation.org){target="_blank"}  
-[Rseek](http://rseek.org){preview-links="false"}
+[Rseek](http://rseek.org){preview-link="false" target="_blank"}
 
 -   [R-universe](https://r-universe.dev/search){target="_blank"}
 
 -   CRAN ([list with packages](https://cloud.r-project.org/){target="_blank"}, [Task Views](https://cran.r-project.org/web/views/){target="_blank"}, [FAQs](https://cran.r-project.org/faqs.html){target="_blank"}, Vignettes)
 
--   [Stack Overflow](http://stackoverflow.com/questions/tagged/r){preview-links="false"}
+-   [Stack Overflow](http://stackoverflow.com/questions/tagged/r){preview-link="false" target="_blank"}
 
-<!-- -   Have a look at the links provided at the end of the handout -->
+-   Have a look at the links provided in the appendix on the course website
 
 ## Exercise 
 

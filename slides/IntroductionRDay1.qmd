@@ -19,6 +19,7 @@ format:
     slide-number: true
     logo: "figures/OUCRU.jpg"
     theme: solarized
+    preview-links: true
     transition: fade
     show-slide-number: print
     embed-resources: true
@@ -27,6 +28,9 @@ format:
           <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.js'></script>
 filters: 
   - webr
+  - assign
+profile: 
+  default: assign
 ---
 
 ## Learning goals {.smaller} 
@@ -56,7 +60,7 @@ Not: using R for statistics, bioinformatics or mathematical modeling
 
 ## R: What is it and why use it? 
 
-- On [R Project website](http://www.r-project.org/about.html){preview-links="true"}: "a language and environment for statistical computing and graphics"
+- On [R Project website](http://www.r-project.org/about.html): "a language and environment for statistical computing and graphics"
 
 - Free: no money charged and open source
 - Runs on all major operating systems
@@ -87,7 +91,7 @@ Not: using R for statistics, bioinformatics or mathematical modeling
 
 ::: {.fragment}
 - [Graphical User
-Interface](https://r4stats.com/articles/software-reviews/r-gui-comparison/){preview-links="true"}
+Interface](https://r4stats.com/articles/software-reviews/r-gui-comparison/)
 e.g. BlueSky, R-Instat, jamovi, RKWard
 :::
 
@@ -173,8 +177,8 @@ Note: use `Ctrl/Cmd + Enter/Return` to run single line
 - Most often rectangular format
   - Columns: variables
   - Rows: observations
-- Example: [titanic3](https://hbiostat.org/data/repo/ctitanic3){target="_blank"} data set; passenger
-  characteristics and survival status after disaster with the [Titanic cruise ship](https://www.encyclopedia-titanica.org/){preview-links="false"}
+- Example: [titanic3](https://hbiostat.org/data/repo/ctitanic3){preview-link="false" target="_blank"} data set; passenger
+  characteristics and survival status after disaster with the [Titanic cruise ship](https://www.encyclopedia-titanica.org/){preview-link="false" target="_blank"}
 
 
 ```{webr-r}
@@ -627,7 +631,7 @@ Consists of 4 main panes
 
 ## Data import {.smaller}
 
-1. R: see [R Data Import/Export](https://cran.r-project.org/manuals.html){preview-links="true"}
+1. R: see [R Data Import/Export](https://cran.r-project.org/manuals.html)
 2. RStudio: **Environment** pane: **Import Dataset**; or via **File** menu: **Import Dataset** 
    - text and csv (`base` or `readr` package)
    - Excel (`readxl` package)
@@ -636,10 +640,11 @@ Consists of 4 main panes
    titanic <- read_excel("data/raw/Titanic3.xlsx")
    ```
    - SPSS/Stata/SAS (`haven` package)
-   - see [Importing Data with RStudio](https://support.posit.co/hc/en-us/articles/218611977-Importing-Data-with-RStudio){target="_blank"}
-   - Imported as a ["tibble"](https://github.com/tidyverse/tibble){target="_blank"}
+   - see [Importing Data with
+     RStudio](https://support.posit.co/hc/en-us/articles/218611977-Importing-Data-with-RStudio){preview-link="false" target="_blank"}
+   - Imported as a ["tibble"](https://github.com/tidyverse/tibble){preview-link="false" target="_blank"}
     (enhancement of `data.frame`)
-3. Database: [Oracle, SQLite, ...](https://solutions.posit.co/connections/db/databases/){preview-links="true"}
+3. Database: [Oracle, SQLite, ...](https://solutions.posit.co/connections/db/databases/)
 
 
 
@@ -698,7 +703,7 @@ quantile(titanic$age)
 
 ## Make exercises 3 and 4 
 
-Data found here: [Titanic3.xlsx](https://github.com/OUCRU-Modelling/R-training-2025/raw/refs/heads/main/slides/data/Titanic3.xlsx)
+Data found here: [Titanic3.xlsx](https://github.com/OUCRU-Modelling/R-training-2025/raw/refs/heads/main/slides/data/Titanic3.xlsx){preview-link="false" target="_blank"}
 
 <!-- Package readxl needs to be installed (not sure whether it comes with RStudio) -->
 
@@ -815,7 +820,7 @@ xtabs(~titanic$survived, data=titanic, subset=(titanic$sex=="male"))
   titanic$sex <- factor(titanic$sex, labels=c("M","F"))
   ```
 
-- [Good introduction to factors](https://www.gormanalysis.com/blog/r-introduction-to-factors-tutorial){preview-links="true"}
+- [Good introduction to factors](https://www.gormanalysis.com/blog/r-introduction-to-factors-tutorial)
   
 ## Dates {.smaller}
 
@@ -835,12 +840,15 @@ xtabs(~titanic$survived, data=titanic, subset=(titanic$sex=="male"))
 - Packages [anytime](https://cran.r-project.org/web/packages/anytime/index.html){target="_blank"} and
     [lubridate](https://cran.r-project.org/web/packages/lubridate/index.html){target="_blank"} useful
 
-- [A Comprehensive Introduction to Handling Date & Time](https://blog.rsquaredacademy.com/handling-date-and-time-in-r){target="_blank"}
+- [A Comprehensive Introduction to Handling Date &
+  Time](https://blog.rsquaredacademy.com/handling-date-and-time-in-r){preview-link="false"
+  target="_blank"}
 
 
 
 ## Make exercises 5, 6 and 7
 
-Return to [main course page](https://oucru-modelling.github.io/R-training-2025/)
+Return to [main course page](https://oucru-modelling.github.io/R-training-2026/){preview-link="false"
+  target="_blank"}
 
 
