@@ -52,7 +52,7 @@ Please follow this [precourse handout](handouts/precourse_setup.qmd){target="_bl
 - Exercises:
   - [Exercises](handouts/exercises_Day1.qmd){target="_blank"}
   - [Exercise answers](handouts/exercises_Day1_answer.qmd){target="_blank"}
-  <!-- - [Exercise answers script](handouts/exercises_Day1_answer.R){target="_blank"} -->
+  - [Exercise answers script](handouts/exercises_Day1_answer.R){target="_blank"}
 - [Example R code scripts - Day 1](slides/Scripts/ExampleCodeDay1.R){target="_blank"}
 
 ### Day 2 (Tuesday)
