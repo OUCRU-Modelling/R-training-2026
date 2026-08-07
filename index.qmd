@@ -30,7 +30,6 @@ date-format: "MMMM D, YYYY -- HH:mm:ss (z)"
 - Dr. Nguyen Lam Vuong, Biostatistics group, OUCRU HCM
 - Mr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM
 
-
 ## Pre-course setups and requirements
 
 Please follow this [precourse handout](handouts/precourse_setup.qmd){target="_blank"} to setup R and RStudio.
@@ -52,8 +51,8 @@ Please follow this [precourse handout](handouts/precourse_setup.qmd){target="_bl
 - Exercises:
   - [Exercises](handouts/exercises_Day1.qmd){target="_blank"}
   - [Exercise answers](handouts/exercises_Day1_answer.qmd){target="_blank"}
-  - [Exercise answers script](handouts/exercises_Day1_answer.R){target="_blank"}
-- [Example R code scripts - Day 1](slides/Scripts/ExampleCodeDay1.R){target="_blank"}
+  - {{< downloadthis handouts/exercises_Day1_answer.R dname="exercises_Day1_answer" label="Exercise answers script" type="primary">}}
+- {{< downloadthis slides/Scripts/ExampleCodeDay1.R dname="ExampleCodeDay1" label="Example R code scripts - Day 1" type="primary">}}
 
 ### Day 2 (Tuesday)
 
