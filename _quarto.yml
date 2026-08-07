@@ -19,9 +19,9 @@ website:
       - href: slides/IntroductionRDay1.qmd
         text: Introduction to R (Day 1)
       - href: slides/viz.qmd
-        text: Principles of data visualisation
+        text: Principles of data visualisation (Day 3)
       - href: slides/qt-repro-res.qmd
-        text: Reproducible research and reporting using Quarto
+        text: Reproducible research and reporting using Quarto (Day 5)
     tools:
       - icon: github
         href: https://github.com/OUCRU-Modelling/R-training-2026

@@ -245,6 +245,895 @@
     "text": "Slide structure\n\n\n\nindex.qmd\n---\ntitle: \"My Presentation\"\nauthor: \"Your Name\"\nformat: \n  revealjs:\n    chalkboard: true\ntoc: false\n---\n\n## Slide Title\n\n- Bullet point 1\n- Bullet point 2\n\n## Code Blocks & Highlighting\n\nYou can add code blocks like this:\n\n```{r}\n# R code block\nsummary(cars)\n```"
   },
   {
+    "objectID": "slides/viz.html#what-to-expect",
+    "href": "slides/viz.html#what-to-expect",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "What to expect",
+    "text": "What to expect\nHow to make an informative visual representation of data and/or results\n\nPart I: process of graph creation\nPart II: principles of graph interpretation\n\n\n\n\n\n\n\nNote\n\n\nGraph = diagram = chart = figure = picture"
+  },
+  {
+    "objectID": "slides/viz.html#section",
+    "href": "slides/viz.html#section",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "",
+    "text": "But it takes\n\nknowledge of graphics principles\neffort; trial and error\ntime\n\nto make a “good” one"
+  },
+  {
+    "objectID": "slides/viz.html#who-created-this-graph",
+    "href": "slides/viz.html#who-created-this-graph",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Who created this graph?",
+    "text": "Who created this graph?"
+  },
+  {
+    "objectID": "slides/viz.html#answer-florence-nightingale",
+    "href": "slides/viz.html#answer-florence-nightingale",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Answer: Florence Nightingale",
+    "text": "Answer: Florence Nightingale\nRose plot to convince UK authorities of importance of hygiene"
+  },
+  {
+    "objectID": "slides/viz.html#example-of-informative-graph",
+    "href": "slides/viz.html#example-of-informative-graph",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Example of informative graph",
+    "text": "Example of informative graph"
+  },
+  {
+    "objectID": "slides/viz.html#example-of-noninformative-graph",
+    "href": "slides/viz.html#example-of-noninformative-graph",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Example of noninformative graph",
+    "text": "Example of noninformative graph\nHinrichsen: risk factors for hepatitis G infection in haemodialysis patients\n\nDo we need a graph?\nAre there enough data points to merit a plot?\n\nDepends on mode of presentation: conference lecture (time limit), article\n\nIf we use a graph, is this one the most truthful and informative?"
+  },
+  {
+    "objectID": "slides/viz.html#graph-versus-table",
+    "href": "slides/viz.html#graph-versus-table",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Graph versus table",
+    "text": "Graph versus table\nCohort study on 1187 HIV infected persons in The Gambia"
+  },
+  {
+    "objectID": "slides/viz.html#pattern-discovery-fake-results",
+    "href": "slides/viz.html#pattern-discovery-fake-results",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Pattern discovery (fake results)",
+    "text": "Pattern discovery (fake results)"
+  },
+  {
+    "objectID": "slides/viz.html#points-to-consider",
+    "href": "slides/viz.html#points-to-consider",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Points to consider",
+    "text": "Points to consider\n\n\nWhy do we make a graph? (purpose)\n\nWe want to explore and inspect our data or results\nPresent data or results, often with a message, to others\n\n\n\n\nWhere do we show the graph: research paper, conference, website\n\n\n\n\nWho is the audience. Level of background knowledge\n\n\n\n\nWhat do we want to show (data)\n\nGraph: visual representation of information (“encoding”)\nmapping from data/results to figure"
+  },
+  {
+    "objectID": "slides/viz.html#the-origin",
+    "href": "slides/viz.html#the-origin",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "The origin",
+    "text": "The origin\n\n\nThe author\n\nLeland Wilkinson, The Grammar of Graphics, Springer 2005\nAuthor of SYSTAT; 1995: sold to SPSS\n1994 - 2007: Senior VP, SPSS"
+  },
+  {
+    "objectID": "slides/viz.html#what-is-a-grammar",
+    "href": "slides/viz.html#what-is-a-grammar",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "What is a grammar?",
+    "text": "What is a grammar?\n\n\n\nDefines components of a sentence (verb, noun, …) and rules how to combine them\nSuch a sentence does not necessarily have to make sense\n“The lab is flying menacingly” (Subject + Conjugate + Verb + Adverb)\n\n\n E.g. this is one grammar rule of English"
+  },
+  {
+    "objectID": "slides/viz.html#what-is-a-grammar-1",
+    "href": "slides/viz.html#what-is-a-grammar-1",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "What is a grammar?",
+    "text": "What is a grammar?\n\nGraphics grammar:\n\nDefines components of a figure and rules how to combine them\nDoes not advise on the best choice of scale (linear, logarithmic), color or line type; one can create noninformative graphs\n\n\n\nGrammar helps expressing ideas or information in a clear and coherent way"
+  },
+  {
+    "objectID": "slides/viz.html#grammar-of-a-graph",
+    "href": "slides/viz.html#grammar-of-a-graph",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Grammar of a graph",
+    "text": "Grammar of a graph\n\nA graph maps information (data) to aesthetic attributes of geometric objects\nAesthetic attributes are the “role” of variables in plot: location (often along x-axis and y-axis), colour, size, shape\nGeometric objects are the shapes of the data you’re visualising, e.g. points, lines, bars"
+  },
+  {
+    "objectID": "slides/viz.html#scatter-plot",
+    "href": "slides/viz.html#scatter-plot",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Scatter plot",
+    "text": "Scatter plot\n\n\n\n\n\n“Mapping routine measles vaccination in low-and middle-income countries.” Nature 589, no. 7842 (2021): 415-419. (IF 2023 = 50.5).\nHow do you read this plot?"
+  },
+  {
+    "objectID": "slides/viz.html#scatter-plot-1",
+    "href": "slides/viz.html#scatter-plot-1",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Scatter plot",
+    "text": "Scatter plot\n\n\n\n\nWhat information would you need to map each point correctly onto this plot?\n\nCountry name\nPosition\nSize\nColor"
+  },
+  {
+    "objectID": "slides/viz.html#scatter-plot-2",
+    "href": "slides/viz.html#scatter-plot-2",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Scatter plot",
+    "text": "Scatter plot"
+  },
+  {
+    "objectID": "slides/viz.html#data",
+    "href": "slides/viz.html#data",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Data",
+    "text": "Data\n\n\n\n\n\n\n\n\n\n\nlabel\n(country)\nx\n(coverage)\ny\n(inequality)\nsize\n(population)\ncolor\n(region)\n\n\n\n\nNigeria\n0.20\n-0.07\n220M\nSub-Saharan Africa\n\n\n\nData can be downloaded here: nature_plot.xlsx\n\n\n# A tibble: 6 × 5\n  country          coverage inequality   pop region                             \n  &lt;chr&gt;               &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;                              \n1 Angola              -0.14      0.1    30.2 Sub-Saharan Africa                 \n2 Papua New Guinea    -0.35      0.08   16.5 Southeast Asia, East Asia and Ocea…\n3 Pakistan             0.12      0.05   82.5 South Asia                         \n4 Chad                 0.14      0.01   27.5 Sub-Saharan Africa                 \n5 Ethiopia             0.32      0.005  55   Sub-Saharan Africa                 \n6 Kenya                0.07     -0.06   30.2 Sub-Saharan Africa"
+  },
+  {
+    "objectID": "slides/viz.html#scatter-plot-3",
+    "href": "slides/viz.html#scatter-plot-3",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Scatter plot",
+    "text": "Scatter plot\n\n\n\n\nLet’s draw this “by hand”"
+  },
+  {
+    "objectID": "slides/viz.html#draw-this-by-hand",
+    "href": "slides/viz.html#draw-this-by-hand",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Draw this “by hand”",
+    "text": "Draw this “by hand”\n\n\n\n\n\nDraw the axes\nDraw the data points\nAdjust point sizes\nColour-code the regions\nAdd key country labels"
+  },
+  {
+    "objectID": "slides/viz.html#draw-the-axes",
+    "href": "slides/viz.html#draw-the-axes",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Draw the axes",
+    "text": "Draw the axes\n\n\n\ncode.R\n\n# df &lt;- ...\nggplot(data = df, mapping = aes(x = coverage, y = inequality))\n\n\n\n➡ The x and y aesthetics determine which variable is drawn on each axis."
+  },
+  {
+    "objectID": "slides/viz.html#draw-the-data-points",
+    "href": "slides/viz.html#draw-the-data-points",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Draw the data points",
+    "text": "Draw the data points\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point()"
+  },
+  {
+    "objectID": "slides/viz.html#changing-the-plot-orientation",
+    "href": "slides/viz.html#changing-the-plot-orientation",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Changing the plot orientation",
+    "text": "Changing the plot orientation\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = inequality, y = coverage)) +\n  geom_point()\n\n\n\nSwapping x and y aesthetics will change the plot orientation"
+  },
+  {
+    "objectID": "slides/viz.html#adjust-point-sizes",
+    "href": "slides/viz.html#adjust-point-sizes",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Adjust point sizes",
+    "text": "Adjust point sizes\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop))\n\n\n\nObserve the 2 mapping argument calls, one in ggplot() and one in geom_point()"
+  },
+  {
+    "objectID": "slides/viz.html#colour-code-the-regions",
+    "href": "slides/viz.html#colour-code-the-regions",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Colour-code the regions",
+    "text": "Colour-code the regions\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region))"
+  },
+  {
+    "objectID": "slides/viz.html#setting-the-theme",
+    "href": "slides/viz.html#setting-the-theme",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Setting the theme",
+    "text": "Setting the theme\n\nIn ggplot2, themes control the display of all non-data elements of the plot\nWhat are non-data elements?\nList of non-data elements:\n\ntitles\nlabels\nfonts\nbackground\ngridlines\nlegends"
+  },
+  {
+    "objectID": "slides/viz.html#setting-the-theme-1",
+    "href": "slides/viz.html#setting-the-theme-1",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Setting the theme",
+    "text": "Setting the theme\n\n\n\nWhich part of the figure’s theme do we want to modify?\nUse the official documentation to find out how and what can we change\nQuick answer: theme(legend.position = ...)"
+  },
+  {
+    "objectID": "slides/viz.html#setting-the-theme-2",
+    "href": "slides/viz.html#setting-the-theme-2",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Setting the theme",
+    "text": "Setting the theme\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  theme(legend.position = \"top\")\n\n\nMoved the legend to the top of the figure"
+  },
+  {
+    "objectID": "slides/viz.html#setting-the-theme-3",
+    "href": "slides/viz.html#setting-the-theme-3",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Setting the theme",
+    "text": "Setting the theme\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\")\n  )\n\n\nA few more tweaks to make it look nice\nAsk your LLM what they mean!"
+  },
+  {
+    "objectID": "slides/viz.html#add-key-country-labels",
+    "href": "slides/viz.html#add-key-country-labels",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Add key country labels",
+    "text": "Add key country labels\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country))"
+  },
+  {
+    "objectID": "slides/viz.html#compare-with-the-original-figure",
+    "href": "slides/viz.html#compare-with-the-original-figure",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Compare with the original figure",
+    "text": "Compare with the original figure\n\n\nOriginal figure \n\nOurs (so far)"
+  },
+  {
+    "objectID": "slides/viz.html#grammar-of-a-graph-1",
+    "href": "slides/viz.html#grammar-of-a-graph-1",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Grammar of a graph",
+    "text": "Grammar of a graph\n\nMapping from information (data) to aesthetic attributes of geometric objects\nAesthetic attributes are the “role” of variables in plot: location (often along x-axis and y-axis), colour, size, shape\nGeometric objects are what you see on the plot (points, lines, bars)\n\n\n\nScales maps the information (data) to aesthetic attributes\nGuides defines how scales are represented"
+  },
+  {
+    "objectID": "slides/viz.html#scales-and-guides",
+    "href": "slides/viz.html#scales-and-guides",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Scales and guides",
+    "text": "Scales and guides\n\nIn other words:\n\nScales control properties of aesthetics, e.g. x-axis limits, y-axis ticks, point color, point size, line type, etc.\nGuides control the figure legends, where we read data values from the graph"
+  },
+  {
+    "objectID": "slides/viz.html#scales",
+    "href": "slides/viz.html#scales",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Scales",
+    "text": "Scales\n\nScales can also include statistical transformation(s)!"
+  },
+  {
+    "objectID": "slides/viz.html#scales-statistical-transformation",
+    "href": "slides/viz.html#scales-statistical-transformation",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Scales: statistical transformation",
+    "text": "Scales: statistical transformation\n\nValue transformation (e.g. linear scale -&gt; logarithm scale)\nEach bar in a histogram can be a “sum” or a “percentage/frequency”, depending on which statistical transformation you want to apply\nA Least Square Regression line can be fitted before plotting, this also counts as a statistical transformation"
+  },
+  {
+    "objectID": "slides/viz.html#scales-statistical-transformation-1",
+    "href": "slides/viz.html#scales-statistical-transformation-1",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Scales: statistical transformation",
+    "text": "Scales: statistical transformation\n\n\n\n\n\n\nImportant\n\n\nStatistical transformation(s) on the scales do not change the data, just the scale we use to observe it\n\n\n\n\n\nLinear scale on the x-axis\n\n\n\n\n\n\n\n\n\n\nLog-10-scale on the x-axis"
+  },
+  {
+    "objectID": "slides/viz.html#scales-and-guides-1",
+    "href": "slides/viz.html#scales-and-guides-1",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Scales and guides",
+    "text": "Scales and guides\n\nIn summary:\n\nScales control properties of aesthetics, e.g. x-axis limits, y-axis ticks, point color, point size, line type, etc.\nGuides control the figure legends, where we read data values from the graph\nScales can also include statistical transformation(s)\n\n\n\n\nSome other aesthetic attributes that can be controlled with a scale:\n\ncolour/fill\nline type\ngeometric object shape\ngeometric object size"
+  },
+  {
+    "objectID": "slides/viz.html#refine-the-plot-the-colour-scale",
+    "href": "slides/viz.html#refine-the-plot-the-colour-scale",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Refine the plot: the colour scale",
+    "text": "Refine the plot: the colour scale\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country))"
+  },
+  {
+    "objectID": "slides/viz.html#refine-the-plot-the-colour-scale-1",
+    "href": "slides/viz.html#refine-the-plot-the-colour-scale-1",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Refine the plot: the colour scale",
+    "text": "Refine the plot: the colour scale\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_discrete(\n    palette = scales::pal_viridis()\n  )\n\n\nUse the built-in Viridis color palette"
+  },
+  {
+    "objectID": "slides/viz.html#refine-the-plot-the-colour-scale-2",
+    "href": "slides/viz.html#refine-the-plot-the-colour-scale-2",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Refine the plot: the colour scale",
+    "text": "Refine the plot: the colour scale\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_viridis_d()\n\n\n\n\n\n\n\n\nTip\n\n\nYou can also use scale_color_viridis_d(), which is a shorthand for the scale layer we used on the previous slide\nBreakdown:\n\nscale means we are adding a scale layer\n_color means this scale is for the color aesthetic (checking your aes()!)\n_viridis defines the color palette\n_d() stands for “discrete”, so this scale is for a discrete variable"
+  },
+  {
+    "objectID": "slides/viz.html#refine-the-plot-the-colour-scale-3",
+    "href": "slides/viz.html#refine-the-plot-the-colour-scale-3",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Refine the plot: the colour scale",
+    "text": "Refine the plot: the colour scale\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_manual(values = my_pallete)\n\n\nYou can define and use your own custom color palette!"
+  },
+  {
+    "objectID": "slides/viz.html#refine-the-plot-the-point-size-scale",
+    "href": "slides/viz.html#refine-the-plot-the-point-size-scale",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Refine the plot: the point-size scale",
+    "text": "Refine the plot: the point-size scale\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_manual(values = my_pallete, guide = guide_legend(order = 2)) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#refine-the-plot-the-axes",
+    "href": "slides/viz.html#refine-the-plot-the-axes",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Refine the plot: the axes",
+    "text": "Refine the plot: the axes\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_manual(values = my_pallete, guide = guide_legend(order = 2)) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_x_continuous(\n    breaks = c(-0.25, 0, 0.25, 0.5),\n    limits = c(-0.4, 0.55)\n  ) +\n  scale_y_continuous(\n    breaks = c(-0.1, 0, 0.1),\n    limits = c(-0.16, 0.1)\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#refine-the-plot-labels-and-theme",
+    "href": "slides/viz.html#refine-the-plot-labels-and-theme",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Refine the plot: labels and theme",
+    "text": "Refine the plot: labels and theme\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_manual(\n    name = \"\",\n    values = my_pallete,\n    guide = guide_legend(order = 2)\n  ) +\n  scale_size_continuous(\n    name = \"\",\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_x_continuous(\n    name = \"Change in MCV1 coverage (2019-2000)\",\n    breaks = c(-0.25, 0, 0.25, 0.5),\n    limits = c(-0.4, 0.55)\n  ) +\n  scale_y_continuous(\n    name = \"Change in absolute geographical inequality (2019-2000)\",\n    breaks = c(-0.1, 0, 0.1),\n    limits = c(-0.16, 0.1)\n  ) +\n  theme_classic() +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\"),\n    axis.text = element_text(size = 11)\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#refine-the-plot-minor-tweaks",
+    "href": "slides/viz.html#refine-the-plot-minor-tweaks",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Refine the plot: minor tweaks",
+    "text": "Refine the plot: minor tweaks\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region), alpha = 0.8) +\n  geom_text(mapping = aes(label = country), hjust = -0.2, vjust = 0.2) +\n  geom_vline(xintercept = 0, color = \"#999999\") +\n  geom_hline(yintercept = 0, color = \"#999999\") +\n  scale_color_manual(\n    name = \"\",\n    values = my_pallete,\n    guide = guide_legend(order = 2)\n  ) +\n  scale_size_continuous(\n    name = \"\",\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_x_continuous(\n    name = \"Change in MCV1 coverage (2019-2000)\",\n    breaks = c(-0.25, 0, 0.25, 0.5),\n    limits = c(-0.4, 0.55)\n  ) +\n  scale_y_continuous(\n    name = \"Change in absolute geographical inequality (2019-2000)\",\n    breaks = c(-0.1, 0, 0.1),\n    limits = c(-0.16, 0.1)\n  ) +\n  theme_classic() +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\"),\n    axis.text = element_text(size = 11)\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#refine-the-plot",
+    "href": "slides/viz.html#refine-the-plot",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Refine the plot",
+    "text": "Refine the plot"
+  },
+  {
+    "objectID": "slides/viz.html#some-frequently-used-geom_",
+    "href": "slides/viz.html#some-frequently-used-geom_",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Some frequently used geom_*",
+    "text": "Some frequently used geom_*\nHistogram and bar charts\n\n\n\n\n\n\n\n\n\nGeometric object\nDescription\nAesthetics\n\n\n\n\ngeom_histogram()\nDivide continuous x into bins and count observations.\nRequired: x, and bins or binwidth\n\n\ngeom_col()\nBar chart using provided x and y values.\nRequired: x, y\n\n\ngeom_bar()\nBar chart with one axis computed using stat.\nRequired: x or y, stat (default: \"count\")"
+  },
+  {
+    "objectID": "slides/viz.html#some-frequently-used-geom_-1",
+    "href": "slides/viz.html#some-frequently-used-geom_-1",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Some frequently used geom_*",
+    "text": "Some frequently used geom_*\n\nExample: For the following examples, we will use the simulated_covid.rds dataset\n\nsimulated_covid &lt;- readRDS(\"data/simulated_covid.rds\")\n\nhead(simulated_covid)\n\n  id  case_name case_type sex age date_onset date_admission   outcome\n1  1 jCQH5RSlVq confirmed   m  22 2023-01-01           &lt;NA&gt; recovered\n2  2 AdCD3im7sn  probable   m  21 2023-01-08           &lt;NA&gt; recovered\n3  3 iDzmfZhFkV  probable   m  21 2023-01-03           &lt;NA&gt; recovered\n4  4 sKipHJsjZ2  probable   m  10 2023-01-10           &lt;NA&gt;      died\n5  5 xG7GvAjlBf suspected   m  24 2023-01-05           &lt;NA&gt; recovered\n6  7 ZWWcBMLzoH confirmed   m  10 2023-01-04           &lt;NA&gt; recovered\n  date_outcome date_first_contact date_last_contact   district     outbreak\n1         &lt;NA&gt;               &lt;NA&gt;              &lt;NA&gt;   Tan Binh 1st outbreak\n2         &lt;NA&gt;         2022-12-31        2023-01-04    Tan Phu 1st outbreak\n3         &lt;NA&gt;         2022-12-29        2023-01-05   Binh Tan 1st outbreak\n4   2023-01-27         2023-01-10        2023-01-13    Quan 10 1st outbreak\n5         &lt;NA&gt;         2023-01-07        2023-01-07    Quan 12 1st outbreak\n6         &lt;NA&gt;         2023-01-06        2023-01-07 Binh Thanh 1st outbreak"
+  },
+  {
+    "objectID": "slides/viz.html#some-frequently-used-geom_-2",
+    "href": "slides/viz.html#some-frequently-used-geom_-2",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Some frequently used geom_*",
+    "text": "Some frequently used geom_*\n\nExample: creating a bar chart for number of covid incidence over time\n\n\n\ncode.R\n\nggplot(\n  data = simulated_covid,\n  aes(x = date_onset)\n) +\n  geom_bar(\n    color = \"cornflowerblue\"\n  ) +\n  scale_x_date(\"Date\") +\n  scale_y_continuous(\"Number of cases\") +\n  ggtitle(\"New covid cases over time\")"
+  },
+  {
+    "objectID": "slides/viz.html#some-frequently-used-geom_-3",
+    "href": "slides/viz.html#some-frequently-used-geom_-3",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Some frequently used geom_*",
+    "text": "Some frequently used geom_*\nScatter plot\n\n\n\n\n\n\n\n\n\ngeom_*\ndescription\nParameters\n\n\n\n\ngeom_point()\nCreate a scatter plot from given x and y\nRequired aesthetic: x and y"
+  },
+  {
+    "objectID": "slides/viz.html#some-frequently-used-geom_-4",
+    "href": "slides/viz.html#some-frequently-used-geom_-4",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Some frequently used geom_*",
+    "text": "Some frequently used geom_*\n\nExample: creating a scatter plot for number of covid incidence over time\n\n\n\ncode.R\n\nlibrary(dplyr)\n# we need to compute y\n# (case_count before plotting)\naggregated_cases &lt;- simulated_covid |&gt;\n  group_by(date_onset) |&gt;\n  summarise(\n    case_count = n()\n  )\n\nggplot(\n  aggregated_cases,\n  aes(x = date_onset, y = case_count)\n) +\n  geom_point(\n    color = \"cornflowerblue\"\n  ) +\n  scale_x_date(\"Date\") +\n  scale_y_continuous(\"Number of cases\") +\n  ggtitle(\"New covid cases over time\")"
+  },
+  {
+    "objectID": "slides/viz.html#some-frequently-used-geom_-5",
+    "href": "slides/viz.html#some-frequently-used-geom_-5",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Some frequently used geom_*",
+    "text": "Some frequently used geom_*\nLine chart\n\n\n\n\n\n\n\n\n\ngeom_*\ndescription\nParameters\n\n\n\n\ngeom_line()\nCreate a line plot from given x and y\nRequired aesthetic: x and y\n\n\ngeom_smooth()\nCreate a regression line plot from x and y\nRequired aesthetic: x and y\n\nmethod: select regression model (\"auto\", \" lm\", \"glm\", \"gam\", \"loess\")\nformula: adjust the formula for the regression model"
+  },
+  {
+    "objectID": "slides/viz.html#some-frequently-used-geom_-6",
+    "href": "slides/viz.html#some-frequently-used-geom_-6",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Some frequently used geom_*",
+    "text": "Some frequently used geom_*\n\nExample: creating a line chart for number of covid incidence over time\n\n\n\ncode.R\n\nggplot(\n  aggregated_cases,\n  aes(x = date_onset, y = case_count)\n) +\n  geom_line(\n    color = \"cornflowerblue\"\n  ) +\n  scale_x_date(\"Date\") +\n  scale_y_continuous(\"Number of cases\") +\n  ggtitle(\"New covid cases over time\")"
+  },
+  {
+    "objectID": "slides/viz.html#some-frequently-used-geom_-7",
+    "href": "slides/viz.html#some-frequently-used-geom_-7",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Some frequently used geom_*",
+    "text": "Some frequently used geom_*\n\nExample: add a regression line for number of covid incidence over time\n\n\n\ncode.R\n\nggplot(\n  aggregated_cases,\n  aes(x = date_onset, y = case_count)\n) +\n  geom_point(\n    color = \"grey\"\n  ) +\n  geom_smooth(\n    color = \"cornflowerblue\",\n    # choose gam model to fit the data\n    method = \"gam\"\n  ) +\n  scale_x_date(\"Date\") +\n  scale_y_continuous(\"Number of cases\") +\n  ggtitle(\"New covid cases over time\")"
+  },
+  {
+    "objectID": "slides/viz.html#some-frequently-used-geom_-8",
+    "href": "slides/viz.html#some-frequently-used-geom_-8",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Some frequently used geom_*",
+    "text": "Some frequently used geom_*\n\nBox plot\n\n\n\n\n\n\n\n\ngeom_*\ndescription\nParameters\n\n\n\n\ngeom_boxplot()\nCreate a boxplot from a continuous variable.\nIf both x and y are given, one must be a categorical variable (in which case a boxplot is created for each category)\nRequired aesthetic: x or y"
+  },
+  {
+    "objectID": "slides/viz.html#some-frequently-used-geom_-9",
+    "href": "slides/viz.html#some-frequently-used-geom_-9",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Some frequently used geom_*",
+    "text": "Some frequently used geom_*\n\nExample: create a box plot to compare number of cases per day between 2 outbreaks\n\n\n\ncode.R\n\n# compute cases per day for each outbreak\ncases_per_outbreak &lt;- simulated_covid |&gt;\n  group_by(date_onset, outbreak) |&gt;\n  summarise(\n    case_count = n()\n  )\n\nggplot(\n  cases_per_outbreak,\n  aes(x = case_count, y = outbreak)\n) +\n  geom_boxplot() +\n  scale_x_continuous(\"Number of daily cases\") +\n  scale_y_discrete(\"Outbreak\") +\n  ggtitle(\"Compare distribution of daily cases between 2 outbreaks\")"
+  },
+  {
+    "objectID": "slides/viz.html#where-to-find-more-geom_",
+    "href": "slides/viz.html#where-to-find-more-geom_",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Where to find more geom_*?",
+    "text": "Where to find more geom_*?\nFor a complete list of geom_*, refer to ggplot2 official documentation\nAlternatively, you can also look for the example code for your desired chart type at R Graph Gallery"
+  },
+  {
+    "objectID": "slides/viz.html#save-plot",
+    "href": "slides/viz.html#save-plot",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Save plot",
+    "text": "Save plot\nFunction ggsave() is used for saving plots with the following key parameters\n\nplot select plot to save (default to the last generated plot)\nfilename name of the saved file\npath path to the directory where the plot is stored\nwidth, height plot size in units expressed by the units argument\ndpi plot resolution"
+  },
+  {
+    "objectID": "slides/viz.html#save-plot-1",
+    "href": "slides/viz.html#save-plot-1",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Save plot",
+    "text": "Save plot\nExample: save the last generated plot\n\nggsave(\n  path = \"plots\", # save plot under plots directory\n  filename = \"new_plot.png\",\n  width = 800,\n  height = 600, # adjust plot size in pixel\n  units = \"px\",\n  dpi = 200 # set resolution\n)"
+  },
+  {
+    "objectID": "slides/viz.html#export-two-types-of-formats",
+    "href": "slides/viz.html#export-two-types-of-formats",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Export: two types of formats",
+    "text": "Export: two types of formats\n\nVector format (e.g. .svg, .eps)\n\nConsists of independent geometric objects (segments, polygons, curves, etc.)\nCan be enlarged without losing resolution\n\nRaster format (e.g. .png, .jpeg/.jpg, .tiff).\n\nRectangular grid of pixels, possibly with color\nWill be very blurry if image is enlarged while resolution is low"
+  },
+  {
+    "objectID": "slides/viz.html#main-components-of-a-graph-r",
+    "href": "slides/viz.html#main-components-of-a-graph-r",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Main components of a graph (R)",
+    "text": "Main components of a graph (R)\n\nMapping from data to aesthetic attributes of geometric objects\nGeometic objects: what you see on the plot (points, lines, bars)\nAesthetic attributes: “role” of variables in plot: location (often along x-axis and y-axis), colour, size, shape\nScales: map data values to aesthetic attributes\n\n\n\nCoordinate system: cartesian, polar, map projections.\nNetworks, trees have no coordinate system\n\n\n\n\nNot about:\n\ngraph type (\\(\\approx\\) language, words)\nfont size, background colour … Some of these are specified in a theme"
+  },
+  {
+    "objectID": "slides/viz.html#polar-coordinate-system",
+    "href": "slides/viz.html#polar-coordinate-system",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Polar coordinate system",
+    "text": "Polar coordinate system\nPie chart WHO European Health Report 2009\n\nGeometric object? Aesthetic attributes? Transformation? Coordinate system?"
+  },
+  {
+    "objectID": "slides/viz.html#overview",
+    "href": "slides/viz.html#overview",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Overview",
+    "text": "Overview\n\nWhat does mapping = aes() do?\nInheritance of data and aesthetics\nThe annotate() layer\nFigure panes using facet_wrap()\nExtending ggplot2\nInteractive plots with plotly"
+  },
+  {
+    "objectID": "slides/viz.html#what-does-mapping-aes-do",
+    "href": "slides/viz.html#what-does-mapping-aes-do",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "What does mapping = aes() do?",
+    "text": "What does mapping = aes() do?\n\n\nggplot() arguments and default values:\n\nggplot(data = NULL, mapping = aes(), ...)\n\ngeom_*() arguments and default values:\n\ngeom_bar(mapping = NULL, data = NULL, ...)\ngeom_boxplot(mapping = NULL, data = NULL, ...)\ngeom_point(mapping = NULL, data = NULL, ...)"
+  },
+  {
+    "objectID": "slides/viz.html#what-does-mapping-aes-do-1",
+    "href": "slides/viz.html#what-does-mapping-aes-do-1",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "What does mapping = aes() do?",
+    "text": "What does mapping = aes() do?\n\nRecall this:\n\n\ndf &lt;- read_excel(\"data/nature_plot.xlsx\")\nhead(df)\n\n# A tibble: 6 × 5\n  country          coverage inequality   pop region                             \n  &lt;chr&gt;               &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;                              \n1 Angola              -0.14      0.1    30.2 Sub-Saharan Africa                 \n2 Papua New Guinea    -0.35      0.08   16.5 Southeast Asia, East Asia and Ocea…\n3 Pakistan             0.12      0.05   82.5 South Asia                         \n4 Chad                 0.14      0.01   27.5 Sub-Saharan Africa                 \n5 Ethiopia             0.32      0.005  55   Sub-Saharan Africa                 \n6 Kenya                0.07     -0.06   30.2 Sub-Saharan Africa                 \n\n\n\n\n\n\n\n\n\n\n\n\n\nlabel\n(country)\nx\n(coverage)\ny\n(inequality)\nsize\n(population)\ncolor\n(region)\n\n\n\n\nNigeria\n0.20\n-0.07\n220M\nSub-Saharan Africa"
+  },
+  {
+    "objectID": "slides/viz.html#what-does-mapping-aes-do-2",
+    "href": "slides/viz.html#what-does-mapping-aes-do-2",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "What does mapping = aes() do?",
+    "text": "What does mapping = aes() do?\nIdea: we are mapping the variables in the data to the aesthetics of a geometry\naes(x = coverage, y = inequality)\n#&gt; Aesthetic mapping: \n#&gt; * `x` -&gt; `coverage`\n#&gt; * `y` -&gt; `inequality`\n\n\naes(x = coverage^2, y = inequality/2)\n#&gt; Aesthetic mapping: \n#&gt; * `x` -&gt; `coverage^2`\n#&gt; * `y` -&gt; `inequality/2`"
+  },
+  {
+    "objectID": "slides/viz.html#what-does-mapping-aes-do-3",
+    "href": "slides/viz.html#what-does-mapping-aes-do-3",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "What does mapping = aes() do?",
+    "text": "What does mapping = aes() do?\nHow do we know which aesthetics does each geometry support? Read the documentation!\nSimply:\n\nRead the documentation of the geometry of interest\nClick Aesthetics on the navigation bar on the right (or scroll down)\nAll aesthetics compatible for the geometry are listed"
+  },
+  {
+    "objectID": "slides/viz.html#inheritance-of-data-and-aesthetics",
+    "href": "slides/viz.html#inheritance-of-data-and-aesthetics",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Inheritance of data and aesthetics",
+    "text": "Inheritance of data and aesthetics\n\nRecall this:\n\nggplot() arguments and default values:\n\nggplot(data = NULL, mapping = aes(), ...)\n\ngeom_*() arguments and default values:\n\ngeom_bar(mapping = NULL, data = NULL, ...)\ngeom_boxplot(mapping = NULL, data = NULL, ...)\ngeom_point(mapping = NULL, data = NULL, ...)"
+  },
+  {
+    "objectID": "slides/viz.html#inheritance-of-data-and-aesthetics-1",
+    "href": "slides/viz.html#inheritance-of-data-and-aesthetics-1",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Inheritance of data and aesthetics",
+    "text": "Inheritance of data and aesthetics\nThe idea is that:\n\nggplot() can control the dataset and aesthetics\ngeom_*()s can also control the type of geometries, and allow customisation of aesthetics"
+  },
+  {
+    "objectID": "slides/viz.html#inheritance-of-data-and-aesthetics-2",
+    "href": "slides/viz.html#inheritance-of-data-and-aesthetics-2",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Inheritance of data and aesthetics",
+    "text": "Inheritance of data and aesthetics\nA typical ggplot plot will look something like:\nggplot(plot_df, aes(x = date, y = count)) +\n  geom_line() +\n  geom_point()\n\nImplicitly, you can think of this as:\nggplot() +\n  geom_line(mapping = aes(x = date, y = count), data = plot_df) +\n  geom_line(mapping = aes(x = date, y = count), data = plot_df)\n\n\n\n\n\n\n\n\nNote\n\n\n\nWe call this inheritance\nData and aesthetics are inherited top-down"
+  },
+  {
+    "objectID": "slides/viz.html#inheritance-of-data-and-aesthetics-3",
+    "href": "slides/viz.html#inheritance-of-data-and-aesthetics-3",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Inheritance of data and aesthetics",
+    "text": "Inheritance of data and aesthetics\nYou have seen this in action before!\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region, alpha = 0.8)) +\n  geom_text(aes(label = country), hjust = -0.2, vjust = 0.2) +\n  geom_vline(xintercept = 0, color = \"#999999\") +\n  geom_hline(yintercept = 0, color = \"#999999\") +\n  scale_x_continuous(breaks = c(-0.25, 0, 0.25, 0.5),\n                     limits = c(-0.4, 0.55)) +\n  scale_y_continuous(breaks = c(-0.1, 0, 0.1), limits = c(-0.16, 0.1)) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_color_manual(\n    values = my_pallete,\n    guide = guide_legend(order = 2)\n  ) +\n  labs(x = \"Change in MCV1 coverage (2019-2000)\",\n       y = \"Change in absolute geographical inequality (2019-2000)\",\n       size = NULL,\n       color = NULL) +\n  theme_classic() +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\"),\n    axis.text = element_text(size = 11)\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#inheritance-of-data-and-aesthetics-4",
+    "href": "slides/viz.html#inheritance-of-data-and-aesthetics-4",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Inheritance of data and aesthetics",
+    "text": "Inheritance of data and aesthetics\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region), alpha = 0.8) +\n  geom_text(aes(label = country), hjust = -0.2, vjust = 0.2)"
+  },
+  {
+    "objectID": "slides/viz.html#inside-and-outside-aes",
+    "href": "slides/viz.html#inside-and-outside-aes",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Inside and outside aes()",
+    "text": "Inside and outside aes()\nWhat happens if we do it like this:\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region, alpha = 0.8)) +\n  geom_text(aes(label = country, hjust = -0.2, vjust = 0.2))"
+  },
+  {
+    "objectID": "slides/viz.html#inside-and-outside-aes-1",
+    "href": "slides/viz.html#inside-and-outside-aes-1",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Inside and outside aes()",
+    "text": "Inside and outside aes()\n\nBack to this slide (again):\n\n\n\n\n\n\n\n\n\n\nlabel\n(country)\nx\n(coverage)\ny\n(inequality)\nsize\n(population)\ncolor\n(region)\n\n\n\n\nNigeria\n0.20\n-0.07\n220M\nSub-Saharan Africa\n\n\n\n\ndf &lt;- read_excel(\"data/nature_plot.xlsx\")\nhead(df)\n\n# A tibble: 6 × 5\n  country          coverage inequality   pop region                             \n  &lt;chr&gt;               &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;                              \n1 Angola              -0.14      0.1    30.2 Sub-Saharan Africa                 \n2 Papua New Guinea    -0.35      0.08   16.5 Southeast Asia, East Asia and Ocea…\n3 Pakistan             0.12      0.05   82.5 South Asia                         \n4 Chad                 0.14      0.01   27.5 Sub-Saharan Africa                 \n5 Ethiopia             0.32      0.005  55   Sub-Saharan Africa                 \n6 Kenya                0.07     -0.06   30.2 Sub-Saharan Africa"
+  },
+  {
+    "objectID": "slides/viz.html#inside-and-outside-aes-2",
+    "href": "slides/viz.html#inside-and-outside-aes-2",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Inside and outside aes()",
+    "text": "Inside and outside aes()\n\n\n\n\n\n\nImportant\n\n\nIn short:\n\nYou want the aesthetics to change with the data -&gt; put it inside aes()*\nYou want the aesthetics to be fixed regardless of data -&gt; put it outside aes()*\nThe aesthetics must be supported by the geometry\n\n\n\nThis also means that columns names can only be used inside aes()"
+  },
+  {
+    "objectID": "slides/viz.html#color-transparency",
+    "href": "slides/viz.html#color-transparency",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Color transparency",
+    "text": "Color transparency\nIn ggplot2, you can add transparency to colors with the alpha aesthetics (available for most geometries)"
+  },
+  {
+    "objectID": "slides/viz.html#the-annotate-layer",
+    "href": "slides/viz.html#the-annotate-layer",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "The annotate() layer",
+    "text": "The annotate() layer\n\nWhat if we want to annotate specific parts of a figure?\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#the-annotate-layer-1",
+    "href": "slides/viz.html#the-annotate-layer-1",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "The annotate() layer",
+    "text": "The annotate() layer\n\nAdding a vertical line with geom_vline() and a label with geom_label()\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  # main plotting geoms\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  # figure annotation geoms (2)\n  geom_vline(xintercept = as.Date(\"2023-03-01\"), linetype = 2) +\n  geom_label(label = \"Start of outbreak\", x = as.Date(\"2023-03-01\"), y = 30) +\n  # labels\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#the-annotate-layer-2",
+    "href": "slides/viz.html#the-annotate-layer-2",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "The annotate() layer",
+    "text": "The annotate() layer\n\nAdding a region with geom_rect() and a label with geom_label()\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  # figure annotation geoms (1)\n  geom_rect(\n    ymin = -Inf,\n    ymax = Inf,\n    xmin = as.Date(\"2023-04-01\"),\n    xmax = as.Date(\"2023-06-01\"),\n    alpha = 0.2,\n    fill = \"red\"\n  ) +\n  geom_label(\n    label = \"Outbreak peak\",\n    x = as.Date(\"2023-06-25\"),\n    y = 30,\n    color = \"red\"\n  ) +\n  # main plotting geoms\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  # labels\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#the-annotate-layer-3",
+    "href": "slides/viz.html#the-annotate-layer-3",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "The annotate() layer",
+    "text": "The annotate() layer\n\nWe already said alpha = 0.2 outside of aes(), why doesn’t it have any transparency at all??"
+  },
+  {
+    "objectID": "slides/viz.html#the-annotate-layer-4",
+    "href": "slides/viz.html#the-annotate-layer-4",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "The annotate() layer",
+    "text": "The annotate() layer\n\n\nI lied\nAesthetics are always dependant on the dataset, whether it is outside or inside aes()"
+  },
+  {
+    "objectID": "slides/viz.html#the-annotate-layer-5",
+    "href": "slides/viz.html#the-annotate-layer-5",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "The annotate() layer",
+    "text": "The annotate() layer\nExample:\n\nOriginally the dataset when used in ggplot() looks like this:\n\nggplot(aggregated_cases, ...) + ...\n\n\n# A tibble: 257 × 2\n   date_onset case_count\n   &lt;date&gt;          &lt;int&gt;\n 1 2023-01-01          1\n 2 2023-01-03          1\n 3 2023-01-04          1\n 4 2023-01-05          1\n 5 2023-01-06          3\n 6 2023-01-07          3\n 7 2023-01-08          1\n 8 2023-01-09          1\n 9 2023-01-10          2\n10 2023-01-14          1\n# ℹ 247 more rows\n\n\n\nWhen you assigned a fixed value to an aesthetic outside of aes(), it might look like this:\n\nggplot(aggregated_cases, ...) + geom_...(alpha = 0.2)\n\n\n# A tibble: 257 × 3\n   date_onset case_count alpha\n   &lt;date&gt;          &lt;int&gt; &lt;dbl&gt;\n 1 2023-01-01          1   0.2\n 2 2023-01-03          1   0.2\n 3 2023-01-04          1   0.2\n 4 2023-01-05          1   0.2\n 5 2023-01-06          3   0.2\n 6 2023-01-07          3   0.2\n 7 2023-01-08          1   0.2\n 8 2023-01-09          1   0.2\n 9 2023-01-10          2   0.2\n10 2023-01-14          1   0.2\n# ℹ 247 more rows"
+  },
+  {
+    "objectID": "slides/viz.html#the-annotate-layer-6",
+    "href": "slides/viz.html#the-annotate-layer-6",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "The annotate() layer",
+    "text": "The annotate() layer\n\nUsing the annotate() layer, you can separate the annotations from the geometry layer\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  # figure annotation geoms (1)\n  annotate(\n    \"rect\",\n    ymin = -Inf,\n    ymax = Inf,\n    xmin = as.Date(\"2023-04-01\"),\n    xmax = as.Date(\"2023-06-01\"),\n    alpha = 0.2,\n    fill = \"red\"\n  ) +\n  annotate(\n    \"label\",\n    label = \"Outbreak peak\",\n    x = as.Date(\"2023-06-25\"),\n    y = 30,\n    color = \"red\"\n  ) +\n  # main plotting geoms\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  # labels\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#the-annotate-layer-7",
+    "href": "slides/viz.html#the-annotate-layer-7",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "The annotate() layer",
+    "text": "The annotate() layer\nComparing:\ngeom_rect(\n  ymin = -Inf, ymax = Inf,\n  xmin = as.Date(\"2023-04-01\"), xmax = as.Date(\"2023-06-01\"), \n  alpha = 0.2, fill = \"red\"\n) +\ngeom_label(label = \"Outbreak peak\", x = as.Date(\"2023-06-25\"), y = 30, color = \"red\")\nvs.\nannotate(\"rect\",\n  ymin = -Inf, ymax = Inf,\n  xmin = as.Date(\"2023-04-01\"), xmax = as.Date(\"2023-06-01\"), \n  alpha = 0.2, fill = \"red\"\n) +\nannotate(\"label\", label = \"Outbreak peak\", x = as.Date(\"2023-06-25\"), y = 30, color = \"red\") +"
+  },
+  {
+    "objectID": "slides/viz.html#the-annotate-layer-8",
+    "href": "slides/viz.html#the-annotate-layer-8",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "The annotate() layer",
+    "text": "The annotate() layer\n\n\n\n\n\n\nImportant\n\n\nIn short:\n\nYou can create plot annotations with geom_label(), geom_rect(), geom_abline(), etc. (look at ggplot2 website)\nIf it’s not working correctly (looks blurry, result not as expected), use annotate() instead; very easy to switch from geom_*() to annotate()"
+  },
+  {
+    "objectID": "slides/viz.html#splitting-up-with-facet_wrap",
+    "href": "slides/viz.html#splitting-up-with-facet_wrap",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Splitting up with facet_wrap()",
+    "text": "Splitting up with facet_wrap()\n\nWhat if you want to split the plot into different panels for each group?\nHave a look at your data, find a “grouping” variable to split the data"
+  },
+  {
+    "objectID": "slides/viz.html#splitting-up-with-facet_wrap-1",
+    "href": "slides/viz.html#splitting-up-with-facet_wrap-1",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Splitting up with facet_wrap()",
+    "text": "Splitting up with facet_wrap()\n\n\nFor example: Split our simulated_covid by outbreak\n\n\n\nggplot(data = simulated_covid, aes(x = date_onset)) +\n  geom_bar(fill = \"cornflowerblue\") +\n  facet_wrap(~outbreak)"
+  },
+  {
+    "objectID": "slides/viz.html#splitting-up-with-facet_wrap-2",
+    "href": "slides/viz.html#splitting-up-with-facet_wrap-2",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Splitting up with facet_wrap()",
+    "text": "Splitting up with facet_wrap()\n\n\nUse facet_wrap() and add in the variable (with a ~ in the front)\n\n\n\nggplot(data = simulated_covid, aes(x = date_onset)) +\n  geom_bar(fill = \"cornflowerblue\") +\n  facet_wrap(~outbreak)"
+  },
+  {
+    "objectID": "slides/viz.html#splitting-up-with-facet_wrap-3",
+    "href": "slides/viz.html#splitting-up-with-facet_wrap-3",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Splitting up with facet_wrap()",
+    "text": "Splitting up with facet_wrap()\n\n\nYou can “free” the scales from their original limits\n\n\n\nggplot(data = simulated_covid, aes(x = date_onset)) +\n  geom_bar(fill = \"cornflowerblue\") +\n  facet_wrap(~outbreak, scales = \"free_x\")"
+  },
+  {
+    "objectID": "slides/viz.html#splitting-up-with-facet_wrap-4",
+    "href": "slides/viz.html#splitting-up-with-facet_wrap-4",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Splitting up with facet_wrap()",
+    "text": "Splitting up with facet_wrap()\n\n\nYou can “free” the scales from their original limits\n\n\n\nggplot(data = simulated_covid, aes(x = date_onset)) +\n  geom_bar(fill = \"cornflowerblue\") +\n  facet_wrap(~outbreak, scales = \"free_y\")"
+  },
+  {
+    "objectID": "slides/viz.html#extending-ggplot2",
+    "href": "slides/viz.html#extending-ggplot2",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Extending ggplot2",
+    "text": "Extending ggplot2\n\nAdd specific functionalities to ggplot2 with extensions!\nHow to use:\n\nThink of a specific figure you want to plot\nTry your best to plot it with ggplot2\nIf you think ggplot2 cannot do what you want. Have a look here\nRead their documentation to see how to use them"
+  },
+  {
+    "objectID": "slides/viz.html#extending-ggplot2-1",
+    "href": "slides/viz.html#extending-ggplot2-1",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Extending ggplot2",
+    "text": "Extending ggplot2\nSome commonly used extensions:\n\npatchwork: to patch multiple ggplot2 plots together\ngganimate: to create moving/animating plots\nggrepel: to repel labels on a plot away from each other\nggdist: to work with distributions"
+  },
+  {
+    "objectID": "slides/viz.html#interactive-plots-with-plotly",
+    "href": "slides/viz.html#interactive-plots-with-plotly",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Interactive plots with plotly",
+    "text": "Interactive plots with plotly\n\n\nIf you need to create interactive ggplots, you can use the plotly package\nYou just need to save your ggplot into an object\n\n\np &lt;- ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
+  },
+  {
+    "objectID": "slides/viz.html#interactive-plots-with-plotly-1",
+    "href": "slides/viz.html#interactive-plots-with-plotly-1",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Interactive plots with plotly",
+    "text": "Interactive plots with plotly\n\n\nThen use it in the plotly::ggplotly() function\n\n\n# install.packages(\"plotly\")\nlibrary(plotly)\nggplotly(p)"
+  },
+  {
+    "objectID": "slides/viz.html#interactive-plots-with-plotly-2",
+    "href": "slides/viz.html#interactive-plots-with-plotly-2",
+    "title": "Principles of data visualisation and plotting in R",
+    "section": "Interactive plots with plotly",
+    "text": "Interactive plots with plotly\n\n\nYou can also create 3d plots with plotly\n\n\nplot_ly(\n  data = tibble(x = rnorm(10), y = rnorm(10), z = rnorm(10)),\n  x = ~x,\n  y = ~y,\n  z = ~z\n)"
+  },
+  {
+    "objectID": "slides/qt-example-slide.html#slide-title",
+    "href": "slides/qt-example-slide.html#slide-title",
+    "title": "My Presentation",
+    "section": "Slide Title",
+    "text": "Slide Title\n\nBullet point 1\nBullet point 2"
+  },
+  {
+    "objectID": "slides/qt-example-slide.html#code-blocks-highlighting",
+    "href": "slides/qt-example-slide.html#code-blocks-highlighting",
+    "title": "My Presentation",
+    "section": "Code Blocks & Highlighting",
+    "text": "Code Blocks & Highlighting\nYou can add code blocks like this:\n```{r}\n# R code block\nsummary(cars)\n```"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "OUCRU R training course - 2026",
+    "section": "",
+    "text": "The training will be 09:00 – 17:00 (UTC +7) for everyday\nThere will be a lunch break between 12:30 – 13:30 (UTC +7)\nLunch will be provided for in-person attendees who filled in their attendance on ferendum.com. If you did not, you need to arrange lunch yourself.\n\n\n\n\nProf. Ronald Geskus, Biostatistics group, OUCRU HCM\nMr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM\nMr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM\nDr. Tran Thai Hung, Biostatistics group, OUCRU HCM\nMs. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM\nDr. Duc Du Hong, Biostatistics group, OUCRU HCM\nDr. Thuan Hoang Van, Biostatistics group, OUCRU Ha Noi\nDr. Nguyen Lam Vuong, Biostatistics group, OUCRU HCM\nMr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM\n\n\n\n\nPlease follow this pre-course setups handout to setup R and RStudio."
+  },
+  {
+    "objectID": "index.html#contributors",
+    "href": "index.html#contributors",
+    "title": "OUCRU R training course - 2026",
+    "section": "",
+    "text": "Prof. Ronald Geskus, Biostatistics group, OUCRU HCM\nMr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM\nMr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM\nDr. Tran Thai Hung, Biostatistics group, OUCRU HCM\nMs. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM\nDr. Duc Du Hong, Biostatistics group, OUCRU HCM\nDr. Thuan Hoang Van, Biostatistics group, OUCRU Ha Noi\nDr. Nguyen Lam Vuong, Biostatistics group, OUCRU HCM\nMr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM"
+  },
+  {
+    "objectID": "index.html#pre-course-setups-and-requirements",
+    "href": "index.html#pre-course-setups-and-requirements",
+    "title": "OUCRU R training course - 2026",
+    "section": "",
+    "text": "Please follow this pre-course setups handout to setup R and RStudio."
+  },
+  {
+    "objectID": "index.html#introduction-to-r",
+    "href": "index.html#introduction-to-r",
+    "title": "OUCRU R training course - 2026",
+    "section": "Introduction to R",
+    "text": "Introduction to R\n\nDay 1 (Monday)\n\nLecture slides\nLearning objectives:\n\nBasic structure of R\nSimple computations\nImport and inspect datasets\nMake selections\nNavigate RStudio with confidence\n\nExercises:\n\nExercises\nExercise answers\n Exercise answers script \n\n Example R code scripts - Day 1 \n\n\n\nDay 2 (Tuesday)\n\nLecture slides\nLearning objectives:\n\nCreate visualisations using Base R graphics\nWrite simple functions to automate tasks; the package system\nLists\nUsing pipe operators to chain functions\n\nR code:\n\n Exercise answers script \n\n Example R code scripts - Day 2"
+  },
+  {
+    "objectID": "index.html#principles-of-data-visualisation-and-plotting-in-r",
+    "href": "index.html#principles-of-data-visualisation-and-plotting-in-r",
+    "title": "OUCRU R training course - 2026",
+    "section": "Principles of data visualisation and plotting in R",
+    "text": "Principles of data visualisation and plotting in R\n\nDay 3 (Wednesday):\n\nLecture slides\nLearning objectives:\n\nThe grammar of graphics—understanding how plots are built\nThe step-by-step process of creating graphs in R\nUse the ggplot2 package plot figures in R\nHow to design clear and impactful visualisations\nUsing LLMs (Large Language Models) to help you with plotting\n\nExercises\n\n\n\n\nDay 4 (Thursday-morning):\n\nLearning objectives:\n\nUnderstand the principles of data visualisation"
+  },
+  {
+    "objectID": "index.html#advanced-data-management-in-r",
+    "href": "index.html#advanced-data-management-in-r",
+    "title": "OUCRU R training course - 2026",
+    "section": "Advanced data management in R",
+    "text": "Advanced data management in R\n\nDay 4 (Thursday-afternoon):\n\nLearning objectives:\n\nLogics with if-else statements and for-loops\nData manipulation with mutate()\nJoining dataframes\nPivotting dataframes into long and wide formats\nVectorisation in R with map()"
+  },
+  {
+    "objectID": "index.html#reproducible-research-and-reporting-using-quarto",
+    "href": "index.html#reproducible-research-and-reporting-using-quarto",
+    "title": "OUCRU R training course - 2026",
+    "section": "Reproducible research and reporting using Quarto",
+    "text": "Reproducible research and reporting using Quarto\n\nDay 5 (Friday-morning)\n\nLecture slides\nLearning objectives:\n\nWrite papers with reproducible tables and figures using Quarto\nGenerate reports in multiple formats: Word, PDF, slides, web pages…\nEasily update analyses when new data becomes available\n\nExercises\nExercise answer keys"
+  },
+  {
+    "objectID": "index.html#introduction-to-r-and-rstudio",
+    "href": "index.html#introduction-to-r-and-rstudio",
+    "title": "OUCRU R training course - 2026",
+    "section": "Introduction to R and RStudio",
+    "text": "Introduction to R and RStudio\nGood introduction, with explanatory videos:\n\nRStudio provides several tutorials for beginners and more advanced users: https://education.rstudio.com/\nDatacamp provides many courses at different levels (OUCRU HCMC has a license). See http://www.statmethods.net. The introduction is free\nA basic course, interactive design: https://www.quantargo.com/courses/course-r-introduction\nIntroduction from Pasteur institute: https://hub-courses.pages.pasteur.fr/R_pasteur_phd/First_steps_RStudio.html\nGood summary of basic concepts: http://www.burns-stat.com/documents/tutorials/impatient-r\nA comprehensive introduction: https://github.com/matloff/fasteR\nIntroduction to R programming: https://jjallaire.github.io/hopr/"
+  },
+  {
+    "objectID": "index.html#deeper-into-r",
+    "href": "index.html#deeper-into-r",
+    "title": "OUCRU R training course - 2026",
+    "section": "DeepeR into R",
+    "text": "DeepeR into R\n\nThe book R for Data Science (2e)\n“What They Forgot to Teach You About R”\nhttps://www.r-project.org/doc/bib/R-books.html\nThe official R manuals: https://cran.r-project.org/manuals.html"
+  },
+  {
+    "objectID": "index.html#r-and-statistics",
+    "href": "index.html#r-and-statistics",
+    "title": "OUCRU R training course - 2026",
+    "section": "R and statistics",
+    "text": "R and statistics\n\nA simple introduction to biomedical statistics using R: https://a-little-book-of-r-for-biomedical-statistics.readthedocs.io/en/latest/\nA website with detailed examples of all types of statistical analysis: https://stats.oarc.ucla.edu/other/dae/\nR by example: http://www.mayin.org/ajayshah/KB/R/index.html\nR course, with focus machine learning"
+  },
+  {
+    "objectID": "index.html#r-markdown-and-quarto",
+    "href": "index.html#r-markdown-and-quarto",
+    "title": "OUCRU R training course - 2026",
+    "section": "R Markdown and Quarto",
+    "text": "R Markdown and Quarto\n\nThe main RStudio webpage on R Markdown, with links to two freely available books: https://rmarkdown.rstudio.com/docs/\nIntroduction from RStudio\nIntroduction to knitr\nFirst steps in Markdown\nWriting academic papers with R Markdown (focus on bibiliographies): https://ikashnitsky.github.io/2019/zotero/\nR Markdown tips: https://appsilon.com/r-markdown-tips/\nPowerpoint presentations using R Markdown: https://appsilon.com/r-markdown-powerpoint-presentation/\nhttps://codingclubuc3m.rbind.io/post/2019-09-24/ focus on creating presentations\nR Quarto tutorial: https://appsilon.com/r-quarto-tutorial/"
+  },
+  {
+    "objectID": "handouts/exercises_Day5.html",
+    "href": "handouts/exercises_Day5.html",
+    "title": "Exercises Day 5",
+    "section": "",
+    "text": "NotePiping\n\n\n\nIt is expected that the exercise answers will be mainly using the pipe operators |&gt;, instead of putting functions inside each other"
+  },
+  {
+    "objectID": "handouts/exercises_Day5.html#notes-and-instructions",
+    "href": "handouts/exercises_Day5.html#notes-and-instructions",
+    "title": "Exercises Day 5",
+    "section": "",
+    "text": "NotePiping\n\n\n\nIt is expected that the exercise answers will be mainly using the pipe operators |&gt;, instead of putting functions inside each other"
+  },
+  {
+    "objectID": "handouts/exercises_Day5.html#dataset",
+    "href": "handouts/exercises_Day5.html#dataset",
+    "title": "Exercises Day 5",
+    "section": "Dataset",
+    "text": "Dataset\nWe will use covid_cases.rds for this exercise.\n\n  \n    Data dictionary\n  \n\n\n\n\n\n\n\nColumn\nDescription\n\n\n\n\ndate\ndate of the case report\n\n\n211 columns with the format cases_{country_code}\nnumber of reported cases of each country and archipelago\n\n\n\nCountry codes of interest (i.e. Codes for countries needed for the exercise)\n\n\n\nCode\nCountry name\n\n\n\n\nchn\nChina\n\n\nusa\nUnited States of America\n\n\nvnm\nVietnam\n\n\nsgp\nSingapore"
+  },
+  {
+    "objectID": "handouts/exercises_Day5.html#exercises",
+    "href": "handouts/exercises_Day5.html#exercises",
+    "title": "Exercises Day 5",
+    "section": "Exercises",
+    "text": "Exercises\n\nTask 1: Data import\n\nRead data\nLoad the tidyverse meta-package into R\n\n\n\n\n\n\n\nNote\n\n\n\nA “meta-package” is a package that contains other packages. Remember, tidyverse is just a collection of packages.\n\n\n\n\nTask 2: Data cleaning and filtering\n\nDoes the data follow the tidy data standard?\n\nIf not, pivot the data into a tibble that follows the tidy data standard\n\nDo some quick skim on the data. Do the variable values make sense given its type?\n\nIf not, filter out incorrect/impossible data\n\nFilter the data so that we only have week 3-12 of 2020\nSave the results back into covid_cases\n\n\n\n\n\n\n\nTipTip: pivotting\n\n\n\n\n\n\nIf your data is not tidy data:\n\n“Lengthens” the data using tidyr::pivot_longer(), i.e. less columns, more rows\n“Widens” the data using tidyr::pivot_wider(), i.e. less rows, more columns\n\n\n\n\n\n\n\n\n\n\n\nTipTip: data cleaning\n\n\n\n\n\n\nThe main variable here is case counts from each country. They should have a numeric type and should not be lower than 0. You can’t have negative case counts\nYou can remove or filter undesirable values using dplyr::filter()\n\n\n\n\n\n\nTask 3: Data transformation\n\nUsing the covid_cases object created in Task 2:\n\nGroup the data and calculate the total number of cases per country\nSelect the top 5 countries with highest total cases\nExtract the country codes and save them into a new object, e.g. top_countries\n\n\n\nUse the covid_cases object created in Task 2 again:\n\nGroup the data again, calculate the total number of cases per country again\nModify the country column:\n\nSo that we only keep the names of countries in the top 5 (generated above). Countries on in the top 5 will be changed to \"Others\"\nTurn this column into a factor type using the forcats package (already in tidyverse)\nGroup the data again, this time, group by date and country\nCalculate the total number of cases per date per country\nCreate a new column called pct_cases, which is the percentage of total cases per date per country\n(Optional) remove rows with NA from the tibble\nThere are many ways to do this part of the task\n\nSave all of this into a new object, e.g. plot_data\n\n\n\n\n\n\n\n\nTipTip: data grouping and summarisation\n\n\n\n\n\n\nGroup data into groups with dplyr::group_by() and ungroup data with dplyr::ungroup()\nSummarise each group into a single row with dplyr::summarise()\nYou can have multiple groups at the same time. For example:\n\n\n\n`summarise()` has regrouped the output.\nℹ Summaries were computed grouped by date and country.\nℹ Output is grouped by date.\nℹ Use `summarise(.groups = \"drop_last\")` to silence this message.\nℹ Use `summarise(.by = c(date, country))` for per-operation grouping\n  (`?dplyr::dplyr_by`) instead.\n\n\n\n  \n\n\n\n\nYou can choose not to summarise, but add a new column to each group with dplyr::mutate(). For example:\n\n\n\n\n  \n\n\n\nThis will create a new column total_cases that contains the sum of cases for each country without reducing each group into a single row like summarise(). Values will be duplicated for each group.\n\n\n\n\n\n\n\n\n\nTipTip: get top n values in a tibble\n\n\n\n\n\n\nYou can select rows with the top n values in a tibble using dplyr::slice_max()\n\n\n\n\n\n\n\n\n\n\nTipTip: get values of a column in a tibble\n\n\n\n\n\n\nYou can extract values from a columns in a tibble using dplyr::pull()\n\n\n\n\n\n\n\n\n\n\nTipTip: turn a tibble column into a factor\n\n\n\n\n\n\nYou can create and work with factors inside a tibble using the forcats package (already in tidyverse)\nYou can “lump”, or gather, factor levels that are not frequent with forcats::fct_lump_n()\n\n\n\n\n\n\nTask 4: Join data\n\nUse this data country_region.rds to get the regions and sub-regions for all countries.\nMake these 2 tables:\n\n\n\n\n  \n\n\n\n\n\n\n  \n\n\n\n\nWrite a short paragraph summarising key insights from the table, using inline R code to dynamically display case numbers. For example:\n\n\nEurope (192,068) and Asia (126,420) reported the highest number of cases, while Oceania (1,879) had the lowest.\n\nNoted that the number of cases is not hard-coded but you use inline R code to generate it within the text.\n\n\n\n\n\n\nTipTip: join the tables with left_join()\n\n\n\n\n\nYou can join covid_cases and country_region, using the country column of covid_cases and the alpha_3 column of country_region.\n\n\n\n\n\n\n\n\n\nTipTip: make the total cases table\n\n\n\n\n\nYou can use group_by() and summarise() to compute the total cases by sum(cases).\n\n\n\n\n\n\n\n\n\nTipTip: make inline R code\n\n\n\n\n\nIn the paragraph, use inline R code like {r} scales::comma(data$total_cases[tmp1$region == \"Europe\"]) to reference computed values. Function scales::comma() will make the numbers appear with commas for thousands (e.g., 100,000 instead of 100000).\n\n\n\n\n\nTask 5: Data visualization\n\nUsing ggplot2, try your best to generate the following figure:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipTip: how do I draw that??\n\n\n\n\n\n\nggplot2 reference page is very useful\nHere are all the functions used to generate the plot above, in sequence:\n\nggplot()\ngeom_area()\nscale_y_continuous()\nscale_x_date()\nscale_fill_discrete()\nggtitle()\nEvery function is connected with the + operator"
+  },
+  {
+    "objectID": "handouts/exercise_day3.html",
+    "href": "handouts/exercise_day3.html",
+    "title": "Exercises Day 3",
+    "section": "",
+    "text": "Throughout these exercises, we will recreate the plots from Day 2 exercises using the ggplot2 package"
+  },
+  {
+    "objectID": "handouts/exercise_day3.html#overview",
+    "href": "handouts/exercise_day3.html#overview",
+    "title": "Exercises Day 3",
+    "section": "",
+    "text": "Throughout these exercises, we will recreate the plots from Day 2 exercises using the ggplot2 package"
+  },
+  {
+    "objectID": "handouts/exercise_day3.html#dataset",
+    "href": "handouts/exercise_day3.html#dataset",
+    "title": "Exercises Day 3",
+    "section": "Dataset",
+    "text": "Dataset\nWe will use the Titanic3.xlsx dataset\nIf you haven’t had the data already, click the button below to download it\n\n\n Download data\n\n\nWe can then load the data by running\n\nlibrary(readxl)\nlibrary(ggplot2)\n\n# make sure to modify the file path to match where it is on your device\ntitanic &lt;- read_excel(\"data/raw/Titanic3.xlsx\", na = \"NA\")\n\nhead(titanic, n = 10)"
+  },
+  {
+    "objectID": "handouts/exercise_day3.html#exercise-1",
+    "href": "handouts/exercise_day3.html#exercise-1",
+    "title": "Exercises Day 3",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nIn this exercise, we will draw a plot exploring the relationship between age, sex and the fare paid for the trip.\nThe end result will look something like this.\n\n\n\n\n\n\n\n\n\nSeems complicated? Don’t panic! the following sections will guide you through the process step-by-step.\nStep 1: Plot the price that was paid (fare) as a function of age. Label the axis for fare as “fare paid (GBP)”\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\n\nuse geom_point() for scatter plot\nlabel for y-axis and x-axis can be configure via ylab() and xlab()\n\n\n\n\n\n\nReveal answer\nggplot(titanic) +\n  geom_point(aes(x = age, y = fare)) +\n  ylab(\"fare paid (GBP)\")\n\n\nBonus task: Try adding coord_polar() to see what happen\n\n\nReveal code\nggplot(titanic) +\n  geom_point(aes(x = age, y = fare)) +\n  ylab(\"fare paid (GBP)\") +\n  coord_polar()\n\n\nStep 2: Return to the cartesian coordinate system. Add a second layer that fits the linear regression line with 95% confidence interval.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\nThis is considered as smoothing, use geom_smooth(method=\"lm\") to fit a linear regression model\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = fare)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  ylab(\"fare paid (GBP)\")\n\n\nStep 3: The distribution of fare is very skewed. Therefore, it may be better to plot fare on a logarithmic scale so let’s do exactly that.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\nReplace ylab() with scale_y_log10()\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = fare)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  scale_y_log10(\"fare paid (GBP)\")\n\n\nStep 4: Now, we want to color the data points by passenger class (pclass), and split the calculation and plot for the regression line by these 3 groups.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nAdd color to the aesthetic attributes (via aes())\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = fare, color = pclass)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  scale_y_log10(\"fare paid (GBP)\")\n\n\nStep 5: Next, we want to split the plot into separate panes for each sex, add a rug plot to both sides as well.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\nSeparate plots into panes via facet_wrap()\nAdd rug plot via geom_rug()\n\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = fare, color = pclass)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  geom_rug() +\n  scale_y_log10(\"fare paid (GBP)\") +\n  facet_wrap(~sex)\n\n\nStep 6: Make the plot prettier to your heart’s content!\n\n\nExample output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\nYou can consider:\n\nChanging color scale (e.g., scale_color_viridis_d(), scale_color_manual())\nChanging plot theme (e.g., theme_bw(), theme_minimal())\n\n\n\n\nFor the color palette, we use a custom OUCRU palette from the oucru package, which can be installed by running\n\nrenv::install(\"OUCRU-Modelling/oucru\")\n\nAnd loaded into R via\n\nlibrary(oucru)\n\n# The palette can be accessed via\nscale_color_oucru_d()\n\nYou may also want to check some sample usages of the package here\n\n\nCode for example output\nggplot(titanic, aes(x = age, y = fare, color = pclass)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  geom_rug() +\n  scale_y_log10(\"fare paid (GBP)\") +\n  facet_wrap(~sex) +\n  scale_color_oucru_d() +\n  theme_bw()\n\n\nStep 7: Save your plot as a .png\n\n\nReveal answer\nggsave(\"output/titanic_fare_plot.png\", width = 7, heigh = 5)"
+  },
+  {
+    "objectID": "handouts/exercise_day3.html#exercise-2",
+    "href": "handouts/exercise_day3.html#exercise-2",
+    "title": "Exercises Day 3",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nFor this exercise, we will create plots to explore the age distribution for each pclass\n\nExercise 2.1. Histogram\nWe can start by plotting histograms of age for each of the pclass.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\n\nUse geom_histogram()\nSplit the plot by pclass via facet_wrap()\n\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age)) +\n  geom_histogram() +\n  facet_wrap(~pclass)\n\n\n\n\nExercise 2.2. Boxplot\nAnother option is to use the boxplot. Start by making a boxplot of age (along y-axis) for each of the passenger classes (along x-axis).\n\n\nReveal answer\nggplot(titanic) +\n  geom_boxplot(\n    aes(y = age, x = pclass)\n  )\n\n\nThen, add the individual data points to the boxplot. Give the data points a red color and make them (slightly) transparent.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\n\nUse geom_jitter() instead of geom_point() to make it easier to discriminate between the data points.\nTransparency level can be configured via the alpha aesthetic\n\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(y = age, x = pclass)) +\n  geom_boxplot() +\n  geom_jitter(color = \"red\", alpha = .2)\n\n\n\n\nExercise 2.3. Violin plot\nInstead of using boxplot, you may also consider using the violin plot.\nTry recreating the following plot\n\n\n\n\n\n\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(y = age, x = pclass)) +\n  geom_violin() +\n  geom_jitter(color = \"red\", alpha = .2) +\n  theme_bw()\n\n\nBonus task: Customize the plot to your liking!"
+  },
+  {
+    "objectID": "handouts/exercise_day3.html#exercise-3",
+    "href": "handouts/exercise_day3.html#exercise-3",
+    "title": "Exercises Day 3",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nMake a new graph in which we perform an exploratory analysis of the relationship between survival and age, sex and passenger class (pclass).\nThe end result should look something like this.\n\n\n\n\n\n\n\n\n\nA few details\n\nJitter is configured with height=0.05 and width=0 (experiment with different width values to see why you should set width=0)\n\n\n\nThe smoothed layer is generated with loess method\nThe color is configured with oucru palette “group4”\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\nList of geoms used include:\n\ngeom_smooth()\ngeom_jitter()\n\nPosition of legend can be configured via theme(legend.position = ...)\nLimit for y-axis can be configured via coord_cartesian(ylim=...)\nThe oucru palette can be configured via scale_color_oucru_d(palette = ...)\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = survived, color = sex)) +\n  geom_smooth(method = \"loess\") +\n  geom_jitter(width = 0, height = .05, alpha = .5) +\n  facet_wrap(~pclass) +\n  coord_cartesian(ylim = c(-.1, 1.1)) +\n  scale_color_oucru_d(palette = \"group4\") +\n  theme_bw() +\n  theme(legend.position = 'top')"
+  },
+  {
+    "objectID": "handouts/precourse_setup.html",
+    "href": "handouts/precourse_setup.html",
+    "title": "Pre-course setups and requirements",
+    "section": "",
+    "text": "About\nHere we explain how to install R and RStudio on your own computer. This is required to ensure a smooth experience and reproducible results during the course.\n\n\n1 R\n\nGo to the R website\nIn the column on the left hand side, click on the CRAN link under the subheading Download\n\nYou now see a page with CRAN Mirrors. This is a list of servers from which the R software and extensions can be downloaded from\n\nClick on the first link\n\nNow both the left hand side and the right hand side of the page change (This page can be saved as a bookmark/favorite)\n\nOn the right hand side, click on the download link for your operating system\n\nE.g. Windows users click on Download R for Windows, then click on base and download the program from there.\nIt is recommended to install the latest version as well as to upgrade the program if a new major version is released, which is about once per year\nYou can use the default installation options\n\n\n\n\n2 RStudio Desktop\n\nGo to the download page\nScroll down, look for 2: Install Rstudio and click on the button for downloading RStudio Desktop\nDownload and install RStudio Desktop\n\nYou can use the default installation options\n\nOpen Rstudio Desktop, to check that everything has been installed correctly\n\nE.g. via the Start menu in Windows\n\n\n\n\n3 renv setup\n\nThe renv package helps you create reproducible environments for your R projects. Use renv to make your R projects more isolated, portable and reproducible.\n\nFor better error reproducilibity, environment consistency, and ease of debugging, we will setup an renv environment for the course. Follow these steps:\n\nIn your normal R console, install renv with\n\ninstall.packages(\"renv\")\n\nInitialise renv in the project environment with\n\nrenv::init()\n\n\n\n\n\n\nNote\n\n\n\n\n\nMake sure you’re in the correct working directory!\nYou can check from the R console with getwd() and set the correct working directory with setwd(...)\n\n\n\n\nRestart your R session\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nThis can be done using Ctrl+Shift+F10 on Windows and Cmd+Shift+F10 on MacOS\n\n\n\n\nCheck your R console upon restart. It should say that renv is loaded and activated!\n\n(This will be quickly walked through again on the first session of the course)"
+  },
+  {
+    "objectID": "slides/qt-example.html",
+    "href": "slides/qt-example.html",
+    "title": "Hello, Quarto",
+    "section": "",
+    "text": "Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
+  },
+  {
+    "objectID": "slides/qt-example.html#introduction-to-quarto",
+    "href": "slides/qt-example.html#introduction-to-quarto",
+    "title": "Hello, Quarto",
+    "section": "",
+    "text": "Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
+  },
+  {
+    "objectID": "slides/qt-example.html#header-levels",
+    "href": "slides/qt-example.html#header-levels",
+    "title": "Hello, Quarto",
+    "section": "2 Header Levels",
+    "text": "2 Header Levels\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\nLevel 1 header: # Header\nLevel 2 header: ## Subheader\nLevel 3 header: ### Sub-subheader\n\n\n2.1 Nested Headers\nUsing headers, you can create nested sections to structure your document in a clear and organized way."
+  },
+  {
+    "objectID": "slides/qt-example.html#inline-text-formatting",
+    "href": "slides/qt-example.html#inline-text-formatting",
+    "title": "Hello, Quarto",
+    "section": "3 Inline Text Formatting",
+    "text": "3 Inline Text Formatting\nYou can format your text inline to add emphasis or other styling options.\n\nBold text: **bold**\nItalic text: *italic*\nInline code: `code`\nUnderline: [underline]{.underline}\n\n\nBlockquotes can be used to highlight important information or quotes by adding &gt; at the beginning of a line."
+  },
+  {
+    "objectID": "slides/qt-example.html#lists",
+    "href": "slides/qt-example.html#lists",
+    "title": "Hello, Quarto",
+    "section": "4 Lists",
+    "text": "4 Lists\nQuarto supports both ordered and unordered lists.\n\n4.1 Unordered List\nTo create an unordered list, use an asterisk * before each item:\n\nFirst item\nSecond item\nThird item\n\n\n\n4.2 Ordered List\nTo create an ordered list, use numbers before each item:\n\nFirst item\nSecond item\nThird item"
+  },
+  {
+    "objectID": "slides/qt-example.html#links-and-images",
+    "href": "slides/qt-example.html#links-and-images",
+    "title": "Hello, Quarto",
+    "section": "5 Links and images",
+    "text": "5 Links and images\nhttp://example.com\nlinked phrase\n\n\n\noptional caption text"
+  },
+  {
+    "objectID": "slides/qt-example.html#tables",
+    "href": "slides/qt-example.html#tables",
+    "title": "Hello, Quarto",
+    "section": "6 Tables",
+    "text": "6 Tables\n\n\n\nFirst Header\nSecond Header\n\n\n\n\nContent Cell\nContent Cell\n\n\nContent Cell\nContent Cell"
+  },
+  {
+    "objectID": "slides/qt-example.html#code-block",
+    "href": "slides/qt-example.html#code-block",
+    "title": "Hello, Quarto",
+    "section": "7 Code block",
+    "text": "7 Code block\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")"
+  },
+  {
+    "objectID": "slides/qt-example.html#footnotes",
+    "href": "slides/qt-example.html#footnotes",
+    "title": "Hello, Quarto",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThis is an example footnote.↩︎"
+  },
+  {
     "objectID": "slides/IntroductionRDay1.html#learning-goals",
     "href": "slides/IntroductionRDay1.html#learning-goals",
     "title": "Introduction to R, Day 1",
@@ -511,871 +1400,150 @@
     "text": "Make exercises 5, 6 and 7\nReturn to main course page"
   },
   {
-    "objectID": "slides/qt-example.html",
-    "href": "slides/qt-example.html",
-    "title": "Hello, Quarto",
-    "section": "",
-    "text": "Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
+    "objectID": "slides/IntroductionRDay2.html#learning-goals",
+    "href": "slides/IntroductionRDay2.html#learning-goals",
+    "title": "Introduction to R, Day 2",
+    "section": "Learning goals",
+    "text": "Learning goals\n\nDay 1\n\nBasic structure of the R program and language\nUse the RStudio working environment\nImport, inspect and manage a data set\n\nSelect variables (columns) and rows (observations)\nMissing data, factors, dates\n\n\n\n\n\nDay 2\n\nUsing graphics in base R\nFunctions, packages\nObject specific functions\nLists\nWriting more transparent code"
   },
   {
-    "objectID": "slides/qt-example.html#introduction-to-quarto",
-    "href": "slides/qt-example.html#introduction-to-quarto",
-    "title": "Hello, Quarto",
-    "section": "",
-    "text": "Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
+    "objectID": "slides/IntroductionRDay2.html#r-graphics-systems",
+    "href": "slides/IntroductionRDay2.html#r-graphics-systems",
+    "title": "Introduction to R, Day 2",
+    "section": "R graphics systems:",
+    "text": "R graphics systems:\n\nBase graphics (package graphics)\n\nStraightforward to use\nAlways loaded when R is started\nSee Ch. 12 of manual An Introduction to R\n\n\n\n\nlattice package. Less popular nowadays. Not covered here.\nggplot2 package: Wednesday\nNote: these systems cannot be mixed"
   },
   {
-    "objectID": "slides/qt-example.html#header-levels",
-    "href": "slides/qt-example.html#header-levels",
-    "title": "Hello, Quarto",
-    "section": "2 Header Levels",
-    "text": "2 Header Levels\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\nLevel 1 header: # Header\nLevel 2 header: ## Subheader\nLevel 3 header: ### Sub-subheader\n\n\n2.1 Nested Headers\nUsing headers, you can create nested sections to structure your document in a clear and organized way."
+    "objectID": "slides/IntroductionRDay2.html#basic-plot-in-base-graphics",
+    "href": "slides/IntroductionRDay2.html#basic-plot-in-base-graphics",
+    "title": "Introduction to R, Day 2",
+    "section": "Basic plot in base graphics",
+    "text": "Basic plot in base graphics\nPlot fare paid as function of age\nplot(titanic$age, titanic$fare)\nExercise: What would you like to change to make it good enough for publication?\n\n\nFormula based specification\n\nbasis for specification of regression models\ngeneral form: dependent ~ independent\n\nplot(fare ~ age, data=titanic)\n\nindependent: variable names separated by operator (+ for main effects and * for main effects plus interaction)\nfunctions with formula (as first argument) have data and subset argument\n\n\n\n\nSome possible changes: change labels along axes, rotate numbers along y-axis, add regression line, rescale fare\n\n\n\nGood summary on base graphics on page 5 of Reference card"
   },
   {
-    "objectID": "slides/qt-example.html#inline-text-formatting",
-    "href": "slides/qt-example.html#inline-text-formatting",
-    "title": "Hello, Quarto",
-    "section": "3 Inline Text Formatting",
-    "text": "3 Inline Text Formatting\nYou can format your text inline to add emphasis or other styling options.\n\nBold text: **bold**\nItalic text: *italic*\nInline code: `code`\nUnderline: [underline]{.underline}\n\n\nBlockquotes can be used to highlight important information or quotes by adding &gt; at the beginning of a line."
+    "objectID": "slides/IntroductionRDay2.html#arguments-and-parameters-that-can-be-changed",
+    "href": "slides/IntroductionRDay2.html#arguments-and-parameters-that-can-be-changed",
+    "title": "Introduction to R, Day 2",
+    "section": "Arguments and parameters that can be changed",
+    "text": "Arguments and parameters that can be changed\n\nWithin function only\n\nxlab, ylab, main\ntype\nxlim, ylim, log\n\nAlso via par function\n\ncex.axis, cex.lab, las\ncex, pch\ncol, lty, lwd\n\nOnly via par function\n\nmar, mfcol, mfrow"
   },
   {
-    "objectID": "slides/qt-example.html#lists",
-    "href": "slides/qt-example.html#lists",
-    "title": "Hello, Quarto",
-    "section": "4 Lists",
-    "text": "4 Lists\nQuarto supports both ordered and unordered lists.\n\n4.1 Unordered List\nTo create an unordered list, use an asterisk * before each item:\n\nFirst item\nSecond item\nThird item\n\n\n\n4.2 Ordered List\nTo create an ordered list, use numbers before each item:\n\nFirst item\nSecond item\nThird item"
+    "objectID": "slides/IntroductionRDay2.html#some-important-functions-for-plotting",
+    "href": "slides/IntroductionRDay2.html#some-important-functions-for-plotting",
+    "title": "Introduction to R, Day 2",
+    "section": "Some important functions for plotting",
+    "text": "Some important functions for plotting\n\nHigh level plot functions\n\nplot\nhist\nboxplot\n\nLow level plot functions (add to existing plot)\n\npoints\nlines, abline\ntext, legend, title, arrows, segments"
   },
   {
-    "objectID": "slides/qt-example.html#links-and-images",
-    "href": "slides/qt-example.html#links-and-images",
-    "title": "Hello, Quarto",
-    "section": "5 Links and images",
-    "text": "5 Links and images\nhttp://example.com\nlinked phrase\n\n\n\noptional caption text"
+    "objectID": "slides/IntroductionRDay2.html#other-plots",
+    "href": "slides/IntroductionRDay2.html#other-plots",
+    "title": "Introduction to R, Day 2",
+    "section": "Other plots",
+    "text": "Other plots\n1-3. Plot fare paid as function of age, change scale, add regression line\n\nColor points by passenger class\nMake a separate plot by sex\n\n\nExercise 6: Make a histogram of age\nExercise 7: Make a boxplot of age by passenger class."
   },
   {
-    "objectID": "slides/qt-example.html#tables",
-    "href": "slides/qt-example.html#tables",
-    "title": "Hello, Quarto",
-    "section": "6 Tables",
-    "text": "6 Tables\n\n\n\nFirst Header\nSecond Header\n\n\n\n\nContent Cell\nContent Cell\n\n\nContent Cell\nContent Cell"
-  },
-  {
-    "objectID": "slides/qt-example.html#code-block",
-    "href": "slides/qt-example.html#code-block",
-    "title": "Hello, Quarto",
-    "section": "7 Code block",
-    "text": "7 Code block\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")"
-  },
-  {
-    "objectID": "slides/qt-example.html#footnotes",
-    "href": "slides/qt-example.html#footnotes",
-    "title": "Hello, Quarto",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nThis is an example footnote.↩︎"
-  },
-  {
-    "objectID": "handouts/precourse_setup.html",
-    "href": "handouts/precourse_setup.html",
-    "title": "Pre-course setups and requirements",
-    "section": "",
-    "text": "About\nHere we explain how to install R and RStudio on your own computer. This is required to ensure a smooth experience and reproducible results during the course.\n\n\n1 R\n\nGo to the R website\nIn the column on the left hand side, click on the CRAN link under the subheading Download\n\nYou now see a page with CRAN Mirrors. This is a list of servers from which the R software and extensions can be downloaded from\n\nClick on the first link\n\nNow both the left hand side and the right hand side of the page change (This page can be saved as a bookmark/favorite)\n\nOn the right hand side, click on the download link for your operating system\n\nE.g. Windows users click on Download R for Windows, then click on base and download the program from there.\nIt is recommended to install the latest version as well as to upgrade the program if a new major version is released, which is about once per year\nYou can use the default installation options\n\n\n\n\n2 RStudio Desktop\n\nGo to the download page\nScroll down, look for 2: Install Rstudio and click on the button for downloading RStudio Desktop\nDownload and install RStudio Desktop\n\nYou can use the default installation options\n\nOpen Rstudio Desktop, to check that everything has been installed correctly\n\nE.g. via the Start menu in Windows\n\n\n\n\n3 renv setup\n\nThe renv package helps you create reproducible environments for your R projects. Use renv to make your R projects more isolated, portable and reproducible.\n\nFor better error reproducilibity, environment consistency, and ease of debugging, we will setup an renv environment for the course. Follow these steps:\n\nIn your normal R console, install renv with\n\ninstall.packages(\"renv\")\n\nInitialise renv in the project environment with\n\nrenv::init()\n\n\n\n\n\n\nNote\n\n\n\n\n\nMake sure you’re in the correct working directory!\nYou can check from the R console with getwd() and set the correct working directory with setwd(...)\n\n\n\n\nRestart your R session\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nThis can be done using Ctrl+Shift+F10 on Windows and Cmd+Shift+F10 on MacOS\n\n\n\n\nCheck your R console upon restart. It should say that renv is loaded and activated!\n\n(This will be quickly walked through again on the first session of the course)"
-  },
-  {
-    "objectID": "handouts/precourse_setup.html#r",
-    "href": "handouts/precourse_setup.html#r",
-    "title": "Pre-course setups and requirements",
-    "section": "R",
-    "text": "R\n\nGo to the R website\nIn the column on the left hand side, click on the CRAN link under the subheading Download\n\nYou now see a page with CRAN Mirrors. This is a list of servers from which the R software and extensions can be downloaded from\n\nClick on the first link\n\nNow both the left hand side and the right hand side of the page change (This page can be saved as a bookmark/favorite)\n\nOn the right hand side, click on the download link for your operating system\n\nE.g. Windows users click on Download R for Windows, then click on base and download the program from there.\nIt is recommended to install the latest version as well as to upgrade the program if a new major version is released, which is about once per year\nYou can use the default installation options"
-  },
-  {
-    "objectID": "handouts/precourse_setup.html#rstudio-desktop",
-    "href": "handouts/precourse_setup.html#rstudio-desktop",
-    "title": "Pre-course setups and requirements",
-    "section": "RStudio Desktop",
-    "text": "RStudio Desktop\n\nGo to the download page\nScroll down, look for 2: Install Rstudio and click on the button for downloading RStudio Desktop\nDownload and install RStudio Desktop\n\nYou can use the default installation options\n\nOpen Rstudio Desktop, to check that everything has been installed correctly\n\nE.g. via the Start menu in Windows"
-  },
-  {
-    "objectID": "handouts/exercise_day3.html",
-    "href": "handouts/exercise_day3.html",
-    "title": "Exercises Day 3",
-    "section": "",
-    "text": "Throughout these exercises, we will recreate the plots from Day 2 exercises using the ggplot2 package"
-  },
-  {
-    "objectID": "handouts/exercise_day3.html#overview",
-    "href": "handouts/exercise_day3.html#overview",
-    "title": "Exercises Day 3",
-    "section": "",
-    "text": "Throughout these exercises, we will recreate the plots from Day 2 exercises using the ggplot2 package"
-  },
-  {
-    "objectID": "handouts/exercise_day3.html#dataset",
-    "href": "handouts/exercise_day3.html#dataset",
-    "title": "Exercises Day 3",
-    "section": "Dataset",
-    "text": "Dataset\nWe will use the Titanic3.xlsx dataset\nIf you haven’t had the data already, click the button below to download it\n\n\n Download data\n\n\nWe can then load the data by running\n\nlibrary(readxl)\nlibrary(ggplot2)\n\n# make sure to modify the file path to match where it is on your device\ntitanic &lt;- read_excel(\"data/raw/Titanic3.xlsx\", na = \"NA\")\n\nhead(titanic, n = 10)"
-  },
-  {
-    "objectID": "handouts/exercise_day3.html#exercise-1",
-    "href": "handouts/exercise_day3.html#exercise-1",
-    "title": "Exercises Day 3",
-    "section": "Exercise 1",
-    "text": "Exercise 1\nIn this exercise, we will draw a plot exploring the relationship between age, sex and the fare paid for the trip.\nThe end result will look something like this.\n\n\n\n\n\n\n\n\n\nSeems complicated? Don’t panic! the following sections will guide you through the process step-by-step.\nStep 1: Plot the price that was paid (fare) as a function of age. Label the axis for fare as “fare paid (GBP)”\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\n\nuse geom_point() for scatter plot\nlabel for y-axis and x-axis can be configure via ylab() and xlab()\n\n\n\n\n\n\nReveal answer\nggplot(titanic) +\n  geom_point(aes(x = age, y = fare)) +\n  ylab(\"fare paid (GBP)\")\n\n\nBonus task: Try adding coord_polar() to see what happen\n\n\nReveal code\nggplot(titanic) +\n  geom_point(aes(x = age, y = fare)) +\n  ylab(\"fare paid (GBP)\") +\n  coord_polar()\n\n\nStep 2: Return to the cartesian coordinate system. Add a second layer that fits the linear regression line with 95% confidence interval.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\nThis is considered as smoothing, use geom_smooth(method=\"lm\") to fit a linear regression model\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = fare)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  ylab(\"fare paid (GBP)\")\n\n\nStep 3: The distribution of fare is very skewed. Therefore, it may be better to plot fare on a logarithmic scale so let’s do exactly that.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\nReplace ylab() with scale_y_log10()\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = fare)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  scale_y_log10(\"fare paid (GBP)\")\n\n\nStep 4: Now, we want to color the data points by passenger class (pclass), and split the calculation and plot for the regression line by these 3 groups.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nAdd color to the aesthetic attributes (via aes())\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = fare, color = pclass)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  scale_y_log10(\"fare paid (GBP)\")\n\n\nStep 5: Next, we want to split the plot into separate panes for each sex, add a rug plot to both sides as well.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\nSeparate plots into panes via facet_wrap()\nAdd rug plot via geom_rug()\n\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = fare, color = pclass)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  geom_rug() +\n  scale_y_log10(\"fare paid (GBP)\") +\n  facet_wrap(~sex)\n\n\nStep 6: Make the plot prettier to your heart’s content!\n\n\nExample output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\nYou can consider:\n\nChanging color scale (e.g., scale_color_viridis_d(), scale_color_manual())\nChanging plot theme (e.g., theme_bw(), theme_minimal())\n\n\n\n\nFor the color palette, we use a custom OUCRU palette from the oucru package, which can be installed by running\n\nrenv::install(\"OUCRU-Modelling/oucru\")\n\nAnd loaded into R via\n\nlibrary(oucru)\n\n# The palette can be accessed via\nscale_color_oucru_d()\n\nYou may also want to check some sample usages of the package here\n\n\nCode for example output\nggplot(titanic, aes(x = age, y = fare, color = pclass)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  geom_rug() +\n  scale_y_log10(\"fare paid (GBP)\") +\n  facet_wrap(~sex) +\n  scale_color_oucru_d() +\n  theme_bw()\n\n\nStep 7: Save your plot as a .png\n\n\nReveal answer\nggsave(\"output/titanic_fare_plot.png\", width = 7, heigh = 5)"
-  },
-  {
-    "objectID": "handouts/exercise_day3.html#exercise-2",
-    "href": "handouts/exercise_day3.html#exercise-2",
-    "title": "Exercises Day 3",
-    "section": "Exercise 2",
-    "text": "Exercise 2\nFor this exercise, we will create plots to explore the age distribution for each pclass\n\nExercise 2.1. Histogram\nWe can start by plotting histograms of age for each of the pclass.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\n\nUse geom_histogram()\nSplit the plot by pclass via facet_wrap()\n\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age)) +\n  geom_histogram() +\n  facet_wrap(~pclass)\n\n\n\n\nExercise 2.2. Boxplot\nAnother option is to use the boxplot. Start by making a boxplot of age (along y-axis) for each of the passenger classes (along x-axis).\n\n\nReveal answer\nggplot(titanic) +\n  geom_boxplot(\n    aes(y = age, x = pclass)\n  )\n\n\nThen, add the individual data points to the boxplot. Give the data points a red color and make them (slightly) transparent.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\n\nUse geom_jitter() instead of geom_point() to make it easier to discriminate between the data points.\nTransparency level can be configured via the alpha aesthetic\n\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(y = age, x = pclass)) +\n  geom_boxplot() +\n  geom_jitter(color = \"red\", alpha = .2)\n\n\n\n\nExercise 2.3. Violin plot\nInstead of using boxplot, you may also consider using the violin plot.\nTry recreating the following plot\n\n\n\n\n\n\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(y = age, x = pclass)) +\n  geom_violin() +\n  geom_jitter(color = \"red\", alpha = .2) +\n  theme_bw()\n\n\nBonus task: Customize the plot to your liking!"
-  },
-  {
-    "objectID": "handouts/exercise_day3.html#exercise-3",
-    "href": "handouts/exercise_day3.html#exercise-3",
-    "title": "Exercises Day 3",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nMake a new graph in which we perform an exploratory analysis of the relationship between survival and age, sex and passenger class (pclass).\nThe end result should look something like this.\n\n\n\n\n\n\n\n\n\nA few details\n\nJitter is configured with height=0.05 and width=0 (experiment with different width values to see why you should set width=0)\n\n\n\nThe smoothed layer is generated with loess method\nThe color is configured with oucru palette “group4”\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\nList of geoms used include:\n\ngeom_smooth()\ngeom_jitter()\n\nPosition of legend can be configured via theme(legend.position = ...)\nLimit for y-axis can be configured via coord_cartesian(ylim=...)\nThe oucru palette can be configured via scale_color_oucru_d(palette = ...)\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = survived, color = sex)) +\n  geom_smooth(method = \"loess\") +\n  geom_jitter(width = 0, height = .05, alpha = .5) +\n  facet_wrap(~pclass) +\n  coord_cartesian(ylim = c(-.1, 1.1)) +\n  scale_color_oucru_d(palette = \"group4\") +\n  theme_bw() +\n  theme(legend.position = 'top')"
-  },
-  {
-    "objectID": "handouts/exercises_Day5.html",
-    "href": "handouts/exercises_Day5.html",
-    "title": "Exercises Day 5",
-    "section": "",
-    "text": "NotePiping\n\n\n\nIt is expected that the exercise answers will be mainly using the pipe operators |&gt;, instead of putting functions inside each other"
-  },
-  {
-    "objectID": "handouts/exercises_Day5.html#notes-and-instructions",
-    "href": "handouts/exercises_Day5.html#notes-and-instructions",
-    "title": "Exercises Day 5",
-    "section": "",
-    "text": "NotePiping\n\n\n\nIt is expected that the exercise answers will be mainly using the pipe operators |&gt;, instead of putting functions inside each other"
-  },
-  {
-    "objectID": "handouts/exercises_Day5.html#dataset",
-    "href": "handouts/exercises_Day5.html#dataset",
-    "title": "Exercises Day 5",
-    "section": "Dataset",
-    "text": "Dataset\nWe will use covid_cases.rds for this exercise.\n\n  \n    Data dictionary\n  \n\n\n\n\n\n\n\nColumn\nDescription\n\n\n\n\ndate\ndate of the case report\n\n\n211 columns with the format cases_{country_code}\nnumber of reported cases of each country and archipelago\n\n\n\nCountry codes of interest (i.e. Codes for countries needed for the exercise)\n\n\n\nCode\nCountry name\n\n\n\n\nchn\nChina\n\n\nusa\nUnited States of America\n\n\nvnm\nVietnam\n\n\nsgp\nSingapore"
-  },
-  {
-    "objectID": "handouts/exercises_Day5.html#exercises",
-    "href": "handouts/exercises_Day5.html#exercises",
-    "title": "Exercises Day 5",
-    "section": "Exercises",
-    "text": "Exercises\n\nTask 1: Data import\n\nRead data\nLoad the tidyverse meta-package into R\n\n\n\n\n\n\n\nNote\n\n\n\nA “meta-package” is a package that contains other packages. Remember, tidyverse is just a collection of packages.\n\n\n\n\nTask 2: Data cleaning and filtering\n\nDoes the data follow the tidy data standard?\n\nIf not, pivot the data into a tibble that follows the tidy data standard\n\nDo some quick skim on the data. Do the variable values make sense given its type?\n\nIf not, filter out incorrect/impossible data\n\nFilter the data so that we only have week 3-12 of 2020\nSave the results back into covid_cases\n\n\n\n\n\n\n\nTipTip: pivotting\n\n\n\n\n\n\nIf your data is not tidy data:\n\n“Lengthens” the data using tidyr::pivot_longer(), i.e. less columns, more rows\n“Widens” the data using tidyr::pivot_wider(), i.e. less rows, more columns\n\n\n\n\n\n\n\n\n\n\n\nTipTip: data cleaning\n\n\n\n\n\n\nThe main variable here is case counts from each country. They should have a numeric type and should not be lower than 0. You can’t have negative case counts\nYou can remove or filter undesirable values using dplyr::filter()\n\n\n\n\n\n\nTask 3: Data transformation\n\nUsing the covid_cases object created in Task 2:\n\nGroup the data and calculate the total number of cases per country\nSelect the top 5 countries with highest total cases\nExtract the country codes and save them into a new object, e.g. top_countries\n\n\n\nUse the covid_cases object created in Task 2 again:\n\nGroup the data again, calculate the total number of cases per country again\nModify the country column:\n\nSo that we only keep the names of countries in the top 5 (generated above). Countries on in the top 5 will be changed to \"Others\"\nTurn this column into a factor type using the forcats package (already in tidyverse)\nGroup the data again, this time, group by date and country\nCalculate the total number of cases per date per country\nCreate a new column called pct_cases, which is the percentage of total cases per date per country\n(Optional) remove rows with NA from the tibble\nThere are many ways to do this part of the task\n\nSave all of this into a new object, e.g. plot_data\n\n\n\n\n\n\n\n\nTipTip: data grouping and summarisation\n\n\n\n\n\n\nGroup data into groups with dplyr::group_by() and ungroup data with dplyr::ungroup()\nSummarise each group into a single row with dplyr::summarise()\nYou can have multiple groups at the same time. For example:\n\n\n\n`summarise()` has regrouped the output.\nℹ Summaries were computed grouped by date and country.\nℹ Output is grouped by date.\nℹ Use `summarise(.groups = \"drop_last\")` to silence this message.\nℹ Use `summarise(.by = c(date, country))` for per-operation grouping\n  (`?dplyr::dplyr_by`) instead.\n\n\n\n  \n\n\n\n\nYou can choose not to summarise, but add a new column to each group with dplyr::mutate(). For example:\n\n\n\n\n  \n\n\n\nThis will create a new column total_cases that contains the sum of cases for each country without reducing each group into a single row like summarise(). Values will be duplicated for each group.\n\n\n\n\n\n\n\n\n\nTipTip: get top n values in a tibble\n\n\n\n\n\n\nYou can select rows with the top n values in a tibble using dplyr::slice_max()\n\n\n\n\n\n\n\n\n\n\nTipTip: get values of a column in a tibble\n\n\n\n\n\n\nYou can extract values from a columns in a tibble using dplyr::pull()\n\n\n\n\n\n\n\n\n\n\nTipTip: turn a tibble column into a factor\n\n\n\n\n\n\nYou can create and work with factors inside a tibble using the forcats package (already in tidyverse)\nYou can “lump”, or gather, factor levels that are not frequent with forcats::fct_lump_n()\n\n\n\n\n\n\nTask 4: Join data\n\nUse this data country_region.rds to get the regions and sub-regions for all countries.\nMake these 2 tables:\n\n\n\n\n  \n\n\n\n\n\n\n  \n\n\n\n\nWrite a short paragraph summarising key insights from the table, using inline R code to dynamically display case numbers. For example:\n\n\nEurope (192,068) and Asia (126,420) reported the highest number of cases, while Oceania (1,879) had the lowest.\n\nNoted that the number of cases is not hard-coded but you use inline R code to generate it within the text.\n\n\n\n\n\n\nTipTip: join the tables with left_join()\n\n\n\n\n\nYou can join covid_cases and country_region, using the country column of covid_cases and the alpha_3 column of country_region.\n\n\n\n\n\n\n\n\n\nTipTip: make the total cases table\n\n\n\n\n\nYou can use group_by() and summarise() to compute the total cases by sum(cases).\n\n\n\n\n\n\n\n\n\nTipTip: make inline R code\n\n\n\n\n\nIn the paragraph, use inline R code like {r} scales::comma(data$total_cases[tmp1$region == \"Europe\"]) to reference computed values. Function scales::comma() will make the numbers appear with commas for thousands (e.g., 100,000 instead of 100000).\n\n\n\n\n\nTask 5: Data visualization\n\nUsing ggplot2, try your best to generate the following figure:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipTip: how do I draw that??\n\n\n\n\n\n\nggplot2 reference page is very useful\nHere are all the functions used to generate the plot above, in sequence:\n\nggplot()\ngeom_area()\nscale_y_continuous()\nscale_x_date()\nscale_fill_discrete()\nggtitle()\nEvery function is connected with the + operator"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "OUCRU R training course - 2026",
-    "section": "",
-    "text": "The training will be 09:00 – 17:00 (UTC +7) for everyday\nThere will be a lunch break between 12:30 – 13:30 (UTC +7)\nLunch will be provided for in-person attendees who filled in their attendance on ferendum.com. If you did not, you need to arrange lunch yourself.\n\n\n\n\nProf. Ronald Geskus, Biostatistics group, OUCRU HCM\nMr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM\nMr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM\nDr. Tran Thai Hung, Biostatistics group, OUCRU HCM\nMs. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM\nDr. Duc Du Hong, Biostatistics group, OUCRU HCM\nDr. Thuan Hoang Van, Biostatistics group, OUCRU Ha Noi\nDr. Nguyen Lam Vuong, Biostatistics group, OUCRU HCM\nMr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM\n\n\n\n\nPlease follow this pre-course setups handout to setup R and RStudio."
-  },
-  {
-    "objectID": "index.html#contributors",
-    "href": "index.html#contributors",
-    "title": "OUCRU R training course - 2026",
-    "section": "",
-    "text": "Prof. Ronald Geskus, Biostatistics group, OUCRU HCM\nMr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM\nMr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM\nDr. Tran Thai Hung, Biostatistics group, OUCRU HCM\nMs. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM\nDr. Duc Du Hong, Biostatistics group, OUCRU HCM\nDr. Thuan Hoang Van, Biostatistics group, OUCRU Ha Noi\nDr. Nguyen Lam Vuong, Biostatistics group, OUCRU HCM\nMr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM"
-  },
-  {
-    "objectID": "index.html#pre-course-setups-and-requirements",
-    "href": "index.html#pre-course-setups-and-requirements",
-    "title": "OUCRU R training course - 2026",
-    "section": "",
-    "text": "Please follow this pre-course setups handout to setup R and RStudio."
-  },
-  {
-    "objectID": "index.html#introduction-to-r",
-    "href": "index.html#introduction-to-r",
-    "title": "OUCRU R training course - 2026",
-    "section": "Introduction to R",
-    "text": "Introduction to R\n\nDay 1 (Monday)\n\nLecture slides\nLearning objectives:\n\nBasic structure of R\nSimple computations\nImport and inspect datasets\nMake selections\nNavigate RStudio with confidence\n\nExercises:\n\nExercises\nExercise answers\n Exercise answers script \n\n Example R code scripts - Day 1 \n\n\n\nDay 2 (Tuesday)\n\n\nLearning objectives:\n\nWrite simple functions to automate tasks\nCreate visualisations using Base R graphics\nUnderstand the R working environment, including file paths and workspace management\nUsing pipe operators to chain functions\nHow to read and understand the errors and warnings in your R console\nFind and use R documentation and resources to solve problems on your own\n\nNo exercises will be given"
-  },
-  {
-    "objectID": "index.html#principles-of-data-visualisation-and-plotting-in-r",
-    "href": "index.html#principles-of-data-visualisation-and-plotting-in-r",
-    "title": "OUCRU R training course - 2026",
-    "section": "Principles of data visualisation and plotting in R",
-    "text": "Principles of data visualisation and plotting in R\n\nDay 3 (Wednesday):\n\nLecture slides\nLearning objectives:\n\nThe grammar of graphics—understanding how plots are built\nThe step-by-step process of creating graphs in R\nUse the ggplot2 package plot figures in R\nHow to design clear and impactful visualisations\nUsing LLMs (Large Language Models) to help you with plotting\n\nExercises\n\n\n\n\nDay 4 (Thursday-morning):\n\nLearning objectives:\n\nUnderstand the principles of data visualisation"
-  },
-  {
-    "objectID": "index.html#advanced-data-management-in-r",
-    "href": "index.html#advanced-data-management-in-r",
-    "title": "OUCRU R training course - 2026",
-    "section": "Advanced data management in R",
-    "text": "Advanced data management in R\n\nDay 4 (Thursday-afternoon):\n\nLearning objectives:\n\nLogics with if-else statements and for-loops\nData manipulation with mutate()\nJoining dataframes\nPivotting dataframes into long and wide formats\nVectorisation in R with map()"
-  },
-  {
-    "objectID": "index.html#reproducible-research-and-reporting-using-quarto",
-    "href": "index.html#reproducible-research-and-reporting-using-quarto",
-    "title": "OUCRU R training course - 2026",
-    "section": "Reproducible research and reporting using Quarto",
-    "text": "Reproducible research and reporting using Quarto\n\nDay 5 (Friday-morning)\n\nLecture slides\nLearning objectives:\n\nWrite papers with reproducible tables and figures using Quarto\nGenerate reports in multiple formats: Word, PDF, slides, web pages…\nEasily update analyses when new data becomes available\n\nExercises\nExercise answer keys"
-  },
-  {
-    "objectID": "index.html#introduction-to-r-and-rstudio",
-    "href": "index.html#introduction-to-r-and-rstudio",
-    "title": "OUCRU R training course - 2026",
-    "section": "Introduction to R and RStudio",
-    "text": "Introduction to R and RStudio\nGood introduction, with explanatory videos:\n\nRStudio provides several tutorials for beginners and more advanced users: https://education.rstudio.com/\nDatacamp provides many courses at different levels (OUCRU HCMC has a license). See http://www.statmethods.net. The introduction is free\nA basic course, interactive design: https://www.quantargo.com/courses/course-r-introduction\nIntroduction from Pasteur institute: https://hub-courses.pages.pasteur.fr/R_pasteur_phd/First_steps_RStudio.html\nGood summary of basic concepts: http://www.burns-stat.com/documents/tutorials/impatient-r\nA comprehensive introduction: https://github.com/matloff/fasteR\nIntroduction to R programming: https://jjallaire.github.io/hopr/"
-  },
-  {
-    "objectID": "index.html#deeper-into-r",
-    "href": "index.html#deeper-into-r",
-    "title": "OUCRU R training course - 2026",
-    "section": "DeepeR into R",
-    "text": "DeepeR into R\n\nThe book R for Data Science (2e)\n“What They Forgot to Teach You About R”\nhttps://www.r-project.org/doc/bib/R-books.html\nThe official R manuals: https://cran.r-project.org/manuals.html"
-  },
-  {
-    "objectID": "index.html#r-and-statistics",
-    "href": "index.html#r-and-statistics",
-    "title": "OUCRU R training course - 2026",
-    "section": "R and statistics",
-    "text": "R and statistics\n\nA simple introduction to biomedical statistics using R: https://a-little-book-of-r-for-biomedical-statistics.readthedocs.io/en/latest/\nA website with detailed examples of all types of statistical analysis: https://stats.oarc.ucla.edu/other/dae/\nR by example: http://www.mayin.org/ajayshah/KB/R/index.html\nR course, with focus machine learning"
-  },
-  {
-    "objectID": "index.html#r-markdown-and-quarto",
-    "href": "index.html#r-markdown-and-quarto",
-    "title": "OUCRU R training course - 2026",
-    "section": "R Markdown and Quarto",
-    "text": "R Markdown and Quarto\n\nThe main RStudio webpage on R Markdown, with links to two freely available books: https://rmarkdown.rstudio.com/docs/\nIntroduction from RStudio\nIntroduction to knitr\nFirst steps in Markdown\nWriting academic papers with R Markdown (focus on bibiliographies): https://ikashnitsky.github.io/2019/zotero/\nR Markdown tips: https://appsilon.com/r-markdown-tips/\nPowerpoint presentations using R Markdown: https://appsilon.com/r-markdown-powerpoint-presentation/\nhttps://codingclubuc3m.rbind.io/post/2019-09-24/ focus on creating presentations\nR Quarto tutorial: https://appsilon.com/r-quarto-tutorial/"
-  },
-  {
-    "objectID": "slides/qt-example-slide.html#slide-title",
-    "href": "slides/qt-example-slide.html#slide-title",
-    "title": "My Presentation",
-    "section": "Slide Title",
-    "text": "Slide Title\n\nBullet point 1\nBullet point 2"
-  },
-  {
-    "objectID": "slides/qt-example-slide.html#code-blocks-highlighting",
-    "href": "slides/qt-example-slide.html#code-blocks-highlighting",
-    "title": "My Presentation",
-    "section": "Code Blocks & Highlighting",
-    "text": "Code Blocks & Highlighting\nYou can add code blocks like this:\n```{r}\n# R code block\nsummary(cars)\n```"
-  },
-  {
-    "objectID": "slides/viz.html#what-to-expect",
-    "href": "slides/viz.html#what-to-expect",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "What to expect",
-    "text": "What to expect\nHow to make an informative visual representation of data and/or results\n\nPart I: process of graph creation\nPart II: principles of graph interpretation\n\n\n\n\n\n\n\nNote\n\n\nGraph = diagram = chart = figure = picture"
-  },
-  {
-    "objectID": "slides/viz.html#section",
-    "href": "slides/viz.html#section",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "",
-    "text": "But it takes\n\nknowledge of graphics principles\neffort; trial and error\ntime\n\nto make a “good” one"
-  },
-  {
-    "objectID": "slides/viz.html#who-created-this-graph",
-    "href": "slides/viz.html#who-created-this-graph",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Who created this graph?",
-    "text": "Who created this graph?"
-  },
-  {
-    "objectID": "slides/viz.html#answer-florence-nightingale",
-    "href": "slides/viz.html#answer-florence-nightingale",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Answer: Florence Nightingale",
-    "text": "Answer: Florence Nightingale\nRose plot to convince UK authorities of importance of hygiene"
-  },
-  {
-    "objectID": "slides/viz.html#example-of-informative-graph",
-    "href": "slides/viz.html#example-of-informative-graph",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Example of informative graph",
-    "text": "Example of informative graph"
-  },
-  {
-    "objectID": "slides/viz.html#example-of-noninformative-graph",
-    "href": "slides/viz.html#example-of-noninformative-graph",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Example of noninformative graph",
-    "text": "Example of noninformative graph\nHinrichsen: risk factors for hepatitis G infection in haemodialysis patients\n\nDo we need a graph?\nAre there enough data points to merit a plot?\n\nDepends on mode of presentation: conference lecture (time limit), article\n\nIf we use a graph, is this one the most truthful and informative?"
-  },
-  {
-    "objectID": "slides/viz.html#graph-versus-table",
-    "href": "slides/viz.html#graph-versus-table",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Graph versus table",
-    "text": "Graph versus table\nCohort study on 1187 HIV infected persons in The Gambia"
-  },
-  {
-    "objectID": "slides/viz.html#pattern-discovery-fake-results",
-    "href": "slides/viz.html#pattern-discovery-fake-results",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Pattern discovery (fake results)",
-    "text": "Pattern discovery (fake results)"
-  },
-  {
-    "objectID": "slides/viz.html#points-to-consider",
-    "href": "slides/viz.html#points-to-consider",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Points to consider",
-    "text": "Points to consider\n\n\nWhy do we make a graph? (purpose)\n\nWe want to explore and inspect our data or results\nPresent data or results, often with a message, to others\n\n\n\n\nWhere do we show the graph: research paper, conference, website\n\n\n\n\nWho is the audience. Level of background knowledge\n\n\n\n\nWhat do we want to show (data)\n\nGraph: visual representation of information (“encoding”)\nmapping from data/results to figure"
-  },
-  {
-    "objectID": "slides/viz.html#the-origin",
-    "href": "slides/viz.html#the-origin",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "The origin",
-    "text": "The origin\n\n\nThe author\n\nLeland Wilkinson, The Grammar of Graphics, Springer 2005\nAuthor of SYSTAT; 1995: sold to SPSS\n1994 - 2007: Senior VP, SPSS"
-  },
-  {
-    "objectID": "slides/viz.html#what-is-a-grammar",
-    "href": "slides/viz.html#what-is-a-grammar",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "What is a grammar?",
-    "text": "What is a grammar?\n\n\n\nDefines components of a sentence (verb, noun, …) and rules how to combine them\nSuch a sentence does not necessarily have to make sense\n“The lab is flying menacingly” (Subject + Conjugate + Verb + Adverb)\n\n\n E.g. this is one grammar rule of English"
-  },
-  {
-    "objectID": "slides/viz.html#what-is-a-grammar-1",
-    "href": "slides/viz.html#what-is-a-grammar-1",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "What is a grammar?",
-    "text": "What is a grammar?\n\nGraphics grammar:\n\nDefines components of a figure and rules how to combine them\nDoes not advise on the best choice of scale (linear, logarithmic), color or line type; one can create noninformative graphs\n\n\n\nGrammar helps expressing ideas or information in a clear and coherent way"
-  },
-  {
-    "objectID": "slides/viz.html#grammar-of-a-graph",
-    "href": "slides/viz.html#grammar-of-a-graph",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Grammar of a graph",
-    "text": "Grammar of a graph\n\nA graph maps information (data) to aesthetic attributes of geometric objects\nAesthetic attributes are the “role” of variables in plot: location (often along x-axis and y-axis), colour, size, shape\nGeometric objects are the shapes of the data you’re visualising, e.g. points, lines, bars"
-  },
-  {
-    "objectID": "slides/viz.html#scatter-plot",
-    "href": "slides/viz.html#scatter-plot",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Scatter plot",
-    "text": "Scatter plot\n\n\n\n\n\n“Mapping routine measles vaccination in low-and middle-income countries.” Nature 589, no. 7842 (2021): 415-419. (IF 2023 = 50.5).\nHow do you read this plot?"
-  },
-  {
-    "objectID": "slides/viz.html#scatter-plot-1",
-    "href": "slides/viz.html#scatter-plot-1",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Scatter plot",
-    "text": "Scatter plot\n\n\n\n\nWhat information would you need to map each point correctly onto this plot?\n\nCountry name\nPosition\nSize\nColor"
-  },
-  {
-    "objectID": "slides/viz.html#data",
-    "href": "slides/viz.html#data",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Data",
-    "text": "Data\n\n\n\n\n\n\n\n\n\n\nlabel\n(country)\nx\n(coverage)\ny\n(inequality)\nsize\n(population)\ncolor\n(region)\n\n\n\n\nNigeria\n0.20\n-0.07\n220M\nSub-Saharan Africa\n\n\n\nData can be downloaded here: nature_plot.xlsx\n\n\n# A tibble: 6 × 5\n  country          coverage inequality   pop region                             \n  &lt;chr&gt;               &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;                              \n1 Angola              -0.14      0.1    30.2 Sub-Saharan Africa                 \n2 Papua New Guinea    -0.35      0.08   16.5 Southeast Asia, East Asia and Ocea…\n3 Pakistan             0.12      0.05   82.5 South Asia                         \n4 Chad                 0.14      0.01   27.5 Sub-Saharan Africa                 \n5 Ethiopia             0.32      0.005  55   Sub-Saharan Africa                 \n6 Kenya                0.07     -0.06   30.2 Sub-Saharan Africa"
-  },
-  {
-    "objectID": "slides/viz.html#scatter-plot-2",
-    "href": "slides/viz.html#scatter-plot-2",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Scatter plot",
-    "text": "Scatter plot\n\n\n\n\nLet’s draw this “by hand”"
-  },
-  {
-    "objectID": "slides/viz.html#draw-this-by-hand",
-    "href": "slides/viz.html#draw-this-by-hand",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Draw this “by hand”",
-    "text": "Draw this “by hand”\n\n\n\n\n\nDraw the axes\nDraw the data points\nAdjust point sizes\nColour-code the regions\nAdd key country labels"
-  },
-  {
-    "objectID": "slides/viz.html#draw-the-axes",
-    "href": "slides/viz.html#draw-the-axes",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Draw the axes",
-    "text": "Draw the axes\n\n\n\ncode.R\n\n# df &lt;- ...\nggplot(\n  data = df,\n  mapping = aes(x = coverage, y = inequality)\n)\n\n\n\n➡ The x and y aesthetics determine which variable is drawn on each axis."
-  },
-  {
-    "objectID": "slides/viz.html#draw-the-data-points",
-    "href": "slides/viz.html#draw-the-data-points",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Draw the data points",
-    "text": "Draw the data points\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point()"
-  },
-  {
-    "objectID": "slides/viz.html#changing-the-plot-orientation",
-    "href": "slides/viz.html#changing-the-plot-orientation",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Changing the plot orientation",
-    "text": "Changing the plot orientation\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = inequality, y = coverage)) +\n  geom_point()\n\n\n\nSwapping x and y aesthetics will change the plot orientation"
-  },
-  {
-    "objectID": "slides/viz.html#adjust-point-sizes",
-    "href": "slides/viz.html#adjust-point-sizes",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Adjust point sizes",
-    "text": "Adjust point sizes\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop))\n\n\n\nObserve the 2 mapping argument calls, one in ggplot() and one in geom_point()"
-  },
-  {
-    "objectID": "slides/viz.html#colour-code-the-regions",
-    "href": "slides/viz.html#colour-code-the-regions",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Colour-code the regions",
-    "text": "Colour-code the regions\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region))"
-  },
-  {
-    "objectID": "slides/viz.html#add-key-country-labels",
-    "href": "slides/viz.html#add-key-country-labels",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Add key country labels",
-    "text": "Add key country labels\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country))"
-  },
-  {
-    "objectID": "slides/viz.html#compare-with-the-original-figure",
-    "href": "slides/viz.html#compare-with-the-original-figure",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Compare with the original figure",
-    "text": "Compare with the original figure\n\n\nOriginal figure \n\nOurs (so far)"
-  },
-  {
-    "objectID": "slides/viz.html#grammar-of-a-graph-1",
-    "href": "slides/viz.html#grammar-of-a-graph-1",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Grammar of a graph",
-    "text": "Grammar of a graph\n\nMapping from information (data) to aesthetic attributes of geometric objects\nAesthetic attributes are the “role” of variables in plot: location (often along x-axis and y-axis), colour, size, shape\nGeometric objects are what you see on the plot (points, lines, bars)\n\n\n\nScales defines how the information (data) is mapped to aesthetic attributes work\nGuides defines how scales are represented"
-  },
-  {
-    "objectID": "slides/viz.html#scales-and-guides",
-    "href": "slides/viz.html#scales-and-guides",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Scales and guides",
-    "text": "Scales and guides\n\nScales controls the limits and ticks of the x-axis and y-axis\nGuides can roughly be understood as similar to figure legends, it’s where we read data values from the graph\n\n\nWhich components are controlled by scales? And which are controlled by guides?"
-  },
-  {
-    "objectID": "slides/viz.html#scales-and-guides-1",
-    "href": "slides/viz.html#scales-and-guides-1",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Scales and guides",
-    "text": "Scales and guides\n\nScales can also include statistical transformation(s)!"
-  },
-  {
-    "objectID": "slides/viz.html#scales-statistical-transformation",
-    "href": "slides/viz.html#scales-statistical-transformation",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Scales: statistical transformation",
-    "text": "Scales: statistical transformation\n\nValue transformation (e.g. linear scale -&gt; logarithm scale)\nEach bar in a histogram can be a “sum” or a “percentage/frequency”, depending on the (optional) statistical transformation applied\nA Least Square Regression line can be fitted before plotting, this also counts as a statistical transformation"
-  },
-  {
-    "objectID": "slides/viz.html#scales-statistical-transformation-1",
-    "href": "slides/viz.html#scales-statistical-transformation-1",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Scales: statistical transformation",
-    "text": "Scales: statistical transformation\n\n\n\n\n\n\nImportant\n\n\nStatistical transformation(s) on the scales do not change the data, just the scale we use to observe it\n\n\n\n\n\nLinear scale on the x-axis\n\n\n\n\n\n\n\n\n\n\nLog-10-scale on the x-axis"
-  },
-  {
-    "objectID": "slides/viz.html#scales",
-    "href": "slides/viz.html#scales",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Scales",
-    "text": "Scales\n\nScales controls the limits and ticks of the x-axis and y-axis\nGuides can roughly be understood as similar to figure legends\nScales can also include statistical transformation(s)\n\n\n\n\n\nSome other types of scales: colour, point shape, line type, point size"
-  },
-  {
-    "objectID": "slides/viz.html#refine-the-plot-the-colour-scale",
-    "href": "slides/viz.html#refine-the-plot-the-colour-scale",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Refine the plot: the colour scale",
-    "text": "Refine the plot: the colour scale\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country))"
-  },
-  {
-    "objectID": "slides/viz.html#refine-the-plot-the-colour-scale-1",
-    "href": "slides/viz.html#refine-the-plot-the-colour-scale-1",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Refine the plot: the colour scale",
-    "text": "Refine the plot: the colour scale\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_discrete(\n    palette = scales::pal_viridis()\n  )\n\n\nUse the built-in Viridis color palette"
-  },
-  {
-    "objectID": "slides/viz.html#refine-the-plot-the-colour-scale-2",
-    "href": "slides/viz.html#refine-the-plot-the-colour-scale-2",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Refine the plot: the colour scale",
-    "text": "Refine the plot: the colour scale\n\n\n\ncode.R\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_viridis_d()\n\n\n\n\n\n\n\n\nTip\n\n\nYou can also use scale_color_viridis_d(), which is a shorthand for the scale layer we used on the previous slide\nBreakdown:\n\nscale means we are adding a scale layer\n_color means this scale is for the color aesthetic (checking your aes()!)\n_viridis defines the color palette\n_d() stands for “discrete”, so this scale is for a discrete variable"
-  },
-  {
-    "objectID": "slides/viz.html#refine-the-plot-the-colour-scale-3",
-    "href": "slides/viz.html#refine-the-plot-the-colour-scale-3",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Refine the plot: the colour scale",
-    "text": "Refine the plot: the colour scale\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_manual(values = my_pallete)\n\n\nYou can define and use your own custom color palette!"
-  },
-  {
-    "objectID": "slides/viz.html#refine-the-plot-the-point-size-scale",
-    "href": "slides/viz.html#refine-the-plot-the-point-size-scale",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Refine the plot: the point-size scale",
-    "text": "Refine the plot: the point-size scale\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_manual(values = my_pallete, guide = guide_legend(order = 2)) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  )"
-  },
-  {
-    "objectID": "slides/viz.html#refine-the-plot-the-axes",
-    "href": "slides/viz.html#refine-the-plot-the-axes",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Refine the plot: the axes",
-    "text": "Refine the plot: the axes\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_manual(values = my_pallete, guide = guide_legend(order = 2)) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_x_continuous(\n    breaks = c(-0.25, 0, 0.25, 0.5),\n    limits = c(-0.4, 0.55)\n  ) +\n  scale_y_continuous(\n    breaks = c(-0.1, 0, 0.1),\n    limits = c(-0.16, 0.1)\n  )"
-  },
-  {
-    "objectID": "slides/viz.html#refine-the-plot-labels-and-theme",
-    "href": "slides/viz.html#refine-the-plot-labels-and-theme",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Refine the plot: labels and theme",
-    "text": "Refine the plot: labels and theme\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region)) +\n  geom_text(mapping = aes(label = country)) +\n  scale_color_manual(\n    name = \"\",\n    values = my_pallete,\n    guide = guide_legend(order = 2)\n  ) +\n  scale_size_continuous(\n    name = \"\",\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_x_continuous(\n    name = \"Change in MCV1 coverage (2019-2000)\",\n    breaks = c(-0.25, 0, 0.25, 0.5),\n    limits = c(-0.4, 0.55)\n  ) +\n  scale_y_continuous(\n    name = \"Change in absolute geographical inequality (2019-2000)\",\n    breaks = c(-0.1, 0, 0.1),\n    limits = c(-0.16, 0.1)\n  ) +\n  theme_classic() +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\"),\n    axis.text = element_text(size = 11)\n  )"
-  },
-  {
-    "objectID": "slides/viz.html#refine-the-plot-minor-tweaks",
-    "href": "slides/viz.html#refine-the-plot-minor-tweaks",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Refine the plot: minor tweaks",
-    "text": "Refine the plot: minor tweaks\n\n\n\ncode.R\n\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(data = df, mapping = aes(x = coverage, y = inequality)) +\n  geom_point(mapping = aes(size = pop, color = region), alpha = 0.8) +\n  geom_text(mapping = aes(label = country), hjust = -0.2, vjust = 0.2) +\n  geom_vline(xintercept = 0, color = \"#999999\") +\n  geom_hline(yintercept = 0, color = \"#999999\") +\n  scale_color_manual(\n    name = \"\",\n    values = my_pallete,\n    guide = guide_legend(order = 2)\n  ) +\n  scale_size_continuous(\n    name = \"\",\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_x_continuous(\n    name = \"Change in MCV1 coverage (2019-2000)\",\n    breaks = c(-0.25, 0, 0.25, 0.5),\n    limits = c(-0.4, 0.55)\n  ) +\n  scale_y_continuous(\n    name = \"Change in absolute geographical inequality (2019-2000)\",\n    breaks = c(-0.1, 0, 0.1),\n    limits = c(-0.16, 0.1)\n  ) +\n  theme_classic() +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\"),\n    axis.text = element_text(size = 11)\n  )"
-  },
-  {
-    "objectID": "slides/viz.html#refine-the-plot",
-    "href": "slides/viz.html#refine-the-plot",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Refine the plot",
-    "text": "Refine the plot"
-  },
-  {
-    "objectID": "slides/viz.html#some-frequently-used-geom_",
-    "href": "slides/viz.html#some-frequently-used-geom_",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Some frequently used geom_*",
-    "text": "Some frequently used geom_*\nHistogram and bar charts\n\n\n\n\n\n\n\n\n\nGeometric object\nDescription\nAesthetics\n\n\n\n\ngeom_histogram()\nDivide continuous x into bins and count observations.\nRequired: x, and bins or binwidth\n\n\ngeom_col()\nBar chart using provided x and y values.\nRequired: x, y\n\n\ngeom_bar()\nBar chart with one axis computed using stat.\nRequired: x or y, stat (default: \"count\")"
-  },
-  {
-    "objectID": "slides/viz.html#some-frequently-used-geom_-1",
-    "href": "slides/viz.html#some-frequently-used-geom_-1",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Some frequently used geom_*",
-    "text": "Some frequently used geom_*\n\nExample: For the following examples, we will use the simulated_covid.rds dataset\n\nsimulated_covid &lt;- readRDS(\"data/simulated_covid.rds\")\n\nhead(simulated_covid)\n\n  id  case_name case_type sex age date_onset date_admission   outcome\n1  1 jCQH5RSlVq confirmed   m  22 2023-01-01           &lt;NA&gt; recovered\n2  2 AdCD3im7sn  probable   m  21 2023-01-08           &lt;NA&gt; recovered\n3  3 iDzmfZhFkV  probable   m  21 2023-01-03           &lt;NA&gt; recovered\n4  4 sKipHJsjZ2  probable   m  10 2023-01-10           &lt;NA&gt;      died\n5  5 xG7GvAjlBf suspected   m  24 2023-01-05           &lt;NA&gt; recovered\n6  7 ZWWcBMLzoH confirmed   m  10 2023-01-04           &lt;NA&gt; recovered\n  date_outcome date_first_contact date_last_contact   district     outbreak\n1         &lt;NA&gt;               &lt;NA&gt;              &lt;NA&gt;   Tan Binh 1st outbreak\n2         &lt;NA&gt;         2022-12-31        2023-01-04    Tan Phu 1st outbreak\n3         &lt;NA&gt;         2022-12-29        2023-01-05   Binh Tan 1st outbreak\n4   2023-01-27         2023-01-10        2023-01-13    Quan 10 1st outbreak\n5         &lt;NA&gt;         2023-01-07        2023-01-07    Quan 12 1st outbreak\n6         &lt;NA&gt;         2023-01-06        2023-01-07 Binh Thanh 1st outbreak"
-  },
-  {
-    "objectID": "slides/viz.html#some-frequently-used-geom_-2",
-    "href": "slides/viz.html#some-frequently-used-geom_-2",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Some frequently used geom_*",
-    "text": "Some frequently used geom_*\n\nExample: creating a bar chart for number of covid incidence over time\n\n\n\ncode.R\n\nggplot(\n  data = simulated_covid,\n  aes(x = date_onset)\n) +\n  geom_bar(\n    color = \"cornflowerblue\"\n  ) +\n  scale_x_date(\"Date\") +\n  scale_y_continuous(\"Number of cases\") +\n  ggtitle(\"New covid cases over time\")"
-  },
-  {
-    "objectID": "slides/viz.html#some-frequently-used-geom_-3",
-    "href": "slides/viz.html#some-frequently-used-geom_-3",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Some frequently used geom_*",
-    "text": "Some frequently used geom_*\nScatter plot\n\n\n\n\n\n\n\n\n\ngeom_*\ndescription\nParameters\n\n\n\n\ngeom_point()\nCreate a scatter plot from given x and y\nRequired aesthetic: x and y"
-  },
-  {
-    "objectID": "slides/viz.html#some-frequently-used-geom_-4",
-    "href": "slides/viz.html#some-frequently-used-geom_-4",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Some frequently used geom_*",
-    "text": "Some frequently used geom_*\n\nExample: creating a scatter plot for number of covid incidence over time\n\n\n\ncode.R\n\nlibrary(dplyr)\n# we need to compute y\n# (case_count before plotting)\naggregated_cases &lt;- simulated_covid |&gt;\n  group_by(date_onset) |&gt;\n  summarise(\n    case_count = n()\n  )\n\nggplot(\n  aggregated_cases,\n  aes(x = date_onset, y = case_count)\n) +\n  geom_point(\n    color = \"cornflowerblue\"\n  ) +\n  scale_x_date(\"Date\") +\n  scale_y_continuous(\"Number of cases\") +\n  ggtitle(\"New covid cases over time\")"
-  },
-  {
-    "objectID": "slides/viz.html#some-frequently-used-geom_-5",
-    "href": "slides/viz.html#some-frequently-used-geom_-5",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Some frequently used geom_*",
-    "text": "Some frequently used geom_*\nLine chart\n\n\n\n\n\n\n\n\n\ngeom_*\ndescription\nParameters\n\n\n\n\ngeom_line()\nCreate a line plot from given x and y\nRequired aesthetic: x and y\n\n\ngeom_smooth()\nCreate a regression line plot from x and y\nRequired aesthetic: x and y\n\nmethod: select regression model (\"auto\", \" lm\", \"glm\", \"gam\", \"loess\")\nformula: adjust the formula for the regression model"
-  },
-  {
-    "objectID": "slides/viz.html#some-frequently-used-geom_-6",
-    "href": "slides/viz.html#some-frequently-used-geom_-6",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Some frequently used geom_*",
-    "text": "Some frequently used geom_*\n\nExample: creating a line chart for number of covid incidence over time\n\n\n\ncode.R\n\nggplot(\n  aggregated_cases,\n  aes(x = date_onset, y = case_count)\n) +\n  geom_line(\n    color = \"cornflowerblue\"\n  ) +\n  scale_x_date(\"Date\") +\n  scale_y_continuous(\"Number of cases\") +\n  ggtitle(\"New covid cases over time\")"
-  },
-  {
-    "objectID": "slides/viz.html#some-frequently-used-geom_-7",
-    "href": "slides/viz.html#some-frequently-used-geom_-7",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Some frequently used geom_*",
-    "text": "Some frequently used geom_*\n\nExample: add a regression line for number of covid incidence over time\n\n\n\ncode.R\n\nggplot(\n  aggregated_cases,\n  aes(x = date_onset, y = case_count)\n) +\n  geom_point(\n    color = \"grey\"\n  ) +\n  geom_smooth(\n    color = \"cornflowerblue\",\n    # choose gam model to fit the data\n    method = \"gam\"\n  ) +\n  scale_x_date(\"Date\") +\n  scale_y_continuous(\"Number of cases\") +\n  ggtitle(\"New covid cases over time\")"
-  },
-  {
-    "objectID": "slides/viz.html#some-frequently-used-geom_-8",
-    "href": "slides/viz.html#some-frequently-used-geom_-8",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Some frequently used geom_*",
-    "text": "Some frequently used geom_*\n\nBox plot\n\n\n\n\n\n\n\n\ngeom_*\ndescription\nParameters\n\n\n\n\ngeom _boxplot()\nCreate a boxplot from a continuous variable.\nIf both x and y are given, one must be a categorical variable (in which case a boxplot is created for each category)\nRequired aesthetic: x or y"
-  },
-  {
-    "objectID": "slides/viz.html#some-frequently-used-geom_-9",
-    "href": "slides/viz.html#some-frequently-used-geom_-9",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Some frequently used geom_*",
-    "text": "Some frequently used geom_*\n\nExample: create a box plot to compare number of cases per day between 2 outbreaks\n\n\n\ncode.R\n\n# compute cases per day for each outbreak\ncases_per_outbreak &lt;- simulated_covid |&gt;\n  group_by(date_onset, outbreak) |&gt;\n  summarise(\n    case_count = n()\n  )\n\nggplot(\n  cases_per_outbreak,\n  aes(x = case_count, y = outbreak)\n) +\n  geom_boxplot() +\n  scale_x_continuous(\"Number of daily cases\") +\n  scale_y_discrete(\"Outbreak\") +\n  ggtitle(\"Compare distribution of daily cases between 2 outbreaks\")"
-  },
-  {
-    "objectID": "slides/viz.html#where-to-find-more-geom_",
-    "href": "slides/viz.html#where-to-find-more-geom_",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Where to find more geom_*?",
-    "text": "Where to find more geom_*?\nFor a complete list of geom_*, refer to ggplot2 official documentation\nAlternatively, you can also look for the example code for your desired chart type at R Graph Gallery"
-  },
-  {
-    "objectID": "slides/viz.html#save-plot",
-    "href": "slides/viz.html#save-plot",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Save plot",
-    "text": "Save plot\nFunction ggsave() is used for saving plots with the following key parameters\n\nplot select plot to save (default to the last generated plot)\nfilename name of the saved file\npath path to the directory where the plot is stored\nwidth, height plot size in units expressed by the units argument\ndpi plot resolution"
-  },
-  {
-    "objectID": "slides/viz.html#save-plot-1",
-    "href": "slides/viz.html#save-plot-1",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Save plot",
-    "text": "Save plot\nExample: save the last generated plot\n\nggsave(\n  path = \"plots\", # save plot under plots directory\n  filename = \"new_plot.png\",\n  width = 800,\n  height = 600, # adjust plot size in pixel\n  units = \"px\",\n  dpi = 200 # set resolution\n)"
-  },
-  {
-    "objectID": "slides/viz.html#export-two-types-of-formats",
-    "href": "slides/viz.html#export-two-types-of-formats",
-    "title": "Principles of data visualisation and plotting in R",
+    "objectID": "slides/IntroductionRDay2.html#export-two-types-of-formats",
+    "href": "slides/IntroductionRDay2.html#export-two-types-of-formats",
+    "title": "Introduction to R, Day 2",
     "section": "Export: two types of formats",
-    "text": "Export: two types of formats\n\nVector format (e.g. .pdf, .svg, .eps)\n\nConsists of independent geometric objects (segments, polygons, curves, etc.)\nCan be enlarged without losing resolution\n\nRaster format (e.g. .png, .jpeg/.jpg, .tiff).\n\nRectangular grid of pixels, possibly with color\nWill be very blurry if image is enlarged while resolution is low"
+    "text": "Export: two types of formats\n\nVector format (pdf, eps, wmf, emf, svg)\n\ndigital image consisting of independent geometric objects (segments, polygons, curves, etc.)\ncan be enlarged without losing resolution\n\nRaster format (png, jpeg, tiff, bmp).\n\nrectangular grid of pixels, possibly with color\nresolution impaired if image is enlarged\n\nGraphics can be saved via the menu in the graphics/plots window, or a specific graphics file type can be created directly via code\n\npdf(\"foo.pdf\",...)\n...\ndev.off()\nor win.metafile(\"foo.wmf\",...) or png(\"foo.png\",...) and ending with dev.off()"
   },
   {
-    "objectID": "slides/viz.html#main-components-of-a-graph-r",
-    "href": "slides/viz.html#main-components-of-a-graph-r",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Main components of a graph (R)",
-    "text": "Main components of a graph (R)\n\nMapping from data to aesthetic attributes of geometric objects\nGeometic objects: what you see on the plot (points, lines, bars)\nAesthetic attributes: “role” of variables in plot: location (often along x-axis and y-axis), colour, size, shape\nScales: map data values to aesthetic attributes\n\n\n\nCoordinate system: cartesian, polar, map projections.\nNetworks, trees have no coordinate system\n\n\n\n\nNot about:\n\ngraph type (\\(\\approx\\) language, words)\nfont size, background colour … Some of these are specified in a theme"
+    "objectID": "slides/IntroductionRDay2.html#aside-errors-and-warnings",
+    "href": "slides/IntroductionRDay2.html#aside-errors-and-warnings",
+    "title": "Introduction to R, Day 2",
+    "section": "Aside: errors and warnings",
+    "text": "Aside: errors and warnings\n\nError: code cannot be executed; no output is produced\n\n5 + \"apple\"\ntitanic$age[1,5]\n\nWarning: something unexpected occurred; output produced, but potentially incorrect\n\nas.numeric(c(\"1\", \"2\", \"banana\"))\nplot(fare ~ age, data=titanic, las=1, log=\"y\")"
   },
   {
-    "objectID": "slides/viz.html#polar-coordinate-system",
-    "href": "slides/viz.html#polar-coordinate-system",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Polar coordinate system",
-    "text": "Polar coordinate system\nPie chart WHO European Health Report 2009\n\nGeometric object? Aesthetic attributes? Transformation? Coordinate system?"
+    "objectID": "slides/IntroductionRDay2.html#basic-format",
+    "href": "slides/IntroductionRDay2.html#basic-format",
+    "title": "Introduction to R, Day 2",
+    "section": "Basic format",
+    "text": "Basic format\n\nAll actions are performed via functions: sqrt, mean, help, library, t.test, plot\nInput: required and optional arguments; within parentheses, separated by comma\n\nrequired: need to be supplied\noptional: have default values\nBeware of sequence of arguments; required ones come first. Compare\nlog(1000, 10) \nlog(10, 1000) \n\n\n\n\nSome functions have special “argument”: ...\nMeaning: anything that makes sense. Example: in c and paste function, which allow for the use of many values to\nOutput: result of calculations (typically assigned to R object), graphics, help window, etc.\nYou can use functions within other functions, e.g. mean(c(3,6,8))"
   },
   {
-    "objectID": "slides/viz.html#overview",
-    "href": "slides/viz.html#overview",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Overview",
-    "text": "Overview\n\nWhat does mapping = aes() do?\nInheritance of data and aesthetics\nThe annotate() layer\nFigure panes using facet_wrap()\nExtending ggplot2\nInteractive plots with plotly"
+    "objectID": "slides/IntroductionRDay2.html#object-specific-functionality-i",
+    "href": "slides/IntroductionRDay2.html#object-specific-functionality-i",
+    "title": "Introduction to R, Day 2",
+    "section": "Object specific functionality (I)",
+    "text": "Object specific functionality (I)\n\nOutput of function depends on class of object\n\nExamples:\n\nsummary:\nsummary.data.frame, summary.factor, summary.Date\ndefault: summary.default\nplot: plot(y ~ x, data=..., ...)\n Plot depends on class of `x`: scatterplot is default, but\n boxplot if `x` is of class factor and plot by year if `x` is of class Date"
   },
   {
-    "objectID": "slides/viz.html#what-does-mapping-aes-do",
-    "href": "slides/viz.html#what-does-mapping-aes-do",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "What does mapping = aes() do?",
-    "text": "What does mapping = aes() do?\n\n\nggplot() arguments and default values:\n\nggplot(data = NULL, mapping = aes(), ...)\n\ngeom_*() arguments and default values:\n\ngeom_bar(mapping = NULL, data = NULL, ...)\ngeom_boxplot(mapping = NULL, data = NULL, ...)\ngeom_point(mapping = NULL, data = NULL, ...)"
+    "objectID": "slides/IntroductionRDay2.html#object-specific-functionality-ii",
+    "href": "slides/IntroductionRDay2.html#object-specific-functionality-ii",
+    "title": "Introduction to R, Day 2",
+    "section": "Object specific functionality (II)",
+    "text": "Object specific functionality (II)\nWhy important to know?\n\nFinding information in help file\nVery efficient in use. E.g. plot is a generic function, with specific methods depending on the class of the object that is the argument of the function.\nWe only need to remember plot"
   },
   {
-    "objectID": "slides/viz.html#what-does-mapping-aes-do-1",
-    "href": "slides/viz.html#what-does-mapping-aes-do-1",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "What does mapping = aes() do?",
-    "text": "What does mapping = aes() do?\n\nRecall this:\n\n\ndf &lt;- read_excel(\"data/nature_plot.xlsx\")\nhead(df)\n\n# A tibble: 6 × 5\n  country          coverage inequality   pop region                             \n  &lt;chr&gt;               &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;                              \n1 Angola              -0.14      0.1    30.2 Sub-Saharan Africa                 \n2 Papua New Guinea    -0.35      0.08   16.5 Southeast Asia, East Asia and Ocea…\n3 Pakistan             0.12      0.05   82.5 South Asia                         \n4 Chad                 0.14      0.01   27.5 Sub-Saharan Africa                 \n5 Ethiopia             0.32      0.005  55   Sub-Saharan Africa                 \n6 Kenya                0.07     -0.06   30.2 Sub-Saharan Africa                 \n\n\n\n\n\n\n\n\n\n\n\n\n\nlabel\n(country)\nx\n(coverage)\ny\n(inequality)\nsize\n(population)\ncolor\n(region)\n\n\n\n\nNigeria\n0.20\n-0.07\n220M\nSub-Saharan Africa"
+    "objectID": "slides/IntroductionRDay2.html#functions-the-inside",
+    "href": "slides/IntroductionRDay2.html#functions-the-inside",
+    "title": "Introduction to R, Day 2",
+    "section": "Functions: the inside",
+    "text": "Functions: the inside\n\nFunction code can be seen by leaving out the parentheses \n\nIQR\n\nGeneral structure:\n\nFunctionName(args) {\n    lines of R code (collection of functions)\n}\nThe last value is returned as output - You can write your own functions:\ngood.morning &lt;- function(work){\n    if(work==TRUE) cat(\"wake up\") else \n      cat(\"you can stay in bed\")\n}\ngood.morning()"
   },
   {
-    "objectID": "slides/viz.html#what-does-mapping-aes-do-2",
-    "href": "slides/viz.html#what-does-mapping-aes-do-2",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "What does mapping = aes() do?",
-    "text": "What does mapping = aes() do?\nIdea: we are mapping the variables in the data to the aesthetics of a geometry\naes(x = coverage, y = inequality)\n#&gt; Aesthetic mapping: \n#&gt; * `x` -&gt; `coverage`\n#&gt; * `y` -&gt; `inequality`\n\n\naes(x = coverage^2, y = inequality/2)\n#&gt; Aesthetic mapping: \n#&gt; * `x` -&gt; `coverage^2`\n#&gt; * `y` -&gt; `inequality/2`"
+    "objectID": "slides/IntroductionRDay2.html#packages",
+    "href": "slides/IntroductionRDay2.html#packages",
+    "title": "Introduction to R, Day 2",
+    "section": "Packages",
+    "text": "Packages\n\nRegular R users transform recurring tasks into self-made functions\nCan make it into a package, i.e. a collection of functions (and data):\n\nggplot2\ntidyverse\nWHO TB data\nAMR\npharmaverse\nSUSENAS\nvietnameseConverter\nsudoku\nrStrava\n\nGive package developers appropriate credit and cite their packages"
   },
   {
-    "objectID": "slides/viz.html#what-does-mapping-aes-do-3",
-    "href": "slides/viz.html#what-does-mapping-aes-do-3",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "What does mapping = aes() do?",
-    "text": "What does mapping = aes() do?\nHow do we know which aesthetics does each geometry support? Read the documentation!\nSimply:\n\nRead the documentation of the geometry of interest\nClick Aesthetics on the navigation bar on the right (or scroll down)\nAll aesthetics compatible for the geometry are listed"
+    "objectID": "slides/IntroductionRDay2.html#packages-where-to-find-them",
+    "href": "slides/IntroductionRDay2.html#packages-where-to-find-them",
+    "title": "Introduction to R, Day 2",
+    "section": "Packages, where to find them?",
+    "text": "Packages, where to find them?\n\nComprehensive R Archive Network (24504 packages on August 4, 2026)\nGitHub (34867 packages on August 4, 2026)\nBioconductor\nReview\n\n\n\nNeed to be installed on your computer\nR program itself also based on packages. Some loaded at startup base, graphics, stats, utils …\nFor example, base package contains sqrt function\nOther packages need to be loaded before use, best way is via library(pkg_name)"
   },
   {
-    "objectID": "slides/viz.html#inheritance-of-data-and-aesthetics",
-    "href": "slides/viz.html#inheritance-of-data-and-aesthetics",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Inheritance of data and aesthetics",
-    "text": "Inheritance of data and aesthetics\n\nRecall this:\n\nggplot() arguments and default values:\n\nggplot(data = NULL, mapping = aes(), ...)\n\ngeom_*() arguments and default values:\n\ngeom_bar(mapping = NULL, data = NULL, ...)\ngeom_boxplot(mapping = NULL, data = NULL, ...)\ngeom_point(mapping = NULL, data = NULL, ...)"
+    "objectID": "slides/IntroductionRDay2.html#another-object-mode-list",
+    "href": "slides/IntroductionRDay2.html#another-object-mode-list",
+    "title": "Introduction to R, Day 2",
+    "section": "Another object mode: list",
+    "text": "Another object mode: list\n\nGeneral mode to store information\nDifferent modes cannot be mixed in vectors\n\nteachers &lt;- c(\"Ronald\",\"Hung\",\"Tuyen\") # mode character\nrooms &lt;- c(306,306,305) # mode numeric\nc(teachers, rooms) # numbers become characters\n\nModes can be mixed in a list:\n\nlist(teachers, rooms)\n## named list:\nlist(teacher = teachers, room = rooms)\nTwo components, with names teacher and room\n\nData are of mode list, but with a special class data.frame\n\nmode(titanic)\nclass(titanic)"
   },
   {
-    "objectID": "slides/viz.html#inheritance-of-data-and-aesthetics-1",
-    "href": "slides/viz.html#inheritance-of-data-and-aesthetics-1",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Inheritance of data and aesthetics",
-    "text": "Inheritance of data and aesthetics\nThe idea is that:\n\nggplot() can control the dataset and aesthetics\ngeom_*()s can also control the type of geometries, and allow customisation of aesthetics"
+    "objectID": "slides/IntroductionRDay2.html#example-regression-models",
+    "href": "slides/IntroductionRDay2.html#example-regression-models",
+    "title": "Introduction to R, Day 2",
+    "section": "Example: regression models",
+    "text": "Example: regression models\nHow does fare paid depend on age? Linear regression:\nFareByAge &lt;- lm(log(fare+3)~age, data=titanic)\nOutput: should contain everything to derive information from fitted model: coefficients, p-values, confidence intervals, residuals, …\nObject of mode list and of class lm. Help file for summary: summary.lm"
   },
   {
-    "objectID": "slides/viz.html#inheritance-of-data-and-aesthetics-2",
-    "href": "slides/viz.html#inheritance-of-data-and-aesthetics-2",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Inheritance of data and aesthetics",
-    "text": "Inheritance of data and aesthetics\nA typical ggplot plot will look something like:\nggplot(plot_df, aes(x = date, y = count)) +\n  geom_line() +\n  geom_point()\n\nImplicitly, you can think of this as:\nggplot() +\n  geom_line(mapping = aes(x = date, y = count), data = plot_df) +\n  geom_line(mapping = aes(x = date, y = count), data = plot_df)\n\n\n\n\n\n\n\n\nNote\n\n\n\nWe call this inheritance\nData and aesthetics are inherited top-down"
+    "objectID": "slides/IntroductionRDay2.html#more-transparent-and-often-shorter-code",
+    "href": "slides/IntroductionRDay2.html#more-transparent-and-often-shorter-code",
+    "title": "Introduction to R, Day 2",
+    "section": "More transparent (and often shorter) code",
+    "text": "More transparent (and often shorter) code\n\nformula structure (regression models, plot function)\nwith function to save repetitive use of data set name :\nwith(titanic, table(sex, survived))\n## instead of table(titanic$sex, titanic$survived)\npipe operator |&gt; (or %&gt;% from the magrittr package)\n\ncombining functions in one line can make code obscure: h(g(f(x)))\nexample: round(proportions(table(titanic$sex,titanic$survived)),2)\nreplace by x |&gt; f() |&gt; g() |&gt; h()"
   },
   {
-    "objectID": "slides/viz.html#inheritance-of-data-and-aesthetics-3",
-    "href": "slides/viz.html#inheritance-of-data-and-aesthetics-3",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Inheritance of data and aesthetics",
-    "text": "Inheritance of data and aesthetics\nYou have seen this in action before!\nmy_pallete &lt;- c(\n  \"Central Europe, Eastern Europe and Central Asia\" = \"#fa8495\",\n  \"Latin America and Caribbean\" = \"#4ca258\",\n  \"North Africa and Middle East\" = \"#6493bb\",\n  \"South Asia\" = \"#d7c968\",\n  \"Southeast Asia, East Asia and Oceania\" = \"#7dd8f3\",\n  \"Sub-Saharan Africa\" = \"#bc5c91\"\n)\n\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region, alpha = 0.8)) +\n  geom_text(aes(label = country), hjust = -0.2, vjust = 0.2) +\n  geom_vline(xintercept = 0, color = \"#999999\") +\n  geom_hline(yintercept = 0, color = \"#999999\") +\n  scale_x_continuous(breaks = c(-0.25, 0, 0.25, 0.5),\n                     limits = c(-0.4, 0.55)) +\n  scale_y_continuous(breaks = c(-0.1, 0, 0.1), limits = c(-0.16, 0.1)) +\n  scale_size_continuous(\n    breaks = c(50, 100, 150, 200),\n    labels = c(\"50 million\", \"100 million\", \"150 million\", \"200 million\"),\n    range = c(0, 8),\n    guide = guide_legend(order = 1)\n  ) +\n  scale_color_manual(\n    values = my_pallete,\n    guide = guide_legend(order = 2)\n  ) +\n  labs(x = \"Change in MCV1 coverage (2019-2000)\",\n       y = \"Change in absolute geographical inequality (2019-2000)\",\n       size = NULL,\n       color = NULL) +\n  theme_classic() +\n  theme(\n    legend.position = \"top\",\n    legend.direction = \"vertical\",\n    legend.text = element_text(size = 11),\n    legend.key.height = unit(0.5, \"cm\"),\n    axis.text = element_text(size = 11)\n  )"
+    "objectID": "slides/IntroductionRDay2.html#the-apply-functions",
+    "href": "slides/IntroductionRDay2.html#the-apply-functions",
+    "title": "Introduction to R, Day 2",
+    "section": "The apply functions",
+    "text": "The apply functions\n\napply: apply a function over all columns or all rows of an array\nlapply: apply a function over a list (including data.frame)\nsapply: similar to lapply but more user-friendly if output can be coerced into a vector\ntapply: can be used to split a vector in subgroups and apply a function to each of the subgroups\naggregate is an alternative to tapply"
   },
   {
-    "objectID": "slides/viz.html#inheritance-of-data-and-aesthetics-4",
-    "href": "slides/viz.html#inheritance-of-data-and-aesthetics-4",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Inheritance of data and aesthetics",
-    "text": "Inheritance of data and aesthetics\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region), alpha = 0.8) +\n  geom_text(aes(label = country), hjust = -0.2, vjust = 0.2)"
+    "objectID": "slides/IntroductionRDay2.html#exercises",
+    "href": "slides/IntroductionRDay2.html#exercises",
+    "title": "Introduction to R, Day 2",
+    "section": "Exercises",
+    "text": "Exercises\n\nMake a summary of fare by passenger class using the tapply and the aggregate function\nFit the regression model that fits the mean fare paid (on the log scale) as a function of age:\nFareByAge &lt;- lm(log(fare+3)~age, data=titanic)\nSummarize the results. What do you conclude?\nRefit the model using 10 years as unit for age and summarize the results. Use the pipe operator, starting with titanic |&gt; transform(age=age/10) |&gt; ...\nUse a LLM if you get an error message"
   },
   {
-    "objectID": "slides/viz.html#inside-and-outside-aes",
-    "href": "slides/viz.html#inside-and-outside-aes",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Inside and outside aes()",
-    "text": "Inside and outside aes()\nWhat happens if we do it like this:\nggplot(df, aes(x = coverage, y = inequality)) +\n  geom_point(aes(size = pop, color = region, alpha = 0.8)) +\n  geom_text(aes(label = country, hjust = -0.2, vjust = 0.2))"
+    "objectID": "slides/IntroductionRDay2.html#finding-information",
+    "href": "slides/IntroductionRDay2.html#finding-information",
+    "title": "Introduction to R, Day 2",
+    "section": "Finding Information",
+    "text": "Finding Information\n\nFunction help. R is object oriented!\nSearch on Google (use language r: if result is non-specific)\nchatGPT or an R package such as askgpt or ellmer\nR documentation\nRseek\nR-universe\nCRAN (list with packages, Task Views, FAQs, Vignettes)\nStack Overflow"
   },
   {
-    "objectID": "slides/viz.html#inside-and-outside-aes-1",
-    "href": "slides/viz.html#inside-and-outside-aes-1",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Inside and outside aes()",
-    "text": "Inside and outside aes()\n\nBack to this slide (again):\n\n\n\n\n\n\n\n\n\n\nlabel\n(country)\nx\n(coverage)\ny\n(inequality)\nsize\n(population)\ncolor\n(region)\n\n\n\n\nNigeria\n0.20\n-0.07\n220M\nSub-Saharan Africa\n\n\n\n\ndf &lt;- read_excel(\"data/nature_plot.xlsx\")\nhead(df)\n\n# A tibble: 6 × 5\n  country          coverage inequality   pop region                             \n  &lt;chr&gt;               &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;                              \n1 Angola              -0.14      0.1    30.2 Sub-Saharan Africa                 \n2 Papua New Guinea    -0.35      0.08   16.5 Southeast Asia, East Asia and Ocea…\n3 Pakistan             0.12      0.05   82.5 South Asia                         \n4 Chad                 0.14      0.01   27.5 Sub-Saharan Africa                 \n5 Ethiopia             0.32      0.005  55   Sub-Saharan Africa                 \n6 Kenya                0.07     -0.06   30.2 Sub-Saharan Africa"
-  },
-  {
-    "objectID": "slides/viz.html#inside-and-outside-aes-2",
-    "href": "slides/viz.html#inside-and-outside-aes-2",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Inside and outside aes()",
-    "text": "Inside and outside aes()\n\n\n\n\n\n\nImportant\n\n\nIn short:\n\nYou want the aesthetics to change with the data -&gt; put it inside aes()*\nYou want the aesthetics to be fixed regardless of data -&gt; put it outside aes()*\nThe aesthetics must be supported by the geometry\n\n\n\nThis also means that columns names can only be used inside aes()"
-  },
-  {
-    "objectID": "slides/viz.html#color-transparency",
-    "href": "slides/viz.html#color-transparency",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Color transparency",
-    "text": "Color transparency\nIn ggplot2, you can add transparency to colors with the alpha aesthetics (available for most geometries)"
-  },
-  {
-    "objectID": "slides/viz.html#the-annotate-layer",
-    "href": "slides/viz.html#the-annotate-layer",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "The annotate() layer",
-    "text": "The annotate() layer\n\nWhat if we want to annotate specific parts of a figure?\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
-  },
-  {
-    "objectID": "slides/viz.html#the-annotate-layer-1",
-    "href": "slides/viz.html#the-annotate-layer-1",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "The annotate() layer",
-    "text": "The annotate() layer\n\nAdding a vertical line with geom_vline() and a label with geom_label()\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  # main plotting geoms\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  # figure annotation geoms (2)\n  geom_vline(xintercept = as.Date(\"2023-03-01\"), linetype = 2) +\n  geom_label(label = \"Start of outbreak\", x = as.Date(\"2023-03-01\"), y = 30) +\n  # labels\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
-  },
-  {
-    "objectID": "slides/viz.html#the-annotate-layer-2",
-    "href": "slides/viz.html#the-annotate-layer-2",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "The annotate() layer",
-    "text": "The annotate() layer\n\nAdding a region with geom_rect() and a label with geom_label()\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  # figure annotation geoms (1)\n  geom_rect(\n    ymin = -Inf,\n    ymax = Inf,\n    xmin = as.Date(\"2023-04-01\"),\n    xmax = as.Date(\"2023-06-01\"),\n    alpha = 0.2,\n    fill = \"red\"\n  ) +\n  geom_label(\n    label = \"Outbreak peak\",\n    x = as.Date(\"2023-06-25\"),\n    y = 30,\n    color = \"red\"\n  ) +\n  # main plotting geoms\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  # labels\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
-  },
-  {
-    "objectID": "slides/viz.html#the-annotate-layer-3",
-    "href": "slides/viz.html#the-annotate-layer-3",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "The annotate() layer",
-    "text": "The annotate() layer\n\nWe already said alpha = 0.2 outside of aes(), why doesn’t it have any transparency at all??"
-  },
-  {
-    "objectID": "slides/viz.html#the-annotate-layer-4",
-    "href": "slides/viz.html#the-annotate-layer-4",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "The annotate() layer",
-    "text": "The annotate() layer\n\n\nI lied\nAesthetics are always dependant on the dataset, whether it is outside or inside aes()"
-  },
-  {
-    "objectID": "slides/viz.html#the-annotate-layer-5",
-    "href": "slides/viz.html#the-annotate-layer-5",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "The annotate() layer",
-    "text": "The annotate() layer\nExample:\n\nOriginally the dataset when used in ggplot() looks like this:\n\nggplot(aggregated_cases, ...) + ...\n\n\n# A tibble: 257 × 2\n   date_onset case_count\n   &lt;date&gt;          &lt;int&gt;\n 1 2023-01-01          1\n 2 2023-01-03          1\n 3 2023-01-04          1\n 4 2023-01-05          1\n 5 2023-01-06          3\n 6 2023-01-07          3\n 7 2023-01-08          1\n 8 2023-01-09          1\n 9 2023-01-10          2\n10 2023-01-14          1\n# ℹ 247 more rows\n\n\n\nWhen you assigned a fixed value to an aesthetic outside of aes(), it might look like this:\n\nggplot(aggregated_cases, ...) + geom_...(alpha = 0.2)\n\n\n# A tibble: 257 × 3\n   date_onset case_count alpha\n   &lt;date&gt;          &lt;int&gt; &lt;dbl&gt;\n 1 2023-01-01          1   0.2\n 2 2023-01-03          1   0.2\n 3 2023-01-04          1   0.2\n 4 2023-01-05          1   0.2\n 5 2023-01-06          3   0.2\n 6 2023-01-07          3   0.2\n 7 2023-01-08          1   0.2\n 8 2023-01-09          1   0.2\n 9 2023-01-10          2   0.2\n10 2023-01-14          1   0.2\n# ℹ 247 more rows"
-  },
-  {
-    "objectID": "slides/viz.html#the-annotate-layer-6",
-    "href": "slides/viz.html#the-annotate-layer-6",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "The annotate() layer",
-    "text": "The annotate() layer\n\nUsing the annotate() layer, you can separate the annotations from the geometry layer\n\n\nggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  # figure annotation geoms (1)\n  annotate(\n    \"rect\",\n    ymin = -Inf,\n    ymax = Inf,\n    xmin = as.Date(\"2023-04-01\"),\n    xmax = as.Date(\"2023-06-01\"),\n    alpha = 0.2,\n    fill = \"red\"\n  ) +\n  annotate(\n    \"label\",\n    label = \"Outbreak peak\",\n    x = as.Date(\"2023-06-25\"),\n    y = 30,\n    color = \"red\"\n  ) +\n  # main plotting geoms\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  # labels\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
-  },
-  {
-    "objectID": "slides/viz.html#the-annotate-layer-7",
-    "href": "slides/viz.html#the-annotate-layer-7",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "The annotate() layer",
-    "text": "The annotate() layer\nComparing:\ngeom_rect(\n  ymin = -Inf, ymax = Inf,\n  xmin = as.Date(\"2023-04-01\"), xmax = as.Date(\"2023-06-01\"), \n  alpha = 0.2, fill = \"red\"\n) +\ngeom_label(label = \"Outbreak peak\", x = as.Date(\"2023-06-25\"), y = 30, color = \"red\")\nvs.\nannotate(\"rect\",\n  ymin = -Inf, ymax = Inf,\n  xmin = as.Date(\"2023-04-01\"), xmax = as.Date(\"2023-06-01\"), \n  alpha = 0.2, fill = \"red\"\n) +\nannotate(\"label\", label = \"Outbreak peak\", x = as.Date(\"2023-06-25\"), y = 30, color = \"red\") +"
-  },
-  {
-    "objectID": "slides/viz.html#the-annotate-layer-8",
-    "href": "slides/viz.html#the-annotate-layer-8",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "The annotate() layer",
-    "text": "The annotate() layer\n\n\n\n\n\n\nImportant\n\n\nIn short:\n\nYou can create plot annotations with geom_label(), geom_rect(), geom_abline(), etc. (look at ggplot2 website)\nIf it’s not working correctly (looks blurry, result not as expected), use annotate() instead; very easy to switch from geom_*() to annotate()"
-  },
-  {
-    "objectID": "slides/viz.html#splitting-up-with-facet_wrap",
-    "href": "slides/viz.html#splitting-up-with-facet_wrap",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Splitting up with facet_wrap()",
-    "text": "Splitting up with facet_wrap()\n\nWhat if you want to split the plot into different panels for each group?\nHave a look at your data, find a “grouping” variable to split the data"
-  },
-  {
-    "objectID": "slides/viz.html#splitting-up-with-facet_wrap-1",
-    "href": "slides/viz.html#splitting-up-with-facet_wrap-1",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Splitting up with facet_wrap()",
-    "text": "Splitting up with facet_wrap()\n\n\nFor example: Split our simulated_covid by outbreak\n\n\n\nggplot(data = simulated_covid, aes(x = date_onset)) +\n  geom_bar(fill = \"cornflowerblue\") +\n  facet_wrap(~outbreak)"
-  },
-  {
-    "objectID": "slides/viz.html#splitting-up-with-facet_wrap-2",
-    "href": "slides/viz.html#splitting-up-with-facet_wrap-2",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Splitting up with facet_wrap()",
-    "text": "Splitting up with facet_wrap()\n\n\nUse facet_wrap() and add in the variable (with a ~ in the front)\n\n\n\nggplot(data = simulated_covid, aes(x = date_onset)) +\n  geom_bar(fill = \"cornflowerblue\") +\n  facet_wrap(~outbreak)"
-  },
-  {
-    "objectID": "slides/viz.html#splitting-up-with-facet_wrap-3",
-    "href": "slides/viz.html#splitting-up-with-facet_wrap-3",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Splitting up with facet_wrap()",
-    "text": "Splitting up with facet_wrap()\n\n\nYou can “free” the scales from their original limits\n\n\n\nggplot(data = simulated_covid, aes(x = date_onset)) +\n  geom_bar(fill = \"cornflowerblue\") +\n  facet_wrap(~outbreak, scales = \"free_x\")"
-  },
-  {
-    "objectID": "slides/viz.html#splitting-up-with-facet_wrap-4",
-    "href": "slides/viz.html#splitting-up-with-facet_wrap-4",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Splitting up with facet_wrap()",
-    "text": "Splitting up with facet_wrap()\n\n\nYou can “free” the scales from their original limits\n\n\n\nggplot(data = simulated_covid, aes(x = date_onset)) +\n  geom_bar(fill = \"cornflowerblue\") +\n  facet_wrap(~outbreak, scales = \"free_y\")"
-  },
-  {
-    "objectID": "slides/viz.html#extending-ggplot2",
-    "href": "slides/viz.html#extending-ggplot2",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Extending ggplot2",
-    "text": "Extending ggplot2\n\nAdd specific functionalities to ggplot2 with extensions!\nHow to use:\n\nThink of a specific figure you want to plot\nTry your best to plot it with ggplot2\nIf you think ggplot2 cannot do what you want. Have a look here\nRead their documentation to see how to use them"
-  },
-  {
-    "objectID": "slides/viz.html#extending-ggplot2-1",
-    "href": "slides/viz.html#extending-ggplot2-1",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Extending ggplot2",
-    "text": "Extending ggplot2\nSome commonly used extensions:\n\npatchwork: to patch multiple ggplot2 plots together\ngganimate: to create moving/animating plots\nggrepel: to repel labels on a plot away from each other\nggdist: to work with distributions"
-  },
-  {
-    "objectID": "slides/viz.html#interactive-plots-with-plotly",
-    "href": "slides/viz.html#interactive-plots-with-plotly",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Interactive plots with plotly",
-    "text": "Interactive plots with plotly\n\n\nIf you need to create interactive ggplots, you can use the plotly package\nYou just need to save your ggplot into an object\n\n\np &lt;- ggplot(aggregated_cases, aes(x = date_onset, y = case_count)) +\n  geom_point(color = \"grey\") +\n  geom_smooth(color = \"cornflowerblue\", method = \"gam\") +\n  labs(\n    title = \"New covid cases over time\",\n    x = \"Date\",\n    y = \"Number of cases\"\n  )"
-  },
-  {
-    "objectID": "slides/viz.html#interactive-plots-with-plotly-1",
-    "href": "slides/viz.html#interactive-plots-with-plotly-1",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Interactive plots with plotly",
-    "text": "Interactive plots with plotly\n\n\nThen use it in the plotly::ggplotly() function\n\n\n# install.packages(\"plotly\")\nlibrary(plotly)\nggplotly(p)"
-  },
-  {
-    "objectID": "slides/viz.html#interactive-plots-with-plotly-2",
-    "href": "slides/viz.html#interactive-plots-with-plotly-2",
-    "title": "Principles of data visualisation and plotting in R",
-    "section": "Interactive plots with plotly",
-    "text": "Interactive plots with plotly\n\n\nYou can also create 3d plots with plotly\n\n\nplot_ly(\n  data = tibble(x = rnorm(10), y = rnorm(10), z = rnorm(10)),\n  x = ~x,\n  y = ~y,\n  z = ~z\n)"
+    "objectID": "slides/IntroductionRDay2.html#exercise",
+    "href": "slides/IntroductionRDay2.html#exercise",
+    "title": "Introduction to R, Day 2",
+    "section": "Exercise",
+    "text": "Exercise\nFind information on\n\ndescriptive statistics\nchange several categorical variables of a data.frame into factor variables\nrecognize nonstandard date formats"
   }
 ]
