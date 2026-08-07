@@ -576,7 +576,13 @@ code.R
 #| code-line-numbers: "3"
 ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_point(mapping = aes(size = pop, color = region)) +
-  geom_text(mapping = aes(label = country))
+  geom_text(mapping = aes(label = country)) +
+  theme(
+    legend.position = "top",
+    legend.direction = "vertical",
+    legend.text = element_text(size = 11),
+    legend.key.height = unit(0.5, "cm")
+  )
 ```
 :::
 ::::
@@ -589,7 +595,13 @@ ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
 #| out-width: "100%"
 ggplot(df, aes(x = coverage, y = inequality)) +
   geom_point(aes(size = pop, color = region)) +
-  geom_text(aes(label = country))
+  geom_text(aes(label = country)) +
+  theme(
+    legend.position = "top",
+    legend.direction = "vertical",
+    legend.text = element_text(size = 11),
+    legend.key.height = unit(0.5, "cm")
+  )
 ```
 :::
 ::::::
@@ -611,7 +623,13 @@ Ours (so far)
 #| out-width: "100%"
 ggplot(df, aes(x = coverage, y = inequality)) +
   geom_point(aes(size = pop, color = region)) +
-  geom_text(aes(label = country))
+  geom_text(aes(label = country)) +
+  theme(
+    legend.position = "top",
+    legend.direction = "vertical",
+    legend.text = element_text(size = 11),
+    legend.key.height = unit(0.5, "cm")
+  )
 ```
 :::
 :::::
@@ -727,7 +745,13 @@ code.R
 #| eval: FALSE
 ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_point(mapping = aes(size = pop, color = region)) +
-  geom_text(mapping = aes(label = country))
+  geom_text(mapping = aes(label = country)) +
+  theme(
+    legend.position = "top",
+    legend.direction = "vertical",
+    legend.text = element_text(size = 11),
+    legend.key.height = unit(0.5, "cm")
+  )
 ```
 :::
 ::::
@@ -740,7 +764,13 @@ ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
 #| out-width: "100%"
 ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_point(mapping = aes(size = pop, color = region)) +
-  geom_text(mapping = aes(label = country))
+  geom_text(mapping = aes(label = country)) +
+  theme(
+    legend.position = "top",
+    legend.direction = "vertical",
+    legend.text = element_text(size = 11),
+    legend.key.height = unit(0.5, "cm")
+  )
 ```
 :::
 ::::::
@@ -760,6 +790,12 @@ ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_text(mapping = aes(label = country)) +
   scale_color_discrete(
     palette = scales::pal_viridis()
+  ) +
+  theme(
+    legend.position = "top",
+    legend.direction = "vertical",
+    legend.text = element_text(size = 11),
+    legend.key.height = unit(0.5, "cm")
   )
 ```
 :::
@@ -778,6 +814,12 @@ ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_text(mapping = aes(label = country)) +
   scale_color_discrete(
     palette = scales::pal_viridis()
+  ) +
+  theme(
+    legend.position = "top",
+    legend.direction = "vertical",
+    legend.text = element_text(size = 11),
+    legend.key.height = unit(0.5, "cm")
   )
 ```
 :::
@@ -796,11 +838,17 @@ code.R
 ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_point(mapping = aes(size = pop, color = region)) +
   geom_text(mapping = aes(label = country)) +
-  scale_color_viridis_d()
+  scale_color_viridis_d() +
+  theme(
+    legend.position = "top",
+    legend.direction = "vertical",
+    legend.text = element_text(size = 11),
+    legend.key.height = unit(0.5, "cm")
+  )
 ```
 :::
 
-::: callout-tip
+::: {.callout-tip style="font-size:0.7em;"}
 You can also use `scale_color_viridis_d()`, which is a shorthand for the
 scale layer we used on the previous slide
 
@@ -823,7 +871,13 @@ Breakdown:
 ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_point(mapping = aes(size = pop, color = region)) +
   geom_text(mapping = aes(label = country)) +
-  scale_color_viridis_d()
+  scale_color_viridis_d() +
+  theme(
+    legend.position = "top",
+    legend.direction = "vertical",
+    legend.text = element_text(size = 11),
+    legend.key.height = unit(0.5, "cm")
+  )
 ```
 :::
 :::::::
@@ -851,7 +905,13 @@ my_pallete <- c(
 ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_point(mapping = aes(size = pop, color = region)) +
   geom_text(mapping = aes(label = country)) +
-  scale_color_manual(values = my_pallete)
+  scale_color_manual(values = my_pallete) +
+  theme(
+    legend.position = "top",
+    legend.direction = "vertical",
+    legend.text = element_text(size = 11),
+    legend.key.height = unit(0.5, "cm")
+  )
 ```
 :::
 You can define and use your own custom color palette!
@@ -875,7 +935,13 @@ my_pallete <- c(
 ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_point(mapping = aes(size = pop, color = region)) +
   geom_text(mapping = aes(label = country)) +
-  scale_color_manual(values = my_pallete)
+  scale_color_manual(values = my_pallete) +
+  theme(
+    legend.position = "top",
+    legend.direction = "vertical",
+    legend.text = element_text(size = 11),
+    legend.key.height = unit(0.5, "cm")
+  )
 ```
 :::
 ::::::
@@ -902,12 +968,17 @@ my_pallete <- c(
 ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_point(mapping = aes(size = pop, color = region)) +
   geom_text(mapping = aes(label = country)) +
-  scale_color_manual(values = my_pallete, guide = guide_legend(order = 2)) +
+  scale_color_manual(values = my_pallete) +
   scale_size_continuous(
     breaks = c(50, 100, 150, 200),
     labels = c("50 million", "100 million", "150 million", "200 million"),
     range = c(0, 8),
-    guide = guide_legend(order = 1)
+  ) +
+  theme(
+    legend.position = "top",
+    legend.direction = "vertical",
+    legend.text = element_text(size = 11),
+    legend.key.height = unit(0.5, "cm")
   )
 ```
 :::
@@ -922,12 +993,82 @@ ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
 ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_point(mapping = aes(size = pop, color = region)) +
   geom_text(mapping = aes(label = country)) +
-  scale_color_manual(values = my_pallete, guide = guide_legend(order = 2)) +
+  scale_color_manual(values = my_pallete) +
+  scale_size_continuous(
+    breaks = c(50, 100, 150, 200),
+    labels = c("50 million", "100 million", "150 million", "200 million"),
+    range = c(0, 8),
+  ) +
+  theme(
+    legend.position = "top",
+    legend.direction = "vertical",
+    legend.text = element_text(size = 11),
+    legend.key.height = unit(0.5, "cm")
+  )
+```
+:::
+::::::
+
+## Refine the plot: reorder the legends {.smaller}
+
+:::::: columns
+:::: {.column width="60%"}
+::: {.codewindow .r}
+code.R
+
+```{r}
+#| eval: FALSE
+#| code-line-numbers: "18"
+my_pallete <- c(
+  "Central Europe, Eastern Europe and Central Asia" = "#fa8495",
+  "Latin America and Caribbean" = "#4ca258",
+  "North Africa and Middle East" = "#6493bb",
+  "South Asia" = "#d7c968",
+  "Southeast Asia, East Asia and Oceania" = "#7dd8f3",
+  "Sub-Saharan Africa" = "#bc5c91"
+)
+
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region)) +
+  geom_text(mapping = aes(label = country)) +
+  scale_color_manual(values = my_pallete) +
   scale_size_continuous(
     breaks = c(50, 100, 150, 200),
     labels = c("50 million", "100 million", "150 million", "200 million"),
     range = c(0, 8),
     guide = guide_legend(order = 1)
+  ) +
+  theme(
+    legend.position = "top",
+    legend.direction = "vertical",
+    legend.text = element_text(size = 11),
+    legend.key.height = unit(0.5, "cm")
+  )
+```
+:::
+::::
+
+::: {.column width="40%"}
+```{r}
+#| echo: FALSE
+#| fig-width: 5
+#| fig-height: 5
+#| out-width: "100%"
+ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
+  geom_point(mapping = aes(size = pop, color = region)) +
+  geom_text(mapping = aes(label = country)) +
+  scale_color_manual(values = my_pallete) +
+  scale_size_continuous(
+    breaks = c(50, 100, 150, 200),
+    labels = c("50 million", "100 million", "150 million", "200 million"),
+    range = c(0, 8),
+    guide = guide_legend(order = 1)
+  ) +
+  theme(
+    legend.position = "top",
+    legend.direction = "vertical",
+    legend.text = element_text(size = 11),
+    legend.key.height = unit(0.5, "cm")
   )
 ```
 :::
@@ -955,7 +1096,7 @@ my_pallete <- c(
 ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_point(mapping = aes(size = pop, color = region)) +
   geom_text(mapping = aes(label = country)) +
-  scale_color_manual(values = my_pallete, guide = guide_legend(order = 2)) +
+  scale_color_manual(values = my_pallete) +
   scale_size_continuous(
     breaks = c(50, 100, 150, 200),
     labels = c("50 million", "100 million", "150 million", "200 million"),
@@ -969,6 +1110,12 @@ ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   scale_y_continuous(
     breaks = c(-0.1, 0, 0.1),
     limits = c(-0.16, 0.1)
+  ) +
+  theme(
+    legend.position = "top",
+    legend.direction = "vertical",
+    legend.text = element_text(size = 11),
+    legend.key.height = unit(0.5, "cm")
   )
 ```
 :::
@@ -983,7 +1130,7 @@ ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
 ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   geom_point(mapping = aes(size = pop, color = region)) +
   geom_text(mapping = aes(label = country)) +
-  scale_color_manual(values = my_pallete, guide = guide_legend(order = 2)) +
+  scale_color_manual(values = my_pallete) +
   scale_size_continuous(
     breaks = c(50, 100, 150, 200),
     labels = c("50 million", "100 million", "150 million", "200 million"),
@@ -997,6 +1144,12 @@ ggplot(data = df, mapping = aes(x = coverage, y = inequality)) +
   scale_y_continuous(
     breaks = c(-0.1, 0, 0.1),
     limits = c(-0.16, 0.1)
+  ) +
+  theme(
+    legend.position = "top",
+    legend.direction = "vertical",
+    legend.text = element_text(size = 11),
+    legend.key.height = unit(0.5, "cm")
   )
 ```
 :::
