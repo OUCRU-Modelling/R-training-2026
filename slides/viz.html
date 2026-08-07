@@ -102,7 +102,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-4fd48ba744d2ce6e268e6dac3775ecf5.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-44648f3c0eb4b1a7574f4b861a54f175.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -1223,12 +1223,12 @@ by **guides**?
 <span id="cb18-11"><a aria-label="11"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">size =</span> pop, <span class="at">color =</span> region)) <span class="sc">+</span></span>
 <span id="cb18-12"><a aria-label="12"></a>  <span class="fu">geom_text</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">label =</span> country)) <span class="sc">+</span></span>
 <span id="cb18-13"><a aria-label="13"></a>  <span class="fu">scale_color_manual</span>(</span>
-<span id="cb18-14"><a aria-label="14"></a>    <span class="at">name =</span> <span class="st">""</span>,</span>
+<span id="cb18-14"><a aria-label="14"></a>    <span class="at">name =</span> <span class="cn">NULL</span>,</span>
 <span id="cb18-15"><a aria-label="15"></a>    <span class="at">values =</span> my_pallete,</span>
 <span id="cb18-16"><a aria-label="16"></a>    <span class="at">guide =</span> <span class="fu">guide_legend</span>(<span class="at">order =</span> <span class="dv">2</span>)</span>
 <span id="cb18-17"><a aria-label="17"></a>  ) <span class="sc">+</span></span>
 <span id="cb18-18"><a aria-label="18"></a>  <span class="fu">scale_size_continuous</span>(</span>
-<span id="cb18-19"><a aria-label="19"></a>    <span class="at">name =</span> <span class="st">""</span>,</span>
+<span id="cb18-19"><a aria-label="19"></a>    <span class="at">name =</span> <span class="cn">NULL</span>,</span>
 <span id="cb18-20"><a aria-label="20"></a>    <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">200</span>),</span>
 <span id="cb18-21"><a aria-label="21"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"50 million"</span>, <span class="st">"100 million"</span>, <span class="st">"150 million"</span>, <span class="st">"200 million"</span>),</span>
 <span id="cb18-22"><a aria-label="22"></a>    <span class="at">range =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">8</span>),</span>
@@ -1288,12 +1288,12 @@ by **guides**?
 <span id="cb19-13"><a aria-label="13"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"#999999"</span>) <span class="sc">+</span></span>
 <span id="cb19-14"><a aria-label="14"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"#999999"</span>) <span class="sc">+</span></span>
 <span id="cb19-15"><a aria-label="15"></a>  <span class="fu">scale_color_manual</span>(</span>
-<span id="cb19-16"><a aria-label="16"></a>    <span class="at">name =</span> <span class="st">""</span>,</span>
+<span id="cb19-16"><a aria-label="16"></a>    <span class="at">name =</span> <span class="cn">NULL</span>,</span>
 <span id="cb19-17"><a aria-label="17"></a>    <span class="at">values =</span> my_pallete,</span>
 <span id="cb19-18"><a aria-label="18"></a>    <span class="at">guide =</span> <span class="fu">guide_legend</span>(<span class="at">order =</span> <span class="dv">2</span>)</span>
 <span id="cb19-19"><a aria-label="19"></a>  ) <span class="sc">+</span></span>
 <span id="cb19-20"><a aria-label="20"></a>  <span class="fu">scale_size_continuous</span>(</span>
-<span id="cb19-21"><a aria-label="21"></a>    <span class="at">name =</span> <span class="st">""</span>,</span>
+<span id="cb19-21"><a aria-label="21"></a>    <span class="at">name =</span> <span class="cn">NULL</span>,</span>
 <span id="cb19-22"><a aria-label="22"></a>    <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">200</span>),</span>
 <span id="cb19-23"><a aria-label="23"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"50 million"</span>, <span class="st">"100 million"</span>, <span class="st">"150 million"</span>, <span class="st">"200 million"</span>),</span>
 <span id="cb19-24"><a aria-label="24"></a>    <span class="at">range =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">8</span>),</span>
@@ -1692,10 +1692,13 @@ by **guides**?
 </div></div>
 </div>
 </section>
-<section id="where-to-find-more-geom_" class="slide level2">
-<h2>Where to find more <code>geom_*</code>?</h2>
-<p>For a complete list of <code>geom_*</code>, refer to <a href="https://ggplot2.tidyverse.org/reference/index.html#geom" data-preview-link="true"><code>ggplot2</code> official documentation</a></p>
-<p>Alternatively, you can also look for the example code for your desired chart type at <a href="https://r-graph-gallery.com" data-preview-link="true">R Graph Gallery</a></p>
+<section id="read-the-docs" class="slide level2">
+<h2>Read the docs!</h2>
+<ul>
+<li><p>For a complete list of <code>geom_*</code>, refer to <a href="https://ggplot2.tidyverse.org/reference/index.html#geom" data-preview-link="true"><code>ggplot2</code> official documentation</a></p></li>
+<li><p>How do we know which aesthetics does each geometry support? Read the <a href="https://ggplot2.tidyverse.org/reference/index.html#geoms" style="text-decoration: underline;">documentation</a>!</p></li>
+<li><p>Alternatively, you can also look for the example code for your desired chart type at <a href="https://r-graph-gallery.com" data-preview-link="true">R Graph Gallery</a></p></li>
+</ul>
 </section>
 <section id="save-plot" class="slide level2">
 <h2>Save plot</h2>
@@ -1737,28 +1740,32 @@ by **guides**?
 </ul></li>
 </ul>
 </section>
-<section id="main-components-of-a-graph-r" class="slide level2 smaller">
-<h2>Main components of a graph (R)</h2>
+<section id="grammar-of-a-graph-2" class="slide level2 smaller">
+<h2>Grammar of a graph</h2>
 <ul>
-<li><p>Mapping from data to aesthetic attributes of geometric objects</p></li>
-<li><p>Geometic objects: what you see on the plot (points, lines, bars)</p></li>
-<li><p>Aesthetic attributes: “role” of variables in plot: location (often along x-axis and y-axis), colour, size, shape</p></li>
-<li><p>Scales: map data values to aesthetic attributes</p></li>
+<li>Mapping from information (data) to <strong>aesthetic attributes</strong> of <strong>geometric objects</strong></li>
+<li><strong>Aesthetic attributes</strong> are the “role” of variables in plot: location (often along x-axis and y-axis), colour, size, shape</li>
+<li><strong>Geometric objects</strong> are what you see on the plot (points, lines, bars)</li>
+<li><strong>Scales</strong> maps the information (data) to <strong>aesthetic attributes</strong></li>
+<li><strong>Guides</strong> defines how <strong>scales</strong> are represented</li>
 </ul>
 <div class="fragment">
 <ul>
-<li><p><span style="color:red;">Coordinate system</span>: cartesian, polar, map projections.</p>
-<p>Networks, trees have no coordinate system</p></li>
+<li><span style="color:red;">Coordinate system</span>: cartesian, polar, map projections</li>
 </ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="fragment">
-<ul>
-<li>Not about:
-<ul>
-<li><a href="https://www.data-to-viz.com/">graph type</a> (<span class="math inline">\(\approx\)</span> language, words)</li>
-<li>font size, background colour … Some of these are specified in a <span style="color:red;">theme</span></li>
-</ul></li>
-</ul>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Networks, trees have no coordinate system</p>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section id="polar-coordinate-system" class="slide level2">
@@ -1766,6 +1773,13 @@ by **guides**?
 <p>Pie chart WHO European Health Report 2009</p>
 
 <img data-src="figures/viz/DeathsWHO.jpg" style="width:90.0%" class="r-stretch"><p><strong>Geometric object? Aesthetic attributes? Transformation? Coordinate system?</strong></p>
+</section>
+<section id="grammar-of-a-graph-3" class="slide level2">
+<h2>Grammar of a graph</h2>
+<ul>
+<li>The grammar of graphics <span style="color: red;"><strong>is not</strong></span> about <strong>deciding</strong> the <a href="https://www.data-to-viz.com/">type of graphics</a> for your data</li>
+<li>We are the decision makers. The grammar of graphics just provide the common language, e.g.&nbsp;knowing English and knowing what to say are 2 different things!</li>
+</ul>
 </section></section>
 <section>
 <section id="advance-ggplot2" class="title-slide slide level1 center">
@@ -1775,7 +1789,6 @@ by **guides**?
 <section id="overview" class="slide level2">
 <h2>Overview</h2>
 <ul>
-<li>What does <code>mapping = aes()</code> do?</li>
 <li>Inheritance of data and aesthetics</li>
 <li>The <code>annotate()</code> layer</li>
 <li>Figure panes using <code>facet_wrap()</code></li>
@@ -1783,9 +1796,10 @@ by **guides**?
 <li>Interactive plots with <code>plotly</code></li>
 </ul>
 </section>
-<section id="what-does-mapping-aes-do" class="slide level2">
-<h2>What does <code>mapping = aes()</code> do?</h2>
+<section id="inheritance-of-data-and-aesthetics" class="slide level2 smaller">
+<h2>Inheritance of data and aesthetics</h2>
 <div class="fragment">
+<p>Recall this:</p>
 <ul>
 <li><code>ggplot()</code> arguments and default values:</li>
 </ul>
@@ -1797,125 +1811,26 @@ by **guides**?
 <span id="cb29-2"><a aria-label="2"></a><span class="fu">geom_boxplot</span>(<span class="at">mapping =</span> <span class="cn">NULL</span>, <span class="at">data =</span> <span class="cn">NULL</span>, ...)</span>
 <span id="cb29-3"><a aria-label="3"></a><span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="cn">NULL</span>, <span class="at">data =</span> <span class="cn">NULL</span>, ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="fragment">
-<p><img data-src="figures/ggplots_mapping_aes.png"></p>
-</div>
-</section>
-<section id="what-does-mapping-aes-do-1" class="slide level2 scrollable">
-<h2>What does <code>mapping = aes()</code> do?</h2>
-<div class="r-fit-text">
-<p>Recall this:</p>
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a aria-label="1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/nature_plot.xlsx"</span>)</span>
-<span id="cb30-2"><a aria-label="2"></a><span class="fu">head</span>(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 5
-  country          coverage inequality   pop region                             
-  &lt;chr&gt;               &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;                              
-1 Angola              -0.14      0.1    30.2 Sub-Saharan Africa                 
-2 Papua New Guinea    -0.35      0.08   16.5 Southeast Asia, East Asia and Ocea…
-3 Pakistan             0.12      0.05   82.5 South Asia                         
-4 Chad                 0.14      0.01   27.5 Sub-Saharan Africa                 
-5 Ethiopia             0.32      0.005  55   Sub-Saharan Africa                 
-6 Kenya                0.07     -0.06   30.2 Sub-Saharan Africa                 </code></pre>
-</div>
-</div>
-</div>
-<table class="caption-top" style="width:96%;">
-<colgroup>
-<col style="width: 17%">
-<col style="width: 17%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 19%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><p>label</p>
-<p>(country)</p></th>
-<th><p>x</p>
-<p>(coverage)</p></th>
-<th><p>y</p>
-<p>(inequality)</p></th>
-<th><p>size</p>
-<p>(population)</p></th>
-<th><p>color</p>
-<p>(region)</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Nigeria</td>
-<td>0.20</td>
-<td>-0.07</td>
-<td>220M</td>
-<td>Sub-Saharan Africa</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="what-does-mapping-aes-do-2" class="slide level2">
-<h2>What does <code>mapping = aes()</code> do?</h2>
-<p><strong>Idea</strong>: we are <strong>mapping</strong> the <em>variables</em> in the data to the <em>aesthetics</em> of a <em>geometry</em></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a aria-label="1"></a><span class="fu">aes</span>(<span class="at">x =</span> coverage, <span class="at">y =</span> inequality)</span>
-<span id="cb32-2"><a aria-label="2"></a><span class="co">#&gt; Aesthetic mapping: </span></span>
-<span id="cb32-3"><a aria-label="3"></a><span class="co">#&gt; * `x` -&gt; `coverage`</span></span>
-<span id="cb32-4"><a aria-label="4"></a><span class="co">#&gt; * `y` -&gt; `inequality`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><br></p>
-<div class="fragment">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a aria-label="1"></a><span class="fu">aes</span>(<span class="at">x =</span> coverage<span class="sc">^</span><span class="dv">2</span>, <span class="at">y =</span> inequality<span class="sc">/</span><span class="dv">2</span>)</span>
-<span id="cb33-2"><a aria-label="2"></a><span class="co">#&gt; Aesthetic mapping: </span></span>
-<span id="cb33-3"><a aria-label="3"></a><span class="co">#&gt; * `x` -&gt; `coverage^2`</span></span>
-<span id="cb33-4"><a aria-label="4"></a><span class="co">#&gt; * `y` -&gt; `inequality/2`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="what-does-mapping-aes-do-3" class="slide level2">
-<h2>What does <code>mapping = aes()</code> do?</h2>
-<p>How do we know which aesthetics does each geometry support? Read the <a href="https://ggplot2.tidyverse.org/reference/index.html#geoms" target="_blank" style="text-decoration: underline;">documentation</a>!</p>
-<p>Simply:</p>
-<ul>
-<li>Read the documentation of the geometry of interest</li>
-<li>Click <strong>Aesthetics</strong> on the navigation bar on the right (or scroll down)</li>
-<li>All aesthetics compatible for the geometry are listed</li>
-</ul>
-</section>
-<section id="inheritance-of-data-and-aesthetics" class="slide level2">
-<h2>Inheritance of data and aesthetics</h2>
-<div class="fragment">
-<p>Recall this:</p>
-<ul>
-<li><code>ggplot()</code> arguments and default values:</li>
-</ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a aria-label="1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="cn">NULL</span>, <span class="at">mapping =</span> <span class="fu">aes</span>(), ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ul>
-<li><code>geom_*()</code> arguments and default values:</li>
-</ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a aria-label="1"></a><span class="fu">geom_bar</span>(<span class="at">mapping =</span> <span class="cn">NULL</span>, <span class="at">data =</span> <span class="cn">NULL</span>, ...)</span>
-<span id="cb35-2"><a aria-label="2"></a><span class="fu">geom_boxplot</span>(<span class="at">mapping =</span> <span class="cn">NULL</span>, <span class="at">data =</span> <span class="cn">NULL</span>, ...)</span>
-<span id="cb35-3"><a aria-label="3"></a><span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="cn">NULL</span>, <span class="at">data =</span> <span class="cn">NULL</span>, ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
 </section>
 <section id="inheritance-of-data-and-aesthetics-1" class="slide level2">
 <h2>Inheritance of data and aesthetics</h2>
 <p>The idea is that:</p>
 <ul>
-<li><code>ggplot()</code> can control the <strong>dataset</strong> and <strong>aesthetics</strong></li>
-<li><code>geom_*()</code>s can also control the type of <strong>geometries</strong>, and <em>allow customisation</em> of <strong>aesthetics</strong></li>
+<li><code>ggplot()</code> control the <strong>dataset</strong> and <strong>aesthetics</strong></li>
+<li><code>geom_*()</code>s control the <strong>geometric layer</strong>, and <em>allow customisation</em> of <strong>aesthetics</strong> for that specific geom layer</li>
 </ul>
 </section>
-<section id="inheritance-of-data-and-aesthetics-2" class="slide level2">
+<section id="inheritance-of-data-and-aesthetics-2" class="slide level2 smaller">
 <h2>Inheritance of data and aesthetics</h2>
 <p>A typical <code>ggplot</code> plot will look something like:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a aria-label="1"></a><span class="fu">ggplot</span>(plot_df, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> count)) <span class="sc">+</span></span>
-<span id="cb36-2"><a aria-label="2"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb36-3"><a aria-label="3"></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a aria-label="1"></a><span class="fu">ggplot</span>(plot_df, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> count)) <span class="sc">+</span></span>
+<span id="cb30-2"><a aria-label="2"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb30-3"><a aria-label="3"></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <p>Implicitly, you can think of this as:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a aria-label="1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb37-2"><a aria-label="2"></a>  <span class="fu">geom_line</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> count), <span class="at">data =</span> plot_df) <span class="sc">+</span></span>
-<span id="cb37-3"><a aria-label="3"></a>  <span class="fu">geom_line</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> count), <span class="at">data =</span> plot_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a aria-label="1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb31-2"><a aria-label="2"></a>  <span class="fu">geom_line</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> count), <span class="at">data =</span> plot_df) <span class="sc">+</span></span>
+<span id="cb31-3"><a aria-label="3"></a>  <span class="fu">geom_line</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> count), <span class="at">data =</span> plot_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="fragment">
 <div class="callout callout-note callout-titled callout-style-default">
@@ -1936,65 +1851,62 @@ by **guides**?
 </div>
 </div>
 </section>
-<section id="inheritance-of-data-and-aesthetics-3" class="slide level2" data-auto-animate="true">
+<section id="inheritance-of-data-and-aesthetics-3" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Inheritance of data and aesthetics</h2>
-<p>You have seen this in action before!</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb38-1" class="hljs-ln-code"><a aria-label="1"></a>my_pallete <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb38-2" class="hljs-ln-code"><a aria-label="2"></a>  <span class="st">"Central Europe, Eastern Europe and Central Asia"</span> <span class="ot">=</span> <span class="st">"#fa8495"</span>,</span>
-<span id="cb38-3" class="hljs-ln-code"><a aria-label="3"></a>  <span class="st">"Latin America and Caribbean"</span> <span class="ot">=</span> <span class="st">"#4ca258"</span>,</span>
-<span id="cb38-4" class="hljs-ln-code"><a aria-label="4"></a>  <span class="st">"North Africa and Middle East"</span> <span class="ot">=</span> <span class="st">"#6493bb"</span>,</span>
-<span id="cb38-5" class="hljs-ln-code"><a aria-label="5"></a>  <span class="st">"South Asia"</span> <span class="ot">=</span> <span class="st">"#d7c968"</span>,</span>
-<span id="cb38-6" class="hljs-ln-code"><a aria-label="6"></a>  <span class="st">"Southeast Asia, East Asia and Oceania"</span> <span class="ot">=</span> <span class="st">"#7dd8f3"</span>,</span>
-<span id="cb38-7" class="hljs-ln-code"><a aria-label="7"></a>  <span class="st">"Sub-Saharan Africa"</span> <span class="ot">=</span> <span class="st">"#bc5c91"</span></span>
-<span id="cb38-8" class="hljs-ln-code"><a aria-label="8"></a>)</span>
-<span id="cb38-9" class="hljs-ln-code"><a aria-label="9"></a></span>
-<span id="cb38-10" class="hljs-ln-code"><a aria-label="10"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> coverage, <span class="at">y =</span> inequality)) <span class="sc">+</span></span>
-<span id="cb38-11" class="hljs-ln-code"><a aria-label="11"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> pop, <span class="at">color =</span> region, <span class="at">alpha =</span> <span class="fl">0.8</span>)) <span class="sc">+</span></span>
-<span id="cb38-12" class="hljs-ln-code"><a aria-label="12"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> country), <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.2</span>, <span class="at">vjust =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb38-13" class="hljs-ln-code"><a aria-label="13"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"#999999"</span>) <span class="sc">+</span></span>
-<span id="cb38-14" class="hljs-ln-code"><a aria-label="14"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"#999999"</span>) <span class="sc">+</span></span>
-<span id="cb38-15" class="hljs-ln-code"><a aria-label="15"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.25</span>, <span class="dv">0</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>),</span>
-<span id="cb38-16" class="hljs-ln-code"><a aria-label="16"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.4</span>, <span class="fl">0.55</span>)) <span class="sc">+</span></span>
-<span id="cb38-17" class="hljs-ln-code"><a aria-label="17"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.1</span>, <span class="dv">0</span>, <span class="fl">0.1</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.16</span>, <span class="fl">0.1</span>)) <span class="sc">+</span></span>
-<span id="cb38-18" class="hljs-ln-code"><a aria-label="18"></a>  <span class="fu">scale_size_continuous</span>(</span>
-<span id="cb38-19" class="hljs-ln-code"><a aria-label="19"></a>    <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">200</span>),</span>
-<span id="cb38-20" class="hljs-ln-code"><a aria-label="20"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"50 million"</span>, <span class="st">"100 million"</span>, <span class="st">"150 million"</span>, <span class="st">"200 million"</span>),</span>
-<span id="cb38-21" class="hljs-ln-code"><a aria-label="21"></a>    <span class="at">range =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">8</span>),</span>
-<span id="cb38-22" class="hljs-ln-code"><a aria-label="22"></a>    <span class="at">guide =</span> <span class="fu">guide_legend</span>(<span class="at">order =</span> <span class="dv">1</span>)</span>
-<span id="cb38-23" class="hljs-ln-code"><a aria-label="23"></a>  ) <span class="sc">+</span></span>
-<span id="cb38-24" class="hljs-ln-code"><a aria-label="24"></a>  <span class="fu">scale_color_manual</span>(</span>
-<span id="cb38-25" class="hljs-ln-code"><a aria-label="25"></a>    <span class="at">values =</span> my_pallete,</span>
-<span id="cb38-26" class="hljs-ln-code"><a aria-label="26"></a>    <span class="at">guide =</span> <span class="fu">guide_legend</span>(<span class="at">order =</span> <span class="dv">2</span>)</span>
-<span id="cb38-27" class="hljs-ln-code"><a aria-label="27"></a>  ) <span class="sc">+</span></span>
-<span id="cb38-28" class="hljs-ln-code"><a aria-label="28"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Change in MCV1 coverage (2019-2000)"</span>,</span>
-<span id="cb38-29" class="hljs-ln-code"><a aria-label="29"></a>       <span class="at">y =</span> <span class="st">"Change in absolute geographical inequality (2019-2000)"</span>,</span>
-<span id="cb38-30" class="hljs-ln-code"><a aria-label="30"></a>       <span class="at">size =</span> <span class="cn">NULL</span>,</span>
-<span id="cb38-31" class="hljs-ln-code"><a aria-label="31"></a>       <span class="at">color =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb38-32" class="hljs-ln-code"><a aria-label="32"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb38-33" class="hljs-ln-code"><a aria-label="33"></a>  <span class="fu">theme</span>(</span>
-<span id="cb38-34" class="hljs-ln-code"><a aria-label="34"></a>    <span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
-<span id="cb38-35" class="hljs-ln-code"><a aria-label="35"></a>    <span class="at">legend.direction =</span> <span class="st">"vertical"</span>,</span>
-<span id="cb38-36" class="hljs-ln-code"><a aria-label="36"></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>),</span>
-<span id="cb38-37" class="hljs-ln-code"><a aria-label="37"></a>    <span class="at">legend.key.height =</span> <span class="fu">unit</span>(<span class="fl">0.5</span>, <span class="st">"cm"</span>),</span>
-<span id="cb38-38" class="hljs-ln-code"><a aria-label="38"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>)</span>
-<span id="cb38-39" class="hljs-ln-code"><a aria-label="39"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Our final figure this morning:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb32-1" class="hljs-ln-code"><a aria-label="1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> coverage, <span class="at">y =</span> inequality)) <span class="sc">+</span></span>
+<span id="cb32-2" class="hljs-ln-code"><a aria-label="2"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">size =</span> pop, <span class="at">color =</span> region), <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb32-3" class="hljs-ln-code"><a aria-label="3"></a>  <span class="fu">geom_text</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">label =</span> country), <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.2</span>, <span class="at">vjust =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb32-4" class="hljs-ln-code"><a aria-label="4"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"#999999"</span>) <span class="sc">+</span></span>
+<span id="cb32-5" class="hljs-ln-code"><a aria-label="5"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"#999999"</span>) <span class="sc">+</span></span>
+<span id="cb32-6" class="hljs-ln-code"><a aria-label="6"></a>  <span class="fu">scale_color_manual</span>(</span>
+<span id="cb32-7" class="hljs-ln-code"><a aria-label="7"></a>    <span class="at">name =</span> <span class="cn">NULL</span>,</span>
+<span id="cb32-8" class="hljs-ln-code"><a aria-label="8"></a>    <span class="at">values =</span> my_pallete,</span>
+<span id="cb32-9" class="hljs-ln-code"><a aria-label="9"></a>    <span class="at">guide =</span> <span class="fu">guide_legend</span>(<span class="at">order =</span> <span class="dv">2</span>)</span>
+<span id="cb32-10" class="hljs-ln-code"><a aria-label="10"></a>  ) <span class="sc">+</span></span>
+<span id="cb32-11" class="hljs-ln-code"><a aria-label="11"></a>  <span class="fu">scale_size_continuous</span>(</span>
+<span id="cb32-12" class="hljs-ln-code"><a aria-label="12"></a>    <span class="at">name =</span> <span class="cn">NULL</span>,</span>
+<span id="cb32-13" class="hljs-ln-code"><a aria-label="13"></a>    <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">200</span>),</span>
+<span id="cb32-14" class="hljs-ln-code"><a aria-label="14"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"50 million"</span>, <span class="st">"100 million"</span>, <span class="st">"150 million"</span>, <span class="st">"200 million"</span>),</span>
+<span id="cb32-15" class="hljs-ln-code"><a aria-label="15"></a>    <span class="at">range =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">8</span>),</span>
+<span id="cb32-16" class="hljs-ln-code"><a aria-label="16"></a>    <span class="at">guide =</span> <span class="fu">guide_legend</span>(<span class="at">order =</span> <span class="dv">1</span>)</span>
+<span id="cb32-17" class="hljs-ln-code"><a aria-label="17"></a>  ) <span class="sc">+</span></span>
+<span id="cb32-18" class="hljs-ln-code"><a aria-label="18"></a>  <span class="fu">scale_x_continuous</span>(</span>
+<span id="cb32-19" class="hljs-ln-code"><a aria-label="19"></a>    <span class="at">name =</span> <span class="st">"Change in MCV1 coverage (2019-2000)"</span>,</span>
+<span id="cb32-20" class="hljs-ln-code"><a aria-label="20"></a>    <span class="at">breaks =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.25</span>, <span class="dv">0</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>),</span>
+<span id="cb32-21" class="hljs-ln-code"><a aria-label="21"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.4</span>, <span class="fl">0.55</span>)</span>
+<span id="cb32-22" class="hljs-ln-code"><a aria-label="22"></a>  ) <span class="sc">+</span></span>
+<span id="cb32-23" class="hljs-ln-code"><a aria-label="23"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb32-24" class="hljs-ln-code"><a aria-label="24"></a>    <span class="at">name =</span> <span class="st">"Change in absolute geographical inequality (2019-2000)"</span>,</span>
+<span id="cb32-25" class="hljs-ln-code"><a aria-label="25"></a>    <span class="at">breaks =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.1</span>, <span class="dv">0</span>, <span class="fl">0.1</span>),</span>
+<span id="cb32-26" class="hljs-ln-code"><a aria-label="26"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.16</span>, <span class="fl">0.1</span>)</span>
+<span id="cb32-27" class="hljs-ln-code"><a aria-label="27"></a>  ) <span class="sc">+</span></span>
+<span id="cb32-28" class="hljs-ln-code"><a aria-label="28"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb32-29" class="hljs-ln-code"><a aria-label="29"></a>  <span class="fu">theme</span>(</span>
+<span id="cb32-30" class="hljs-ln-code"><a aria-label="30"></a>    <span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb32-31" class="hljs-ln-code"><a aria-label="31"></a>    <span class="at">legend.direction =</span> <span class="st">"vertical"</span>,</span>
+<span id="cb32-32" class="hljs-ln-code"><a aria-label="32"></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>),</span>
+<span id="cb32-33" class="hljs-ln-code"><a aria-label="33"></a>    <span class="at">legend.key.height =</span> <span class="fu">unit</span>(<span class="fl">0.5</span>, <span class="st">"cm"</span>),</span>
+<span id="cb32-34" class="hljs-ln-code"><a aria-label="34"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>)</span>
+<span id="cb32-35" class="hljs-ln-code"><a aria-label="35"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="inheritance-of-data-and-aesthetics-4" class="slide level2" data-auto-animate="true">
+<section id="inheritance-of-data-and-aesthetics-4" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Inheritance of data and aesthetics</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb39-1" class="hljs-ln-code"><a aria-label="1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> coverage, <span class="at">y =</span> inequality)) <span class="sc">+</span></span>
-<span id="cb39-2" class="hljs-ln-code"><a aria-label="2"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> pop, <span class="at">color =</span> region), <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb39-3" class="hljs-ln-code"><a aria-label="3"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> country), <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.2</span>, <span class="at">vjust =</span> <span class="fl">0.2</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Focus on this chunk</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb33-1" class="hljs-ln-code"><a aria-label="1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> coverage, <span class="at">y =</span> inequality)) <span class="sc">+</span></span>
+<span id="cb33-2" class="hljs-ln-code"><a aria-label="2"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">size =</span> pop, <span class="at">color =</span> region), <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb33-3" class="hljs-ln-code"><a aria-label="3"></a>  <span class="fu">geom_text</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">label =</span> country), <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.2</span>, <span class="at">vjust =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
-<img data-src="viz_files/figure-revealjs/unnamed-chunk-51-1.png" width="960" class="r-stretch"></section>
-<section id="inside-and-outside-aes" class="slide level2">
+<img data-src="viz_files/figure-revealjs/unnamed-chunk-50-1.png" width="960" class="r-stretch"></section>
+<section id="inside-and-outside-aes" class="slide level2 smaller">
 <h2>Inside and outside <code>aes()</code></h2>
 <p>What happens if we do it like this:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a aria-label="1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> coverage, <span class="at">y =</span> inequality)) <span class="sc">+</span></span>
-<span id="cb40-2"><a aria-label="2"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> pop, <span class="at">color =</span> region, <span class="at">alpha =</span> <span class="fl">0.8</span>)) <span class="sc">+</span></span>
-<span id="cb40-3"><a aria-label="3"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> country, <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.2</span>, <span class="at">vjust =</span> <span class="fl">0.2</span>)) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a aria-label="1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> coverage, <span class="at">y =</span> inequality)) <span class="sc">+</span></span>
+<span id="cb34-2"><a aria-label="2"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">size =</span> pop, <span class="at">color =</span> region, <span class="at">alpha =</span> <span class="fl">0.8</span>)) <span class="sc">+</span></span>
+<span id="cb34-3"><a aria-label="3"></a>  <span class="fu">geom_text</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">label =</span> country, <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.2</span>, <span class="at">vjust =</span> <span class="fl">0.2</span>)) <span class="sc">+</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
-<img data-src="viz_files/figure-revealjs/unnamed-chunk-52-1.png" width="960" class="r-stretch"></section>
-<section id="inside-and-outside-aes-1" class="slide level2 scrollable">
+<img data-src="viz_files/figure-revealjs/unnamed-chunk-51-1.png" width="960" class="r-stretch"></section>
+<section id="inside-and-outside-aes-1" class="slide level2 scrollable smaller">
 <h2>Inside and outside <code>aes()</code></h2>
 <div class="r-fit-text">
 <p>Back to this slide (again):</p>
@@ -2031,8 +1943,8 @@ by **guides**?
 </tbody>
 </table>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a aria-label="1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/nature_plot.xlsx"</span>)</span>
-<span id="cb41-2"><a aria-label="2"></a><span class="fu">head</span>(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a aria-label="1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/nature_plot.xlsx"</span>)</span>
+<span id="cb35-2"><a aria-label="2"></a><span class="fu">head</span>(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 5
   country          coverage inequality   pop region                             
@@ -2062,66 +1974,103 @@ by **guides**?
 <ul>
 <li>You want the aesthetics to <strong>change</strong> with the data -&gt; put it <strong>inside</strong> <code>aes()</code>*</li>
 <li>You want the aesthetics to <strong>be fixed</strong> regardless of data -&gt; put it <strong>outside</strong> <code>aes()</code>*</li>
-<li>The aesthetics must be supported by the geometry</li>
+<li>The aesthetics must be supported by the geometric objects</li>
 </ul>
-<div class="footnote">
+</div>
+</div>
+</div>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
 <ul>
 <li>This also means that columns names can only be used inside <code>aes()</code></li>
 </ul>
 </div>
 </div>
 </div>
-</div>
 </section>
-<section id="color-transparency" class="slide level2">
+<section id="color-transparency" class="slide level2 smaller">
 <h2>Color transparency</h2>
-<p>In <code>ggplot2</code>, you can add transparency to colors with the <code>alpha</code> aesthetics (available for most geometries)</p>
-
-<img data-src="viz_files/figure-revealjs/unnamed-chunk-54-1.png" width="960" class="r-stretch"></section>
-<section id="the-annotate-layer" class="slide level2 scrollable">
-<h2>The <code>annotate()</code> layer</h2>
-<div class="r-fit-text">
-<p>What if we want to <em>annotate</em> specific parts of a figure?</p>
-<div class="fragment">
+<p>In <code>ggplot2</code>, you can add transparency to colors with the <code>alpha</code> aesthetics (available for most geometric objects)</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a aria-label="1"></a><span class="fu">tibble</span>(<span class="at">start_x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">end_x =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">11</span>, <span class="at">alphas =</span> <span class="fu">seq</span>(<span class="fl">0.1</span>, <span class="dv">1</span>, <span class="fl">0.1</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb37-2"><a aria-label="2"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb37-3"><a aria-label="3"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">as.character</span>(alphas), <span class="at">x =</span> (start_x <span class="sc">+</span> <span class="fl">0.5</span>), <span class="at">y =</span> <span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb37-4"><a aria-label="4"></a>  <span class="fu">geom_rect</span>(</span>
+<span id="cb37-5"><a aria-label="5"></a>    <span class="fu">aes</span>(<span class="at">xmin =</span> start_x, <span class="at">xmax =</span> end_x, <span class="at">alpha =</span> alphas),</span>
+<span id="cb37-6"><a aria-label="6"></a>    <span class="at">ymin =</span> <span class="dv">0</span>,</span>
+<span id="cb37-7"><a aria-label="7"></a>    <span class="at">ymax =</span> <span class="dv">10</span>,</span>
+<span id="cb37-8"><a aria-label="8"></a>    <span class="at">fill =</span> <span class="st">"blue"</span></span>
+<span id="cb37-9"><a aria-label="9"></a>  ) <span class="sc">+</span></span>
+<span id="cb37-10"><a aria-label="10"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="cn">NULL</span>, <span class="at">labels =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb37-11"><a aria-label="11"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="cn">NULL</span>, <span class="at">labels =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb37-12"><a aria-label="12"></a>  <span class="fu">scale_alpha_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="fl">0.1</span>, <span class="dv">1</span>, <span class="fl">0.1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a aria-label="1"></a><span class="fu">ggplot</span>(aggregated_cases, <span class="fu">aes</span>(<span class="at">x =</span> date_onset, <span class="at">y =</span> case_count)) <span class="sc">+</span></span>
-<span id="cb43-2"><a aria-label="2"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
-<span id="cb43-3"><a aria-label="3"></a>  <span class="fu">geom_smooth</span>(<span class="at">color =</span> <span class="st">"cornflowerblue"</span>, <span class="at">method =</span> <span class="st">"gam"</span>) <span class="sc">+</span></span>
-<span id="cb43-4"><a aria-label="4"></a>  <span class="fu">labs</span>(</span>
-<span id="cb43-5"><a aria-label="5"></a>    <span class="at">title =</span> <span class="st">"New covid cases over time"</span>,</span>
-<span id="cb43-6"><a aria-label="6"></a>    <span class="at">x =</span> <span class="st">"Date"</span>,</span>
-<span id="cb43-7"><a aria-label="7"></a>    <span class="at">y =</span> <span class="st">"Number of cases"</span></span>
-<span id="cb43-8"><a aria-label="8"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="viz_files/figure-revealjs/unnamed-chunk-55-1.png" style="width:100.0%"></p>
+<p><img data-src="viz_files/figure-revealjs/unnamed-chunk-53-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </section>
-<section id="the-annotate-layer-1" class="slide level2 scrollable">
+<section id="the-annotate-layer" class="slide level2">
 <h2>The <code>annotate()</code> layer</h2>
-<div class="r-fit-text">
-<p>Adding a vertical line with <code>geom_vline()</code> and a label with <code>geom_label()</code></p>
-<div class="fragment">
+<p>How to <em>annotate</em> specific parts of a figure?</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a aria-label="1"></a><span class="fu">ggplot</span>(aggregated_cases, <span class="fu">aes</span>(<span class="at">x =</span> date_onset, <span class="at">y =</span> case_count)) <span class="sc">+</span></span>
+<span id="cb38-2"><a aria-label="2"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
+<span id="cb38-3"><a aria-label="3"></a>  <span class="fu">geom_smooth</span>(<span class="at">color =</span> <span class="st">"cornflowerblue"</span>, <span class="at">method =</span> <span class="st">"gam"</span>) <span class="sc">+</span></span>
+<span id="cb38-4"><a aria-label="4"></a>  <span class="fu">labs</span>(</span>
+<span id="cb38-5"><a aria-label="5"></a>    <span class="at">title =</span> <span class="st">"New covid cases over time"</span>,</span>
+<span id="cb38-6"><a aria-label="6"></a>    <span class="at">x =</span> <span class="st">"Date"</span>,</span>
+<span id="cb38-7"><a aria-label="7"></a>    <span class="at">y =</span> <span class="st">"Number of cases"</span></span>
+<span id="cb38-8"><a aria-label="8"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44" data-code-line-numbers="6-7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a aria-label="1"></a><span class="fu">ggplot</span>(aggregated_cases, <span class="fu">aes</span>(<span class="at">x =</span> date_onset, <span class="at">y =</span> case_count)) <span class="sc">+</span></span>
-<span id="cb44-2"><a aria-label="2"></a>  <span class="co"># main plotting geoms</span></span>
-<span id="cb44-3"><a aria-label="3"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
-<span id="cb44-4"><a aria-label="4"></a>  <span class="fu">geom_smooth</span>(<span class="at">color =</span> <span class="st">"cornflowerblue"</span>, <span class="at">method =</span> <span class="st">"gam"</span>) <span class="sc">+</span></span>
-<span id="cb44-5"><a aria-label="5"></a>  <span class="co"># figure annotation geoms (2)</span></span>
-<span id="cb44-6"><a aria-label="6"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">as.Date</span>(<span class="st">"2023-03-01"</span>), <span class="at">linetype =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb44-7"><a aria-label="7"></a>  <span class="fu">geom_label</span>(<span class="at">label =</span> <span class="st">"Start of outbreak"</span>, <span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2023-03-01"</span>), <span class="at">y =</span> <span class="dv">30</span>) <span class="sc">+</span></span>
-<span id="cb44-8"><a aria-label="8"></a>  <span class="co"># labels</span></span>
-<span id="cb44-9"><a aria-label="9"></a>  <span class="fu">labs</span>(</span>
-<span id="cb44-10"><a aria-label="10"></a>    <span class="at">title =</span> <span class="st">"New covid cases over time"</span>,</span>
-<span id="cb44-11"><a aria-label="11"></a>    <span class="at">x =</span> <span class="st">"Date"</span>,</span>
-<span id="cb44-12"><a aria-label="12"></a>    <span class="at">y =</span> <span class="st">"Number of cases"</span></span>
-<span id="cb44-13"><a aria-label="13"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="viz_files/figure-revealjs/unnamed-chunk-54-1.png" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="the-annotate-layer-1" class="slide level2">
+<h2>The <code>annotate()</code> layer</h2>
+<p>Adding a vertical line with <code>geom_vline()</code> and a label with <code>geom_label()</code></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39" data-code-line-numbers="6-7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a aria-label="1"></a><span class="fu">ggplot</span>(aggregated_cases, <span class="fu">aes</span>(<span class="at">x =</span> date_onset, <span class="at">y =</span> case_count)) <span class="sc">+</span></span>
+<span id="cb39-2"><a aria-label="2"></a>  <span class="co"># main plotting geoms</span></span>
+<span id="cb39-3"><a aria-label="3"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
+<span id="cb39-4"><a aria-label="4"></a>  <span class="fu">geom_smooth</span>(<span class="at">color =</span> <span class="st">"cornflowerblue"</span>, <span class="at">method =</span> <span class="st">"gam"</span>) <span class="sc">+</span></span>
+<span id="cb39-5"><a aria-label="5"></a>  <span class="co"># figure annotation geoms (2)</span></span>
+<span id="cb39-6"><a aria-label="6"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">as.Date</span>(<span class="st">"2023-03-01"</span>), <span class="at">linetype =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb39-7"><a aria-label="7"></a>  <span class="fu">geom_label</span>(<span class="at">label =</span> <span class="st">"Start of outbreak"</span>, <span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2023-03-01"</span>), <span class="at">y =</span> <span class="dv">30</span>) <span class="sc">+</span></span>
+<span id="cb39-8"><a aria-label="8"></a>  <span class="co"># labels</span></span>
+<span id="cb39-9"><a aria-label="9"></a>  <span class="fu">labs</span>(</span>
+<span id="cb39-10"><a aria-label="10"></a>    <span class="at">title =</span> <span class="st">"New covid cases over time"</span>,</span>
+<span id="cb39-11"><a aria-label="11"></a>    <span class="at">x =</span> <span class="st">"Date"</span>,</span>
+<span id="cb39-12"><a aria-label="12"></a>    <span class="at">y =</span> <span class="st">"Number of cases"</span></span>
+<span id="cb39-13"><a aria-label="13"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
@@ -2130,72 +2079,73 @@ by **guides**?
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section id="the-annotate-layer-2" class="slide level2 scrollable">
 <h2>The <code>annotate()</code> layer</h2>
-<div class="r-fit-text">
-<p>Adding a region with <code>geom_rect()</code> and a label with <code>geom_label()</code></p>
-<div class="fragment">
+<p>Annotate a time range with <code>geom_rect()</code> and a label with <code>geom_label()</code></p>
+<div class="columns">
+<div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45" data-code-line-numbers="3-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a aria-label="1"></a><span class="fu">ggplot</span>(aggregated_cases, <span class="fu">aes</span>(<span class="at">x =</span> date_onset, <span class="at">y =</span> case_count)) <span class="sc">+</span></span>
-<span id="cb45-2"><a aria-label="2"></a>  <span class="co"># figure annotation geoms (1)</span></span>
-<span id="cb45-3"><a aria-label="3"></a>  <span class="fu">geom_rect</span>(</span>
-<span id="cb45-4"><a aria-label="4"></a>    <span class="at">ymin =</span> <span class="sc">-</span><span class="cn">Inf</span>,</span>
-<span id="cb45-5"><a aria-label="5"></a>    <span class="at">ymax =</span> <span class="cn">Inf</span>,</span>
-<span id="cb45-6"><a aria-label="6"></a>    <span class="at">xmin =</span> <span class="fu">as.Date</span>(<span class="st">"2023-04-01"</span>),</span>
-<span id="cb45-7"><a aria-label="7"></a>    <span class="at">xmax =</span> <span class="fu">as.Date</span>(<span class="st">"2023-06-01"</span>),</span>
-<span id="cb45-8"><a aria-label="8"></a>    <span class="at">alpha =</span> <span class="fl">0.2</span>,</span>
-<span id="cb45-9"><a aria-label="9"></a>    <span class="at">fill =</span> <span class="st">"red"</span></span>
-<span id="cb45-10"><a aria-label="10"></a>  ) <span class="sc">+</span></span>
-<span id="cb45-11"><a aria-label="11"></a>  <span class="fu">geom_label</span>(</span>
-<span id="cb45-12"><a aria-label="12"></a>    <span class="at">label =</span> <span class="st">"Outbreak peak"</span>,</span>
-<span id="cb45-13"><a aria-label="13"></a>    <span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2023-06-25"</span>),</span>
-<span id="cb45-14"><a aria-label="14"></a>    <span class="at">y =</span> <span class="dv">30</span>,</span>
-<span id="cb45-15"><a aria-label="15"></a>    <span class="at">color =</span> <span class="st">"red"</span></span>
-<span id="cb45-16"><a aria-label="16"></a>  ) <span class="sc">+</span></span>
-<span id="cb45-17"><a aria-label="17"></a>  <span class="co"># main plotting geoms</span></span>
-<span id="cb45-18"><a aria-label="18"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
-<span id="cb45-19"><a aria-label="19"></a>  <span class="fu">geom_smooth</span>(<span class="at">color =</span> <span class="st">"cornflowerblue"</span>, <span class="at">method =</span> <span class="st">"gam"</span>) <span class="sc">+</span></span>
-<span id="cb45-20"><a aria-label="20"></a>  <span class="co"># labels</span></span>
-<span id="cb45-21"><a aria-label="21"></a>  <span class="fu">labs</span>(</span>
-<span id="cb45-22"><a aria-label="22"></a>    <span class="at">title =</span> <span class="st">"New covid cases over time"</span>,</span>
-<span id="cb45-23"><a aria-label="23"></a>    <span class="at">x =</span> <span class="st">"Date"</span>,</span>
-<span id="cb45-24"><a aria-label="24"></a>    <span class="at">y =</span> <span class="st">"Number of cases"</span></span>
-<span id="cb45-25"><a aria-label="25"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40" data-code-line-numbers="3-10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a aria-label="1"></a><span class="fu">ggplot</span>(aggregated_cases, <span class="fu">aes</span>(<span class="at">x =</span> date_onset, <span class="at">y =</span> case_count)) <span class="sc">+</span></span>
+<span id="cb40-2"><a aria-label="2"></a>  <span class="co"># figure annotation geoms (1)</span></span>
+<span id="cb40-3"><a aria-label="3"></a>  <span class="fu">geom_rect</span>(</span>
+<span id="cb40-4"><a aria-label="4"></a>    <span class="at">ymin =</span> <span class="sc">-</span><span class="cn">Inf</span>,</span>
+<span id="cb40-5"><a aria-label="5"></a>    <span class="at">ymax =</span> <span class="cn">Inf</span>,</span>
+<span id="cb40-6"><a aria-label="6"></a>    <span class="at">xmin =</span> <span class="fu">as.Date</span>(<span class="st">"2023-04-01"</span>),</span>
+<span id="cb40-7"><a aria-label="7"></a>    <span class="at">xmax =</span> <span class="fu">as.Date</span>(<span class="st">"2023-06-01"</span>),</span>
+<span id="cb40-8"><a aria-label="8"></a>    <span class="at">alpha =</span> <span class="fl">0.2</span>,</span>
+<span id="cb40-9"><a aria-label="9"></a>    <span class="at">fill =</span> <span class="st">"red"</span></span>
+<span id="cb40-10"><a aria-label="10"></a>  ) <span class="sc">+</span></span>
+<span id="cb40-11"><a aria-label="11"></a>  <span class="fu">geom_label</span>(</span>
+<span id="cb40-12"><a aria-label="12"></a>    <span class="at">label =</span> <span class="st">"Outbreak peak"</span>,</span>
+<span id="cb40-13"><a aria-label="13"></a>    <span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2023-06-25"</span>),</span>
+<span id="cb40-14"><a aria-label="14"></a>    <span class="at">y =</span> <span class="dv">30</span>,</span>
+<span id="cb40-15"><a aria-label="15"></a>    <span class="at">color =</span> <span class="st">"red"</span></span>
+<span id="cb40-16"><a aria-label="16"></a>  ) <span class="sc">+</span></span>
+<span id="cb40-17"><a aria-label="17"></a>  <span class="co"># main plotting geoms</span></span>
+<span id="cb40-18"><a aria-label="18"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
+<span id="cb40-19"><a aria-label="19"></a>  <span class="fu">geom_smooth</span>(<span class="at">color =</span> <span class="st">"cornflowerblue"</span>, <span class="at">method =</span> <span class="st">"gam"</span>) <span class="sc">+</span></span>
+<span id="cb40-20"><a aria-label="20"></a>  <span class="co"># labels</span></span>
+<span id="cb40-21"><a aria-label="21"></a>  <span class="fu">labs</span>(</span>
+<span id="cb40-22"><a aria-label="22"></a>    <span class="at">title =</span> <span class="st">"New covid cases over time"</span>,</span>
+<span id="cb40-23"><a aria-label="23"></a>    <span class="at">x =</span> <span class="st">"Date"</span>,</span>
+<span id="cb40-24"><a aria-label="24"></a>    <span class="at">y =</span> <span class="st">"Number of cases"</span></span>
+<span id="cb40-25"><a aria-label="25"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="viz_files/figure-revealjs/unnamed-chunk-57-1.png" style="width:100.0%"></p>
+<p><img data-src="viz_files/figure-revealjs/unnamed-chunk-58-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section id="the-annotate-layer-3" class="slide level2 scrollable">
 <h2>The <code>annotate()</code> layer</h2>
 
-<img data-src="viz_files/figure-revealjs/unnamed-chunk-58-1.png" style="width:100.0%" class="r-stretch"><p>We already said <code>alpha = 0.2</code> <strong>outside of <code>aes()</code></strong>, why doesn’t it have any transparency at all??</p>
+<img data-src="viz_files/figure-revealjs/unnamed-chunk-59-1.png" style="width:100.0%" class="r-stretch"><p>We already put <code>alpha = 0.2</code> <strong>outside of <code>aes()</code></strong>, why doesn’t it have any transparency at all??</p>
 </section>
 <section id="the-annotate-layer-4" class="slide level2 scrollable">
 <h2>The <code>annotate()</code> layer</h2>
 <div class="fragment">
 <ul>
-<li class="fragment">I lied</li>
-<li class="fragment">Aesthetics are always dependant on the dataset, whether it is outside or inside <code>aes()</code></li>
+<li class="fragment">Well ackshually… ☝️🤓</li>
+<li class="fragment">Aesthetics are always dependant on the dataset, whether it is outside or inside <code>aes()</code>!</li>
 </ul>
 </div>
 </section>
-<section id="the-annotate-layer-5" class="slide level2 scrollable">
+<section id="the-annotate-layer-5" class="slide level2 scrollable smaller">
 <h2>The <code>annotate()</code> layer</h2>
 <p>Example:</p>
 <ul>
 <li>Originally the dataset <strong>when used in <code>ggplot()</code></strong> looks like this:</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a aria-label="1"></a><span class="fu">ggplot</span>(aggregated_cases, ...) <span class="sc">+</span> ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a aria-label="1"></a><span class="fu">ggplot</span>(aggregated_cases, ...) <span class="sc">+</span> ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 257 × 2
@@ -2215,9 +2165,9 @@ by **guides**?
 </div>
 </div>
 <ul>
-<li>When you assigned a fixed value to an aesthetic outside of <code>aes()</code>, it might look like this:</li>
+<li>When you assigned a fixed value to an aesthetic outside of <code>aes()</code>, it will look like this:</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a aria-label="1"></a><span class="fu">ggplot</span>(aggregated_cases, ...) <span class="sc">+</span> <span class="fu">geom_...</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a aria-label="1"></a><span class="fu">ggplot</span>(aggregated_cases, ...) <span class="sc">+</span> <span class="fu">geom_...</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 257 × 3
@@ -2239,64 +2189,65 @@ by **guides**?
 </section>
 <section id="the-annotate-layer-6" class="slide level2 scrollable">
 <h2>The <code>annotate()</code> layer</h2>
-<div class="r-fit-text">
-<p>Using the <code>annotate()</code> layer, you can separate the annotations from the geometry layer</p>
-<div class="fragment">
+<div class="columns">
+<p>Using the <code>annotate()</code> layer, you can separate the annotations from the geometry layer</p><div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50" data-code-line-numbers="3-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a aria-label="1"></a><span class="fu">ggplot</span>(aggregated_cases, <span class="fu">aes</span>(<span class="at">x =</span> date_onset, <span class="at">y =</span> case_count)) <span class="sc">+</span></span>
-<span id="cb50-2"><a aria-label="2"></a>  <span class="co"># figure annotation geoms (1)</span></span>
-<span id="cb50-3"><a aria-label="3"></a>  <span class="fu">annotate</span>(</span>
-<span id="cb50-4"><a aria-label="4"></a>    <span class="st">"rect"</span>,</span>
-<span id="cb50-5"><a aria-label="5"></a>    <span class="at">ymin =</span> <span class="sc">-</span><span class="cn">Inf</span>,</span>
-<span id="cb50-6"><a aria-label="6"></a>    <span class="at">ymax =</span> <span class="cn">Inf</span>,</span>
-<span id="cb50-7"><a aria-label="7"></a>    <span class="at">xmin =</span> <span class="fu">as.Date</span>(<span class="st">"2023-04-01"</span>),</span>
-<span id="cb50-8"><a aria-label="8"></a>    <span class="at">xmax =</span> <span class="fu">as.Date</span>(<span class="st">"2023-06-01"</span>),</span>
-<span id="cb50-9"><a aria-label="9"></a>    <span class="at">alpha =</span> <span class="fl">0.2</span>,</span>
-<span id="cb50-10"><a aria-label="10"></a>    <span class="at">fill =</span> <span class="st">"red"</span></span>
-<span id="cb50-11"><a aria-label="11"></a>  ) <span class="sc">+</span></span>
-<span id="cb50-12"><a aria-label="12"></a>  <span class="fu">annotate</span>(</span>
-<span id="cb50-13"><a aria-label="13"></a>    <span class="st">"label"</span>,</span>
-<span id="cb50-14"><a aria-label="14"></a>    <span class="at">label =</span> <span class="st">"Outbreak peak"</span>,</span>
-<span id="cb50-15"><a aria-label="15"></a>    <span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2023-06-25"</span>),</span>
-<span id="cb50-16"><a aria-label="16"></a>    <span class="at">y =</span> <span class="dv">30</span>,</span>
-<span id="cb50-17"><a aria-label="17"></a>    <span class="at">color =</span> <span class="st">"red"</span></span>
-<span id="cb50-18"><a aria-label="18"></a>  ) <span class="sc">+</span></span>
-<span id="cb50-19"><a aria-label="19"></a>  <span class="co"># main plotting geoms</span></span>
-<span id="cb50-20"><a aria-label="20"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
-<span id="cb50-21"><a aria-label="21"></a>  <span class="fu">geom_smooth</span>(<span class="at">color =</span> <span class="st">"cornflowerblue"</span>, <span class="at">method =</span> <span class="st">"gam"</span>) <span class="sc">+</span></span>
-<span id="cb50-22"><a aria-label="22"></a>  <span class="co"># labels</span></span>
-<span id="cb50-23"><a aria-label="23"></a>  <span class="fu">labs</span>(</span>
-<span id="cb50-24"><a aria-label="24"></a>    <span class="at">title =</span> <span class="st">"New covid cases over time"</span>,</span>
-<span id="cb50-25"><a aria-label="25"></a>    <span class="at">x =</span> <span class="st">"Date"</span>,</span>
-<span id="cb50-26"><a aria-label="26"></a>    <span class="at">y =</span> <span class="st">"Number of cases"</span></span>
-<span id="cb50-27"><a aria-label="27"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45" data-code-line-numbers="3-11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a aria-label="1"></a><span class="fu">ggplot</span>(aggregated_cases, <span class="fu">aes</span>(<span class="at">x =</span> date_onset, <span class="at">y =</span> case_count)) <span class="sc">+</span></span>
+<span id="cb45-2"><a aria-label="2"></a>  <span class="co"># figure annotation geoms (1)</span></span>
+<span id="cb45-3"><a aria-label="3"></a>  <span class="fu">annotate</span>(</span>
+<span id="cb45-4"><a aria-label="4"></a>    <span class="st">"rect"</span>,</span>
+<span id="cb45-5"><a aria-label="5"></a>    <span class="at">ymin =</span> <span class="sc">-</span><span class="cn">Inf</span>,</span>
+<span id="cb45-6"><a aria-label="6"></a>    <span class="at">ymax =</span> <span class="cn">Inf</span>,</span>
+<span id="cb45-7"><a aria-label="7"></a>    <span class="at">xmin =</span> <span class="fu">as.Date</span>(<span class="st">"2023-04-01"</span>),</span>
+<span id="cb45-8"><a aria-label="8"></a>    <span class="at">xmax =</span> <span class="fu">as.Date</span>(<span class="st">"2023-06-01"</span>),</span>
+<span id="cb45-9"><a aria-label="9"></a>    <span class="at">alpha =</span> <span class="fl">0.2</span>,</span>
+<span id="cb45-10"><a aria-label="10"></a>    <span class="at">fill =</span> <span class="st">"red"</span></span>
+<span id="cb45-11"><a aria-label="11"></a>  ) <span class="sc">+</span></span>
+<span id="cb45-12"><a aria-label="12"></a>  <span class="fu">annotate</span>(</span>
+<span id="cb45-13"><a aria-label="13"></a>    <span class="st">"label"</span>,</span>
+<span id="cb45-14"><a aria-label="14"></a>    <span class="at">label =</span> <span class="st">"Outbreak peak"</span>,</span>
+<span id="cb45-15"><a aria-label="15"></a>    <span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2023-06-25"</span>),</span>
+<span id="cb45-16"><a aria-label="16"></a>    <span class="at">y =</span> <span class="dv">30</span>,</span>
+<span id="cb45-17"><a aria-label="17"></a>    <span class="at">color =</span> <span class="st">"red"</span></span>
+<span id="cb45-18"><a aria-label="18"></a>  ) <span class="sc">+</span></span>
+<span id="cb45-19"><a aria-label="19"></a>  <span class="co"># main plotting geoms</span></span>
+<span id="cb45-20"><a aria-label="20"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
+<span id="cb45-21"><a aria-label="21"></a>  <span class="fu">geom_smooth</span>(<span class="at">color =</span> <span class="st">"cornflowerblue"</span>, <span class="at">method =</span> <span class="st">"gam"</span>) <span class="sc">+</span></span>
+<span id="cb45-22"><a aria-label="22"></a>  <span class="co"># labels</span></span>
+<span id="cb45-23"><a aria-label="23"></a>  <span class="fu">labs</span>(</span>
+<span id="cb45-24"><a aria-label="24"></a>    <span class="at">title =</span> <span class="st">"New covid cases over time"</span>,</span>
+<span id="cb45-25"><a aria-label="25"></a>    <span class="at">x =</span> <span class="st">"Date"</span>,</span>
+<span id="cb45-26"><a aria-label="26"></a>    <span class="at">y =</span> <span class="st">"Number of cases"</span></span>
+<span id="cb45-27"><a aria-label="27"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="viz_files/figure-revealjs/unnamed-chunk-61-1.png" style="width:100.0%"></p>
+<p><img data-src="viz_files/figure-revealjs/unnamed-chunk-63-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section id="the-annotate-layer-7" class="slide level2 scrollable">
 <h2>The <code>annotate()</code> layer</h2>
 <p>Comparing:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a aria-label="1"></a><span class="fu">geom_rect</span>(</span>
-<span id="cb51-2"><a aria-label="2"></a>  <span class="at">ymin =</span> <span class="sc">-</span><span class="cn">Inf</span>, <span class="at">ymax =</span> <span class="cn">Inf</span>,</span>
-<span id="cb51-3"><a aria-label="3"></a>  <span class="at">xmin =</span> <span class="fu">as.Date</span>(<span class="st">"2023-04-01"</span>), <span class="at">xmax =</span> <span class="fu">as.Date</span>(<span class="st">"2023-06-01"</span>), </span>
-<span id="cb51-4"><a aria-label="4"></a>  <span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">fill =</span> <span class="st">"red"</span></span>
-<span id="cb51-5"><a aria-label="5"></a>) <span class="sc">+</span></span>
-<span id="cb51-6"><a aria-label="6"></a><span class="fu">geom_label</span>(<span class="at">label =</span> <span class="st">"Outbreak peak"</span>, <span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2023-06-25"</span>), <span class="at">y =</span> <span class="dv">30</span>, <span class="at">color =</span> <span class="st">"red"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a aria-label="1"></a><span class="fu">geom_rect</span>(</span>
+<span id="cb46-2"><a aria-label="2"></a>  <span class="at">ymin =</span> <span class="sc">-</span><span class="cn">Inf</span>, <span class="at">ymax =</span> <span class="cn">Inf</span>,</span>
+<span id="cb46-3"><a aria-label="3"></a>  <span class="at">xmin =</span> <span class="fu">as.Date</span>(<span class="st">"2023-04-01"</span>), <span class="at">xmax =</span> <span class="fu">as.Date</span>(<span class="st">"2023-06-01"</span>), </span>
+<span id="cb46-4"><a aria-label="4"></a>  <span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">fill =</span> <span class="st">"red"</span></span>
+<span id="cb46-5"><a aria-label="5"></a>) <span class="sc">+</span></span>
+<span id="cb46-6"><a aria-label="6"></a><span class="fu">geom_label</span>(<span class="at">label =</span> <span class="st">"Outbreak peak"</span>, <span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2023-06-25"</span>), <span class="at">y =</span> <span class="dv">30</span>, <span class="at">color =</span> <span class="st">"red"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>vs.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a aria-label="1"></a><span class="fu">annotate</span>(<span class="st">"rect"</span>,</span>
-<span id="cb52-2"><a aria-label="2"></a>  <span class="at">ymin =</span> <span class="sc">-</span><span class="cn">Inf</span>, <span class="at">ymax =</span> <span class="cn">Inf</span>,</span>
-<span id="cb52-3"><a aria-label="3"></a>  <span class="at">xmin =</span> <span class="fu">as.Date</span>(<span class="st">"2023-04-01"</span>), <span class="at">xmax =</span> <span class="fu">as.Date</span>(<span class="st">"2023-06-01"</span>), </span>
-<span id="cb52-4"><a aria-label="4"></a>  <span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">fill =</span> <span class="st">"red"</span></span>
-<span id="cb52-5"><a aria-label="5"></a>) <span class="sc">+</span></span>
-<span id="cb52-6"><a aria-label="6"></a><span class="fu">annotate</span>(<span class="st">"label"</span>, <span class="at">label =</span> <span class="st">"Outbreak peak"</span>, <span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2023-06-25"</span>), <span class="at">y =</span> <span class="dv">30</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a aria-label="1"></a><span class="fu">annotate</span>(<span class="st">"rect"</span>,</span>
+<span id="cb47-2"><a aria-label="2"></a>  <span class="at">ymin =</span> <span class="sc">-</span><span class="cn">Inf</span>, <span class="at">ymax =</span> <span class="cn">Inf</span>,</span>
+<span id="cb47-3"><a aria-label="3"></a>  <span class="at">xmin =</span> <span class="fu">as.Date</span>(<span class="st">"2023-04-01"</span>), <span class="at">xmax =</span> <span class="fu">as.Date</span>(<span class="st">"2023-06-01"</span>), </span>
+<span id="cb47-4"><a aria-label="4"></a>  <span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">fill =</span> <span class="st">"red"</span></span>
+<span id="cb47-5"><a aria-label="5"></a>) <span class="sc">+</span></span>
+<span id="cb47-6"><a aria-label="6"></a><span class="fu">annotate</span>(<span class="st">"label"</span>, <span class="at">label =</span> <span class="st">"Outbreak peak"</span>, <span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">"2023-06-25"</span>), <span class="at">y =</span> <span class="dv">30</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="the-annotate-layer-8" class="slide level2 scrollable">
 <h2>The <code>annotate()</code> layer</h2>
@@ -2333,13 +2284,13 @@ by **guides**?
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a aria-label="1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> simulated_covid, <span class="fu">aes</span>(<span class="at">x =</span> date_onset)) <span class="sc">+</span></span>
-<span id="cb53-2"><a aria-label="2"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"cornflowerblue"</span>) <span class="sc">+</span></span>
-<span id="cb53-3"><a aria-label="3"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>outbreak)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a aria-label="1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> simulated_covid, <span class="fu">aes</span>(<span class="at">x =</span> date_onset)) <span class="sc">+</span></span>
+<span id="cb48-2"><a aria-label="2"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"cornflowerblue"</span>) <span class="sc">+</span></span>
+<span id="cb48-3"><a aria-label="3"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>outbreak)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="viz_files/figure-revealjs/unnamed-chunk-62-1.png" width="960"></p>
+<p><img data-src="viz_files/figure-revealjs/unnamed-chunk-64-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -2355,13 +2306,13 @@ by **guides**?
 </ul>
 <div class="fragment">
 <div class="cell" data-code-line-number="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a aria-label="1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> simulated_covid, <span class="fu">aes</span>(<span class="at">x =</span> date_onset)) <span class="sc">+</span></span>
-<span id="cb54-2"><a aria-label="2"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"cornflowerblue"</span>) <span class="sc">+</span></span>
-<span id="cb54-3"><a aria-label="3"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>outbreak)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a aria-label="1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> simulated_covid, <span class="fu">aes</span>(<span class="at">x =</span> date_onset)) <span class="sc">+</span></span>
+<span id="cb49-2"><a aria-label="2"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"cornflowerblue"</span>) <span class="sc">+</span></span>
+<span id="cb49-3"><a aria-label="3"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>outbreak)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="viz_files/figure-revealjs/unnamed-chunk-63-1.png" width="960"></p>
+<p><img data-src="viz_files/figure-revealjs/unnamed-chunk-65-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -2377,13 +2328,13 @@ by **guides**?
 </ul>
 <div class="fragment">
 <div class="cell" data-code-line-number="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a aria-label="1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> simulated_covid, <span class="fu">aes</span>(<span class="at">x =</span> date_onset)) <span class="sc">+</span></span>
-<span id="cb55-2"><a aria-label="2"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"cornflowerblue"</span>) <span class="sc">+</span></span>
-<span id="cb55-3"><a aria-label="3"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>outbreak, <span class="at">scales =</span> <span class="st">"free_x"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a aria-label="1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> simulated_covid, <span class="fu">aes</span>(<span class="at">x =</span> date_onset)) <span class="sc">+</span></span>
+<span id="cb50-2"><a aria-label="2"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"cornflowerblue"</span>) <span class="sc">+</span></span>
+<span id="cb50-3"><a aria-label="3"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>outbreak, <span class="at">scales =</span> <span class="st">"free_x"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="viz_files/figure-revealjs/unnamed-chunk-64-1.png" width="960"></p>
+<p><img data-src="viz_files/figure-revealjs/unnamed-chunk-66-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -2399,13 +2350,13 @@ by **guides**?
 </ul>
 <div class="fragment">
 <div class="cell" data-code-line-number="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a aria-label="1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> simulated_covid, <span class="fu">aes</span>(<span class="at">x =</span> date_onset)) <span class="sc">+</span></span>
-<span id="cb56-2"><a aria-label="2"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"cornflowerblue"</span>) <span class="sc">+</span></span>
-<span id="cb56-3"><a aria-label="3"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>outbreak, <span class="at">scales =</span> <span class="st">"free_y"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a aria-label="1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> simulated_covid, <span class="fu">aes</span>(<span class="at">x =</span> date_onset)) <span class="sc">+</span></span>
+<span id="cb51-2"><a aria-label="2"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"cornflowerblue"</span>) <span class="sc">+</span></span>
+<span id="cb51-3"><a aria-label="3"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>outbreak, <span class="at">scales =</span> <span class="st">"free_y"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="viz_files/figure-revealjs/unnamed-chunk-65-1.png" width="960"></p>
+<p><img data-src="viz_files/figure-revealjs/unnamed-chunk-67-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -2444,14 +2395,14 @@ by **guides**?
 <li>You just need to save your <code>ggplot</code> into an object</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a aria-label="1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(aggregated_cases, <span class="fu">aes</span>(<span class="at">x =</span> date_onset, <span class="at">y =</span> case_count)) <span class="sc">+</span></span>
-<span id="cb57-2"><a aria-label="2"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
-<span id="cb57-3"><a aria-label="3"></a>  <span class="fu">geom_smooth</span>(<span class="at">color =</span> <span class="st">"cornflowerblue"</span>, <span class="at">method =</span> <span class="st">"gam"</span>) <span class="sc">+</span></span>
-<span id="cb57-4"><a aria-label="4"></a>  <span class="fu">labs</span>(</span>
-<span id="cb57-5"><a aria-label="5"></a>    <span class="at">title =</span> <span class="st">"New covid cases over time"</span>,</span>
-<span id="cb57-6"><a aria-label="6"></a>    <span class="at">x =</span> <span class="st">"Date"</span>,</span>
-<span id="cb57-7"><a aria-label="7"></a>    <span class="at">y =</span> <span class="st">"Number of cases"</span></span>
-<span id="cb57-8"><a aria-label="8"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a aria-label="1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(aggregated_cases, <span class="fu">aes</span>(<span class="at">x =</span> date_onset, <span class="at">y =</span> case_count)) <span class="sc">+</span></span>
+<span id="cb52-2"><a aria-label="2"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
+<span id="cb52-3"><a aria-label="3"></a>  <span class="fu">geom_smooth</span>(<span class="at">color =</span> <span class="st">"cornflowerblue"</span>, <span class="at">method =</span> <span class="st">"gam"</span>) <span class="sc">+</span></span>
+<span id="cb52-4"><a aria-label="4"></a>  <span class="fu">labs</span>(</span>
+<span id="cb52-5"><a aria-label="5"></a>    <span class="at">title =</span> <span class="st">"New covid cases over time"</span>,</span>
+<span id="cb52-6"><a aria-label="6"></a>    <span class="at">x =</span> <span class="st">"Date"</span>,</span>
+<span id="cb52-7"><a aria-label="7"></a>    <span class="at">y =</span> <span class="st">"Number of cases"</span></span>
+<span id="cb52-8"><a aria-label="8"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
@@ -2462,12 +2413,12 @@ by **guides**?
 <li>Then use it in the <code>plotly::ggplotly()</code> function</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a aria-label="1"></a><span class="co"># install.packages("plotly")</span></span>
-<span id="cb58-2"><a aria-label="2"></a><span class="fu">library</span>(plotly)</span>
-<span id="cb58-3"><a aria-label="3"></a><span class="fu">ggplotly</span>(p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a aria-label="1"></a><span class="co"># install.packages("plotly")</span></span>
+<span id="cb53-2"><a aria-label="2"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb53-3"><a aria-label="3"></a><span class="fu">ggplotly</span>(p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-1716992e02bd7622652e" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-1716992e02bd7622652e">{"x":{"data":[{"x":[19358,19360,19361,19362,19363,19364,19365,19366,19367,19371,19373,19374,19375,19378,19379,19380,19381,19382,19384,19386,19387,19389,19391,19392,19393,19394,19395,19396,19397,19398,19404,19405,19406,19410,19411,19412,19413,19414,19415,19416,19417,19418,19419,19420,19421,19422,19423,19424,19425,19426,19427,19428,19429,19430,19431,19432,19433,19434,19435,19436,19437,19438,19439,19440,19441,19442,19443,19444,19445,19446,19447,19448,19449,19450,19451,19452,19453,19454,19455,19456,19457,19458,19459,19460,19461,19462,19463,19464,19465,19466,19467,19468,19469,19470,19471,19472,19473,19474,19475,19476,19477,19478,19479,19480,19481,19482,19483,19484,19485,19486,19487,19488,19489,19490,19491,19492,19493,19494,19495,19496,19497,19498,19499,19500,19501,19502,19503,19504,19505,19506,19507,19508,19509,19510,19511,19512,19513,19514,19515,19516,19517,19518,19519,19520,19521,19522,19523,19524,19525,19526,19527,19528,19529,19530,19531,19532,19533,19534,19535,19536,19537,19538,19539,19540,19541,19542,19543,19544,19545,19546,19547,19548,19549,19550,19551,19552,19553,19554,19555,19556,19557,19558,19559,19560,19561,19562,19563,19564,19565,19566,19567,19568,19569,19570,19571,19572,19573,19574,19575,19576,19577,19578,19579,19580,19581,19582,19583,19584,19585,19586,19587,19588,19589,19590,19591,19592,19593,19594,19595,19596,19597,19598,19599,19600,19601,19602,19603,19604,19605,19606,19607,19608,19609,19610,19611,19612,19613,19614,19615,19616,19617,19618,19619,19620,19621,19622,19623,19624,19625,19626,19627,19628,19629,19630,19631,19633,19639],"y":[1,1,1,1,3,3,1,1,2,1,1,2,1,2,2,2,2,1,2,1,1,1,1,2,1,1,1,1,1,1,2,3,1,2,2,1,3,1,4,9,3,2,1,10,3,2,5,2,7,8,8,5,6,4,1,4,2,6,8,8,7,11,7,7,12,5,10,12,8,7,8,10,15,9,10,14,6,14,10,9,14,12,16,18,20,16,11,15,22,20,27,19,19,19,17,22,25,21,23,27,24,23,27,26,18,33,26,23,21,24,29,26,31,19,23,24,20,17,23,22,16,19,20,14,19,13,8,18,7,12,13,20,9,6,6,10,11,4,11,21,11,8,9,12,7,17,14,12,11,13,11,15,9,13,6,10,5,4,9,14,7,8,5,10,4,4,4,12,9,10,10,9,8,8,9,15,8,14,9,7,13,10,10,17,10,14,11,15,11,11,9,10,13,11,18,16,11,9,12,10,7,14,7,10,10,11,10,16,14,23,17,20,15,18,13,20,17,22,15,14,20,13,14,19,10,10,19,19,10,13,21,16,22,13,13,12,13,13,11,17,6,11,5,2,4,6,11,5,5,5,3,1,1,4,3,1,2],"text":["date_onset: 2023-01-01<br />case_count:  1","date_onset: 2023-01-03<br />case_count:  1","date_onset: 2023-01-04<br />case_count:  1","date_onset: 2023-01-05<br />case_count:  1","date_onset: 2023-01-06<br />case_count:  3","date_onset: 2023-01-07<br />case_count:  3","date_onset: 2023-01-08<br />case_count:  1","date_onset: 2023-01-09<br />case_count:  1","date_onset: 2023-01-10<br />case_count:  2","date_onset: 2023-01-14<br />case_count:  1","date_onset: 2023-01-16<br />case_count:  1","date_onset: 2023-01-17<br />case_count:  2","date_onset: 2023-01-18<br />case_count:  1","date_onset: 2023-01-21<br />case_count:  2","date_onset: 2023-01-22<br />case_count:  2","date_onset: 2023-01-23<br />case_count:  2","date_onset: 2023-01-24<br />case_count:  2","date_onset: 2023-01-25<br />case_count:  1","date_onset: 2023-01-27<br />case_count:  2","date_onset: 2023-01-29<br />case_count:  1","date_onset: 2023-01-30<br />case_count:  1","date_onset: 2023-02-01<br />case_count:  1","date_onset: 2023-02-03<br />case_count:  1","date_onset: 2023-02-04<br />case_count:  2","date_onset: 2023-02-05<br />case_count:  1","date_onset: 2023-02-06<br />case_count:  1","date_onset: 2023-02-07<br />case_count:  1","date_onset: 2023-02-08<br />case_count:  1","date_onset: 2023-02-09<br />case_count:  1","date_onset: 2023-02-10<br />case_count:  1","date_onset: 2023-02-16<br />case_count:  2","date_onset: 2023-02-17<br />case_count:  3","date_onset: 2023-02-18<br />case_count:  1","date_onset: 2023-02-22<br />case_count:  2","date_onset: 2023-02-23<br />case_count:  2","date_onset: 2023-02-24<br />case_count:  1","date_onset: 2023-02-25<br />case_count:  3","date_onset: 2023-02-26<br />case_count:  1","date_onset: 2023-02-27<br />case_count:  4","date_onset: 2023-02-28<br />case_count:  9","date_onset: 2023-03-01<br />case_count:  3","date_onset: 2023-03-02<br />case_count:  2","date_onset: 2023-03-03<br />case_count:  1","date_onset: 2023-03-04<br />case_count: 10","date_onset: 2023-03-05<br />case_count:  3","date_onset: 2023-03-06<br />case_count:  2","date_onset: 2023-03-07<br />case_count:  5","date_onset: 2023-03-08<br />case_count:  2","date_onset: 2023-03-09<br />case_count:  7","date_onset: 2023-03-10<br />case_count:  8","date_onset: 2023-03-11<br />case_count:  8","date_onset: 2023-03-12<br />case_count:  5","date_onset: 2023-03-13<br />case_count:  6","date_onset: 2023-03-14<br />case_count:  4","date_onset: 2023-03-15<br />case_count:  1","date_onset: 2023-03-16<br />case_count:  4","date_onset: 2023-03-17<br />case_count:  2","date_onset: 2023-03-18<br />case_count:  6","date_onset: 2023-03-19<br />case_count:  8","date_onset: 2023-03-20<br />case_count:  8","date_onset: 2023-03-21<br />case_count:  7","date_onset: 2023-03-22<br />case_count: 11","date_onset: 2023-03-23<br />case_count:  7","date_onset: 2023-03-24<br />case_count:  7","date_onset: 2023-03-25<br />case_count: 12","date_onset: 2023-03-26<br />case_count:  5","date_onset: 2023-03-27<br />case_count: 10","date_onset: 2023-03-28<br />case_count: 12","date_onset: 2023-03-29<br />case_count:  8","date_onset: 2023-03-30<br />case_count:  7","date_onset: 2023-03-31<br />case_count:  8","date_onset: 2023-04-01<br />case_count: 10","date_onset: 2023-04-02<br />case_count: 15","date_onset: 2023-04-03<br />case_count:  9","date_onset: 2023-04-04<br />case_count: 10","date_onset: 2023-04-05<br />case_count: 14","date_onset: 2023-04-06<br />case_count:  6","date_onset: 2023-04-07<br />case_count: 14","date_onset: 2023-04-08<br />case_count: 10","date_onset: 2023-04-09<br />case_count:  9","date_onset: 2023-04-10<br />case_count: 14","date_onset: 2023-04-11<br />case_count: 12","date_onset: 2023-04-12<br />case_count: 16","date_onset: 2023-04-13<br />case_count: 18","date_onset: 2023-04-14<br />case_count: 20","date_onset: 2023-04-15<br />case_count: 16","date_onset: 2023-04-16<br />case_count: 11","date_onset: 2023-04-17<br />case_count: 15","date_onset: 2023-04-18<br />case_count: 22","date_onset: 2023-04-19<br />case_count: 20","date_onset: 2023-04-20<br />case_count: 27","date_onset: 2023-04-21<br />case_count: 19","date_onset: 2023-04-22<br />case_count: 19","date_onset: 2023-04-23<br />case_count: 19","date_onset: 2023-04-24<br />case_count: 17","date_onset: 2023-04-25<br />case_count: 22","date_onset: 2023-04-26<br />case_count: 25","date_onset: 2023-04-27<br />case_count: 21","date_onset: 2023-04-28<br />case_count: 23","date_onset: 2023-04-29<br />case_count: 27","date_onset: 2023-04-30<br />case_count: 24","date_onset: 2023-05-01<br />case_count: 23","date_onset: 2023-05-02<br />case_count: 27","date_onset: 2023-05-03<br />case_count: 26","date_onset: 2023-05-04<br />case_count: 18","date_onset: 2023-05-05<br />case_count: 33","date_onset: 2023-05-06<br />case_count: 26","date_onset: 2023-05-07<br />case_count: 23","date_onset: 2023-05-08<br />case_count: 21","date_onset: 2023-05-09<br />case_count: 24","date_onset: 2023-05-10<br />case_count: 29","date_onset: 2023-05-11<br />case_count: 26","date_onset: 2023-05-12<br />case_count: 31","date_onset: 2023-05-13<br />case_count: 19","date_onset: 2023-05-14<br />case_count: 23","date_onset: 2023-05-15<br />case_count: 24","date_onset: 2023-05-16<br />case_count: 20","date_onset: 2023-05-17<br />case_count: 17","date_onset: 2023-05-18<br />case_count: 23","date_onset: 2023-05-19<br />case_count: 22","date_onset: 2023-05-20<br />case_count: 16","date_onset: 2023-05-21<br />case_count: 19","date_onset: 2023-05-22<br />case_count: 20","date_onset: 2023-05-23<br />case_count: 14","date_onset: 2023-05-24<br />case_count: 19","date_onset: 2023-05-25<br />case_count: 13","date_onset: 2023-05-26<br />case_count:  8","date_onset: 2023-05-27<br />case_count: 18","date_onset: 2023-05-28<br />case_count:  7","date_onset: 2023-05-29<br />case_count: 12","date_onset: 2023-05-30<br />case_count: 13","date_onset: 2023-05-31<br />case_count: 20","date_onset: 2023-06-01<br />case_count:  9","date_onset: 2023-06-02<br />case_count:  6","date_onset: 2023-06-03<br />case_count:  6","date_onset: 2023-06-04<br />case_count: 10","date_onset: 2023-06-05<br />case_count: 11","date_onset: 2023-06-06<br />case_count:  4","date_onset: 2023-06-07<br />case_count: 11","date_onset: 2023-06-08<br />case_count: 21","date_onset: 2023-06-09<br />case_count: 11","date_onset: 2023-06-10<br />case_count:  8","date_onset: 2023-06-11<br />case_count:  9","date_onset: 2023-06-12<br />case_count: 12","date_onset: 2023-06-13<br />case_count:  7","date_onset: 2023-06-14<br />case_count: 17","date_onset: 2023-06-15<br />case_count: 14","date_onset: 2023-06-16<br />case_count: 12","date_onset: 2023-06-17<br />case_count: 11","date_onset: 2023-06-18<br />case_count: 13","date_onset: 2023-06-19<br />case_count: 11","date_onset: 2023-06-20<br />case_count: 15","date_onset: 2023-06-21<br />case_count:  9","date_onset: 2023-06-22<br />case_count: 13","date_onset: 2023-06-23<br />case_count:  6","date_onset: 2023-06-24<br />case_count: 10","date_onset: 2023-06-25<br />case_count:  5","date_onset: 2023-06-26<br />case_count:  4","date_onset: 2023-06-27<br />case_count:  9","date_onset: 2023-06-28<br />case_count: 14","date_onset: 2023-06-29<br />case_count:  7","date_onset: 2023-06-30<br />case_count:  8","date_onset: 2023-07-01<br />case_count:  5","date_onset: 2023-07-02<br />case_count: 10","date_onset: 2023-07-03<br />case_count:  4","date_onset: 2023-07-04<br />case_count:  4","date_onset: 2023-07-05<br />case_count:  4","date_onset: 2023-07-06<br />case_count: 12","date_onset: 2023-07-07<br />case_count:  9","date_onset: 2023-07-08<br />case_count: 10","date_onset: 2023-07-09<br />case_count: 10","date_onset: 2023-07-10<br />case_count:  9","date_onset: 2023-07-11<br />case_count:  8","date_onset: 2023-07-12<br />case_count:  8","date_onset: 2023-07-13<br />case_count:  9","date_onset: 2023-07-14<br />case_count: 15","date_onset: 2023-07-15<br />case_count:  8","date_onset: 2023-07-16<br />case_count: 14","date_onset: 2023-07-17<br />case_count:  9","date_onset: 2023-07-18<br />case_count:  7","date_onset: 2023-07-19<br />case_count: 13","date_onset: 2023-07-20<br />case_count: 10","date_onset: 2023-07-21<br />case_count: 10","date_onset: 2023-07-22<br />case_count: 17","date_onset: 2023-07-23<br />case_count: 10","date_onset: 2023-07-24<br />case_count: 14","date_onset: 2023-07-25<br />case_count: 11","date_onset: 2023-07-26<br />case_count: 15","date_onset: 2023-07-27<br />case_count: 11","date_onset: 2023-07-28<br />case_count: 11","date_onset: 2023-07-29<br />case_count:  9","date_onset: 2023-07-30<br />case_count: 10","date_onset: 2023-07-31<br />case_count: 13","date_onset: 2023-08-01<br />case_count: 11","date_onset: 2023-08-02<br />case_count: 18","date_onset: 2023-08-03<br />case_count: 16","date_onset: 2023-08-04<br />case_count: 11","date_onset: 2023-08-05<br />case_count:  9","date_onset: 2023-08-06<br />case_count: 12","date_onset: 2023-08-07<br />case_count: 10","date_onset: 2023-08-08<br />case_count:  7","date_onset: 2023-08-09<br />case_count: 14","date_onset: 2023-08-10<br />case_count:  7","date_onset: 2023-08-11<br />case_count: 10","date_onset: 2023-08-12<br />case_count: 10","date_onset: 2023-08-13<br />case_count: 11","date_onset: 2023-08-14<br />case_count: 10","date_onset: 2023-08-15<br />case_count: 16","date_onset: 2023-08-16<br />case_count: 14","date_onset: 2023-08-17<br />case_count: 23","date_onset: 2023-08-18<br />case_count: 17","date_onset: 2023-08-19<br />case_count: 20","date_onset: 2023-08-20<br />case_count: 15","date_onset: 2023-08-21<br />case_count: 18","date_onset: 2023-08-22<br />case_count: 13","date_onset: 2023-08-23<br />case_count: 20","date_onset: 2023-08-24<br />case_count: 17","date_onset: 2023-08-25<br />case_count: 22","date_onset: 2023-08-26<br />case_count: 15","date_onset: 2023-08-27<br />case_count: 14","date_onset: 2023-08-28<br />case_count: 20","date_onset: 2023-08-29<br />case_count: 13","date_onset: 2023-08-30<br />case_count: 14","date_onset: 2023-08-31<br />case_count: 19","date_onset: 2023-09-01<br />case_count: 10","date_onset: 2023-09-02<br />case_count: 10","date_onset: 2023-09-03<br />case_count: 19","date_onset: 2023-09-04<br />case_count: 19","date_onset: 2023-09-05<br />case_count: 10","date_onset: 2023-09-06<br />case_count: 13","date_onset: 2023-09-07<br />case_count: 21","date_onset: 2023-09-08<br />case_count: 16","date_onset: 2023-09-09<br />case_count: 22","date_onset: 2023-09-10<br />case_count: 13","date_onset: 2023-09-11<br />case_count: 13","date_onset: 2023-09-12<br />case_count: 12","date_onset: 2023-09-13<br />case_count: 13","date_onset: 2023-09-14<br />case_count: 13","date_onset: 2023-09-15<br />case_count: 11","date_onset: 2023-09-16<br />case_count: 17","date_onset: 2023-09-17<br />case_count:  6","date_onset: 2023-09-18<br />case_count: 11","date_onset: 2023-09-19<br />case_count:  5","date_onset: 2023-09-20<br />case_count:  2","date_onset: 2023-09-21<br />case_count:  4","date_onset: 2023-09-22<br />case_count:  6","date_onset: 2023-09-23<br />case_count: 11","date_onset: 2023-09-24<br />case_count:  5","date_onset: 2023-09-25<br />case_count:  5","date_onset: 2023-09-26<br />case_count:  5","date_onset: 2023-09-27<br />case_count:  3","date_onset: 2023-09-28<br />case_count:  1","date_onset: 2023-09-29<br />case_count:  1","date_onset: 2023-09-30<br />case_count:  4","date_onset: 2023-10-01<br />case_count:  3","date_onset: 2023-10-03<br />case_count:  1","date_onset: 2023-10-09<br />case_count:  2"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(190,190,190,1)","opacity":1,"size":5.6692913385826778,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(190,190,190,1)"}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[19358,19361.556962025315,19365.113924050635,19368.67088607595,19372.227848101265,19375.784810126581,19379.3417721519,19382.898734177215,19386.455696202531,19390.01265822785,19393.569620253165,19397.126582278481,19400.683544303796,19404.240506329115,19407.797468354431,19411.354430379746,19414.911392405062,19418.468354430381,19422.025316455696,19425.582278481012,19429.139240506331,19432.696202531646,19436.253164556962,19439.810126582277,19443.367088607596,19446.924050632912,19450.481012658227,19454.037974683546,19457.594936708861,19461.151898734177,19464.708860759492,19468.265822784811,19471.822784810127,19475.379746835442,19478.936708860758,19482.493670886077,19486.050632911392,19489.607594936708,19493.164556962027,19496.721518987342,19500.278481012658,19503.835443037973,19507.392405063292,19510.949367088608,19514.506329113923,19518.063291139242,19521.620253164558,19525.177215189873,19528.734177215189,19532.291139240508,19535.848101265823,19539.405063291139,19542.962025316454,19546.518987341773,19550.075949367088,19553.632911392404,19557.189873417723,19560.746835443038,19564.303797468354,19567.860759493669,19571.417721518988,19574.974683544304,19578.531645569619,19582.088607594938,19585.645569620254,19589.202531645569,19592.759493670885,19596.316455696204,19599.873417721519,19603.430379746835,19606.98734177215,19610.544303797469,19614.101265822785,19617.6582278481,19621.215189873419,19624.772151898735,19628.32911392405,19631.886075949365,19635.443037974685,19639],"y":[1.2914022074242559,1.3316651542858886,1.3724865505127801,1.4144248454700443,1.4580384885229478,1.5038859290366897,1.5525256163765366,1.6045159999076004,1.6604155289951388,1.7207826530044248,1.7861758213005499,1.8571534832487835,1.9363324958453849,2.0371081967808302,2.1763919681326254,2.3710971372261573,2.6381370313867083,2.9944249779399912,3.4568743042105878,4.0423983375240979,4.7679104052066412,5.650323834582033,6.7042040606406541,7.916625504978148,9.2568325706023167,10.693768247089954,12.196375524021924,13.733597390979362,15.274376837538659,16.787656853280925,18.241215707388079,19.589349916735184,20.777685612896072,21.751705652391522,22.456892891740868,22.838730187463661,22.842700396078413,22.414286374105032,21.507692686722461,20.176929909593806,18.539655410697762,16.714554399226468,14.820312084370141,12.97561367532488,11.299144381280918,9.9095894114291472,8.9163000022713685,8.323025861671665,8.0667416034508204,8.0833682432512592,8.3088267967152056,8.6790382794848515,9.1299237072024901,9.5974040955108944,10.02180502071306,10.392720936874447,10.730637734393099,11.056517406737283,11.39132194737631,11.756013349779129,12.171553607415136,12.658904713752463,13.234612181660735,13.866375369978389,14.491525823801426,15.046938033928654,15.469486491158245,15.696045686288491,15.66349011011704,15.308694253442418,14.574123823595455,13.463389627054035,12.01779532776947,10.279198438583807,8.2894564723379069,6.0904269418788637,3.7239673600477792,1.2319352396876455,-1.3438119063611944,-3.9614165652504396],"text":["date_onset: 19358.00<br />case_count:  1.291402","date_onset: 19361.56<br />case_count:  1.331665","date_onset: 19365.11<br />case_count:  1.372487","date_onset: 19368.67<br />case_count:  1.414425","date_onset: 19372.23<br />case_count:  1.458038","date_onset: 19375.78<br />case_count:  1.503886","date_onset: 19379.34<br />case_count:  1.552526","date_onset: 19382.90<br />case_count:  1.604516","date_onset: 19386.46<br />case_count:  1.660416","date_onset: 19390.01<br />case_count:  1.720783","date_onset: 19393.57<br />case_count:  1.786176","date_onset: 19397.13<br />case_count:  1.857153","date_onset: 19400.68<br />case_count:  1.936332","date_onset: 19404.24<br />case_count:  2.037108","date_onset: 19407.80<br />case_count:  2.176392","date_onset: 19411.35<br />case_count:  2.371097","date_onset: 19414.91<br />case_count:  2.638137","date_onset: 19418.47<br />case_count:  2.994425","date_onset: 19422.03<br />case_count:  3.456874","date_onset: 19425.58<br />case_count:  4.042398","date_onset: 19429.14<br />case_count:  4.767910","date_onset: 19432.70<br />case_count:  5.650324","date_onset: 19436.25<br />case_count:  6.704204","date_onset: 19439.81<br />case_count:  7.916626","date_onset: 19443.37<br />case_count:  9.256833","date_onset: 19446.92<br />case_count: 10.693768","date_onset: 19450.48<br />case_count: 12.196376","date_onset: 19454.04<br />case_count: 13.733597","date_onset: 19457.59<br />case_count: 15.274377","date_onset: 19461.15<br />case_count: 16.787657","date_onset: 19464.71<br />case_count: 18.241216","date_onset: 19468.27<br />case_count: 19.589350","date_onset: 19471.82<br />case_count: 20.777686","date_onset: 19475.38<br />case_count: 21.751706","date_onset: 19478.94<br />case_count: 22.456893","date_onset: 19482.49<br />case_count: 22.838730","date_onset: 19486.05<br />case_count: 22.842700","date_onset: 19489.61<br />case_count: 22.414286","date_onset: 19493.16<br />case_count: 21.507693","date_onset: 19496.72<br />case_count: 20.176930","date_onset: 19500.28<br />case_count: 18.539655","date_onset: 19503.84<br />case_count: 16.714554","date_onset: 19507.39<br />case_count: 14.820312","date_onset: 19510.95<br />case_count: 12.975614","date_onset: 19514.51<br />case_count: 11.299144","date_onset: 19518.06<br />case_count:  9.909589","date_onset: 19521.62<br />case_count:  8.916300","date_onset: 19525.18<br />case_count:  8.323026","date_onset: 19528.73<br />case_count:  8.066742","date_onset: 19532.29<br />case_count:  8.083368","date_onset: 19535.85<br />case_count:  8.308827","date_onset: 19539.41<br />case_count:  8.679038","date_onset: 19542.96<br />case_count:  9.129924","date_onset: 19546.52<br />case_count:  9.597404","date_onset: 19550.08<br />case_count: 10.021805","date_onset: 19553.63<br />case_count: 10.392721","date_onset: 19557.19<br />case_count: 10.730638","date_onset: 19560.75<br />case_count: 11.056517","date_onset: 19564.30<br />case_count: 11.391322","date_onset: 19567.86<br />case_count: 11.756013","date_onset: 19571.42<br />case_count: 12.171554","date_onset: 19574.97<br />case_count: 12.658905","date_onset: 19578.53<br />case_count: 13.234612","date_onset: 19582.09<br />case_count: 13.866375","date_onset: 19585.65<br />case_count: 14.491526","date_onset: 19589.20<br />case_count: 15.046938","date_onset: 19592.76<br />case_count: 15.469486","date_onset: 19596.32<br />case_count: 15.696046","date_onset: 19599.87<br />case_count: 15.663490","date_onset: 19603.43<br />case_count: 15.308694","date_onset: 19606.99<br />case_count: 14.574124","date_onset: 19610.54<br />case_count: 13.463390","date_onset: 19614.10<br />case_count: 12.017795","date_onset: 19617.66<br />case_count: 10.279198","date_onset: 19621.22<br />case_count:  8.289456","date_onset: 19624.77<br />case_count:  6.090427","date_onset: 19628.33<br />case_count:  3.723967","date_onset: 19631.89<br />case_count:  1.231935","date_onset: 19635.44<br />case_count: -1.343812","date_onset: 19639.00<br />case_count: -3.961417"],"type":"scatter","mode":"lines","name":"fitted values","line":{"width":3.7795275590551185,"color":"rgba(100,149,237,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[19358,19361.556962025315,19365.113924050635,19368.67088607595,19372.227848101265,19375.784810126581,19379.3417721519,19382.898734177215,19386.455696202531,19390.01265822785,19393.569620253165,19397.126582278481,19400.683544303796,19404.240506329115,19407.797468354431,19411.354430379746,19414.911392405062,19418.468354430381,19422.025316455696,19425.582278481012,19429.139240506331,19432.696202531646,19436.253164556962,19439.810126582277,19443.367088607596,19446.924050632912,19450.481012658227,19454.037974683546,19457.594936708861,19461.151898734177,19464.708860759492,19468.265822784811,19471.822784810127,19475.379746835442,19478.936708860758,19482.493670886077,19486.050632911392,19489.607594936708,19493.164556962027,19496.721518987342,19500.278481012658,19503.835443037973,19507.392405063292,19510.949367088608,19514.506329113923,19518.063291139242,19521.620253164558,19525.177215189873,19528.734177215189,19532.291139240508,19535.848101265823,19539.405063291139,19542.962025316454,19546.518987341773,19550.075949367088,19553.632911392404,19557.189873417723,19560.746835443038,19564.303797468354,19567.860759493669,19571.417721518988,19574.974683544304,19578.531645569619,19582.088607594938,19585.645569620254,19589.202531645569,19592.759493670885,19596.316455696204,19599.873417721519,19603.430379746835,19606.98734177215,19610.544303797469,19614.101265822785,19617.6582278481,19621.215189873419,19624.772151898735,19628.32911392405,19631.886075949365,19635.443037974685,19639,19639,19639,19635.443037974685,19631.886075949365,19628.32911392405,19624.772151898735,19621.215189873419,19617.6582278481,19614.101265822785,19610.544303797469,19606.98734177215,19603.430379746835,19599.873417721519,19596.316455696204,19592.759493670885,19589.202531645569,19585.645569620254,19582.088607594938,19578.531645569619,19574.974683544304,19571.417721518988,19567.860759493669,19564.303797468354,19560.746835443038,19557.189873417723,19553.632911392404,19550.075949367088,19546.518987341773,19542.962025316454,19539.405063291139,19535.848101265823,19532.291139240508,19528.734177215189,19525.177215189873,19521.620253164558,19518.063291139242,19514.506329113923,19510.949367088608,19507.392405063292,19503.835443037973,19500.278481012658,19496.721518987342,19493.164556962027,19489.607594936708,19486.050632911392,19482.493670886077,19478.936708860758,19475.379746835442,19471.822784810127,19468.265822784811,19464.708860759492,19461.151898734177,19457.594936708861,19454.037974683546,19450.481012658227,19446.924050632912,19443.367088607596,19439.810126582277,19436.253164556962,19432.696202531646,19429.139240506331,19425.582278481012,19422.025316455696,19418.468354430381,19414.911392405062,19411.354430379746,19407.797468354431,19404.240506329115,19400.683544303796,19397.126582278481,19393.569620253165,19390.01265822785,19386.455696202531,19382.898734177215,19379.3417721519,19375.784810126581,19372.227848101265,19368.67088607595,19365.113924050635,19361.556962025315,19358,19358],"y":[-1.2081137177822614,-0.80749170167965234,-0.44350903500456851,-0.13552184475158446,0.095531398241218035,0.23596838053296443,0.29240665357491458,0.2934708922700433,0.27558779670568256,0.26991563290911502,0.29871106704971617,0.37615397207997558,0.50866542240535728,0.69459778998127075,0.9272814533768996,1.1983620118101774,1.5039513358444188,1.8536146093998225,2.274915636160344,2.807928615064363,3.4954321932468426,4.3757829605836509,5.474001815526492,6.7574913307829956,8.1566902197756264,9.6064924401830982,11.065455357519291,12.522925610122925,13.985163679602032,15.458188560242771,16.934686435538275,18.354513555562722,19.620996767939172,20.635657735537798,21.319310528722962,21.629184405936815,21.5499678251836,21.071364567738616,20.179764422472086,18.91842324108671,17.363044002895272,15.586454784232272,13.678540257494305,11.766058665118564,10.006446331472331,8.5644476304683259,7.5838547063623025,7.0590261667345349,6.8854748126796288,6.9530222186448682,7.1676035643360603,7.471781103382563,7.8396864492371225,8.2536522987064185,8.6892041033027549,9.1275858604965947,9.5489769183878881,9.9288030326042893,10.257073666846543,10.559179014405348,10.892600168229066,11.324251570121051,11.906479442883956,12.601152723774725,13.308922639738048,13.923654787578631,14.349743710873472,14.522383965447554,14.408788026777424,13.988524018848747,13.239807810459142,12.168899681257878,10.787832872165042,9.0864644775907362,7.0410199230668056,4.6495700747587589,1.9591195534587,-0.95532079157391592,-4.0182734567263942,-7.1614159916287976,-7.1614159916287976,-0.76141713887208162,1.3306496440040052,3.4191912709492067,5.4888151666368579,7.5312838089989684,9.5378930216090083,11.471932399576877,13.247757783373897,14.757879572850191,15.908439836731768,16.62886448803609,16.918192193456655,16.869707407129425,16.589229271443017,16.170221280278678,15.674129007864805,15.131598016182053,14.562744920437513,13.993557857383875,13.450507046601206,12.952847685152911,12.525570227906078,12.184231780870277,11.91229855039831,11.657856013252299,11.354405938123366,10.94115589231537,10.420160965167858,9.8862954555871401,9.450050029094351,9.2137142678576502,9.2480083942220119,9.5870255566087952,10.248745298180435,11.254731192389968,12.591842431089505,14.185168685531195,15.962083911245976,17.842654014220667,19.716266818500252,21.435436578100902,22.835620950972835,23.757208180471448,24.135432966973227,24.048275968990506,23.594475254758773,22.867753569245245,21.934374457852972,20.824186277907646,19.547744979237883,18.117125146319079,16.563589995475287,14.944269171835799,13.327295690524558,11.78104405399681,10.356974921429007,9.0757596791733004,7.9344063057548162,6.9248647085804151,6.0403886171664398,5.2768680599838333,4.6388329722608317,4.1352353464801599,3.7723227269289978,3.5438322626421375,3.4255024828883514,3.3796186035803899,3.3639995692854123,3.3381529944175914,3.2736405755513838,3.1716496730997346,3.045243261284595,2.9155611075451575,2.8126445791781585,2.771803477540415,2.8205455788046776,2.9643715356916731,3.188482136030129,3.4708220102514296,3.7909181326307735,-1.2081137177822614],"text":["date_onset: 19358.00<br />case_count:  1.291402","date_onset: 19361.56<br />case_count:  1.331665","date_onset: 19365.11<br />case_count:  1.372487","date_onset: 19368.67<br />case_count:  1.414425","date_onset: 19372.23<br />case_count:  1.458038","date_onset: 19375.78<br />case_count:  1.503886","date_onset: 19379.34<br />case_count:  1.552526","date_onset: 19382.90<br />case_count:  1.604516","date_onset: 19386.46<br />case_count:  1.660416","date_onset: 19390.01<br />case_count:  1.720783","date_onset: 19393.57<br />case_count:  1.786176","date_onset: 19397.13<br />case_count:  1.857153","date_onset: 19400.68<br />case_count:  1.936332","date_onset: 19404.24<br />case_count:  2.037108","date_onset: 19407.80<br />case_count:  2.176392","date_onset: 19411.35<br />case_count:  2.371097","date_onset: 19414.91<br />case_count:  2.638137","date_onset: 19418.47<br />case_count:  2.994425","date_onset: 19422.03<br />case_count:  3.456874","date_onset: 19425.58<br />case_count:  4.042398","date_onset: 19429.14<br />case_count:  4.767910","date_onset: 19432.70<br />case_count:  5.650324","date_onset: 19436.25<br />case_count:  6.704204","date_onset: 19439.81<br />case_count:  7.916626","date_onset: 19443.37<br />case_count:  9.256833","date_onset: 19446.92<br />case_count: 10.693768","date_onset: 19450.48<br />case_count: 12.196376","date_onset: 19454.04<br />case_count: 13.733597","date_onset: 19457.59<br />case_count: 15.274377","date_onset: 19461.15<br />case_count: 16.787657","date_onset: 19464.71<br />case_count: 18.241216","date_onset: 19468.27<br />case_count: 19.589350","date_onset: 19471.82<br />case_count: 20.777686","date_onset: 19475.38<br />case_count: 21.751706","date_onset: 19478.94<br />case_count: 22.456893","date_onset: 19482.49<br />case_count: 22.838730","date_onset: 19486.05<br />case_count: 22.842700","date_onset: 19489.61<br />case_count: 22.414286","date_onset: 19493.16<br />case_count: 21.507693","date_onset: 19496.72<br />case_count: 20.176930","date_onset: 19500.28<br />case_count: 18.539655","date_onset: 19503.84<br />case_count: 16.714554","date_onset: 19507.39<br />case_count: 14.820312","date_onset: 19510.95<br />case_count: 12.975614","date_onset: 19514.51<br />case_count: 11.299144","date_onset: 19518.06<br />case_count:  9.909589","date_onset: 19521.62<br />case_count:  8.916300","date_onset: 19525.18<br />case_count:  8.323026","date_onset: 19528.73<br />case_count:  8.066742","date_onset: 19532.29<br />case_count:  8.083368","date_onset: 19535.85<br />case_count:  8.308827","date_onset: 19539.41<br />case_count:  8.679038","date_onset: 19542.96<br />case_count:  9.129924","date_onset: 19546.52<br />case_count:  9.597404","date_onset: 19550.08<br />case_count: 10.021805","date_onset: 19553.63<br />case_count: 10.392721","date_onset: 19557.19<br />case_count: 10.730638","date_onset: 19560.75<br />case_count: 11.056517","date_onset: 19564.30<br />case_count: 11.391322","date_onset: 19567.86<br />case_count: 11.756013","date_onset: 19571.42<br />case_count: 12.171554","date_onset: 19574.97<br />case_count: 12.658905","date_onset: 19578.53<br />case_count: 13.234612","date_onset: 19582.09<br />case_count: 13.866375","date_onset: 19585.65<br />case_count: 14.491526","date_onset: 19589.20<br />case_count: 15.046938","date_onset: 19592.76<br />case_count: 15.469486","date_onset: 19596.32<br />case_count: 15.696046","date_onset: 19599.87<br />case_count: 15.663490","date_onset: 19603.43<br />case_count: 15.308694","date_onset: 19606.99<br />case_count: 14.574124","date_onset: 19610.54<br />case_count: 13.463390","date_onset: 19614.10<br />case_count: 12.017795","date_onset: 19617.66<br />case_count: 10.279198","date_onset: 19621.22<br />case_count:  8.289456","date_onset: 19624.77<br />case_count:  6.090427","date_onset: 19628.33<br />case_count:  3.723967","date_onset: 19631.89<br />case_count:  1.231935","date_onset: 19635.44<br />case_count: -1.343812","date_onset: 19639.00<br />case_count: -3.961417","date_onset: 19639.00<br />case_count: -3.961417","date_onset: 19639.00<br />case_count: -3.961417","date_onset: 19635.44<br />case_count: -1.343812","date_onset: 19631.89<br />case_count:  1.231935","date_onset: 19628.33<br />case_count:  3.723967","date_onset: 19624.77<br />case_count:  6.090427","date_onset: 19621.22<br />case_count:  8.289456","date_onset: 19617.66<br />case_count: 10.279198","date_onset: 19614.10<br />case_count: 12.017795","date_onset: 19610.54<br />case_count: 13.463390","date_onset: 19606.99<br />case_count: 14.574124","date_onset: 19603.43<br />case_count: 15.308694","date_onset: 19599.87<br />case_count: 15.663490","date_onset: 19596.32<br />case_count: 15.696046","date_onset: 19592.76<br />case_count: 15.469486","date_onset: 19589.20<br />case_count: 15.046938","date_onset: 19585.65<br />case_count: 14.491526","date_onset: 19582.09<br />case_count: 13.866375","date_onset: 19578.53<br />case_count: 13.234612","date_onset: 19574.97<br />case_count: 12.658905","date_onset: 19571.42<br />case_count: 12.171554","date_onset: 19567.86<br />case_count: 11.756013","date_onset: 19564.30<br />case_count: 11.391322","date_onset: 19560.75<br />case_count: 11.056517","date_onset: 19557.19<br />case_count: 10.730638","date_onset: 19553.63<br />case_count: 10.392721","date_onset: 19550.08<br />case_count: 10.021805","date_onset: 19546.52<br />case_count:  9.597404","date_onset: 19542.96<br />case_count:  9.129924","date_onset: 19539.41<br />case_count:  8.679038","date_onset: 19535.85<br />case_count:  8.308827","date_onset: 19532.29<br />case_count:  8.083368","date_onset: 19528.73<br />case_count:  8.066742","date_onset: 19525.18<br />case_count:  8.323026","date_onset: 19521.62<br />case_count:  8.916300","date_onset: 19518.06<br />case_count:  9.909589","date_onset: 19514.51<br />case_count: 11.299144","date_onset: 19510.95<br />case_count: 12.975614","date_onset: 19507.39<br />case_count: 14.820312","date_onset: 19503.84<br />case_count: 16.714554","date_onset: 19500.28<br />case_count: 18.539655","date_onset: 19496.72<br />case_count: 20.176930","date_onset: 19493.16<br />case_count: 21.507693","date_onset: 19489.61<br />case_count: 22.414286","date_onset: 19486.05<br />case_count: 22.842700","date_onset: 19482.49<br />case_count: 22.838730","date_onset: 19478.94<br />case_count: 22.456893","date_onset: 19475.38<br />case_count: 21.751706","date_onset: 19471.82<br />case_count: 20.777686","date_onset: 19468.27<br />case_count: 19.589350","date_onset: 19464.71<br />case_count: 18.241216","date_onset: 19461.15<br />case_count: 16.787657","date_onset: 19457.59<br />case_count: 15.274377","date_onset: 19454.04<br />case_count: 13.733597","date_onset: 19450.48<br />case_count: 12.196376","date_onset: 19446.92<br />case_count: 10.693768","date_onset: 19443.37<br />case_count:  9.256833","date_onset: 19439.81<br />case_count:  7.916626","date_onset: 19436.25<br />case_count:  6.704204","date_onset: 19432.70<br />case_count:  5.650324","date_onset: 19429.14<br />case_count:  4.767910","date_onset: 19425.58<br />case_count:  4.042398","date_onset: 19422.03<br />case_count:  3.456874","date_onset: 19418.47<br />case_count:  2.994425","date_onset: 19414.91<br />case_count:  2.638137","date_onset: 19411.35<br />case_count:  2.371097","date_onset: 19407.80<br />case_count:  2.176392","date_onset: 19404.24<br />case_count:  2.037108","date_onset: 19400.68<br />case_count:  1.936332","date_onset: 19397.13<br />case_count:  1.857153","date_onset: 19393.57<br />case_count:  1.786176","date_onset: 19390.01<br />case_count:  1.720783","date_onset: 19386.46<br />case_count:  1.660416","date_onset: 19382.90<br />case_count:  1.604516","date_onset: 19379.34<br />case_count:  1.552526","date_onset: 19375.78<br />case_count:  1.503886","date_onset: 19372.23<br />case_count:  1.458038","date_onset: 19368.67<br />case_count:  1.414425","date_onset: 19365.11<br />case_count:  1.372487","date_onset: 19361.56<br />case_count:  1.331665","date_onset: 19358.00<br />case_count:  1.291402","date_onset: 19358.00<br />case_count:  1.291402"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(100,149,237,0.4)","dash":"solid"},"fill":"toself","fillcolor":"rgba(153,153,153,0.4)","hoveron":"points","hoverinfo":"x+y","showlegend":false,"xaxis":"x","yaxis":"y","frame":null}],"layout":{"margin":{"t":40.840182648401829,"r":7.3059360730593621,"b":37.260273972602747,"l":37.260273972602747},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"New covid cases over time","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[19343.950000000001,19653.049999999999],"tickmode":"array","ticktext":["Jan","Apr","Jul","Oct"],"tickvals":[19358,19448,19539,19631],"categoryorder":"array","categoryarray":["Jan","Apr","Jul","Oct"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Date","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-9.1694867912102378,35.008070799581439],"tickmode":"array","ticktext":["0","10","20","30"],"tickvals":[0,10.000000000000002,20,30],"categoryorder":"array","categoryarray":["0","10","20","30"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Number of cases","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.8897637795275593,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"13f5389eb60e":{"x":{},"y":{},"type":"scatter"},"13f53bc26e2c":{"x":{},"y":{}}},"cur_data":"13f5389eb60e","visdat":{"13f5389eb60e":["function (y) ","x"],"13f53bc26e2c":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-28f434c3fd9e33ab5b9a" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-28f434c3fd9e33ab5b9a">{"x":{"data":[{"x":[19358,19360,19361,19362,19363,19364,19365,19366,19367,19371,19373,19374,19375,19378,19379,19380,19381,19382,19384,19386,19387,19389,19391,19392,19393,19394,19395,19396,19397,19398,19404,19405,19406,19410,19411,19412,19413,19414,19415,19416,19417,19418,19419,19420,19421,19422,19423,19424,19425,19426,19427,19428,19429,19430,19431,19432,19433,19434,19435,19436,19437,19438,19439,19440,19441,19442,19443,19444,19445,19446,19447,19448,19449,19450,19451,19452,19453,19454,19455,19456,19457,19458,19459,19460,19461,19462,19463,19464,19465,19466,19467,19468,19469,19470,19471,19472,19473,19474,19475,19476,19477,19478,19479,19480,19481,19482,19483,19484,19485,19486,19487,19488,19489,19490,19491,19492,19493,19494,19495,19496,19497,19498,19499,19500,19501,19502,19503,19504,19505,19506,19507,19508,19509,19510,19511,19512,19513,19514,19515,19516,19517,19518,19519,19520,19521,19522,19523,19524,19525,19526,19527,19528,19529,19530,19531,19532,19533,19534,19535,19536,19537,19538,19539,19540,19541,19542,19543,19544,19545,19546,19547,19548,19549,19550,19551,19552,19553,19554,19555,19556,19557,19558,19559,19560,19561,19562,19563,19564,19565,19566,19567,19568,19569,19570,19571,19572,19573,19574,19575,19576,19577,19578,19579,19580,19581,19582,19583,19584,19585,19586,19587,19588,19589,19590,19591,19592,19593,19594,19595,19596,19597,19598,19599,19600,19601,19602,19603,19604,19605,19606,19607,19608,19609,19610,19611,19612,19613,19614,19615,19616,19617,19618,19619,19620,19621,19622,19623,19624,19625,19626,19627,19628,19629,19630,19631,19633,19639],"y":[1,1,1,1,3,3,1,1,2,1,1,2,1,2,2,2,2,1,2,1,1,1,1,2,1,1,1,1,1,1,2,3,1,2,2,1,3,1,4,9,3,2,1,10,3,2,5,2,7,8,8,5,6,4,1,4,2,6,8,8,7,11,7,7,12,5,10,12,8,7,8,10,15,9,10,14,6,14,10,9,14,12,16,18,20,16,11,15,22,20,27,19,19,19,17,22,25,21,23,27,24,23,27,26,18,33,26,23,21,24,29,26,31,19,23,24,20,17,23,22,16,19,20,14,19,13,8,18,7,12,13,20,9,6,6,10,11,4,11,21,11,8,9,12,7,17,14,12,11,13,11,15,9,13,6,10,5,4,9,14,7,8,5,10,4,4,4,12,9,10,10,9,8,8,9,15,8,14,9,7,13,10,10,17,10,14,11,15,11,11,9,10,13,11,18,16,11,9,12,10,7,14,7,10,10,11,10,16,14,23,17,20,15,18,13,20,17,22,15,14,20,13,14,19,10,10,19,19,10,13,21,16,22,13,13,12,13,13,11,17,6,11,5,2,4,6,11,5,5,5,3,1,1,4,3,1,2],"text":["date_onset: 2023-01-01<br />case_count:  1","date_onset: 2023-01-03<br />case_count:  1","date_onset: 2023-01-04<br />case_count:  1","date_onset: 2023-01-05<br />case_count:  1","date_onset: 2023-01-06<br />case_count:  3","date_onset: 2023-01-07<br />case_count:  3","date_onset: 2023-01-08<br />case_count:  1","date_onset: 2023-01-09<br />case_count:  1","date_onset: 2023-01-10<br />case_count:  2","date_onset: 2023-01-14<br />case_count:  1","date_onset: 2023-01-16<br />case_count:  1","date_onset: 2023-01-17<br />case_count:  2","date_onset: 2023-01-18<br />case_count:  1","date_onset: 2023-01-21<br />case_count:  2","date_onset: 2023-01-22<br />case_count:  2","date_onset: 2023-01-23<br />case_count:  2","date_onset: 2023-01-24<br />case_count:  2","date_onset: 2023-01-25<br />case_count:  1","date_onset: 2023-01-27<br />case_count:  2","date_onset: 2023-01-29<br />case_count:  1","date_onset: 2023-01-30<br />case_count:  1","date_onset: 2023-02-01<br />case_count:  1","date_onset: 2023-02-03<br />case_count:  1","date_onset: 2023-02-04<br />case_count:  2","date_onset: 2023-02-05<br />case_count:  1","date_onset: 2023-02-06<br />case_count:  1","date_onset: 2023-02-07<br />case_count:  1","date_onset: 2023-02-08<br />case_count:  1","date_onset: 2023-02-09<br />case_count:  1","date_onset: 2023-02-10<br />case_count:  1","date_onset: 2023-02-16<br />case_count:  2","date_onset: 2023-02-17<br />case_count:  3","date_onset: 2023-02-18<br />case_count:  1","date_onset: 2023-02-22<br />case_count:  2","date_onset: 2023-02-23<br />case_count:  2","date_onset: 2023-02-24<br />case_count:  1","date_onset: 2023-02-25<br />case_count:  3","date_onset: 2023-02-26<br />case_count:  1","date_onset: 2023-02-27<br />case_count:  4","date_onset: 2023-02-28<br />case_count:  9","date_onset: 2023-03-01<br />case_count:  3","date_onset: 2023-03-02<br />case_count:  2","date_onset: 2023-03-03<br />case_count:  1","date_onset: 2023-03-04<br />case_count: 10","date_onset: 2023-03-05<br />case_count:  3","date_onset: 2023-03-06<br />case_count:  2","date_onset: 2023-03-07<br />case_count:  5","date_onset: 2023-03-08<br />case_count:  2","date_onset: 2023-03-09<br />case_count:  7","date_onset: 2023-03-10<br />case_count:  8","date_onset: 2023-03-11<br />case_count:  8","date_onset: 2023-03-12<br />case_count:  5","date_onset: 2023-03-13<br />case_count:  6","date_onset: 2023-03-14<br />case_count:  4","date_onset: 2023-03-15<br />case_count:  1","date_onset: 2023-03-16<br />case_count:  4","date_onset: 2023-03-17<br />case_count:  2","date_onset: 2023-03-18<br />case_count:  6","date_onset: 2023-03-19<br />case_count:  8","date_onset: 2023-03-20<br />case_count:  8","date_onset: 2023-03-21<br />case_count:  7","date_onset: 2023-03-22<br />case_count: 11","date_onset: 2023-03-23<br />case_count:  7","date_onset: 2023-03-24<br />case_count:  7","date_onset: 2023-03-25<br />case_count: 12","date_onset: 2023-03-26<br />case_count:  5","date_onset: 2023-03-27<br />case_count: 10","date_onset: 2023-03-28<br />case_count: 12","date_onset: 2023-03-29<br />case_count:  8","date_onset: 2023-03-30<br />case_count:  7","date_onset: 2023-03-31<br />case_count:  8","date_onset: 2023-04-01<br />case_count: 10","date_onset: 2023-04-02<br />case_count: 15","date_onset: 2023-04-03<br />case_count:  9","date_onset: 2023-04-04<br />case_count: 10","date_onset: 2023-04-05<br />case_count: 14","date_onset: 2023-04-06<br />case_count:  6","date_onset: 2023-04-07<br />case_count: 14","date_onset: 2023-04-08<br />case_count: 10","date_onset: 2023-04-09<br />case_count:  9","date_onset: 2023-04-10<br />case_count: 14","date_onset: 2023-04-11<br />case_count: 12","date_onset: 2023-04-12<br />case_count: 16","date_onset: 2023-04-13<br />case_count: 18","date_onset: 2023-04-14<br />case_count: 20","date_onset: 2023-04-15<br />case_count: 16","date_onset: 2023-04-16<br />case_count: 11","date_onset: 2023-04-17<br />case_count: 15","date_onset: 2023-04-18<br />case_count: 22","date_onset: 2023-04-19<br />case_count: 20","date_onset: 2023-04-20<br />case_count: 27","date_onset: 2023-04-21<br />case_count: 19","date_onset: 2023-04-22<br />case_count: 19","date_onset: 2023-04-23<br />case_count: 19","date_onset: 2023-04-24<br />case_count: 17","date_onset: 2023-04-25<br />case_count: 22","date_onset: 2023-04-26<br />case_count: 25","date_onset: 2023-04-27<br />case_count: 21","date_onset: 2023-04-28<br />case_count: 23","date_onset: 2023-04-29<br />case_count: 27","date_onset: 2023-04-30<br />case_count: 24","date_onset: 2023-05-01<br />case_count: 23","date_onset: 2023-05-02<br />case_count: 27","date_onset: 2023-05-03<br />case_count: 26","date_onset: 2023-05-04<br />case_count: 18","date_onset: 2023-05-05<br />case_count: 33","date_onset: 2023-05-06<br />case_count: 26","date_onset: 2023-05-07<br />case_count: 23","date_onset: 2023-05-08<br />case_count: 21","date_onset: 2023-05-09<br />case_count: 24","date_onset: 2023-05-10<br />case_count: 29","date_onset: 2023-05-11<br />case_count: 26","date_onset: 2023-05-12<br />case_count: 31","date_onset: 2023-05-13<br />case_count: 19","date_onset: 2023-05-14<br />case_count: 23","date_onset: 2023-05-15<br />case_count: 24","date_onset: 2023-05-16<br />case_count: 20","date_onset: 2023-05-17<br />case_count: 17","date_onset: 2023-05-18<br />case_count: 23","date_onset: 2023-05-19<br />case_count: 22","date_onset: 2023-05-20<br />case_count: 16","date_onset: 2023-05-21<br />case_count: 19","date_onset: 2023-05-22<br />case_count: 20","date_onset: 2023-05-23<br />case_count: 14","date_onset: 2023-05-24<br />case_count: 19","date_onset: 2023-05-25<br />case_count: 13","date_onset: 2023-05-26<br />case_count:  8","date_onset: 2023-05-27<br />case_count: 18","date_onset: 2023-05-28<br />case_count:  7","date_onset: 2023-05-29<br />case_count: 12","date_onset: 2023-05-30<br />case_count: 13","date_onset: 2023-05-31<br />case_count: 20","date_onset: 2023-06-01<br />case_count:  9","date_onset: 2023-06-02<br />case_count:  6","date_onset: 2023-06-03<br />case_count:  6","date_onset: 2023-06-04<br />case_count: 10","date_onset: 2023-06-05<br />case_count: 11","date_onset: 2023-06-06<br />case_count:  4","date_onset: 2023-06-07<br />case_count: 11","date_onset: 2023-06-08<br />case_count: 21","date_onset: 2023-06-09<br />case_count: 11","date_onset: 2023-06-10<br />case_count:  8","date_onset: 2023-06-11<br />case_count:  9","date_onset: 2023-06-12<br />case_count: 12","date_onset: 2023-06-13<br />case_count:  7","date_onset: 2023-06-14<br />case_count: 17","date_onset: 2023-06-15<br />case_count: 14","date_onset: 2023-06-16<br />case_count: 12","date_onset: 2023-06-17<br />case_count: 11","date_onset: 2023-06-18<br />case_count: 13","date_onset: 2023-06-19<br />case_count: 11","date_onset: 2023-06-20<br />case_count: 15","date_onset: 2023-06-21<br />case_count:  9","date_onset: 2023-06-22<br />case_count: 13","date_onset: 2023-06-23<br />case_count:  6","date_onset: 2023-06-24<br />case_count: 10","date_onset: 2023-06-25<br />case_count:  5","date_onset: 2023-06-26<br />case_count:  4","date_onset: 2023-06-27<br />case_count:  9","date_onset: 2023-06-28<br />case_count: 14","date_onset: 2023-06-29<br />case_count:  7","date_onset: 2023-06-30<br />case_count:  8","date_onset: 2023-07-01<br />case_count:  5","date_onset: 2023-07-02<br />case_count: 10","date_onset: 2023-07-03<br />case_count:  4","date_onset: 2023-07-04<br />case_count:  4","date_onset: 2023-07-05<br />case_count:  4","date_onset: 2023-07-06<br />case_count: 12","date_onset: 2023-07-07<br />case_count:  9","date_onset: 2023-07-08<br />case_count: 10","date_onset: 2023-07-09<br />case_count: 10","date_onset: 2023-07-10<br />case_count:  9","date_onset: 2023-07-11<br />case_count:  8","date_onset: 2023-07-12<br />case_count:  8","date_onset: 2023-07-13<br />case_count:  9","date_onset: 2023-07-14<br />case_count: 15","date_onset: 2023-07-15<br />case_count:  8","date_onset: 2023-07-16<br />case_count: 14","date_onset: 2023-07-17<br />case_count:  9","date_onset: 2023-07-18<br />case_count:  7","date_onset: 2023-07-19<br />case_count: 13","date_onset: 2023-07-20<br />case_count: 10","date_onset: 2023-07-21<br />case_count: 10","date_onset: 2023-07-22<br />case_count: 17","date_onset: 2023-07-23<br />case_count: 10","date_onset: 2023-07-24<br />case_count: 14","date_onset: 2023-07-25<br />case_count: 11","date_onset: 2023-07-26<br />case_count: 15","date_onset: 2023-07-27<br />case_count: 11","date_onset: 2023-07-28<br />case_count: 11","date_onset: 2023-07-29<br />case_count:  9","date_onset: 2023-07-30<br />case_count: 10","date_onset: 2023-07-31<br />case_count: 13","date_onset: 2023-08-01<br />case_count: 11","date_onset: 2023-08-02<br />case_count: 18","date_onset: 2023-08-03<br />case_count: 16","date_onset: 2023-08-04<br />case_count: 11","date_onset: 2023-08-05<br />case_count:  9","date_onset: 2023-08-06<br />case_count: 12","date_onset: 2023-08-07<br />case_count: 10","date_onset: 2023-08-08<br />case_count:  7","date_onset: 2023-08-09<br />case_count: 14","date_onset: 2023-08-10<br />case_count:  7","date_onset: 2023-08-11<br />case_count: 10","date_onset: 2023-08-12<br />case_count: 10","date_onset: 2023-08-13<br />case_count: 11","date_onset: 2023-08-14<br />case_count: 10","date_onset: 2023-08-15<br />case_count: 16","date_onset: 2023-08-16<br />case_count: 14","date_onset: 2023-08-17<br />case_count: 23","date_onset: 2023-08-18<br />case_count: 17","date_onset: 2023-08-19<br />case_count: 20","date_onset: 2023-08-20<br />case_count: 15","date_onset: 2023-08-21<br />case_count: 18","date_onset: 2023-08-22<br />case_count: 13","date_onset: 2023-08-23<br />case_count: 20","date_onset: 2023-08-24<br />case_count: 17","date_onset: 2023-08-25<br />case_count: 22","date_onset: 2023-08-26<br />case_count: 15","date_onset: 2023-08-27<br />case_count: 14","date_onset: 2023-08-28<br />case_count: 20","date_onset: 2023-08-29<br />case_count: 13","date_onset: 2023-08-30<br />case_count: 14","date_onset: 2023-08-31<br />case_count: 19","date_onset: 2023-09-01<br />case_count: 10","date_onset: 2023-09-02<br />case_count: 10","date_onset: 2023-09-03<br />case_count: 19","date_onset: 2023-09-04<br />case_count: 19","date_onset: 2023-09-05<br />case_count: 10","date_onset: 2023-09-06<br />case_count: 13","date_onset: 2023-09-07<br />case_count: 21","date_onset: 2023-09-08<br />case_count: 16","date_onset: 2023-09-09<br />case_count: 22","date_onset: 2023-09-10<br />case_count: 13","date_onset: 2023-09-11<br />case_count: 13","date_onset: 2023-09-12<br />case_count: 12","date_onset: 2023-09-13<br />case_count: 13","date_onset: 2023-09-14<br />case_count: 13","date_onset: 2023-09-15<br />case_count: 11","date_onset: 2023-09-16<br />case_count: 17","date_onset: 2023-09-17<br />case_count:  6","date_onset: 2023-09-18<br />case_count: 11","date_onset: 2023-09-19<br />case_count:  5","date_onset: 2023-09-20<br />case_count:  2","date_onset: 2023-09-21<br />case_count:  4","date_onset: 2023-09-22<br />case_count:  6","date_onset: 2023-09-23<br />case_count: 11","date_onset: 2023-09-24<br />case_count:  5","date_onset: 2023-09-25<br />case_count:  5","date_onset: 2023-09-26<br />case_count:  5","date_onset: 2023-09-27<br />case_count:  3","date_onset: 2023-09-28<br />case_count:  1","date_onset: 2023-09-29<br />case_count:  1","date_onset: 2023-09-30<br />case_count:  4","date_onset: 2023-10-01<br />case_count:  3","date_onset: 2023-10-03<br />case_count:  1","date_onset: 2023-10-09<br />case_count:  2"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(190,190,190,1)","opacity":1,"size":5.6692913385826778,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(190,190,190,1)"}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[19358,19361.556962025315,19365.113924050635,19368.67088607595,19372.227848101265,19375.784810126581,19379.3417721519,19382.898734177215,19386.455696202531,19390.01265822785,19393.569620253165,19397.126582278481,19400.683544303796,19404.240506329115,19407.797468354431,19411.354430379746,19414.911392405062,19418.468354430381,19422.025316455696,19425.582278481012,19429.139240506331,19432.696202531646,19436.253164556962,19439.810126582277,19443.367088607596,19446.924050632912,19450.481012658227,19454.037974683546,19457.594936708861,19461.151898734177,19464.708860759492,19468.265822784811,19471.822784810127,19475.379746835442,19478.936708860758,19482.493670886077,19486.050632911392,19489.607594936708,19493.164556962027,19496.721518987342,19500.278481012658,19503.835443037973,19507.392405063292,19510.949367088608,19514.506329113923,19518.063291139242,19521.620253164558,19525.177215189873,19528.734177215189,19532.291139240508,19535.848101265823,19539.405063291139,19542.962025316454,19546.518987341773,19550.075949367088,19553.632911392404,19557.189873417723,19560.746835443038,19564.303797468354,19567.860759493669,19571.417721518988,19574.974683544304,19578.531645569619,19582.088607594938,19585.645569620254,19589.202531645569,19592.759493670885,19596.316455696204,19599.873417721519,19603.430379746835,19606.98734177215,19610.544303797469,19614.101265822785,19617.6582278481,19621.215189873419,19624.772151898735,19628.32911392405,19631.886075949365,19635.443037974685,19639],"y":[1.2914022074242559,1.3316651542858886,1.3724865505127801,1.4144248454700443,1.4580384885229478,1.5038859290366897,1.5525256163765366,1.6045159999076004,1.6604155289951388,1.7207826530044248,1.7861758213005499,1.8571534832487835,1.9363324958453849,2.0371081967808302,2.1763919681326254,2.3710971372261573,2.6381370313867083,2.9944249779399912,3.4568743042105878,4.0423983375240979,4.7679104052066412,5.650323834582033,6.7042040606406541,7.916625504978148,9.2568325706023167,10.693768247089954,12.196375524021924,13.733597390979362,15.274376837538659,16.787656853280925,18.241215707388079,19.589349916735184,20.777685612896072,21.751705652391522,22.456892891740868,22.838730187463661,22.842700396078413,22.414286374105032,21.507692686722461,20.176929909593806,18.539655410697762,16.714554399226468,14.820312084370141,12.97561367532488,11.299144381280918,9.9095894114291472,8.9163000022713685,8.323025861671665,8.0667416034508204,8.0833682432512592,8.3088267967152056,8.6790382794848515,9.1299237072024901,9.5974040955108944,10.02180502071306,10.392720936874447,10.730637734393099,11.056517406737283,11.39132194737631,11.756013349779129,12.171553607415136,12.658904713752463,13.234612181660735,13.866375369978389,14.491525823801426,15.046938033928654,15.469486491158245,15.696045686288491,15.66349011011704,15.308694253442418,14.574123823595455,13.463389627054035,12.01779532776947,10.279198438583807,8.2894564723379069,6.0904269418788637,3.7239673600477792,1.2319352396876455,-1.3438119063611944,-3.9614165652504396],"text":["date_onset: 19358.00<br />case_count:  1.291402","date_onset: 19361.56<br />case_count:  1.331665","date_onset: 19365.11<br />case_count:  1.372487","date_onset: 19368.67<br />case_count:  1.414425","date_onset: 19372.23<br />case_count:  1.458038","date_onset: 19375.78<br />case_count:  1.503886","date_onset: 19379.34<br />case_count:  1.552526","date_onset: 19382.90<br />case_count:  1.604516","date_onset: 19386.46<br />case_count:  1.660416","date_onset: 19390.01<br />case_count:  1.720783","date_onset: 19393.57<br />case_count:  1.786176","date_onset: 19397.13<br />case_count:  1.857153","date_onset: 19400.68<br />case_count:  1.936332","date_onset: 19404.24<br />case_count:  2.037108","date_onset: 19407.80<br />case_count:  2.176392","date_onset: 19411.35<br />case_count:  2.371097","date_onset: 19414.91<br />case_count:  2.638137","date_onset: 19418.47<br />case_count:  2.994425","date_onset: 19422.03<br />case_count:  3.456874","date_onset: 19425.58<br />case_count:  4.042398","date_onset: 19429.14<br />case_count:  4.767910","date_onset: 19432.70<br />case_count:  5.650324","date_onset: 19436.25<br />case_count:  6.704204","date_onset: 19439.81<br />case_count:  7.916626","date_onset: 19443.37<br />case_count:  9.256833","date_onset: 19446.92<br />case_count: 10.693768","date_onset: 19450.48<br />case_count: 12.196376","date_onset: 19454.04<br />case_count: 13.733597","date_onset: 19457.59<br />case_count: 15.274377","date_onset: 19461.15<br />case_count: 16.787657","date_onset: 19464.71<br />case_count: 18.241216","date_onset: 19468.27<br />case_count: 19.589350","date_onset: 19471.82<br />case_count: 20.777686","date_onset: 19475.38<br />case_count: 21.751706","date_onset: 19478.94<br />case_count: 22.456893","date_onset: 19482.49<br />case_count: 22.838730","date_onset: 19486.05<br />case_count: 22.842700","date_onset: 19489.61<br />case_count: 22.414286","date_onset: 19493.16<br />case_count: 21.507693","date_onset: 19496.72<br />case_count: 20.176930","date_onset: 19500.28<br />case_count: 18.539655","date_onset: 19503.84<br />case_count: 16.714554","date_onset: 19507.39<br />case_count: 14.820312","date_onset: 19510.95<br />case_count: 12.975614","date_onset: 19514.51<br />case_count: 11.299144","date_onset: 19518.06<br />case_count:  9.909589","date_onset: 19521.62<br />case_count:  8.916300","date_onset: 19525.18<br />case_count:  8.323026","date_onset: 19528.73<br />case_count:  8.066742","date_onset: 19532.29<br />case_count:  8.083368","date_onset: 19535.85<br />case_count:  8.308827","date_onset: 19539.41<br />case_count:  8.679038","date_onset: 19542.96<br />case_count:  9.129924","date_onset: 19546.52<br />case_count:  9.597404","date_onset: 19550.08<br />case_count: 10.021805","date_onset: 19553.63<br />case_count: 10.392721","date_onset: 19557.19<br />case_count: 10.730638","date_onset: 19560.75<br />case_count: 11.056517","date_onset: 19564.30<br />case_count: 11.391322","date_onset: 19567.86<br />case_count: 11.756013","date_onset: 19571.42<br />case_count: 12.171554","date_onset: 19574.97<br />case_count: 12.658905","date_onset: 19578.53<br />case_count: 13.234612","date_onset: 19582.09<br />case_count: 13.866375","date_onset: 19585.65<br />case_count: 14.491526","date_onset: 19589.20<br />case_count: 15.046938","date_onset: 19592.76<br />case_count: 15.469486","date_onset: 19596.32<br />case_count: 15.696046","date_onset: 19599.87<br />case_count: 15.663490","date_onset: 19603.43<br />case_count: 15.308694","date_onset: 19606.99<br />case_count: 14.574124","date_onset: 19610.54<br />case_count: 13.463390","date_onset: 19614.10<br />case_count: 12.017795","date_onset: 19617.66<br />case_count: 10.279198","date_onset: 19621.22<br />case_count:  8.289456","date_onset: 19624.77<br />case_count:  6.090427","date_onset: 19628.33<br />case_count:  3.723967","date_onset: 19631.89<br />case_count:  1.231935","date_onset: 19635.44<br />case_count: -1.343812","date_onset: 19639.00<br />case_count: -3.961417"],"type":"scatter","mode":"lines","name":"fitted values","line":{"width":3.7795275590551185,"color":"rgba(100,149,237,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[19358,19361.556962025315,19365.113924050635,19368.67088607595,19372.227848101265,19375.784810126581,19379.3417721519,19382.898734177215,19386.455696202531,19390.01265822785,19393.569620253165,19397.126582278481,19400.683544303796,19404.240506329115,19407.797468354431,19411.354430379746,19414.911392405062,19418.468354430381,19422.025316455696,19425.582278481012,19429.139240506331,19432.696202531646,19436.253164556962,19439.810126582277,19443.367088607596,19446.924050632912,19450.481012658227,19454.037974683546,19457.594936708861,19461.151898734177,19464.708860759492,19468.265822784811,19471.822784810127,19475.379746835442,19478.936708860758,19482.493670886077,19486.050632911392,19489.607594936708,19493.164556962027,19496.721518987342,19500.278481012658,19503.835443037973,19507.392405063292,19510.949367088608,19514.506329113923,19518.063291139242,19521.620253164558,19525.177215189873,19528.734177215189,19532.291139240508,19535.848101265823,19539.405063291139,19542.962025316454,19546.518987341773,19550.075949367088,19553.632911392404,19557.189873417723,19560.746835443038,19564.303797468354,19567.860759493669,19571.417721518988,19574.974683544304,19578.531645569619,19582.088607594938,19585.645569620254,19589.202531645569,19592.759493670885,19596.316455696204,19599.873417721519,19603.430379746835,19606.98734177215,19610.544303797469,19614.101265822785,19617.6582278481,19621.215189873419,19624.772151898735,19628.32911392405,19631.886075949365,19635.443037974685,19639,19639,19639,19635.443037974685,19631.886075949365,19628.32911392405,19624.772151898735,19621.215189873419,19617.6582278481,19614.101265822785,19610.544303797469,19606.98734177215,19603.430379746835,19599.873417721519,19596.316455696204,19592.759493670885,19589.202531645569,19585.645569620254,19582.088607594938,19578.531645569619,19574.974683544304,19571.417721518988,19567.860759493669,19564.303797468354,19560.746835443038,19557.189873417723,19553.632911392404,19550.075949367088,19546.518987341773,19542.962025316454,19539.405063291139,19535.848101265823,19532.291139240508,19528.734177215189,19525.177215189873,19521.620253164558,19518.063291139242,19514.506329113923,19510.949367088608,19507.392405063292,19503.835443037973,19500.278481012658,19496.721518987342,19493.164556962027,19489.607594936708,19486.050632911392,19482.493670886077,19478.936708860758,19475.379746835442,19471.822784810127,19468.265822784811,19464.708860759492,19461.151898734177,19457.594936708861,19454.037974683546,19450.481012658227,19446.924050632912,19443.367088607596,19439.810126582277,19436.253164556962,19432.696202531646,19429.139240506331,19425.582278481012,19422.025316455696,19418.468354430381,19414.911392405062,19411.354430379746,19407.797468354431,19404.240506329115,19400.683544303796,19397.126582278481,19393.569620253165,19390.01265822785,19386.455696202531,19382.898734177215,19379.3417721519,19375.784810126581,19372.227848101265,19368.67088607595,19365.113924050635,19361.556962025315,19358,19358],"y":[-1.2081137177822614,-0.80749170167965234,-0.44350903500456851,-0.13552184475158446,0.095531398241218035,0.23596838053296443,0.29240665357491458,0.2934708922700433,0.27558779670568256,0.26991563290911502,0.29871106704971617,0.37615397207997558,0.50866542240535728,0.69459778998127075,0.9272814533768996,1.1983620118101774,1.5039513358444188,1.8536146093998225,2.274915636160344,2.807928615064363,3.4954321932468426,4.3757829605836509,5.474001815526492,6.7574913307829956,8.1566902197756264,9.6064924401830982,11.065455357519291,12.522925610122925,13.985163679602032,15.458188560242771,16.934686435538275,18.354513555562722,19.620996767939172,20.635657735537798,21.319310528722962,21.629184405936815,21.5499678251836,21.071364567738616,20.179764422472086,18.91842324108671,17.363044002895272,15.586454784232272,13.678540257494305,11.766058665118564,10.006446331472331,8.5644476304683259,7.5838547063623025,7.0590261667345349,6.8854748126796288,6.9530222186448682,7.1676035643360603,7.471781103382563,7.8396864492371225,8.2536522987064185,8.6892041033027549,9.1275858604965947,9.5489769183878881,9.9288030326042893,10.257073666846543,10.559179014405348,10.892600168229066,11.324251570121051,11.906479442883956,12.601152723774725,13.308922639738048,13.923654787578631,14.349743710873472,14.522383965447554,14.408788026777424,13.988524018848747,13.239807810459142,12.168899681257878,10.787832872165042,9.0864644775907362,7.0410199230668056,4.6495700747587589,1.9591195534587,-0.95532079157391592,-4.0182734567263942,-7.1614159916287976,-7.1614159916287976,-0.76141713887208162,1.3306496440040052,3.4191912709492067,5.4888151666368579,7.5312838089989684,9.5378930216090083,11.471932399576877,13.247757783373897,14.757879572850191,15.908439836731768,16.62886448803609,16.918192193456655,16.869707407129425,16.589229271443017,16.170221280278678,15.674129007864805,15.131598016182053,14.562744920437513,13.993557857383875,13.450507046601206,12.952847685152911,12.525570227906078,12.184231780870277,11.91229855039831,11.657856013252299,11.354405938123366,10.94115589231537,10.420160965167858,9.8862954555871401,9.450050029094351,9.2137142678576502,9.2480083942220119,9.5870255566087952,10.248745298180435,11.254731192389968,12.591842431089505,14.185168685531195,15.962083911245976,17.842654014220667,19.716266818500252,21.435436578100902,22.835620950972835,23.757208180471448,24.135432966973227,24.048275968990506,23.594475254758773,22.867753569245245,21.934374457852972,20.824186277907646,19.547744979237883,18.117125146319079,16.563589995475287,14.944269171835799,13.327295690524558,11.78104405399681,10.356974921429007,9.0757596791733004,7.9344063057548162,6.9248647085804151,6.0403886171664398,5.2768680599838333,4.6388329722608317,4.1352353464801599,3.7723227269289978,3.5438322626421375,3.4255024828883514,3.3796186035803899,3.3639995692854123,3.3381529944175914,3.2736405755513838,3.1716496730997346,3.045243261284595,2.9155611075451575,2.8126445791781585,2.771803477540415,2.8205455788046776,2.9643715356916731,3.188482136030129,3.4708220102514296,3.7909181326307735,-1.2081137177822614],"text":["date_onset: 19358.00<br />case_count:  1.291402","date_onset: 19361.56<br />case_count:  1.331665","date_onset: 19365.11<br />case_count:  1.372487","date_onset: 19368.67<br />case_count:  1.414425","date_onset: 19372.23<br />case_count:  1.458038","date_onset: 19375.78<br />case_count:  1.503886","date_onset: 19379.34<br />case_count:  1.552526","date_onset: 19382.90<br />case_count:  1.604516","date_onset: 19386.46<br />case_count:  1.660416","date_onset: 19390.01<br />case_count:  1.720783","date_onset: 19393.57<br />case_count:  1.786176","date_onset: 19397.13<br />case_count:  1.857153","date_onset: 19400.68<br />case_count:  1.936332","date_onset: 19404.24<br />case_count:  2.037108","date_onset: 19407.80<br />case_count:  2.176392","date_onset: 19411.35<br />case_count:  2.371097","date_onset: 19414.91<br />case_count:  2.638137","date_onset: 19418.47<br />case_count:  2.994425","date_onset: 19422.03<br />case_count:  3.456874","date_onset: 19425.58<br />case_count:  4.042398","date_onset: 19429.14<br />case_count:  4.767910","date_onset: 19432.70<br />case_count:  5.650324","date_onset: 19436.25<br />case_count:  6.704204","date_onset: 19439.81<br />case_count:  7.916626","date_onset: 19443.37<br />case_count:  9.256833","date_onset: 19446.92<br />case_count: 10.693768","date_onset: 19450.48<br />case_count: 12.196376","date_onset: 19454.04<br />case_count: 13.733597","date_onset: 19457.59<br />case_count: 15.274377","date_onset: 19461.15<br />case_count: 16.787657","date_onset: 19464.71<br />case_count: 18.241216","date_onset: 19468.27<br />case_count: 19.589350","date_onset: 19471.82<br />case_count: 20.777686","date_onset: 19475.38<br />case_count: 21.751706","date_onset: 19478.94<br />case_count: 22.456893","date_onset: 19482.49<br />case_count: 22.838730","date_onset: 19486.05<br />case_count: 22.842700","date_onset: 19489.61<br />case_count: 22.414286","date_onset: 19493.16<br />case_count: 21.507693","date_onset: 19496.72<br />case_count: 20.176930","date_onset: 19500.28<br />case_count: 18.539655","date_onset: 19503.84<br />case_count: 16.714554","date_onset: 19507.39<br />case_count: 14.820312","date_onset: 19510.95<br />case_count: 12.975614","date_onset: 19514.51<br />case_count: 11.299144","date_onset: 19518.06<br />case_count:  9.909589","date_onset: 19521.62<br />case_count:  8.916300","date_onset: 19525.18<br />case_count:  8.323026","date_onset: 19528.73<br />case_count:  8.066742","date_onset: 19532.29<br />case_count:  8.083368","date_onset: 19535.85<br />case_count:  8.308827","date_onset: 19539.41<br />case_count:  8.679038","date_onset: 19542.96<br />case_count:  9.129924","date_onset: 19546.52<br />case_count:  9.597404","date_onset: 19550.08<br />case_count: 10.021805","date_onset: 19553.63<br />case_count: 10.392721","date_onset: 19557.19<br />case_count: 10.730638","date_onset: 19560.75<br />case_count: 11.056517","date_onset: 19564.30<br />case_count: 11.391322","date_onset: 19567.86<br />case_count: 11.756013","date_onset: 19571.42<br />case_count: 12.171554","date_onset: 19574.97<br />case_count: 12.658905","date_onset: 19578.53<br />case_count: 13.234612","date_onset: 19582.09<br />case_count: 13.866375","date_onset: 19585.65<br />case_count: 14.491526","date_onset: 19589.20<br />case_count: 15.046938","date_onset: 19592.76<br />case_count: 15.469486","date_onset: 19596.32<br />case_count: 15.696046","date_onset: 19599.87<br />case_count: 15.663490","date_onset: 19603.43<br />case_count: 15.308694","date_onset: 19606.99<br />case_count: 14.574124","date_onset: 19610.54<br />case_count: 13.463390","date_onset: 19614.10<br />case_count: 12.017795","date_onset: 19617.66<br />case_count: 10.279198","date_onset: 19621.22<br />case_count:  8.289456","date_onset: 19624.77<br />case_count:  6.090427","date_onset: 19628.33<br />case_count:  3.723967","date_onset: 19631.89<br />case_count:  1.231935","date_onset: 19635.44<br />case_count: -1.343812","date_onset: 19639.00<br />case_count: -3.961417","date_onset: 19639.00<br />case_count: -3.961417","date_onset: 19639.00<br />case_count: -3.961417","date_onset: 19635.44<br />case_count: -1.343812","date_onset: 19631.89<br />case_count:  1.231935","date_onset: 19628.33<br />case_count:  3.723967","date_onset: 19624.77<br />case_count:  6.090427","date_onset: 19621.22<br />case_count:  8.289456","date_onset: 19617.66<br />case_count: 10.279198","date_onset: 19614.10<br />case_count: 12.017795","date_onset: 19610.54<br />case_count: 13.463390","date_onset: 19606.99<br />case_count: 14.574124","date_onset: 19603.43<br />case_count: 15.308694","date_onset: 19599.87<br />case_count: 15.663490","date_onset: 19596.32<br />case_count: 15.696046","date_onset: 19592.76<br />case_count: 15.469486","date_onset: 19589.20<br />case_count: 15.046938","date_onset: 19585.65<br />case_count: 14.491526","date_onset: 19582.09<br />case_count: 13.866375","date_onset: 19578.53<br />case_count: 13.234612","date_onset: 19574.97<br />case_count: 12.658905","date_onset: 19571.42<br />case_count: 12.171554","date_onset: 19567.86<br />case_count: 11.756013","date_onset: 19564.30<br />case_count: 11.391322","date_onset: 19560.75<br />case_count: 11.056517","date_onset: 19557.19<br />case_count: 10.730638","date_onset: 19553.63<br />case_count: 10.392721","date_onset: 19550.08<br />case_count: 10.021805","date_onset: 19546.52<br />case_count:  9.597404","date_onset: 19542.96<br />case_count:  9.129924","date_onset: 19539.41<br />case_count:  8.679038","date_onset: 19535.85<br />case_count:  8.308827","date_onset: 19532.29<br />case_count:  8.083368","date_onset: 19528.73<br />case_count:  8.066742","date_onset: 19525.18<br />case_count:  8.323026","date_onset: 19521.62<br />case_count:  8.916300","date_onset: 19518.06<br />case_count:  9.909589","date_onset: 19514.51<br />case_count: 11.299144","date_onset: 19510.95<br />case_count: 12.975614","date_onset: 19507.39<br />case_count: 14.820312","date_onset: 19503.84<br />case_count: 16.714554","date_onset: 19500.28<br />case_count: 18.539655","date_onset: 19496.72<br />case_count: 20.176930","date_onset: 19493.16<br />case_count: 21.507693","date_onset: 19489.61<br />case_count: 22.414286","date_onset: 19486.05<br />case_count: 22.842700","date_onset: 19482.49<br />case_count: 22.838730","date_onset: 19478.94<br />case_count: 22.456893","date_onset: 19475.38<br />case_count: 21.751706","date_onset: 19471.82<br />case_count: 20.777686","date_onset: 19468.27<br />case_count: 19.589350","date_onset: 19464.71<br />case_count: 18.241216","date_onset: 19461.15<br />case_count: 16.787657","date_onset: 19457.59<br />case_count: 15.274377","date_onset: 19454.04<br />case_count: 13.733597","date_onset: 19450.48<br />case_count: 12.196376","date_onset: 19446.92<br />case_count: 10.693768","date_onset: 19443.37<br />case_count:  9.256833","date_onset: 19439.81<br />case_count:  7.916626","date_onset: 19436.25<br />case_count:  6.704204","date_onset: 19432.70<br />case_count:  5.650324","date_onset: 19429.14<br />case_count:  4.767910","date_onset: 19425.58<br />case_count:  4.042398","date_onset: 19422.03<br />case_count:  3.456874","date_onset: 19418.47<br />case_count:  2.994425","date_onset: 19414.91<br />case_count:  2.638137","date_onset: 19411.35<br />case_count:  2.371097","date_onset: 19407.80<br />case_count:  2.176392","date_onset: 19404.24<br />case_count:  2.037108","date_onset: 19400.68<br />case_count:  1.936332","date_onset: 19397.13<br />case_count:  1.857153","date_onset: 19393.57<br />case_count:  1.786176","date_onset: 19390.01<br />case_count:  1.720783","date_onset: 19386.46<br />case_count:  1.660416","date_onset: 19382.90<br />case_count:  1.604516","date_onset: 19379.34<br />case_count:  1.552526","date_onset: 19375.78<br />case_count:  1.503886","date_onset: 19372.23<br />case_count:  1.458038","date_onset: 19368.67<br />case_count:  1.414425","date_onset: 19365.11<br />case_count:  1.372487","date_onset: 19361.56<br />case_count:  1.331665","date_onset: 19358.00<br />case_count:  1.291402","date_onset: 19358.00<br />case_count:  1.291402"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(100,149,237,0.4)","dash":"solid"},"fill":"toself","fillcolor":"rgba(153,153,153,0.4)","hoveron":"points","hoverinfo":"x+y","showlegend":false,"xaxis":"x","yaxis":"y","frame":null}],"layout":{"margin":{"t":40.840182648401829,"r":7.3059360730593621,"b":37.260273972602747,"l":37.260273972602747},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"New covid cases over time","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[19343.950000000001,19653.049999999999],"tickmode":"array","ticktext":["Jan","Apr","Jul","Oct"],"tickvals":[19358,19448,19539,19631],"categoryorder":"array","categoryarray":["Jan","Apr","Jul","Oct"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Date","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-9.1694867912102378,35.008070799581439],"tickmode":"array","ticktext":["0","10","20","30"],"tickvals":[0,10.000000000000002,20,30],"categoryorder":"array","categoryarray":["0","10","20","30"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Number of cases","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.8897637795275593,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"388e3eed55a6":{"x":{},"y":{},"type":"scatter"},"388e4f922590":{"x":{},"y":{}}},"cur_data":"388e3eed55a6","visdat":{"388e3eed55a6":["function (y) ","x"],"388e4f922590":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -2479,15 +2430,15 @@ by **guides**?
 <li>You can also create 3d plots with <code>plotly</code></li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a aria-label="1"></a><span class="fu">plot_ly</span>(</span>
-<span id="cb59-2"><a aria-label="2"></a>  <span class="at">data =</span> <span class="fu">tibble</span>(<span class="at">x =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>), <span class="at">y =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>), <span class="at">z =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>)),</span>
-<span id="cb59-3"><a aria-label="3"></a>  <span class="at">x =</span> <span class="sc">~</span>x,</span>
-<span id="cb59-4"><a aria-label="4"></a>  <span class="at">y =</span> <span class="sc">~</span>y,</span>
-<span id="cb59-5"><a aria-label="5"></a>  <span class="at">z =</span> <span class="sc">~</span>z</span>
-<span id="cb59-6"><a aria-label="6"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a aria-label="1"></a><span class="fu">plot_ly</span>(</span>
+<span id="cb54-2"><a aria-label="2"></a>  <span class="at">data =</span> <span class="fu">tibble</span>(<span class="at">x =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>), <span class="at">y =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>), <span class="at">z =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>)),</span>
+<span id="cb54-3"><a aria-label="3"></a>  <span class="at">x =</span> <span class="sc">~</span>x,</span>
+<span id="cb54-4"><a aria-label="4"></a>  <span class="at">y =</span> <span class="sc">~</span>y,</span>
+<span id="cb54-5"><a aria-label="5"></a>  <span class="at">z =</span> <span class="sc">~</span>z</span>
+<span id="cb54-6"><a aria-label="6"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-ef2bb3ed4e6fe6764091" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-ef2bb3ed4e6fe6764091">{"x":{"visdat":{"13f538708699":["function () ","plotlyVisDat"]},"cur_data":"13f538708699","attrs":{"13f538708699":{"x":{},"y":{},"z":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20]}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"scene":{"xaxis":{"title":"x"},"yaxis":{"title":"y"},"zaxis":{"title":"z"}},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[-0.55505518229291018,0.18315425636579674,0.78987000169655175,1.6174925335136696,0.44938474130999956,0.23654630283272735,0.34660218151828004,0.54822286138174448,-1.0115935848992574,-1.2671354977344973],"y":[-1.3056039177805763,1.6355934797695939,1.0000515743950631,1.0142488238666871,0.67499919138072395,-2.0162314661108853,0.68572334722915285,-0.47360301088270623,0.74384628207578352,-1.006543763958317],"z":[0.92335612945666168,1.7891972905225815,-0.63508062691382006,0.37674231328754054,-0.28446799947912804,0.70605911116279085,0.39071833232090608,-0.74522604823675642,0.51881935414637259,-0.55679206193441688],"type":"scatter3d","mode":"markers","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-2b0aa405a172c97b7a08" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-2b0aa405a172c97b7a08">{"x":{"visdat":{"388e3a2e61a1":["function () ","plotlyVisDat"]},"cur_data":"388e3a2e61a1","attrs":{"388e3a2e61a1":{"x":{},"y":{},"z":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20]}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"scene":{"xaxis":{"title":"x"},"yaxis":{"title":"y"},"zaxis":{"title":"z"}},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[-0.33765654002610979,-0.23512944074242914,0.72437745920724694,-0.38951748202625547,1.5787213939675646,1.0292848416010119,0.79834814615242611,1.8426105346116188,1.0913999443945248,-1.0692116637130278],"y":[-0.093150781636095747,-0.76713537844552004,0.24926000339689347,-0.22723763462948932,0.38844754905207973,0.83098969529142397,-0.417760775702126,-0.12441663234963482,1.5798727704289228,1.4096757667489599],"z":[-0.54630116788943983,0.70395041771329292,1.4686057549826108,-0.63127151237338119,1.6769877568120859,-0.31357948524626872,0.43714093308811297,0.052667269979203048,1.0938646150046623,-0.0093153845078798678],"type":"scatter3d","mode":"markers","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -2835,6 +2786,13 @@ by **guides**?
               if (link.dataset.originalHref !== undefined) {
                 link.href = link.dataset.originalHref;
               }
+                // target, if specified
+                link.setAttribute("target", "_blank");
+                if (link.getAttribute("rel") === null) {
+                  link.setAttribute("rel", "noopener");
+                }
+                // default icon
+                link.classList.add("external");
             }
           }
         function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
