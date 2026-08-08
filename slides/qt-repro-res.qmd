@@ -1,6 +1,6 @@
 ---
 title: "Using Quarto for reproducible research"
-author: "Hung Trang and Thinh Ong"
+author: "Hung Tran and Thinh Ong"
 format:
   revealjs:
     slide-number: true
@@ -29,6 +29,10 @@ number-sections: false
 # What can Quarto do?
 
 ## Website
+
+
+
+
 
 ![](figures/qt/qt-website.png)
 
