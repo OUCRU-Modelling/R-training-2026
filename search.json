@@ -1376,7 +1376,7 @@
     "href": "slides/qt-repro-res.html#header",
     "title": "Using Quarto for reproducible research",
     "section": "Header",
-    "text": "Header\n\n\n\nindex.qmd\n---\ntitle: \"My Quarto file\"\nauthor: \"Your Name\"\ndate: \"2026-08-08\"\nformat: html\ntoc: true\nexecute:\n  echo: false\n  warning: false\n  message: false\n  cache: false\n---\n\n\n\n\nDefines document properties and settings, for examples:\n\ntitle: Document title\nauthor: Authorship\ndate: Date this document was published\nformat:\n\nWebpage: html\nPresentation: revealjs\nMS Word: docx\nReport/Manuscript: pdf\n\ntoc: table of contents"
+    "text": "Header\n\n\n\nindex.qmd\n---\ntitle: \"My Quarto file\"\nauthor: \"Your Name\"\ndate: \"2026-08-08\"\nformat: html\ntoc: true\nexecute:\n  echo: false\n  warning: false\n  message: false\n  cache: false\n---\n\n\n\n\nDefines document properties and settings, for examples:\n\ntitle: Document title\nauthor: Authorship\ndate: Date this document was published\nformat:\n\nWebpage: html\nPresentation: revealjs\nMS Word: docx\nReport/Manuscript: pdf\n\ntoc: table of contents\nexecute:\n\necho: false\nwarning: false\nmessage: false\ncache: false"
   },
   {
     "objectID": "slides/qt-repro-res.html#body",
