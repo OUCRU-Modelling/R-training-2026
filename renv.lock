@@ -293,6 +293,29 @@
       "Maintainer": "Jeroen Ooms <jeroenooms@gmail.com>",
       "Repository": "CRAN"
     },
+    "assertthat": {
+      "Package": "assertthat",
+      "Version": "0.2.1",
+      "Source": "Repository",
+      "Title": "Easy Pre and Post Assertions",
+      "Authors@R": "person(\"Hadley\", \"Wickham\", , \"hadley@rstudio.com\", c(\"aut\", \"cre\"))",
+      "Description": "An extension to stopifnot() that makes it easy to declare  the pre and post conditions that you code should satisfy, while also  producing friendly error messages so that your users know what's gone wrong.",
+      "License": "GPL-3",
+      "Imports": [
+        "tools"
+      ],
+      "Suggests": [
+        "testthat",
+        "covr"
+      ],
+      "RoxygenNote": "6.0.1",
+      "Collate": "'assert-that.r' 'on-failure.r' 'assertions-file.r' 'assertions-scalar.R' 'assertions.r' 'base.r' 'base-comparison.r' 'base-is.r' 'base-logical.r' 'base-misc.r' 'utils.r' 'validate-that.R'",
+      "NeedsCompilation": "no",
+      "Author": "Hadley Wickham [aut, cre]",
+      "Maintainer": "Hadley Wickham <hadley@rstudio.com>",
+      "Repository": "CRAN",
+      "Encoding": "UTF-8"
+    },
     "backports": {
       "Package": "backports",
       "Version": "1.5.1",
@@ -3021,16 +3044,14 @@
       ],
       "LazyData": "true",
       "LazyDataCompression": "bzip2",
+      "Author": "Tuyen Huynh [aut, cre]",
+      "Maintainer": "Tuyen Huynh <tuyenhn@oucru.org>",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
-      "RemoteRepo": "oucru",
       "RemoteUsername": "OUCRU-Modelling",
-      "RemotePkgRef": "OUCRU-Modelling/oucru",
-      "RemoteRef": "HEAD",
-      "RemoteSha": "f92a8ba72b88f8ae22f96666bfefc306b1441ab7",
-      "NeedsCompilation": "no",
-      "Author": "Tuyen Huynh [aut, cre]",
-      "Maintainer": "Tuyen Huynh <tuyenhn@oucru.org>"
+      "RemoteRepo": "oucru",
+      "RemoteRef": "v0.0.1",
+      "RemoteSha": "f92a8ba72b88f8ae22f96666bfefc306b1441ab7"
     },
     "pillar": {
       "Package": "pillar",
@@ -3422,6 +3443,44 @@
       "NeedsCompilation": "yes",
       "Author": "Hadley Wickham [aut, cre] (ORCID: <https://orcid.org/0000-0003-4757-117X>), Lionel Henry [aut], Posit Software, PBC [cph, fnd] (ROR: <https://ror.org/03wc8by49>)",
       "Maintainer": "Hadley Wickham <hadley@posit.co>",
+      "Repository": "CRAN"
+    },
+    "qrcode": {
+      "Package": "qrcode",
+      "Version": "0.3.0",
+      "Source": "Repository",
+      "Type": "Package",
+      "Title": "Generate QRcodes with R",
+      "Authors@R": "c( person(\"Thierry\", \"Onkelinx\", , \"qrcode@muscardinus.be\", role = c(\"aut\", \"cre\"), comment = c(\"Author of the reimplemented functions\", ORCID = \"0000-0001-8804-4216\")), person(\"Victor\", \"Teh\", , \"victorteh@gmail.com\", role = \"aut\", comment = \"Original author\") )",
+      "Description": "Create static QR codes in R. The content of the QR code is exactly what the user defines. We don't add a redirect URL, making it impossible for us to track the usage of the QR code. This allows to generate fast, free to use and privacy friendly QR codes.",
+      "License": "GPL-3",
+      "URL": "https://thierryo.github.io/qrcode/, https://github.com/ThierryO/qrcode, https://doi.org/10.5281/zenodo.5040088",
+      "BugReports": "https://github.com/ThierryO/qrcode/issues",
+      "Depends": [
+        "R (>= 4.1.0)"
+      ],
+      "Imports": [
+        "assertthat",
+        "stats",
+        "utils"
+      ],
+      "Suggests": [
+        "httr",
+        "jpeg",
+        "knitr",
+        "opencv",
+        "png",
+        "rsvg",
+        "testthat (>= 3.0.0)"
+      ],
+      "Config/checklist/keywords": "two-dimensional barcode; matrix barcode",
+      "Config/testthat/edition": "3",
+      "Encoding": "UTF-8",
+      "Language": "en-GB",
+      "RoxygenNote": "7.3.2",
+      "NeedsCompilation": "no",
+      "Author": "Thierry Onkelinx [aut, cre] (Author of the reimplemented functions, <https://orcid.org/0000-0001-8804-4216>), Victor Teh [aut] (Original author)",
+      "Maintainer": "Thierry Onkelinx <qrcode@muscardinus.be>",
       "Repository": "CRAN"
     },
     "ragg": {

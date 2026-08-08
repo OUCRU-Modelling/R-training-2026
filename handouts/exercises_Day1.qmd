@@ -92,7 +92,7 @@ earlier to your R Script File.
 #| echo: false
 #| warning: false
 library(readxl)
-titanic <- read_excel("data/raw/Titanic3.xlsx", na="NA")
+titanic <- read_excel("data/raw/Titanic3.xlsx", na = "NA")
 ```
 
 a.  Inspect the data set in spreadsheet-like format that shows up after importing (if it does not show up, you can click on the `titanic` object in the **Environment** pane). Do the variables make sense? Are there any weird values? Sort the data in ascending order of age by clicking on **age** in the data set.
@@ -144,15 +144,18 @@ each of the variables?
 summary(titanic)
 ```
 
-d.  Compute the 5%, 25%, 50%, 75% and 95% quantiles, the inter-quartile range and the standard deviation for age and fare. You may have to take a look at the `help` files for the functions `quantile`, `IQR` and `sd`.
+d.  Compute the 5%, 25%, 50%, 75% and 95% quantiles, the inter-quartile range and the
+standard deviation for age and fare. You may need to take a look at the `help` files
+for the functions `quantile`, `IQR` and `sd` (look at the RStudio shortcut list if
+you want to see one way to open a help page.
 
 ```{r}
 ## some quantiles
-quantile(titanic$age, probs=c(0.05,0.25,0.5,0.75,0.95), na.rm=TRUE)
-quantile(titanic$fare, probs=c(0.05,0.25,0.5,0.75,0.95), na.rm=TRUE)
+quantile(titanic$age, probs = c(0.05, 0.25, 0.5, 0.75, 0.95), na.rm = TRUE)
+quantile(titanic$fare, probs = c(0.05, 0.25, 0.5, 0.75, 0.95), na.rm = TRUE)
 ## the IQR (note that this is a single number)
-IQR(titanic$age, na.rm=TRUE)
-IQR(titanic$fare, na.rm=TRUE)
+IQR(titanic$age, na.rm = TRUE)
+IQR(titanic$fare, na.rm = TRUE)
 ## the the standard deviation
 sd(titanic$age, na.rm = TRUE)
 sd(titanic$fare, na.rm = TRUE)
@@ -186,21 +189,21 @@ proportions(table(titanic$sex, titanic$survived), margin = 1)
 a.  Take a look at the name, and the home town/destination of all passengers who were older than 70 years. Use the appropriate selection functions.
 
 ```{r}
-subset(titanic,age>70)[,c("name","home_dest")]
+subset(titanic, age > 70)[, c("name", "home_dest")]
 ```
 
 It is seen that there is one person from Uruguay in this group. Select the single record from that person. Did this person travel with relatives?
 
 ```{r}
-subset(titanic, name=="Artagaveytia, Mr. Ramon")
+subset(titanic, name == "Artagaveytia, Mr. Ramon")
 ```
 
 b.  Make a table of survivor status by sex, but only for the first class passengers. What do you observe? Compare this with the survival status for the 3rd class passengers.
 
 ```{r}
-first <- xtabs(~sex+survived, data=titanic, subset=(pclass=="1st"))
+first <- xtabs(~ sex + survived, data = titanic, subset = (pclass == "1st"))
 first
-third <- xtabs(~sex+survived, data=titanic, subset=(pclass=="3rd"))
+third <- xtabs(~ sex + survived, data = titanic, subset = (pclass == "3rd"))
 third
 ```
 
@@ -211,7 +214,7 @@ a.  Make passenger class and sex into factor variables.
 b.  Add a variable `status` to the Titanic data set, which gives the survival status of the passengers as a factor variable with labels "no" and "yes" describing whether individuals survived. Make the value "no" the first level.
 
 ```{r add-status}
-titanic$status <- factor(titanic$survived, labels=c("no","yes"))
+titanic$status <- factor(titanic$survived, labels = c("no", "yes"))
 ```
 
 c.  Run the `summary` function again. What change do you observe compared to Exercise 4?

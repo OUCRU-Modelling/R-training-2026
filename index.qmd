@@ -14,14 +14,14 @@ date-format: "MMMM D, YYYY -- HH:mm:ss (z)"
 # Housekeeping
 
 - The training will be **09:00 – 17:00 (UTC +7)** for everyday
-  - We will finish on Friday morning session
 - There will be a **lunch break between 12:30 – 13:30 (UTC +7)**
-- Lunch will be provided for in-person attendees
+- Lunch will be provided for in-person attendees who filled in their attendance on
+  [ferendum.com]{style="text-decoration: underline;"}. If you did not, you need to arrange lunch yourself. 
 
 ## Contributors
 
 - Prof. Ronald Geskus, Biostatistics group, OUCRU HCM
-- Dr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM
+- Mr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM
 - Mr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM
 - Dr. Tran Thai Hung, Biostatistics group, OUCRU HCM
 - Ms. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM
@@ -30,10 +30,9 @@ date-format: "MMMM D, YYYY -- HH:mm:ss (z)"
 - Dr. Nguyen Lam Vuong, Biostatistics group, OUCRU HCM
 - Mr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM
 
-
 ## Pre-course setups and requirements
 
-Please follow this [precourse handout](handouts/precourse_setup.qmd){target="_blank"} to setup R and RStudio.
+Please follow this [pre-course setups handout](handouts/precourse_setup.qmd) to setup R and RStudio.
 
 # Course topics
 
@@ -41,7 +40,7 @@ Please follow this [precourse handout](handouts/precourse_setup.qmd){target="_bl
 
 ### Day 1 (Monday)
 
-- [Lecture slides](slides/IntroductionRDay1.qmd)
+- [Lecture slides](slides/IntroductionRDay1.qmd){.external target="_blank"}
 - **Learning objectives**:
   1. Basic structure of R
   2. Simple computations
@@ -50,23 +49,23 @@ Please follow this [precourse handout](handouts/precourse_setup.qmd){target="_bl
   5. Navigate RStudio with confidence
 
 - Exercises:
-  - [Exercises](handouts/exercises_Day1.qmd){target="_blank"}
-  - [Exercise answers](handouts/exercises_Day1_answer.qmd){target="_blank"}
-  - [Exercise answers script](handouts/exercises_Day1_answer.R){target="_blank"}
-- [Example R code scripts - Day 1](slides/Scripts/ExampleCodeDay1.R){target="_blank"}
+  - [Exercises](handouts/exercises_Day1.qmd){.external target="_blank"}
+  - [Exercise answers](handouts/exercises_Day1_answer.qmd){.external target="_blank"}
+  - {{< downloadthis handouts/exercises_Day1_answer.R dname="exercises_Day1_answer" label="Exercise answers script" type="primary">}}
+- {{< downloadthis slides/Scripts/ExampleCodeDay1.R dname="ExampleCodeDay1" label="Example R code scripts - Day 1" type="primary">}}
 
 ### Day 2 (Tuesday)
 
-<!-- - [Lecture slides](slides/IntroductionRDay2.qmd) -->
+- [Lecture slides](slides/IntroductionRDay2.qmd){.external target="_blank"}
 - **Learning objectives**:
-  1. Write simple functions to automate tasks
-  2. Create visualisations using Base R graphics
-  3. Understand the R working environment, including file paths and workspace management
+  1. Create visualisations using Base R graphics
+  2. Write simple functions to automate tasks; the package system
+  3. Lists
   4. Using *pipe operators* to chain functions
-  5. How to read and understand the errors and warnings in your R console
-  6. Find and use R documentation and resources to solve problems on your own
-- No exercises will be given
-<!-- - [Example R code scripts - Day 2](slides/Scripts/ExampleCodeDay2.R){target="_blank"} -->
+- R code:
+  - {{< downloadthis handouts/exercises_Day2_answer.R dname="exercises_Day2_answer" label="Exercise answers script" type="primary">}}
+- {{< downloadthis slides/Scripts/ExampleCodeDay2.R dname="ExampleCodeDay2"
+  label="Example R code scripts - Day 2" type="primary">}}
 
 
 ## Principles of data visualisation and plotting in R
@@ -81,7 +80,7 @@ Please follow this [precourse handout](handouts/precourse_setup.qmd){target="_bl
   4. How to design clear and impactful visualisations
   5. Using LLMs (Large Language Models) to help you with plotting
   
-- [Exercises](handouts/exercise_day3.qmd){target="_blank"}
+- [Exercises](handouts/exercise_day3.qmd){.external target="_blank"}
 
 <!-- - [Handout file](handouts/VisualisationHandouts.pdf)
   - [Exercise answer key](handouts/Exercises_Day3_answer.pdf)

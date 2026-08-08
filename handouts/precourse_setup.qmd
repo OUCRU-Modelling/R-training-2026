@@ -1,24 +1,24 @@
 ---
 title: "Pre-course setups and requirements"
-author: "Ronald Geskus and Tuyen Huynh"
-toc: false
-number-sections: false
+author: 
+    - "Ronald Geskus"
+    - "Tuyen Huynh"
+number-sections: true
 format: 
   html:
     link-external-newwindow: true
     link-external-icon: true
-navbar: false
+navbar: true
 date: last-modified
 date-format: "MMMM D, YYYY -- HH:mm:ss (z)"
 ---
 
-# About
+# About {.unnumbered}
 
 Here we explain how to install R and RStudio on your own computer. This is **required** to ensure a smooth experience and reproducible results during the course.
 
-# Installation
 
-## R
+# R
 
 1. Go to the [R website](http://www.r-project.org)
 2. In the column on the left hand side, click on the [CRAN](https://cran.r-project.org/mirrors.html) link under the subheading **Download**
@@ -31,7 +31,7 @@ Here we explain how to install R and RStudio on your own computer. This is **req
     - You can use the default installation options
 
 
-## RStudio Desktop
+# RStudio Desktop
 
 1. Go to [the download page](https://posit.co/download/rstudio-desktop/)
 2. Scroll down, look for **2: Install Rstudio** and click on the button for downloading **RStudio Desktop**

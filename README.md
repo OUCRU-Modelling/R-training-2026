@@ -13,11 +13,10 @@ Materials for the course in their quarto format are stored here
     - Before commit and push, run `renv::snapshot()`
 - Locations:
     - Slides go into `slides/`
-        - Slides should have `format: revealjs` in the YAML headers
     - Handouts go into `handouts/`
         - Handouts should have `format: html` in the YAML headers (or `pdf` if you wish)
-    - Custom CSS rules go into `styles.css`
-        - Append your own CSS rules here
+    - (Optional) Custom CSS rules go into `theme.scss`
+- For file downloading, please use the [`downloadthis` extension](https://github.com/shafayetShafee/downloadthis) (see `index.qmd` for examples)
 - Test **locally** with
     - `quarto preview`: live preview and continuously render on save
     - `quarto render`: one-time render; resulting main page is `_render/index.html`
