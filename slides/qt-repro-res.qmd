@@ -1,6 +1,6 @@
 ---
 title: "Using Quarto for reproducible research"
-author: "Thinh Ong and Tuyen Huynh"
+author: "Hung Trang and Thinh Ong"
 format:
   revealjs:
     slide-number: true
