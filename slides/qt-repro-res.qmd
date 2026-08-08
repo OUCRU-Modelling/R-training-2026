@@ -40,8 +40,6 @@ number-sections: false
 
 ## Report/Manuscript
 
-<!-- ![](figures/qt/qt-report.png) -->
-
 <iframe src="dili_analysis.html" width="100%" height="500px" style="border:none;"></iframe>
 
 ## Dashboard
@@ -87,6 +85,8 @@ Or click [here](https://quarto.org/docs/gallery/)
 
 [1]:  figures/qt/qt-search-2.png
 [2]:  https://quarto.org/ "Let's try it out"
+
+# Let's write a manuscript
 
 ## Creating a Quarto file
 
@@ -302,8 +302,6 @@ index.html
 2.  Render it using the "Render" button in RStudio or by pressing `Ctrl+Shift+K`.
 
 ![](figures/qt/render.png)
-
-# Let's write a manuscript
 
 ## Create tables
 
