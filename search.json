@@ -1400,6 +1400,13 @@
     "text": "Rendering output\n\nSave your Quarto file.\nRender it using the “Render” button in RStudio or by pressing Ctrl+Shift+K."
   },
   {
+    "objectID": "slides/qt-repro-res.html#add-text-and-picture",
+    "href": "slides/qt-repro-res.html#add-text-and-picture",
+    "title": "Using Quarto for reproducible research",
+    "section": "Add text and picture",
+    "text": "Add text and picture"
+  },
+  {
     "objectID": "slides/qt-repro-res.html#create-tables",
     "href": "slides/qt-repro-res.html#create-tables",
     "title": "Using Quarto for reproducible research",
