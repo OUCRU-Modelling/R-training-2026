@@ -24,11 +24,7 @@ number-sections: false
 
 ## How does Quarto work?
 
-
-
-
-
-![](figures/qt/qt-flow.png)
+![](figures/qt/qt-flow.png){.r-stretch fig-align="center"}
 
 # What can Quarto do?
 
