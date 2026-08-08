@@ -184,7 +184,11 @@ Defines document properties and settings, for examples:
     -   MS Word: `docx`
     -   Report/Manuscript: `pdf`
 -   `toc`: table of contents
-
+-   `execute`:
+    -   echo: false
+    -   warning: false
+    -   message: false
+    -   cache: false
 :::
 :::::::
 
