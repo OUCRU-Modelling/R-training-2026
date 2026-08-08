@@ -159,11 +159,6 @@ author: "Your Name"
 date: "`r Sys.Date()`"
 format: html
 toc: true
-execute:
-  echo: false
-  warning: false
-  message: false
-  cache: false
 ---
 ```
 :::
@@ -184,11 +179,7 @@ Defines document properties and settings, for examples:
     -   MS Word: `docx`
     -   Report/Manuscript: `pdf`
 -   `toc`: table of contents
--   `execute`:
-    -   echo: false
-    -   warning: false
-    -   message: false
-    -   cache: false
+
 :::
 :::::::
 
