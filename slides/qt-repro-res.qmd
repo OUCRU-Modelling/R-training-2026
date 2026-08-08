@@ -307,6 +307,8 @@ index.html
 
 ![](figures/qt/render.png)
 
+## Add text and picture
+
 ## Create tables
 
 -   There are many packages to create beautiful tables in R:
