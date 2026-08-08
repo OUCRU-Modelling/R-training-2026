@@ -40,7 +40,9 @@ number-sections: false
 
 ## Report/Manuscript
 
-![](figures/qt/qt-report.png)
+<!-- ![](figures/qt/qt-report.png) -->
+
+<iframe src="dili_analysis.html" width="100%" height="500px" style="border:none;"></iframe>
 
 ## Dashboard
 
