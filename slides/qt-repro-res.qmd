@@ -159,6 +159,11 @@ author: "Your Name"
 date: "`r Sys.Date()`"
 format: html
 toc: true
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
 ---
 ```
 :::
