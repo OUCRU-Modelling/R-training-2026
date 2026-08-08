@@ -24,15 +24,15 @@ number-sections: false
 
 ## How does Quarto work?
 
+
+
+
+
 ![](figures/qt/qt-flow.png)
 
 # What can Quarto do?
 
 ## Website
-
-
-
-
 
 ![](figures/qt/qt-website.png)
 
