@@ -79,7 +79,7 @@ summary(titanic$dob) # numeric variable, mode(titanic$dob) gives numeric
 ## make it into a Date variable
 titanic$dob <- as.Date("15 April 1912", "%d %b %Y")+ (-titanic$age*365.25)
 class(titanic$dob)
-mode(titanic$dob) still of mode numeric, but
+mode(titanic$dob)
 
 help(summary) # Date class not mentioned
 methods(summary) # separate help page for summary.Date
