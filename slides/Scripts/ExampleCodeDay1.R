@@ -132,7 +132,7 @@ table(titanic$sex)
 titanic$sex <- factor(titanic$sex)
 levels(titanic$sex) # female comes first
 as.numeric(titanic$sex)[1:100]
-levels(titanic$sex) <- c("male","female")
+titanic$sex <- relevel(titanic$sec, ref="male")
 ## or directly when creating the factor:
 titanic$sex <- factor(titanic$sex, levels=c("male","female"))
 table(titanic$sex)
@@ -170,8 +170,10 @@ as.Date(paste(a,b,d,collapse=" "),"%d %b %Y")
 library(anytime)
 anydate(titanic$dob[1:10])
 ## ten years difference because the R date origin is assumed in anydate function
+## the lubridate package provide an easy way to subtract 10 years
 library(lubridate)
 anydate(titanic$dob[1:10]) -  years(10)
+## anydate recognizes many date formats, but not all
 anydate("15041912") # doesn't work
 anydate("19120415") # does work
 
