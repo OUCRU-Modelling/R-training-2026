@@ -307,18 +307,14 @@ index.html
 
 ![](figures/qt/render.png)
 
-## Add text, math formula, symbol
-Quarto uses LaTeX syntax to render equations seamlessly:
-Inline math: Wrap LaTeX code with single dollar signs $ LaTex $
-Display math: Wrap LaTeX code with double dollar signs $$ LaTex $$
+## Add texts, math formulas, symbols
 
 ::::::: columns
 :::: {.column width="50%"}
 ::: {.codewindow .quarto}
-
-``` markdown
 math_examples.qmd
 
+``` markdown
 ---
 title: "My Quarto file"
 author: "Your Name"
@@ -354,7 +350,7 @@ $$f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}$$
 
 ![](figures/qt/cite-insert.png)
 
-## Add picture
+## Add pictures, links
 
 ## Create tables
 
