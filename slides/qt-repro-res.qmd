@@ -316,11 +316,16 @@ math_examples.qmd
 
 ``` markdown
 ---
-title: "My Quarto file"
-author: "Your Name"
-date: "`r Sys.Date()`"
-format: html
-toc: true
+title: "Hello, Quarto"
+date: 2025-01-06
+author: "Biostats and Modelling"
+format: 
+  html:
+    code-overflow: wrap
+    embed-resources: true
+number-sections: true
+navbar: false
+toc: false
 ---
 Or we can include some math formula here: $4+4=8$ (alternatively, a more complex formula as math display via visual/insert).
 
@@ -340,11 +345,16 @@ math_examples.qmd
 
 ``` markdown
 ---
-title: "My Quarto file"
-author: "Your Name"
-date: "`r Sys.Date()`"
-format: html
-toc: true
+title: "Hello, Quarto"
+date: 2025-01-06
+author: "Biostats and Modelling"
+format: 
+  html:
+    code-overflow: wrap
+    embed-resources: true
+number-sections: true
+navbar: false
+toc: false
 ---
 Or we can include some math formula here: $4+4=8$ (alternatively, a more complex formula as math display via visual/insert).
 
