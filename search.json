@@ -1407,6 +1407,34 @@
     "text": "Rendering output\n\nSave your Quarto file.\nRender it using the “Render” button in RStudio or by pressing Ctrl+Shift+K."
   },
   {
+    "objectID": "slides/qt-repro-res.html#template",
+    "href": "slides/qt-repro-res.html#template",
+    "title": "Using Quarto for reproducible research",
+    "section": "Template",
+    "text": "Template\n\nTemplates help make your document look professional without extra effort\nYou can use pre-built templates or create your own for a custom style\nSome templates are designed for academic journals, presentations, or reports\nClick here to see a list of available journal templates in Quarto"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#what-is-a-quarto-template",
+    "href": "slides/qt-repro-res.html#what-is-a-quarto-template",
+    "title": "Using Quarto for reproducible research",
+    "section": "What is a Quarto template?",
+    "text": "What is a Quarto template?\n\nA Quarto template is a pre-designed document layout that controls the appearance of your output (PDF, Word, HTML, or presentation).\n\nLet’s try a template for journals published by Elsevier."
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#template-1",
+    "href": "slides/qt-repro-res.html#template-1",
+    "title": "Using Quarto for reproducible research",
+    "section": "Template",
+    "text": "Template\nPaste this code in the terminal (not the console or your coding panel).\n\nquarto use template quarto-journals/elsevier\n\nSay “Yes” to everything it gonna ask."
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#template-2",
+    "href": "slides/qt-repro-res.html#template-2",
+    "title": "Using Quarto for reproducible research",
+    "section": "Template",
+    "text": "Template\n\n\n\npaper.qmd\n---\ntitle: Short Paper\nsubtitle: A Short Subtitle\nauthor:\n  - name: Alice Anonymous\n    email: alice@example.com\n    affiliations: \n        - id: some-tech\n          name: Some Institute of Technology\n          department: Department Name\n          address: Street Address\n          city: City\n          state: State\n          postal-code: Postal Code\n    attributes:\n        corresponding: true\n    note: This is the first author footnote.\n  - name: Bob Security\n    email: bob@example.com\n    affiliations:\n        - id: another-u\n          name: Another University\n          department: Department Name\n          address: Street Address\n          city: City\n          state: State\n          postal-code: Postal Code\n    note: |\n      Another author footnote, this is a very long footnote and it should be a really long footnote. But this footnote is not yet sufficiently long enough to make two lines of footnote text.\n  - name: Cat Memes\n    email: cat@example.com\n    affiliations:\n        - ref: another-u\n    note: Yet another author footnote.\n  - name: Derek Zoolander\n    email: derek@example.com\n    affilations:\n        - ref: some-tech\nabstract: |\n  This is the abstract. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum augue turpis, dictum non malesuada a, volutpat eget velit. Nam placerat turpis purus, eu tristique ex tincidunt et. Mauris sed augue eget turpis ultrices tincidunt. Sed et mi in leo porta egestas. Aliquam non laoreet velit. Nunc quis ex vitae eros aliquet auctor nec ac libero. Duis laoreet sapien eu mi luctus, in bibendum leo molestie. Sed hendrerit diam diam, ac dapibus nisl volutpat vitae. Aliquam bibendum varius libero, eu efficitur justo rutrum at. Sed at tempus elit.\nkeywords: \n  - keyword1\n  - keyword2\ndate: last-modified\nbibliography: bibliography.bib\nformat:\n  elsevier-pdf:\n    keep-tex: true\n    journal:\n      name: Journal Name\n      formatting: preprint\n      # model: 3p # Don't set a model with preprint\n      cite-style: authoryear\n---\n\nPlease make sure that your manuscript follows the guidelines in the \nGuide for Authors of the relevant journal. It is not necessary to \ntypeset your manuscript in exactly the same way as an article, \nunless you are submitting to a camera-ready copy (CRC) journal.\n\nFor detailed instructions regarding the elsevier article class, see   &lt;https://www.elsevier.com/authors/policies-and-guidelines/latex-instructions&gt;\n\n# Bibliography styles\n\nHere are two sample references:  @Feynman1963118 @Dirac1953888.\n\nWith this template using elsevier class, natbib will be used. Three bibliographic style ﬁles (*.bst) are provided and their use controled by `cite-style` option: \n\n- `citestyle: number` (default)  will use `elsarticle-num.bst` - can be used for the numbered scheme\n- `citestyle: numbername` will use `elsarticle-num-names.bst` - can be used for numbered with new options of natbib.sty\n- `citestyle: authoryear` will use `elsarticle-harv.bst` — can be used for author year scheme\n\nThis `citestyle` will insert the right `.bst` and set the correct `classoption` for `elsarticle` document class.\n\nUsing `natbiboptions` variable in YAML header, you can set more options for `natbib` itself . Example \n\n```yaml\nnatbiboptions: longnamesfirst,angle,semicolon\n```\n\n## Using CSL \n\nIf `cite-method` is set to `citeproc` in `elsevier_article()`, then pandoc is used for citations instead of `natbib`. In this case, the `csl` option is used to format the references. By default, this template will provide an appropriate style, but alternative `csl` files are available from &lt;https://www.zotero.org/styles?q=elsevier&gt;. These can be downloaded\nand stored locally, or the url can be used as in the example header.\n\n# Equations\n\nHere is an equation:\n$$ \n  f_{X}(x) = \\left(\\frac{\\alpha}{\\beta}\\right)\n  \\left(\\frac{x}{\\beta}\\right)^{\\alpha-1}\n  e^{-\\left(\\frac{x}{\\beta}\\right)^{\\alpha}}; \n  \\alpha,\\beta,x &gt; 0 .\n$$\n\nInline equations work as well: $\\sum_{i = 2}^\\infty\\{\\alpha_i^\\beta\\}$\n\n# Figures and tables\n\n@fig-meaningless is generated using an R chunk.\n\n```{r}\n#| label: fig-meaningless\n#| fig-cap: A meaningless scatterplot\n#| fig-width: 5\n#| fig-height: 5\n#| fig-align: center\n#| out-width: 50%\n#| echo: false\nplot(runif(25), runif(25))\n```\n\n# Tables coming from R\n\nTables can also be generated using R chunks, as shown in @tbl-simple example.\n\n```{r}\n#| label: tbl-simple\n#| tbl-cap: Caption centered above table\n#| echo: true\nknitr::kable(head(mtcars)[,1:4])\n```\n\n# References {-}"
+  },
+  {
     "objectID": "slides/qt-repro-res.html#add-citation",
     "href": "slides/qt-repro-res.html#add-citation",
     "title": "Using Quarto for reproducible research",
@@ -1496,34 +1524,6 @@
     "title": "Using Quarto for reproducible research",
     "section": "Reuse code with new data",
     "text": "Reuse code with new data\n\n\n\n\ndf |&gt;\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) |&gt;\n  tbl_summary(\n    include = c(sex, age, outcome, outbreak),\n    label = list(\n      sex ~ \"Sex\", age ~ \"Age (years)\", \n      outcome ~ \"Outcome\", outbreak ~ \"Outbreak\"\n    ),\n    digits = c(\n      all_categorical() ~ c(0, 1), \n      all_continuous() ~ 1\n    ),\n    statistic = list(\n      all_continuous() ~ \"{mean} \\u00b1 {sd}\"\n    )\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN = 1,5131\n\n\n\n\nSex\n\n\n\n\n    Female\n746 (49.3%)\n\n\n    Male\n767 (50.7%)\n\n\nAge (years)\n12.8 ± 7.6\n\n\nOutcome\n\n\n\n\n    Died\n110 (7.3%)\n\n\n    Recovered\n1,403 (92.7%)\n\n\nOutbreak\n\n\n\n\n    1st outbreak\n1,513 (100.0%)\n\n\n\n1 n (%); Mean ± SD"
-  },
-  {
-    "objectID": "slides/qt-repro-res.html#template",
-    "href": "slides/qt-repro-res.html#template",
-    "title": "Using Quarto for reproducible research",
-    "section": "Template",
-    "text": "Template\n\nTemplates help make your document look professional without extra effort\nYou can use pre-built templates or create your own for a custom style\nSome templates are designed for academic journals, presentations, or reports\nClick here to see a list of available journal templates in Quarto"
-  },
-  {
-    "objectID": "slides/qt-repro-res.html#what-is-a-quarto-template",
-    "href": "slides/qt-repro-res.html#what-is-a-quarto-template",
-    "title": "Using Quarto for reproducible research",
-    "section": "What is a Quarto template?",
-    "text": "What is a Quarto template?\n\nA Quarto template is a pre-designed document layout that controls the appearance of your output (PDF, Word, HTML, or presentation).\n\nLet’s try a template for journals published by Elsevier."
-  },
-  {
-    "objectID": "slides/qt-repro-res.html#template-1",
-    "href": "slides/qt-repro-res.html#template-1",
-    "title": "Using Quarto for reproducible research",
-    "section": "Template",
-    "text": "Template\nPaste this code in the terminal (not the console or your coding panel).\n\nquarto use template quarto-journals/elsevier\n\nSay “Yes” to everything it gonna ask."
-  },
-  {
-    "objectID": "slides/qt-repro-res.html#template-2",
-    "href": "slides/qt-repro-res.html#template-2",
-    "title": "Using Quarto for reproducible research",
-    "section": "Template",
-    "text": "Template\n\n\n\npaper.qmd\n---\ntitle: Short Paper\nsubtitle: A Short Subtitle\nauthor:\n  - name: Alice Anonymous\n    email: alice@example.com\n    affiliations: \n        - id: some-tech\n          name: Some Institute of Technology\n          department: Department Name\n          address: Street Address\n          city: City\n          state: State\n          postal-code: Postal Code\n    attributes:\n        corresponding: true\n    note: This is the first author footnote.\n  - name: Bob Security\n    email: bob@example.com\n    affiliations:\n        - id: another-u\n          name: Another University\n          department: Department Name\n          address: Street Address\n          city: City\n          state: State\n          postal-code: Postal Code\n    note: |\n      Another author footnote, this is a very long footnote and it should be a really long footnote. But this footnote is not yet sufficiently long enough to make two lines of footnote text.\n  - name: Cat Memes\n    email: cat@example.com\n    affiliations:\n        - ref: another-u\n    note: Yet another author footnote.\n  - name: Derek Zoolander\n    email: derek@example.com\n    affilations:\n        - ref: some-tech\nabstract: |\n  This is the abstract. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum augue turpis, dictum non malesuada a, volutpat eget velit. Nam placerat turpis purus, eu tristique ex tincidunt et. Mauris sed augue eget turpis ultrices tincidunt. Sed et mi in leo porta egestas. Aliquam non laoreet velit. Nunc quis ex vitae eros aliquet auctor nec ac libero. Duis laoreet sapien eu mi luctus, in bibendum leo molestie. Sed hendrerit diam diam, ac dapibus nisl volutpat vitae. Aliquam bibendum varius libero, eu efficitur justo rutrum at. Sed at tempus elit.\nkeywords: \n  - keyword1\n  - keyword2\ndate: last-modified\nbibliography: bibliography.bib\nformat:\n  elsevier-pdf:\n    keep-tex: true\n    journal:\n      name: Journal Name\n      formatting: preprint\n      # model: 3p # Don't set a model with preprint\n      cite-style: authoryear\n---\n\nPlease make sure that your manuscript follows the guidelines in the \nGuide for Authors of the relevant journal. It is not necessary to \ntypeset your manuscript in exactly the same way as an article, \nunless you are submitting to a camera-ready copy (CRC) journal.\n\nFor detailed instructions regarding the elsevier article class, see   &lt;https://www.elsevier.com/authors/policies-and-guidelines/latex-instructions&gt;\n\n# Bibliography styles\n\nHere are two sample references:  @Feynman1963118 @Dirac1953888.\n\nWith this template using elsevier class, natbib will be used. Three bibliographic style ﬁles (*.bst) are provided and their use controled by `cite-style` option: \n\n- `citestyle: number` (default)  will use `elsarticle-num.bst` - can be used for the numbered scheme\n- `citestyle: numbername` will use `elsarticle-num-names.bst` - can be used for numbered with new options of natbib.sty\n- `citestyle: authoryear` will use `elsarticle-harv.bst` — can be used for author year scheme\n\nThis `citestyle` will insert the right `.bst` and set the correct `classoption` for `elsarticle` document class.\n\nUsing `natbiboptions` variable in YAML header, you can set more options for `natbib` itself . Example \n\n```yaml\nnatbiboptions: longnamesfirst,angle,semicolon\n```\n\n## Using CSL \n\nIf `cite-method` is set to `citeproc` in `elsevier_article()`, then pandoc is used for citations instead of `natbib`. In this case, the `csl` option is used to format the references. By default, this template will provide an appropriate style, but alternative `csl` files are available from &lt;https://www.zotero.org/styles?q=elsevier&gt;. These can be downloaded\nand stored locally, or the url can be used as in the example header.\n\n# Equations\n\nHere is an equation:\n$$ \n  f_{X}(x) = \\left(\\frac{\\alpha}{\\beta}\\right)\n  \\left(\\frac{x}{\\beta}\\right)^{\\alpha-1}\n  e^{-\\left(\\frac{x}{\\beta}\\right)^{\\alpha}}; \n  \\alpha,\\beta,x &gt; 0 .\n$$\n\nInline equations work as well: $\\sum_{i = 2}^\\infty\\{\\alpha_i^\\beta\\}$\n\n# Figures and tables\n\n@fig-meaningless is generated using an R chunk.\n\n```{r}\n#| label: fig-meaningless\n#| fig-cap: A meaningless scatterplot\n#| fig-width: 5\n#| fig-height: 5\n#| fig-align: center\n#| out-width: 50%\n#| echo: false\nplot(runif(25), runif(25))\n```\n\n# Tables coming from R\n\nTables can also be generated using R chunks, as shown in @tbl-simple example.\n\n```{r}\n#| label: tbl-simple\n#| tbl-cap: Caption centered above table\n#| echo: true\nknitr::kable(head(mtcars)[,1:4])\n```\n\n# References {-}"
   },
   {
     "objectID": "slides/qt-repro-res.html#revealjs",
