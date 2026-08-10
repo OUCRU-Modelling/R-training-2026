@@ -1362,7 +1362,7 @@
     "href": "slides/qt-repro-res.html#creating-an-rproject-file",
     "title": "Using Quarto for reproducible research",
     "section": "Creating an Rproject file",
-    "text": "Creating an Rproject file\n\nCreate an Rproject file in side the folder my_project\nOpen that Rproject"
+    "text": "Creating an Rproject file\n\nDonwload the - In class example\nUnzip the folder\nCreate an Rproject file in side the folder my_project\nOpen that Rproject"
   },
   {
     "objectID": "slides/qt-repro-res.html#creating-a-quarto-file",
