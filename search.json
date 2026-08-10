@@ -1362,14 +1362,14 @@
     "href": "slides/qt-repro-res.html#creating-an-rproject-file",
     "title": "Using Quarto for reproducible research",
     "section": "Creating an Rproject file",
-    "text": "Creating an Rproject file\n\nDonwload the in class example: my_project.zip\nUnzip the folder\nCreate an Rproject file in side the folder my_project\nOpen that Rproject"
+    "text": "Creating an Rproject file\n\nDonwload the in class example: my_project.zip\nUnzip the folder\nOpen RStudio\nCreate an Rproject file in side the folder my_project"
   },
   {
     "objectID": "slides/qt-repro-res.html#creating-a-quarto-file",
     "href": "slides/qt-repro-res.html#creating-a-quarto-file",
     "title": "Using Quarto for reproducible research",
     "section": "Creating a Quarto file",
-    "text": "Creating a Quarto file\n\n\n\n\n\n\n\nOpen RStudio\nGo to File &gt; New File &gt; Quarto Document\nSelect the format you want\nSave the file with a .qmd extension"
+    "text": "Creating a Quarto file\n\n\n\n\n\n\n\nOpen Rproject\nGo to File &gt; New File &gt; Quarto Document\nSelect the format you want\nSave the file with a .qmd extension"
   },
   {
     "objectID": "slides/qt-repro-res.html#how-to-use-quarto",
