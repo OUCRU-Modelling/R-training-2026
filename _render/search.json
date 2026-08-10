@@ -3,8 +3,8 @@
     "objectID": "slides/qt-repro-res.html#what-is-quarto",
     "href": "slides/qt-repro-res.html#what-is-quarto",
     "title": "Using Quarto for reproducible research",
-    "section": "What is Quarto?",
-    "text": "What is Quarto?\n\nA publishing system for creating documents, presentations, websites…\nCan build HTML, PDF, Microsoft Word…\nCombines Markdown and R/Python/Julia code for reproducible workflows\nIntegrated into RStudio by default"
+    "section": "",
+    "text": "A publishing system for creating documents, presentations, websites…\nCan build HTML, PDF, Microsoft Word…\nCombines Markdown and R/Python/Julia code for reproducible workflows\nIntegrated into RStudio by default"
   },
   {
     "objectID": "slides/qt-repro-res.html#how-does-quarto-work",
@@ -116,7 +116,7 @@
     "href": "slides/qt-repro-res.html#data",
     "title": "Using Quarto for reproducible research",
     "section": "Data",
-    "text": "Data\nFirst let’s load the packages and have a look at the dataset simulated_covid.rds.\n\nlibrary(tidyverse)\nlibrary(gtsummary)\n\ndf &lt;- readRDS(\"data/simulated_covid.rds\")\nhead(df)\n\n  id  case_name case_type sex age date_onset date_admission   outcome\n1  1 jCQH5RSlVq confirmed   m  22 2023-01-01           &lt;NA&gt; recovered\n2  2 AdCD3im7sn  probable   m  21 2023-01-08           &lt;NA&gt; recovered\n3  3 iDzmfZhFkV  probable   m  21 2023-01-03           &lt;NA&gt; recovered\n4  4 sKipHJsjZ2  probable   m  10 2023-01-10           &lt;NA&gt;      died\n5  5 xG7GvAjlBf suspected   m  24 2023-01-05           &lt;NA&gt; recovered\n6  7 ZWWcBMLzoH confirmed   m  10 2023-01-04           &lt;NA&gt; recovered\n  date_outcome date_first_contact date_last_contact   district     outbreak\n1         &lt;NA&gt;               &lt;NA&gt;              &lt;NA&gt;   Tan Binh 1st outbreak\n2         &lt;NA&gt;         2022-12-31        2023-01-04    Tan Phu 1st outbreak\n3         &lt;NA&gt;         2022-12-29        2023-01-05   Binh Tan 1st outbreak\n4   2023-01-27         2023-01-10        2023-01-13    Quan 10 1st outbreak\n5         &lt;NA&gt;         2023-01-07        2023-01-07    Quan 12 1st outbreak\n6         &lt;NA&gt;         2023-01-06        2023-01-07 Binh Thanh 1st outbreak"
+    "text": "Data\nFirst let’s load the packages and have a look at the dataset simulated_covid.rds.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.2.1     ✔ readr     2.2.0\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.3     ✔ tibble    3.3.1\n✔ lubridate 1.9.5     ✔ tidyr     1.3.2\n✔ purrr     1.2.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(gtsummary)\n\ndf &lt;- readRDS(\"data/simulated_covid.rds\")\nhead(df)\n\n  id  case_name case_type sex age date_onset date_admission   outcome\n1  1 jCQH5RSlVq confirmed   m  22 2023-01-01           &lt;NA&gt; recovered\n2  2 AdCD3im7sn  probable   m  21 2023-01-08           &lt;NA&gt; recovered\n3  3 iDzmfZhFkV  probable   m  21 2023-01-03           &lt;NA&gt; recovered\n4  4 sKipHJsjZ2  probable   m  10 2023-01-10           &lt;NA&gt;      died\n5  5 xG7GvAjlBf suspected   m  24 2023-01-05           &lt;NA&gt; recovered\n6  7 ZWWcBMLzoH confirmed   m  10 2023-01-04           &lt;NA&gt; recovered\n  date_outcome date_first_contact date_last_contact   district     outbreak\n1         &lt;NA&gt;               &lt;NA&gt;              &lt;NA&gt;   Tan Binh 1st outbreak\n2         &lt;NA&gt;         2022-12-31        2023-01-04    Tan Phu 1st outbreak\n3         &lt;NA&gt;         2022-12-29        2023-01-05   Binh Tan 1st outbreak\n4   2023-01-27         2023-01-10        2023-01-13    Quan 10 1st outbreak\n5         &lt;NA&gt;         2023-01-07        2023-01-07    Quan 12 1st outbreak\n6         &lt;NA&gt;         2023-01-06        2023-01-07 Binh Thanh 1st outbreak"
   },
   {
     "objectID": "slides/qt-repro-res.html#descriptive-tables",
@@ -459,14 +459,14 @@
     "href": "handouts/exercise_day3.html",
     "title": "Exercises Day 3",
     "section": "",
-    "text": "Throughout these exercises, we will recreate the plots from Day 2 exercises using the ggplot2 package"
+    "text": ".h2 {\n  position: sticky;\n  top: 0;\n  z-index: 10;\n  background-color: white;\n  padding: 0.25em 0;\n}"
   },
   {
     "objectID": "handouts/exercise_day3.html#overview",
     "href": "handouts/exercise_day3.html#overview",
     "title": "Exercises Day 3",
-    "section": "",
-    "text": "Throughout these exercises, we will recreate the plots from Day 2 exercises using the ggplot2 package"
+    "section": "Overview",
+    "text": "Overview\nThroughout these exercises, we will recreate some of the plots from Day 2 exercises using the ggplot2 package"
   },
   {
     "objectID": "handouts/exercise_day3.html#dataset",
@@ -480,7 +480,7 @@
     "href": "handouts/exercise_day3.html#exercise-1",
     "title": "Exercises Day 3",
     "section": "Exercise 1",
-    "text": "Exercise 1\nIn this exercise, we will draw a plot exploring the relationship between age, sex and the fare paid for the trip.\nThe end result will look something like this.\n\n\n\n\n\n\n\n\n\nSeems complicated? Don’t panic! the following sections will guide you through the process step-by-step.\nStep 1: Plot the price that was paid (fare) as a function of age. Label the axis for fare as “fare paid (GBP)”\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\n\nuse geom_point() for scatter plot\nlabel for y-axis and x-axis can be configure via ylab() and xlab()\n\n\n\n\n\n\nReveal answer\nggplot(titanic) +\n  geom_point(aes(x = age, y = fare)) +\n  ylab(\"fare paid (GBP)\")\n\n\nBonus task: Try adding coord_polar() to see what happen\n\n\nReveal code\nggplot(titanic) +\n  geom_point(aes(x = age, y = fare)) +\n  ylab(\"fare paid (GBP)\") +\n  coord_polar()\n\n\nStep 2: Return to the cartesian coordinate system. Add a second layer that fits the linear regression line with 95% confidence interval.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\nThis is considered as smoothing, use geom_smooth(method=\"lm\") to fit a linear regression model\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = fare)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  ylab(\"fare paid (GBP)\")\n\n\nStep 3: The distribution of fare is very skewed. Therefore, it may be better to plot fare on a logarithmic scale so let’s do exactly that.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\nReplace ylab() with scale_y_log10()\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = fare)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  scale_y_log10(\"fare paid (GBP)\")\n\n\nStep 4: Now, we want to color the data points by passenger class (pclass), and split the calculation and plot for the regression line by these 3 groups.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nAdd color to the aesthetic attributes (via aes())\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = fare, color = pclass)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  scale_y_log10(\"fare paid (GBP)\")\n\n\nStep 5: Next, we want to split the plot into separate panes for each sex, add a rug plot to both sides as well.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\nSeparate plots into panes via facet_wrap()\nAdd rug plot via geom_rug()\n\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = fare, color = pclass)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  geom_rug() +\n  scale_y_log10(\"fare paid (GBP)\") +\n  facet_wrap(~sex)\n\n\nStep 6: Make the plot prettier to your heart’s content!\n\n\nExample output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\nYou can consider:\n\nChanging color scale (e.g., scale_color_viridis_d(), scale_color_manual())\nChanging plot theme (e.g., theme_bw(), theme_minimal())\n\n\n\n\nFor the color palette, we use a custom OUCRU palette from the oucru package, which can be installed by running\n\nrenv::install(\"OUCRU-Modelling/oucru\")\n\nAnd loaded into R via\n\nlibrary(oucru)\n\n# The palette can be accessed via\nscale_color_oucru_d()\n\nYou may also want to check some sample usages of the package here\n\n\nCode for example output\nggplot(titanic, aes(x = age, y = fare, color = pclass)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  geom_rug() +\n  scale_y_log10(\"fare paid (GBP)\") +\n  facet_wrap(~sex) +\n  scale_color_oucru_d() +\n  theme_bw()\n\n\nStep 7: Save your plot as a .png\n\n\nReveal answer\nggsave(\"output/titanic_fare_plot.png\", width = 7, heigh = 5)"
+    "text": "Exercise 1\nIn this exercise, we will draw a plot exploring the relationship between age, sex, passenger class (pclass) and the fare paid for the trip.\nThe end result will look something like this.\n\n\n\n\n\n\n\n\n\nSeems complicated? Don’t panic! the following sections will guide you through the process step-by-step.\nStep 1: Plot the price that was paid (fare) as a function of age. Label the axis for fare as “fare paid (GBP)”\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\n\nuse geom_point() for scatter plot\nlabel for y-axis and x-axis can be configure via ylab() and xlab()\n\n\n\n\n\n\nReveal answer\nggplot(titanic) +\n  geom_point(aes(x = age, y = fare)) +\n  ylab(\"fare paid (GBP)\")\n\n\nYou are expected to encounter the following Warning message. Why does this occur?\n\n\nWarning: Removed 264 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\nBonus task: Try adding coord_polar() to see what happen\n\n\nReveal code\nggplot(titanic) +\n  geom_point(aes(x = age, y = fare)) +\n  ylab(\"fare paid (GBP)\") +\n  coord_polar()\n\n\nStep 2: Return to the cartesian coordinate system. Add a second layer that fits the linear regression line with 95% confidence interval.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\nThis is considered as smoothing, use geom_smooth(method=\"lm\") to fit a linear regression model\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = fare)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  ylab(\"fare paid (GBP)\")\n\n\nStep 3: The distribution of fare is very skewed. Therefore, it may be better to plot fare on a logarithmic scale so let’s do exactly that.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\nReplace ylab() with scale_y_log10()\n\n\n\nYou may encounter some new Warning messages. Why do they occur, and how can we resolve them?\n\n\nWarning in scale_y_log10(\"fare paid (GBP)\"): log-10 transformation introduced infinite values.\nlog-10 transformation introduced infinite values.\n\n\nWarning: Removed 272 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 264 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\nReveal answer\n# avoid log10(0)=-Inf by adding a small value to fare\nggplot(titanic, aes(x = age, y = fare+3)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  scale_y_log10(\"fare paid (GBP)\")\n\n\nStep 4: Now, we want to color the data points by passenger class (pclass), and split the calculation and plot for the regression line by these 3 groups.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nAdd color to the aesthetic attributes (via aes())\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = fare+3, color = pclass)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  scale_y_log10(\"fare paid (GBP)\")\n\n\nStep 5: Next, we want to split the plot into separate panes for each sex, add a rug plot to both sides as well.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\nSeparate plots into panes via facet_wrap()\nAdd rug plot via geom_rug()\n\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = fare+3, color = pclass)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  geom_rug() +\n  scale_y_log10(\"fare paid (GBP)\") +\n  facet_wrap(~sex)\n\n\nStep 6: Make the plot prettier to your heart’s content!\n\n\nExample output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\nYou can consider:\n\nChanging color scale (e.g., scale_color_viridis_d(), scale_color_manual())\nChanging plot theme (e.g., theme_bw(), theme_minimal())\n\n\n\n\nFor the color palette, we use a custom OUCRU palette from the oucru package, which can be installed by running\n\nrenv::install(\"OUCRU-Modelling/oucru\")\n\nAnd loaded into R via\n\nlibrary(oucru)\n\n# The palette can be accessed via\nscale_color_oucru_d()\n\nYou may also want to check some sample usages of the package here\n\n\nCode for example output\nggplot(titanic, aes(x = age, y = fare, color = pclass)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  geom_rug() +\n  scale_y_log10(\"fare paid (GBP)\") +\n  facet_wrap(~sex) +\n  scale_color_oucru_d() +\n  theme_bw()\n\n\nStep 7: Save your plot as a .png\n\n\nReveal answer\nggsave(\"output/titanic_fare_plot.png\", width = 7, heigh = 5)"
   },
   {
     "objectID": "handouts/exercise_day3.html#exercise-2",
@@ -557,7 +557,7 @@
     "href": "index.html#principles-of-data-visualisation-and-plotting-in-r",
     "title": "OUCRU R training course - 2026",
     "section": "Principles of data visualisation and plotting in R",
-    "text": "Principles of data visualisation and plotting in R\n\nDay 3 (Wednesday):\n\nLecture slides\nLearning objectives:\n\nThe grammar of graphics—understanding how plots are built\nThe step-by-step process of creating graphs in R\nUse the ggplot2 package plot figures in R\nHow to design clear and impactful visualisations\nUsing LLMs (Large Language Models) to help you with plotting\n\nExercises\n\n\n\n\nDay 4 (Thursday-morning):\n\nLearning objectives:\n\nUnderstand the principles of data visualisation"
+    "text": "Principles of data visualisation and plotting in R\n\nDay 3 (Wednesday):\n\nLecture slides\nLearning objectives:\n\nThe grammar of graphics—understanding how plots are built\nThe step-by-step process of creating graphs in R\nUse the ggplot2 package plot figures in R\nHow to design clear and impactful visualisations\nUsing LLMs (Large Language Models) to help you with plotting\n\nExercises\nR code:\n\n Exercise answers script \n\n\n\n\n\nDay 4 (Thursday-morning):\n\nLearning objectives:\n\nUnderstand the principles of data visualisation"
   },
   {
     "objectID": "index.html#advanced-data-management-in-r",
@@ -1706,5 +1706,110 @@
     "title": "Introduction to R, Day 2",
     "section": "",
     "text": "Day 1\n\nBasic structure of the R program and language\nUse the RStudio working environment\nImport, inspect and manage a data set\n\nSelect variables (columns) and rows (observations)\nMissing data, factors, dates\n\n\n\n\n\nDay 2\n\nUsing graphics in base R\nFunctions, packages\nObject specific functions\nLists\nWriting more transparent code"
+  },
+  {
+    "objectID": "AGENTS.html",
+    "href": "AGENTS.html",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Guidance for AI coding agents working in this repository.\n\n\nCourse website for OUCRU R training course 2026 — a Quarto website project (project: type: website) built from .qmd files. Published at https://oucru-modelling.github.io/R-training-2026/.\n\n\n\n\nQuarto website project (not a book or blog)\nR, with package versions locked via renv (renv.lock, .Rprofile, renv/)\nSlide decks use format: revealjs; handouts use format: html (or pdf)\n\n\n\n\n\n\n\n\n\n\n\nPath\nPurpose\n\n\n\n\nindex.qmd\nHomepage — course schedule + links to slides/handouts\n\n\nslides/\nLecture slide decks (format: revealjs)\n\n\nhandouts/\nExercises, answer keys, setup instructions (format: html or pdf)\n\n\n_quarto.yml\nProject-level config (theme, navbar, output dir, freeze: auto)\n\n\ntheme.scss, theme-dark.scss\nLight and dark theme overrides (paired with cosmo bootstrap theme)\n\n\nREADME.md\nHuman-readable project description and instructor guidelines\n\n\nR-training-2026.Rproj\nRStudio project file\n\n\n.nojekyll\nGitHub Pages directive (prevents Jekyll processing)\n\n\nrenv/, renv.lock, .Rprofile\nR package version locking\n\n\n_render/\nRendered site output — generated, not hand-edited\n\n\n.github/workflows/publish.yml\nGitHub Actions workflow: renders and publishes on push to main\n\n\n\nNote: the publish workflow ignores changes to README.md and AGENTS.md — editing them won’t trigger a rebuild.\n\n\n\nBefore doing any R work in this project:\nrenv::restore()\nThis installs the exact package versions pinned in renv.lock.\n\n\n\n\nNew/edited slides go in slides/ and must keep format: revealjs in the YAML header.\nNew/edited handouts go in handouts/ and must use format: html (or pdf).\nTheme overrides go in theme.scss (light) and theme-dark.scss (dark), not inline in .qmd files.\nSite-wide settings (theme, navbar, etc.) live in _quarto.yml. A .qmd file’s own YAML header overrides project defaults for that file only.\nIf you add, remove, or update an R package used anywhere in the project, run renv::snapshot() before committing so renv.lock stays in sync.\n\n\n\n\n\nLive preview while editing: quarto preview\nOne-off full render: quarto render → output lands in _render/index.html\n\nThe _quarto.yml has freeze: auto, which caches code output to speed up subsequent renders. If output changes, delete _render/ or run quarto render --no-cache.\nRun one of these after editing any .qmd file to catch rendering errors before committing.\n\n\n\n\nDo: push commits to main — a GitHub Actions workflow renders and publishes the site automatically.\nDon’t: run quarto publish gh-pages manually — this bypasses the intended CI-based publishing flow.\n\n\n\n\n\nDon’t hand-edit anything under _render/ — it’s generated; edit the source .qmd instead.\nDon’t commit a dependency change without a matching renv::snapshot().\nDon’t install R packages outside the project’s renv library.\nDon’t change a slide’s format away from revealjs or a handout’s away from html/pdf without good reason — downstream links in index.qmd assume these."
+  },
+  {
+    "objectID": "AGENTS.html#what-this-repo-is",
+    "href": "AGENTS.html#what-this-repo-is",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Course website for OUCRU R training course 2026 — a Quarto website project (project: type: website) built from .qmd files. Published at https://oucru-modelling.github.io/R-training-2026/."
+  },
+  {
+    "objectID": "AGENTS.html#stack",
+    "href": "AGENTS.html#stack",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Quarto website project (not a book or blog)\nR, with package versions locked via renv (renv.lock, .Rprofile, renv/)\nSlide decks use format: revealjs; handouts use format: html (or pdf)"
+  },
+  {
+    "objectID": "AGENTS.html#repository-layout",
+    "href": "AGENTS.html#repository-layout",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Path\nPurpose\n\n\n\n\nindex.qmd\nHomepage — course schedule + links to slides/handouts\n\n\nslides/\nLecture slide decks (format: revealjs)\n\n\nhandouts/\nExercises, answer keys, setup instructions (format: html or pdf)\n\n\n_quarto.yml\nProject-level config (theme, navbar, output dir, freeze: auto)\n\n\ntheme.scss, theme-dark.scss\nLight and dark theme overrides (paired with cosmo bootstrap theme)\n\n\nREADME.md\nHuman-readable project description and instructor guidelines\n\n\nR-training-2026.Rproj\nRStudio project file\n\n\n.nojekyll\nGitHub Pages directive (prevents Jekyll processing)\n\n\nrenv/, renv.lock, .Rprofile\nR package version locking\n\n\n_render/\nRendered site output — generated, not hand-edited\n\n\n.github/workflows/publish.yml\nGitHub Actions workflow: renders and publishes on push to main\n\n\n\nNote: the publish workflow ignores changes to README.md and AGENTS.md — editing them won’t trigger a rebuild."
+  },
+  {
+    "objectID": "AGENTS.html#environment-setup",
+    "href": "AGENTS.html#environment-setup",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Before doing any R work in this project:\nrenv::restore()\nThis installs the exact package versions pinned in renv.lock."
+  },
+  {
+    "objectID": "AGENTS.html#making-changes",
+    "href": "AGENTS.html#making-changes",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "New/edited slides go in slides/ and must keep format: revealjs in the YAML header.\nNew/edited handouts go in handouts/ and must use format: html (or pdf).\nTheme overrides go in theme.scss (light) and theme-dark.scss (dark), not inline in .qmd files.\nSite-wide settings (theme, navbar, etc.) live in _quarto.yml. A .qmd file’s own YAML header overrides project defaults for that file only.\nIf you add, remove, or update an R package used anywhere in the project, run renv::snapshot() before committing so renv.lock stays in sync."
+  },
+  {
+    "objectID": "AGENTS.html#build-test-locally",
+    "href": "AGENTS.html#build-test-locally",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Live preview while editing: quarto preview\nOne-off full render: quarto render → output lands in _render/index.html\n\nThe _quarto.yml has freeze: auto, which caches code output to speed up subsequent renders. If output changes, delete _render/ or run quarto render --no-cache.\nRun one of these after editing any .qmd file to catch rendering errors before committing."
+  },
+  {
+    "objectID": "AGENTS.html#publishing",
+    "href": "AGENTS.html#publishing",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Do: push commits to main — a GitHub Actions workflow renders and publishes the site automatically.\nDon’t: run quarto publish gh-pages manually — this bypasses the intended CI-based publishing flow."
+  },
+  {
+    "objectID": "AGENTS.html#things-to-avoid",
+    "href": "AGENTS.html#things-to-avoid",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Don’t hand-edit anything under _render/ — it’s generated; edit the source .qmd instead.\nDon’t commit a dependency change without a matching renv::snapshot().\nDon’t install R packages outside the project’s renv library.\nDon’t change a slide’s format away from revealjs or a handout’s away from html/pdf without good reason — downstream links in index.qmd assume these."
+  },
+  {
+    "objectID": "handouts/exercises_Day3.html#overview",
+    "href": "handouts/exercises_Day3.html#overview",
+    "title": "Exercises Day 3",
+    "section": "Overview",
+    "text": "Overview\nThroughout these exercises, we will recreate some of the plots from Day 2 exercises using the ggplot2 package"
+  },
+  {
+    "objectID": "handouts/exercises_Day3.html#dataset",
+    "href": "handouts/exercises_Day3.html#dataset",
+    "title": "Exercises Day 3",
+    "section": "Dataset",
+    "text": "Dataset\nWe will use the Titanic3.xlsx dataset\nIf you haven’t had the data already, click the button below to download it\n\n\n Download data\n\n\nWe can then load the data by running\n\nlibrary(readxl)\nlibrary(ggplot2)\n\n# make sure to modify the file path to match where it is on your device\ntitanic &lt;- read_excel(\"data/raw/Titanic3.xlsx\", na = \"NA\")\n\nhead(titanic, n = 10)"
+  },
+  {
+    "objectID": "handouts/exercises_Day3.html#exercise-1",
+    "href": "handouts/exercises_Day3.html#exercise-1",
+    "title": "Exercises Day 3",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nIn this exercise, we will draw a plot exploring the relationship between age, sex, passenger class (pclass) and the fare paid for the trip.\nThe end result will look something like this.\n\n\n\n\n\n\n\n\n\nSeems complicated? Don’t panic! the following sections will guide you through the process step-by-step.\nStep 1: Plot the price that was paid (fare) as a function of age. Label the axis for fare as “fare paid (GBP)”\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\n\nuse geom_point() for scatter plot\nlabel for y-axis and x-axis can be configure via ylab() and xlab()\n\n\n\n\n\n\nReveal answer\nggplot(titanic) +\n  geom_point(aes(x = age, y = fare)) +\n  ylab(\"fare paid (GBP)\")\n\n\nYou are expected to encounter the following Warning message. Why does this occur?\n\n\nWarning: Removed 264 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\nBonus task: Try adding coord_polar() to see what happen\n\n\nReveal code\nggplot(titanic) +\n  geom_point(aes(x = age, y = fare)) +\n  ylab(\"fare paid (GBP)\") +\n  coord_polar()\n\n\nStep 2: Return to the cartesian coordinate system. Add a second layer that fits the linear regression line with 95% confidence interval.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\nThis is considered as smoothing, use geom_smooth(method=\"lm\") to fit a linear regression model\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = fare)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  ylab(\"fare paid (GBP)\")\n\n\nStep 3: The distribution of fare is very skewed. Therefore, it may be better to plot fare on a logarithmic scale so let’s do exactly that.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\nReplace ylab() with scale_y_log10()\n\n\n\nYou may encounter some new Warning messages. Why do they occur, and how can we resolve them?\n\n\nWarning in scale_y_log10(\"fare paid (GBP)\"): log-10 transformation introduced infinite values.\nlog-10 transformation introduced infinite values.\n\n\nWarning: Removed 272 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 264 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\nReveal answer\n# avoid log10(0)=-Inf by adding a small value to fare\nggplot(titanic, aes(x = age, y = fare+3)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  scale_y_log10(\"fare paid (GBP)\")\n\n\nStep 4: Now, we want to color the data points by passenger class (pclass), and split the calculation and plot for the regression line by these 3 groups.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nAdd color to the aesthetic attributes (via aes())\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = fare+3, color = pclass)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  scale_y_log10(\"fare paid (GBP)\")\n\n\nStep 5: Next, we want to split the plot into separate panes for each sex, add a rug plot to both sides as well.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\n\n\nSeparate plots into panes via facet_wrap()\nAdd rug plot via geom_rug()\n\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = fare+3, color = pclass)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  geom_rug() +\n  scale_y_log10(\"fare paid (GBP)\") +\n  facet_wrap(~sex)\n\n\nStep 6: Make the plot prettier to your heart’s content!\n\n\nExample output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\nYou can consider:\n\nChanging color scale (e.g., scale_color_viridis_d(), scale_color_manual())\nChanging plot theme (e.g., theme_bw(), theme_minimal())\n\n\n\n\nFor the color palette, we use a custom OUCRU palette from the oucru package, which can be installed by running\n\nrenv::install(\"OUCRU-Modelling/oucru\")\n\nAnd loaded into R via\n\nlibrary(oucru)\n\n# The palette can be accessed via\nscale_color_oucru_d()\n\nYou may also want to check some sample usages of the package here\n\n\nCode for example output\nggplot(titanic, aes(x = age, y = fare, color = pclass)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  geom_rug() +\n  scale_y_log10(\"fare paid (GBP)\") +\n  facet_wrap(~sex) +\n  scale_color_oucru_d() +\n  theme_bw()\n\n\nStep 7: Save your plot as a .png\n\n\nReveal answer\nggsave(\"output/titanic_fare_plot.png\", width = 7, heigh = 5)"
+  },
+  {
+    "objectID": "handouts/exercises_Day3.html#exercise-2",
+    "href": "handouts/exercises_Day3.html#exercise-2",
+    "title": "Exercises Day 3",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nFor this exercise, we will create plots to explore the age distribution for each pclass\n\nExercise 2.1. Histogram\nWe can start by plotting histograms of age for each of the pclass.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\n\nUse geom_histogram()\nSplit the plot by pclass via facet_wrap()\n\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age)) +\n  geom_histogram() +\n  facet_wrap(~pclass)\n\n\n\n\nExercise 2.2. Boxplot\nAnother option is to use the boxplot. Start by making a boxplot of age (along y-axis) for each of the passenger classes (along x-axis).\n\n\nReveal answer\nggplot(titanic) +\n  geom_boxplot(\n    aes(y = age, x = pclass)\n  )\n\n\nThen, add the individual data points to the boxplot. Give the data points a red color and make them (slightly) transparent.\n\n\nExpected output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\n\nUse geom_jitter() instead of geom_point() to make it easier to discriminate between the data points.\nTransparency level can be configured via the alpha aesthetic\n\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(y = age, x = pclass)) +\n  geom_boxplot() +\n  geom_jitter(color = \"red\", alpha = .2)\n\n\n\n\nExercise 2.3. Violin plot\nInstead of using boxplot, you may also consider using the violin plot.\nTry recreating the following plot\n\n\n\n\n\n\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(y = age, x = pclass)) +\n  geom_violin() +\n  geom_jitter(color = \"red\", alpha = .2) +\n  theme_bw()\n\n\nBonus task: Customize the plot to your liking!"
+  },
+  {
+    "objectID": "handouts/exercises_Day3.html#exercise-3",
+    "href": "handouts/exercises_Day3.html#exercise-3",
+    "title": "Exercises Day 3",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nMake a new graph in which we perform an exploratory analysis of the relationship between survival and age, sex and passenger class (pclass).\nThe end result should look something like this.\n\n\n\n\n\n\n\n\n\nA few details\n\nJitter is configured with height=0.05 and width=0 (experiment with different width values to see why you should set width=0)\n\n\n\nThe smoothed layer is generated with loess method\nThe color is configured with oucru palette “group4”\n\n\n\n\n\n\n\nTipHint\n\n\n\n\n\nList of geoms used include:\n\ngeom_smooth()\ngeom_jitter()\n\nPosition of legend can be configured via theme(legend.position = ...)\nLimit for y-axis can be configured via coord_cartesian(ylim=...)\nThe oucru palette can be configured via scale_color_oucru_d(palette = ...)\n\n\n\n\n\nReveal answer\nggplot(titanic, aes(x = age, y = survived, color = sex)) +\n  geom_smooth(method = \"loess\") +\n  geom_jitter(width = 0, height = .05, alpha = .5) +\n  facet_wrap(~pclass) +\n  coord_cartesian(ylim = c(-.1, 1.1)) +\n  scale_color_oucru_d(palette = \"group4\") +\n  theme_bw() +\n  theme(legend.position = 'top')"
+  },
+  {
+    "objectID": "handouts/exercises_Day3.html#r-code",
+    "href": "handouts/exercises_Day3.html#r-code",
+    "title": "Exercises Day 3",
+    "section": "R code",
+    "text": "R code\nYou can download the .R code file containing the answers to today’s exercises using the button below\n Exercise answers script"
   }
 ]
