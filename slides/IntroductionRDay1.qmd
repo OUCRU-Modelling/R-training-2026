@@ -66,7 +66,7 @@ Not: using R for statistics, bioinformatics or mathematical modeling
   -   **Community**: large, collaborative user base
 - Steep learning curve(?)
 
-## The R phenotypes 
+## The R phenotypes {.scrollable}
 
 - R program: very basic functionality via menus
 
