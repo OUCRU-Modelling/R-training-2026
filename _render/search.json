@@ -1818,5 +1818,12 @@
     "title": "My Presentation",
     "section": "",
     "text": "Bullet point 1\nBullet point 2"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#exercise-day-5",
+    "href": "slides/qt-repro-res.html#exercise-day-5",
+    "title": "Using Quarto for reproducible research",
+    "section": "Exercise day 5",
+    "text": "Exercise day 5\n\nExercises"
   }
 ]

@@ -1021,3 +1021,4 @@ summary(cars)
 
 # Now create your own Quarto manuscript and presentation!
 
+- [Exercises](/handouts/exercises_Day5.qmd){target="_blank"}
