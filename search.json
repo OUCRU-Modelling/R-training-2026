@@ -1369,14 +1369,14 @@
     "href": "slides/qt-repro-res.html#how-to-use-quarto",
     "title": "Using Quarto for reproducible research",
     "section": "How to use Quarto?",
-    "text": "How to use Quarto?\n\n\n\nindex.qmd\n---\ntitle: \"My Quarto file\"\nauthor: \"Your Name\"\ndate: \"2026-08-09\"\nformat: html\n---\n\nSummary of `mtcars`\n\n```{r}\nsummary(mtcars)\n```\n\n\n\n\nMain components of a Quarto file:\n\nHeader (YAML metadata)\nBody (Markdown content and code chunks)"
+    "text": "How to use Quarto?\n\n\n\nindex.qmd\n---\ntitle: \"My Quarto file\"\nauthor: \"Your Name\"\ndate: \"2026-08-10\"\nformat: html\n---\n\nSummary of `mtcars`\n\n```{r}\nsummary(mtcars)\n```\n\n\n\n\nMain components of a Quarto file:\n\nHeader (YAML metadata)\nBody (Markdown content and code chunks)"
   },
   {
     "objectID": "slides/qt-repro-res.html#header",
     "href": "slides/qt-repro-res.html#header",
     "title": "Using Quarto for reproducible research",
     "section": "Header",
-    "text": "Header\n\n\n\nindex.qmd\n---\ntitle: \"My Quarto file\"\nauthor: \"Your Name\"\ndate: \"2026-08-09\"\nformat: html\ntoc: true\n---\n\n\n\n\nDefines document properties and settings, for examples:\n\ntitle: Document title\nauthor: Authorship\ndate: Date this document was published\nformat:\n\nWebpage: html\nPresentation: revealjs\nMS Word: docx\nReport/Manuscript: pdf\n\ntoc: table of contents"
+    "text": "Header\n\n\n\nindex.qmd\n---\ntitle: \"My Quarto file\"\nauthor: \"Your Name\"\ndate: \"2026-08-10\"\nformat: html\ntoc: true\n---\n\n\n\n\nDefines document properties and settings, for examples:\n\ntitle: Document title\nauthor: Authorship\ndate: Date this document was published\nformat:\n\nWebpage: html\nPresentation: revealjs\nMS Word: docx\nReport/Manuscript: pdf\n\ntoc: table of contents"
   },
   {
     "objectID": "slides/qt-repro-res.html#body",
@@ -1400,11 +1400,32 @@
     "text": "Rendering output\n\nSave your Quarto file.\nRender it using the “Render” button in RStudio or by pressing Ctrl+Shift+K."
   },
   {
-    "objectID": "slides/qt-repro-res.html#add-text-and-picture",
-    "href": "slides/qt-repro-res.html#add-text-and-picture",
+    "objectID": "slides/qt-repro-res.html#add-text-math-formula-symbol",
+    "href": "slides/qt-repro-res.html#add-text-math-formula-symbol",
     "title": "Using Quarto for reproducible research",
-    "section": "Add text and picture",
-    "text": "Add text and picture"
+    "section": "Add text, math formula, symbol",
+    "text": "Add text, math formula, symbol"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#add-citation",
+    "href": "slides/qt-repro-res.html#add-citation",
+    "title": "Using Quarto for reproducible research",
+    "section": "Add citation",
+    "text": "Add citation\n\nYou can add citations to the text using Quarto\nThe easiest way to do this is via the Visual view"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#add-citation-1",
+    "href": "slides/qt-repro-res.html#add-citation-1",
+    "title": "Using Quarto for reproducible research",
+    "section": "Add citation",
+    "text": "Add citation"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#add-picture",
+    "href": "slides/qt-repro-res.html#add-picture",
+    "title": "Using Quarto for reproducible research",
+    "section": "Add picture",
+    "text": "Add picture"
   },
   {
     "objectID": "slides/qt-repro-res.html#create-tables",
@@ -1482,20 +1503,6 @@
     "title": "Using Quarto for reproducible research",
     "section": "Reuse code with new data",
     "text": "Reuse code with new data\n\n\n\n\ndf |&gt;\n  mutate(sex = factor(\n    sex,\n    levels = c(\"f\", \"m\"),\n    labels = c(\"Female\", \"Male\")\n  ),\n  outcome = str_to_sentence(outcome)) |&gt;\n  tbl_summary(\n    include = c(sex, age, outcome, outbreak),\n    label = list(\n      sex ~ \"Sex\", age ~ \"Age (years)\", \n      outcome ~ \"Outcome\", outbreak ~ \"Outbreak\"\n    ),\n    digits = c(\n      all_categorical() ~ c(0, 1), \n      all_continuous() ~ 1\n    ),\n    statistic = list(\n      all_continuous() ~ \"{mean} \\u00b1 {sd}\"\n    )\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN = 1,5131\n\n\n\n\nSex\n\n\n\n\n    Female\n746 (49.3%)\n\n\n    Male\n767 (50.7%)\n\n\nAge (years)\n12.8 ± 7.6\n\n\nOutcome\n\n\n\n\n    Died\n110 (7.3%)\n\n\n    Recovered\n1,403 (92.7%)\n\n\nOutbreak\n\n\n\n\n    1st outbreak\n1,513 (100.0%)\n\n\n\n1 n (%); Mean ± SD"
-  },
-  {
-    "objectID": "slides/qt-repro-res.html#add-citation",
-    "href": "slides/qt-repro-res.html#add-citation",
-    "title": "Using Quarto for reproducible research",
-    "section": "Add citation",
-    "text": "Add citation\n\nYou can add citations to the text using Quarto\nThe easiest way to do this is via the Visual view"
-  },
-  {
-    "objectID": "slides/qt-repro-res.html#add-citation-1",
-    "href": "slides/qt-repro-res.html#add-citation-1",
-    "title": "Using Quarto for reproducible research",
-    "section": "Add citation",
-    "text": "Add citation"
   },
   {
     "objectID": "slides/qt-repro-res.html#template",
