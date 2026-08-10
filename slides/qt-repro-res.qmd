@@ -328,8 +328,6 @@ index.html
 
 ![](figures/qt/cite-insert.png)
 
-## Add pictures, links
-
 ## Create tables
 
 -   There are many packages to create beautiful tables in R:
