@@ -89,10 +89,10 @@ Or click [here](https://quarto.org/docs/gallery/)
 # Let's write a manuscript
 
 ## Creating an Rproject file
-- Donwload the in class example: [my_project.zip](handouts/my_project.zip){target="_blank"}
-- Unzip the folder
-- Create an Rproject file in side the folder my_project
-- Open that Rproject
+1. Donwload the in class example: [my_project.zip](handouts/my_project.zip){target="_blank"}
+2. Unzip the folder
+3. Open RStudio
+4. Create an Rproject file in side the folder my_project
 
 ## Creating a Quarto file
 
@@ -105,7 +105,7 @@ Or click [here](https://quarto.org/docs/gallery/)
 :::
 
 ::: {.column width="45%"}
-1.  Open RStudio
+1.  Open Rproject
 2.  Go to File \> New File \> Quarto Document
 3.  Select the format you want
 4.  Save the file with a `.qmd` extension
