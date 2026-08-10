@@ -251,6 +251,15 @@ To create an ordered list, use numbers before each item:
 2. Second item
 3. Third item
 
+## Math equations and symbols
+
+Inline math:
+The simple regression model is $Y_i = \beta_0 + \beta_1 X_i + \epsilon_i$: `$Y_i = \beta_0 + \beta_1 X_i + \epsilon_i$`
+
+Display math: 
+The Gaussian probability density function is:
+$$f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}$$: `$$f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}$$`
+
 ## Links and images
 
 <http://example.com>
@@ -306,68 +315,6 @@ index.html
 2.  Render it using the "Render" button in RStudio or by pressing `Ctrl+Shift+K`.
 
 ![](figures/qt/render.png)
-
-## Add texts, math formulas, symbols
-
-::::::: columns
-:::: {.column width="50%"}
-::: {.codewindow .quarto}
-math_examples.qmd
-
-``` markdown
----
-title: "Hello, Quarto"
-date: 2025-01-06
-author: "Biostats and Modelling"
-format: 
-  html:
-    code-overflow: wrap
-    embed-resources: true
-number-sections: true
-navbar: false
-toc: false
----
-Or we can include some math formula here: $4+4=8$ (alternatively, a more complex formula as math display via visual/insert).
-
-The simple regression model is $Y_i = \beta_0 + \beta_1 X_i + \epsilon_i$.
-
-The Gaussian probability density function is:
-
-$$f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}$$
-```
-
-:::
-::::
-
-:::: {.column width="50%"}
-
-math_examples.qmd
-
-``` markdown
----
-title: "Hello, Quarto"
-date: 2025-01-06
-author: "Biostats and Modelling"
-format: 
-  html:
-    code-overflow: wrap
-    embed-resources: true
-number-sections: true
-navbar: false
-toc: false
----
-Or we can include some math formula here: $4+4=8$ (alternatively, a more complex formula as math display via visual/insert).
-
-The simple regression model is $Y_i = \beta_0 + \beta_1 X_i + \epsilon_i$.
-
-The Gaussian probability density function is:
-
-$$f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}$$
-```
-::::
-:::::::
-
-
 
 ## Add citation
 
