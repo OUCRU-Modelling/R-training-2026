@@ -89,7 +89,7 @@ Or click [here](https://quarto.org/docs/gallery/)
 # Let's write a manuscript
 
 ## Creating an Rproject file
-- Donwload the - [In class example](handouts/my_project.zip){target="_blank"}
+- Donwload the in class example: [my_project.zip](handouts/my_project.zip){target="_blank"}
 - Unzip the folder
 - Create an Rproject file in side the folder my_project
 - Open that Rproject
