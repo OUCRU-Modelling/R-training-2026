@@ -334,6 +334,27 @@ $$f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}$$
 :::
 ::::
 
+:::: {.column width="50%"}
+
+math_examples.qmd
+
+``` markdown
+---
+title: "My Quarto file"
+author: "Your Name"
+date: "`r Sys.Date()`"
+format: html
+toc: true
+---
+Or we can include some math formula here: $4+4=8$ (alternatively, a more complex formula as math display via visual/insert).
+
+The simple regression model is $Y_i = \beta_0 + \beta_1 X_i + \epsilon_i$.
+
+The Gaussian probability density function is:
+
+$$f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}$$
+```
+::::
 :::::::
 
 
