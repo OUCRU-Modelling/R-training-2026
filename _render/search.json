@@ -67,7 +67,7 @@
     "href": "slides/qt-repro-res.html#creating-a-quarto-file",
     "title": "Using Quarto for reproducible research",
     "section": "Creating a Quarto file",
-    "text": "Creating a Quarto file\n\n\n\n\n\n\n\nOpen RStudio\nGo to File &gt; New File &gt; Quarto Document\nSelect the format you want\nSave the file with a .qmd extension"
+    "text": "Creating a Quarto file\n\n\n\n\n\n\n\nOpen Rproject\nGo to File &gt; New File &gt; Quarto Document\nSelect the format you want\nSave the file with a .qmd extension"
   },
   {
     "objectID": "slides/qt-repro-res.html#how-to-use-quarto",
@@ -571,7 +571,7 @@
     "href": "index.html#reproducible-research-and-reporting-using-quarto",
     "title": "OUCRU R training course - 2026",
     "section": "Reproducible research and reporting using Quarto",
-    "text": "Reproducible research and reporting using Quarto\n\nDay 5 (Friday-morning)\n\nLecture slides\nLearning objectives:\n\nWrite papers with reproducible tables and figures using Quarto\nGenerate reports in multiple formats: Word, PDF, slides, web pages…\nEasily update analyses when new data becomes available\n\nExercises\nExercise answer keys"
+    "text": "Reproducible research and reporting using Quarto\n\nDay 5 (Friday-morning)\n\nLecture slides\nLearning objectives:\n\nWrite papers with reproducible tables and figures using Quarto\nGenerate reports in multiple formats: Word, PDF, slides, web pages…\nEasily update analyses when new data becomes available\n\nIn class example: my_project.zip\nExercises\nExercise answer keys"
   },
   {
     "objectID": "index.html#introduction-to-r-and-rstudio",
@@ -612,8 +612,8 @@
     "objectID": "slides/qt-example-slide.html#slide-title",
     "href": "slides/qt-example-slide.html#slide-title",
     "title": "My Presentation",
-    "section": "Slide Title",
-    "text": "Slide Title\n\nBullet point 1\nBullet point 2"
+    "section": "",
+    "text": "Bullet point 1\nBullet point 2"
   },
   {
     "objectID": "slides/qt-example-slide.html#code-blocks-highlighting",
@@ -1551,7 +1551,7 @@
     "href": "slides/qt-repro-res.html#creating-an-rproject-file",
     "title": "Using Quarto for reproducible research",
     "section": "Creating an Rproject file",
-    "text": "Creating an Rproject file\n\nCreate an Rproject file in side the folder my_project\nOpen that Rproject"
+    "text": "Creating an Rproject file\n\nDonwload the in class example: my_project.zip\nUnzip the folder\nOpen RStudio\nCreate an Rproject file in side the folder my_project"
   },
   {
     "objectID": "slides/qt-repro-res.html#add-pictures-links",
@@ -1811,5 +1811,12 @@
     "title": "Exercises Day 3",
     "section": "R code",
     "text": "R code\nYou can download the .R code file containing the answers to today’s exercises using the button below\n Exercise answers script"
+  },
+  {
+    "objectID": "slides/qt-example-slide.html",
+    "href": "slides/qt-example-slide.html",
+    "title": "My Presentation",
+    "section": "",
+    "text": "Bullet point 1\nBullet point 2"
   }
 ]
