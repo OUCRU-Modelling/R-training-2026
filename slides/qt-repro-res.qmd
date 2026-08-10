@@ -89,7 +89,7 @@ Or click [here](https://quarto.org/docs/gallery/)
 # Let's write a manuscript
 
 ## Creating an Rproject file
-1. Donwload the in class example: [my_project.zip](handouts/my_project.zip){target="_blank"}
+1. Donwload the in class example: [my_project.zip](/handouts/my_project.zip){target="_blank"}
 2. Unzip the folder
 3. Open RStudio
 4. Create an Rproject file in side the folder my_project
