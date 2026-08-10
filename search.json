@@ -1404,7 +1404,7 @@
     "href": "slides/qt-repro-res.html#add-texts-math-formulas-symbols",
     "title": "Using Quarto for reproducible research",
     "section": "Add texts, math formulas, symbols",
-    "text": "Add texts, math formulas, symbols\n\n\n\nmath_examples.qmd\n---\ntitle: \"My Quarto file\"\nauthor: \"Your Name\"\ndate: \"2026-08-10\"\nformat: html\ntoc: true\n---\nOr we can include some math formula here: $4+4=8$ (alternatively, a more complex formula as math display via visual/insert).\n\nThe simple regression model is $Y_i = \\beta_0 + \\beta_1 X_i + \\epsilon_i$.\n\nThe Gaussian probability density function is:\n\n$$f(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} e^{-\\frac{(x - \\mu)^2}{2\\sigma^2}}$$"
+    "text": "Add texts, math formulas, symbols\n\n\n\nmath_examples.qmd\n---\ntitle: \"My Quarto file\"\nauthor: \"Your Name\"\ndate: \"2026-08-10\"\nformat: html\ntoc: true\n---\nOr we can include some math formula here: $4+4=8$ (alternatively, a more complex formula as math display via visual/insert).\n\nThe simple regression model is $Y_i = \\beta_0 + \\beta_1 X_i + \\epsilon_i$.\n\nThe Gaussian probability density function is:\n\n$$f(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} e^{-\\frac{(x - \\mu)^2}{2\\sigma^2}}$$\n\n\nmath_examples.qmd\n---\ntitle: \"My Quarto file\"\nauthor: \"Your Name\"\ndate: \"2026-08-10\"\nformat: html\ntoc: true\n---\nOr we can include some math formula here: $4+4=8$ (alternatively, a more complex formula as math display via visual/insert).\n\nThe simple regression model is $Y_i = \\beta_0 + \\beta_1 X_i + \\epsilon_i$.\n\nThe Gaussian probability density function is:\n\n$$f(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} e^{-\\frac{(x - \\mu)^2}{2\\sigma^2}}$$"
   },
   {
     "objectID": "slides/qt-repro-res.html#add-citation",
