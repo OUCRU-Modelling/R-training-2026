@@ -2,25 +2,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ronald Geskus">
-<meta name="author" content="Tuyen Huynh">
+<meta name="author" content="Tran Thai Hung">
 
-<title>Pre-course setups and requirements</title>
+<title>Exercises Day 1</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
+code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: 1.5em;}
-div.column{flex: auto;}
-@media screen {
-div.columns{gap: min(4vw, 1.5em);}
-div.column{overflow-x: auto;}
-}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -80,14 +77,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c63faf4a9a231195038ce4a88aabf56a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-274ccbfd47e105e69fd3cbd498ecbb5f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-c63faf4a9a231195038ce4a88aabf56a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-4317a53b3c9404183a211fec289c3a4e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-2b268d294c90c234c176955d06c2f2ae.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-4317a53b3c9404183a211fec289c3a4e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -116,6 +113,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -313,7 +339,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../handouts/precourse_setup.html" aria-current="page"> 
+    <a class="nav-link" href="../handouts/precourse_setup.html"> 
 <span class="menu-text">Pre-course setups</span></a>
   </li>  
   <li class="nav-item">
@@ -350,12 +376,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#about" id="toc-about" class="nav-link active" data-scroll-target="#about">About</a></li>
-  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r"><span class="header-section-number">1</span> R</a></li>
-  <li><a href="#rstudio-desktop" id="toc-rstudio-desktop" class="nav-link" data-scroll-target="#rstudio-desktop"><span class="header-section-number">2</span> RStudio Desktop</a></li>
-  <li><a href="#renv-setup" id="toc-renv-setup" class="nav-link" data-scroll-target="#renv-setup"><span class="header-section-number">3</span> <code>renv</code> setup</a></li>
+  <li><a href="#exercise-1-selection-within-a-vector" id="toc-exercise-1-selection-within-a-vector" class="nav-link active" data-scroll-target="#exercise-1-selection-within-a-vector">Exercise 1: selection within a vector</a></li>
+  <li><a href="#exercise-2-some-calculations" id="toc-exercise-2-some-calculations" class="nav-link" data-scroll-target="#exercise-2-some-calculations">Exercise 2: some calculations</a></li>
+  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">RStudio</a>
+  <ul class="collapse">
+  <li><a href="#some-useful-keyboard-shortcuts-in-rstudio-for-windows" id="toc-some-useful-keyboard-shortcuts-in-rstudio-for-windows" class="nav-link" data-scroll-target="#some-useful-keyboard-shortcuts-in-rstudio-for-windows">Some useful Keyboard Shortcuts in RStudio for Windows</a></li>
+  </ul></li>
+  <li><a href="#exercise-3-importing-data-from-excel-and-first-check" id="toc-exercise-3-importing-data-from-excel-and-first-check" class="nav-link" data-scroll-target="#exercise-3-importing-data-from-excel-and-first-check">Exercise 3: importing data from Excel and first check</a></li>
+  <li><a href="#exercise-4-some-columns-summarized" id="toc-exercise-4-some-columns-summarized" class="nav-link" data-scroll-target="#exercise-4-some-columns-summarized">Exercise 4: some columns summarized</a></li>
+  <li><a href="#exercise-5-work-with-subsets" id="toc-exercise-5-work-with-subsets" class="nav-link" data-scroll-target="#exercise-5-work-with-subsets">Exercise 5: work with subsets</a></li>
+  <li><a href="#exercise-6-make-factor-variables" id="toc-exercise-6-make-factor-variables" class="nav-link" data-scroll-target="#exercise-6-make-factor-variables">Exercise 6: make factor variables</a></li>
+  <li><a href="#exercise-7-working-with-dates" id="toc-exercise-7-working-with-dates" class="nav-link" data-scroll-target="#exercise-7-working-with-dates">Exercise 7: working with dates</a></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="exercises_Day1.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -363,129 +396,190 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Pre-course setups and requirements</h1>
+<h1 class="title">Exercises Day 1</h1>
 </div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Ronald Geskus </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            OUCRU biostat
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Tran Thai Hung </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            OUCRU biostat
+          </p>
+      </div>
+  </div>
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Authors</div>
-    <div class="quarto-title-meta-contents">
-             <p>Ronald Geskus </p>
-             <p>Tuyen Huynh </p>
-          </div>
-  </div>
-    
+      
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 10, 2026 – 05:01:59 (UTC)</p>
+      <p class="date">Last version: August 07, 2026</p>
     </div>
   </div>
   
     
   </div>
   
+<div>
+  <div class="abstract">
+    <div class="block-title">Abstract</div>
+    You already made exercises 1 and 2 in the slides. For exercises 3 to 7, you will do them in RStudio. Please make sure that you have R and RStudio installed on your laptop.
+  </div>
+</div>
 
 
 </header>
 
 
-<section id="about" class="level1 unnumbered">
-<h1 class="unnumbered">About</h1>
-<p>Here we explain how to install R and RStudio on your own computer. This is <strong>required</strong> to ensure a smooth experience and reproducible results during the course.</p>
-</section>
-<section id="r" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> R</h1>
-<ol type="1">
-<li>Go to the <a href="http://www.r-project.org">R website</a></li>
-<li>In the column on the left hand side, click on the <a href="https://cran.r-project.org/mirrors.html">CRAN</a> link under the subheading <strong>Download</strong>
-<ul>
-<li>You now see a page with <em>CRAN Mirrors</em>. This is a list of servers from which the R software and extensions can be downloaded from</li>
-</ul></li>
-<li>Click on the first link
-<ul>
-<li>Now both the left hand side and the right hand side of the page change (This page can be saved as a bookmark/favorite)</li>
-</ul></li>
-<li>On the right hand side, click on the download link for your operating system
-<ul>
-<li>E.g. Windows users click on <a href="https://cloud.r-project.org/">Download R for Windows</a>, then click on <strong>base</strong> and download the program from there.</li>
-<li>It is recommended to install the latest version as well as to upgrade the program if a new major version is released, which is about once per year</li>
-<li>You can use the default installation options</li>
-</ul></li>
+<section id="exercise-1-selection-within-a-vector" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1-selection-within-a-vector">Exercise 1: selection within a vector</h2>
+<ol type="a">
+<li>Create a vector named <code>vec</code> that consists of the numbers from 11 to 30</li>
+<li>Select the 7th element of the vector</li>
+<li>Select all elements except the 15th. Hint: use a minus sign</li>
+<li>Select the 2nd and 5th element of the vector</li>
+<li>Select only the odd valued elements of <code>vec</code>.</li>
 </ol>
 </section>
-<section id="rstudio-desktop" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> RStudio Desktop</h1>
-<ol type="1">
-<li>Go to <a href="https://posit.co/download/rstudio-desktop/">the download page</a></li>
-<li>Scroll down, look for <strong>2: Install Rstudio</strong> and click on the button for downloading <strong>RStudio Desktop</strong></li>
-<li>Download and install RStudio Desktop
-<ul>
-<li>You can use the default installation options</li>
-</ul></li>
-<li>Open Rstudio Desktop, to check that everything has been installed correctly
-<ul>
-<li>E.g. via the <strong>Start</strong> menu in Windows</li>
-</ul></li>
+<section id="exercise-2-some-calculations" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2-some-calculations">Exercise 2: some calculations</h2>
+<ol type="a">
+<li>Use the elementary functions <code>/</code>, <code>-</code>, <code>^</code> and the function <code>sum</code> to calculate the mean <span class="math display">\[\bar{x}=\sum_{i=1}^n x_i/n\]</span> and the standard deviation <span class="math display">\[\sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2/(n-1)}\]</span> of the fare paid by the titanic passengers.</li>
+<li>Verify your answer by using the built-in R functions <code>mean</code> and <code>sd</code>.</li>
 </ol>
 </section>
-<section id="renv-setup" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> <code>renv</code> setup</h1>
-<blockquote class="blockquote">
-<p>The <a href="https://rstudio.github.io/renv/"><code>renv</code></a> package helps you create reproducible environments for your R projects. Use <code>renv</code> to make your R projects more <strong>isolated</strong>, portable and <strong>reproducible</strong>.</p>
-</blockquote>
-<p>For better error reproducilibity, environment consistency, and ease of debugging, we will setup an <code>renv</code> environment for the course. Follow these steps:</p>
-<ol type="1">
-<li>In your normal R console, install <code>renv</code> with</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"renv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="2" type="1">
-<li>Initialise <code>renv</code> in the project environment with</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">init</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="rstudio">RStudio</h2>
+<section id="some-useful-keyboard-shortcuts-in-rstudio-for-windows" class="level3">
+<h3 class="anchored" data-anchor-id="some-useful-keyboard-shortcuts-in-rstudio-for-windows">Some useful Keyboard Shortcuts in RStudio for Windows</h3>
+<p>Over time it is useful to learn a couple of RStudio shortcuts that you frequently use. You can find an overview of them under the <strong>Help → Keyboard Shortcuts help</strong> menu. More shortcuts and tips can be found on the <a href="https://www.appsilon.com/post/rstudio-shortcuts-and-tips">Appsilon</a> website.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Note
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Make sure you’re in the correct working directory!</p>
-<p>You can check from the R console with <code>getwd()</code> and set the correct working directory with <code>setwd(...)</code></p>
+<p>On the mac, Ctrl → Cmd, Alt → Option, and Enter → Return.</p>
+<ul>
+<li><strong>Ctrl+Enter</strong>: Run current line</li>
+<li><strong>Ctrl+Alt+I</strong>: Insert new chunk</li>
+<li><strong>Alt+-</strong>: Insert assignment <code>&lt;-</code></li>
+<li><strong>F1</strong>: Show function help page when cursor is on function name</li>
+<li><strong>Ctrl+Tab</strong>: Switch between tabs in Source Editor</li>
+<li><strong>Ctrl+1 / Ctrl+2</strong>: Move focus to Source/Console</li>
+<li><strong>Tab / Ctrl+Space</strong>: Code suggestion/completion</li>
+<li><strong>In Console</strong>:
+<ul>
+<li>Arrows <strong>Up/Down</strong> to navigate earlier commands</li>
+<li><strong>Ctrl+Up</strong> pops up a listing of latest commands</li>
+</ul></li>
+</ul>
 </div>
 </div>
-</div>
-<ol start="3" type="1">
-<li>Restart your R session</li>
+<p>Create a folder on your computer for the exercises in this R course. Open RStudio and create a new New Project in that folder. Open a new R Script file via the menu:</p>
+<p><strong>File → New File → R Script…</strong></p>
+<p>Write the code in that R Script file.</p>
+</section>
+</section>
+<section id="exercise-3-importing-data-from-excel-and-first-check" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3-importing-data-from-excel-and-first-check">Exercise 3: importing data from Excel and first check</h2>
+<p>We will work with a dataset that gives the survival status of passengers on the Titanic. We provide the dataset in <strong>Excel</strong> format (<a href="https://github.com/OUCRU-Modelling/R-training-2026/raw/refs/heads/main/slides/data/Titanic3.xlsx">Titanic3.xlsx</a>). See <a href="https://hbiostat.org/data/repo/ctitanic3">this link</a> for a description of the variables. Our data set has three additional columns: <code>dob</code> (date of birth), <code>family</code> (whether the person travelled with family) and <code>agecat</code> (age categorized in age ranges).</p>
+<p>Download the dataset to the raw data subfolder of your project folder. Import the dataset by clicking on <strong>Import Dataset</strong> from the <strong>Environment</strong> pane. Browse for the Excel file.</p>
+<p>The first 50 rows of the data set are shown. Look at the code under <strong>Code Preview</strong>. Assign the R object name <code>titanic</code> to the dataset under <strong>Import Options</strong> and observe that the code under <strong>Code Preview</strong> has changed.</p>
+<p>Look at the mode of variable age. A problem with the mode for age is that missing values are coded as a character value <code>"NA"</code> in our Excel file; it is not recognized as an R type NA value. In the future, you may encounter other representations of missing values, such as <code>missing</code>, <code>404</code>, <code>-99</code> or <code>unknown</code>, which should also be treated as <code>NA</code>. Specify that NA represents missing values under the import options. Observe how the code under *Code Preview<strong> changed again. Copy the code from </strong>Code Preview**. Click on the “Import” button. Paste the code you have copied earlier to your R Script File.</p>
+<ol type="a">
+<li><p>Inspect the data set in spreadsheet-like format that shows up after importing (if it does not show up, you can click on the <code>titanic</code> object in the <strong>Environment</strong> pane). Do the variables make sense? Are there any weird values? Sort the data in ascending order of age by clicking on <strong>age</strong> in the data set.</p></li>
+<li><p>Use the function <code>dim</code> to find the number of rows (passengers) and columns (variables) in the data set.</p></li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>This can be done using Ctrl+Shift+F10 on Windows and Cmd+Shift+F10 on MacOS</p>
-</div>
-</div>
-</div>
-<ol start="4" type="1">
-<li>Check your R console upon restart. It should say that <code>renv</code> is loaded and activated!</li>
+<ol start="3" type="a">
+<li>Use the <code>str</code> function to obtain a summary of the basic characteristics per variable. Have a look at the <code>survived</code> column. Does it have the mode that you expect? (You can also use the <code>mode</code> function to check the modes.)</li>
 </ol>
-<p>(This will be quickly walked through again on the first session of the course)</p>
+</section>
+<section id="exercise-4-some-columns-summarized" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4-some-columns-summarized">Exercise 4: some columns summarized</h2>
+<ol type="a">
+<li>Issue the commands</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(titanic, <span class="dv">10</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(titanic, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>What do you observe?</p>
+<ol start="2" type="a">
+<li>The <code>readxl</code> package that is used to import the data stores the data as a <code>tibble</code>, which is a special type of format on top of the <code>data.frame</code> format to store data in R. Override the <code>tibble</code> format using the function <code>as.data.frame</code>.</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>titanic <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(titanic)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Run the <code>head</code> and <code>tail</code> functions again. What has changed?</p>
+<ol start="3" type="a">
+<li>Summarize the whole dataset using the <code>summary</code> function. What do you observe for each of the variables?</li>
+</ol>
+<ol start="4" type="a">
+<li>Compute the 5%, 25%, 50%, 75% and 95% quantiles, the inter-quartile range and the standard deviation for age and fare. You may need to take a look at the <code>help</code> files for the functions <code>quantile</code>, <code>IQR</code> and <code>sd</code> (look at the RStudio shortcut list if you want to see one way to open a help page.</li>
+</ol>
+<ol start="5" type="a">
+<li>For categorical variables, <code>summary</code> is not very informative. Use the <code>table</code> function to summarize the variables <code>pclass</code>, and <code>sex</code>. Also give a two-by-two table for sex and survival status using the same <code>table</code> function. Again, have a look at the help file if needed.</li>
+</ol>
+<ol start="6" type="a">
+<li>The function <code>addmargins</code> adds the row sums and the column sums to the table of survival status by sex. The function <code>proportions</code> tabulates proportions instead of absolute numbers.</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">addmargins</span>(<span class="fu">table</span>(titanic<span class="sc">$</span>sex, titanic<span class="sc">$</span>survived))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">proportions</span>(<span class="fu">table</span>(titanic<span class="sc">$</span>sex, titanic<span class="sc">$</span>survived))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Use the <code>proportions</code> function to compute the fraction (or percentage) of survivors by sex. Have a look at the help file if needed.</p>
+</section>
+<section id="exercise-5-work-with-subsets" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-5-work-with-subsets">Exercise 5: work with subsets</h2>
+<ol type="a">
+<li>Take a look at the name, and the home town/destination of all passengers who were older than 70 years. Use the appropriate selection functions.</li>
+</ol>
+<p>It is seen that there is one person from Uruguay in this group. Select the single record from that person. Did this person travel with relatives?</p>
+<ol start="2" type="a">
+<li>Make a table of survivor status by sex, but only for the first class passengers. What do you observe? Compare this with the survival status for the 3rd class passengers.</li>
+</ol>
+</section>
+<section id="exercise-6-make-factor-variables" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-6-make-factor-variables">Exercise 6: make factor variables</h2>
+<ol type="a">
+<li><p>Make passenger class and sex into factor variables.</p></li>
+<li><p>Add a variable <code>status</code> to the Titanic data set, which gives the survival status of the passengers as a factor variable with labels “no” and “yes” describing whether individuals survived. Make the value “no” the first level.</p></li>
+</ol>
+<ol start="3" type="a">
+<li>Run the <code>summary</code> function again. What change do you observe compared to Exercise 4?</li>
+</ol>
+</section>
+<section id="exercise-7-working-with-dates" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-7-working-with-dates">Exercise 7: working with dates</h2>
+<ol type="a">
+<li>The variable <code>dob</code> gives the date of birth, using days since January 1st, 1960 (this is the time origin used by Stata). Transform this to a true date value using the function <code>as.Date</code> (specify the origin argument).</li>
+</ol>
+<ol start="2" type="a">
+<li>The default display is “year/month/day”. Make a table of the day of the month that the passengers were born, using the <code>format</code> function. What do you observe?</li>
+</ol>
+<ol start="3" type="a">
+<li>What was the earliest date of birth among all the passengers on the boat. Does this correspond to the age of the oldest person on the date that the ship sank (April 15th, 1912)? Use the functions <code>min</code> and <code>max</code>.</li>
+</ol>
 
 
 </section>
@@ -591,13 +685,6 @@ Tip
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
-            // target, if specified
-            link.setAttribute("target", "_blank");
-            if (link.getAttribute("rel") === null) {
-              link.setAttribute("rel", "noopener");
-            }
-            // default icon
-            link.classList.add("external");
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
