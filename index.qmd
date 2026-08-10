@@ -80,7 +80,10 @@ Please follow this [pre-course setups handout](handouts/precourse_setup.qmd) to 
   4. How to design clear and impactful visualisations
   5. Using LLMs (Large Language Models) to help you with plotting
   
-- [Exercises](handouts/exercise_day3.qmd){.external target="_blank"}
+- [Exercises](handouts/exercises_Day3.qmd){.external target="_blank"}
+
+- R code:
+  - {{< downloadthis handouts/exercises_Day3_answer.R dname="exercises_Day3_answer" label="Exercise answers script" type="primary">}}
 
 <!-- - [Handout file](handouts/VisualisationHandouts.pdf)
   - [Exercise answer key](handouts/Exercises_Day3_answer.pdf)

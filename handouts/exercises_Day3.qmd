@@ -20,9 +20,20 @@ execute:
   eval: true
 ---
 
+```{css}
+/*| echo: false */
+h2 {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: white;
+  padding: 0.25em 0;
+}
+```
+
 ## Overview
 
-Throughout these exercises, we will recreate the plots from [Day 2 exercises](#) using the `ggplot2` package
+Throughout these exercises, we will recreate some of the plots from [Day 2 exercises](#) using the `ggplot2` package
 
 <!-- TODO: Add reference to the base R plot exercise once it is published-->
 
@@ -61,7 +72,7 @@ head(titanic, n = 10)
 
 ## Exercise 1
 
-In this exercise, we will draw a plot exploring the relationship between `age`, `sex` and the `fare` paid for the trip.
+In this exercise, we will draw a plot exploring the relationship between `age`, `sex`, passenger class (`pclass`) and the `fare` paid for the trip.
 
 The end result will look something like this.
 
@@ -71,7 +82,7 @@ The end result will look something like this.
 
 library(oucru)
 
-ggplot(titanic, aes(x = age, y = fare, color = pclass)) +
+ggplot(titanic, aes(x = age, y = fare+3, color = pclass)) +
   geom_point(size = 1) +
   geom_smooth(method = "lm") +
   geom_rug() +
@@ -112,6 +123,18 @@ ggplot(titanic) +
 #| code-fold: true
 #| eval: false
 #| code-summary: "Reveal answer"
+ggplot(titanic) +
+  geom_point(aes(x = age, y = fare)) +
+  ylab("fare paid (GBP)")
+```
+
+You are expected to encounter the following Warning message. Why does this occur?
+
+```{r}
+#| warning: true
+#| echo: false
+#| results: false
+#| fig-show: hide
 ggplot(titanic) +
   geom_point(aes(x = age, y = fare)) +
   ylab("fare paid (GBP)")
@@ -173,7 +196,7 @@ ggplot(titanic, aes(x = age, y = fare)) +
 ```{r}
 #| warning: false
 #| echo: false
-ggplot(titanic, aes(x = age, y = fare)) +
+ggplot(titanic, aes(x = age, y = fare+3)) +
   geom_point() +
   geom_smooth(method = "lm") +
   scale_y_log10("fare paid (GBP)")
@@ -187,12 +210,27 @@ ggplot(titanic, aes(x = age, y = fare)) +
 Replace `ylab()` with `scale_y_log10()`
 :::
 
+You may encounter some new Warning messages. Why do they occur, and how can we resolve them?
+
+```{r}
+#| warning: true
+#| message: false
+#| echo: false
+#| fig-show: hide
+
+ggplot(titanic, aes(x = age, y = fare)) +
+    geom_point() +
+    geom_smooth(method = "lm", formula = y ~ x) +
+    scale_y_log10("fare paid (GBP)")
+```
+
 ```{r}
 #| warning: false
 #| eval: false
 #| code-fold: true
 #| code-summary: "Reveal answer"
-ggplot(titanic, aes(x = age, y = fare)) +
+# avoid log10(0)=-Inf by adding a small value to fare
+ggplot(titanic, aes(x = age, y = fare+3)) +
   geom_point() +
   geom_smooth(method = "lm") +
   scale_y_log10("fare paid (GBP)")
@@ -207,7 +245,7 @@ ggplot(titanic, aes(x = age, y = fare)) +
 ```{r}
 #| warning: false
 #| echo: false
-ggplot(titanic, aes(x = age, y = fare, color = pclass)) +
+ggplot(titanic, aes(x = age, y = fare+3, color = pclass)) +
   geom_point() +
   geom_smooth(method = "lm") +
   scale_y_log10("fare paid (GBP)")
@@ -224,7 +262,7 @@ Add `color` to the aesthetic attributes (via `aes()`)
 #| eval: false
 #| code-fold: true
 #| code-summary: "Reveal answer"
-ggplot(titanic, aes(x = age, y = fare, color = pclass)) +
+ggplot(titanic, aes(x = age, y = fare+3, color = pclass)) +
   geom_point() +
   geom_smooth(method = "lm") +
   scale_y_log10("fare paid (GBP)")
@@ -239,7 +277,7 @@ ggplot(titanic, aes(x = age, y = fare, color = pclass)) +
 ```{r}
 #| echo: false
 #| warning: false
-ggplot(titanic, aes(x = age, y = fare, color = pclass)) +
+ggplot(titanic, aes(x = age, y = fare+3, color = pclass)) +
   geom_point() +
   geom_smooth(method = "lm") +
   geom_rug() +
@@ -260,7 +298,7 @@ ggplot(titanic, aes(x = age, y = fare, color = pclass)) +
 #| code-fold: true
 #| code-summary: "Reveal answer"
 
-ggplot(titanic, aes(x = age, y = fare, color = pclass)) +
+ggplot(titanic, aes(x = age, y = fare+3, color = pclass)) +
   geom_point() +
   geom_smooth(method = "lm") +
   geom_rug() +
@@ -277,7 +315,7 @@ ggplot(titanic, aes(x = age, y = fare, color = pclass)) +
 ```{r}
 #| echo: false
 #| warning: false
-ggplot(titanic, aes(x = age, y = fare, color = pclass)) +
+ggplot(titanic, aes(x = age, y = fare+3, color = pclass)) +
   geom_point() +
   geom_smooth(method = "lm") +
   geom_rug() +
@@ -524,3 +562,11 @@ ggplot(titanic, aes(x = age, y = survived, color = sex)) +
   theme_bw() +
   theme(legend.position = 'top')
 ```
+
+
+--------------------------
+## R code
+
+You can download the `.R` code file containing the answers to today's exercises using the button below
+
+{{< downloadthis exercises_Day3_answer.R dname="exercises_Day3_answer" label="Exercise answers script" type="primary">}}
