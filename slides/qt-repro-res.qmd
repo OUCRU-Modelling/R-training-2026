@@ -307,7 +307,21 @@ index.html
 
 ![](figures/qt/render.png)
 
-## Add text and picture
+## Add text, math formula, symbol
+
+## Add citation
+
+-   You can add citations to the text using Quarto
+
+-   The easiest way to do this is via the `Visual` view
+
+![](figures/qt/cite.png)
+
+## Add citation
+
+![](figures/qt/cite-insert.png)
+
+## Add picture
 
 ## Create tables
 
@@ -718,18 +732,6 @@ df |>
 ```
 :::
 ::::::
-
-## Add citation
-
--   You can add citations to the text using Quarto
-
--   The easiest way to do this is via the `Visual` view
-
-![](figures/qt/cite.png)
-
-## Add citation
-
-![](figures/qt/cite-insert.png)
 
 ## Template
 
