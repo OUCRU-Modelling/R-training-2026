@@ -33,9 +33,7 @@ h2 {
 
 ## Overview
 
-Throughout these exercises, we will recreate some of the plots from [Day 2 exercises](#) using the `ggplot2` package
-
-<!-- TODO: Add reference to the base R plot exercise once it is published-->
+Throughout these exercises, we will recreate some of the plots from [Day 2 exercises](https://oucru-modelling.github.io/R-training-2026/slides/IntroductionRDay2.html#/other-plots) using the `ggplot2` package
 
 ## Dataset
 
