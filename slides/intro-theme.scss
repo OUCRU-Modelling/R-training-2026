@@ -1,0 +1,6 @@
+/*-- scss:rules --*/
+div.fig-rm-on-exit {
+    &:not(.current-fragment) img {
+        display: none !important;
+    }
+}

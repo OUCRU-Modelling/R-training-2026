@@ -18,7 +18,7 @@ format:
   revealjs:
     slide-number: true
     logo: "figures/OUCRU.jpg"
-    theme: solarized
+    theme: [solarized, intro-theme.scss]
     preview-links: true
     transition: fade
     show-slide-number: print
@@ -135,7 +135,7 @@ Take the 10-log of 1000 (y with $10^y=1000$):
 
 Sum of numbers 1 to 5:
 ```{webr-r}
-sum(c(1,2,3,4,5)) # or sum(1:5)
+sum(c(1, 2, 3, 4, 5)) # or sum(1:5)
 ```
 
 Some constants ($\pi$, ...) pre-defined:
@@ -148,20 +148,20 @@ pi
 
 Assign value 2 to <span style="color:red;">object</span> x
 ```{webr-r}
-x <- sqrt(2) 
+x <- sqrt(2)
 ```
 
 Show content of x
 ```{webr-r}
-print(x)     # show value
-x            # shortcut for print(x)
-print(x, digits=10) # more digits
+print(x) # show value
+x # shortcut for print(x)
+print(x, digits = 10) # more digits
 ```
 
 Without assignment, x keeps old value
 ```{webr-r}
 x^2
-x 
+x
 x <- x^2 # overwrite value
 x
 ```
@@ -182,17 +182,40 @@ Note: use `Ctrl/Cmd + Enter/Return` to run single line
 #| label: "Create sample titanic data"
 #| context: setup
 titanic <- data.frame(
-    pclass=rep(c("1st","2nd","3rd"),c(4,2,4)),
-    survived=c(1,0,0,0,1,1,0,0,0,0),
-    name=c("Allison, Master. Hudson Trevor","Dulles, Mr. William Crothers","McCarthy, Mr. Timothy J","Walker, Mr. William Anderson", "Duran y More, Miss. Asuncion", "Mellinger, Miss. Madeleine Viol","Abbott, Master. Eugene Joseph", "Calic, Mr. Petar","Flynn, Mr. James", "Johnston, Miss. Catherine Helen"),
-    age= c(0.9167,39,54,47,27,13,13,17,NA,NA),
-	fare=c(151.55,29.7,51.8625,34.0208,13.8583,19.5,20.25,8.6625,7.75,23.4))
+  pclass = rep(c("1st", "2nd", "3rd"), c(4, 2, 4)),
+  survived = c(1, 0, 0, 0, 1, 1, 0, 0, 0, 0),
+  name = c(
+    "Allison, Master. Hudson Trevor",
+    "Dulles, Mr. William Crothers",
+    "McCarthy, Mr. Timothy J",
+    "Walker, Mr. William Anderson",
+    "Duran y More, Miss. Asuncion",
+    "Mellinger, Miss. Madeleine Viol",
+    "Abbott, Master. Eugene Joseph",
+    "Calic, Mr. Petar",
+    "Flynn, Mr. James",
+    "Johnston, Miss. Catherine Helen"
+  ),
+  age = c(0.9167, 39, 54, 47, 27, 13, 13, 17, NA, NA),
+  fare = c(
+    151.55,
+    29.7,
+    51.8625,
+    34.0208,
+    13.8583,
+    19.5,
+    20.25,
+    8.6625,
+    7.75,
+    23.4
+  )
+)
 ```
 
 For now, we work with subset (10 passengers) of titanic data set:
 ```{webr-r}
 #| label: "Example: titanic data"
-titanic 
+titanic
 ```
 
 ## Data: selections within a single column {.smaller .scrollable}
@@ -205,25 +228,25 @@ Select age of passengers 1 and 5
 ```{webr-r}
 #| label: "age selections 1 and 5"
 titanic$age
-titanic$age[1,5]    # gives an error
-titanic$age[c(1,5)] # c is function to combine values
+titanic$age[1, 5] # gives an error
+titanic$age[c(1, 5)] # c is function to combine values
 ```
 
 Select age of passengers 6 to 10
 ```{webr-r}
 #| label: "selection of range in age column"
-titanic$age[c(6,7,8,9,10)] 
-6:10               # short notation for c(6,7,8,9,10)
-seq(6,10,by=1)     # same as 6:10
+titanic$age[c(6, 7, 8, 9, 10)]
+6:10 # short notation for c(6,7,8,9,10)
+seq(6, 10, by = 1) # same as 6:10
 ```
 
 Flexibility of `seq` function
 ```{webr-r}
 #| label: "more selections in age column"
-seq(1,10,by=2)     # only odd numbers
+seq(1, 10, by = 2) # only odd numbers
 ## select age in the odd rows:
-titanic$age[seq(1,10,by=2)] 
-## 
+titanic$age[seq(1, 10, by = 2)]
+##
 ```
 
 ## Data: selection of rows and columns {.smaller}
@@ -233,14 +256,14 @@ titanic$age[seq(1,10,by=2)]
 ```{webr-r}
 #| label: "selections in data"
 ## 2 rows and columns 3 and 1
-titanic[2:3, c(3,1)]
-titanic[6,10]
+titanic[2:3, c(3, 1)]
+titanic[6, 10]
 ## titanic$age[6,10] gives error because it has only one dimension
 ```
 
 Columns: selection by name of columns
 ```{webr-r}
-titanic[c(2,3), c("name","pclass")]
+titanic[c(2, 3), c("name", "pclass")]
 ```
 
 
@@ -261,7 +284,7 @@ e. Select only the odd valued elements of `vec`.
 
 ```{webr-r}
 ## first assign position of odd numbers in 11:30 to index
-index <- seq(from=.. , to=.. , by=..)
+index <- seq(from = .., to = .., by = ..)
 ## perform the selection in vec using index
 
 ##
@@ -379,7 +402,7 @@ give_feedback(type = "manuscript", which = "measles model", deadline = "next Fri
 - Example: change unit of age to decade (10 years)
 ```{webr-r}
 #| label: "vectorized calculations"
-titanic$age/10 # age per 10 years for each person 
+titanic$age / 10 # age per 10 years for each person
 ```
 
 - What does this code give:
@@ -467,7 +490,7 @@ computed, as a numeric or complex vector of length one.
 - Data (variables) come in different types. The most important ones are:
   - *numeric*:
 ```{webr-r}
-seq(0,2,by=0.25)
+seq(0, 2, by = 0.25)
 ```
   - *logical*: values `TRUE` and `FALSE`
 ```{webr-r}
@@ -480,8 +503,8 @@ letters[1:10]
 ```
   - You can change the mode of some data objects
 ```{webr-r}
-as.character(seq(0,2,by=0.25))
-as.numeric(c(FALSE,TRUE))
+as.character(seq(0, 2, by = 0.25))
+as.numeric(c(FALSE, TRUE))
 ```
 
 
@@ -493,7 +516,7 @@ as.numeric(c(FALSE,TRUE))
 ```{webr-r}
 #| label: logical mode Ia
 titanic$fare
-titanic$fare[c(TRUE,FALSE,TRUE,TRUE, FALSE, TRUE,FALSE,TRUE,TRUE, FALSE)] 
+titanic$fare[c(TRUE, FALSE, TRUE, TRUE, FALSE, TRUE, FALSE, TRUE, TRUE, FALSE)]
 ```
 
 - Logical statements arise from comparing values:
@@ -502,8 +525,8 @@ titanic$fare[c(TRUE,FALSE,TRUE,TRUE, FALSE, TRUE,FALSE,TRUE,TRUE, FALSE)]
   - Not equal to: `!=`
 ```{webr-r}
 #| label: logical mode Ib
-titanic$fare>40
-titanic$pclass[titanic$fare>40]
+titanic$fare > 40
+titanic$pclass[titanic$fare > 40]
 "Hung" > "Ronald" # alphabetical order
 ```
 - Converted to integer if a numeric value is required:
@@ -512,8 +535,8 @@ titanic$pclass[titanic$fare>40]
   
 ```{webr-r}
 #| label: logical mode Ic
-titanic$pclass=="1st"
-sum(titanic$pclass=="1st")
+titanic$pclass == "1st"
+sum(titanic$pclass == "1st")
 ```
 
 
@@ -670,8 +693,8 @@ Variable summaries
   The function `is.na` checks for missingness
 
 ```{webr-r}
-titanic$age==NA # not correct
-3==NA # NA is NA, whatever the comparison value
+titanic$age == NA # not correct
+3 == NA # NA is NA, whatever the comparison value
 is.na(3)
 is.na(titanic$age)
 table(is.na(titanic$age))
@@ -684,7 +707,7 @@ table(is.na(titanic$age))
   
 ```{webr-r}
 table(titanic$age)
-table(titanic$age, useNA="always")
+table(titanic$age, useNA = "always")
 ```
 
 
@@ -693,7 +716,7 @@ table(titanic$age, useNA="always")
  
 ```{webr-r}
 mean(titanic$age)
-mean(titanic$age, na.rm=TRUE)
+mean(titanic$age, na.rm = TRUE)
 quantile(titanic$age)
 ```
 
@@ -735,8 +758,8 @@ Data found here: [Titanic3.xlsx](https://github.com/OUCRU-Modelling/R-training-2
 
 Create a named vector:
 ```{webr-r}
-teachers <- c("Ronald","Hung","Tuyen")
-rooms <- c(306,306,305)
+teachers <- c("Ronald", "Hung", "Tuyen")
+rooms <- c(306, 306, 305)
 names(rooms) <- teachers
 rooms
 ```
@@ -750,7 +773,7 @@ rooms["Ronald"]
 - Same for data sets (use `dimnames` because there are two dimensions):
 ```{webr-r}
 dimnames(titanic)
-titanic[c(2,3),c("name","age")]
+titanic[c(2, 3), c("name", "age")]
 ```
 
 ## More efficient row selections: "subset" {.smaller}
