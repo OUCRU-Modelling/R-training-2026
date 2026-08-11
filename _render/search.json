@@ -599,7 +599,7 @@
     "href": "index.html#reproducible-research-and-reporting-using-quarto",
     "title": "OUCRU R training course - 2026",
     "section": "Reproducible research and reporting using Quarto",
-    "text": "Reproducible research and reporting using Quarto\n\nDay 5 (Friday-morning)\n\nLecture slides\nLearning objectives:\n\nWrite papers with reproducible tables and figures using Quarto\nGenerate reports in multiple formats: Word, PDF, slides, web pages…\nEasily update analyses when new data becomes available\n\nIn class example: my_project.zip\nExercises\nExercise answer keys"
+    "text": "Reproducible research and reporting using Quarto\n\nDay 5 (Friday-morning)\n\nLecture slides\nLearning objectives:\n\nWrite papers with reproducible tables and figures using Quarto\nGenerate reports in multiple formats: Word, PDF, slides, web pages…\nEasily update analyses when new data becomes available\n\nIn class example: my_project.zip\nExercises"
   },
   {
     "objectID": "index.html#introduction-to-r-and-rstudio",
@@ -1291,8 +1291,8 @@
     "objectID": "slides/IntroductionRDay1.html#learning-goals",
     "href": "slides/IntroductionRDay1.html#learning-goals",
     "title": "Introduction to R, Day 1",
-    "section": "Learning goals",
-    "text": "Learning goals\nBecome familiar and confident with the R program, using RStudio\nNot: using R for statistics, bioinformatics or mathematical modeling\n\n\nDay 1\n\nBasic structure of the R program and language\n\nBasic computations and selections\nObjects and functions\n\nUse the RStudio working environment\nImport and inspect a data set\n\nSelect variables (columns) and rows (observations)\nMissing data, factor variables, date variables\n\n\n\n\n\n\nDay 2\n\nR graphics, functions, data management, finding further information"
+    "section": "",
+    "text": "Become familiar and confident with the R program, using RStudio\nNot: using R for statistics, bioinformatics or mathematical modeling\n\n\nDay 1\n\nBasic structure of the R program and language\n\nBasic computations and selections\nObjects and functions\n\nUse the RStudio working environment\nImport and inspect a data set\n\nSelect variables (columns) and rows (observations)\nMissing data, factor variables, date variables\n\n\n\n\n\n\nDay 2\n\nR graphics, functions, data management, finding further information"
   },
   {
     "objectID": "slides/IntroductionRDay1.html#r-what-is-it-and-why-use-it",
@@ -1390,7 +1390,7 @@
     "href": "slides/IntroductionRDay1.html#functions-ii",
     "title": "Introduction to R, Day 1",
     "section": "Functions (II)",
-    "text": "Functions (II)\n\nEverything we do in R boils down to running a function:\nGenerates some output given some input:\ngoal(arg1=input1, arg2=input2, ...)\n\ngoal: what do we want; function name\ninput: what information does R need for this; arguments of the function\n\nOutput: a value (often assigned to an object for further use); a figure; a help page, …\nE.g. help(mean): mean is argument of function help. Output is the appearance of a page with information on the mean function"
+    "text": "Functions (II)\n\n\nEverything we do in R boils down to running a function:\nGenerates some output given some input:\ngoal(arg1=input1, arg2=input2, ...)\n\ngoal: what do we want; function name\ninput: what information does R need for this; arguments of the function\n\nOutput: a value (often assigned to an object for further use); a figure; a help page, …\nE.g. help(mean): mean is argument of function help. Output is the appearance of a page with information on the mean function"
   },
   {
     "objectID": "slides/IntroductionRDay1.html#many-calculation-functions-are-vectorized",
@@ -1425,7 +1425,7 @@
     "href": "slides/IntroductionRDay1.html#remember",
     "title": "Introduction to R, Day 1",
     "section": "Remember",
-    "text": "Remember\n\n\n\n\n\n\n\nObjects and functions\n\n\n\nEverything that exists in R is an object (data, functions, …)\nEverything that happens in R is a function call"
+    "text": "Remember\n\n\n\n\n\n\nNoteObjects and functions\n\n\n\n\nEverything that exists in R is an object (data, functions, …)\nEverything that happens in R is a function call"
   },
   {
     "objectID": "slides/IntroductionRDay1.html#modes",
@@ -1523,7 +1523,7 @@
     "href": "slides/IntroductionRDay1.html#more-efficient-row-selections-subset",
     "title": "Introduction to R, Day 1",
     "section": "More efficient row selections: “subset”",
-    "text": "More efficient row selections: “subset”\n\nsubset function: subset(my.data, subset=...),\nwith ... a logical condition:\n\nsubset(titanic, pclass %in% c(\"1st\",\"2nd\"))$survived\nNote: %in% is another logical construct\n\nsubset argument in functions with formula structure:\n\nxtabs(~survived, data=titanic, subset=(sex==\"male\"))    \n\n\n\n\n\n\nWarning\n\n\n\nDon’t use “$” for column selection if function has a data argument\n\nxtabs(~titanic$survived, data=titanic, subset=(titanic$sex==\"male\"))"
+    "text": "More efficient row selections: “subset”\n\nsubset function: subset(my.data, subset=...),\nwith ... a logical condition:\n\nsubset(titanic, pclass %in% c(\"1st\",\"2nd\"))$survived\nNote: %in% is another logical construct\n\nsubset argument in functions with formula structure:\n\nxtabs(~survived, data=titanic, subset=(sex==\"male\"))    \n\n\n\n\n\n\nWarning\n\n\n\n\nDon’t use “$” for column selection if function has a data argument\n\nxtabs(~titanic$survived, data=titanic, subset=(titanic$sex==\"male\"))"
   },
   {
     "objectID": "slides/IntroductionRDay1.html#more-efficient-column-selections",
@@ -1552,5 +1552,12 @@
     "title": "Introduction to R, Day 1",
     "section": "Make exercises 5, 6 and 7",
     "text": "Make exercises 5, 6 and 7\nReturn to main course page"
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html",
+    "href": "slides/IntroductionRDay1.html",
+    "title": "Introduction to R, Day 1",
+    "section": "",
+    "text": "Become familiar and confident with the R program, using RStudio\nNot: using R for statistics, bioinformatics or mathematical modeling\n\n\nDay 1\n\nBasic structure of the R program and language\n\nBasic computations and selections\nObjects and functions\n\nUse the RStudio working environment\nImport and inspect a data set\n\nSelect variables (columns) and rows (observations)\nMissing data, factor variables, date variables\n\n\n\n\n\n\nDay 2\n\nR graphics, functions, data management, finding further information"
   }
 ]
