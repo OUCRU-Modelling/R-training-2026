@@ -108,7 +108,7 @@ Or click [here](https://quarto.org/docs/gallery/)
 1.  Open Rproject
 2.  Go to File \> New File \> Quarto Document
 3.  Select the format you want
-4.  Save the file with a `.qmd` extension
+4.  Save the file with name as covid.qmd
 :::
 ::::::
 
@@ -501,6 +501,10 @@ knitr::kable(head(mtcars)[,1:4])
 <embed src="figures/paper.pdf" height="590px" width="500px" />
 :::
 ::::::
+
+## Use our template
+- Open day5_manuscript.qmd in my_project/templates folder
+- Copy all the code inside day5_manuscript.qmd and paste to the covid.qmd
 
 ## Add citation
 
