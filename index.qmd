@@ -91,16 +91,19 @@ Please follow this [pre-course setups handout](handouts/precourse_setup.qmd) to 
 - **Learning objectives**:
   1. Understand the principles of data visualisation
 
-## Advanced data management in R
+## Advance data management and techniques in R
 
 ### Day 4 (Thursday-afternoon):
 
 - **Learning objectives**:
-  1. Logics with if-else statements and for-loops
-  3. Data manipulation with `mutate()`
+  1. Into the `tidyverse`
+  2. Logics with if-else statements and for-loops
+  3. Data manipulation with `tidyverse`
+      - Data ingestion with `readr`
+      - Pivotting dataframes with `tidyr`
+      - Column manipulation with `dplyr`
   4. Joining dataframes
-  5. Pivotting dataframes into long and wide formats
-  6. Vectorisation in R with `map()`
+  5. Vectors and vectorisation in R
 
 
 
