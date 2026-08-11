@@ -218,37 +218,42 @@ What information would you need to map each point correctly onto this
 plot?
 
 ::: incremental
-- Country name
-- Position
-- Size
-- Color
+-   Country name
+-   Coverage, Inequality
+-   Population
+-   Region
 :::
 ::::
 ::::::
 
 ## Scatter plot
 
-:::::: columns
+::::: columns
 ::: {.column width="50%"}
 ![](figures/viz/nature.png)
 :::
 
-:::: {.column width="50%"}
-<!-- TODO: which information/data is used for what aes -->
+::: {.column width="50%"}
+How should we map these information to the plot? In other words, which aesthetic should we map these information to?
 
-::::
-::::::
+-   Country name (label)
+-   Coverage, Inequality (x, y)
+-   Population (point size)
+-   Region (color)
+:::::
 
 ## Data {.smaller}
 
-+------------+------------+--------------+--------------+-------------+
-| label      | x          | y            | size         | color       |
-|            |            |              |              |             |
-| (country)  | (coverage) | (inequality) | (population) | (region)    |
-+============+============+==============+==============+=============+
-| Nigeria    | 0.20       | -0.07        | 220M         | Sub-Saharan |
-|            |            |              |              | Africa      |
-+------------+------------+--------------+--------------+-------------+
++------------+------------+------------+------------+------------+
+| label      | x          | y          | size       | color      |
+|            |            |            |            |            |
+| (country)  | (coverage) | (i         | (p         | (region)   |
+|            |            | nequality) | opulation) |            |
++============+============+============+============+============+
+| Nigeria    | 0.20       | -0.07      | 220M       | S          |
+|            |            |            |            | ub-Saharan |
+|            |            |            |            | Africa     |
++------------+------------+------------+------------+------------+
 
 Data can be downloaded here:
 [nature_plot.xlsx](https://github.com/OUCRU-Modelling/R-training-2025/raw/refs/heads/main/slides/data/nature_plot.xlsx)
