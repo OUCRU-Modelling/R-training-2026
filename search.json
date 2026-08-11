@@ -1446,7 +1446,7 @@
     "href": "index.html#advance-data-management-and-techniques-in-r",
     "title": "OUCRU R training course - 2026",
     "section": "Advance data management and techniques in R",
-    "text": "Advance data management and techniques in R\n\nDay 4 (Thursday-afternoon):\n\nLearning objectives:\n\nInto the tidyverse\nLogics with if-else statements and for-loops\nData manipulation with tidyverse\n\nData ingestion with readr\nPivotting dataframes with tidyr\nColumn manipulation with dplyr\n\nJoining dataframes\nVectors and vectorisation in R"
+    "text": "Advance data management and techniques in R\n\nDay 4 (Thursday-afternoon):\n\nLecture slides\nLearning objectives:\n\nInto the tidyverse\nLogics with if-else statements and for-loops\nData manipulation with tidyverse\n\nData ingestion with readr\nPivotting dataframes with tidyr\nColumn manipulation with dplyr\n\nJoining dataframes\nVectors and vectorisation in R"
   },
   {
     "objectID": "index.html#reproducible-research-and-reporting-using-quarto",
