@@ -134,6 +134,15 @@ Cohort study on 1187 HIV infected persons in The Gambia
 
 # The Grammar of Graphics
 
+## AI usage disclosure
+
+The theme and styling of this presentation were created by a quantised Qwen3.6-35B-A3B model, ran fully local on 12GB VRAM and 32GB RAM
+
+No data were sent to any datacentres
+
+Promote local AI!
+
+
 ## The origin
 
 ::::: columns
