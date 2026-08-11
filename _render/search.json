@@ -67,7 +67,7 @@
     "href": "slides/qt-repro-res.html#creating-a-quarto-file",
     "title": "Using Quarto for reproducible research",
     "section": "Creating a Quarto file",
-    "text": "Creating a Quarto file\n\n\n\n\n\n\n\nOpen Rproject\nGo to File &gt; New File &gt; Quarto Document\nSelect the format you want\nSave the file as covid.qmd (Ctrl + S / Cmd + S)."
+    "text": "Creating a Quarto file\n\n\n\n\n\n\n\nOpen covid.Rproj\nGo to File \\&gt; New File \\&gt; Quarto Document\nSelect the format you want\nSave the file as covid.qmd"
   },
   {
     "objectID": "slides/qt-repro-res.html#how-to-use-quarto",
@@ -1551,7 +1551,7 @@
     "href": "slides/qt-repro-res.html#creating-an-rproject-file",
     "title": "Using Quarto for reproducible research",
     "section": "Creating an Rproject file",
-    "text": "Creating an Rproject file\n\nDonwload the in class example: my_project.zip\nExtract the downloaded zip folder.\nOpen RStudio\nGo to File &gt; New Project… &gt; Existing Directory, browse to the extracted my_project folder, and click Create Project to generate covid.Rproj inside it."
+    "text": "Creating an Rproject file\n\nDownload the in-class example: Download my_project.zip\nExtract the downloaded zip folder.\nOpen RStudio\nGo to File &gt; New Project... &gt; Existing Directory, browse to the extracted my_project folder, and click Create Project to generate covid.Rproj inside it."
   },
   {
     "objectID": "slides/qt-repro-res.html#add-pictures-links",
@@ -1831,6 +1831,6 @@
     "href": "slides/qt-repro-res.html#use-our-template",
     "title": "Using Quarto for reproducible research",
     "section": "Use our template",
-    "text": "Use our template\n\nOpen day5_manuscript.qmd in my_project/templates folder\nCopy all the code inside day5_manuscript.qmd and paste to the covid.qmd"
+    "text": "Use our template\n\nOpen day5_manuscript.qmd from the templates/ folder inside my_project.\nCopy all the contents inside day5_manuscript.qmd and paste to the covid.qmd."
   }
 ]

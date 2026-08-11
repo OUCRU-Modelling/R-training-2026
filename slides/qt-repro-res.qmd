@@ -89,7 +89,7 @@ Or click [here](https://quarto.org/docs/gallery/)
 # Let's write a manuscript
 
 ## Creating an Rproject file
-1. Donwload the in class example: [my_project.zip](/handouts/my_project.zip){target="_blank"}
+1. Download the in-class example: [Download my_project.zip](/handouts/my_project.zip){.btn .btn-primary target="_blank" role="button"}
 2. Extract the downloaded zip folder.
 3. Open RStudio
 4. Go to `File > New Project... > Existing Directory`, browse to the extracted `my_project` folder, and click Create Project to generate `covid.Rproj` inside it.
