@@ -1362,7 +1362,7 @@
     "href": "slides/qt-repro-res.html#creating-an-rproject-file",
     "title": "Using Quarto for reproducible research",
     "section": "Creating an Rproject file",
-    "text": "Creating an Rproject file\n\nDonwload the in class example: my_project.zip\nExtract the downloaded zip folder.\nOpen RStudio\nGo to File &gt; New Project... &gt; Existing Directory, browse to the extracted my_project folder, and click Create Project to generate covid.Rproj inside it."
+    "text": "Creating an Rproject file\n\nDownload the in-class example: Download my_project.zip\nExtract the downloaded zip folder.\nOpen RStudio\nGo to File &gt; New Project... &gt; Existing Directory, browse to the extracted my_project folder, and click Create Project to generate covid.Rproj inside it."
   },
   {
     "objectID": "slides/qt-repro-res.html#creating-a-quarto-file",
