@@ -503,8 +503,8 @@ knitr::kable(head(mtcars)[,1:4])
 ::::::
 
 ## Use our template
-- Open day5_manuscript.qmd in my_project/templates folder
-- Copy all the code inside day5_manuscript.qmd and paste to the covid.qmd
+- Open `day5_manuscript.qmd` from the `templates/` folder inside `my_project`.
+- Copy all the contents inside `day5_manuscript.qmd` and paste to the `covid.qmd`.
 
 ## Add citation
 
