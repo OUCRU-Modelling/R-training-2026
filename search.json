@@ -1439,7 +1439,7 @@
     "href": "slides/qt-repro-res.html#use-our-template",
     "title": "Using Quarto for reproducible research",
     "section": "Use our template",
-    "text": "Use our template\n\nOpen day5_manuscript.qmd in my_project/templates folder\nCopy all the code inside day5_manuscript.qmd and paste to the covid.qmd"
+    "text": "Use our template\n\nOpen day5_manuscript.qmd from the templates/ folder inside my_project.\nCopy all the contents inside day5_manuscript.qmd and paste to the covid.qmd."
   },
   {
     "objectID": "slides/qt-repro-res.html#add-citation",
