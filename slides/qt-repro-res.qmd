@@ -92,7 +92,7 @@ Or click [here](https://quarto.org/docs/gallery/)
 1. Donwload the in class example: [my_project.zip](/handouts/my_project.zip){target="_blank"}
 2. Extract the downloaded zip folder.
 3. Open RStudio
-4. Go to File > New Project... > Existing Directory, browse to the extracted my_project folder, and click Create Project to generate covid.Rproj inside it.
+4. Go to `File > New Project... > Existing Directory`, browse to the extracted `my_project` folder, and click Create Project to generate `covid.Rproj` inside it.
 
 ## Creating a Quarto file
 
@@ -105,10 +105,10 @@ Or click [here](https://quarto.org/docs/gallery/)
 :::
 
 ::: {.column width="45%"}
-1.  Open Rproject
-2.  Go to File \> New File \> Quarto Document
+1.  Open `covid.Rproj`
+2.  Go to `File \> New File \> Quarto Document`
 3.  Select the format you want
-4.  Save the file as covid.qmd (Ctrl + S / Cmd + S).
+4.  Save the file as `covid.qmd`
 :::
 ::::::
 
