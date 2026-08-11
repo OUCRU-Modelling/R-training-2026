@@ -132,7 +132,7 @@ table(titanic$sex)
 titanic$sex <- factor(titanic$sex)
 levels(titanic$sex) # female comes first
 as.numeric(titanic$sex)[1:100]
-titanic$sex <- relevel(titanic$sec, ref="male")
+titanic$sex <- relevel(titanic$sex, ref="male")
 ## or directly when creating the factor:
 titanic$sex <- factor(titanic$sex, levels=c("male","female"))
 table(titanic$sex)

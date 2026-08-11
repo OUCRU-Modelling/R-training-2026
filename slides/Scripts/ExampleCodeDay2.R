@@ -51,7 +51,7 @@ log(b=10,x=100)
 
 subset(titanic, age<=4)
 subset(titanic, age) # gives an error
-subset(titanic, age:sibsp) # gives an eror and a warning
+subset(titanic, age:sibsp) # gives an error and a warning
 subset(titanic, sel=age) # correct
 help(subset)
 subset(titanic, s=age) # still gives an error
@@ -60,9 +60,7 @@ subset(titanic, s=age) # still gives an error
 help(c)
 c(3,6,8)
 help(paste)
-OUCRU <- c("Oxford","University","Clinical","Research","Unit")
-paste(OUCRU)
-paste(OUCRU, collapse=" ")
+paste("Oxford","University","Clinical","Research","Unit")
 
 ##################################################
 ## Classes and methods
@@ -103,20 +101,25 @@ good.morning
 good.morning()
 good.morning(work=FALSE)
 
+citation(package="tinyplot")
+
 ##################################################
 ## Lists
 ##################################################
 
 class(titanic)
+mode(titanic)
+
 teachers <- c("Ronald","Hung","Tuyen")
 rooms <- c(306,306,305)
 c(teachers, rooms)
+mode(c(teachers, rooms))
 
 list(teachers, rooms)
-list(teacher = teachers, room = rooms)
-
-mode(titanic)
-class(titanic)
+RT <- list(teacher = teachers, room = rooms)
+RT
+RT$teacher
+RT[[1]]
 
 ## output of regression model is object of mode list
 AgeBySex <- lm(age~sex, data=titanic)
@@ -159,6 +162,7 @@ row.sums
 rbind(cbind(x, Rtot = row.sums), Ctot = c(col.sums, sum(col.sums)))
 
 lapply(titanic, summary)
+lapply(titanic, mode)
 sapply(titanic, mode)
 
 with(titanic, tapply(age, sex, FUN= mean, na.rm=TRUE)) # |> class()

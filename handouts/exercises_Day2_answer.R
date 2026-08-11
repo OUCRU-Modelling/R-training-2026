@@ -28,6 +28,10 @@ abline(lm(fare~age, data=titanic), col="red")
 #############################################################
 ## Exercise 3: transform or change scale for fare
 #############################################################
+
+plot(sqrt(fare)~age, data=titanic)
+abline(lm(sqrt(fare)~age, data=titanic), col="red")
+
 ## Use log10 of fare
 plot(log10(fare)~age, data=titanic)
 abline(lm(log10(fare)~age, data=titanic, subset=fare>0), col="red")
@@ -43,7 +47,7 @@ title("Fare paid for ticket on Titanic versus age")
 ## change plotting character
 plot(fare ~ age, data=titanic, las=1, log="y")
 colors()
-points(fare+3~age, data=titanic, col="red", subset=fare==0, pch=25, bg="red")
+points(fare+3~age, data=titanic, col="red", subset=fare==0, pch=25, bg="red", cex=0.7)
 title("Fare by age")
 
 ## add text and arrows
@@ -91,6 +95,9 @@ par(mfrow=c(1,1))
 hist(titanic$age)
 hist(titanic$age, breaks=15, cex.axis=1.5, cex.lab=1.5, xlab="age")
 
+hist(titanic$age, breaks=1500, cex.axis=1.5, cex.lab=1.5, xlab="age")
+
+
 #############################################################
 ## Exercise 7: Make a boxplot of age by passenger class
 #############################################################
@@ -106,13 +113,17 @@ with(titanic, tapply(fare, pclass, FUN= summary))
 aggregate(fare~pclass, data=titanic, FUN=summary)
 
 
-FareByAge <- lm(log(fare+3)~age, data=titanic)
+FareByAge <- lm(log(fare+1)~age, data=titanic)
 FareByAge
 summary(FareByAge)
 
 titanic |>
     transform(age=age/10) |>
-    lm(log(fare+3)~age, data=_) |>
+    lm(log(fare+1)~age) # gives error
+
+titanic |>
+    transform(age=age/10) |>
+    lm(log(fare+1)~age, data=_) |>
     summary()
 
 
