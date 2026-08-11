@@ -95,6 +95,7 @@ Please follow this [pre-course setups handout](handouts/precourse_setup.qmd) to 
 
 ### Day 4 (Thursday-afternoon):
 
+- [Lecture slides](slides/advance-R.qmd)
 - **Learning objectives**:
   1. Into the `tidyverse`
   2. Logics with if-else statements and for-loops
