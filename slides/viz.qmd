@@ -234,12 +234,12 @@ plot?
 :::
 
 ::: {.column width="50%"}
-How should we map these information to the plot? In other words, which aesthetic should we map these information to?
+Which [aesthetic]{style="color: red;"} should we map these information to?
 
--   Country name (label)
--   Coverage, Inequality (x, y)
--   Population (point size)
--   Region (color)
+-   Country name [(label)]{.fragment style="color: red;"} 
+-   Coverage, Inequality [(x, y)]{.fragment style="color: red;"} 
+-   Population [(point size)]{.fragment style="color: red;"} 
+-   Region [(color)]{.fragment style="color: red;"} 
 :::::
 
 ## Data {.smaller}
