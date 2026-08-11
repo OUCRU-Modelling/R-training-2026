@@ -194,6 +194,7 @@ way]{style="color: red;"}
 ## Scatter plot
 
 ::::: columns
+
 ::: {.column width="50%"}
 ![](figures/viz/nature.png)
 :::
@@ -204,11 +205,13 @@ way]{style="color: red;"}
 
 - How do you read this plot?
 :::
+
 :::::
 
 ## Scatter plot
 
 :::::: columns
+
 ::: {.column width="50%"}
 ![](figures/viz/nature.png)
 :::
@@ -223,7 +226,9 @@ plot?
 -   Population
 -   Region
 :::
+
 ::::
+
 ::::::
 
 ## Scatter plot
@@ -240,6 +245,8 @@ Which [aesthetic]{style="color: red;"} should we map these information to?
 -   Coverage, Inequality [(x, y)]{.fragment style="color: red;"} 
 -   Population [(point size)]{.fragment style="color: red;"} 
 -   Region [(color)]{.fragment style="color: red;"} 
+
+::: 
 :::::
 
 ## Data {.smaller}
