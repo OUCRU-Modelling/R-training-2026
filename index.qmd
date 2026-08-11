@@ -85,12 +85,6 @@ Please follow this [pre-course setups handout](handouts/precourse_setup.qmd) to 
 - R code:
   - {{< downloadthis handouts/exercises_Day3_answer.R dname="exercises_Day3_answer" label="Exercise answers script" type="primary">}}
 
-<!-- - [Handout file](handouts/VisualisationHandouts.pdf)
-  - [Exercise answer key](handouts/Exercises_Day3_answer.pdf)
-  - [Exercise answer script](handouts/Exercises_Day3_answer.R)
-  - Datasets: 
-    - [NightingaleRose.csv](https://github.com/OUCRU-Modelling/R-training-2026/raw/refs/heads/main/slides/data/NightingaleRose.csv) 
-    - [ICUCost.csv](https://github.com/OUCRU-Modelling/R-training-2026/raw/refs/heads/main/slides/data/ICUCost.csv) -->
 
 ### Day 4 (Thursday-morning):
 
