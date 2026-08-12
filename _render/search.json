@@ -81,14 +81,14 @@
     "href": "slides/qt-repro-res.html#how-to-use-quarto",
     "title": "Using Quarto for reproducible research",
     "section": "How to use Quarto?",
-    "text": "How to use Quarto?\n\n\n\nindex.qmd\n---\ntitle: \"My Quarto file\"\nauthor: \"Your Name\"\ndate: \"2026-08-11\"\nformat: html\n---\n\nSummary of `mtcars`\n\n```{r}\nsummary(mtcars)\n```\n\n\n\n\nMain components of a Quarto file:\n\nHeader (YAML metadata)\nBody (Markdown content and code chunks)"
+    "text": "How to use Quarto?\n\n\n\nindex.qmd\n---\ntitle: \"My Quarto file\"\nauthor: \"Your Name\"\ndate: \"2026-08-12\"\nformat: html\n---\n\nSummary of `mtcars`\n\n```{r}\nsummary(mtcars)\n```\n\n\n\n\nMain components of a Quarto file:\n\nHeader (YAML metadata)\nBody (Markdown content and code chunks)"
   },
   {
     "objectID": "slides/qt-repro-res.html#header",
     "href": "slides/qt-repro-res.html#header",
     "title": "Using Quarto for reproducible research",
     "section": "Header",
-    "text": "Header\n\n\n\nindex.qmd\n---\ntitle: \"My Quarto file\"\nauthor: \"Your Name\"\ndate: \"2026-08-11\"\nformat: html\ntoc: true\n---\n\n\n\n\nDefines document properties and settings, for examples:\n\ntitle: Document title\nauthor: Authorship\ndate: Date this document was published\nformat:\n\nWebpage: html\nPresentation: revealjs\nMS Word: docx\nReport/Manuscript: pdf\n\ntoc: table of contents"
+    "text": "Header\n\n\n\nindex.qmd\n---\ntitle: \"My Quarto file\"\nauthor: \"Your Name\"\ndate: \"2026-08-12\"\nformat: html\ntoc: true\n---\n\n\n\n\nDefines document properties and settings, for examples:\n\ntitle: Document title\nauthor: Authorship\ndate: Date this document was published\nformat:\n\nWebpage: html\nPresentation: revealjs\nMS Word: docx\nReport/Manuscript: pdf\n\ntoc: table of contents"
   },
   {
     "objectID": "slides/qt-repro-res.html#body",
@@ -1965,5 +1965,12 @@
     "title": "Introduction to R, Day 1",
     "section": "Make exercises 5, 6 and 7",
     "text": "Make exercises 5, 6 and 7\nReturn to main course page"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html#quarto-syntax-quiz",
+    "href": "slides/qt-repro-res.html#quarto-syntax-quiz",
+    "title": "Using Quarto for reproducible research",
+    "section": "Quarto syntax quiz",
+    "text": "Quarto syntax quiz\nhttps://dashboard.blooket.com/set/67d14a2bd40d72e0b5cfc37d"
   }
 ]

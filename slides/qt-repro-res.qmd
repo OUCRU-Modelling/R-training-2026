@@ -309,6 +309,10 @@ index.html
 ::::
 :::::::
 
+## Quarto syntax quiz
+
+[Blooket Set](https://dashboard.blooket.com/set/67d14a2bd40d72e0b5cfc37d){target="_blank"}
+
 ## MS Word-like interface
 
 ![](figures/qt/qt-visual.png)
