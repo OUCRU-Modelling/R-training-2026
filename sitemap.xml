@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://oucru-modelling.github.io/R-training-2026/slides/advance-R.html</loc>
-    <lastmod>2026-08-12T09:00:52.123Z</lastmod>
-  </url>
-  <url>
-    <loc>https://oucru-modelling.github.io/R-training-2026/slides/qt-repro-res.html</loc>
-    <lastmod>2026-08-12T09:00:52.154Z</lastmod>
-  </url>
-  <url>
-    <loc>https://oucru-modelling.github.io/R-training-2026/slides/viz.html</loc>
-    <lastmod>2026-08-12T09:00:52.155Z</lastmod>
-  </url>
-  <url>
-    <loc>https://oucru-modelling.github.io/R-training-2026/slides/qt-example-slide.html</loc>
-    <lastmod>2026-08-12T09:00:52.153Z</lastmod>
+    <loc>https://oucru-modelling.github.io/R-training-2026/handouts/exercises_Day5.html</loc>
+    <lastmod>2026-08-12T15:05:27.960Z</lastmod>
   </url>
   <url>
     <loc>https://oucru-modelling.github.io/R-training-2026/handouts/exercises_Day3.html</loc>
-    <lastmod>2026-08-12T09:00:52.109Z</lastmod>
-  </url>
-  <url>
-    <loc>https://oucru-modelling.github.io/R-training-2026/handouts/exercises_Day5.html</loc>
-    <lastmod>2026-08-12T09:00:52.109Z</lastmod>
+    <lastmod>2026-08-12T15:05:27.960Z</lastmod>
   </url>
   <url>
     <loc>https://oucru-modelling.github.io/R-training-2026/handouts/precourse_setup.html</loc>
-    <lastmod>2026-08-12T09:00:52.121Z</lastmod>
+    <lastmod>2026-08-12T15:05:27.972Z</lastmod>
   </url>
   <url>
-    <loc>https://oucru-modelling.github.io/R-training-2026/index.html</loc>
-    <lastmod>2026-08-12T09:00:52.121Z</lastmod>
-  </url>
-  <url>
-    <loc>https://oucru-modelling.github.io/R-training-2026/slides/IntroductionRDay2.html</loc>
-    <lastmod>2026-08-12T09:00:52.123Z</lastmod>
-  </url>
-  <url>
-    <loc>https://oucru-modelling.github.io/R-training-2026/slides/qt-example.html</loc>
-    <lastmod>2026-08-12T09:00:52.154Z</lastmod>
+    <loc>https://oucru-modelling.github.io/R-training-2026/slides/viz.html</loc>
+    <lastmod>2026-08-12T15:05:28.041Z</lastmod>
   </url>
   <url>
     <loc>https://oucru-modelling.github.io/R-training-2026/slides/IntroductionRDay1.html</loc>
-    <lastmod>2026-08-12T09:00:52.123Z</lastmod>
+    <lastmod>2026-08-12T15:05:27.973Z</lastmod>
+  </url>
+  <url>
+    <loc>https://oucru-modelling.github.io/R-training-2026/slides/qt-example-slide.html</loc>
+    <lastmod>2026-08-12T15:05:28.040Z</lastmod>
+  </url>
+  <url>
+    <loc>https://oucru-modelling.github.io/R-training-2026/slides/IntroductionRDay2.html</loc>
+    <lastmod>2026-08-12T15:05:27.974Z</lastmod>
+  </url>
+  <url>
+    <loc>https://oucru-modelling.github.io/R-training-2026/slides/qt-repro-res.html</loc>
+    <lastmod>2026-08-12T15:05:28.040Z</lastmod>
+  </url>
+  <url>
+    <loc>https://oucru-modelling.github.io/R-training-2026/slides/advance-R.html</loc>
+    <lastmod>2026-08-12T15:05:28.009Z</lastmod>
+  </url>
+  <url>
+    <loc>https://oucru-modelling.github.io/R-training-2026/slides/qt-example.html</loc>
+    <lastmod>2026-08-12T15:05:28.040Z</lastmod>
+  </url>
+  <url>
+    <loc>https://oucru-modelling.github.io/R-training-2026/index.html</loc>
+    <lastmod>2026-08-12T15:05:27.972Z</lastmod>
   </url>
 </urlset>
