@@ -128,7 +128,7 @@ Please follow this [pre-course setups handout](handouts/precourse_setup.qmd) to 
   2. Generate reports in multiple formats: Word, PDF, slides, web pages…
   3. Easily update analyses when new data becomes available
 
-- In class example: [my_project.zip](handouts/my_project.zip){target="_blank"}
+- Exercises: [my_project.zip](handouts/my_project.zip){target="_blank"}
 
 # Appendix
 
