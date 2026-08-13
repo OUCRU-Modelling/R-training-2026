@@ -32,7 +32,12 @@ number-sections: false
 
 ## Website
 
-![](figures/qt/qt-website.png)
+[![][1]][2]{target="_blank"}
+
+[1]: figures/qt/qt-website2.png
+[2]: https://oucru-biostats.github.io/Introduction-to-Medical-Statistics/ "Let's try it out"
+
+
 
 ## Presentation
 
@@ -81,10 +86,10 @@ Or click [here](https://quarto.org/docs/gallery/)
 
 ## Exploring Quarto
 
-[![][1]][2]{target="_blank"}
+[![][3]][4]{target="_blank"}
 
-[1]:  figures/qt/qt-search-2.png
-[2]:  https://quarto.org/ "Let's try it out"
+[3]:  figures/qt/qt-search-2.png
+[4]:  https://quarto.org/ "Let's try it out"
 
 # Let's write a manuscript
 
