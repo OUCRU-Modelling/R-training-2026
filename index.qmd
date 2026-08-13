@@ -97,9 +97,8 @@ Please follow this [pre-course setups handout](handouts/precourse_setup.qmd) to 
   - [Exercise answer key](handouts/Exercises_Day4a_answer.pdf)
   - [Exercise answer script](handouts/Exercises_Day4a_answer.R)
   - Datasets: 
-    - {{< downloadthis slides/data/NightingaleRose.csv dname="Nightingale Rose" label="Data Nightingale Rose (csv file)" type="primary" >}}
-    
-    - {{< downloadthis slides/data/ICUcost.csv dname="ICU cost" label="Data ICU cost (csv file)" type="primary" >}}
+    - [Data Nightingale Rose (csv file)](slides/data/NightingaleRose.csv)
+    - [Data ICU cost (csv file)](slides/data/ICUcost.csv)
 
 ## Advance data management and techniques in R
 

@@ -858,7 +858,7 @@
     "href": "index.html#principles-of-data-visualisation-and-plotting-in-r",
     "title": "OUCRU R training course - 2026",
     "section": "Principles of data visualisation and plotting in R",
-    "text": "Principles of data visualisation and plotting in R\n\nDay 3 (Wednesday):\n\nLecture slides\nLearning objectives:\n\nThe grammar of graphics—understanding how plots are built\nThe step-by-step process of creating graphs in R\nUse the ggplot2 package plot figures in R\nHow to design clear and impactful visualisations\nUsing LLMs (Large Language Models) to help you with plotting\n\nExercises\nR code:\n\n Exercise answers script \n\n\n\n\nDay 4 (Thursday-morning):\n\nLecture slides\nLearning objectives:\n\nUnderstand the principles of clear and impactful visualisation\n\nHandout file\nExercises:\n\nExercise answer key\nExercise answer script\nDatasets:\n\n Data Nightingale Rose (csv file) \n Data ICU cost (csv file)"
+    "text": "Principles of data visualisation and plotting in R\n\nDay 3 (Wednesday):\n\nLecture slides\nLearning objectives:\n\nThe grammar of graphics—understanding how plots are built\nThe step-by-step process of creating graphs in R\nUse the ggplot2 package plot figures in R\nHow to design clear and impactful visualisations\nUsing LLMs (Large Language Models) to help you with plotting\n\nExercises\nR code:\n\n Exercise answers script \n\n\n\n\nDay 4 (Thursday-morning):\n\nLecture slides\nLearning objectives:\n\nUnderstand the principles of clear and impactful visualisation\n\nHandout file\nExercises:\n\nExercise answer key\nExercise answer script\nDatasets:\n\nData Nightingale Rose (csv file)\nData ICU cost (csv file)"
   },
   {
     "objectID": "index.html#advance-data-management-and-techniques-in-r",
