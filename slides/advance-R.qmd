@@ -505,7 +505,7 @@ covid_cases |>
 
 ## Before we start
 
-Use the `Titanic3` dataset
+Use the [`Titanic3`](https://raw.githubusercontent.com/OUCRU-Modelling/R-training-2025/refs/heads/main/slides/data/Titanic3.xlsx) dataset
 
 ```{r}
 # install.packages("readxl")
