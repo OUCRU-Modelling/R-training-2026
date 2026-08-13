@@ -129,7 +129,6 @@ Please follow this [pre-course setups handout](handouts/precourse_setup.qmd) to 
   3. Easily update analyses when new data becomes available
 
 - In class example: [my_project.zip](handouts/my_project.zip){target="_blank"}
-- [Exercises](handouts/exercises_Day5.qmd){target="_blank"}
 
 # Appendix
 

@@ -319,7 +319,7 @@
     "href": "slides/IntroductionRDay2.html#aside-errors-and-warnings",
     "title": "Introduction to R, Day 2",
     "section": "Aside: errors and warnings",
-    "text": "Aside: errors and warnings\n\nError: code cannot be executed; no output is produced\n\n5 + \"apple\"\ntitanic$age[1,5]\n\nWarning: something unexpected occurred; output produced, but potentially incorrect\n\nas.numeric(c(\"1\", \"2\", \"banana\"))\nplot(fare ~ age, data=titanic, las=1, log=\"y\")"
+    "text": "Aside: errors and warnings\n\nError: code cannot be executed; no output is produced\n\n5 + \"apple\"\ntitanic$age[1,5]\n\n\nWarning: something unexpected occurred; output produced, but potentially incorrect\n\nas.numeric(c(\"1\", \"2\", \"banana\"))\nplot(fare ~ age, data=titanic, las=1, log=\"y\")"
   },
   {
     "objectID": "slides/IntroductionRDay2.html#basic-format",
@@ -347,7 +347,7 @@
     "href": "slides/IntroductionRDay2.html#functions-the-inside",
     "title": "Introduction to R, Day 2",
     "section": "Functions: the inside",
-    "text": "Functions: the inside\n\nFunction code can be seen by leaving out the parentheses \n\nIQR\n\nGeneral structure:\n\nFunctionName(args) {\n    lines of R code (collection of functions)\n}\nThe last value is returned as output - You can write your own functions:\ngood.morning &lt;- function(work){\n    if(work==TRUE) cat(\"wake up\") else \n      cat(\"you can stay in bed\")\n}\ngood.morning()"
+    "text": "Functions: the inside\n\nFunction code can be seen by leaving out the parentheses \n\nIQR\n\nGeneral structure:\n\nFunctionName &lt;- function(args) {\n    lines of R code (collection of functions)\n}\nThe last value is returned as output - You can write your own functions:\ngood.morning &lt;- function(work){\n    if(work==TRUE) cat(\"wake up\") else \n      cat(\"you can stay in bed\")\n}\ngood.morning()"
   },
   {
     "objectID": "slides/IntroductionRDay2.html#packages",
@@ -879,7 +879,7 @@
     "href": "index.html#reproducible-research-and-reporting-using-quarto",
     "title": "OUCRU R training course - 2026",
     "section": "Reproducible research and reporting using Quarto",
-    "text": "Reproducible research and reporting using Quarto\n\nDay 5 (Friday)\n\nLecture slides\nLearning objectives:\n\nWrite papers with reproducible tables and figures using Quarto\nGenerate reports in multiple formats: Word, PDF, slides, web pages…\nEasily update analyses when new data becomes available\n\nIn class example: my_project.zip\nExercises"
+    "text": "Reproducible research and reporting using Quarto\n\nDay 5 (Friday)\n\nLecture slides\nLearning objectives:\n\nWrite papers with reproducible tables and figures using Quarto\nGenerate reports in multiple formats: Word, PDF, slides, web pages…\nEasily update analyses when new data becomes available\n\nIn class example: my_project.zip"
   },
   {
     "objectID": "index.html#introduction-to-r-and-rstudio",
