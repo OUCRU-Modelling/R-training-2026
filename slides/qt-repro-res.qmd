@@ -1032,6 +1032,6 @@ summary(cars)
 :::
 :::::::
 
-# Now create your own Quarto manuscript and presentation!
+## Now create your own Quarto manuscript and presentation!
 
-- [Click to view this exercise](/handouts/exercises_Day5.qmd){.btn .btn-outline-primary target="_blank" role="button"}
+- Use the code in `covid.R` file to complete your report in `covid.qmd`
