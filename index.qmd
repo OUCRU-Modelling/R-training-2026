@@ -114,6 +114,7 @@ Please follow this [pre-course setups handout](handouts/precourse_setup.qmd) to 
       - Column manipulation with `dplyr`
   4. Joining dataframes
   5. Vectors and vectorisation in R
+- [Exercises](handouts/exercises_Day4_afternoon.qmd)
 
 
 
