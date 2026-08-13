@@ -2,25 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ronald Geskus">
-<meta name="author" content="Tuyen Huynh">
 
-<title>Pre-course setups and requirements</title>
+<title>agents</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
+code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: 1.5em;}
-div.column{flex: auto;}
-@media screen {
-div.columns{gap: min(4vw, 1.5em);}
-div.column{overflow-x: auto;}
-}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -66,28 +58,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../slides/figures/OUCRU.jpg" rel="icon" type="image/jpeg">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c63faf4a9a231195038ce4a88aabf56a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-274ccbfd47e105e69fd3cbd498ecbb5f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-c63faf4a9a231195038ce4a88aabf56a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./slides/figures/OUCRU.jpg" rel="icon" type="image/jpeg">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-089094a582bc2d3d363de7c3def9ce72.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-daf033642cbd4af7f704e1a6cac9cfb9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-089094a582bc2d3d363de7c3def9ce72.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -297,9 +290,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../slides/figures/OUCRU.jpg" alt="" class="navbar-logo light-content">
-    <img src="../slides/figures/OUCRU.jpg" alt="" class="navbar-logo dark-content">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./slides/figures/OUCRU.jpg" alt="" class="navbar-logo light-content">
+    <img src="./slides/figures/OUCRU.jpg" alt="" class="navbar-logo dark-content">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -309,27 +302,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../handouts/precourse_setup.html" aria-current="page"> 
+    <a class="nav-link" href="./handouts/precourse_setup.html"> 
 <span class="menu-text">Pre-course setups</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../slides/IntroductionRDay1.html"> 
+    <a class="nav-link" href="./slides/IntroductionRDay1.html"> 
 <span class="menu-text">Introduction to R (Day 1)</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../slides/IntroductionRDay2.html"> 
+    <a class="nav-link" href="./slides/IntroductionRDay2.html"> 
 <span class="menu-text">Introduction to R (Day 2)</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../slides/viz.html"> 
+    <a class="nav-link" href="./slides/viz.html"> 
 <span class="menu-text">Grammar of Graphics (Day 3)</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../slides/qt-repro-res.html"> 
+    <a class="nav-link" href="./slides/qt-repro-res.html"> 
 <span class="menu-text">Reproducible research and reporting using Quarto (Day 5)</span></a>
   </li>  
 </ul>
@@ -350,144 +343,147 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#about" id="toc-about" class="nav-link active" data-scroll-target="#about">About</a></li>
-  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r"><span class="header-section-number">1</span> R</a></li>
-  <li><a href="#rstudio-desktop" id="toc-rstudio-desktop" class="nav-link" data-scroll-target="#rstudio-desktop"><span class="header-section-number">2</span> RStudio Desktop</a></li>
-  <li><a href="#renv-setup" id="toc-renv-setup" class="nav-link" data-scroll-target="#renv-setup"><span class="header-section-number">3</span> <code>renv</code> setup</a></li>
+  <li><a href="#agents.md" id="toc-agents.md" class="nav-link active" data-scroll-target="#agents.md">AGENTS.md</a>
+  <ul class="collapse">
+  <li><a href="#what-this-repo-is" id="toc-what-this-repo-is" class="nav-link" data-scroll-target="#what-this-repo-is">What this repo is</a></li>
+  <li><a href="#stack" id="toc-stack" class="nav-link" data-scroll-target="#stack">Stack</a></li>
+  <li><a href="#repository-layout" id="toc-repository-layout" class="nav-link" data-scroll-target="#repository-layout">Repository layout</a></li>
+  <li><a href="#environment-setup" id="toc-environment-setup" class="nav-link" data-scroll-target="#environment-setup">Environment setup</a></li>
+  <li><a href="#making-changes" id="toc-making-changes" class="nav-link" data-scroll-target="#making-changes">Making changes</a></li>
+  <li><a href="#build-test-locally" id="toc-build-test-locally" class="nav-link" data-scroll-target="#build-test-locally">Build / test locally</a></li>
+  <li><a href="#publishing" id="toc-publishing" class="nav-link" data-scroll-target="#publishing">Publishing</a></li>
+  <li><a href="#things-to-avoid" id="toc-things-to-avoid" class="nav-link" data-scroll-target="#things-to-avoid">Things to avoid</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Pre-course setups and requirements</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Authors</div>
-    <div class="quarto-title-meta-contents">
-             <p>Ronald Geskus </p>
-             <p>Tuyen Huynh </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">August 13, 2026 – 04:41:15 (UTC)</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
 
 
-</header>
-
-
-<section id="about" class="level1 unnumbered">
-<h1 class="unnumbered">About</h1>
-<p>Here we explain how to install R and RStudio on your own computer. This is <strong>required</strong> to ensure a smooth experience and reproducible results during the course.</p>
+<section id="agents.md" class="level1">
+<h1>AGENTS.md</h1>
+<p>Guidance for AI coding agents working in this repository.</p>
+<section id="what-this-repo-is" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-repo-is">What this repo is</h2>
+<p>Course website for <strong>OUCRU R training course 2026</strong> — a <a href="https://quarto.org">Quarto</a> website project (<code>project: type: website</code>) built from <code>.qmd</code> files. Published at <a href="https://oucru-modelling.github.io/R-training-2026/" class="uri">https://oucru-modelling.github.io/R-training-2026/</a>.</p>
 </section>
-<section id="r" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> R</h1>
-<ol type="1">
-<li>Go to the <a href="http://www.r-project.org">R website</a></li>
-<li>In the column on the left hand side, click on the <a href="https://cran.r-project.org/mirrors.html">CRAN</a> link under the subheading <strong>Download</strong>
+<section id="stack" class="level2">
+<h2 class="anchored" data-anchor-id="stack">Stack</h2>
 <ul>
-<li>You now see a page with <em>CRAN Mirrors</em>. This is a list of servers from which the R software and extensions can be downloaded from</li>
-</ul></li>
-<li>Click on the first link
-<ul>
-<li>Now both the left hand side and the right hand side of the page change (This page can be saved as a bookmark/favorite)</li>
-</ul></li>
-<li>On the right hand side, click on the download link for your operating system
-<ul>
-<li>E.g. Windows users click on <a href="https://cloud.r-project.org/">Download R for Windows</a>, then click on <strong>base</strong> and download the program from there.</li>
-<li>It is recommended to install the latest version as well as to upgrade the program if a new major version is released, which is about once per year</li>
-<li>You can use the default installation options</li>
-</ul></li>
-</ol>
+<li><strong>Quarto</strong> website project (not a book or blog)</li>
+<li><strong>R</strong>, with package versions locked via <strong>renv</strong> (<code>renv.lock</code>, <code>.Rprofile</code>, <code>renv/</code>)</li>
+<li>Slide decks use <code>format: revealjs</code>; handouts use <code>format: html</code> (or <code>pdf</code>)</li>
+</ul>
 </section>
-<section id="rstudio-desktop" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> RStudio Desktop</h1>
-<ol type="1">
-<li>Go to <a href="https://posit.co/download/rstudio-desktop/">the download page</a></li>
-<li>Scroll down, look for <strong>2: Install Rstudio</strong> and click on the button for downloading <strong>RStudio Desktop</strong></li>
-<li>Download and install RStudio Desktop
-<ul>
-<li>You can use the default installation options</li>
-</ul></li>
-<li>Open Rstudio Desktop, to check that everything has been installed correctly
-<ul>
-<li>E.g. via the <strong>Start</strong> menu in Windows</li>
-</ul></li>
-</ol>
+<section id="repository-layout" class="level2">
+<h2 class="anchored" data-anchor-id="repository-layout">Repository layout</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Path</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>index.qmd</code></td>
+<td>Homepage — course schedule + links to slides/handouts</td>
+</tr>
+<tr class="even">
+<td><code>slides/</code></td>
+<td>Lecture slide decks (<code>format: revealjs</code>)</td>
+</tr>
+<tr class="odd">
+<td><code>handouts/</code></td>
+<td>Exercises, answer keys, setup instructions (<code>format: html</code> or <code>pdf</code>)</td>
+</tr>
+<tr class="even">
+<td><code>_quarto.yml</code></td>
+<td>Project-level config (theme, navbar, output dir, <code>freeze: auto</code>)</td>
+</tr>
+<tr class="odd">
+<td><code>theme.scss</code>, <code>theme-dark.scss</code></td>
+<td>Light and dark theme overrides (paired with <code>cosmo</code> bootstrap theme)</td>
+</tr>
+<tr class="even">
+<td><code>README.md</code></td>
+<td>Human-readable project description and instructor guidelines</td>
+</tr>
+<tr class="odd">
+<td><code>R-training-2026.Rproj</code></td>
+<td>RStudio project file</td>
+</tr>
+<tr class="even">
+<td><code>.nojekyll</code></td>
+<td>GitHub Pages directive (prevents Jekyll processing)</td>
+</tr>
+<tr class="odd">
+<td><code>renv/</code>, <code>renv.lock</code>, <code>.Rprofile</code></td>
+<td>R package version locking</td>
+</tr>
+<tr class="even">
+<td><code>_render/</code></td>
+<td>Rendered site output — generated, not hand-edited</td>
+</tr>
+<tr class="odd">
+<td><code>.github/workflows/publish.yml</code></td>
+<td>GitHub Actions workflow: renders and publishes on push to <code>main</code></td>
+</tr>
+</tbody>
+</table>
+<p>Note: the publish workflow ignores changes to <code>README.md</code> and <code>AGENTS.md</code> — editing them won’t trigger a rebuild.</p>
 </section>
-<section id="renv-setup" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> <code>renv</code> setup</h1>
-<blockquote class="blockquote">
-<p>The <a href="https://rstudio.github.io/renv/"><code>renv</code></a> package helps you create reproducible environments for your R projects. Use <code>renv</code> to make your R projects more <strong>isolated</strong>, portable and <strong>reproducible</strong>.</p>
-</blockquote>
-<p>For better error reproducilibity, environment consistency, and ease of debugging, we will setup an <code>renv</code> environment for the course. Follow these steps:</p>
-<ol type="1">
-<li>In your normal R console, install <code>renv</code> with</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"renv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="2" type="1">
-<li>Initialise <code>renv</code> in the project environment with</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">init</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Make sure you’re in the correct working directory!</p>
-<p>You can check from the R console with <code>getwd()</code> and set the correct working directory with <code>setwd(...)</code></p>
-</div>
-</div>
-</div>
-<ol start="3" type="1">
-<li>Restart your R session</li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>This can be done using Ctrl+Shift+F10 on Windows and Cmd+Shift+F10 on MacOS</p>
-</div>
-</div>
-</div>
-<ol start="4" type="1">
-<li>Check your R console upon restart. It should say that <code>renv</code> is loaded and activated!</li>
-</ol>
-<p>(This will be quickly walked through again on the first session of the course)</p>
+<section id="environment-setup" class="level2">
+<h2 class="anchored" data-anchor-id="environment-setup">Environment setup</h2>
+<p>Before doing any R work in this project:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This installs the exact package versions pinned in <code>renv.lock</code>.</p>
+</section>
+<section id="making-changes" class="level2">
+<h2 class="anchored" data-anchor-id="making-changes">Making changes</h2>
+<ul>
+<li>New/edited <strong>slides</strong> go in <code>slides/</code> and must keep <code>format: revealjs</code> in the YAML header.</li>
+<li>New/edited <strong>handouts</strong> go in <code>handouts/</code> and must use <code>format: html</code> (or <code>pdf</code>).</li>
+<li>Theme overrides go in <code>theme.scss</code> (light) and <code>theme-dark.scss</code> (dark), not inline in <code>.qmd</code> files.</li>
+<li>Site-wide settings (theme, navbar, etc.) live in <code>_quarto.yml</code>. A <code>.qmd</code> file’s own YAML header overrides project defaults for that file only.</li>
+<li>If you add, remove, or update an R package used anywhere in the project, run <code>renv::snapshot()</code> before committing so <code>renv.lock</code> stays in sync.</li>
+</ul>
+</section>
+<section id="build-test-locally" class="level2">
+<h2 class="anchored" data-anchor-id="build-test-locally">Build / test locally</h2>
+<ul>
+<li>Live preview while editing: <code>quarto preview</code></li>
+<li>One-off full render: <code>quarto render</code> → output lands in <code>_render/index.html</code></li>
+</ul>
+<p>The <code>_quarto.yml</code> has <code>freeze: auto</code>, which caches code output to speed up subsequent renders. If output changes, delete <code>_render/</code> or run <code>quarto render --no-cache</code>.</p>
+<p>Run one of these after editing any <code>.qmd</code> file to catch rendering errors before committing.</p>
+</section>
+<section id="publishing" class="level2">
+<h2 class="anchored" data-anchor-id="publishing">Publishing</h2>
+<ul>
+<li><strong>Do:</strong> push commits to <code>main</code> — a GitHub Actions workflow renders and publishes the site automatically.</li>
+<li><strong>Don’t:</strong> run <code>quarto publish gh-pages</code> manually — this bypasses the intended CI-based publishing flow.</li>
+</ul>
+</section>
+<section id="things-to-avoid" class="level2">
+<h2 class="anchored" data-anchor-id="things-to-avoid">Things to avoid</h2>
+<ul>
+<li>Don’t hand-edit anything under <code>_render/</code> — it’s generated; edit the source <code>.qmd</code> instead.</li>
+<li>Don’t commit a dependency change without a matching <code>renv::snapshot()</code>.</li>
+<li>Don’t install R packages outside the project’s <code>renv</code> library.</li>
+<li>Don’t change a slide’s format away from <code>revealjs</code> or a handout’s away from <code>html</code>/<code>pdf</code> without good reason — downstream links in <code>index.qmd</code> assume these.</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -591,13 +587,6 @@ Tip
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
-            // target, if specified
-            link.setAttribute("target", "_blank");
-            if (link.getAttribute("rel") === null) {
-              link.setAttribute("rel", "noopener");
-            }
-            // default icon
-            link.classList.add("external");
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
