@@ -1,5 +1,180 @@
 [
   {
+    "objectID": "handouts/exercises_Day4_afternoon.html",
+    "href": "handouts/exercises_Day4_afternoon.html",
+    "title": "Exercises Day 4 (afternoon)",
+    "section": "",
+    "text": "NotePiping\n\n\n\nIt is expected that the exercise answers will be mainly using the pipe operators |&gt;, instead of putting functions inside each other"
+  },
+  {
+    "objectID": "handouts/exercises_Day4_afternoon.html#notes-and-instructions",
+    "href": "handouts/exercises_Day4_afternoon.html#notes-and-instructions",
+    "title": "Exercises Day 4 (afternoon)",
+    "section": "",
+    "text": "NotePiping\n\n\n\nIt is expected that the exercise answers will be mainly using the pipe operators |&gt;, instead of putting functions inside each other"
+  },
+  {
+    "objectID": "handouts/exercises_Day4_afternoon.html#dataset",
+    "href": "handouts/exercises_Day4_afternoon.html#dataset",
+    "title": "Exercises Day 4 (afternoon)",
+    "section": "Dataset",
+    "text": "Dataset\nWe will use covid_cases.rds for this exercise.\n\n  \n    Data dictionary\n  \n\n\n\n\n\n\n\nColumn\nDescription\n\n\n\n\ndate\ndate of the case report\n\n\n211 columns with the format cases_{country_code}\nnumber of reported cases of each country and archipelago\n\n\n\nCountry codes of interest (i.e. Codes for countries needed for the exercise)\n\n\n\nCode\nCountry name\n\n\n\n\nchn\nChina\n\n\nusa\nUnited States of America\n\n\nvnm\nVietnam\n\n\nsgp\nSingapore"
+  },
+  {
+    "objectID": "handouts/exercises_Day4_afternoon.html#exercises",
+    "href": "handouts/exercises_Day4_afternoon.html#exercises",
+    "title": "Exercises Day 4 (afternoon)",
+    "section": "Exercises",
+    "text": "Exercises\n\nTask 1: Data import\n\nRead data\nLoad the tidyverse meta-package into R\n\n\n\n\n\n\n\nNote\n\n\n\nA “meta-package” is a package that contains other packages. Remember, tidyverse is just a collection of packages.\n\n\n\n\nTask 2: Data cleaning and filtering\n\nDoes the data follow the tidy data standard?\n\nIf not, pivot the data into a tibble that follows the tidy data standard\n\nDo some quick skim on the data. Do the variable values make sense given its type?\n\nIf not, filter out incorrect/impossible data\n\nFilter the data so that we only have week 3-12 of 2020\nSave the results back into covid_cases\n\n\n\n\n\n\n\nTipTip: pivotting\n\n\n\n\n\n\nIf your data is not tidy data:\n\n“Lengthens” the data using tidyr::pivot_longer(), i.e. less columns, more rows\n“Widens” the data using tidyr::pivot_wider(), i.e. less rows, more columns\n\n\n\n\n\n\n\n\n\n\n\nTipTip: data cleaning\n\n\n\n\n\n\nThe main variable here is case counts from each country. They should have a numeric type and should not be lower than 0. You can’t have negative case counts\nYou can remove or filter undesirable values using dplyr::filter()\n\n\n\n\n\n\nTask 3: Data transformation\n\nUsing the covid_cases object created in Task 2:\n\nGroup the data and calculate the total number of cases per country\nSelect the top 5 countries with highest total cases\nExtract the country codes and save them into a new object, e.g. top_countries\n\n\n\nUse the covid_cases object created in Task 2 again:\n\nGroup the data again, calculate the total number of cases per country again\nModify the country column:\n\nSo that we only keep the names of countries in the top 5 (generated above). Countries on in the top 5 will be changed to \"Others\"\nTurn this column into a factor type using the forcats package (already in tidyverse)\nGroup the data again, this time, group by date and country\nCalculate the total number of cases per date per country\nCreate a new column called pct_cases, which is the percentage of total cases per date per country\n(Optional) remove rows with NA from the tibble\nThere are many ways to do this part of the task\n\nSave all of this into a new object, e.g. plot_data\n\n\n\n\n\n\n\n\nTipTip: data grouping and summarisation\n\n\n\n\n\n\nGroup data into groups with dplyr::group_by() and ungroup data with dplyr::ungroup()\nSummarise each group into a single row with dplyr::summarise()\nYou can have multiple groups at the same time. For example:\n\n\n\n`summarise()` has regrouped the output.\nℹ Summaries were computed grouped by date and country.\nℹ Output is grouped by date.\nℹ Use `summarise(.groups = \"drop_last\")` to silence this message.\nℹ Use `summarise(.by = c(date, country))` for per-operation grouping\n  (`?dplyr::dplyr_by`) instead.\n\n\n\n  \n\n\n\n\nYou can choose not to summarise, but add a new column to each group with dplyr::mutate(). For example:\n\n\n\n\n  \n\n\n\nThis will create a new column total_cases that contains the sum of cases for each country without reducing each group into a single row like summarise(). Values will be duplicated for each group.\n\n\n\n\n\n\n\n\n\nTipTip: get top n values in a tibble\n\n\n\n\n\n\nYou can select rows with the top n values in a tibble using dplyr::slice_max()\n\n\n\n\n\n\n\n\n\n\nTipTip: get values of a column in a tibble\n\n\n\n\n\n\nYou can extract values from a columns in a tibble using dplyr::pull()\n\n\n\n\n\n\n\n\n\n\nTipTip: turn a tibble column into a factor\n\n\n\n\n\n\nYou can create and work with factors inside a tibble using the forcats package (already in tidyverse)\nYou can “lump”, or gather, factor levels that are not frequent with forcats::fct_lump_n()\n\n\n\n\n\n\nTask 4: Join data\n\nUse this data country_region.rds to get the regions and sub-regions for all countries.\nMake these 2 tables:\n\n\nWrite a short paragraph summarising key insights from the table, using inline R code to dynamically display case numbers. For example:\n\n\nEurope (192,068) and Asia (126,420) reported the highest number of cases, while Oceania (1,879) had the lowest.\n\nNoted that the number of cases is not hard-coded but you use inline R code to generate it within the text.\n\n\n\n\n\n\nTipTip: join the tables with left_join()\n\n\n\n\n\nYou can join covid_cases and country_region, using the country column of covid_cases and the alpha_3 column of country_region.\n\n\n\n\n\n\n\n\n\nTipTip: make the total cases table\n\n\n\n\n\nYou can use group_by() and summarise() to compute the total cases by sum(cases).\n\n\n\n\n\n\n\n\n\nTipTip: make inline R code\n\n\n\n\n\nIn the paragraph, use inline R code like {r} scales::comma(data$total_cases[tmp1$region == \"Europe\"]) to reference computed values. Function scales::comma() will make the numbers appear with commas for thousands (e.g., 100,000 instead of 100000).\n\n\n\n\n\nTask 5: Data visualization\n\nUsing ggplot2, try your best to generate the following figure:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipTip: how do I draw that??\n\n\n\n\n\n\nggplot2 reference page is very useful\nHere are all the functions used to generate the plot above, in sequence:\n\nggplot()\ngeom_area()\nscale_y_continuous()\nscale_x_date()\nscale_fill_discrete()\nggtitle()\nEvery function is connected with the + operator"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "OUCRU R training course - 2026",
+    "section": "",
+    "text": "The training will be 09:00 – 17:00 (UTC +7) for everyday\nThere will be a lunch break between 12:30 – 13:30 (UTC +7)\nLunch will be provided for in-person attendees who filled in their attendance on ferendum.com. If you did not, you need to arrange lunch yourself.\n\n\n\n\nProf. Ronald Geskus, Biostatistics group, OUCRU HCM\nMr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM\nMr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM\nDr. Tran Thai Hung, Biostatistics group, OUCRU HCM\nMs. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM\nDr. Duc Du Hong, Biostatistics group, OUCRU HCM\nDr. Thuan Hoang Van, Biostatistics group, OUCRU Ha Noi\nDr. Nguyen Lam Vuong, Biostatistics group, OUCRU HCM\nMr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM\n\n\n\n\nPlease follow this pre-course setups handout to setup R and RStudio."
+  },
+  {
+    "objectID": "index.html#contributors",
+    "href": "index.html#contributors",
+    "title": "OUCRU R training course - 2026",
+    "section": "",
+    "text": "Prof. Ronald Geskus, Biostatistics group, OUCRU HCM\nMr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM\nMr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM\nDr. Tran Thai Hung, Biostatistics group, OUCRU HCM\nMs. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM\nDr. Duc Du Hong, Biostatistics group, OUCRU HCM\nDr. Thuan Hoang Van, Biostatistics group, OUCRU Ha Noi\nDr. Nguyen Lam Vuong, Biostatistics group, OUCRU HCM\nMr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM"
+  },
+  {
+    "objectID": "index.html#pre-course-setups-and-requirements",
+    "href": "index.html#pre-course-setups-and-requirements",
+    "title": "OUCRU R training course - 2026",
+    "section": "",
+    "text": "Please follow this pre-course setups handout to setup R and RStudio."
+  },
+  {
+    "objectID": "index.html#introduction-to-r",
+    "href": "index.html#introduction-to-r",
+    "title": "OUCRU R training course - 2026",
+    "section": "Introduction to R",
+    "text": "Introduction to R\n\nDay 1 (Monday)\n\nLecture slides\nLearning objectives:\n\nBasic structure of R\nSimple computations\nImport and inspect datasets\nMake selections\nNavigate RStudio with confidence\n\nExercises:\n\nExercises\nExercise answers\n Exercise answers script \n\n Example R code scripts - Day 1 \n\n\n\nDay 2 (Tuesday)\n\nLecture slides\nLearning objectives:\n\nCreate visualisations using Base R graphics\nWrite simple functions to automate tasks; the package system\nLists\nUsing pipe operators to chain functions\n\nR code:\n\n Exercise answers script \n\n Example R code scripts - Day 2"
+  },
+  {
+    "objectID": "index.html#principles-of-data-visualisation-and-plotting-in-r",
+    "href": "index.html#principles-of-data-visualisation-and-plotting-in-r",
+    "title": "OUCRU R training course - 2026",
+    "section": "Principles of data visualisation and plotting in R",
+    "text": "Principles of data visualisation and plotting in R\n\nDay 3 (Wednesday):\n\nLecture slides\nLearning objectives:\n\nThe grammar of graphics—understanding how plots are built\nThe step-by-step process of creating graphs in R\nUse the ggplot2 package plot figures in R\nHow to design clear and impactful visualisations\nUsing LLMs (Large Language Models) to help you with plotting\n\nExercises\nR code:\n\n Exercise answers script \n\n\n\n\nDay 4 (Thursday-morning):\n\nLecture slides\nLearning objectives:\n\nUnderstand the principles of clear and impactful visualisation\n\nHandout file\nExercises:\n\nExercise answer key\nExercise answer script\nDatasets:\n\nData Nightingale Rose (csv file)\nData ICU cost (csv file)"
+  },
+  {
+    "objectID": "index.html#advance-data-management-and-techniques-in-r",
+    "href": "index.html#advance-data-management-and-techniques-in-r",
+    "title": "OUCRU R training course - 2026",
+    "section": "Advance data management and techniques in R",
+    "text": "Advance data management and techniques in R\n\nDay 4 (Thursday-afternoon):\n\nLecture slides\nLearning objectives:\n\nInto the tidyverse\nLogics with if-else statements and for-loops\nData manipulation with tidyverse\n\nData ingestion with readr\nPivotting dataframes with tidyr\nColumn manipulation with dplyr\n\nJoining dataframes\nVectors and vectorisation in R\n\nExercises"
+  },
+  {
+    "objectID": "index.html#reproducible-research-and-reporting-using-quarto",
+    "href": "index.html#reproducible-research-and-reporting-using-quarto",
+    "title": "OUCRU R training course - 2026",
+    "section": "Reproducible research and reporting using Quarto",
+    "text": "Reproducible research and reporting using Quarto\n\nDay 5 (Friday)\n\nLecture slides\nLearning objectives:\n\nWrite papers with reproducible tables and figures using Quarto\nGenerate reports in multiple formats: Word, PDF, slides, web pages…\nEasily update analyses when new data becomes available\n\nIn class example: my_project.zip\nExercises"
+  },
+  {
+    "objectID": "index.html#introduction-to-r-and-rstudio",
+    "href": "index.html#introduction-to-r-and-rstudio",
+    "title": "OUCRU R training course - 2026",
+    "section": "Introduction to R and RStudio",
+    "text": "Introduction to R and RStudio\nGood introduction, with explanatory videos:\n\nRStudio provides several tutorials for beginners and more advanced users: https://education.rstudio.com/\nDatacamp provides many courses at different levels (OUCRU HCMC has a license). See http://www.statmethods.net. The introduction is free\nA basic course, interactive design: https://www.quantargo.com/courses/course-r-introduction\nIntroduction from Pasteur institute: https://hub-courses.pages.pasteur.fr/R_pasteur_phd/First_steps_RStudio.html\nGood summary of basic concepts: http://www.burns-stat.com/documents/tutorials/impatient-r\nA comprehensive introduction: https://github.com/matloff/fasteR\nIntroduction to R programming: https://jjallaire.github.io/hopr/"
+  },
+  {
+    "objectID": "index.html#deeper-into-r",
+    "href": "index.html#deeper-into-r",
+    "title": "OUCRU R training course - 2026",
+    "section": "DeepeR into R",
+    "text": "DeepeR into R\n\nThe book R for Data Science (2e)\n“What They Forgot to Teach You About R”\nhttps://www.r-project.org/doc/bib/R-books.html\nThe official R manuals: https://cran.r-project.org/manuals.html"
+  },
+  {
+    "objectID": "index.html#r-and-statistics",
+    "href": "index.html#r-and-statistics",
+    "title": "OUCRU R training course - 2026",
+    "section": "R and statistics",
+    "text": "R and statistics\n\nA simple introduction to biomedical statistics using R: https://a-little-book-of-r-for-biomedical-statistics.readthedocs.io/en/latest/\nA website with detailed examples of all types of statistical analysis: https://stats.oarc.ucla.edu/other/dae/\nR by example: http://www.mayin.org/ajayshah/KB/R/index.html\nR course, with focus machine learning"
+  },
+  {
+    "objectID": "index.html#r-markdown-and-quarto",
+    "href": "index.html#r-markdown-and-quarto",
+    "title": "OUCRU R training course - 2026",
+    "section": "R Markdown and Quarto",
+    "text": "R Markdown and Quarto\n\nThe main RStudio webpage on R Markdown, with links to two freely available books: https://rmarkdown.rstudio.com/docs/\nIntroduction from RStudio\nIntroduction to knitr\nFirst steps in Markdown\nWriting academic papers with R Markdown (focus on bibiliographies): https://ikashnitsky.github.io/2019/zotero/\nR Markdown tips: https://appsilon.com/r-markdown-tips/\nPowerpoint presentations using R Markdown: https://appsilon.com/r-markdown-powerpoint-presentation/\nhttps://codingclubuc3m.rbind.io/post/2019-09-24/ focus on creating presentations\nR Quarto tutorial: https://appsilon.com/r-quarto-tutorial/"
+  },
+  {
+    "objectID": "slides/qt-example.html",
+    "href": "slides/qt-example.html",
+    "title": "Hello, Quarto",
+    "section": "",
+    "text": "Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
+  },
+  {
+    "objectID": "slides/qt-example.html#introduction-to-quarto",
+    "href": "slides/qt-example.html#introduction-to-quarto",
+    "title": "Hello, Quarto",
+    "section": "",
+    "text": "Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
+  },
+  {
+    "objectID": "slides/qt-example.html#header-levels",
+    "href": "slides/qt-example.html#header-levels",
+    "title": "Hello, Quarto",
+    "section": "2 Header Levels",
+    "text": "2 Header Levels\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\nLevel 1 header: # Header\nLevel 2 header: ## Subheader\nLevel 3 header: ### Sub-subheader\n\n\n2.1 Nested Headers\nUsing headers, you can create nested sections to structure your document in a clear and organized way."
+  },
+  {
+    "objectID": "slides/qt-example.html#inline-text-formatting",
+    "href": "slides/qt-example.html#inline-text-formatting",
+    "title": "Hello, Quarto",
+    "section": "3 Inline Text Formatting",
+    "text": "3 Inline Text Formatting\nYou can format your text inline to add emphasis or other styling options.\n\nBold text: **bold**\nItalic text: *italic*\nInline code: `code`\nUnderline: [underline]{.underline}\n\n\nBlockquotes can be used to highlight important information or quotes by adding &gt; at the beginning of a line."
+  },
+  {
+    "objectID": "slides/qt-example.html#lists",
+    "href": "slides/qt-example.html#lists",
+    "title": "Hello, Quarto",
+    "section": "4 Lists",
+    "text": "4 Lists\nQuarto supports both ordered and unordered lists.\n\n4.1 Unordered List\nTo create an unordered list, use an asterisk * before each item:\n\nFirst item\nSecond item\nThird item\n\n\n\n4.2 Ordered List\nTo create an ordered list, use numbers before each item:\n\nFirst item\nSecond item\nThird item"
+  },
+  {
+    "objectID": "slides/qt-example.html#math-equations-and-symbols",
+    "href": "slides/qt-example.html#math-equations-and-symbols",
+    "title": "Hello, Quarto",
+    "section": "5 Math equations and symbols",
+    "text": "5 Math equations and symbols\nInline math:\nThe simple regression model is \\(Y_i = \\beta_0 + \\beta_1 X_i + \\epsilon_i\\) $Y_i = \\beta_0 + \\beta_1 X_i + \\epsilon_i$\nDisplay math:\nThe Gaussian probability density function is: \\[f(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} e^{-\\frac{(x - \\mu)^2}{2\\sigma^2}}\\] $$f(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} e^{-\\frac{(x - \\mu)^2}{2\\sigma^2}}$$"
+  },
+  {
+    "objectID": "slides/qt-example.html#links-and-images",
+    "href": "slides/qt-example.html#links-and-images",
+    "title": "Hello, Quarto",
+    "section": "6 Links and images",
+    "text": "6 Links and images\nhttp://example.com\nlinked phrase\n\n\n\noptional caption text"
+  },
+  {
+    "objectID": "slides/qt-example.html#tables",
+    "href": "slides/qt-example.html#tables",
+    "title": "Hello, Quarto",
+    "section": "7 Tables",
+    "text": "7 Tables\n\n\n\nFirst Header\nSecond Header\n\n\n\n\nContent Cell\nContent Cell\n\n\nContent Cell\nContent Cell"
+  },
+  {
+    "objectID": "slides/qt-example.html#code-block",
+    "href": "slides/qt-example.html#code-block",
+    "title": "Hello, Quarto",
+    "section": "8 Code block",
+    "text": "8 Code block\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")"
+  },
+  {
+    "objectID": "slides/qt-example.html#footnotes",
+    "href": "slides/qt-example.html#footnotes",
+    "title": "Hello, Quarto",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThis is an example footnote.↩︎"
+  },
+  {
     "objectID": "slides/advance-R.html#course-topics",
     "href": "slides/advance-R.html#course-topics",
     "title": "Advance data management and techniques in R",
@@ -672,6 +847,433 @@
     "text": "Slide structure\n\n\n\nindex.qmd\n---\ntitle: \"My Presentation\"\nauthor: \"Your Name\"\nformat: \n  revealjs:\n    chalkboard: true\ntoc: false\n---\n\n## Slide Title\n\n- Bullet point 1\n- Bullet point 2\n\n## Code Blocks & Highlighting\n\nYou can add code blocks like this:\n\n```{r}\n# R code block\nsummary(cars)\n```"
   },
   {
+    "objectID": "slides/IntroductionRDay2.html#learning-goals",
+    "href": "slides/IntroductionRDay2.html#learning-goals",
+    "title": "Introduction to R, Day 2",
+    "section": "Learning goals",
+    "text": "Learning goals\n\nDay 1\n\nBasic structure of the R program and language\nUse the RStudio working environment\nImport, inspect and manage a data set\n\nSelect variables (columns) and rows (observations)\nMissing data, factors, dates\n\n\n\n\n\nDay 2\n\nUsing graphics in base R\nFunctions, packages\nObject specific functions\nLists\nWriting more transparent code"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#r-graphics-systems",
+    "href": "slides/IntroductionRDay2.html#r-graphics-systems",
+    "title": "Introduction to R, Day 2",
+    "section": "R graphics systems:",
+    "text": "R graphics systems:\n\nBase graphics (package graphics)\n\nStraightforward to use\nAlways loaded when R is started\nSee Ch. 12 of manual An Introduction to R\n\n\n\n\nlattice package. Less popular nowadays. Not covered here.\nggplot2 package: Wednesday\nNote: these systems cannot be mixed"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#basic-plot-in-base-graphics",
+    "href": "slides/IntroductionRDay2.html#basic-plot-in-base-graphics",
+    "title": "Introduction to R, Day 2",
+    "section": "Basic plot in base graphics",
+    "text": "Basic plot in base graphics\nPlot fare paid as function of age\nplot(titanic$age, titanic$fare)\nExercise: What would you like to change to make it good enough for publication?\n\n\nFormula based specification\n\nbasis for specification of regression models\ngeneral form: dependent ~ independent\n\nplot(fare ~ age, data=titanic)\n\nindependent: variable names separated by operator (+ for main effects and * for main effects plus interaction)\nfunctions with formula (as first argument) have data and subset argument\n\n\n\n\nSome possible changes: change labels along axes, rotate numbers along y-axis, add regression line, rescale fare\n\n\n\nGood summary on base graphics on page 5 of Reference card"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#arguments-and-parameters-that-can-be-changed",
+    "href": "slides/IntroductionRDay2.html#arguments-and-parameters-that-can-be-changed",
+    "title": "Introduction to R, Day 2",
+    "section": "Arguments and parameters that can be changed",
+    "text": "Arguments and parameters that can be changed\n\nWithin function only\n\nxlab, ylab, main\ntype\nxlim, ylim, log\n\nAlso via par function\n\ncex.axis, cex.lab, las\ncex, pch\ncol, lty, lwd\n\nOnly via par function\n\nmar, mfcol, mfrow"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#some-important-functions-for-plotting",
+    "href": "slides/IntroductionRDay2.html#some-important-functions-for-plotting",
+    "title": "Introduction to R, Day 2",
+    "section": "Some important functions for plotting",
+    "text": "Some important functions for plotting\n\nHigh level plot functions\n\nplot\nhist\nboxplot\n\nLow level plot functions (add to existing plot)\n\npoints\nlines, abline\ntext, legend, title, arrows, segments"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#other-plots",
+    "href": "slides/IntroductionRDay2.html#other-plots",
+    "title": "Introduction to R, Day 2",
+    "section": "Other plots",
+    "text": "Other plots\n1-3. Plot fare paid as function of age, change scale, add regression line\n\nColor points by passenger class\nMake a separate plot by sex\n\n\nExercise 6: Make a histogram of age\nExercise 7: Make a boxplot of age by passenger class."
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#export-two-types-of-formats",
+    "href": "slides/IntroductionRDay2.html#export-two-types-of-formats",
+    "title": "Introduction to R, Day 2",
+    "section": "Export: two types of formats",
+    "text": "Export: two types of formats\n\nVector format (pdf, eps, wmf, emf, svg)\n\ndigital image consisting of independent geometric objects (segments, polygons, curves, etc.)\ncan be enlarged without losing resolution\n\nRaster format (png, jpeg, tiff, bmp).\n\nrectangular grid of pixels, possibly with color\nresolution impaired if image is enlarged\n\nGraphics can be saved via the menu in the graphics/plots window, or a specific graphics file type can be created directly via code\n\npdf(\"foo.pdf\",...)\n...\ndev.off()\nor win.metafile(\"foo.wmf\",...) or png(\"foo.png\",...) and ending with dev.off()"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#aside-errors-and-warnings",
+    "href": "slides/IntroductionRDay2.html#aside-errors-and-warnings",
+    "title": "Introduction to R, Day 2",
+    "section": "Aside: errors and warnings",
+    "text": "Aside: errors and warnings\n\nError: code cannot be executed; no output is produced\n\n5 + \"apple\"\ntitanic$age[1,5]\n\nWarning: something unexpected occurred; output produced, but potentially incorrect\n\nas.numeric(c(\"1\", \"2\", \"banana\"))\nplot(fare ~ age, data=titanic, las=1, log=\"y\")"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#basic-format",
+    "href": "slides/IntroductionRDay2.html#basic-format",
+    "title": "Introduction to R, Day 2",
+    "section": "Basic format",
+    "text": "Basic format\n\nAll actions are performed via functions: sqrt, mean, help, library, t.test, plot\nInput: required and optional arguments; within parentheses, separated by comma\n\nrequired: need to be supplied\noptional: have default values\nBeware of sequence of arguments; required ones come first. Compare\nlog(1000, 10) \nlog(10, 1000) \n\n\n\n\nSome functions have special “argument”: ...\nMeaning: anything that makes sense. Example: in c and paste function, which allow for the use of many values to\nOutput: result of calculations (typically assigned to R object), graphics, help window, etc.\nYou can use functions within other functions, e.g. mean(c(3,6,8))"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#object-specific-functionality-i",
+    "href": "slides/IntroductionRDay2.html#object-specific-functionality-i",
+    "title": "Introduction to R, Day 2",
+    "section": "Object specific functionality (I)",
+    "text": "Object specific functionality (I)\n\nOutput of function depends on class of object\n\nExamples:\n\nsummary:\nsummary.data.frame, summary.factor, summary.Date\ndefault: summary.default\nplot: plot(y ~ x, data=..., ...)\n Plot depends on class of `x`: scatterplot is default, but\n boxplot if `x` is of class factor and plot by year if `x` is of class Date"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#object-specific-functionality-ii",
+    "href": "slides/IntroductionRDay2.html#object-specific-functionality-ii",
+    "title": "Introduction to R, Day 2",
+    "section": "Object specific functionality (II)",
+    "text": "Object specific functionality (II)\nWhy important to know?\n\nFinding information in help file\nVery efficient in use. E.g. plot is a generic function, with specific methods depending on the class of the object that is the argument of the function.\nWe only need to remember plot"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#functions-the-inside",
+    "href": "slides/IntroductionRDay2.html#functions-the-inside",
+    "title": "Introduction to R, Day 2",
+    "section": "Functions: the inside",
+    "text": "Functions: the inside\n\nFunction code can be seen by leaving out the parentheses \n\nIQR\n\nGeneral structure:\n\nFunctionName(args) {\n    lines of R code (collection of functions)\n}\nThe last value is returned as output - You can write your own functions:\ngood.morning &lt;- function(work){\n    if(work==TRUE) cat(\"wake up\") else \n      cat(\"you can stay in bed\")\n}\ngood.morning()"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#packages",
+    "href": "slides/IntroductionRDay2.html#packages",
+    "title": "Introduction to R, Day 2",
+    "section": "Packages",
+    "text": "Packages\n\nRegular R users transform recurring tasks into self-made functions\nCan make it into a package, i.e. a collection of functions (and data):\n\nggplot2\ntidyverse\nWHO TB data\nAMR\npharmaverse\nSUSENAS\nvietnameseConverter\nsudoku\nrStrava\n\nGive package developers appropriate credit and cite their packages"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#packages-where-to-find-them",
+    "href": "slides/IntroductionRDay2.html#packages-where-to-find-them",
+    "title": "Introduction to R, Day 2",
+    "section": "Packages, where to find them?",
+    "text": "Packages, where to find them?\n\nComprehensive R Archive Network (24504 packages on August 4, 2026)\nGitHub (34867 packages on August 4, 2026)\nBioconductor\nMonthly Review Top 40 packages\n\n\n\nNeed to be installed on your computer\nR program itself also based on packages. Some loaded at startup base, graphics, stats, utils …\nFor example, base package contains sqrt function\nOther packages need to be loaded before use, best way is via library(pkg_name)"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#another-object-mode-list",
+    "href": "slides/IntroductionRDay2.html#another-object-mode-list",
+    "title": "Introduction to R, Day 2",
+    "section": "Another object mode: list",
+    "text": "Another object mode: list\n\nGeneral mode to store information\nDifferent modes cannot be mixed in vectors\n\nteachers &lt;- c(\"Ronald\",\"Hung\",\"Tuyen\") # mode character\nrooms &lt;- c(306,306,305) # mode numeric\nc(teachers, rooms) # numbers become characters\n\nModes can be mixed in a list:\n\nlist(teachers, rooms)\n## named list:\nlist(teacher = teachers, room = rooms)\nTwo components, with names teacher and room\n\nData are of mode list, but with a special class data.frame\n\nmode(titanic)\nclass(titanic)"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#example-regression-models",
+    "href": "slides/IntroductionRDay2.html#example-regression-models",
+    "title": "Introduction to R, Day 2",
+    "section": "Example: regression models",
+    "text": "Example: regression models\nHow does fare paid depend on age? Linear regression:\nFareByAge &lt;- lm(log(fare+3)~age, data=titanic)\nOutput: should contain everything to derive information from fitted model: coefficients, p-values, confidence intervals, residuals, …\nObject of mode list and of class lm. Help file for summary: summary.lm"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#more-transparent-and-often-shorter-code",
+    "href": "slides/IntroductionRDay2.html#more-transparent-and-often-shorter-code",
+    "title": "Introduction to R, Day 2",
+    "section": "More transparent (and often shorter) code",
+    "text": "More transparent (and often shorter) code\n\nformula structure (regression models, plot function)\nwith function to save repetitive use of data set name :\nwith(titanic, table(sex, survived))\n## instead of table(titanic$sex, titanic$survived)\npipe operator |&gt; (or %&gt;% from the magrittr package)\n\ncombining functions in one line can make code obscure: h(g(f(x)))\nexample: round(proportions(table(titanic$sex,titanic$survived)),2)\nreplace by x |&gt; f() |&gt; g() |&gt; h()"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#the-apply-functions",
+    "href": "slides/IntroductionRDay2.html#the-apply-functions",
+    "title": "Introduction to R, Day 2",
+    "section": "The apply functions",
+    "text": "The apply functions\n\napply: apply a function over all columns or all rows of an array\nlapply: apply a function over a list (including data.frame)\nsapply: similar to lapply but more user-friendly if output can be coerced into a vector\ntapply: can be used to split a vector in subgroups and apply a function to each of the subgroups\naggregate is an alternative to tapply"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#exercises",
+    "href": "slides/IntroductionRDay2.html#exercises",
+    "title": "Introduction to R, Day 2",
+    "section": "Exercises",
+    "text": "Exercises\n\nMake a summary of fare by passenger class using the tapply and the aggregate function\nFit the regression model that fits the mean fare paid (on the log scale) as a function of age:\nFareByAge &lt;- lm(log(fare+3)~age, data=titanic)\nSummarize the results. What do you conclude?\nRefit the model using 10 years as unit for age and summarize the results. Use the pipe operator, starting with titanic |&gt; transform(age=age/10) |&gt; ...\nUse a LLM if you get an error message"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#finding-information",
+    "href": "slides/IntroductionRDay2.html#finding-information",
+    "title": "Introduction to R, Day 2",
+    "section": "Finding Information",
+    "text": "Finding Information\n\nFunction help. R is object oriented!\nSearch on Google (use language r: if result is non-specific)\nchatGPT or an R package such as askgpt or ellmer\nR documentation\nRseek\nR-universe\nCRAN (list with packages, Task Views, FAQs, Vignettes)\nStack Overflow\nHave a look at the links provided in the appendix on the course website"
+  },
+  {
+    "objectID": "slides/IntroductionRDay2.html#exercise",
+    "href": "slides/IntroductionRDay2.html#exercise",
+    "title": "Introduction to R, Day 2",
+    "section": "Exercise",
+    "text": "Exercise\nFind information on\n\ndescriptive statistics\nchange several categorical variables of a data.frame into factor variables\nrecognize nonstandard date formats"
+  },
+  {
+    "objectID": "slides/qt-example-slide.html#slide-title",
+    "href": "slides/qt-example-slide.html#slide-title",
+    "title": "My Presentation",
+    "section": "Slide Title",
+    "text": "Slide Title\n\nBullet point 1\nBullet point 2"
+  },
+  {
+    "objectID": "slides/qt-example-slide.html#code-blocks-highlighting",
+    "href": "slides/qt-example-slide.html#code-blocks-highlighting",
+    "title": "My Presentation",
+    "section": "Code Blocks & Highlighting",
+    "text": "Code Blocks & Highlighting\nYou can add code blocks like this:\n```{r}\n# R code block\nsummary(cars)\n```"
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#learning-goals",
+    "href": "slides/IntroductionRDay1.html#learning-goals",
+    "title": "Introduction to R, Day 1",
+    "section": "Learning goals",
+    "text": "Learning goals\nBecome familiar and confident with the R program, using RStudio\nNot: using R for statistics, bioinformatics or mathematical modeling\n\n\nDay 1\n\nBasic structure of the R program and language\n\nBasic computations and selections\nObjects and functions\n\nUse the RStudio working environment\nImport and inspect a data set\n\nSelect variables (columns) and rows (observations)\nMissing data, factor variables, date variables\n\n\n\n\n\n\nDay 2\n\nR graphics, functions, data management, finding further information"
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#r-what-is-it-and-why-use-it",
+    "href": "slides/IntroductionRDay1.html#r-what-is-it-and-why-use-it",
+    "title": "Introduction to R, Day 1",
+    "section": "R: What is it and why use it?",
+    "text": "R: What is it and why use it?\n\nOn R Project website: “a language and environment for statistical computing and graphics”\nFree: no money charged and open source\nRuns on all major operating systems\nVery flexible and powerful\n\nReproducibility: see Friday course\nCommunity: large, collaborative user base\n\nSteep learning curve(?)"
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#the-r-phenotypes",
+    "href": "slides/IntroductionRDay1.html#the-r-phenotypes",
+    "title": "Introduction to R, Day 1",
+    "section": "The R phenotypes",
+    "text": "The R phenotypes\n\nR program: very basic functionality via menus\n\n\n\n\n\n\n\n\n\n\nRStudio: user-friendly shell around R\n\n\n\n\nMost analyses performed via writing code in file.\nClassical format: script file with “.R” extension.\nNewer formats: R Markdown (“.Rmd”) and Quarto (“.qmd”)\n\n\n\n\nGraphical User Interface e.g. BlueSky, R-Instat, jamovi, RKWard"
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#r-as-a-pocket-calculator-i",
+    "href": "slides/IntroductionRDay1.html#r-as-a-pocket-calculator-i",
+    "title": "Introduction to R, Day 1",
+    "section": "R as a pocket calculator I",
+    "text": "R as a pocket calculator I\nMany mathematical operations (+, -, *, /, ^ (or **) ) pre-defined\nAdd numbers 2 and 7:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nMultiply 2 and 7:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nDivide 7 by 2:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nCompute \\(2^7\\):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#r-as-a-pocket-calculator-ii",
+    "href": "slides/IntroductionRDay1.html#r-as-a-pocket-calculator-ii",
+    "title": "Introduction to R, Day 1",
+    "section": "R as a pocket calculator II",
+    "text": "R as a pocket calculator II\nSome operations based on functions: sqrt, log, log2, log10, sum, prod. Function arguments within parentheses, sqrt(..) etc.\nCompute the square root of 2:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTake the 10-log of 1000 (y with \\(10^y=1000\\)):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nSum of numbers 1 to 5:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nSome constants (\\(\\pi\\), …) pre-defined:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#assignment",
+    "href": "slides/IntroductionRDay1.html#assignment",
+    "title": "Introduction to R, Day 1",
+    "section": "Assignment",
+    "text": "Assignment\nAssign value 2 to object x\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nShow content of x\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWithout assignment, x keeps old value\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNote: use Ctrl/Cmd + Enter/Return to run single line"
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#datasets",
+    "href": "slides/IntroductionRDay1.html#datasets",
+    "title": "Introduction to R, Day 1",
+    "section": "Datasets",
+    "text": "Datasets\n\nMost often rectangular format\n\nColumns: variables\nRows: observations\n\nExample: titanic3 data set; passenger characteristics and survival status after disaster with the Titanic cruise ship\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFor now, we work with subset (10 passengers) of titanic data set:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#data-selections-within-a-single-column",
+    "href": "slides/IntroductionRDay1.html#data-selections-within-a-single-column",
+    "title": "Introduction to R, Day 1",
+    "section": "Data: selections within a single column",
+    "text": "Data: selections within a single column\n\nEach column is a vector of values\nSingle column from data set selected via “$”, e.g. titanic$age\nElements of vector selected via numbers within square brackets [ ]\n\nSelect age of passengers 1 and 5\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nSelect age of passengers 6 to 10\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFlexibility of seq function\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#data-selection-of-rows-and-columns",
+    "href": "slides/IntroductionRDay1.html#data-selection-of-rows-and-columns",
+    "title": "Introduction to R, Day 1",
+    "section": "Data: selection of rows and columns",
+    "text": "Data: selection of rows and columns\n\nVia square brackets and a comma: dataset[rows, cols]\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nColumns: selection by name of columns\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#exercise-1",
+    "href": "slides/IntroductionRDay1.html#exercise-1",
+    "title": "Introduction to R, Day 1",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\nCreate a vector named vec that consists of the numbers from 11 to 30\nSelect the 7th element of the vector\nSelect all elements except the 15th. Hint: use a minus sign\nSelect the 2nd and 5th element of the vector\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nSelect only the odd valued elements of vec.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#exercise-1-answer",
+    "href": "slides/IntroductionRDay1.html#exercise-1-answer",
+    "title": "Introduction to R, Day 1",
+    "section": "Exercise 1 (answer)",
+    "text": "Exercise 1 (answer)\n\nCreate a vector named vec that consists of the numbers from 11 to 30\nSelect the 7th element of the vector\nSelect all elements except the 15th. Hint: use a minus sign\nSelect the 2nd and 5th element of the vector\nSelect only the odd valued elements of vec.\n\nvec &lt;- seq(11,30)\nvec[7]\n## Use '-' to exclude elements\nvec[-15]\n## Use the concatenate function 'c'\nvec[c(2,5)]\n## odd numbers\nindex &lt;- seq(1,length(vec),by=2)\nvec[index]"
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#exercise-2",
+    "href": "slides/IntroductionRDay1.html#exercise-2",
+    "title": "Introduction to R, Day 1",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nUse the elementary functions /; -; ^ and the function sum to calculate the mean \\[\\bar{x}=\\sum_{i=1}^n x_i/n\\] and the standard deviation \\[\\sqrt{\\sum_{i=1}^{n}(x_i-\\bar{x})^2/(n-1)}\\] of the fare paid by the titanic passengers. Note: \\(n=10\\).\nVerify your answer by using the built-in R functions mean and sd.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#exercise-2-with-answer",
+    "href": "slides/IntroductionRDay1.html#exercise-2-with-answer",
+    "title": "Introduction to R, Day 1",
+    "section": "Exercise 2 (with answer)",
+    "text": "Exercise 2 (with answer)\nUse the elementary functions /, -, ^ and the function sum to calculate the mean \\[\\bar{x}=\\sum_{i=1}^n x_i/n\\] and the standard deviation \\[\\sqrt{ \\sum_{i=1}^n (x_i-\\bar{x})^2/(n-1)}\\] of the fare paid by the titanic passengers. Note: \\(n=10\\). Verify your answer by using the built-in R functions mean and sd.\nfare &lt;- titanic$fare\nMeanFare &lt;- sum(fare)/length(fare)\nMeanFare\nmean(fare)\n# Calculate the standard deviation in three (baby) steps\nnumerator &lt;- sum((fare-MeanFare)^2)\ndenominator &lt;- (length(fare)-1)\nStdFare  &lt;- sqrt(numerator/denominator)\nStdFare\nsd(fare)"
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#functions-i",
+    "href": "slides/IntroductionRDay1.html#functions-i",
+    "title": "Introduction to R, Day 1",
+    "section": "Functions (I)",
+    "text": "Functions (I)\n\n\nA function tells R what work to do for us\nDetails are given via the arguments of the function\nThink of it like asking someone to complete a task for you\n\n\n\nExample\nThinh told Ronald: “Please give feedback on my measles model manuscript before next Friday”.\nHow does this translate into R?\n\n\ngive_feedback(type = \"manuscript\", which = \"measles model\", deadline = \"next Friday\")"
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#functions-ii",
+    "href": "slides/IntroductionRDay1.html#functions-ii",
+    "title": "Introduction to R, Day 1",
+    "section": "Functions (II)",
+    "text": "Functions (II)\n\nEverything we do in R boils down to running a function:\nGenerates some output given some input:\ngoal(arg1=input1, arg2=input2, ...)\n\ngoal: what do we want; function name\ninput: what information does R need for this; arguments of the function\n\nOutput: a value (often assigned to an object for further use); a figure; a help page, …\nE.g. help(mean): mean is argument of function help. Output is the appearance of a page with information on the mean function"
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#many-calculation-functions-are-vectorized",
+    "href": "slides/IntroductionRDay1.html#many-calculation-functions-are-vectorized",
+    "title": "Introduction to R, Day 1",
+    "section": "Many calculation functions are vectorized",
+    "text": "Many calculation functions are vectorized\n\nExample: change unit of age to decade (10 years)\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nWhat does this code give:\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nMore general: iteration via apply functions (Tuesday) and the purrr package (Thursday)"
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#help",
+    "href": "slides/IntroductionRDay1.html#help",
+    "title": "Introduction to R, Day 1",
+    "section": "Help",
+    "text": "Help\n\nTo know more about a function (or dataset) you can often use help function\nhelp(mean) gives\n\nDescription: Generic function for the (trimmed) arithmetic mean.\nUsage: mean(x, …)\nDefault S3 method:\nmean(x, trim = 0, na.rm = FALSE, ...)\nArguments:\nx: an R object. Currently there are methods for numeric/logical vectors and date, date-time and time interval objects.\ntrim:\nna.rm: a logical evaluating to ‘TRUE’ or ‘FALSE’ indicating whether NA values should be stripped before the computation proceeds.\nValue: If trim is zero (the default), the arithmetic mean of the values in x is computed, as a numeric or complex vector of length one."
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#structure-of-help-page",
+    "href": "slides/IntroductionRDay1.html#structure-of-help-page",
+    "title": "Introduction to R, Day 1",
+    "section": "Structure of help page",
+    "text": "Structure of help page\n\nOutline of a help page of a function is always the same:\n\nDescription: what does the function do\nUsage: what arguments/input does the function expect\nArguments: description of the individual arguments\nValue: what is the result of a function call\noften: Details, References, See Also, Examples. You can use the example function to run the examples: example(mean)"
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#objects",
+    "href": "slides/IntroductionRDay1.html#objects",
+    "title": "Introduction to R, Day 1",
+    "section": "Objects",
+    "text": "Objects\n\nEverything that exists in R is an object (data, functions, results from analysis, …)\nExample names for user created objects: patients, Data, LetsHaveFun\nNames are case-sensitive: Data is not the same as data\n\n\n\nNot allowed:\n\nspace\ncharacters with special meaning in R: “@”, “$”, “+” etc.\nnumbers allowed but not as first character\nspecific R programming constructs: for, if, while, ...\n\nBetter avoid names that are R functions:\nsort, c, mean, t, data, q\n\n\n\n\n“_” and “.” are allowed (e.g. lets.have_fun)\nMany prefer “_” over “.” to subdivide names"
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#remember",
+    "href": "slides/IntroductionRDay1.html#remember",
+    "title": "Introduction to R, Day 1",
+    "section": "Remember",
+    "text": "Remember\n\n\n\n\n\n\n\nObjects and functions\n\n\n\nEverything that exists in R is an object (data, functions, …)\nEverything that happens in R is a function call"
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#modes",
+    "href": "slides/IntroductionRDay1.html#modes",
+    "title": "Introduction to R, Day 1",
+    "section": "Modes",
+    "text": "Modes\n\nData (variables) come in different types. The most important ones are:\n\nnumeric:\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nlogical: values TRUE and FALSE\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\ncharacter:\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nYou can change the mode of some data objects\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#modes-logical-i",
+    "href": "slides/IntroductionRDay1.html#modes-logical-i",
+    "title": "Introduction to R, Day 1",
+    "section": "Modes: logical (I)",
+    "text": "Modes: logical (I)\n\nTRUE and FALSE useful for selection\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nLogical statements arise from comparing values:\n\nSmaller/larger than: &lt;; &gt;; &lt;=; &gt;=\nExact equality: ==\nNot equal to: !=\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nConverted to integer if a numeric value is required:\nTRUE equals 1, FALSE equals 0\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#modes-logical-ii",
+    "href": "slides/IntroductionRDay1.html#modes-logical-ii",
+    "title": "Introduction to R, Day 1",
+    "section": "Modes: logical (II)",
+    "text": "Modes: logical (II)\nWe can calculate with logicals. Main operators are:\n\n&: all must be true (“AND”)\n|: at least one must be true (“OR”)\n!: negation (“NOT)”\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLogical statements about fare\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nSelect fare values between 10 and 40\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#r-and-rstudio",
+    "href": "slides/IntroductionRDay1.html#r-and-rstudio",
+    "title": "Introduction to R, Day 1",
+    "section": "R and RStudio",
+    "text": "R and RStudio\n\nR is a programming language for statistical computing and data visualization.\n\n\nRStudio is a software designed to make working with R easier by helping you create, edit, and manage R code and projects. More formally, it is known as an Integrated Development Environment (IDE)."
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#create-project-in-rstudio",
+    "href": "slides/IntroductionRDay1.html#create-project-in-rstudio",
+    "title": "Introduction to R, Day 1",
+    "section": "Create Project in RStudio",
+    "text": "Create Project in RStudio\nAn R project is a directory with .Rproj file, signaling RStudio to manage the project settings accordingly.\n\nThe process of creating an R project is as followed\n\nIn the menu File &gt; New Project…\nClick Existing Directory &gt; Browse\nClick Browse and click on your project directory\nClick Create Project"
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#project-structure",
+    "href": "slides/IntroductionRDay1.html#project-structure",
+    "title": "Introduction to R, Day 1",
+    "section": "Project structure",
+    "text": "Project structure\nA minimal R project structure can have the following format\n└── My_Project\n    ├── output\n    ├── data\n    │   ├── raw\n    │   └── processed\n    └── analysis.R \nWhere\n\ndata folder contains data to be analyzed\noutput stores code output (plot, figures, etc.)\nanalysis.R is the file containing R code. There can be multiple .R files under one project."
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#rstudio-interface",
+    "href": "slides/IntroductionRDay1.html#rstudio-interface",
+    "title": "Introduction to R, Day 1",
+    "section": "RStudio interface",
+    "text": "RStudio interface"
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#rstudio-interface-1",
+    "href": "slides/IntroductionRDay1.html#rstudio-interface-1",
+    "title": "Introduction to R, Day 1",
+    "section": "RStudio interface",
+    "text": "RStudio interface\n\nConsists of 4 main panes\n\nUpper left: Shows the content of source code file and of datasets in R session\nConsole: Shows the executed code lines and their output\nEnvironment: Shows the user defined objects\nFiles/Plot/Package/Help/…:\n\nFiles: for files nagivation\nPlots: show plot output\nPackages: show all the installed packages and packages being used (packages in use will have a ✓)\nHelp: shows documentation for functions or packages"
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#data-import",
+    "href": "slides/IntroductionRDay1.html#data-import",
+    "title": "Introduction to R, Day 1",
+    "section": "Data import",
+    "text": "Data import\n\nR: see R Data Import/Export\nRStudio: Environment pane: Import Dataset; or via File menu: Import Dataset\n\ntext and csv (base or readr package)\nExcel (readxl package)\n\nlibrary(readxl)\ntitanic &lt;- read_excel(\"data/raw/Titanic3.xlsx\")\n\nSPSS/Stata/SAS (haven package)\nsee Importing Data with RStudio\nImported as a “tibble” (enhancement of data.frame)\n\nDatabase: Oracle, SQLite, …"
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#data-inspection-and-basic-variable-summaries",
+    "href": "slides/IntroductionRDay1.html#data-inspection-and-basic-variable-summaries",
+    "title": "Introduction to R, Day 1",
+    "section": "Data inspection and basic variable summaries",
+    "text": "Data inspection and basic variable summaries\n\nView: opens a spreadsheet-style data viewer\nIn RStudio: click on the name of a data object in the Environment tab\ndim: gives the number of rows and columns\nhead: shows the first rows of a data frame\ntail: similar to head but shows the last rows\nstr: compact display of the internal structure of an R object\n\nVariable summaries\n\nsummary: concise summary (also used for data set)\nmean: mean value\nquantile: quantiles\nIQR: inter-quartile range\ntable: tabulation of one or two categorical variables"
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#missing-data",
+    "href": "slides/IntroductionRDay1.html#missing-data",
+    "title": "Introduction to R, Day 1",
+    "section": "Missing data",
+    "text": "Missing data\n\nSpecial value: NA (short for “not available”) The function is.na checks for missingness\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nMost functions exclude missings by default\nNot always what you want\n\ntable excludes missings; we can include them via argument useNA=\"always\"\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nmean gives NA, while quantile (and some others) give error if there are missings; specify argument na.rm=TRUE\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#make-exercises-3-and-4",
+    "href": "slides/IntroductionRDay1.html#make-exercises-3-and-4",
+    "title": "Introduction to R, Day 1",
+    "section": "Make exercises 3 and 4",
+    "text": "Make exercises 3 and 4\nData found here: Titanic3.xlsx"
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#selection-by-name",
+    "href": "slides/IntroductionRDay1.html#selection-by-name",
+    "title": "Introduction to R, Day 1",
+    "section": "Selection by name",
+    "text": "Selection by name\nCreate a named vector:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nSelect by name:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nSame for data sets (use dimnames because there are two dimensions):\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#more-efficient-row-selections-subset",
+    "href": "slides/IntroductionRDay1.html#more-efficient-row-selections-subset",
+    "title": "Introduction to R, Day 1",
+    "section": "More efficient row selections: “subset”",
+    "text": "More efficient row selections: “subset”\n\nsubset function: subset(my.data, subset=...),\nwith ... a logical condition:\n\nsubset(titanic, pclass %in% c(\"1st\",\"2nd\"))$survived\nNote: %in% is another logical construct\n\nsubset argument in functions with formula structure:\n\nxtabs(~survived, data=titanic, subset=(sex==\"male\"))    \n\n\n\n\n\n\nWarning\n\n\n\nDon’t use “$” for column selection if function has a data argument\n\nxtabs(~titanic$survived, data=titanic, subset=(titanic$sex==\"male\"))"
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#more-efficient-column-selections",
+    "href": "slides/IntroductionRDay1.html#more-efficient-column-selections",
+    "title": "Introduction to R, Day 1",
+    "section": "More efficient column selections",
+    "text": "More efficient column selections\n\nsubset function: subset(my.data, select=...), with ... a selection of columns names:\nhead(subset(titanic, select= c(sex,fare)))\nWe can select a sequence of names via : function:\nhead(subset(titanic, select= sex:fare))\nOr use - to exclude columns:\nhead(subset(titanic, select= -(sex:fare)))"
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#give-extra-structure-to-categorical-variables-factors",
+    "href": "slides/IntroductionRDay1.html#give-extra-structure-to-categorical-variables-factors",
+    "title": "Introduction to R, Day 1",
+    "section": "Give extra structure to categorical variables: factors",
+    "text": "Give extra structure to categorical variables: factors\n\nDefine the ordering of the “levels” (useful in regression models)\n\nDefault is by alphabetical/numeric order\ntable(titanic$sex)\nChange the order\ntitanic$sex &lt;- factor(titanic$sex)\nlevels(titanic$sex) # female comes first\nlevels(titanic$sex) &lt;- c(\"male\",\"female\")\n## or directly when creating the factor:\ntitanic$sex &lt;- factor(titanic$sex, levels=c(\"male\",\"female\"))\ntable(titanic$sex)\n\nTo change naming of the levels\nlevels(titanic$sex) &lt;- c(\"M\",\"F\")\n## when (re)creating the factor\ntitanic$sex &lt;- factor(titanic$sex, labels=c(\"M\",\"F\"))\nGood introduction to factors"
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#dates",
+    "href": "slides/IntroductionRDay1.html#dates",
+    "title": "Introduction to R, Day 1",
+    "section": "Dates",
+    "text": "Dates\n\nNumeric value (units since time origin) with character representation\nOrigin:\n\nSPSS: October 14, 1582 (seconds)\nR: January 1st, 1970 (days)\nStata: January 1st, 1960 (days)\n\nR is very flexible in conversion between textual date representations\nas.Date: create date variable\nformat: change display format\nSee page 5 of this reference card\nPackages anytime and lubridate useful\nA Comprehensive Introduction to Handling Date & Time"
+  },
+  {
+    "objectID": "slides/IntroductionRDay1.html#make-exercises-5-6-and-7",
+    "href": "slides/IntroductionRDay1.html#make-exercises-5-6-and-7",
+    "title": "Introduction to R, Day 1",
+    "section": "Make exercises 5, 6 and 7",
+    "text": "Make exercises 5, 6 and 7\nReturn to main course page"
+  },
+  {
     "objectID": "slides/viz.html#what-to-expect",
     "href": "slides/viz.html#what-to-expect",
     "title": "Principles of data visualisation and plotting in R",
@@ -1323,18 +1925,11 @@
     "text": "Interactive plots with plotly\n\n\nYou can also create 3d plots with plotly\n\n\nplot_ly(\n  data = tibble(x = rnorm(10), y = rnorm(10), z = rnorm(10)),\n  x = ~x,\n  y = ~y,\n  z = ~z\n)"
   },
   {
-    "objectID": "slides/qt-example-slide.html#slide-title",
-    "href": "slides/qt-example-slide.html#slide-title",
-    "title": "My Presentation",
-    "section": "Slide Title",
-    "text": "Slide Title\n\nBullet point 1\nBullet point 2"
-  },
-  {
-    "objectID": "slides/qt-example-slide.html#code-blocks-highlighting",
-    "href": "slides/qt-example-slide.html#code-blocks-highlighting",
-    "title": "My Presentation",
-    "section": "Code Blocks & Highlighting",
-    "text": "Code Blocks & Highlighting\nYou can add code blocks like this:\n```{r}\n# R code block\nsummary(cars)\n```"
+    "objectID": "handouts/precourse_setup.html",
+    "href": "handouts/precourse_setup.html",
+    "title": "Pre-course setups and requirements",
+    "section": "",
+    "text": "About\nHere we explain how to install R and RStudio on your own computer. This is required to ensure a smooth experience and reproducible results during the course.\n\n\n1 R\n\nGo to the R website\nIn the column on the left hand side, click on the CRAN link under the subheading Download\n\nYou now see a page with CRAN Mirrors. This is a list of servers from which the R software and extensions can be downloaded from\n\nClick on the first link\n\nNow both the left hand side and the right hand side of the page change (This page can be saved as a bookmark/favorite)\n\nOn the right hand side, click on the download link for your operating system\n\nE.g. Windows users click on Download R for Windows, then click on base and download the program from there.\nIt is recommended to install the latest version as well as to upgrade the program if a new major version is released, which is about once per year\nYou can use the default installation options\n\n\n\n\n2 RStudio Desktop\n\nGo to the download page\nScroll down, look for 2: Install Rstudio and click on the button for downloading RStudio Desktop\nDownload and install RStudio Desktop\n\nYou can use the default installation options\n\nOpen Rstudio Desktop, to check that everything has been installed correctly\n\nE.g. via the Start menu in Windows\n\n\n\n\n3 renv setup\n\nThe renv package helps you create reproducible environments for your R projects. Use renv to make your R projects more isolated, portable and reproducible.\n\nFor better error reproducilibity, environment consistency, and ease of debugging, we will setup an renv environment for the course. Follow these steps:\n\nIn your normal R console, install renv with\n\ninstall.packages(\"renv\")\n\nInitialise renv in the project environment with\n\nrenv::init()\n\n\n\n\n\n\nNote\n\n\n\n\n\nMake sure you’re in the correct working directory!\nYou can check from the R console with getwd() and set the correct working directory with setwd(...)\n\n\n\n\nRestart your R session\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nThis can be done using Ctrl+Shift+F10 on Windows and Cmd+Shift+F10 on MacOS\n\n\n\n\nCheck your R console upon restart. It should say that renv is loaded and activated!\n\n(This will be quickly walked through again on the first session of the course)"
   },
   {
     "objectID": "handouts/exercises_Day3.html#overview",
@@ -1405,600 +2000,5 @@
     "title": "Exercises Day 5",
     "section": "Exercises",
     "text": "Exercises\n\nTask 1: Data import\n\nRead data\nLoad the tidyverse meta-package into R\n\n\n\n\n\n\n\nNote\n\n\n\nA “meta-package” is a package that contains other packages. Remember, tidyverse is just a collection of packages.\n\n\n\n\nTask 2: Data cleaning and filtering\n\nDoes the data follow the tidy data standard?\n\nIf not, pivot the data into a tibble that follows the tidy data standard\n\nDo some quick skim on the data. Do the variable values make sense given its type?\n\nIf not, filter out incorrect/impossible data\n\nFilter the data so that we only have week 3-12 of 2020\nSave the results back into covid_cases\n\n\n\n\n\n\n\nTipTip: pivotting\n\n\n\n\n\n\nIf your data is not tidy data:\n\n“Lengthens” the data using tidyr::pivot_longer(), i.e. less columns, more rows\n“Widens” the data using tidyr::pivot_wider(), i.e. less rows, more columns\n\n\n\n\n\n\n\n\n\n\n\nTipTip: data cleaning\n\n\n\n\n\n\nThe main variable here is case counts from each country. They should have a numeric type and should not be lower than 0. You can’t have negative case counts\nYou can remove or filter undesirable values using dplyr::filter()\n\n\n\n\n\n\nTask 3: Data transformation\n\nUsing the covid_cases object created in Task 2:\n\nGroup the data and calculate the total number of cases per country\nSelect the top 5 countries with highest total cases\nExtract the country codes and save them into a new object, e.g. top_countries\n\n\n\nUse the covid_cases object created in Task 2 again:\n\nGroup the data again, calculate the total number of cases per country again\nModify the country column:\n\nSo that we only keep the names of countries in the top 5 (generated above). Countries on in the top 5 will be changed to \"Others\"\nTurn this column into a factor type using the forcats package (already in tidyverse)\nGroup the data again, this time, group by date and country\nCalculate the total number of cases per date per country\nCreate a new column called pct_cases, which is the percentage of total cases per date per country\n(Optional) remove rows with NA from the tibble\nThere are many ways to do this part of the task\n\nSave all of this into a new object, e.g. plot_data\n\n\n\n\n\n\n\n\nTipTip: data grouping and summarisation\n\n\n\n\n\n\nGroup data into groups with dplyr::group_by() and ungroup data with dplyr::ungroup()\nSummarise each group into a single row with dplyr::summarise()\nYou can have multiple groups at the same time. For example:\n\n\n\n`summarise()` has regrouped the output.\nℹ Summaries were computed grouped by date and country.\nℹ Output is grouped by date.\nℹ Use `summarise(.groups = \"drop_last\")` to silence this message.\nℹ Use `summarise(.by = c(date, country))` for per-operation grouping\n  (`?dplyr::dplyr_by`) instead.\n\n\n\n  \n\n\n\n\nYou can choose not to summarise, but add a new column to each group with dplyr::mutate(). For example:\n\n\n\n\n  \n\n\n\nThis will create a new column total_cases that contains the sum of cases for each country without reducing each group into a single row like summarise(). Values will be duplicated for each group.\n\n\n\n\n\n\n\n\n\nTipTip: get top n values in a tibble\n\n\n\n\n\n\nYou can select rows with the top n values in a tibble using dplyr::slice_max()\n\n\n\n\n\n\n\n\n\n\nTipTip: get values of a column in a tibble\n\n\n\n\n\n\nYou can extract values from a columns in a tibble using dplyr::pull()\n\n\n\n\n\n\n\n\n\n\nTipTip: turn a tibble column into a factor\n\n\n\n\n\n\nYou can create and work with factors inside a tibble using the forcats package (already in tidyverse)\nYou can “lump”, or gather, factor levels that are not frequent with forcats::fct_lump_n()\n\n\n\n\n\n\nTask 4: Join data\n\nUse this data country_region.rds to get the regions and sub-regions for all countries.\nMake these 2 tables:\n\n\n\n\n  \n\n\n\n\n\n\n  \n\n\n\n\nWrite a short paragraph summarising key insights from the table, using inline R code to dynamically display case numbers. For example:\n\n\nEurope (192,068) and Asia (126,420) reported the highest number of cases, while Oceania (1,879) had the lowest.\n\nNoted that the number of cases is not hard-coded but you use inline R code to generate it within the text.\n\n\n\n\n\n\nTipTip: join the tables with left_join()\n\n\n\n\n\nYou can join covid_cases and country_region, using the country column of covid_cases and the alpha_3 column of country_region.\n\n\n\n\n\n\n\n\n\nTipTip: make the total cases table\n\n\n\n\n\nYou can use group_by() and summarise() to compute the total cases by sum(cases).\n\n\n\n\n\n\n\n\n\nTipTip: make inline R code\n\n\n\n\n\nIn the paragraph, use inline R code like {r} scales::comma(data$total_cases[tmp1$region == \"Europe\"]) to reference computed values. Function scales::comma() will make the numbers appear with commas for thousands (e.g., 100,000 instead of 100000).\n\n\n\n\n\nTask 5: Data visualization\n\nUsing ggplot2, try your best to generate the following figure:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipTip: how do I draw that??\n\n\n\n\n\n\nggplot2 reference page is very useful\nHere are all the functions used to generate the plot above, in sequence:\n\nggplot()\ngeom_area()\nscale_y_continuous()\nscale_x_date()\nscale_fill_discrete()\nggtitle()\nEvery function is connected with the + operator"
-  },
-  {
-    "objectID": "handouts/exercises_Day4_afternoon.html",
-    "href": "handouts/exercises_Day4_afternoon.html",
-    "title": "Exercises Day 4 (afternoon)",
-    "section": "",
-    "text": "NotePiping\n\n\n\nIt is expected that the exercise answers will be mainly using the pipe operators |&gt;, instead of putting functions inside each other"
-  },
-  {
-    "objectID": "handouts/exercises_Day4_afternoon.html#notes-and-instructions",
-    "href": "handouts/exercises_Day4_afternoon.html#notes-and-instructions",
-    "title": "Exercises Day 4 (afternoon)",
-    "section": "",
-    "text": "NotePiping\n\n\n\nIt is expected that the exercise answers will be mainly using the pipe operators |&gt;, instead of putting functions inside each other"
-  },
-  {
-    "objectID": "handouts/exercises_Day4_afternoon.html#dataset",
-    "href": "handouts/exercises_Day4_afternoon.html#dataset",
-    "title": "Exercises Day 4 (afternoon)",
-    "section": "Dataset",
-    "text": "Dataset\nWe will use covid_cases.rds for this exercise.\n\n  \n    Data dictionary\n  \n\n\n\n\n\n\n\nColumn\nDescription\n\n\n\n\ndate\ndate of the case report\n\n\n211 columns with the format cases_{country_code}\nnumber of reported cases of each country and archipelago\n\n\n\nCountry codes of interest (i.e. Codes for countries needed for the exercise)\n\n\n\nCode\nCountry name\n\n\n\n\nchn\nChina\n\n\nusa\nUnited States of America\n\n\nvnm\nVietnam\n\n\nsgp\nSingapore"
-  },
-  {
-    "objectID": "handouts/exercises_Day4_afternoon.html#exercises",
-    "href": "handouts/exercises_Day4_afternoon.html#exercises",
-    "title": "Exercises Day 4 (afternoon)",
-    "section": "Exercises",
-    "text": "Exercises\n\nTask 1: Data import\n\nRead data\nLoad the tidyverse meta-package into R\n\n\n\n\n\n\n\nNote\n\n\n\nA “meta-package” is a package that contains other packages. Remember, tidyverse is just a collection of packages.\n\n\n\n\nTask 2: Data cleaning and filtering\n\nDoes the data follow the tidy data standard?\n\nIf not, pivot the data into a tibble that follows the tidy data standard\n\nDo some quick skim on the data. Do the variable values make sense given its type?\n\nIf not, filter out incorrect/impossible data\n\nFilter the data so that we only have week 3-12 of 2020\nSave the results back into covid_cases\n\n\n\n\n\n\n\nTipTip: pivotting\n\n\n\n\n\n\nIf your data is not tidy data:\n\n“Lengthens” the data using tidyr::pivot_longer(), i.e. less columns, more rows\n“Widens” the data using tidyr::pivot_wider(), i.e. less rows, more columns\n\n\n\n\n\n\n\n\n\n\n\nTipTip: data cleaning\n\n\n\n\n\n\nThe main variable here is case counts from each country. They should have a numeric type and should not be lower than 0. You can’t have negative case counts\nYou can remove or filter undesirable values using dplyr::filter()\n\n\n\n\n\n\nTask 3: Data transformation\n\nUsing the covid_cases object created in Task 2:\n\nGroup the data and calculate the total number of cases per country\nSelect the top 5 countries with highest total cases\nExtract the country codes and save them into a new object, e.g. top_countries\n\n\n\nUse the covid_cases object created in Task 2 again:\n\nGroup the data again, calculate the total number of cases per country again\nModify the country column:\n\nSo that we only keep the names of countries in the top 5 (generated above). Countries on in the top 5 will be changed to \"Others\"\nTurn this column into a factor type using the forcats package (already in tidyverse)\nGroup the data again, this time, group by date and country\nCalculate the total number of cases per date per country\nCreate a new column called pct_cases, which is the percentage of total cases per date per country\n(Optional) remove rows with NA from the tibble\nThere are many ways to do this part of the task\n\nSave all of this into a new object, e.g. plot_data\n\n\n\n\n\n\n\n\nTipTip: data grouping and summarisation\n\n\n\n\n\n\nGroup data into groups with dplyr::group_by() and ungroup data with dplyr::ungroup()\nSummarise each group into a single row with dplyr::summarise()\nYou can have multiple groups at the same time. For example:\n\n\n\n`summarise()` has regrouped the output.\nℹ Summaries were computed grouped by date and country.\nℹ Output is grouped by date.\nℹ Use `summarise(.groups = \"drop_last\")` to silence this message.\nℹ Use `summarise(.by = c(date, country))` for per-operation grouping\n  (`?dplyr::dplyr_by`) instead.\n\n\n\n  \n\n\n\n\nYou can choose not to summarise, but add a new column to each group with dplyr::mutate(). For example:\n\n\n\n\n  \n\n\n\nThis will create a new column total_cases that contains the sum of cases for each country without reducing each group into a single row like summarise(). Values will be duplicated for each group.\n\n\n\n\n\n\n\n\n\nTipTip: get top n values in a tibble\n\n\n\n\n\n\nYou can select rows with the top n values in a tibble using dplyr::slice_max()\n\n\n\n\n\n\n\n\n\n\nTipTip: get values of a column in a tibble\n\n\n\n\n\n\nYou can extract values from a columns in a tibble using dplyr::pull()\n\n\n\n\n\n\n\n\n\n\nTipTip: turn a tibble column into a factor\n\n\n\n\n\n\nYou can create and work with factors inside a tibble using the forcats package (already in tidyverse)\nYou can “lump”, or gather, factor levels that are not frequent with forcats::fct_lump_n()\n\n\n\n\n\n\nTask 4: Join data\n\nUse this data country_region.rds to get the regions and sub-regions for all countries.\nMake these 2 tables:\n\n\nWrite a short paragraph summarising key insights from the table, using inline R code to dynamically display case numbers. For example:\n\n\nEurope (192,068) and Asia (126,420) reported the highest number of cases, while Oceania (1,879) had the lowest.\n\nNoted that the number of cases is not hard-coded but you use inline R code to generate it within the text.\n\n\n\n\n\n\nTipTip: join the tables with left_join()\n\n\n\n\n\nYou can join covid_cases and country_region, using the country column of covid_cases and the alpha_3 column of country_region.\n\n\n\n\n\n\n\n\n\nTipTip: make the total cases table\n\n\n\n\n\nYou can use group_by() and summarise() to compute the total cases by sum(cases).\n\n\n\n\n\n\n\n\n\nTipTip: make inline R code\n\n\n\n\n\nIn the paragraph, use inline R code like {r} scales::comma(data$total_cases[tmp1$region == \"Europe\"]) to reference computed values. Function scales::comma() will make the numbers appear with commas for thousands (e.g., 100,000 instead of 100000).\n\n\n\n\n\nTask 5: Data visualization\n\nUsing ggplot2, try your best to generate the following figure:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipTip: how do I draw that??\n\n\n\n\n\n\nggplot2 reference page is very useful\nHere are all the functions used to generate the plot above, in sequence:\n\nggplot()\ngeom_area()\nscale_y_continuous()\nscale_x_date()\nscale_fill_discrete()\nggtitle()\nEvery function is connected with the + operator"
-  },
-  {
-    "objectID": "handouts/precourse_setup.html",
-    "href": "handouts/precourse_setup.html",
-    "title": "Pre-course setups and requirements",
-    "section": "",
-    "text": "About\nHere we explain how to install R and RStudio on your own computer. This is required to ensure a smooth experience and reproducible results during the course.\n\n\n1 R\n\nGo to the R website\nIn the column on the left hand side, click on the CRAN link under the subheading Download\n\nYou now see a page with CRAN Mirrors. This is a list of servers from which the R software and extensions can be downloaded from\n\nClick on the first link\n\nNow both the left hand side and the right hand side of the page change (This page can be saved as a bookmark/favorite)\n\nOn the right hand side, click on the download link for your operating system\n\nE.g. Windows users click on Download R for Windows, then click on base and download the program from there.\nIt is recommended to install the latest version as well as to upgrade the program if a new major version is released, which is about once per year\nYou can use the default installation options\n\n\n\n\n2 RStudio Desktop\n\nGo to the download page\nScroll down, look for 2: Install Rstudio and click on the button for downloading RStudio Desktop\nDownload and install RStudio Desktop\n\nYou can use the default installation options\n\nOpen Rstudio Desktop, to check that everything has been installed correctly\n\nE.g. via the Start menu in Windows\n\n\n\n\n3 renv setup\n\nThe renv package helps you create reproducible environments for your R projects. Use renv to make your R projects more isolated, portable and reproducible.\n\nFor better error reproducilibity, environment consistency, and ease of debugging, we will setup an renv environment for the course. Follow these steps:\n\nIn your normal R console, install renv with\n\ninstall.packages(\"renv\")\n\nInitialise renv in the project environment with\n\nrenv::init()\n\n\n\n\n\n\nNote\n\n\n\n\n\nMake sure you’re in the correct working directory!\nYou can check from the R console with getwd() and set the correct working directory with setwd(...)\n\n\n\n\nRestart your R session\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nThis can be done using Ctrl+Shift+F10 on Windows and Cmd+Shift+F10 on MacOS\n\n\n\n\nCheck your R console upon restart. It should say that renv is loaded and activated!\n\n(This will be quickly walked through again on the first session of the course)"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "OUCRU R training course - 2026",
-    "section": "",
-    "text": "The training will be 09:00 – 17:00 (UTC +7) for everyday\nThere will be a lunch break between 12:30 – 13:30 (UTC +7)\nLunch will be provided for in-person attendees who filled in their attendance on ferendum.com. If you did not, you need to arrange lunch yourself.\n\n\n\n\nProf. Ronald Geskus, Biostatistics group, OUCRU HCM\nMr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM\nMr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM\nDr. Tran Thai Hung, Biostatistics group, OUCRU HCM\nMs. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM\nDr. Duc Du Hong, Biostatistics group, OUCRU HCM\nDr. Thuan Hoang Van, Biostatistics group, OUCRU Ha Noi\nDr. Nguyen Lam Vuong, Biostatistics group, OUCRU HCM\nMr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM\n\n\n\n\nPlease follow this pre-course setups handout to setup R and RStudio."
-  },
-  {
-    "objectID": "index.html#contributors",
-    "href": "index.html#contributors",
-    "title": "OUCRU R training course - 2026",
-    "section": "",
-    "text": "Prof. Ronald Geskus, Biostatistics group, OUCRU HCM\nMr. Thinh Ong Phuc, Mathematical Modeling group, OUCRU HCM\nMr. Tuyen Huynh, Mathematical Modeling group, OUCRU HCM\nDr. Tran Thai Hung, Biostatistics group, OUCRU HCM\nMs. Anh Phan Truong Quynh, Mathematical Modeling group, OUCRU HCM\nDr. Duc Du Hong, Biostatistics group, OUCRU HCM\nDr. Thuan Hoang Van, Biostatistics group, OUCRU Ha Noi\nDr. Nguyen Lam Vuong, Biostatistics group, OUCRU HCM\nMr. Nguyen Pham Nguyen The, Mathematical Modeling group, OUCRU HCM"
-  },
-  {
-    "objectID": "index.html#pre-course-setups-and-requirements",
-    "href": "index.html#pre-course-setups-and-requirements",
-    "title": "OUCRU R training course - 2026",
-    "section": "",
-    "text": "Please follow this pre-course setups handout to setup R and RStudio."
-  },
-  {
-    "objectID": "index.html#introduction-to-r",
-    "href": "index.html#introduction-to-r",
-    "title": "OUCRU R training course - 2026",
-    "section": "Introduction to R",
-    "text": "Introduction to R\n\nDay 1 (Monday)\n\nLecture slides\nLearning objectives:\n\nBasic structure of R\nSimple computations\nImport and inspect datasets\nMake selections\nNavigate RStudio with confidence\n\nExercises:\n\nExercises\nExercise answers\n Exercise answers script \n\n Example R code scripts - Day 1 \n\n\n\nDay 2 (Tuesday)\n\nLecture slides\nLearning objectives:\n\nCreate visualisations using Base R graphics\nWrite simple functions to automate tasks; the package system\nLists\nUsing pipe operators to chain functions\n\nR code:\n\n Exercise answers script \n\n Example R code scripts - Day 2"
-  },
-  {
-    "objectID": "index.html#principles-of-data-visualisation-and-plotting-in-r",
-    "href": "index.html#principles-of-data-visualisation-and-plotting-in-r",
-    "title": "OUCRU R training course - 2026",
-    "section": "Principles of data visualisation and plotting in R",
-    "text": "Principles of data visualisation and plotting in R\n\nDay 3 (Wednesday):\n\nLecture slides\nLearning objectives:\n\nThe grammar of graphics—understanding how plots are built\nThe step-by-step process of creating graphs in R\nUse the ggplot2 package plot figures in R\nHow to design clear and impactful visualisations\nUsing LLMs (Large Language Models) to help you with plotting\n\nExercises\nR code:\n\n Exercise answers script \n\n\n\n\nDay 4 (Thursday-morning):\n\nLecture slides\nLearning objectives:\n\nUnderstand the principles of clear and impactful visualisation\n\nHandout file\nExercises:\n\nExercise answer key\nExercise answer script\nDatasets:\n\nData Nightingale Rose (csv file)\nData ICU cost (csv file)"
-  },
-  {
-    "objectID": "index.html#advance-data-management-and-techniques-in-r",
-    "href": "index.html#advance-data-management-and-techniques-in-r",
-    "title": "OUCRU R training course - 2026",
-    "section": "Advance data management and techniques in R",
-    "text": "Advance data management and techniques in R\n\nDay 4 (Thursday-afternoon):\n\nLecture slides\nLearning objectives:\n\nInto the tidyverse\nLogics with if-else statements and for-loops\nData manipulation with tidyverse\n\nData ingestion with readr\nPivotting dataframes with tidyr\nColumn manipulation with dplyr\n\nJoining dataframes\nVectors and vectorisation in R\n\nExercises"
-  },
-  {
-    "objectID": "index.html#reproducible-research-and-reporting-using-quarto",
-    "href": "index.html#reproducible-research-and-reporting-using-quarto",
-    "title": "OUCRU R training course - 2026",
-    "section": "Reproducible research and reporting using Quarto",
-    "text": "Reproducible research and reporting using Quarto\n\nDay 5 (Friday-morning)\n\nLecture slides\nLearning objectives:\n\nWrite papers with reproducible tables and figures using Quarto\nGenerate reports in multiple formats: Word, PDF, slides, web pages…\nEasily update analyses when new data becomes available\n\nIn class example: my_project.zip\nExercises"
-  },
-  {
-    "objectID": "index.html#introduction-to-r-and-rstudio",
-    "href": "index.html#introduction-to-r-and-rstudio",
-    "title": "OUCRU R training course - 2026",
-    "section": "Introduction to R and RStudio",
-    "text": "Introduction to R and RStudio\nGood introduction, with explanatory videos:\n\nRStudio provides several tutorials for beginners and more advanced users: https://education.rstudio.com/\nDatacamp provides many courses at different levels (OUCRU HCMC has a license). See http://www.statmethods.net. The introduction is free\nA basic course, interactive design: https://www.quantargo.com/courses/course-r-introduction\nIntroduction from Pasteur institute: https://hub-courses.pages.pasteur.fr/R_pasteur_phd/First_steps_RStudio.html\nGood summary of basic concepts: http://www.burns-stat.com/documents/tutorials/impatient-r\nA comprehensive introduction: https://github.com/matloff/fasteR\nIntroduction to R programming: https://jjallaire.github.io/hopr/"
-  },
-  {
-    "objectID": "index.html#deeper-into-r",
-    "href": "index.html#deeper-into-r",
-    "title": "OUCRU R training course - 2026",
-    "section": "DeepeR into R",
-    "text": "DeepeR into R\n\nThe book R for Data Science (2e)\n“What They Forgot to Teach You About R”\nhttps://www.r-project.org/doc/bib/R-books.html\nThe official R manuals: https://cran.r-project.org/manuals.html"
-  },
-  {
-    "objectID": "index.html#r-and-statistics",
-    "href": "index.html#r-and-statistics",
-    "title": "OUCRU R training course - 2026",
-    "section": "R and statistics",
-    "text": "R and statistics\n\nA simple introduction to biomedical statistics using R: https://a-little-book-of-r-for-biomedical-statistics.readthedocs.io/en/latest/\nA website with detailed examples of all types of statistical analysis: https://stats.oarc.ucla.edu/other/dae/\nR by example: http://www.mayin.org/ajayshah/KB/R/index.html\nR course, with focus machine learning"
-  },
-  {
-    "objectID": "index.html#r-markdown-and-quarto",
-    "href": "index.html#r-markdown-and-quarto",
-    "title": "OUCRU R training course - 2026",
-    "section": "R Markdown and Quarto",
-    "text": "R Markdown and Quarto\n\nThe main RStudio webpage on R Markdown, with links to two freely available books: https://rmarkdown.rstudio.com/docs/\nIntroduction from RStudio\nIntroduction to knitr\nFirst steps in Markdown\nWriting academic papers with R Markdown (focus on bibiliographies): https://ikashnitsky.github.io/2019/zotero/\nR Markdown tips: https://appsilon.com/r-markdown-tips/\nPowerpoint presentations using R Markdown: https://appsilon.com/r-markdown-powerpoint-presentation/\nhttps://codingclubuc3m.rbind.io/post/2019-09-24/ focus on creating presentations\nR Quarto tutorial: https://appsilon.com/r-quarto-tutorial/"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#learning-goals",
-    "href": "slides/IntroductionRDay2.html#learning-goals",
-    "title": "Introduction to R, Day 2",
-    "section": "Learning goals",
-    "text": "Learning goals\n\nDay 1\n\nBasic structure of the R program and language\nUse the RStudio working environment\nImport, inspect and manage a data set\n\nSelect variables (columns) and rows (observations)\nMissing data, factors, dates\n\n\n\n\n\nDay 2\n\nUsing graphics in base R\nFunctions, packages\nObject specific functions\nLists\nWriting more transparent code"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#r-graphics-systems",
-    "href": "slides/IntroductionRDay2.html#r-graphics-systems",
-    "title": "Introduction to R, Day 2",
-    "section": "R graphics systems:",
-    "text": "R graphics systems:\n\nBase graphics (package graphics)\n\nStraightforward to use\nAlways loaded when R is started\nSee Ch. 12 of manual An Introduction to R\n\n\n\n\nlattice package. Less popular nowadays. Not covered here.\nggplot2 package: Wednesday\nNote: these systems cannot be mixed"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#basic-plot-in-base-graphics",
-    "href": "slides/IntroductionRDay2.html#basic-plot-in-base-graphics",
-    "title": "Introduction to R, Day 2",
-    "section": "Basic plot in base graphics",
-    "text": "Basic plot in base graphics\nPlot fare paid as function of age\nplot(titanic$age, titanic$fare)\nExercise: What would you like to change to make it good enough for publication?\n\n\nFormula based specification\n\nbasis for specification of regression models\ngeneral form: dependent ~ independent\n\nplot(fare ~ age, data=titanic)\n\nindependent: variable names separated by operator (+ for main effects and * for main effects plus interaction)\nfunctions with formula (as first argument) have data and subset argument\n\n\n\n\nSome possible changes: change labels along axes, rotate numbers along y-axis, add regression line, rescale fare\n\n\n\nGood summary on base graphics on page 5 of Reference card"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#arguments-and-parameters-that-can-be-changed",
-    "href": "slides/IntroductionRDay2.html#arguments-and-parameters-that-can-be-changed",
-    "title": "Introduction to R, Day 2",
-    "section": "Arguments and parameters that can be changed",
-    "text": "Arguments and parameters that can be changed\n\nWithin function only\n\nxlab, ylab, main\ntype\nxlim, ylim, log\n\nAlso via par function\n\ncex.axis, cex.lab, las\ncex, pch\ncol, lty, lwd\n\nOnly via par function\n\nmar, mfcol, mfrow"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#some-important-functions-for-plotting",
-    "href": "slides/IntroductionRDay2.html#some-important-functions-for-plotting",
-    "title": "Introduction to R, Day 2",
-    "section": "Some important functions for plotting",
-    "text": "Some important functions for plotting\n\nHigh level plot functions\n\nplot\nhist\nboxplot\n\nLow level plot functions (add to existing plot)\n\npoints\nlines, abline\ntext, legend, title, arrows, segments"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#other-plots",
-    "href": "slides/IntroductionRDay2.html#other-plots",
-    "title": "Introduction to R, Day 2",
-    "section": "Other plots",
-    "text": "Other plots\n1-3. Plot fare paid as function of age, change scale, add regression line\n\nColor points by passenger class\nMake a separate plot by sex\n\n\nExercise 6: Make a histogram of age\nExercise 7: Make a boxplot of age by passenger class."
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#export-two-types-of-formats",
-    "href": "slides/IntroductionRDay2.html#export-two-types-of-formats",
-    "title": "Introduction to R, Day 2",
-    "section": "Export: two types of formats",
-    "text": "Export: two types of formats\n\nVector format (pdf, eps, wmf, emf, svg)\n\ndigital image consisting of independent geometric objects (segments, polygons, curves, etc.)\ncan be enlarged without losing resolution\n\nRaster format (png, jpeg, tiff, bmp).\n\nrectangular grid of pixels, possibly with color\nresolution impaired if image is enlarged\n\nGraphics can be saved via the menu in the graphics/plots window, or a specific graphics file type can be created directly via code\n\npdf(\"foo.pdf\",...)\n...\ndev.off()\nor win.metafile(\"foo.wmf\",...) or png(\"foo.png\",...) and ending with dev.off()"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#aside-errors-and-warnings",
-    "href": "slides/IntroductionRDay2.html#aside-errors-and-warnings",
-    "title": "Introduction to R, Day 2",
-    "section": "Aside: errors and warnings",
-    "text": "Aside: errors and warnings\n\nError: code cannot be executed; no output is produced\n\n5 + \"apple\"\ntitanic$age[1,5]\n\nWarning: something unexpected occurred; output produced, but potentially incorrect\n\nas.numeric(c(\"1\", \"2\", \"banana\"))\nplot(fare ~ age, data=titanic, las=1, log=\"y\")"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#basic-format",
-    "href": "slides/IntroductionRDay2.html#basic-format",
-    "title": "Introduction to R, Day 2",
-    "section": "Basic format",
-    "text": "Basic format\n\nAll actions are performed via functions: sqrt, mean, help, library, t.test, plot\nInput: required and optional arguments; within parentheses, separated by comma\n\nrequired: need to be supplied\noptional: have default values\nBeware of sequence of arguments; required ones come first. Compare\nlog(1000, 10) \nlog(10, 1000) \n\n\n\n\nSome functions have special “argument”: ...\nMeaning: anything that makes sense. Example: in c and paste function, which allow for the use of many values to\nOutput: result of calculations (typically assigned to R object), graphics, help window, etc.\nYou can use functions within other functions, e.g. mean(c(3,6,8))"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#object-specific-functionality-i",
-    "href": "slides/IntroductionRDay2.html#object-specific-functionality-i",
-    "title": "Introduction to R, Day 2",
-    "section": "Object specific functionality (I)",
-    "text": "Object specific functionality (I)\n\nOutput of function depends on class of object\n\nExamples:\n\nsummary:\nsummary.data.frame, summary.factor, summary.Date\ndefault: summary.default\nplot: plot(y ~ x, data=..., ...)\n Plot depends on class of `x`: scatterplot is default, but\n boxplot if `x` is of class factor and plot by year if `x` is of class Date"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#object-specific-functionality-ii",
-    "href": "slides/IntroductionRDay2.html#object-specific-functionality-ii",
-    "title": "Introduction to R, Day 2",
-    "section": "Object specific functionality (II)",
-    "text": "Object specific functionality (II)\nWhy important to know?\n\nFinding information in help file\nVery efficient in use. E.g. plot is a generic function, with specific methods depending on the class of the object that is the argument of the function.\nWe only need to remember plot"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#functions-the-inside",
-    "href": "slides/IntroductionRDay2.html#functions-the-inside",
-    "title": "Introduction to R, Day 2",
-    "section": "Functions: the inside",
-    "text": "Functions: the inside\n\nFunction code can be seen by leaving out the parentheses \n\nIQR\n\nGeneral structure:\n\nFunctionName(args) {\n    lines of R code (collection of functions)\n}\nThe last value is returned as output - You can write your own functions:\ngood.morning &lt;- function(work){\n    if(work==TRUE) cat(\"wake up\") else \n      cat(\"you can stay in bed\")\n}\ngood.morning()"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#packages",
-    "href": "slides/IntroductionRDay2.html#packages",
-    "title": "Introduction to R, Day 2",
-    "section": "Packages",
-    "text": "Packages\n\nRegular R users transform recurring tasks into self-made functions\nCan make it into a package, i.e. a collection of functions (and data):\n\nggplot2\ntidyverse\nWHO TB data\nAMR\npharmaverse\nSUSENAS\nvietnameseConverter\nsudoku\nrStrava\n\nGive package developers appropriate credit and cite their packages"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#packages-where-to-find-them",
-    "href": "slides/IntroductionRDay2.html#packages-where-to-find-them",
-    "title": "Introduction to R, Day 2",
-    "section": "Packages, where to find them?",
-    "text": "Packages, where to find them?\n\nComprehensive R Archive Network (24504 packages on August 4, 2026)\nGitHub (34867 packages on August 4, 2026)\nBioconductor\nMonthly Review Top 40 packages\n\n\n\nNeed to be installed on your computer\nR program itself also based on packages. Some loaded at startup base, graphics, stats, utils …\nFor example, base package contains sqrt function\nOther packages need to be loaded before use, best way is via library(pkg_name)"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#another-object-mode-list",
-    "href": "slides/IntroductionRDay2.html#another-object-mode-list",
-    "title": "Introduction to R, Day 2",
-    "section": "Another object mode: list",
-    "text": "Another object mode: list\n\nGeneral mode to store information\nDifferent modes cannot be mixed in vectors\n\nteachers &lt;- c(\"Ronald\",\"Hung\",\"Tuyen\") # mode character\nrooms &lt;- c(306,306,305) # mode numeric\nc(teachers, rooms) # numbers become characters\n\nModes can be mixed in a list:\n\nlist(teachers, rooms)\n## named list:\nlist(teacher = teachers, room = rooms)\nTwo components, with names teacher and room\n\nData are of mode list, but with a special class data.frame\n\nmode(titanic)\nclass(titanic)"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#example-regression-models",
-    "href": "slides/IntroductionRDay2.html#example-regression-models",
-    "title": "Introduction to R, Day 2",
-    "section": "Example: regression models",
-    "text": "Example: regression models\nHow does fare paid depend on age? Linear regression:\nFareByAge &lt;- lm(log(fare+3)~age, data=titanic)\nOutput: should contain everything to derive information from fitted model: coefficients, p-values, confidence intervals, residuals, …\nObject of mode list and of class lm. Help file for summary: summary.lm"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#more-transparent-and-often-shorter-code",
-    "href": "slides/IntroductionRDay2.html#more-transparent-and-often-shorter-code",
-    "title": "Introduction to R, Day 2",
-    "section": "More transparent (and often shorter) code",
-    "text": "More transparent (and often shorter) code\n\nformula structure (regression models, plot function)\nwith function to save repetitive use of data set name :\nwith(titanic, table(sex, survived))\n## instead of table(titanic$sex, titanic$survived)\npipe operator |&gt; (or %&gt;% from the magrittr package)\n\ncombining functions in one line can make code obscure: h(g(f(x)))\nexample: round(proportions(table(titanic$sex,titanic$survived)),2)\nreplace by x |&gt; f() |&gt; g() |&gt; h()"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#the-apply-functions",
-    "href": "slides/IntroductionRDay2.html#the-apply-functions",
-    "title": "Introduction to R, Day 2",
-    "section": "The apply functions",
-    "text": "The apply functions\n\napply: apply a function over all columns or all rows of an array\nlapply: apply a function over a list (including data.frame)\nsapply: similar to lapply but more user-friendly if output can be coerced into a vector\ntapply: can be used to split a vector in subgroups and apply a function to each of the subgroups\naggregate is an alternative to tapply"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#exercises",
-    "href": "slides/IntroductionRDay2.html#exercises",
-    "title": "Introduction to R, Day 2",
-    "section": "Exercises",
-    "text": "Exercises\n\nMake a summary of fare by passenger class using the tapply and the aggregate function\nFit the regression model that fits the mean fare paid (on the log scale) as a function of age:\nFareByAge &lt;- lm(log(fare+3)~age, data=titanic)\nSummarize the results. What do you conclude?\nRefit the model using 10 years as unit for age and summarize the results. Use the pipe operator, starting with titanic |&gt; transform(age=age/10) |&gt; ...\nUse a LLM if you get an error message"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#finding-information",
-    "href": "slides/IntroductionRDay2.html#finding-information",
-    "title": "Introduction to R, Day 2",
-    "section": "Finding Information",
-    "text": "Finding Information\n\nFunction help. R is object oriented!\nSearch on Google (use language r: if result is non-specific)\nchatGPT or an R package such as askgpt or ellmer\nR documentation\nRseek\nR-universe\nCRAN (list with packages, Task Views, FAQs, Vignettes)\nStack Overflow\nHave a look at the links provided in the appendix on the course website"
-  },
-  {
-    "objectID": "slides/IntroductionRDay2.html#exercise",
-    "href": "slides/IntroductionRDay2.html#exercise",
-    "title": "Introduction to R, Day 2",
-    "section": "Exercise",
-    "text": "Exercise\nFind information on\n\ndescriptive statistics\nchange several categorical variables of a data.frame into factor variables\nrecognize nonstandard date formats"
-  },
-  {
-    "objectID": "slides/qt-example.html",
-    "href": "slides/qt-example.html",
-    "title": "Hello, Quarto",
-    "section": "",
-    "text": "Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
-  },
-  {
-    "objectID": "slides/qt-example.html#introduction-to-quarto",
-    "href": "slides/qt-example.html#introduction-to-quarto",
-    "title": "Hello, Quarto",
-    "section": "",
-    "text": "Quarto is a publishing system that allows you to create documents, presentations, websites, and more using Markdown syntax and additional tools."
-  },
-  {
-    "objectID": "slides/qt-example.html#header-levels",
-    "href": "slides/qt-example.html#header-levels",
-    "title": "Hello, Quarto",
-    "section": "2 Header Levels",
-    "text": "2 Header Levels\nQuarto supports multiple header levels to create a hierarchical structure in your document. For example:\n\nLevel 1 header: # Header\nLevel 2 header: ## Subheader\nLevel 3 header: ### Sub-subheader\n\n\n2.1 Nested Headers\nUsing headers, you can create nested sections to structure your document in a clear and organized way."
-  },
-  {
-    "objectID": "slides/qt-example.html#inline-text-formatting",
-    "href": "slides/qt-example.html#inline-text-formatting",
-    "title": "Hello, Quarto",
-    "section": "3 Inline Text Formatting",
-    "text": "3 Inline Text Formatting\nYou can format your text inline to add emphasis or other styling options.\n\nBold text: **bold**\nItalic text: *italic*\nInline code: `code`\nUnderline: [underline]{.underline}\n\n\nBlockquotes can be used to highlight important information or quotes by adding &gt; at the beginning of a line."
-  },
-  {
-    "objectID": "slides/qt-example.html#lists",
-    "href": "slides/qt-example.html#lists",
-    "title": "Hello, Quarto",
-    "section": "4 Lists",
-    "text": "4 Lists\nQuarto supports both ordered and unordered lists.\n\n4.1 Unordered List\nTo create an unordered list, use an asterisk * before each item:\n\nFirst item\nSecond item\nThird item\n\n\n\n4.2 Ordered List\nTo create an ordered list, use numbers before each item:\n\nFirst item\nSecond item\nThird item"
-  },
-  {
-    "objectID": "slides/qt-example.html#math-equations-and-symbols",
-    "href": "slides/qt-example.html#math-equations-and-symbols",
-    "title": "Hello, Quarto",
-    "section": "5 Math equations and symbols",
-    "text": "5 Math equations and symbols\nInline math:\nThe simple regression model is \\(Y_i = \\beta_0 + \\beta_1 X_i + \\epsilon_i\\) $Y_i = \\beta_0 + \\beta_1 X_i + \\epsilon_i$\nDisplay math:\nThe Gaussian probability density function is: \\[f(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} e^{-\\frac{(x - \\mu)^2}{2\\sigma^2}}\\] $$f(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} e^{-\\frac{(x - \\mu)^2}{2\\sigma^2}}$$"
-  },
-  {
-    "objectID": "slides/qt-example.html#links-and-images",
-    "href": "slides/qt-example.html#links-and-images",
-    "title": "Hello, Quarto",
-    "section": "6 Links and images",
-    "text": "6 Links and images\nhttp://example.com\nlinked phrase\n\n\n\noptional caption text"
-  },
-  {
-    "objectID": "slides/qt-example.html#tables",
-    "href": "slides/qt-example.html#tables",
-    "title": "Hello, Quarto",
-    "section": "7 Tables",
-    "text": "7 Tables\n\n\n\nFirst Header\nSecond Header\n\n\n\n\nContent Cell\nContent Cell\n\n\nContent Cell\nContent Cell"
-  },
-  {
-    "objectID": "slides/qt-example.html#code-block",
-    "href": "slides/qt-example.html#code-block",
-    "title": "Hello, Quarto",
-    "section": "8 Code block",
-    "text": "8 Code block\nQuarto also supports code blocks, making it easy to include and execute code within your document. Here’s an example of a code block to create a simple plot using R:\n\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(1, 4, 9, 16, 25)\n\nplot(x, y, type = \"o\", col = \"blue\", main = \"Simple plot\", xlab = \"x\", ylab = \"y\")"
-  },
-  {
-    "objectID": "slides/qt-example.html#footnotes",
-    "href": "slides/qt-example.html#footnotes",
-    "title": "Hello, Quarto",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nThis is an example footnote.↩︎"
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#learning-goals",
-    "href": "slides/IntroductionRDay1.html#learning-goals",
-    "title": "Introduction to R, Day 1",
-    "section": "Learning goals",
-    "text": "Learning goals\nBecome familiar and confident with the R program, using RStudio\nNot: using R for statistics, bioinformatics or mathematical modeling\n\n\nDay 1\n\nBasic structure of the R program and language\n\nBasic computations and selections\nObjects and functions\n\nUse the RStudio working environment\nImport and inspect a data set\n\nSelect variables (columns) and rows (observations)\nMissing data, factor variables, date variables\n\n\n\n\n\n\nDay 2\n\nR graphics, functions, data management, finding further information"
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#r-what-is-it-and-why-use-it",
-    "href": "slides/IntroductionRDay1.html#r-what-is-it-and-why-use-it",
-    "title": "Introduction to R, Day 1",
-    "section": "R: What is it and why use it?",
-    "text": "R: What is it and why use it?\n\nOn R Project website: “a language and environment for statistical computing and graphics”\nFree: no money charged and open source\nRuns on all major operating systems\nVery flexible and powerful\n\nReproducibility: see Friday course\nCommunity: large, collaborative user base\n\nSteep learning curve(?)"
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#the-r-phenotypes",
-    "href": "slides/IntroductionRDay1.html#the-r-phenotypes",
-    "title": "Introduction to R, Day 1",
-    "section": "The R phenotypes",
-    "text": "The R phenotypes\n\nR program: very basic functionality via menus\n\n\n\n\n\n\n\n\n\n\nRStudio: user-friendly shell around R\n\n\n\n\nMost analyses performed via writing code in file.\nClassical format: script file with “.R” extension.\nNewer formats: R Markdown (“.Rmd”) and Quarto (“.qmd”)\n\n\n\n\nGraphical User Interface e.g. BlueSky, R-Instat, jamovi, RKWard"
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#r-as-a-pocket-calculator-i",
-    "href": "slides/IntroductionRDay1.html#r-as-a-pocket-calculator-i",
-    "title": "Introduction to R, Day 1",
-    "section": "R as a pocket calculator I",
-    "text": "R as a pocket calculator I\nMany mathematical operations (+, -, *, /, ^ (or **) ) pre-defined\nAdd numbers 2 and 7:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nMultiply 2 and 7:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nDivide 7 by 2:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nCompute \\(2^7\\):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#r-as-a-pocket-calculator-ii",
-    "href": "slides/IntroductionRDay1.html#r-as-a-pocket-calculator-ii",
-    "title": "Introduction to R, Day 1",
-    "section": "R as a pocket calculator II",
-    "text": "R as a pocket calculator II\nSome operations based on functions: sqrt, log, log2, log10, sum, prod. Function arguments within parentheses, sqrt(..) etc.\nCompute the square root of 2:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTake the 10-log of 1000 (y with \\(10^y=1000\\)):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nSum of numbers 1 to 5:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nSome constants (\\(\\pi\\), …) pre-defined:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#assignment",
-    "href": "slides/IntroductionRDay1.html#assignment",
-    "title": "Introduction to R, Day 1",
-    "section": "Assignment",
-    "text": "Assignment\nAssign value 2 to object x\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nShow content of x\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWithout assignment, x keeps old value\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNote: use Ctrl/Cmd + Enter/Return to run single line"
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#datasets",
-    "href": "slides/IntroductionRDay1.html#datasets",
-    "title": "Introduction to R, Day 1",
-    "section": "Datasets",
-    "text": "Datasets\n\nMost often rectangular format\n\nColumns: variables\nRows: observations\n\nExample: titanic3 data set; passenger characteristics and survival status after disaster with the Titanic cruise ship\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFor now, we work with subset (10 passengers) of titanic data set:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#data-selections-within-a-single-column",
-    "href": "slides/IntroductionRDay1.html#data-selections-within-a-single-column",
-    "title": "Introduction to R, Day 1",
-    "section": "Data: selections within a single column",
-    "text": "Data: selections within a single column\n\nEach column is a vector of values\nSingle column from data set selected via “$”, e.g. titanic$age\nElements of vector selected via numbers within square brackets [ ]\n\nSelect age of passengers 1 and 5\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nSelect age of passengers 6 to 10\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nFlexibility of seq function\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#data-selection-of-rows-and-columns",
-    "href": "slides/IntroductionRDay1.html#data-selection-of-rows-and-columns",
-    "title": "Introduction to R, Day 1",
-    "section": "Data: selection of rows and columns",
-    "text": "Data: selection of rows and columns\n\nVia square brackets and a comma: dataset[rows, cols]\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nColumns: selection by name of columns\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#exercise-1",
-    "href": "slides/IntroductionRDay1.html#exercise-1",
-    "title": "Introduction to R, Day 1",
-    "section": "Exercise 1",
-    "text": "Exercise 1\n\nCreate a vector named vec that consists of the numbers from 11 to 30\nSelect the 7th element of the vector\nSelect all elements except the 15th. Hint: use a minus sign\nSelect the 2nd and 5th element of the vector\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nSelect only the odd valued elements of vec.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#exercise-1-answer",
-    "href": "slides/IntroductionRDay1.html#exercise-1-answer",
-    "title": "Introduction to R, Day 1",
-    "section": "Exercise 1 (answer)",
-    "text": "Exercise 1 (answer)\n\nCreate a vector named vec that consists of the numbers from 11 to 30\nSelect the 7th element of the vector\nSelect all elements except the 15th. Hint: use a minus sign\nSelect the 2nd and 5th element of the vector\nSelect only the odd valued elements of vec.\n\nvec &lt;- seq(11,30)\nvec[7]\n## Use '-' to exclude elements\nvec[-15]\n## Use the concatenate function 'c'\nvec[c(2,5)]\n## odd numbers\nindex &lt;- seq(1,length(vec),by=2)\nvec[index]"
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#exercise-2",
-    "href": "slides/IntroductionRDay1.html#exercise-2",
-    "title": "Introduction to R, Day 1",
-    "section": "Exercise 2",
-    "text": "Exercise 2\nUse the elementary functions /; -; ^ and the function sum to calculate the mean \\[\\bar{x}=\\sum_{i=1}^n x_i/n\\] and the standard deviation \\[\\sqrt{\\sum_{i=1}^{n}(x_i-\\bar{x})^2/(n-1)}\\] of the fare paid by the titanic passengers. Note: \\(n=10\\).\nVerify your answer by using the built-in R functions mean and sd.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#exercise-2-with-answer",
-    "href": "slides/IntroductionRDay1.html#exercise-2-with-answer",
-    "title": "Introduction to R, Day 1",
-    "section": "Exercise 2 (with answer)",
-    "text": "Exercise 2 (with answer)\nUse the elementary functions /, -, ^ and the function sum to calculate the mean \\[\\bar{x}=\\sum_{i=1}^n x_i/n\\] and the standard deviation \\[\\sqrt{ \\sum_{i=1}^n (x_i-\\bar{x})^2/(n-1)}\\] of the fare paid by the titanic passengers. Note: \\(n=10\\). Verify your answer by using the built-in R functions mean and sd.\nfare &lt;- titanic$fare\nMeanFare &lt;- sum(fare)/length(fare)\nMeanFare\nmean(fare)\n# Calculate the standard deviation in three (baby) steps\nnumerator &lt;- sum((fare-MeanFare)^2)\ndenominator &lt;- (length(fare)-1)\nStdFare  &lt;- sqrt(numerator/denominator)\nStdFare\nsd(fare)"
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#functions-i",
-    "href": "slides/IntroductionRDay1.html#functions-i",
-    "title": "Introduction to R, Day 1",
-    "section": "Functions (I)",
-    "text": "Functions (I)\n\n\nA function tells R what work to do for us\nDetails are given via the arguments of the function\nThink of it like asking someone to complete a task for you\n\n\n\nExample\nThinh told Ronald: “Please give feedback on my measles model manuscript before next Friday”.\nHow does this translate into R?\n\n\ngive_feedback(type = \"manuscript\", which = \"measles model\", deadline = \"next Friday\")"
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#functions-ii",
-    "href": "slides/IntroductionRDay1.html#functions-ii",
-    "title": "Introduction to R, Day 1",
-    "section": "Functions (II)",
-    "text": "Functions (II)\n\nEverything we do in R boils down to running a function:\nGenerates some output given some input:\ngoal(arg1=input1, arg2=input2, ...)\n\ngoal: what do we want; function name\ninput: what information does R need for this; arguments of the function\n\nOutput: a value (often assigned to an object for further use); a figure; a help page, …\nE.g. help(mean): mean is argument of function help. Output is the appearance of a page with information on the mean function"
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#many-calculation-functions-are-vectorized",
-    "href": "slides/IntroductionRDay1.html#many-calculation-functions-are-vectorized",
-    "title": "Introduction to R, Day 1",
-    "section": "Many calculation functions are vectorized",
-    "text": "Many calculation functions are vectorized\n\nExample: change unit of age to decade (10 years)\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nWhat does this code give:\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nMore general: iteration via apply functions (Tuesday) and the purrr package (Thursday)"
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#help",
-    "href": "slides/IntroductionRDay1.html#help",
-    "title": "Introduction to R, Day 1",
-    "section": "Help",
-    "text": "Help\n\nTo know more about a function (or dataset) you can often use help function\nhelp(mean) gives\n\nDescription: Generic function for the (trimmed) arithmetic mean.\nUsage: mean(x, …)\nDefault S3 method:\nmean(x, trim = 0, na.rm = FALSE, ...)\nArguments:\nx: an R object. Currently there are methods for numeric/logical vectors and date, date-time and time interval objects.\ntrim:\nna.rm: a logical evaluating to ‘TRUE’ or ‘FALSE’ indicating whether NA values should be stripped before the computation proceeds.\nValue: If trim is zero (the default), the arithmetic mean of the values in x is computed, as a numeric or complex vector of length one."
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#structure-of-help-page",
-    "href": "slides/IntroductionRDay1.html#structure-of-help-page",
-    "title": "Introduction to R, Day 1",
-    "section": "Structure of help page",
-    "text": "Structure of help page\n\nOutline of a help page of a function is always the same:\n\nDescription: what does the function do\nUsage: what arguments/input does the function expect\nArguments: description of the individual arguments\nValue: what is the result of a function call\noften: Details, References, See Also, Examples. You can use the example function to run the examples: example(mean)"
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#objects",
-    "href": "slides/IntroductionRDay1.html#objects",
-    "title": "Introduction to R, Day 1",
-    "section": "Objects",
-    "text": "Objects\n\nEverything that exists in R is an object (data, functions, results from analysis, …)\nExample names for user created objects: patients, Data, LetsHaveFun\nNames are case-sensitive: Data is not the same as data\n\n\n\nNot allowed:\n\nspace\ncharacters with special meaning in R: “@”, “$”, “+” etc.\nnumbers allowed but not as first character\nspecific R programming constructs: for, if, while, ...\n\nBetter avoid names that are R functions:\nsort, c, mean, t, data, q\n\n\n\n\n“_” and “.” are allowed (e.g. lets.have_fun)\nMany prefer “_” over “.” to subdivide names"
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#remember",
-    "href": "slides/IntroductionRDay1.html#remember",
-    "title": "Introduction to R, Day 1",
-    "section": "Remember",
-    "text": "Remember\n\n\n\n\n\n\n\nObjects and functions\n\n\n\nEverything that exists in R is an object (data, functions, …)\nEverything that happens in R is a function call"
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#modes",
-    "href": "slides/IntroductionRDay1.html#modes",
-    "title": "Introduction to R, Day 1",
-    "section": "Modes",
-    "text": "Modes\n\nData (variables) come in different types. The most important ones are:\n\nnumeric:\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nlogical: values TRUE and FALSE\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\ncharacter:\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nYou can change the mode of some data objects\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#modes-logical-i",
-    "href": "slides/IntroductionRDay1.html#modes-logical-i",
-    "title": "Introduction to R, Day 1",
-    "section": "Modes: logical (I)",
-    "text": "Modes: logical (I)\n\nTRUE and FALSE useful for selection\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nLogical statements arise from comparing values:\n\nSmaller/larger than: &lt;; &gt;; &lt;=; &gt;=\nExact equality: ==\nNot equal to: !=\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nConverted to integer if a numeric value is required:\nTRUE equals 1, FALSE equals 0\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#modes-logical-ii",
-    "href": "slides/IntroductionRDay1.html#modes-logical-ii",
-    "title": "Introduction to R, Day 1",
-    "section": "Modes: logical (II)",
-    "text": "Modes: logical (II)\nWe can calculate with logicals. Main operators are:\n\n&: all must be true (“AND”)\n|: at least one must be true (“OR”)\n!: negation (“NOT)”\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLogical statements about fare\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nSelect fare values between 10 and 40\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#r-and-rstudio",
-    "href": "slides/IntroductionRDay1.html#r-and-rstudio",
-    "title": "Introduction to R, Day 1",
-    "section": "R and RStudio",
-    "text": "R and RStudio\n\nR is a programming language for statistical computing and data visualization.\n\n\nRStudio is a software designed to make working with R easier by helping you create, edit, and manage R code and projects. More formally, it is known as an Integrated Development Environment (IDE)."
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#create-project-in-rstudio",
-    "href": "slides/IntroductionRDay1.html#create-project-in-rstudio",
-    "title": "Introduction to R, Day 1",
-    "section": "Create Project in RStudio",
-    "text": "Create Project in RStudio\nAn R project is a directory with .Rproj file, signaling RStudio to manage the project settings accordingly.\n\nThe process of creating an R project is as followed\n\nIn the menu File &gt; New Project…\nClick Existing Directory &gt; Browse\nClick Browse and click on your project directory\nClick Create Project"
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#project-structure",
-    "href": "slides/IntroductionRDay1.html#project-structure",
-    "title": "Introduction to R, Day 1",
-    "section": "Project structure",
-    "text": "Project structure\nA minimal R project structure can have the following format\n└── My_Project\n    ├── output\n    ├── data\n    │   ├── raw\n    │   └── processed\n    └── analysis.R \nWhere\n\ndata folder contains data to be analyzed\noutput stores code output (plot, figures, etc.)\nanalysis.R is the file containing R code. There can be multiple .R files under one project."
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#rstudio-interface",
-    "href": "slides/IntroductionRDay1.html#rstudio-interface",
-    "title": "Introduction to R, Day 1",
-    "section": "RStudio interface",
-    "text": "RStudio interface"
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#rstudio-interface-1",
-    "href": "slides/IntroductionRDay1.html#rstudio-interface-1",
-    "title": "Introduction to R, Day 1",
-    "section": "RStudio interface",
-    "text": "RStudio interface\n\nConsists of 4 main panes\n\nUpper left: Shows the content of source code file and of datasets in R session\nConsole: Shows the executed code lines and their output\nEnvironment: Shows the user defined objects\nFiles/Plot/Package/Help/…:\n\nFiles: for files nagivation\nPlots: show plot output\nPackages: show all the installed packages and packages being used (packages in use will have a ✓)\nHelp: shows documentation for functions or packages"
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#data-import",
-    "href": "slides/IntroductionRDay1.html#data-import",
-    "title": "Introduction to R, Day 1",
-    "section": "Data import",
-    "text": "Data import\n\nR: see R Data Import/Export\nRStudio: Environment pane: Import Dataset; or via File menu: Import Dataset\n\ntext and csv (base or readr package)\nExcel (readxl package)\n\nlibrary(readxl)\ntitanic &lt;- read_excel(\"data/raw/Titanic3.xlsx\")\n\nSPSS/Stata/SAS (haven package)\nsee Importing Data with RStudio\nImported as a “tibble” (enhancement of data.frame)\n\nDatabase: Oracle, SQLite, …"
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#data-inspection-and-basic-variable-summaries",
-    "href": "slides/IntroductionRDay1.html#data-inspection-and-basic-variable-summaries",
-    "title": "Introduction to R, Day 1",
-    "section": "Data inspection and basic variable summaries",
-    "text": "Data inspection and basic variable summaries\n\nView: opens a spreadsheet-style data viewer\nIn RStudio: click on the name of a data object in the Environment tab\ndim: gives the number of rows and columns\nhead: shows the first rows of a data frame\ntail: similar to head but shows the last rows\nstr: compact display of the internal structure of an R object\n\nVariable summaries\n\nsummary: concise summary (also used for data set)\nmean: mean value\nquantile: quantiles\nIQR: inter-quartile range\ntable: tabulation of one or two categorical variables"
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#missing-data",
-    "href": "slides/IntroductionRDay1.html#missing-data",
-    "title": "Introduction to R, Day 1",
-    "section": "Missing data",
-    "text": "Missing data\n\nSpecial value: NA (short for “not available”) The function is.na checks for missingness\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nMost functions exclude missings by default\nNot always what you want\n\ntable excludes missings; we can include them via argument useNA=\"always\"\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nmean gives NA, while quantile (and some others) give error if there are missings; specify argument na.rm=TRUE\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#make-exercises-3-and-4",
-    "href": "slides/IntroductionRDay1.html#make-exercises-3-and-4",
-    "title": "Introduction to R, Day 1",
-    "section": "Make exercises 3 and 4",
-    "text": "Make exercises 3 and 4\nData found here: Titanic3.xlsx"
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#selection-by-name",
-    "href": "slides/IntroductionRDay1.html#selection-by-name",
-    "title": "Introduction to R, Day 1",
-    "section": "Selection by name",
-    "text": "Selection by name\nCreate a named vector:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nSelect by name:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nSame for data sets (use dimnames because there are two dimensions):\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#more-efficient-row-selections-subset",
-    "href": "slides/IntroductionRDay1.html#more-efficient-row-selections-subset",
-    "title": "Introduction to R, Day 1",
-    "section": "More efficient row selections: “subset”",
-    "text": "More efficient row selections: “subset”\n\nsubset function: subset(my.data, subset=...),\nwith ... a logical condition:\n\nsubset(titanic, pclass %in% c(\"1st\",\"2nd\"))$survived\nNote: %in% is another logical construct\n\nsubset argument in functions with formula structure:\n\nxtabs(~survived, data=titanic, subset=(sex==\"male\"))    \n\n\n\n\n\n\nWarning\n\n\n\nDon’t use “$” for column selection if function has a data argument\n\nxtabs(~titanic$survived, data=titanic, subset=(titanic$sex==\"male\"))"
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#more-efficient-column-selections",
-    "href": "slides/IntroductionRDay1.html#more-efficient-column-selections",
-    "title": "Introduction to R, Day 1",
-    "section": "More efficient column selections",
-    "text": "More efficient column selections\n\nsubset function: subset(my.data, select=...), with ... a selection of columns names:\nhead(subset(titanic, select= c(sex,fare)))\nWe can select a sequence of names via : function:\nhead(subset(titanic, select= sex:fare))\nOr use - to exclude columns:\nhead(subset(titanic, select= -(sex:fare)))"
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#give-extra-structure-to-categorical-variables-factors",
-    "href": "slides/IntroductionRDay1.html#give-extra-structure-to-categorical-variables-factors",
-    "title": "Introduction to R, Day 1",
-    "section": "Give extra structure to categorical variables: factors",
-    "text": "Give extra structure to categorical variables: factors\n\nDefine the ordering of the “levels” (useful in regression models)\n\nDefault is by alphabetical/numeric order\ntable(titanic$sex)\nChange the order\ntitanic$sex &lt;- factor(titanic$sex)\nlevels(titanic$sex) # female comes first\nlevels(titanic$sex) &lt;- c(\"male\",\"female\")\n## or directly when creating the factor:\ntitanic$sex &lt;- factor(titanic$sex, levels=c(\"male\",\"female\"))\ntable(titanic$sex)\n\nTo change naming of the levels\nlevels(titanic$sex) &lt;- c(\"M\",\"F\")\n## when (re)creating the factor\ntitanic$sex &lt;- factor(titanic$sex, labels=c(\"M\",\"F\"))\nGood introduction to factors"
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#dates",
-    "href": "slides/IntroductionRDay1.html#dates",
-    "title": "Introduction to R, Day 1",
-    "section": "Dates",
-    "text": "Dates\n\nNumeric value (units since time origin) with character representation\nOrigin:\n\nSPSS: October 14, 1582 (seconds)\nR: January 1st, 1970 (days)\nStata: January 1st, 1960 (days)\n\nR is very flexible in conversion between textual date representations\nas.Date: create date variable\nformat: change display format\nSee page 5 of this reference card\nPackages anytime and lubridate useful\nA Comprehensive Introduction to Handling Date & Time"
-  },
-  {
-    "objectID": "slides/IntroductionRDay1.html#make-exercises-5-6-and-7",
-    "href": "slides/IntroductionRDay1.html#make-exercises-5-6-and-7",
-    "title": "Introduction to R, Day 1",
-    "section": "Make exercises 5, 6 and 7",
-    "text": "Make exercises 5, 6 and 7\nReturn to main course page"
   }
 ]
