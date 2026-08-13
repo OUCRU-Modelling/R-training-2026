@@ -3,8 +3,8 @@
     "objectID": "slides/qt-repro-res.html#what-is-quarto",
     "href": "slides/qt-repro-res.html#what-is-quarto",
     "title": "Using Quarto for reproducible research",
-    "section": "What is Quarto?",
-    "text": "What is Quarto?\n\nA publishing system for creating documents, presentations, websites…\nCan build HTML, PDF, Microsoft Word…\nCombines Markdown and R/Python/Julia code for reproducible workflows\nIntegrated into RStudio by default"
+    "section": "",
+    "text": "A publishing system for creating documents, presentations, websites…\nCan build HTML, PDF, Microsoft Word…\nCombines Markdown and R/Python/Julia code for reproducible workflows\nIntegrated into RStudio by default"
   },
   {
     "objectID": "slides/qt-repro-res.html#how-does-quarto-work",
@@ -1972,5 +1972,12 @@
     "title": "Introduction to R, Day 1",
     "section": "Make exercises 5, 6 and 7",
     "text": "Make exercises 5, 6 and 7\nReturn to main course page"
+  },
+  {
+    "objectID": "slides/qt-repro-res.html",
+    "href": "slides/qt-repro-res.html",
+    "title": "Using Quarto for reproducible research",
+    "section": "",
+    "text": "A publishing system for creating documents, presentations, websites…\nCan build HTML, PDF, Microsoft Word…\nCombines Markdown and R/Python/Julia code for reproducible workflows\nIntegrated into RStudio by default"
   }
 ]

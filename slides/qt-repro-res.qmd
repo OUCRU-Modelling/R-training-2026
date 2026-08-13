@@ -40,7 +40,7 @@ number-sections: false
 
 ## Report/Manuscript
 
-<iframe src="report.html" width="100%" height="500px" style="border:none;"></iframe>
+<iframe src="../handouts/report.html" width="100%" height="500px" style="border:none;"></iframe>
 
 ## Dashboard
 
