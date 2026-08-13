@@ -169,6 +169,8 @@ or `win.metafile("foo.wmf",...)` or `png("foo.png",...)` and ending with `dev.of
 titanic$age[1,5]
 ```
 
+<!-- Add: missing parentheses/quotes, case sensitivity, typos in function/command names -->
+
 - Warning: something unexpected occurred; output produced, but potentially incorrect
 
 ```{.r}
@@ -236,7 +238,7 @@ IQR
 - General structure: 
 
 ```{.r}
-FunctionName(args) {
+FunctionName <- function(args) {
     lines of R code (collection of functions)
 }
 ```
