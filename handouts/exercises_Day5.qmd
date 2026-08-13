@@ -14,7 +14,7 @@ lot: FALSE
 number-sections: FALSE
 thanks: "Please do not circulate."
 execute:
-  echo: false
+  echo: true
   eval: true
 ---
 
