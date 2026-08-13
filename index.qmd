@@ -98,7 +98,7 @@ Please follow this [pre-course setups handout](handouts/precourse_setup.qmd) to 
   - [Exercise answer script](handouts/Exercises_Day4a_answer.R)
   - Datasets: 
     - [Data Nightingale Rose (csv file)](slides/data/NightingaleRose.csv)
-    - [Data ICU cost (csv file)](slides/data/ICUcost.csv)
+    - [Data ICU cost (csv file)](slides/data/ICUCost.csv)
 
 ## Advance data management and techniques in R
 
