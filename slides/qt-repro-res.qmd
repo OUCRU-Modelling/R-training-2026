@@ -76,7 +76,7 @@ library(qrcode)
 qr_code("https://quarto.org/docs/gallery/") |> plot()
 
 ```
-Or click [here](https://quarto.org/docs/gallery/)
+Or click [here](https://quarto.org/docs/gallery/){target="_blank"}
 :::
 :::::
 
