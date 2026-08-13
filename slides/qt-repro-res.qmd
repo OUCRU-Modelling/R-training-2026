@@ -337,7 +337,7 @@ index.html
 
 -   Some templates are designed for academic journals, presentations, or reports
 
--   [Click here](https://github.com/quarto-journals/) to see a list of available journal templates in Quarto
+-   [Click here](https://github.com/quarto-journals/){target="_blank"} to see a list of available journal templates in Quarto
 
 ## What is a Quarto template? {.smaller}
 
