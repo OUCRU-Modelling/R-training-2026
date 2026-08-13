@@ -265,7 +265,7 @@ Hung Tran and Thinh Ong
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="qt-repro-res_files/figure-revealjs/unnamed-chunk-1-1.png" width="192"></p>
+<p><img data-src="qt-repro-res_files/figure-html/unnamed-chunk-1-1.png" width="192"></p>
 </figure>
 </div>
 </div>
@@ -707,11 +707,23 @@ Hung Tran and Thinh Ong
 <h2>Data</h2>
 <p>First let’s load the packages and have a look at the dataset <a href="https://github.com/OUCRU-Modelling/R-training-2025/raw/refs/heads/main/slides/data/simulated_covid.rds">simulated_covid.rds</a>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-label="1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb6-2"><a aria-label="2"></a><span class="fu">library</span>(gtsummary)</span>
-<span id="cb6-3"><a aria-label="3"></a></span>
-<span id="cb6-4"><a aria-label="4"></a>df <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/simulated_covid.rds"</span>)</span>
-<span id="cb6-5"><a aria-label="5"></a><span class="fu">head</span>(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-label="1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.2.1     ✔ readr     2.2.0
+✔ forcats   1.0.1     ✔ stringr   1.6.0
+✔ ggplot2   4.0.3     ✔ tibble    3.3.1
+✔ lubridate 1.9.5     ✔ tidyr     1.3.2
+✔ purrr     1.2.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-label="1"></a><span class="fu">library</span>(gtsummary)</span>
+<span id="cb8-2"><a aria-label="2"></a></span>
+<span id="cb8-3"><a aria-label="3"></a>df <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/simulated_covid.rds"</span>)</span>
+<span id="cb8-4"><a aria-label="4"></a><span class="fu">head</span>(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  id  case_name case_type sex age date_onset date_admission   outcome
 1  1 jCQH5RSlVq confirmed   m  22 2023-01-01           &lt;NA&gt; recovered
@@ -736,32 +748,32 @@ Hung Tran and Thinh Ong
 <div class="column" style="width:60%;">
 <div class="codewindow r">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-label="1"></a>df <span class="sc">|&gt;</span> </span>
-<span id="cb8-2"><a aria-label="2"></a>  <span class="fu">tbl_summary</span>(</span>
-<span id="cb8-3"><a aria-label="3"></a>    <span class="at">include =</span> <span class="fu">c</span>(sex, age, outcome, outbreak)</span>
-<span id="cb8-4"><a aria-label="4"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-label="1"></a>df <span class="sc">|&gt;</span> </span>
+<span id="cb10-2"><a aria-label="2"></a>  <span class="fu">tbl_summary</span>(</span>
+<span id="cb10-3"><a aria-label="3"></a>    <span class="at">include =</span> <span class="fu">c</span>(sex, age, outcome, outbreak)</span>
+<span id="cb10-4"><a aria-label="4"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div><div class="column" style="width:40%;">
 <div class="cell">
 <div class="cell-output-display">
-<div id="ufzhmkcvww" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ufzhmkcvww table {
+<div id="ofbiuhqjdu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ofbiuhqjdu table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ufzhmkcvww thead, #ufzhmkcvww tbody, #ufzhmkcvww tfoot, #ufzhmkcvww tr, #ufzhmkcvww td, #ufzhmkcvww th {
+#ofbiuhqjdu thead, #ofbiuhqjdu tbody, #ofbiuhqjdu tfoot, #ofbiuhqjdu tr, #ofbiuhqjdu td, #ofbiuhqjdu th {
   border-style: none;
 }
 
-#ufzhmkcvww p {
+#ofbiuhqjdu p {
   margin: 0;
   padding: 0;
 }
 
-#ufzhmkcvww .gt_table {
+#ofbiuhqjdu .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -787,12 +799,12 @@ Hung Tran and Thinh Ong
   border-left-color: #D3D3D3;
 }
 
-#ufzhmkcvww .gt_caption {
+#ofbiuhqjdu .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ufzhmkcvww .gt_title {
+#ofbiuhqjdu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -804,7 +816,7 @@ Hung Tran and Thinh Ong
   border-bottom-width: 0;
 }
 
-#ufzhmkcvww .gt_subtitle {
+#ofbiuhqjdu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -816,7 +828,7 @@ Hung Tran and Thinh Ong
   border-top-width: 0;
 }
 
-#ufzhmkcvww .gt_heading {
+#ofbiuhqjdu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -828,13 +840,13 @@ Hung Tran and Thinh Ong
   border-right-color: #D3D3D3;
 }
 
-#ufzhmkcvww .gt_bottom_border {
+#ofbiuhqjdu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ufzhmkcvww .gt_col_headings {
+#ofbiuhqjdu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -849,7 +861,7 @@ Hung Tran and Thinh Ong
   border-right-color: #D3D3D3;
 }
 
-#ufzhmkcvww .gt_col_heading {
+#ofbiuhqjdu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -869,7 +881,7 @@ Hung Tran and Thinh Ong
   overflow-x: hidden;
 }
 
-#ufzhmkcvww .gt_column_spanner_outer {
+#ofbiuhqjdu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -881,15 +893,15 @@ Hung Tran and Thinh Ong
   padding-right: 4px;
 }
 
-#ufzhmkcvww .gt_column_spanner_outer:first-child {
+#ofbiuhqjdu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ufzhmkcvww .gt_column_spanner_outer:last-child {
+#ofbiuhqjdu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ufzhmkcvww .gt_column_spanner {
+#ofbiuhqjdu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -901,11 +913,11 @@ Hung Tran and Thinh Ong
   width: 100%;
 }
 
-#ufzhmkcvww .gt_spanner_row {
+#ofbiuhqjdu .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ufzhmkcvww .gt_group_heading {
+#ofbiuhqjdu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -931,7 +943,7 @@ Hung Tran and Thinh Ong
   text-align: left;
 }
 
-#ufzhmkcvww .gt_empty_group_heading {
+#ofbiuhqjdu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -946,15 +958,15 @@ Hung Tran and Thinh Ong
   vertical-align: middle;
 }
 
-#ufzhmkcvww .gt_from_md > :first-child {
+#ofbiuhqjdu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ufzhmkcvww .gt_from_md > :last-child {
+#ofbiuhqjdu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ufzhmkcvww .gt_row {
+#ofbiuhqjdu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -973,7 +985,7 @@ Hung Tran and Thinh Ong
   overflow-x: hidden;
 }
 
-#ufzhmkcvww .gt_stub {
+#ofbiuhqjdu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -986,7 +998,7 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#ufzhmkcvww .gt_stub_row_group {
+#ofbiuhqjdu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1000,15 +1012,15 @@ Hung Tran and Thinh Ong
   vertical-align: top;
 }
 
-#ufzhmkcvww .gt_row_group_first td {
+#ofbiuhqjdu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ufzhmkcvww .gt_row_group_first th {
+#ofbiuhqjdu .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ufzhmkcvww .gt_summary_row {
+#ofbiuhqjdu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1018,16 +1030,16 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#ufzhmkcvww .gt_first_summary_row {
+#ofbiuhqjdu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ufzhmkcvww .gt_first_summary_row.thick {
+#ofbiuhqjdu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ufzhmkcvww .gt_last_summary_row {
+#ofbiuhqjdu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1037,7 +1049,7 @@ Hung Tran and Thinh Ong
   border-bottom-color: #D3D3D3;
 }
 
-#ufzhmkcvww .gt_grand_summary_row {
+#ofbiuhqjdu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1047,7 +1059,7 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#ufzhmkcvww .gt_first_grand_summary_row {
+#ofbiuhqjdu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1057,7 +1069,7 @@ Hung Tran and Thinh Ong
   border-top-color: #D3D3D3;
 }
 
-#ufzhmkcvww .gt_last_grand_summary_row_top {
+#ofbiuhqjdu .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1067,11 +1079,11 @@ Hung Tran and Thinh Ong
   border-bottom-color: #D3D3D3;
 }
 
-#ufzhmkcvww .gt_striped {
+#ofbiuhqjdu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ufzhmkcvww .gt_table_body {
+#ofbiuhqjdu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1080,7 +1092,7 @@ Hung Tran and Thinh Ong
   border-bottom-color: #D3D3D3;
 }
 
-#ufzhmkcvww .gt_footnotes {
+#ofbiuhqjdu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1094,7 +1106,7 @@ Hung Tran and Thinh Ong
   border-right-color: #D3D3D3;
 }
 
-#ufzhmkcvww .gt_footnote {
+#ofbiuhqjdu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1103,7 +1115,7 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#ufzhmkcvww .gt_sourcenotes {
+#ofbiuhqjdu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1117,7 +1129,7 @@ Hung Tran and Thinh Ong
   border-right-color: #D3D3D3;
 }
 
-#ufzhmkcvww .gt_sourcenote {
+#ofbiuhqjdu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1125,72 +1137,72 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#ufzhmkcvww .gt_left {
+#ofbiuhqjdu .gt_left {
   text-align: left;
 }
 
-#ufzhmkcvww .gt_center {
+#ofbiuhqjdu .gt_center {
   text-align: center;
 }
 
-#ufzhmkcvww .gt_right {
+#ofbiuhqjdu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ufzhmkcvww .gt_font_normal {
+#ofbiuhqjdu .gt_font_normal {
   font-weight: normal;
 }
 
-#ufzhmkcvww .gt_font_bold {
+#ofbiuhqjdu .gt_font_bold {
   font-weight: bold;
 }
 
-#ufzhmkcvww .gt_font_italic {
+#ofbiuhqjdu .gt_font_italic {
   font-style: italic;
 }
 
-#ufzhmkcvww .gt_super {
+#ofbiuhqjdu .gt_super {
   font-size: 65%;
 }
 
-#ufzhmkcvww .gt_footnote_marks {
+#ofbiuhqjdu .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ufzhmkcvww .gt_asterisk {
+#ofbiuhqjdu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ufzhmkcvww .gt_indent_1 {
+#ofbiuhqjdu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ufzhmkcvww .gt_indent_2 {
+#ofbiuhqjdu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ufzhmkcvww .gt_indent_3 {
+#ofbiuhqjdu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ufzhmkcvww .gt_indent_4 {
+#ofbiuhqjdu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ufzhmkcvww .gt_indent_5 {
+#ofbiuhqjdu .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ufzhmkcvww .katex-display {
+#ofbiuhqjdu .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ufzhmkcvww div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ofbiuhqjdu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1269,36 +1281,36 @@ Hung Tran and Thinh Ong
 <div class="column" style="width:60%;">
 <div class="codewindow r">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" data-code-line-numbers="4-7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-label="1"></a>df <span class="sc">|&gt;</span></span>
-<span id="cb9-2"><a aria-label="2"></a>  <span class="fu">tbl_summary</span>(</span>
-<span id="cb9-3"><a aria-label="3"></a>    <span class="at">include =</span> <span class="fu">c</span>(sex, age, outcome, outbreak),</span>
-<span id="cb9-4"><a aria-label="4"></a>    <span class="at">label =</span> <span class="fu">list</span>(</span>
-<span id="cb9-5"><a aria-label="5"></a>      sex <span class="sc">~</span> <span class="st">"Sex"</span>, age <span class="sc">~</span> <span class="st">"Age (years)"</span>, </span>
-<span id="cb9-6"><a aria-label="6"></a>      outcome <span class="sc">~</span> <span class="st">"Outcome"</span>, outbreak <span class="sc">~</span> <span class="st">"Outbreak"</span></span>
-<span id="cb9-7"><a aria-label="7"></a>    )</span>
-<span id="cb9-8"><a aria-label="8"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11" data-code-line-numbers="4-7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-label="1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a aria-label="2"></a>  <span class="fu">tbl_summary</span>(</span>
+<span id="cb11-3"><a aria-label="3"></a>    <span class="at">include =</span> <span class="fu">c</span>(sex, age, outcome, outbreak),</span>
+<span id="cb11-4"><a aria-label="4"></a>    <span class="at">label =</span> <span class="fu">list</span>(</span>
+<span id="cb11-5"><a aria-label="5"></a>      sex <span class="sc">~</span> <span class="st">"Sex"</span>, age <span class="sc">~</span> <span class="st">"Age (years)"</span>, </span>
+<span id="cb11-6"><a aria-label="6"></a>      outcome <span class="sc">~</span> <span class="st">"Outcome"</span>, outbreak <span class="sc">~</span> <span class="st">"Outbreak"</span></span>
+<span id="cb11-7"><a aria-label="7"></a>    )</span>
+<span id="cb11-8"><a aria-label="8"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div><div class="column" style="width:40%;">
 <div class="cell">
 <div class="cell-output-display">
-<div id="cucgepnyye" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#cucgepnyye table {
+<div id="lvbkvyygug" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lvbkvyygug table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#cucgepnyye thead, #cucgepnyye tbody, #cucgepnyye tfoot, #cucgepnyye tr, #cucgepnyye td, #cucgepnyye th {
+#lvbkvyygug thead, #lvbkvyygug tbody, #lvbkvyygug tfoot, #lvbkvyygug tr, #lvbkvyygug td, #lvbkvyygug th {
   border-style: none;
 }
 
-#cucgepnyye p {
+#lvbkvyygug p {
   margin: 0;
   padding: 0;
 }
 
-#cucgepnyye .gt_table {
+#lvbkvyygug .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1324,12 +1336,12 @@ Hung Tran and Thinh Ong
   border-left-color: #D3D3D3;
 }
 
-#cucgepnyye .gt_caption {
+#lvbkvyygug .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#cucgepnyye .gt_title {
+#lvbkvyygug .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1341,7 +1353,7 @@ Hung Tran and Thinh Ong
   border-bottom-width: 0;
 }
 
-#cucgepnyye .gt_subtitle {
+#lvbkvyygug .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1353,7 +1365,7 @@ Hung Tran and Thinh Ong
   border-top-width: 0;
 }
 
-#cucgepnyye .gt_heading {
+#lvbkvyygug .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1365,13 +1377,13 @@ Hung Tran and Thinh Ong
   border-right-color: #D3D3D3;
 }
 
-#cucgepnyye .gt_bottom_border {
+#lvbkvyygug .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#cucgepnyye .gt_col_headings {
+#lvbkvyygug .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1386,7 +1398,7 @@ Hung Tran and Thinh Ong
   border-right-color: #D3D3D3;
 }
 
-#cucgepnyye .gt_col_heading {
+#lvbkvyygug .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1406,7 +1418,7 @@ Hung Tran and Thinh Ong
   overflow-x: hidden;
 }
 
-#cucgepnyye .gt_column_spanner_outer {
+#lvbkvyygug .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1418,15 +1430,15 @@ Hung Tran and Thinh Ong
   padding-right: 4px;
 }
 
-#cucgepnyye .gt_column_spanner_outer:first-child {
+#lvbkvyygug .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#cucgepnyye .gt_column_spanner_outer:last-child {
+#lvbkvyygug .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#cucgepnyye .gt_column_spanner {
+#lvbkvyygug .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1438,11 +1450,11 @@ Hung Tran and Thinh Ong
   width: 100%;
 }
 
-#cucgepnyye .gt_spanner_row {
+#lvbkvyygug .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#cucgepnyye .gt_group_heading {
+#lvbkvyygug .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1468,7 +1480,7 @@ Hung Tran and Thinh Ong
   text-align: left;
 }
 
-#cucgepnyye .gt_empty_group_heading {
+#lvbkvyygug .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1483,15 +1495,15 @@ Hung Tran and Thinh Ong
   vertical-align: middle;
 }
 
-#cucgepnyye .gt_from_md > :first-child {
+#lvbkvyygug .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#cucgepnyye .gt_from_md > :last-child {
+#lvbkvyygug .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#cucgepnyye .gt_row {
+#lvbkvyygug .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1510,7 +1522,7 @@ Hung Tran and Thinh Ong
   overflow-x: hidden;
 }
 
-#cucgepnyye .gt_stub {
+#lvbkvyygug .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1523,7 +1535,7 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#cucgepnyye .gt_stub_row_group {
+#lvbkvyygug .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1537,15 +1549,15 @@ Hung Tran and Thinh Ong
   vertical-align: top;
 }
 
-#cucgepnyye .gt_row_group_first td {
+#lvbkvyygug .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#cucgepnyye .gt_row_group_first th {
+#lvbkvyygug .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#cucgepnyye .gt_summary_row {
+#lvbkvyygug .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1555,16 +1567,16 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#cucgepnyye .gt_first_summary_row {
+#lvbkvyygug .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#cucgepnyye .gt_first_summary_row.thick {
+#lvbkvyygug .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#cucgepnyye .gt_last_summary_row {
+#lvbkvyygug .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1574,7 +1586,7 @@ Hung Tran and Thinh Ong
   border-bottom-color: #D3D3D3;
 }
 
-#cucgepnyye .gt_grand_summary_row {
+#lvbkvyygug .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1584,7 +1596,7 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#cucgepnyye .gt_first_grand_summary_row {
+#lvbkvyygug .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1594,7 +1606,7 @@ Hung Tran and Thinh Ong
   border-top-color: #D3D3D3;
 }
 
-#cucgepnyye .gt_last_grand_summary_row_top {
+#lvbkvyygug .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1604,11 +1616,11 @@ Hung Tran and Thinh Ong
   border-bottom-color: #D3D3D3;
 }
 
-#cucgepnyye .gt_striped {
+#lvbkvyygug .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#cucgepnyye .gt_table_body {
+#lvbkvyygug .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1617,7 +1629,7 @@ Hung Tran and Thinh Ong
   border-bottom-color: #D3D3D3;
 }
 
-#cucgepnyye .gt_footnotes {
+#lvbkvyygug .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1631,7 +1643,7 @@ Hung Tran and Thinh Ong
   border-right-color: #D3D3D3;
 }
 
-#cucgepnyye .gt_footnote {
+#lvbkvyygug .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1640,7 +1652,7 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#cucgepnyye .gt_sourcenotes {
+#lvbkvyygug .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1654,7 +1666,7 @@ Hung Tran and Thinh Ong
   border-right-color: #D3D3D3;
 }
 
-#cucgepnyye .gt_sourcenote {
+#lvbkvyygug .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1662,72 +1674,72 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#cucgepnyye .gt_left {
+#lvbkvyygug .gt_left {
   text-align: left;
 }
 
-#cucgepnyye .gt_center {
+#lvbkvyygug .gt_center {
   text-align: center;
 }
 
-#cucgepnyye .gt_right {
+#lvbkvyygug .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#cucgepnyye .gt_font_normal {
+#lvbkvyygug .gt_font_normal {
   font-weight: normal;
 }
 
-#cucgepnyye .gt_font_bold {
+#lvbkvyygug .gt_font_bold {
   font-weight: bold;
 }
 
-#cucgepnyye .gt_font_italic {
+#lvbkvyygug .gt_font_italic {
   font-style: italic;
 }
 
-#cucgepnyye .gt_super {
+#lvbkvyygug .gt_super {
   font-size: 65%;
 }
 
-#cucgepnyye .gt_footnote_marks {
+#lvbkvyygug .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#cucgepnyye .gt_asterisk {
+#lvbkvyygug .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#cucgepnyye .gt_indent_1 {
+#lvbkvyygug .gt_indent_1 {
   text-indent: 5px;
 }
 
-#cucgepnyye .gt_indent_2 {
+#lvbkvyygug .gt_indent_2 {
   text-indent: 10px;
 }
 
-#cucgepnyye .gt_indent_3 {
+#lvbkvyygug .gt_indent_3 {
   text-indent: 15px;
 }
 
-#cucgepnyye .gt_indent_4 {
+#lvbkvyygug .gt_indent_4 {
   text-indent: 20px;
 }
 
-#cucgepnyye .gt_indent_5 {
+#lvbkvyygug .gt_indent_5 {
   text-indent: 25px;
 }
 
-#cucgepnyye .katex-display {
+#lvbkvyygug .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#cucgepnyye div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#lvbkvyygug div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1806,42 +1818,42 @@ Hung Tran and Thinh Ong
 <div class="column" style="width:60%;">
 <div class="codewindow r">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" data-code-line-numbers="2-7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-label="1"></a>df <span class="sc">|&gt;</span></span>
-<span id="cb10-2"><a aria-label="2"></a>  <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">factor</span>(</span>
-<span id="cb10-3"><a aria-label="3"></a>    sex,</span>
-<span id="cb10-4"><a aria-label="4"></a>    <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"f"</span>, <span class="st">"m"</span>),</span>
-<span id="cb10-5"><a aria-label="5"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Female"</span>, <span class="st">"Male"</span>)</span>
-<span id="cb10-6"><a aria-label="6"></a>  ),</span>
-<span id="cb10-7"><a aria-label="7"></a>  <span class="at">outcome =</span> <span class="fu">str_to_sentence</span>(outcome)) <span class="sc">|&gt;</span></span>
-<span id="cb10-8"><a aria-label="8"></a>  <span class="fu">tbl_summary</span>(</span>
-<span id="cb10-9"><a aria-label="9"></a>    <span class="at">include =</span> <span class="fu">c</span>(sex, age, outcome, outbreak),</span>
-<span id="cb10-10"><a aria-label="10"></a>    <span class="at">label =</span> <span class="fu">list</span>(</span>
-<span id="cb10-11"><a aria-label="11"></a>      sex <span class="sc">~</span> <span class="st">"Sex"</span>, age <span class="sc">~</span> <span class="st">"Age (years)"</span>, </span>
-<span id="cb10-12"><a aria-label="12"></a>      outcome <span class="sc">~</span> <span class="st">"Outcome"</span>, outbreak <span class="sc">~</span> <span class="st">"Outbreak"</span></span>
-<span id="cb10-13"><a aria-label="13"></a>    )</span>
-<span id="cb10-14"><a aria-label="14"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12" data-code-line-numbers="2-7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-label="1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a aria-label="2"></a>  <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">factor</span>(</span>
+<span id="cb12-3"><a aria-label="3"></a>    sex,</span>
+<span id="cb12-4"><a aria-label="4"></a>    <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"f"</span>, <span class="st">"m"</span>),</span>
+<span id="cb12-5"><a aria-label="5"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Female"</span>, <span class="st">"Male"</span>)</span>
+<span id="cb12-6"><a aria-label="6"></a>  ),</span>
+<span id="cb12-7"><a aria-label="7"></a>  <span class="at">outcome =</span> <span class="fu">str_to_sentence</span>(outcome)) <span class="sc">|&gt;</span></span>
+<span id="cb12-8"><a aria-label="8"></a>  <span class="fu">tbl_summary</span>(</span>
+<span id="cb12-9"><a aria-label="9"></a>    <span class="at">include =</span> <span class="fu">c</span>(sex, age, outcome, outbreak),</span>
+<span id="cb12-10"><a aria-label="10"></a>    <span class="at">label =</span> <span class="fu">list</span>(</span>
+<span id="cb12-11"><a aria-label="11"></a>      sex <span class="sc">~</span> <span class="st">"Sex"</span>, age <span class="sc">~</span> <span class="st">"Age (years)"</span>, </span>
+<span id="cb12-12"><a aria-label="12"></a>      outcome <span class="sc">~</span> <span class="st">"Outcome"</span>, outbreak <span class="sc">~</span> <span class="st">"Outbreak"</span></span>
+<span id="cb12-13"><a aria-label="13"></a>    )</span>
+<span id="cb12-14"><a aria-label="14"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div><div class="column" style="width:40%;">
 <div class="cell">
 <div class="cell-output-display">
-<div id="cpbyjmqnqu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#cpbyjmqnqu table {
+<div id="updoxrpzon" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#updoxrpzon table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#cpbyjmqnqu thead, #cpbyjmqnqu tbody, #cpbyjmqnqu tfoot, #cpbyjmqnqu tr, #cpbyjmqnqu td, #cpbyjmqnqu th {
+#updoxrpzon thead, #updoxrpzon tbody, #updoxrpzon tfoot, #updoxrpzon tr, #updoxrpzon td, #updoxrpzon th {
   border-style: none;
 }
 
-#cpbyjmqnqu p {
+#updoxrpzon p {
   margin: 0;
   padding: 0;
 }
 
-#cpbyjmqnqu .gt_table {
+#updoxrpzon .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1867,12 +1879,12 @@ Hung Tran and Thinh Ong
   border-left-color: #D3D3D3;
 }
 
-#cpbyjmqnqu .gt_caption {
+#updoxrpzon .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#cpbyjmqnqu .gt_title {
+#updoxrpzon .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1884,7 +1896,7 @@ Hung Tran and Thinh Ong
   border-bottom-width: 0;
 }
 
-#cpbyjmqnqu .gt_subtitle {
+#updoxrpzon .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1896,7 +1908,7 @@ Hung Tran and Thinh Ong
   border-top-width: 0;
 }
 
-#cpbyjmqnqu .gt_heading {
+#updoxrpzon .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1908,13 +1920,13 @@ Hung Tran and Thinh Ong
   border-right-color: #D3D3D3;
 }
 
-#cpbyjmqnqu .gt_bottom_border {
+#updoxrpzon .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#cpbyjmqnqu .gt_col_headings {
+#updoxrpzon .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1929,7 +1941,7 @@ Hung Tran and Thinh Ong
   border-right-color: #D3D3D3;
 }
 
-#cpbyjmqnqu .gt_col_heading {
+#updoxrpzon .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1949,7 +1961,7 @@ Hung Tran and Thinh Ong
   overflow-x: hidden;
 }
 
-#cpbyjmqnqu .gt_column_spanner_outer {
+#updoxrpzon .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1961,15 +1973,15 @@ Hung Tran and Thinh Ong
   padding-right: 4px;
 }
 
-#cpbyjmqnqu .gt_column_spanner_outer:first-child {
+#updoxrpzon .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#cpbyjmqnqu .gt_column_spanner_outer:last-child {
+#updoxrpzon .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#cpbyjmqnqu .gt_column_spanner {
+#updoxrpzon .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1981,11 +1993,11 @@ Hung Tran and Thinh Ong
   width: 100%;
 }
 
-#cpbyjmqnqu .gt_spanner_row {
+#updoxrpzon .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#cpbyjmqnqu .gt_group_heading {
+#updoxrpzon .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2011,7 +2023,7 @@ Hung Tran and Thinh Ong
   text-align: left;
 }
 
-#cpbyjmqnqu .gt_empty_group_heading {
+#updoxrpzon .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2026,15 +2038,15 @@ Hung Tran and Thinh Ong
   vertical-align: middle;
 }
 
-#cpbyjmqnqu .gt_from_md > :first-child {
+#updoxrpzon .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#cpbyjmqnqu .gt_from_md > :last-child {
+#updoxrpzon .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#cpbyjmqnqu .gt_row {
+#updoxrpzon .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2053,7 +2065,7 @@ Hung Tran and Thinh Ong
   overflow-x: hidden;
 }
 
-#cpbyjmqnqu .gt_stub {
+#updoxrpzon .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2066,7 +2078,7 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#cpbyjmqnqu .gt_stub_row_group {
+#updoxrpzon .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2080,15 +2092,15 @@ Hung Tran and Thinh Ong
   vertical-align: top;
 }
 
-#cpbyjmqnqu .gt_row_group_first td {
+#updoxrpzon .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#cpbyjmqnqu .gt_row_group_first th {
+#updoxrpzon .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#cpbyjmqnqu .gt_summary_row {
+#updoxrpzon .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2098,16 +2110,16 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#cpbyjmqnqu .gt_first_summary_row {
+#updoxrpzon .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#cpbyjmqnqu .gt_first_summary_row.thick {
+#updoxrpzon .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#cpbyjmqnqu .gt_last_summary_row {
+#updoxrpzon .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2117,7 +2129,7 @@ Hung Tran and Thinh Ong
   border-bottom-color: #D3D3D3;
 }
 
-#cpbyjmqnqu .gt_grand_summary_row {
+#updoxrpzon .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2127,7 +2139,7 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#cpbyjmqnqu .gt_first_grand_summary_row {
+#updoxrpzon .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2137,7 +2149,7 @@ Hung Tran and Thinh Ong
   border-top-color: #D3D3D3;
 }
 
-#cpbyjmqnqu .gt_last_grand_summary_row_top {
+#updoxrpzon .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2147,11 +2159,11 @@ Hung Tran and Thinh Ong
   border-bottom-color: #D3D3D3;
 }
 
-#cpbyjmqnqu .gt_striped {
+#updoxrpzon .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#cpbyjmqnqu .gt_table_body {
+#updoxrpzon .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2160,7 +2172,7 @@ Hung Tran and Thinh Ong
   border-bottom-color: #D3D3D3;
 }
 
-#cpbyjmqnqu .gt_footnotes {
+#updoxrpzon .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2174,7 +2186,7 @@ Hung Tran and Thinh Ong
   border-right-color: #D3D3D3;
 }
 
-#cpbyjmqnqu .gt_footnote {
+#updoxrpzon .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2183,7 +2195,7 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#cpbyjmqnqu .gt_sourcenotes {
+#updoxrpzon .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2197,7 +2209,7 @@ Hung Tran and Thinh Ong
   border-right-color: #D3D3D3;
 }
 
-#cpbyjmqnqu .gt_sourcenote {
+#updoxrpzon .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2205,72 +2217,72 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#cpbyjmqnqu .gt_left {
+#updoxrpzon .gt_left {
   text-align: left;
 }
 
-#cpbyjmqnqu .gt_center {
+#updoxrpzon .gt_center {
   text-align: center;
 }
 
-#cpbyjmqnqu .gt_right {
+#updoxrpzon .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#cpbyjmqnqu .gt_font_normal {
+#updoxrpzon .gt_font_normal {
   font-weight: normal;
 }
 
-#cpbyjmqnqu .gt_font_bold {
+#updoxrpzon .gt_font_bold {
   font-weight: bold;
 }
 
-#cpbyjmqnqu .gt_font_italic {
+#updoxrpzon .gt_font_italic {
   font-style: italic;
 }
 
-#cpbyjmqnqu .gt_super {
+#updoxrpzon .gt_super {
   font-size: 65%;
 }
 
-#cpbyjmqnqu .gt_footnote_marks {
+#updoxrpzon .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#cpbyjmqnqu .gt_asterisk {
+#updoxrpzon .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#cpbyjmqnqu .gt_indent_1 {
+#updoxrpzon .gt_indent_1 {
   text-indent: 5px;
 }
 
-#cpbyjmqnqu .gt_indent_2 {
+#updoxrpzon .gt_indent_2 {
   text-indent: 10px;
 }
 
-#cpbyjmqnqu .gt_indent_3 {
+#updoxrpzon .gt_indent_3 {
   text-indent: 15px;
 }
 
-#cpbyjmqnqu .gt_indent_4 {
+#updoxrpzon .gt_indent_4 {
   text-indent: 20px;
 }
 
-#cpbyjmqnqu .gt_indent_5 {
+#updoxrpzon .gt_indent_5 {
   text-indent: 25px;
 }
 
-#cpbyjmqnqu .katex-display {
+#updoxrpzon .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#cpbyjmqnqu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#updoxrpzon div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2349,46 +2361,46 @@ Hung Tran and Thinh Ong
 <div class="column" style="width:60%;">
 <div class="codewindow r">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11" data-code-line-numbers="14-17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a aria-label="1"></a>df <span class="sc">|&gt;</span></span>
-<span id="cb11-2"><a aria-label="2"></a>  <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">factor</span>(</span>
-<span id="cb11-3"><a aria-label="3"></a>    sex,</span>
-<span id="cb11-4"><a aria-label="4"></a>    <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"f"</span>, <span class="st">"m"</span>),</span>
-<span id="cb11-5"><a aria-label="5"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Female"</span>, <span class="st">"Male"</span>)</span>
-<span id="cb11-6"><a aria-label="6"></a>  ),</span>
-<span id="cb11-7"><a aria-label="7"></a>  <span class="at">outcome =</span> <span class="fu">str_to_sentence</span>(outcome)) <span class="sc">|&gt;</span></span>
-<span id="cb11-8"><a aria-label="8"></a>  <span class="fu">tbl_summary</span>(</span>
-<span id="cb11-9"><a aria-label="9"></a>    <span class="at">include =</span> <span class="fu">c</span>(sex, age, outcome, outbreak),</span>
-<span id="cb11-10"><a aria-label="10"></a>    <span class="at">label =</span> <span class="fu">list</span>(</span>
-<span id="cb11-11"><a aria-label="11"></a>      sex <span class="sc">~</span> <span class="st">"Sex"</span>, age <span class="sc">~</span> <span class="st">"Age (years)"</span>, </span>
-<span id="cb11-12"><a aria-label="12"></a>      outcome <span class="sc">~</span> <span class="st">"Outcome"</span>, outbreak <span class="sc">~</span> <span class="st">"Outbreak"</span></span>
-<span id="cb11-13"><a aria-label="13"></a>    ),</span>
-<span id="cb11-14"><a aria-label="14"></a>    <span class="at">digits =</span> <span class="fu">c</span>(</span>
-<span id="cb11-15"><a aria-label="15"></a>      <span class="fu">all_categorical</span>() <span class="sc">~</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), </span>
-<span id="cb11-16"><a aria-label="16"></a>      <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="dv">1</span></span>
-<span id="cb11-17"><a aria-label="17"></a>    )</span>
-<span id="cb11-18"><a aria-label="18"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13" data-code-line-numbers="14-17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a aria-label="1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb13-2"><a aria-label="2"></a>  <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">factor</span>(</span>
+<span id="cb13-3"><a aria-label="3"></a>    sex,</span>
+<span id="cb13-4"><a aria-label="4"></a>    <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"f"</span>, <span class="st">"m"</span>),</span>
+<span id="cb13-5"><a aria-label="5"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Female"</span>, <span class="st">"Male"</span>)</span>
+<span id="cb13-6"><a aria-label="6"></a>  ),</span>
+<span id="cb13-7"><a aria-label="7"></a>  <span class="at">outcome =</span> <span class="fu">str_to_sentence</span>(outcome)) <span class="sc">|&gt;</span></span>
+<span id="cb13-8"><a aria-label="8"></a>  <span class="fu">tbl_summary</span>(</span>
+<span id="cb13-9"><a aria-label="9"></a>    <span class="at">include =</span> <span class="fu">c</span>(sex, age, outcome, outbreak),</span>
+<span id="cb13-10"><a aria-label="10"></a>    <span class="at">label =</span> <span class="fu">list</span>(</span>
+<span id="cb13-11"><a aria-label="11"></a>      sex <span class="sc">~</span> <span class="st">"Sex"</span>, age <span class="sc">~</span> <span class="st">"Age (years)"</span>, </span>
+<span id="cb13-12"><a aria-label="12"></a>      outcome <span class="sc">~</span> <span class="st">"Outcome"</span>, outbreak <span class="sc">~</span> <span class="st">"Outbreak"</span></span>
+<span id="cb13-13"><a aria-label="13"></a>    ),</span>
+<span id="cb13-14"><a aria-label="14"></a>    <span class="at">digits =</span> <span class="fu">c</span>(</span>
+<span id="cb13-15"><a aria-label="15"></a>      <span class="fu">all_categorical</span>() <span class="sc">~</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), </span>
+<span id="cb13-16"><a aria-label="16"></a>      <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="dv">1</span></span>
+<span id="cb13-17"><a aria-label="17"></a>    )</span>
+<span id="cb13-18"><a aria-label="18"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div><div class="column" style="width:40%;">
 <div class="cell">
 <div class="cell-output-display">
-<div id="toijrcbmol" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#toijrcbmol table {
+<div id="qhwjkhkwtb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qhwjkhkwtb table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#toijrcbmol thead, #toijrcbmol tbody, #toijrcbmol tfoot, #toijrcbmol tr, #toijrcbmol td, #toijrcbmol th {
+#qhwjkhkwtb thead, #qhwjkhkwtb tbody, #qhwjkhkwtb tfoot, #qhwjkhkwtb tr, #qhwjkhkwtb td, #qhwjkhkwtb th {
   border-style: none;
 }
 
-#toijrcbmol p {
+#qhwjkhkwtb p {
   margin: 0;
   padding: 0;
 }
 
-#toijrcbmol .gt_table {
+#qhwjkhkwtb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2414,12 +2426,12 @@ Hung Tran and Thinh Ong
   border-left-color: #D3D3D3;
 }
 
-#toijrcbmol .gt_caption {
+#qhwjkhkwtb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#toijrcbmol .gt_title {
+#qhwjkhkwtb .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2431,7 +2443,7 @@ Hung Tran and Thinh Ong
   border-bottom-width: 0;
 }
 
-#toijrcbmol .gt_subtitle {
+#qhwjkhkwtb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2443,7 +2455,7 @@ Hung Tran and Thinh Ong
   border-top-width: 0;
 }
 
-#toijrcbmol .gt_heading {
+#qhwjkhkwtb .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2455,13 +2467,13 @@ Hung Tran and Thinh Ong
   border-right-color: #D3D3D3;
 }
 
-#toijrcbmol .gt_bottom_border {
+#qhwjkhkwtb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#toijrcbmol .gt_col_headings {
+#qhwjkhkwtb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2476,7 +2488,7 @@ Hung Tran and Thinh Ong
   border-right-color: #D3D3D3;
 }
 
-#toijrcbmol .gt_col_heading {
+#qhwjkhkwtb .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2496,7 +2508,7 @@ Hung Tran and Thinh Ong
   overflow-x: hidden;
 }
 
-#toijrcbmol .gt_column_spanner_outer {
+#qhwjkhkwtb .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2508,15 +2520,15 @@ Hung Tran and Thinh Ong
   padding-right: 4px;
 }
 
-#toijrcbmol .gt_column_spanner_outer:first-child {
+#qhwjkhkwtb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#toijrcbmol .gt_column_spanner_outer:last-child {
+#qhwjkhkwtb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#toijrcbmol .gt_column_spanner {
+#qhwjkhkwtb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2528,11 +2540,11 @@ Hung Tran and Thinh Ong
   width: 100%;
 }
 
-#toijrcbmol .gt_spanner_row {
+#qhwjkhkwtb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#toijrcbmol .gt_group_heading {
+#qhwjkhkwtb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2558,7 +2570,7 @@ Hung Tran and Thinh Ong
   text-align: left;
 }
 
-#toijrcbmol .gt_empty_group_heading {
+#qhwjkhkwtb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2573,15 +2585,15 @@ Hung Tran and Thinh Ong
   vertical-align: middle;
 }
 
-#toijrcbmol .gt_from_md > :first-child {
+#qhwjkhkwtb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#toijrcbmol .gt_from_md > :last-child {
+#qhwjkhkwtb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#toijrcbmol .gt_row {
+#qhwjkhkwtb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2600,7 +2612,7 @@ Hung Tran and Thinh Ong
   overflow-x: hidden;
 }
 
-#toijrcbmol .gt_stub {
+#qhwjkhkwtb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2613,7 +2625,7 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#toijrcbmol .gt_stub_row_group {
+#qhwjkhkwtb .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2627,15 +2639,15 @@ Hung Tran and Thinh Ong
   vertical-align: top;
 }
 
-#toijrcbmol .gt_row_group_first td {
+#qhwjkhkwtb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#toijrcbmol .gt_row_group_first th {
+#qhwjkhkwtb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#toijrcbmol .gt_summary_row {
+#qhwjkhkwtb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2645,16 +2657,16 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#toijrcbmol .gt_first_summary_row {
+#qhwjkhkwtb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#toijrcbmol .gt_first_summary_row.thick {
+#qhwjkhkwtb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#toijrcbmol .gt_last_summary_row {
+#qhwjkhkwtb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2664,7 +2676,7 @@ Hung Tran and Thinh Ong
   border-bottom-color: #D3D3D3;
 }
 
-#toijrcbmol .gt_grand_summary_row {
+#qhwjkhkwtb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2674,7 +2686,7 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#toijrcbmol .gt_first_grand_summary_row {
+#qhwjkhkwtb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2684,7 +2696,7 @@ Hung Tran and Thinh Ong
   border-top-color: #D3D3D3;
 }
 
-#toijrcbmol .gt_last_grand_summary_row_top {
+#qhwjkhkwtb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2694,11 +2706,11 @@ Hung Tran and Thinh Ong
   border-bottom-color: #D3D3D3;
 }
 
-#toijrcbmol .gt_striped {
+#qhwjkhkwtb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#toijrcbmol .gt_table_body {
+#qhwjkhkwtb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2707,7 +2719,7 @@ Hung Tran and Thinh Ong
   border-bottom-color: #D3D3D3;
 }
 
-#toijrcbmol .gt_footnotes {
+#qhwjkhkwtb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2721,7 +2733,7 @@ Hung Tran and Thinh Ong
   border-right-color: #D3D3D3;
 }
 
-#toijrcbmol .gt_footnote {
+#qhwjkhkwtb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2730,7 +2742,7 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#toijrcbmol .gt_sourcenotes {
+#qhwjkhkwtb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2744,7 +2756,7 @@ Hung Tran and Thinh Ong
   border-right-color: #D3D3D3;
 }
 
-#toijrcbmol .gt_sourcenote {
+#qhwjkhkwtb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2752,72 +2764,72 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#toijrcbmol .gt_left {
+#qhwjkhkwtb .gt_left {
   text-align: left;
 }
 
-#toijrcbmol .gt_center {
+#qhwjkhkwtb .gt_center {
   text-align: center;
 }
 
-#toijrcbmol .gt_right {
+#qhwjkhkwtb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#toijrcbmol .gt_font_normal {
+#qhwjkhkwtb .gt_font_normal {
   font-weight: normal;
 }
 
-#toijrcbmol .gt_font_bold {
+#qhwjkhkwtb .gt_font_bold {
   font-weight: bold;
 }
 
-#toijrcbmol .gt_font_italic {
+#qhwjkhkwtb .gt_font_italic {
   font-style: italic;
 }
 
-#toijrcbmol .gt_super {
+#qhwjkhkwtb .gt_super {
   font-size: 65%;
 }
 
-#toijrcbmol .gt_footnote_marks {
+#qhwjkhkwtb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#toijrcbmol .gt_asterisk {
+#qhwjkhkwtb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#toijrcbmol .gt_indent_1 {
+#qhwjkhkwtb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#toijrcbmol .gt_indent_2 {
+#qhwjkhkwtb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#toijrcbmol .gt_indent_3 {
+#qhwjkhkwtb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#toijrcbmol .gt_indent_4 {
+#qhwjkhkwtb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#toijrcbmol .gt_indent_5 {
+#qhwjkhkwtb .gt_indent_5 {
   text-indent: 25px;
 }
 
-#toijrcbmol .katex-display {
+#qhwjkhkwtb .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#toijrcbmol div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#qhwjkhkwtb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2896,49 +2908,49 @@ Hung Tran and Thinh Ong
 <div class="column" style="width:60%;">
 <div class="codewindow r">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12" data-code-line-numbers="18-20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-label="1"></a>df <span class="sc">|&gt;</span></span>
-<span id="cb12-2"><a aria-label="2"></a>  <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">factor</span>(</span>
-<span id="cb12-3"><a aria-label="3"></a>    sex,</span>
-<span id="cb12-4"><a aria-label="4"></a>    <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"f"</span>, <span class="st">"m"</span>),</span>
-<span id="cb12-5"><a aria-label="5"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Female"</span>, <span class="st">"Male"</span>)</span>
-<span id="cb12-6"><a aria-label="6"></a>  ),</span>
-<span id="cb12-7"><a aria-label="7"></a>  <span class="at">outcome =</span> <span class="fu">str_to_sentence</span>(outcome)) <span class="sc">|&gt;</span></span>
-<span id="cb12-8"><a aria-label="8"></a>  <span class="fu">tbl_summary</span>(</span>
-<span id="cb12-9"><a aria-label="9"></a>    <span class="at">include =</span> <span class="fu">c</span>(sex, age, outcome, outbreak),</span>
-<span id="cb12-10"><a aria-label="10"></a>    <span class="at">label =</span> <span class="fu">list</span>(</span>
-<span id="cb12-11"><a aria-label="11"></a>      sex <span class="sc">~</span> <span class="st">"Sex"</span>, age <span class="sc">~</span> <span class="st">"Age (years)"</span>, </span>
-<span id="cb12-12"><a aria-label="12"></a>      outcome <span class="sc">~</span> <span class="st">"Outcome"</span>, outbreak <span class="sc">~</span> <span class="st">"Outbreak"</span></span>
-<span id="cb12-13"><a aria-label="13"></a>    ),</span>
-<span id="cb12-14"><a aria-label="14"></a>    <span class="at">digits =</span> <span class="fu">c</span>(</span>
-<span id="cb12-15"><a aria-label="15"></a>      <span class="fu">all_categorical</span>() <span class="sc">~</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), </span>
-<span id="cb12-16"><a aria-label="16"></a>      <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="dv">1</span></span>
-<span id="cb12-17"><a aria-label="17"></a>    ),</span>
-<span id="cb12-18"><a aria-label="18"></a>    <span class="at">statistic =</span> <span class="fu">list</span>(</span>
-<span id="cb12-19"><a aria-label="19"></a>      <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="st">"{mean} \u00b1 {sd}"</span></span>
-<span id="cb12-20"><a aria-label="20"></a>    )</span>
-<span id="cb12-21"><a aria-label="21"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14" data-code-line-numbers="18-20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-label="1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb14-2"><a aria-label="2"></a>  <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">factor</span>(</span>
+<span id="cb14-3"><a aria-label="3"></a>    sex,</span>
+<span id="cb14-4"><a aria-label="4"></a>    <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"f"</span>, <span class="st">"m"</span>),</span>
+<span id="cb14-5"><a aria-label="5"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Female"</span>, <span class="st">"Male"</span>)</span>
+<span id="cb14-6"><a aria-label="6"></a>  ),</span>
+<span id="cb14-7"><a aria-label="7"></a>  <span class="at">outcome =</span> <span class="fu">str_to_sentence</span>(outcome)) <span class="sc">|&gt;</span></span>
+<span id="cb14-8"><a aria-label="8"></a>  <span class="fu">tbl_summary</span>(</span>
+<span id="cb14-9"><a aria-label="9"></a>    <span class="at">include =</span> <span class="fu">c</span>(sex, age, outcome, outbreak),</span>
+<span id="cb14-10"><a aria-label="10"></a>    <span class="at">label =</span> <span class="fu">list</span>(</span>
+<span id="cb14-11"><a aria-label="11"></a>      sex <span class="sc">~</span> <span class="st">"Sex"</span>, age <span class="sc">~</span> <span class="st">"Age (years)"</span>, </span>
+<span id="cb14-12"><a aria-label="12"></a>      outcome <span class="sc">~</span> <span class="st">"Outcome"</span>, outbreak <span class="sc">~</span> <span class="st">"Outbreak"</span></span>
+<span id="cb14-13"><a aria-label="13"></a>    ),</span>
+<span id="cb14-14"><a aria-label="14"></a>    <span class="at">digits =</span> <span class="fu">c</span>(</span>
+<span id="cb14-15"><a aria-label="15"></a>      <span class="fu">all_categorical</span>() <span class="sc">~</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), </span>
+<span id="cb14-16"><a aria-label="16"></a>      <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="dv">1</span></span>
+<span id="cb14-17"><a aria-label="17"></a>    ),</span>
+<span id="cb14-18"><a aria-label="18"></a>    <span class="at">statistic =</span> <span class="fu">list</span>(</span>
+<span id="cb14-19"><a aria-label="19"></a>      <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="st">"{mean} \u00b1 {sd}"</span></span>
+<span id="cb14-20"><a aria-label="20"></a>    )</span>
+<span id="cb14-21"><a aria-label="21"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div><div class="column" style="width:40%;">
 <div class="cell">
 <div class="cell-output-display">
-<div id="qgopmtycey" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qgopmtycey table {
+<div id="tdftxloyft" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#tdftxloyft table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qgopmtycey thead, #qgopmtycey tbody, #qgopmtycey tfoot, #qgopmtycey tr, #qgopmtycey td, #qgopmtycey th {
+#tdftxloyft thead, #tdftxloyft tbody, #tdftxloyft tfoot, #tdftxloyft tr, #tdftxloyft td, #tdftxloyft th {
   border-style: none;
 }
 
-#qgopmtycey p {
+#tdftxloyft p {
   margin: 0;
   padding: 0;
 }
 
-#qgopmtycey .gt_table {
+#tdftxloyft .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2964,12 +2976,12 @@ Hung Tran and Thinh Ong
   border-left-color: #D3D3D3;
 }
 
-#qgopmtycey .gt_caption {
+#tdftxloyft .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qgopmtycey .gt_title {
+#tdftxloyft .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2981,7 +2993,7 @@ Hung Tran and Thinh Ong
   border-bottom-width: 0;
 }
 
-#qgopmtycey .gt_subtitle {
+#tdftxloyft .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2993,7 +3005,7 @@ Hung Tran and Thinh Ong
   border-top-width: 0;
 }
 
-#qgopmtycey .gt_heading {
+#tdftxloyft .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3005,13 +3017,13 @@ Hung Tran and Thinh Ong
   border-right-color: #D3D3D3;
 }
 
-#qgopmtycey .gt_bottom_border {
+#tdftxloyft .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qgopmtycey .gt_col_headings {
+#tdftxloyft .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3026,7 +3038,7 @@ Hung Tran and Thinh Ong
   border-right-color: #D3D3D3;
 }
 
-#qgopmtycey .gt_col_heading {
+#tdftxloyft .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3046,7 +3058,7 @@ Hung Tran and Thinh Ong
   overflow-x: hidden;
 }
 
-#qgopmtycey .gt_column_spanner_outer {
+#tdftxloyft .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3058,15 +3070,15 @@ Hung Tran and Thinh Ong
   padding-right: 4px;
 }
 
-#qgopmtycey .gt_column_spanner_outer:first-child {
+#tdftxloyft .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qgopmtycey .gt_column_spanner_outer:last-child {
+#tdftxloyft .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qgopmtycey .gt_column_spanner {
+#tdftxloyft .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3078,11 +3090,11 @@ Hung Tran and Thinh Ong
   width: 100%;
 }
 
-#qgopmtycey .gt_spanner_row {
+#tdftxloyft .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qgopmtycey .gt_group_heading {
+#tdftxloyft .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3108,7 +3120,7 @@ Hung Tran and Thinh Ong
   text-align: left;
 }
 
-#qgopmtycey .gt_empty_group_heading {
+#tdftxloyft .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3123,15 +3135,15 @@ Hung Tran and Thinh Ong
   vertical-align: middle;
 }
 
-#qgopmtycey .gt_from_md > :first-child {
+#tdftxloyft .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qgopmtycey .gt_from_md > :last-child {
+#tdftxloyft .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qgopmtycey .gt_row {
+#tdftxloyft .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3150,7 +3162,7 @@ Hung Tran and Thinh Ong
   overflow-x: hidden;
 }
 
-#qgopmtycey .gt_stub {
+#tdftxloyft .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3163,7 +3175,7 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#qgopmtycey .gt_stub_row_group {
+#tdftxloyft .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3177,15 +3189,15 @@ Hung Tran and Thinh Ong
   vertical-align: top;
 }
 
-#qgopmtycey .gt_row_group_first td {
+#tdftxloyft .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qgopmtycey .gt_row_group_first th {
+#tdftxloyft .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qgopmtycey .gt_summary_row {
+#tdftxloyft .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3195,16 +3207,16 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#qgopmtycey .gt_first_summary_row {
+#tdftxloyft .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qgopmtycey .gt_first_summary_row.thick {
+#tdftxloyft .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qgopmtycey .gt_last_summary_row {
+#tdftxloyft .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3214,7 +3226,7 @@ Hung Tran and Thinh Ong
   border-bottom-color: #D3D3D3;
 }
 
-#qgopmtycey .gt_grand_summary_row {
+#tdftxloyft .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3224,7 +3236,7 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#qgopmtycey .gt_first_grand_summary_row {
+#tdftxloyft .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3234,7 +3246,7 @@ Hung Tran and Thinh Ong
   border-top-color: #D3D3D3;
 }
 
-#qgopmtycey .gt_last_grand_summary_row_top {
+#tdftxloyft .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3244,11 +3256,11 @@ Hung Tran and Thinh Ong
   border-bottom-color: #D3D3D3;
 }
 
-#qgopmtycey .gt_striped {
+#tdftxloyft .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qgopmtycey .gt_table_body {
+#tdftxloyft .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3257,7 +3269,7 @@ Hung Tran and Thinh Ong
   border-bottom-color: #D3D3D3;
 }
 
-#qgopmtycey .gt_footnotes {
+#tdftxloyft .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3271,7 +3283,7 @@ Hung Tran and Thinh Ong
   border-right-color: #D3D3D3;
 }
 
-#qgopmtycey .gt_footnote {
+#tdftxloyft .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3280,7 +3292,7 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#qgopmtycey .gt_sourcenotes {
+#tdftxloyft .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3294,7 +3306,7 @@ Hung Tran and Thinh Ong
   border-right-color: #D3D3D3;
 }
 
-#qgopmtycey .gt_sourcenote {
+#tdftxloyft .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3302,72 +3314,72 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#qgopmtycey .gt_left {
+#tdftxloyft .gt_left {
   text-align: left;
 }
 
-#qgopmtycey .gt_center {
+#tdftxloyft .gt_center {
   text-align: center;
 }
 
-#qgopmtycey .gt_right {
+#tdftxloyft .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qgopmtycey .gt_font_normal {
+#tdftxloyft .gt_font_normal {
   font-weight: normal;
 }
 
-#qgopmtycey .gt_font_bold {
+#tdftxloyft .gt_font_bold {
   font-weight: bold;
 }
 
-#qgopmtycey .gt_font_italic {
+#tdftxloyft .gt_font_italic {
   font-style: italic;
 }
 
-#qgopmtycey .gt_super {
+#tdftxloyft .gt_super {
   font-size: 65%;
 }
 
-#qgopmtycey .gt_footnote_marks {
+#tdftxloyft .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qgopmtycey .gt_asterisk {
+#tdftxloyft .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qgopmtycey .gt_indent_1 {
+#tdftxloyft .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qgopmtycey .gt_indent_2 {
+#tdftxloyft .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qgopmtycey .gt_indent_3 {
+#tdftxloyft .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qgopmtycey .gt_indent_4 {
+#tdftxloyft .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qgopmtycey .gt_indent_5 {
+#tdftxloyft .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qgopmtycey .katex-display {
+#tdftxloyft .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qgopmtycey div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#tdftxloyft div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3446,15 +3458,15 @@ Hung Tran and Thinh Ong
 <div class="column" style="width:50%;">
 <div class="codewindow r">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a aria-label="1"></a>df <span class="sc">|&gt;</span></span>
-<span id="cb13-2"><a aria-label="2"></a>  <span class="fu">count</span>(date_onset) <span class="sc">|&gt;</span></span>
-<span id="cb13-3"><a aria-label="3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> date_onset, <span class="at">y =</span> n)) <span class="sc">+</span></span>
-<span id="cb13-4"><a aria-label="4"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>,</span>
-<span id="cb13-5"><a aria-label="5"></a>           <span class="at">width =</span> <span class="dv">1</span>,</span>
-<span id="cb13-6"><a aria-label="6"></a>           <span class="at">fill =</span> <span class="st">"cornflowerblue"</span>) <span class="sc">+</span></span>
-<span id="cb13-7"><a aria-label="7"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Date of onset"</span>, </span>
-<span id="cb13-8"><a aria-label="8"></a>       <span class="at">y =</span> <span class="st">"Case count"</span>) <span class="sc">+</span></span>
-<span id="cb13-9"><a aria-label="9"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a aria-label="1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb15-2"><a aria-label="2"></a>  <span class="fu">count</span>(date_onset) <span class="sc">|&gt;</span></span>
+<span id="cb15-3"><a aria-label="3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> date_onset, <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb15-4"><a aria-label="4"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>,</span>
+<span id="cb15-5"><a aria-label="5"></a>           <span class="at">width =</span> <span class="dv">1</span>,</span>
+<span id="cb15-6"><a aria-label="6"></a>           <span class="at">fill =</span> <span class="st">"cornflowerblue"</span>) <span class="sc">+</span></span>
+<span id="cb15-7"><a aria-label="7"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Date of onset"</span>, </span>
+<span id="cb15-8"><a aria-label="8"></a>       <span class="at">y =</span> <span class="st">"Case count"</span>) <span class="sc">+</span></span>
+<span id="cb15-9"><a aria-label="9"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -3462,7 +3474,7 @@ Hung Tran and Thinh Ong
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="qt-repro-res_files/figure-revealjs/unnamed-chunk-14-1.png" style="width:100.0%"></p>
+<p><img data-src="qt-repro-res_files/figure-html/unnamed-chunk-14-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -3476,15 +3488,15 @@ Hung Tran and Thinh Ong
 <div class="column" style="width:50%;">
 <div class="codewindow r">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-label="1"></a>df <span class="sc">|&gt;</span></span>
-<span id="cb14-2"><a aria-label="2"></a>  <span class="fu">count</span>(date_onset) <span class="sc">|&gt;</span></span>
-<span id="cb14-3"><a aria-label="3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> date_onset, <span class="at">y =</span> n)) <span class="sc">+</span></span>
-<span id="cb14-4"><a aria-label="4"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>,</span>
-<span id="cb14-5"><a aria-label="5"></a>           <span class="at">width =</span> <span class="dv">1</span>,</span>
-<span id="cb14-6"><a aria-label="6"></a>           <span class="at">fill =</span> <span class="st">"cornflowerblue"</span>) <span class="sc">+</span></span>
-<span id="cb14-7"><a aria-label="7"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Date of onset"</span>, </span>
-<span id="cb14-8"><a aria-label="8"></a>       <span class="at">y =</span> <span class="st">"Case count"</span>) <span class="sc">+</span></span>
-<span id="cb14-9"><a aria-label="9"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a aria-label="1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb16-2"><a aria-label="2"></a>  <span class="fu">count</span>(date_onset) <span class="sc">|&gt;</span></span>
+<span id="cb16-3"><a aria-label="3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> date_onset, <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb16-4"><a aria-label="4"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>,</span>
+<span id="cb16-5"><a aria-label="5"></a>           <span class="at">width =</span> <span class="dv">1</span>,</span>
+<span id="cb16-6"><a aria-label="6"></a>           <span class="at">fill =</span> <span class="st">"cornflowerblue"</span>) <span class="sc">+</span></span>
+<span id="cb16-7"><a aria-label="7"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Date of onset"</span>, </span>
+<span id="cb16-8"><a aria-label="8"></a>       <span class="at">y =</span> <span class="st">"Case count"</span>) <span class="sc">+</span></span>
+<span id="cb16-9"><a aria-label="9"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -3492,7 +3504,7 @@ Hung Tran and Thinh Ong
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="qt-repro-res_files/figure-revealjs/unnamed-chunk-16-1.png" style="width:100.0%"></p>
+<p><img data-src="qt-repro-res_files/figure-html/unnamed-chunk-16-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -3506,17 +3518,17 @@ Hung Tran and Thinh Ong
 <div class="column" style="width:50%;">
 <div class="codewindow r">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15" data-code-line-numbers="1-2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a aria-label="1"></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> </span>
-<span id="cb15-2"><a aria-label="2"></a>  <span class="fu">filter</span>(outbreak <span class="sc">==</span> <span class="st">"1st outbreak"</span>)</span>
-<span id="cb15-3"><a aria-label="3"></a>df <span class="sc">|&gt;</span></span>
-<span id="cb15-4"><a aria-label="4"></a>  <span class="fu">count</span>(date_onset) <span class="sc">|&gt;</span></span>
-<span id="cb15-5"><a aria-label="5"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> date_onset, <span class="at">y =</span> n)) <span class="sc">+</span></span>
-<span id="cb15-6"><a aria-label="6"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>,</span>
-<span id="cb15-7"><a aria-label="7"></a>           <span class="at">width =</span> <span class="dv">1</span>,</span>
-<span id="cb15-8"><a aria-label="8"></a>           <span class="at">fill =</span> <span class="st">"cornflowerblue"</span>) <span class="sc">+</span></span>
-<span id="cb15-9"><a aria-label="9"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Date of onset"</span>, </span>
-<span id="cb15-10"><a aria-label="10"></a>       <span class="at">y =</span> <span class="st">"Case count"</span>) <span class="sc">+</span></span>
-<span id="cb15-11"><a aria-label="11"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17" data-code-line-numbers="1-2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a aria-label="1"></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span> </span>
+<span id="cb17-2"><a aria-label="2"></a>  <span class="fu">filter</span>(outbreak <span class="sc">==</span> <span class="st">"1st outbreak"</span>)</span>
+<span id="cb17-3"><a aria-label="3"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb17-4"><a aria-label="4"></a>  <span class="fu">count</span>(date_onset) <span class="sc">|&gt;</span></span>
+<span id="cb17-5"><a aria-label="5"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> date_onset, <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb17-6"><a aria-label="6"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>,</span>
+<span id="cb17-7"><a aria-label="7"></a>           <span class="at">width =</span> <span class="dv">1</span>,</span>
+<span id="cb17-8"><a aria-label="8"></a>           <span class="at">fill =</span> <span class="st">"cornflowerblue"</span>) <span class="sc">+</span></span>
+<span id="cb17-9"><a aria-label="9"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Date of onset"</span>, </span>
+<span id="cb17-10"><a aria-label="10"></a>       <span class="at">y =</span> <span class="st">"Case count"</span>) <span class="sc">+</span></span>
+<span id="cb17-11"><a aria-label="11"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -3524,7 +3536,7 @@ Hung Tran and Thinh Ong
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="qt-repro-res_files/figure-revealjs/unnamed-chunk-18-1.png" style="width:100.0%"></p>
+<p><img data-src="qt-repro-res_files/figure-html/unnamed-chunk-18-1.png" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -3537,49 +3549,49 @@ Hung Tran and Thinh Ong
 <div class="column" style="width:60%;">
 <div class="codewindow r">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a aria-label="1"></a>df <span class="sc">|&gt;</span></span>
-<span id="cb16-2"><a aria-label="2"></a>  <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">factor</span>(</span>
-<span id="cb16-3"><a aria-label="3"></a>    sex,</span>
-<span id="cb16-4"><a aria-label="4"></a>    <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"f"</span>, <span class="st">"m"</span>),</span>
-<span id="cb16-5"><a aria-label="5"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Female"</span>, <span class="st">"Male"</span>)</span>
-<span id="cb16-6"><a aria-label="6"></a>  ),</span>
-<span id="cb16-7"><a aria-label="7"></a>  <span class="at">outcome =</span> <span class="fu">str_to_sentence</span>(outcome)) <span class="sc">|&gt;</span></span>
-<span id="cb16-8"><a aria-label="8"></a>  <span class="fu">tbl_summary</span>(</span>
-<span id="cb16-9"><a aria-label="9"></a>    <span class="at">include =</span> <span class="fu">c</span>(sex, age, outcome, outbreak),</span>
-<span id="cb16-10"><a aria-label="10"></a>    <span class="at">label =</span> <span class="fu">list</span>(</span>
-<span id="cb16-11"><a aria-label="11"></a>      sex <span class="sc">~</span> <span class="st">"Sex"</span>, age <span class="sc">~</span> <span class="st">"Age (years)"</span>, </span>
-<span id="cb16-12"><a aria-label="12"></a>      outcome <span class="sc">~</span> <span class="st">"Outcome"</span>, outbreak <span class="sc">~</span> <span class="st">"Outbreak"</span></span>
-<span id="cb16-13"><a aria-label="13"></a>    ),</span>
-<span id="cb16-14"><a aria-label="14"></a>    <span class="at">digits =</span> <span class="fu">c</span>(</span>
-<span id="cb16-15"><a aria-label="15"></a>      <span class="fu">all_categorical</span>() <span class="sc">~</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), </span>
-<span id="cb16-16"><a aria-label="16"></a>      <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="dv">1</span></span>
-<span id="cb16-17"><a aria-label="17"></a>    ),</span>
-<span id="cb16-18"><a aria-label="18"></a>    <span class="at">statistic =</span> <span class="fu">list</span>(</span>
-<span id="cb16-19"><a aria-label="19"></a>      <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="st">"{mean} \u00b1 {sd}"</span></span>
-<span id="cb16-20"><a aria-label="20"></a>    )</span>
-<span id="cb16-21"><a aria-label="21"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a aria-label="1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb18-2"><a aria-label="2"></a>  <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">factor</span>(</span>
+<span id="cb18-3"><a aria-label="3"></a>    sex,</span>
+<span id="cb18-4"><a aria-label="4"></a>    <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"f"</span>, <span class="st">"m"</span>),</span>
+<span id="cb18-5"><a aria-label="5"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Female"</span>, <span class="st">"Male"</span>)</span>
+<span id="cb18-6"><a aria-label="6"></a>  ),</span>
+<span id="cb18-7"><a aria-label="7"></a>  <span class="at">outcome =</span> <span class="fu">str_to_sentence</span>(outcome)) <span class="sc">|&gt;</span></span>
+<span id="cb18-8"><a aria-label="8"></a>  <span class="fu">tbl_summary</span>(</span>
+<span id="cb18-9"><a aria-label="9"></a>    <span class="at">include =</span> <span class="fu">c</span>(sex, age, outcome, outbreak),</span>
+<span id="cb18-10"><a aria-label="10"></a>    <span class="at">label =</span> <span class="fu">list</span>(</span>
+<span id="cb18-11"><a aria-label="11"></a>      sex <span class="sc">~</span> <span class="st">"Sex"</span>, age <span class="sc">~</span> <span class="st">"Age (years)"</span>, </span>
+<span id="cb18-12"><a aria-label="12"></a>      outcome <span class="sc">~</span> <span class="st">"Outcome"</span>, outbreak <span class="sc">~</span> <span class="st">"Outbreak"</span></span>
+<span id="cb18-13"><a aria-label="13"></a>    ),</span>
+<span id="cb18-14"><a aria-label="14"></a>    <span class="at">digits =</span> <span class="fu">c</span>(</span>
+<span id="cb18-15"><a aria-label="15"></a>      <span class="fu">all_categorical</span>() <span class="sc">~</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), </span>
+<span id="cb18-16"><a aria-label="16"></a>      <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="dv">1</span></span>
+<span id="cb18-17"><a aria-label="17"></a>    ),</span>
+<span id="cb18-18"><a aria-label="18"></a>    <span class="at">statistic =</span> <span class="fu">list</span>(</span>
+<span id="cb18-19"><a aria-label="19"></a>      <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="st">"{mean} \u00b1 {sd}"</span></span>
+<span id="cb18-20"><a aria-label="20"></a>    )</span>
+<span id="cb18-21"><a aria-label="21"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div><div class="column" style="width:40%;">
 <div class="cell">
 <div class="cell-output-display">
-<div id="iccrwafzam" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#iccrwafzam table {
+<div id="ajowrnkhrr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ajowrnkhrr table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#iccrwafzam thead, #iccrwafzam tbody, #iccrwafzam tfoot, #iccrwafzam tr, #iccrwafzam td, #iccrwafzam th {
+#ajowrnkhrr thead, #ajowrnkhrr tbody, #ajowrnkhrr tfoot, #ajowrnkhrr tr, #ajowrnkhrr td, #ajowrnkhrr th {
   border-style: none;
 }
 
-#iccrwafzam p {
+#ajowrnkhrr p {
   margin: 0;
   padding: 0;
 }
 
-#iccrwafzam .gt_table {
+#ajowrnkhrr .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3605,12 +3617,12 @@ Hung Tran and Thinh Ong
   border-left-color: #D3D3D3;
 }
 
-#iccrwafzam .gt_caption {
+#ajowrnkhrr .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#iccrwafzam .gt_title {
+#ajowrnkhrr .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3622,7 +3634,7 @@ Hung Tran and Thinh Ong
   border-bottom-width: 0;
 }
 
-#iccrwafzam .gt_subtitle {
+#ajowrnkhrr .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3634,7 +3646,7 @@ Hung Tran and Thinh Ong
   border-top-width: 0;
 }
 
-#iccrwafzam .gt_heading {
+#ajowrnkhrr .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3646,13 +3658,13 @@ Hung Tran and Thinh Ong
   border-right-color: #D3D3D3;
 }
 
-#iccrwafzam .gt_bottom_border {
+#ajowrnkhrr .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#iccrwafzam .gt_col_headings {
+#ajowrnkhrr .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3667,7 +3679,7 @@ Hung Tran and Thinh Ong
   border-right-color: #D3D3D3;
 }
 
-#iccrwafzam .gt_col_heading {
+#ajowrnkhrr .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3687,7 +3699,7 @@ Hung Tran and Thinh Ong
   overflow-x: hidden;
 }
 
-#iccrwafzam .gt_column_spanner_outer {
+#ajowrnkhrr .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3699,15 +3711,15 @@ Hung Tran and Thinh Ong
   padding-right: 4px;
 }
 
-#iccrwafzam .gt_column_spanner_outer:first-child {
+#ajowrnkhrr .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#iccrwafzam .gt_column_spanner_outer:last-child {
+#ajowrnkhrr .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#iccrwafzam .gt_column_spanner {
+#ajowrnkhrr .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3719,11 +3731,11 @@ Hung Tran and Thinh Ong
   width: 100%;
 }
 
-#iccrwafzam .gt_spanner_row {
+#ajowrnkhrr .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#iccrwafzam .gt_group_heading {
+#ajowrnkhrr .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3749,7 +3761,7 @@ Hung Tran and Thinh Ong
   text-align: left;
 }
 
-#iccrwafzam .gt_empty_group_heading {
+#ajowrnkhrr .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3764,15 +3776,15 @@ Hung Tran and Thinh Ong
   vertical-align: middle;
 }
 
-#iccrwafzam .gt_from_md > :first-child {
+#ajowrnkhrr .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#iccrwafzam .gt_from_md > :last-child {
+#ajowrnkhrr .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#iccrwafzam .gt_row {
+#ajowrnkhrr .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3791,7 +3803,7 @@ Hung Tran and Thinh Ong
   overflow-x: hidden;
 }
 
-#iccrwafzam .gt_stub {
+#ajowrnkhrr .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3804,7 +3816,7 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#iccrwafzam .gt_stub_row_group {
+#ajowrnkhrr .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3818,15 +3830,15 @@ Hung Tran and Thinh Ong
   vertical-align: top;
 }
 
-#iccrwafzam .gt_row_group_first td {
+#ajowrnkhrr .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#iccrwafzam .gt_row_group_first th {
+#ajowrnkhrr .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#iccrwafzam .gt_summary_row {
+#ajowrnkhrr .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3836,16 +3848,16 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#iccrwafzam .gt_first_summary_row {
+#ajowrnkhrr .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#iccrwafzam .gt_first_summary_row.thick {
+#ajowrnkhrr .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#iccrwafzam .gt_last_summary_row {
+#ajowrnkhrr .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3855,7 +3867,7 @@ Hung Tran and Thinh Ong
   border-bottom-color: #D3D3D3;
 }
 
-#iccrwafzam .gt_grand_summary_row {
+#ajowrnkhrr .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3865,7 +3877,7 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#iccrwafzam .gt_first_grand_summary_row {
+#ajowrnkhrr .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3875,7 +3887,7 @@ Hung Tran and Thinh Ong
   border-top-color: #D3D3D3;
 }
 
-#iccrwafzam .gt_last_grand_summary_row_top {
+#ajowrnkhrr .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3885,11 +3897,11 @@ Hung Tran and Thinh Ong
   border-bottom-color: #D3D3D3;
 }
 
-#iccrwafzam .gt_striped {
+#ajowrnkhrr .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#iccrwafzam .gt_table_body {
+#ajowrnkhrr .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3898,7 +3910,7 @@ Hung Tran and Thinh Ong
   border-bottom-color: #D3D3D3;
 }
 
-#iccrwafzam .gt_footnotes {
+#ajowrnkhrr .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3912,7 +3924,7 @@ Hung Tran and Thinh Ong
   border-right-color: #D3D3D3;
 }
 
-#iccrwafzam .gt_footnote {
+#ajowrnkhrr .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3921,7 +3933,7 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#iccrwafzam .gt_sourcenotes {
+#ajowrnkhrr .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3935,7 +3947,7 @@ Hung Tran and Thinh Ong
   border-right-color: #D3D3D3;
 }
 
-#iccrwafzam .gt_sourcenote {
+#ajowrnkhrr .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3943,72 +3955,72 @@ Hung Tran and Thinh Ong
   padding-right: 5px;
 }
 
-#iccrwafzam .gt_left {
+#ajowrnkhrr .gt_left {
   text-align: left;
 }
 
-#iccrwafzam .gt_center {
+#ajowrnkhrr .gt_center {
   text-align: center;
 }
 
-#iccrwafzam .gt_right {
+#ajowrnkhrr .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#iccrwafzam .gt_font_normal {
+#ajowrnkhrr .gt_font_normal {
   font-weight: normal;
 }
 
-#iccrwafzam .gt_font_bold {
+#ajowrnkhrr .gt_font_bold {
   font-weight: bold;
 }
 
-#iccrwafzam .gt_font_italic {
+#ajowrnkhrr .gt_font_italic {
   font-style: italic;
 }
 
-#iccrwafzam .gt_super {
+#ajowrnkhrr .gt_super {
   font-size: 65%;
 }
 
-#iccrwafzam .gt_footnote_marks {
+#ajowrnkhrr .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#iccrwafzam .gt_asterisk {
+#ajowrnkhrr .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#iccrwafzam .gt_indent_1 {
+#ajowrnkhrr .gt_indent_1 {
   text-indent: 5px;
 }
 
-#iccrwafzam .gt_indent_2 {
+#ajowrnkhrr .gt_indent_2 {
   text-indent: 10px;
 }
 
-#iccrwafzam .gt_indent_3 {
+#ajowrnkhrr .gt_indent_3 {
   text-indent: 15px;
 }
 
-#iccrwafzam .gt_indent_4 {
+#ajowrnkhrr .gt_indent_4 {
   text-indent: 20px;
 }
 
-#iccrwafzam .gt_indent_5 {
+#ajowrnkhrr .gt_indent_5 {
   text-indent: 25px;
 }
 
-#iccrwafzam .katex-display {
+#ajowrnkhrr .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#iccrwafzam div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ajowrnkhrr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4096,28 +4108,28 @@ Hung Tran and Thinh Ong
 <div class="column" style="width:50%;">
 <div class="codewindow quarto">
 <p>index.qmd</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a aria-label="1"></a><span class="co">---</span></span>
-<span id="cb17-2"><a aria-label="2"></a><span class="an">title:</span><span class="co"> "My Presentation"</span></span>
-<span id="cb17-3"><a aria-label="3"></a><span class="an">author:</span><span class="co"> "Your Name"</span></span>
-<span id="cb17-4"><a aria-label="4"></a><span class="an">format:</span><span class="co"> </span></span>
-<span id="cb17-5"><a aria-label="5"></a><span class="co">  revealjs:</span></span>
-<span id="cb17-6"><a aria-label="6"></a><span class="co">    chalkboard: true</span></span>
-<span id="cb17-7"><a aria-label="7"></a><span class="an">toc:</span><span class="co"> false</span></span>
-<span id="cb17-8"><a aria-label="8"></a><span class="co">---</span></span>
-<span id="cb17-9"><a aria-label="9"></a></span>
-<span id="cb17-10"><a aria-label="10"></a><span class="fu">## Slide Title</span></span>
-<span id="cb17-11"><a aria-label="11"></a></span>
-<span id="cb17-12"><a aria-label="12"></a><span class="ss">- </span>Bullet point 1</span>
-<span id="cb17-13"><a aria-label="13"></a><span class="ss">- </span>Bullet point 2</span>
-<span id="cb17-14"><a aria-label="14"></a></span>
-<span id="cb17-15"><a aria-label="15"></a><span class="fu">## Code Blocks &amp; Highlighting</span></span>
-<span id="cb17-16"><a aria-label="16"></a></span>
-<span id="cb17-17"><a aria-label="17"></a>You can add code blocks like this:</span>
-<span id="cb17-18"><a aria-label="18"></a></span>
-<span id="cb17-19"><a aria-label="19"></a><span class="in">```{r}</span></span>
-<span id="cb17-20"><a aria-label="20"></a><span class="co"># R code block</span></span>
-<span id="cb17-21"><a aria-label="21"></a><span class="fu">summary</span>(cars)</span>
-<span id="cb17-22"><a aria-label="22"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a aria-label="1"></a><span class="co">---</span></span>
+<span id="cb19-2"><a aria-label="2"></a><span class="an">title:</span><span class="co"> "My Presentation"</span></span>
+<span id="cb19-3"><a aria-label="3"></a><span class="an">author:</span><span class="co"> "Your Name"</span></span>
+<span id="cb19-4"><a aria-label="4"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb19-5"><a aria-label="5"></a><span class="co">  revealjs:</span></span>
+<span id="cb19-6"><a aria-label="6"></a><span class="co">    chalkboard: true</span></span>
+<span id="cb19-7"><a aria-label="7"></a><span class="an">toc:</span><span class="co"> false</span></span>
+<span id="cb19-8"><a aria-label="8"></a><span class="co">---</span></span>
+<span id="cb19-9"><a aria-label="9"></a></span>
+<span id="cb19-10"><a aria-label="10"></a><span class="fu">## Slide Title</span></span>
+<span id="cb19-11"><a aria-label="11"></a></span>
+<span id="cb19-12"><a aria-label="12"></a><span class="ss">- </span>Bullet point 1</span>
+<span id="cb19-13"><a aria-label="13"></a><span class="ss">- </span>Bullet point 2</span>
+<span id="cb19-14"><a aria-label="14"></a></span>
+<span id="cb19-15"><a aria-label="15"></a><span class="fu">## Code Blocks &amp; Highlighting</span></span>
+<span id="cb19-16"><a aria-label="16"></a></span>
+<span id="cb19-17"><a aria-label="17"></a>You can add code blocks like this:</span>
+<span id="cb19-18"><a aria-label="18"></a></span>
+<span id="cb19-19"><a aria-label="19"></a><span class="in">```{r}</span></span>
+<span id="cb19-20"><a aria-label="20"></a><span class="co"># R code block</span></span>
+<span id="cb19-21"><a aria-label="21"></a><span class="fu">summary</span>(cars)</span>
+<span id="cb19-22"><a aria-label="22"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:5%;">
 
@@ -4134,28 +4146,28 @@ Hung Tran and Thinh Ong
 <div class="column" style="width:50%;">
 <div class="codewindow quarto">
 <p>index.qmd</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a aria-label="1"></a><span class="co">---</span></span>
-<span id="cb18-2"><a aria-label="2"></a><span class="an">title:</span><span class="co"> "My Presentation"</span></span>
-<span id="cb18-3"><a aria-label="3"></a><span class="an">author:</span><span class="co"> "Your Name"</span></span>
-<span id="cb18-4"><a aria-label="4"></a><span class="an">format:</span><span class="co"> </span></span>
-<span id="cb18-5"><a aria-label="5"></a><span class="co">  revealjs:</span></span>
-<span id="cb18-6"><a aria-label="6"></a><span class="co">    chalkboard: true</span></span>
-<span id="cb18-7"><a aria-label="7"></a><span class="an">toc:</span><span class="co"> false</span></span>
-<span id="cb18-8"><a aria-label="8"></a><span class="co">---</span></span>
-<span id="cb18-9"><a aria-label="9"></a></span>
-<span id="cb18-10"><a aria-label="10"></a><span class="fu">## Slide Title</span></span>
-<span id="cb18-11"><a aria-label="11"></a></span>
-<span id="cb18-12"><a aria-label="12"></a><span class="ss">- </span>Bullet point 1</span>
-<span id="cb18-13"><a aria-label="13"></a><span class="ss">- </span>Bullet point 2</span>
-<span id="cb18-14"><a aria-label="14"></a></span>
-<span id="cb18-15"><a aria-label="15"></a><span class="fu">## Code Blocks &amp; Highlighting</span></span>
-<span id="cb18-16"><a aria-label="16"></a></span>
-<span id="cb18-17"><a aria-label="17"></a>You can add code blocks like this:</span>
-<span id="cb18-18"><a aria-label="18"></a></span>
-<span id="cb18-19"><a aria-label="19"></a><span class="in">```{r}</span></span>
-<span id="cb18-20"><a aria-label="20"></a><span class="co"># R code block</span></span>
-<span id="cb18-21"><a aria-label="21"></a><span class="fu">summary</span>(cars)</span>
-<span id="cb18-22"><a aria-label="22"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a aria-label="1"></a><span class="co">---</span></span>
+<span id="cb20-2"><a aria-label="2"></a><span class="an">title:</span><span class="co"> "My Presentation"</span></span>
+<span id="cb20-3"><a aria-label="3"></a><span class="an">author:</span><span class="co"> "Your Name"</span></span>
+<span id="cb20-4"><a aria-label="4"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb20-5"><a aria-label="5"></a><span class="co">  revealjs:</span></span>
+<span id="cb20-6"><a aria-label="6"></a><span class="co">    chalkboard: true</span></span>
+<span id="cb20-7"><a aria-label="7"></a><span class="an">toc:</span><span class="co"> false</span></span>
+<span id="cb20-8"><a aria-label="8"></a><span class="co">---</span></span>
+<span id="cb20-9"><a aria-label="9"></a></span>
+<span id="cb20-10"><a aria-label="10"></a><span class="fu">## Slide Title</span></span>
+<span id="cb20-11"><a aria-label="11"></a></span>
+<span id="cb20-12"><a aria-label="12"></a><span class="ss">- </span>Bullet point 1</span>
+<span id="cb20-13"><a aria-label="13"></a><span class="ss">- </span>Bullet point 2</span>
+<span id="cb20-14"><a aria-label="14"></a></span>
+<span id="cb20-15"><a aria-label="15"></a><span class="fu">## Code Blocks &amp; Highlighting</span></span>
+<span id="cb20-16"><a aria-label="16"></a></span>
+<span id="cb20-17"><a aria-label="17"></a>You can add code blocks like this:</span>
+<span id="cb20-18"><a aria-label="18"></a></span>
+<span id="cb20-19"><a aria-label="19"></a><span class="in">```{r}</span></span>
+<span id="cb20-20"><a aria-label="20"></a><span class="co"># R code block</span></span>
+<span id="cb20-21"><a aria-label="21"></a><span class="fu">summary</span>(cars)</span>
+<span id="cb20-22"><a aria-label="22"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column" style="width:50%;">
 <iframe class="slide-deck" src="qt-example-slide.html" style="width: 100%; height: 500px; border: 1px solid #ccc; box-sizing: border-box;">
@@ -4387,44 +4399,6 @@ Hung Tran and Thinh Ong
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
