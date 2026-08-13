@@ -99,8 +99,7 @@ Please follow this [pre-course setups handout](handouts/precourse_setup.qmd) to 
   - Datasets: 
     - {{< downloadthis slides/data/NightingaleRose.csv dname="Nightingale Rose"
       label="Data Nightingale Rose (csv file)" type="primary">}}
-    - {{< downloadthis slides/data/ICUcost.csv dname="ICU cost"
-      label="Data ICU cost (csv file)" type="primary">}}
+    - {{< downloadthis slides/data/ICUcost.csv dname="ICU cost" label="Data ICU cost (csv file)" type="primary">}}
 
 ## Advance data management and techniques in R
 
