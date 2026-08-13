@@ -672,6 +672,13 @@
     "text": "Slide structure\n\n\n\nindex.qmd\n---\ntitle: \"My Presentation\"\nauthor: \"Your Name\"\nformat: \n  revealjs:\n    chalkboard: true\ntoc: false\n---\n\n## Slide Title\n\n- Bullet point 1\n- Bullet point 2\n\n## Code Blocks & Highlighting\n\nYou can add code blocks like this:\n\n```{r}\n# R code block\nsummary(cars)\n```"
   },
   {
+    "objectID": "slides/qt-repro-res.html#now-create-your-own-quarto-manuscript-and-presentation",
+    "href": "slides/qt-repro-res.html#now-create-your-own-quarto-manuscript-and-presentation",
+    "title": "Using Quarto for reproducible research",
+    "section": "Now create your own Quarto manuscript and presentation!",
+    "text": "Now create your own Quarto manuscript and presentation!\n\nUse the code in covid.R file to complete your report in covid.qmd"
+  },
+  {
     "objectID": "slides/viz.html#what-to-expect",
     "href": "slides/viz.html#what-to-expect",
     "title": "Principles of data visualisation and plotting in R",
