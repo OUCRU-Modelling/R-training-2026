@@ -865,14 +865,14 @@
     "href": "index.html#principles-of-data-visualisation-and-plotting-in-r",
     "title": "OUCRU R training course - 2026",
     "section": "Principles of data visualisation and plotting in R",
-    "text": "Principles of data visualisation and plotting in R\n\nDay 3 (Wednesday):\n\nLecture slides\nLearning objectives:\n\nThe grammar of graphics—understanding how plots are built\nThe step-by-step process of creating graphs in R\nUse the ggplot2 package plot figures in R\nHow to design clear and impactful visualisations\nUsing LLMs (Large Language Models) to help you with plotting\n\nExercises\nR code:\n\n Exercise answers script \n\n\n\n\nDay 4 (Thursday-morning):\n\nLecture slides\nLearning objectives:\n\nUnderstand the principles of clear and impactful visualisation\n\nHandout file\nExercises:\n\nExercise answer key\nExercise answer script\nDatasets:\n\nData Nightingale Rose (csv file)\n\nData ICU cost (csv file)"
+    "text": "Principles of data visualisation and plotting in R\n\nDay 3 (Wednesday):\n\nLecture slides\nLearning objectives:\n\nThe grammar of graphics—understanding how plots are built\nThe step-by-step process of creating graphs in R\nUse the ggplot2 package plot figures in R\nHow to design clear and impactful visualisations\nUsing LLMs (Large Language Models) to help you with plotting\n\nExercises\nR code:\n\n Exercise answers script \n\n\n\n\nDay 4 (Thursday-morning):\n\nLecture slides\nLearning objectives:\n\nUnderstand the principles of clear and impactful visualisation\n\nHandout file\nExercises:\n\nExercise answer key\nExercise answer script\nDatasets:\n\nData Nightingale Rose (csv file)\nData ICU cost (csv file)"
   },
   {
     "objectID": "index.html#advance-data-management-and-techniques-in-r",
     "href": "index.html#advance-data-management-and-techniques-in-r",
     "title": "OUCRU R training course - 2026",
     "section": "Advance data management and techniques in R",
-    "text": "Advance data management and techniques in R\n\nDay 4 (Thursday-afternoon):\n\nLecture slides\nLearning objectives:\n\nInto the tidyverse\nLogics with if-else statements and for-loops\nData manipulation with tidyverse\n\nData ingestion with readr\nPivotting dataframes with tidyr\nColumn manipulation with dplyr\n\nJoining dataframes\nVectors and vectorisation in R"
+    "text": "Advance data management and techniques in R\n\nDay 4 (Thursday-afternoon):\n\nLecture slides\nLearning objectives:\n\nInto the tidyverse\nLogics with if-else statements and for-loops\nData manipulation with tidyverse\n\nData ingestion with readr\nPivotting dataframes with tidyr\nColumn manipulation with dplyr\n\nJoining dataframes\nVectors and vectorisation in R\n\nExercises"
   },
   {
     "objectID": "index.html#reproducible-research-and-reporting-using-quarto",
@@ -2140,5 +2140,96 @@
     "title": "Principles of data visualisation and plotting in R",
     "section": "",
     "text": "How to make an informative visual representation of data and/or results\n\nPart I: process of graph creation\nPart II: principles of graph interpretation\n\n\n\n\n\n\n\nNote\n\n\n\nGraph = diagram = chart = figure = picture\n\n\n\n\n\n\n\n\n\n\n\n\n\nBut it takes\n\nknowledge of graphics principles\neffort; trial and error\ntime\n\nto make a “good” one\n\n\n\n\n\n\n\n\n\n\n\n\n\nRose plot to convince UK authorities of importance of hygiene\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHinrichsen: risk factors for hepatitis G infection in haemodialysis patients\n\nDo we need a graph?\nAre there enough data points to merit a plot?\n\nDepends on mode of presentation: conference lecture (time limit), article\n\nIf we use a graph, is this one the most truthful and informative?\n\n\n\n\n\n\n\n\n\nCohort study on 1187 HIV infected persons in The Gambia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhy do we make a graph? (purpose)\n\nWe want to explore and inspect our data or results\nPresent data or results, often with a message, to others\n\n\n\n\nWhere do we show the graph: research paper, conference, website\n\n\n\n\nWho is the audience. Level of background knowledge\n\n\n\n\nWhat do we want to show (data)\n\nGraph: visual representation of information (“encoding”)\nmapping from data/results to figure"
+  },
+  {
+    "objectID": "handouts/exercises_Day4_afternoon.html",
+    "href": "handouts/exercises_Day4_afternoon.html",
+    "title": "Exercises Day 4 (afternoon)",
+    "section": "",
+    "text": "NotePiping\n\n\n\nIt is expected that the exercise answers will be mainly using the pipe operators |&gt;, instead of putting functions inside each other"
+  },
+  {
+    "objectID": "handouts/exercises_Day4_afternoon.html#notes-and-instructions",
+    "href": "handouts/exercises_Day4_afternoon.html#notes-and-instructions",
+    "title": "Exercises Day 4 (afternoon)",
+    "section": "",
+    "text": "NotePiping\n\n\n\nIt is expected that the exercise answers will be mainly using the pipe operators |&gt;, instead of putting functions inside each other"
+  },
+  {
+    "objectID": "handouts/exercises_Day4_afternoon.html#dataset",
+    "href": "handouts/exercises_Day4_afternoon.html#dataset",
+    "title": "Exercises Day 4 (afternoon)",
+    "section": "Dataset",
+    "text": "Dataset\nWe will use covid_cases.rds for this exercise.\n\n  \n    Data dictionary\n  \n\n\n\n\n\n\n\nColumn\nDescription\n\n\n\n\ndate\ndate of the case report\n\n\n211 columns with the format cases_{country_code}\nnumber of reported cases of each country and archipelago\n\n\n\nCountry codes of interest (i.e. Codes for countries needed for the exercise)\n\n\n\nCode\nCountry name\n\n\n\n\nchn\nChina\n\n\nusa\nUnited States of America\n\n\nvnm\nVietnam\n\n\nsgp\nSingapore"
+  },
+  {
+    "objectID": "handouts/exercises_Day4_afternoon.html#exercises",
+    "href": "handouts/exercises_Day4_afternoon.html#exercises",
+    "title": "Exercises Day 4 (afternoon)",
+    "section": "Exercises",
+    "text": "Exercises\n\nTask 1: Data import\n\nRead data\nLoad the tidyverse meta-package into R\n\n\n\n\n\n\n\nNote\n\n\n\nA “meta-package” is a package that contains other packages. Remember, tidyverse is just a collection of packages.\n\n\n\n\nTask 2: Data cleaning and filtering\n\nDoes the data follow the tidy data standard?\n\nIf not, pivot the data into a tibble that follows the tidy data standard\n\nDo some quick skim on the data. Do the variable values make sense given its type?\n\nIf not, filter out incorrect/impossible data\n\nFilter the data so that we only have week 3-12 of 2020\nSave the results back into covid_cases\n\n\n\n\n\n\n\nTipTip: pivotting\n\n\n\n\n\n\nIf your data is not tidy data:\n\n“Lengthens” the data using tidyr::pivot_longer(), i.e. less columns, more rows\n“Widens” the data using tidyr::pivot_wider(), i.e. less rows, more columns\n\n\n\n\n\n\n\n\n\n\n\nTipTip: data cleaning\n\n\n\n\n\n\nThe main variable here is case counts from each country. They should have a numeric type and should not be lower than 0. You can’t have negative case counts\nYou can remove or filter undesirable values using dplyr::filter()\n\n\n\n\n\n\nTask 3: Data transformation\n\nUsing the covid_cases object created in Task 2:\n\nGroup the data and calculate the total number of cases per country\nSelect the top 5 countries with highest total cases\nExtract the country codes and save them into a new object, e.g. top_countries\n\n\n\nUse the covid_cases object created in Task 2 again:\n\nGroup the data again, calculate the total number of cases per country again\nModify the country column:\n\nSo that we only keep the names of countries in the top 5 (generated above). Countries on in the top 5 will be changed to \"Others\"\nTurn this column into a factor type using the forcats package (already in tidyverse)\nGroup the data again, this time, group by date and country\nCalculate the total number of cases per date per country\nCreate a new column called pct_cases, which is the percentage of total cases per date per country\n(Optional) remove rows with NA from the tibble\nThere are many ways to do this part of the task\n\nSave all of this into a new object, e.g. plot_data\n\n\n\n\n\n\n\n\nTipTip: data grouping and summarisation\n\n\n\n\n\n\nGroup data into groups with dplyr::group_by() and ungroup data with dplyr::ungroup()\nSummarise each group into a single row with dplyr::summarise()\nYou can have multiple groups at the same time. For example:\n\n\n\n`summarise()` has regrouped the output.\nℹ Summaries were computed grouped by date and country.\nℹ Output is grouped by date.\nℹ Use `summarise(.groups = \"drop_last\")` to silence this message.\nℹ Use `summarise(.by = c(date, country))` for per-operation grouping\n  (`?dplyr::dplyr_by`) instead.\n\n\n\n  \n\n\n\n\nYou can choose not to summarise, but add a new column to each group with dplyr::mutate(). For example:\n\n\n\n\n  \n\n\n\nThis will create a new column total_cases that contains the sum of cases for each country without reducing each group into a single row like summarise(). Values will be duplicated for each group.\n\n\n\n\n\n\n\n\n\nTipTip: get top n values in a tibble\n\n\n\n\n\n\nYou can select rows with the top n values in a tibble using dplyr::slice_max()\n\n\n\n\n\n\n\n\n\n\nTipTip: get values of a column in a tibble\n\n\n\n\n\n\nYou can extract values from a columns in a tibble using dplyr::pull()\n\n\n\n\n\n\n\n\n\n\nTipTip: turn a tibble column into a factor\n\n\n\n\n\n\nYou can create and work with factors inside a tibble using the forcats package (already in tidyverse)\nYou can “lump”, or gather, factor levels that are not frequent with forcats::fct_lump_n()\n\n\n\n\n\n\nTask 4: Join data\n\nUse this data country_region.rds to get the regions and sub-regions for all countries.\nMake these 2 tables:\n\n\nWrite a short paragraph summarising key insights from the table, using inline R code to dynamically display case numbers. For example:\n\n\nEurope (192,068) and Asia (126,420) reported the highest number of cases, while Oceania (1,879) had the lowest.\n\nNoted that the number of cases is not hard-coded but you use inline R code to generate it within the text.\n\n\n\n\n\n\nTipTip: join the tables with left_join()\n\n\n\n\n\nYou can join covid_cases and country_region, using the country column of covid_cases and the alpha_3 column of country_region.\n\n\n\n\n\n\n\n\n\nTipTip: make the total cases table\n\n\n\n\n\nYou can use group_by() and summarise() to compute the total cases by sum(cases).\n\n\n\n\n\n\n\n\n\nTipTip: make inline R code\n\n\n\n\n\nIn the paragraph, use inline R code like {r} scales::comma(data$total_cases[tmp1$region == \"Europe\"]) to reference computed values. Function scales::comma() will make the numbers appear with commas for thousands (e.g., 100,000 instead of 100000).\n\n\n\n\n\nTask 5: Data visualization\n\nUsing ggplot2, try your best to generate the following figure:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipTip: how do I draw that??\n\n\n\n\n\n\nggplot2 reference page is very useful\nHere are all the functions used to generate the plot above, in sequence:\n\nggplot()\ngeom_area()\nscale_y_continuous()\nscale_x_date()\nscale_fill_discrete()\nggtitle()\nEvery function is connected with the + operator"
+  },
+  {
+    "objectID": "AGENTS.html",
+    "href": "AGENTS.html",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Guidance for AI coding agents working in this repository.\n\n\nCourse website for OUCRU R training course 2026 — a Quarto website project (project: type: website) built from .qmd files. Published at https://oucru-modelling.github.io/R-training-2026/.\n\n\n\n\nQuarto website project (not a book or blog)\nR, with package versions locked via renv (renv.lock, .Rprofile, renv/)\nSlide decks use format: revealjs; handouts use format: html (or pdf)\n\n\n\n\n\n\n\n\n\n\n\nPath\nPurpose\n\n\n\n\nindex.qmd\nHomepage — course schedule + links to slides/handouts\n\n\nslides/\nLecture slide decks (format: revealjs)\n\n\nhandouts/\nExercises, answer keys, setup instructions (format: html or pdf)\n\n\n_quarto.yml\nProject-level config (theme, navbar, output dir, freeze: auto)\n\n\ntheme.scss, theme-dark.scss\nLight and dark theme overrides (paired with cosmo bootstrap theme)\n\n\nREADME.md\nHuman-readable project description and instructor guidelines\n\n\nR-training-2026.Rproj\nRStudio project file\n\n\n.nojekyll\nGitHub Pages directive (prevents Jekyll processing)\n\n\nrenv/, renv.lock, .Rprofile\nR package version locking\n\n\n_render/\nRendered site output — generated, not hand-edited\n\n\n.github/workflows/publish.yml\nGitHub Actions workflow: renders and publishes on push to main\n\n\n\nNote: the publish workflow ignores changes to README.md and AGENTS.md — editing them won’t trigger a rebuild.\n\n\n\nBefore doing any R work in this project:\nrenv::restore()\nThis installs the exact package versions pinned in renv.lock.\n\n\n\n\nNew/edited slides go in slides/ and must keep format: revealjs in the YAML header.\nNew/edited handouts go in handouts/ and must use format: html (or pdf).\nTheme overrides go in theme.scss (light) and theme-dark.scss (dark), not inline in .qmd files.\nSite-wide settings (theme, navbar, etc.) live in _quarto.yml. A .qmd file’s own YAML header overrides project defaults for that file only.\nIf you add, remove, or update an R package used anywhere in the project, run renv::snapshot() before committing so renv.lock stays in sync.\n\n\n\n\n\nLive preview while editing: quarto preview\nOne-off full render: quarto render → output lands in _render/index.html\n\nThe _quarto.yml has freeze: auto, which caches code output to speed up subsequent renders. If output changes, delete _render/ or run quarto render --no-cache.\nRun one of these after editing any .qmd file to catch rendering errors before committing.\n\n\n\n\nDo: push commits to main — a GitHub Actions workflow renders and publishes the site automatically.\nDon’t: run quarto publish gh-pages manually — this bypasses the intended CI-based publishing flow.\n\n\n\n\n\nDon’t hand-edit anything under _render/ — it’s generated; edit the source .qmd instead.\nDon’t commit a dependency change without a matching renv::snapshot().\nDon’t install R packages outside the project’s renv library.\nDon’t change a slide’s format away from revealjs or a handout’s away from html/pdf without good reason — downstream links in index.qmd assume these."
+  },
+  {
+    "objectID": "AGENTS.html#what-this-repo-is",
+    "href": "AGENTS.html#what-this-repo-is",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Course website for OUCRU R training course 2026 — a Quarto website project (project: type: website) built from .qmd files. Published at https://oucru-modelling.github.io/R-training-2026/."
+  },
+  {
+    "objectID": "AGENTS.html#stack",
+    "href": "AGENTS.html#stack",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Quarto website project (not a book or blog)\nR, with package versions locked via renv (renv.lock, .Rprofile, renv/)\nSlide decks use format: revealjs; handouts use format: html (or pdf)"
+  },
+  {
+    "objectID": "AGENTS.html#repository-layout",
+    "href": "AGENTS.html#repository-layout",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Path\nPurpose\n\n\n\n\nindex.qmd\nHomepage — course schedule + links to slides/handouts\n\n\nslides/\nLecture slide decks (format: revealjs)\n\n\nhandouts/\nExercises, answer keys, setup instructions (format: html or pdf)\n\n\n_quarto.yml\nProject-level config (theme, navbar, output dir, freeze: auto)\n\n\ntheme.scss, theme-dark.scss\nLight and dark theme overrides (paired with cosmo bootstrap theme)\n\n\nREADME.md\nHuman-readable project description and instructor guidelines\n\n\nR-training-2026.Rproj\nRStudio project file\n\n\n.nojekyll\nGitHub Pages directive (prevents Jekyll processing)\n\n\nrenv/, renv.lock, .Rprofile\nR package version locking\n\n\n_render/\nRendered site output — generated, not hand-edited\n\n\n.github/workflows/publish.yml\nGitHub Actions workflow: renders and publishes on push to main\n\n\n\nNote: the publish workflow ignores changes to README.md and AGENTS.md — editing them won’t trigger a rebuild."
+  },
+  {
+    "objectID": "AGENTS.html#environment-setup",
+    "href": "AGENTS.html#environment-setup",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Before doing any R work in this project:\nrenv::restore()\nThis installs the exact package versions pinned in renv.lock."
+  },
+  {
+    "objectID": "AGENTS.html#making-changes",
+    "href": "AGENTS.html#making-changes",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "New/edited slides go in slides/ and must keep format: revealjs in the YAML header.\nNew/edited handouts go in handouts/ and must use format: html (or pdf).\nTheme overrides go in theme.scss (light) and theme-dark.scss (dark), not inline in .qmd files.\nSite-wide settings (theme, navbar, etc.) live in _quarto.yml. A .qmd file’s own YAML header overrides project defaults for that file only.\nIf you add, remove, or update an R package used anywhere in the project, run renv::snapshot() before committing so renv.lock stays in sync."
+  },
+  {
+    "objectID": "AGENTS.html#build-test-locally",
+    "href": "AGENTS.html#build-test-locally",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Live preview while editing: quarto preview\nOne-off full render: quarto render → output lands in _render/index.html\n\nThe _quarto.yml has freeze: auto, which caches code output to speed up subsequent renders. If output changes, delete _render/ or run quarto render --no-cache.\nRun one of these after editing any .qmd file to catch rendering errors before committing."
+  },
+  {
+    "objectID": "AGENTS.html#publishing",
+    "href": "AGENTS.html#publishing",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Do: push commits to main — a GitHub Actions workflow renders and publishes the site automatically.\nDon’t: run quarto publish gh-pages manually — this bypasses the intended CI-based publishing flow."
+  },
+  {
+    "objectID": "AGENTS.html#things-to-avoid",
+    "href": "AGENTS.html#things-to-avoid",
+    "title": "AGENTS.md",
+    "section": "",
+    "text": "Don’t hand-edit anything under _render/ — it’s generated; edit the source .qmd instead.\nDon’t commit a dependency change without a matching renv::snapshot().\nDon’t install R packages outside the project’s renv library.\nDon’t change a slide’s format away from revealjs or a handout’s away from html/pdf without good reason — downstream links in index.qmd assume these."
   }
 ]

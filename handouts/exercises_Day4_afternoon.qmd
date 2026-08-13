@@ -1,5 +1,6 @@
 ---
-title: "Exercises Day 5"
+title: "Exercises Day 4 (afternoon)"
+subtitle: "Please do not circulate."
 author: "Tuyen Huynh and the team"
 date: 'last-modified'
 date-format: '[Last version:] MMMM DD, YYYY'
